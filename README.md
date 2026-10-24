@@ -11,6 +11,7 @@
 - [04 · 아이템·장비·파밍](docs/04_items.md)
 - [05 · 콘텐츠와 진행 구조](docs/05_content.md)
 - [06 · 첫 시험판 범위](docs/06_vertical_slice.md)
+- [07 · 스탯·능력치 및 자유 초기화](docs/07_attributes.md)
 - [결정·변경 이력](docs/decisions.md)
 
 ## 보존된 기획 기록
