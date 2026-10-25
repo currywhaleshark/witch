@@ -16,6 +16,7 @@
 - [06 · 첫 시험판 범위](docs/06_vertical_slice.md)
 - [07 · 스탯·능력치 및 자유 초기화](docs/07_attributes.md)
 - [09 · 캐릭터 아트 제작·2D SCG·Tripo 3D·Codex 인계](docs/09_character_art_pipeline.md)
+- [10 · UI·화면 구성](docs/10_ui.md)
 - [결정·변경 이력](docs/decisions.md)
 
 ## 보존된 기획 기록
