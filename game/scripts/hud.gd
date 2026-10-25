@@ -10,6 +10,9 @@ const MUTED = Color("9aadaf")
 const GOLD = Color("d8b77b")
 const TEAL = Color("8dd8c4")
 const RED = Color("ee987d")
+const KEYS = ["LMB", "RMB", "Q", "W", "E", "R"]
+# Slot icons follow the bound skill, not the slot position.
+const ICONS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6}
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -37,11 +40,18 @@ func _draw() -> void:
 	label_at(Vector2(42, 45), "WITCH  /  COMBAT STUDY 01", 12, GOLD, true)
 	label_at(Vector2(42, 76), "기계장치의 마녀", 23, PAPER, true)
 	label_at(Vector2(43, 96), "단일 전투 필드 · 도형 시안", 12, MUTED)
-	var active: bool = arena.state.active_tool != null
-	var upkeep: float = arena.rules.skills.bolt_cutter.upkeep_per_second
-	var status = "볼트 커터 가동  ·  MP −%s/s" % str(upkeep) if active else "공구 대기  ·  Q로 가동"
+	var tool = arena.state.active_tool
+	var active: bool = tool != null
+	var tool_keys: Array = []
+	for i in 6:
+		var bound = arena.state.bindings[arena.rules.SLOTS[i]]
+		if bound != null and arena.rules.skills[bound].kind == "tool":
+			tool_keys.append(KEYS[i])
+	var status = "공구 대기  ·  %s로 가동" % "·".join(tool_keys)
+	if active:
+		status = "%s 가동  ·  MP −%s/s" % [arena.rules.skills[tool].name, str(arena.rules.skills[tool].upkeep_per_second)]
 	if active and arena.state.mana < 10:
-		status = "마나 소진 임박  ·  Q로 해제"
+		status = "마나 소진 임박  ·  같은 키로 해제"
 	panel(Rect2(24, 115, 300, 38), INK, GOLD if active else EDGE)
 	draw_circle(Vector2(44, 134), 5, GOLD if active else MUTED)
 	label_at(Vector2(61, 140), status, 14, GOLD if active else MUTED)
@@ -64,8 +74,13 @@ func _draw() -> void:
 		var length = 64.0 if enemy.heavy else 48.0
 		draw_rect(Rect2(p.x - length / 2 - 2, p.y - 2, length + 4, 9), INK)
 		draw_rect(Rect2(p.x - length / 2, p.y, length * maxf(0, enemy.hp) / enemy.max_hp, 5), GOLD if enemy.heavy else RED)
+		var debuffs: Array = []
 		if enemy.slow > 0:
-			centered(p + Vector2(0, -8), "둔화", 11, TEAL)
+			debuffs.append("둔화")
+		if enemy.shred > 0:
+			debuffs.append("방깎")
+		if not debuffs.is_empty():
+			centered(p + Vector2(0, -8), " · ".join(debuffs), 11, TEAL)
 		elif enemy.windup > 0:
 			centered(p + Vector2(0, -8), "!", 17, RED)
 	if arena.message_time > 0:
@@ -87,27 +102,26 @@ func _draw() -> void:
 		panel(r, Color("14242c"), Color("35464c"))
 		centered(r.position + Vector2(19, 21), str(i + 1), 13, MUTED)
 		centered(r.position + Vector2(19, 49), "—", 18, EDGE)
-	var names = ["기본 타격" if arena.state.bindings.lmb == "basic_attack" else "산탄", "산탄", "볼트 커터", "태엽인형", "포탑", "표적 중계"]
-	var keys = ["LMB", "RMB", "Q", "W", "E", "R"]
 	var sx = start + 196
 	for i in 6:
 		var slot: String = arena.rules.SLOTS[i]
 		var skill: Dictionary = arena.rules.skills[arena.state.bindings[slot]]
 		var cooldown: float = arena.state.cooldowns.get(skill.id, 0)
 		var insufficient: bool = arena.state.mana < skill.mana_cost
-		var color = GOLD if i == 2 and active else (Color("72888c") if insufficient else TEAL)
+		var running: bool = skill.kind == "tool" and tool == skill.id
+		var color = GOLD if running else (Color("72888c") if insufficient else TEAL)
 		if i == 0 and arena.fallback_time > 0:
 			color = GOLD
 		var rect = Rect2(sx + i * 100, h - 131, 91, 107)
-		panel(rect, PANEL, color if i == 2 and active else EDGE)
-		label_at(rect.position + Vector2(8, 17), keys[i], 11, color, true)
-		icon(rect.position + Vector2(45, 45), i, color)
-		centered(rect.position + Vector2(45, 80), names[i], 13, PAPER)
+		panel(rect, PANEL, color if running else EDGE)
+		label_at(rect.position + Vector2(8, 17), KEYS[i], 11, color, true)
+		icon(rect.position + Vector2(45, 45), ICONS[skill.id], color)
+		centered(rect.position + Vector2(45, 80), skill.name, 13, PAPER)
 		var detail = "MP %d" % skill.mana_cost
-		if i == 2:
-			detail = "유지 %s/s" % str(upkeep)
+		if skill.kind == "tool":
+			detail = "유지 %s · %.2f초" % [str(skill.upkeep_per_second), arena.attack_seconds(skill.id)]
 		elif skill.id == "basic_attack":
-			detail = "동작 %.2f초" % arena.attack_seconds(active)
+			detail = "동작 %.2f초" % arena.attack_seconds(tool)
 		elif skill.get("cast_seconds", 0.0) > 0:
 			detail = "MP %d · %.2f초" % [skill.mana_cost, arena.cast_seconds(skill)]
 		centered(rect.position + Vector2(45, 98), detail, 11, MUTED)
@@ -132,7 +146,7 @@ func _draw() -> void:
 		centered(Vector2(w / 2, h / 2 + 14), "Enter  다시 시작    ·    M  효과음 전환", 17, MUTED)
 		if arena.paused:
 			centered(Vector2(w / 2, h / 2 + 53), "Esc  계속하기", 16, TEAL)
-			centered(Vector2(w / 2, h / 2 + 110), "시험 도구   F1 좌클릭 기본/산탄   ·   F2 마나 소진   ·   F3 마나 회복   ·   F4 공속 점수   ·   F8 시전 속도 점수", 13, MUTED)
+			centered(Vector2(w / 2, h / 2 + 110), "시험 도구   F1 좌클릭 기본/산탄   ·   F2 마나 소진   ·   F3 마나 회복   ·   F4 공속 점수   ·   F8 시전 속도 점수   ·   F9 R 그라인더/표적 중계", 13, MUTED)
 			centered(Vector2(w / 2, h / 2 + 134), "A5 마나 시험   F5 연속 교전 켜기/끄기   ·   F6 기록 저장   ·   F7 마나 회복량", 13, MUTED)
 
 func a5_panel(pos: Vector2) -> void:
@@ -141,7 +155,7 @@ func a5_panel(pos: Vector2) -> void:
 	var gap_now: bool = probe.current_gap > 0
 	panel(Rect2(pos, Vector2(300, 150)), Color("14262fee"), RED if gap_now else Color("50625f"))
 	label_at(pos + Vector2(18, 23), "A5 마나 시험  ·  연속 교전", 12, GOLD, true)
-	label_at(pos + Vector2(18, 46), "교전 %d초  ·  회복 %s/s  ·  공구 유지 %s/s" % [probe.combat_seconds, str(arena.config.mana_regen), str(arena.rules.skills.bolt_cutter.upkeep_per_second)], 12, MUTED)
+	label_at(pos + Vector2(18, 46), "교전 %d초  ·  회복 %s/s  ·  공구 유지 %s/s" % [probe.combat_seconds, str(arena.config.mana_regen), str(arena.rules.skills[arena.state.active_tool].upkeep_per_second if arena.state.active_tool != null else 0)], 12, MUTED)
 	label_at(pos + Vector2(18, 72), "기술 공백 %.1f초 (%d%%) · %d회" % [probe.gap_seconds, roundi(probe.gap_share() * 100), probe.gap_count], 14, PAPER)
 	label_at(pos + Vector2(18, 95), ("지금 공백 %.1f초" % probe.current_gap if gap_now else "지금 쓸 수 있는 기술 있음") + "  ·  최장 %.1f초" % probe.longest_gap, 13, RED if gap_now else TEAL)
 	label_at(pos + Vector2(18, 118), "마나 부족 %d  ·  대체 공격 %d  ·  공구 해제 %d" % [probe.counts.mana_failures, probe.counts.fallback_attacks, probe.counts.tool_auto_releases], 12, MUTED)
@@ -188,3 +202,11 @@ func icon(p: Vector2, kind: int, color: Color) -> void:
 			draw_circle(p, 3, color)
 			for angle in [0, PI / 2, PI, 3 * PI / 2]:
 				draw_line(p + Vector2(9, 0).rotated(angle), p + Vector2(20, 0).rotated(angle), color, 2)
+		6:
+			# Toothed cutting disc on a short handle.
+			draw_line(p + Vector2(-14, 15), p + Vector2(-3, 3), color, 3)
+			draw_arc(p + Vector2(4, -4), 11, 0, TAU, 24, color, 2)
+			for k in 8:
+				var angle = k * TAU / 8
+				draw_line(p + Vector2(4, -4) + Vector2(11, 0).rotated(angle), p + Vector2(4, -4) + Vector2(15, 0).rotated(angle + 0.25), color, 2)
+			draw_circle(p + Vector2(4, -4), 3, GOLD)

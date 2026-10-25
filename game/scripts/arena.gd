@@ -6,6 +6,9 @@ const ManaProbe = preload("res://scripts/mana_probe.gd")
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
+const STEEL = Color("a9c1d6")
+# Each tool keeps its own colour on the witch, its ring and its swings.
+const TOOL_COLORS = {"bolt_cutter": BRASS, "grinder": STEEL}
 const PICK_LAYER = 8
 # Held inputs repeat only attack-like casts; toggles, summons and placement stay one per press.
 const REPEAT_KINDS = ["aim", "enemy"]
@@ -47,8 +50,9 @@ var last_events: Array = []
 var hover_id = ""
 var hover_ring: MeshInstance3D
 var move_marker: MeshInstance3D
-var tool_ring: MeshInstance3D
-var tool_visual: Node3D
+var tool_rings: Dictionary = {}
+var tool_visuals: Dictionary = {}
+var grinder_disk: MeshInstance3D
 # A5 mana test: endless engagement, measurement and session logs.
 var a5_mode = false
 var probe: RefCounted
@@ -169,14 +173,16 @@ func reset_arena() -> void:
 		state = rules.bind(state, slot, config.bindings[slot])
 	player = Shape.body(world, Vector3(0, 0, 2), 4)
 	player_model = Shape.witch(player)
-	tool_visual = Node3D.new()
-	player_model.add_child(tool_visual)
+	tool_visuals = {"bolt_cutter": Node3D.new(), "grinder": Node3D.new()}
+	for id in tool_visuals:
+		player_model.add_child(tool_visuals[id])
+		tool_rings[id] = Shape.ring(player, Vector3(0, 0.08, 0), 0.7, TOOL_COLORS[id])
 	for x in [-0.13, 0.13]:
-		var jaw = Shape.box(tool_visual, Vector3(0.57 + x, 1.66, -0.1), Vector3(0.10, 0.43, 0.16), BRASS)
+		var jaw = Shape.box(tool_visuals.bolt_cutter, Vector3(0.57 + x, 1.66, -0.1), Vector3(0.10, 0.43, 0.16), BRASS)
 		jaw.rotation.z = x * 1.5
+	grinder_disk = Shape.cylinder(tool_visuals.grinder, Vector3(0.57, 1.7, -0.1), 0.24, 0.05, STEEL)
+	grinder_disk.rotation.z = PI / 2
 	Shape.ring(player, Vector3(0, 0.035, 0), 0.55, TEAL)
-	tool_ring = Shape.ring(player, Vector3(0, 0.08, 0), 0.7, BRASS)
-	tool_ring.visible = false
 	destination = player.position
 	hp = config.max_hp
 	kills = 0
@@ -210,7 +216,7 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false) -> void:
 	var pick = Shape.pick_volume(body, 0.7 * size, 1.65 * size, PICK_LAYER)
 	pick.set_meta("enemy_id", id)
 	var maximum: float = config.heavy_hp if heavy else config.enemy_hp
-	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": heavy, "cooldown": 1.0, "windup": 0.0, "slow": 0.0, "flash": 0.0}
+	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": heavy, "cooldown": 1.0, "windup": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0}
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -260,7 +266,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var steps: Array = config.attack_speed_steps
 			config.attack_speed_score = steps[(steps.find(config.attack_speed_score) + 1) % steps.size()]
 			restart_probe("settings_changed")
-			show_message("공속 점수 %d · 기본 공격 %.2f초" % [config.attack_speed_score, attack_seconds(false)])
+			show_message("공속 점수 %d · 기본 공격 %.2f초" % [config.attack_speed_score, attack_seconds()])
 			return
 		if event.physical_keycode == KEY_F8:
 			var cast_steps: Array = config.cast_speed_steps
@@ -272,6 +278,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			cancel_pending_cast()
 			state = rules.bind(state, "lmb", "shotgun" if state.bindings.lmb == "basic_attack" else "basic_attack")
 			restart_probe("settings_changed")
+			return
+		if event.physical_keycode == KEY_F9:
+			cancel_pending_cast()
+			var options: Array = config.r_slot_options
+			state = rules.bind(state, "r", options[(options.find(state.bindings.r) + 1) % options.size()])
+			restart_probe("settings_changed")
+			show_message("R 슬롯: " + rules.skills[state.bindings.r].name)
 			return
 		if event.physical_keycode == KEY_F2:
 			state.mana = 0.0
@@ -504,7 +517,7 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	var skill: Dictionary = {} if cast.is_empty() else rules.skills[cast.skill]
 	var seconds = 0.0
 	if cast.get("skill") == rules.basic_id:
-		seconds = attack_seconds(cast.active_tool != null)
+		seconds = attack_seconds(cast.active_tool)
 	elif not skill.is_empty() and not skill.get("while_moving", false):
 		seconds = cast_seconds(skill)
 	if seconds <= 0:
@@ -589,8 +602,9 @@ func motion_seconds(base: float, minimum: float, k: float, score: float) -> floa
 	# Soft-cap shape proposed in 04 §4.1; every constant is a trial value.
 	return minimum + (base - minimum) / (1.0 + k * score)
 
-func attack_seconds(tool: bool) -> float:
-	var base: float = config.tool_attack_seconds if tool else config.basic_attack_seconds
+func attack_seconds(tool = null) -> float:
+	# Each tool swaps in its own attack motion; null is the bare staff.
+	var base: float = rules.skills[tool].attack_seconds if tool != null else config.basic_attack_seconds
 	return motion_seconds(base, config.min_attack_seconds, config.attack_speed_k, config.attack_speed_score)
 
 func cast_seconds(skill: Dictionary) -> float:
@@ -681,19 +695,18 @@ func execute_cast(event: Dictionary) -> void:
 	player_model.look_at(player.position + direction)
 	match event.skill:
 		"basic_attack":
-			var tool: bool = event.active_tool != null
-			var damage: float = config.tool_damage if tool else config.basic_damage
+			var tool = event.active_tool
+			var damage: float = rules.skills[tool].attack_damage if tool != null else config.basic_damage
 			var best = nearest_enemy(player.position, rules.skills.basic_attack.range, direction, 0.2)
 			if event.get("target_enemy") != null and enemies.has(event.target_enemy):
 				best = event.target_enemy
 			if best != "":
-				if tool:
-					enemies[best].slow = config.tool_slow_seconds
-					damage_enemy(best, damage)
-				else:
-					damage_enemy(best, damage)
-			beam(player.position + Vector3.UP, player.position + direction * 2.3 + Vector3.UP, BRASS if tool else TEAL, 0.12)
-			play_cue(0.8 if tool else 1.2)
+				if tool != null:
+					# Debuffs of different tools coexist; switching tools never clears them.
+					enemies[best][rules.skills[tool].debuff] = float(rules.skills[tool].debuff_seconds)
+				damage_enemy(best, damage)
+			beam(player.position + Vector3.UP, player.position + direction * 2.3 + Vector3.UP, TOOL_COLORS.get(tool, TEAL), 0.12)
+			play_cue({"bolt_cutter": 0.8, "grinder": 1.55}.get(tool, 1.2))
 		"shotgun":
 			for id in enemies.keys():
 				var delta: Vector3 = enemies[id].body.position - player.position
@@ -702,7 +715,7 @@ func execute_cast(event: Dictionary) -> void:
 			for angle in [-0.34, -0.17, 0, 0.17, 0.34]:
 				beam(player.position + Vector3.UP, player.position + direction.rotated(Vector3.UP, angle) * rules.skills.shotgun.range + Vector3.UP, BRASS)
 			play_cue(0.65)
-		"bolt_cutter": pulse(player.position, BRASS, 0.8)
+		"bolt_cutter", "grinder": pulse(player.position, TOOL_COLORS[event.skill], 0.8)
 		"automaton":
 			var pos = player.position + Vector3(1, 0, 0.6)
 			pos.x = clampf(pos.x, -14, 14)
@@ -733,7 +746,8 @@ func damage_enemy(id: String, amount: float) -> void:
 	if not enemies.has(id):
 		return
 	var enemy: Dictionary = enemies[id]
-	enemy.hp -= amount
+	# Trial shred: no armour formula exists yet, so shredded enemies take more direct damage.
+	enemy.hp -= amount * (config.shred_damage_taken if enemy.shred > 0 else 1.0)
 	enemy.flash = 0.16
 	if enemy.hp <= 0:
 		pulse(enemy.body.position, RED, 0.6)
@@ -835,8 +849,11 @@ func _physics_process(dt: float) -> void:
 		for id in enemies.keys():
 			_tick_enemy(enemies[id], dt)
 		_tick_allies(dt)
-	tool_ring.visible = state.active_tool != null
-	tool_visual.visible = state.active_tool != null
+	for id in tool_visuals:
+		tool_visuals[id].visible = state.active_tool == id
+		tool_rings[id].visible = state.active_tool == id
+	if state.active_tool == "grinder" and not paused:
+		grinder_disk.rotate_object_local(Vector3.UP, dt * 18)
 	player_model.rotation.z = sin(elapsed * 26) * 0.08 if hit_time > 0 else 0.0
 	# Placeholder windup pose until real attack/cast animations exist.
 	player_model.rotation.x = -0.22 if not windup.is_empty() else 0.0
@@ -862,6 +879,7 @@ func _physics_process(dt: float) -> void:
 func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	var delta: Vector3 = player.position - enemy.body.position
 	enemy.slow = maxf(0, enemy.slow - dt)
+	enemy.shred = maxf(0, enemy.shred - dt)
 	enemy.flash = maxf(0, enemy.flash - dt)
 	enemy.model.scale = Vector3.ONE * (1.15 if enemy.heavy else 1.0) * (1.08 if enemy.flash > 0 else 1.0)
 	if enemy.windup > 0:
@@ -877,7 +895,7 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	if delta.length() > 11:
 		return
 	if delta.length() > 1.2:
-		enemy.body.velocity = delta.normalized() * config.enemy_speed * (0.65 if enemy.heavy else 1) * (0.45 if enemy.slow > 0 else 1)
+		enemy.body.velocity = delta.normalized() * config.enemy_speed * (0.65 if enemy.heavy else 1) * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
 		enemy.body.move_and_slide()
 		enemy.model.look_at(player.position)
 	elif enemy.cooldown <= 0:

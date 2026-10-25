@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "grinder is a tool toggle bound to R",
+    "R deploys the grinder at once",
+    "only the grinder is shown",
+    "deploying the bolt cutter replaces the grinder",
+    "the same key releases the active tool",
+    "the grinder also releases on its own key",
+    "grinder cuts faster than the staff, bolt cutter swings slower",
+    "a grinder cut shreds without slowing",
+    "shred applies from the cut that lands it",
+    "a single grinder cut is lighter than a staff hit",
+    "other skills hit harder on a shredded enemy",
+    "other skills keep the grinder deployed",
+    "switching tools keeps the earlier shred while the bolt cutter slows",
+    "bolt cutter hits gain from the grinder's shred",
+    "debuffs expire on their own timers",
+    "shred wears off",
+    "grinder upkeep drains mana and auto-releases",
+    "F9 swaps R to the target relay",
+    "F9 swaps R back to the grinder"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

@@ -35,6 +35,8 @@ func fresh(target: Vector3 = Vector3(8, 0, 0)) -> void:
 	arena.enemies.clear()
 	arena.spawn_enemy("target", target)
 	arena.enemies.target.cooldown = 999
+	# R defaults to the grinder; approach checks need the target relay there.
+	arena.state = arena.rules.bind(arena.state, "r", "relay")
 	await step(2)
 
 func finish_approach() -> void:

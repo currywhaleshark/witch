@@ -161,7 +161,7 @@ func run() -> void:
 	var full: float = arena.enemies.target.hp
 	mouse(MOUSE_BUTTON_LEFT, true, screen(arena.enemies.target.body.position + Vector3.UP * 1.3))
 	check(hits(full) == 0 and arena.action_time > 0, "press on enemy head starts an attack motion")
-	await step(int(arena.attack_seconds(false) * arena.rules.skills.basic_attack.release_ratio * 60) + 1)
+	await step(int(arena.attack_seconds() * arena.rules.skills.basic_attack.release_ratio * 60) + 1)
 	check(hits(full) == 1, "attack hits at its release point")
 	check(not arena.state.cooldowns.has("basic_attack"), "basic attack uses no cooldown")
 	motion(screen(Vector3(-6, 0, 5)))
@@ -171,7 +171,7 @@ func run() -> void:
 	mouse(MOUSE_BUTTON_LEFT, false, screen(Vector3(-6, 0, 5)))
 	# A swing already in motion still lands; only new repeats stop.
 	var swinging = not arena.windup.is_empty()
-	await step(int(arena.attack_seconds(false) * 60) + 2)
+	await step(int(arena.attack_seconds() * 60) + 2)
 	check(not swinging or hits(full) == 3, "release lets the started swing land")
 	var released: float = arena.enemies.target.hp
 	await step(80)
@@ -180,7 +180,7 @@ func run() -> void:
 	await fresh(Vector3(2, 0, 0), false)
 	arena.request_slot("lmb", {"enemy_id": "target"})
 	arena.enemies.target.body.position = Vector3(6, 0, 0)
-	await step(int(arena.attack_seconds(false) * arena.rules.skills.basic_attack.release_ratio * 60) + 2)
+	await step(int(arena.attack_seconds() * arena.rules.skills.basic_attack.release_ratio * 60) + 2)
 	check(arena.enemies.target.hp == arena.enemies.target.max_hp and arena.message_time == 0 and arena.state.mana == arena.state.max_mana, "target leaving range during the windup is a silent whiff")
 
 	await fresh(Vector3(4, 0, 0), false)
@@ -195,7 +195,7 @@ func run() -> void:
 
 	await fresh()
 	arena.config.attack_speed_score = 40
-	check(arena.attack_seconds(false) < arena.config.basic_attack_seconds and arena.attack_seconds(false) > arena.config.min_attack_seconds, "attack speed shortens motion above its floor")
+	check(arena.attack_seconds() < arena.config.basic_attack_seconds and arena.attack_seconds() > arena.config.min_attack_seconds, "attack speed shortens motion above its floor")
 	full = arena.enemies.target.hp
 	mouse(MOUSE_BUTTON_LEFT, true, screen(arena.enemies.target.body.position + Vector3.UP * 0.8))
 	await step(66)

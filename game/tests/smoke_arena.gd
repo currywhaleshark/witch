@@ -64,6 +64,8 @@ func run() -> void:
 	arena.action_time = 0.0
 	var mp: float = arena.state.mana
 	arena.enemies.enemy_5.body.position = Vector3(-13, 0, -11)
+	# R defaults to the grinder; these checks need the target relay there.
+	arena.state = arena.rules.bind(arena.state, "r", "relay")
 	arena.request_slot("r", {"enemy_id": "enemy_5"})
 	check(arena.state.mana == mp and not arena.pending_cast.is_empty(), "out-of-range skill queues approach without spending mana")
 	arena.state.cooldowns.clear()
