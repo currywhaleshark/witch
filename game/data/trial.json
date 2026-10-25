@@ -40,7 +40,7 @@
   "bindings": {"lmb": "basic_attack", "rmb": "shotgun", "q": "bolt_cutter", "w": "automaton", "e": "turret", "r": "relay"},
   "skills": [
     {"id": "basic_attack", "kind": "aim", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 0, "range": 2.6},
-    {"id": "shotgun", "kind": "aim", "mana_cost": 10, "cooldown_seconds": 1.2, "upkeep_per_second": 0, "range": 8},
+    {"id": "shotgun", "kind": "aim", "mana_cost": 10, "cooldown_seconds": 1.2, "upkeep_per_second": 0, "range": 8, "targeting": "direction"},
     {"id": "bolt_cutter", "kind": "tool", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 5, "range": 0},
     {"id": "automaton", "kind": "mobile_summon", "mana_cost": 15, "cooldown_seconds": 4, "upkeep_per_second": 0, "range": 14},
     {"id": "turret", "kind": "ground", "mana_cost": 15, "cooldown_seconds": 5, "upkeep_per_second": 0, "range": 9},

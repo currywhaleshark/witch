@@ -57,9 +57,19 @@ func run() -> void:
 
 	await fresh(Vector3(12, 0, 0))
 	arena.request_slot("rmb", {"enemy_id": "target"})
+	check(arena.pending_cast.is_empty() and arena.player.position.is_equal_approx(Vector3.ZERO) and arena.state.mana == 50, "direction skill fires at a distant enemy without walking")
+	check(arena.enemies.target.hp == 60, "direction skill range still limits its reach")
+	arena.state.cooldowns.clear()
+	arena.request_slot("rmb", {"ground": [-12, 0, 0]})
+	check(arena.pending_cast.is_empty() and arena.state.mana == 40 and not arena.moving, "direction skill aimed at far ground fires in place")
+
+	await fresh(Vector3(12, 0, 0))
+	arena.player.position = Vector3(-6, 0, 0)
+	arena.request_slot("r", {"enemy_id": "target"})
+	check(not arena.pending_cast.is_empty() and arena.state.mana == 60, "targeted ranged skill begins approach without spending mana")
 	await finish_approach()
-	check(arena.enemies.target.hp == 30 and arena.state.mana == 50, "ranged skill approaches and spends mana exactly once on cast")
-	check(arena.player.position.x > 3.9 and arena.player.position.x < 5, "ranged skill stops at its own range instead of melee range")
+	check(arena.state.mana == 57 and arena.last_events[-1].get("skill") == "relay", "targeted ranged skill spends mana exactly once on cast")
+	check(arena.player.position.x > -2.5 and arena.player.position.x < -1.5, "targeted ranged skill stops at its own range instead of melee range")
 
 	await fresh()
 	arena.request_slot("e", {"ground": [-12, 0, 0]})
@@ -94,8 +104,9 @@ func run() -> void:
 	check(arena.pending_cast.is_empty() and not arena.moving, "target death cancels approach even when it is the last enemy")
 
 	await fresh(Vector3(12, 0, 0))
+	arena.player.position = Vector3(-6, 0, 0)
 	arena.state.mana = 0.0
-	arena.request_slot("rmb", {"enemy_id": "target"})
+	arena.request_slot("r", {"enemy_id": "target"})
 	check(arena.pending_cast.is_empty() and arena.last_events[-1].reason == "insufficient_mana", "unusable skill does not begin walking")
 	arena.state = arena.rules.bind(arena.state, "lmb", "shotgun")
 	arena.request_slot("lmb", {"enemy_id": "target"})
@@ -103,7 +114,8 @@ func run() -> void:
 	check(arena.enemies.target.hp == 42 and arena.state.bindings.lmb == "shotgun" and arena.player.position.distance_to(arena.enemies.target.body.position) <= 2.6, "mana fallback approaches to basic range while preserving binding")
 
 	await fresh(Vector3(12, 0, 0))
-	arena.request_slot("rmb", {"enemy_id": "target"})
+	arena.player.position = Vector3(-6, 0, 0)
+	arena.request_slot("r", {"enemy_id": "target"})
 	arena.state.mana = 0.0
 	await step()
 	check(arena.pending_cast.is_empty() and not arena.moving and arena.enemies.target.hp == 60, "mana loss during approach cancels without casting")

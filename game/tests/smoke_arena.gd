@@ -54,7 +54,7 @@ func run() -> void:
 	arena.action_time = 0.0
 	var mp: float = arena.state.mana
 	arena.enemies.enemy_5.body.position = Vector3(-13, 0, -11)
-	arena.request_slot("rmb", {"enemy_id": "enemy_5"})
+	arena.request_slot("r", {"enemy_id": "enemy_5"})
 	check(arena.state.mana == mp and not arena.pending_cast.is_empty(), "out-of-range skill queues approach without spending mana")
 	arena.state.cooldowns.clear()
 	arena.request_slot("q", {})

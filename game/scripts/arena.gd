@@ -297,6 +297,9 @@ func spatial_check(skill: Dictionary, cursor: Dictionary):
 			if ally.node.position.distance_to(pos) < 0.9:
 				return "invalid_ground"
 		return "out_of_range" if player.position.distance_to(pos) > float(skill.range) else null
+	if skill.get("targeting") == "direction":
+		# Direction skills fire toward the cursor at once; range only limits their reach.
+		return null
 	if cursor.get("enemy_id") != null:
 		if not enemies.has(cursor.enemy_id):
 			return "out_of_range"

@@ -26,10 +26,9 @@
     "dead player cannot cast",
     "restart rebuilds actors and resources",
     "offscreen automaton returns toward player",
-    "kills remove targets and complete arena",
-    "rendered viewport screenshot saved"
+    "kills remove targets and complete arena"
   ],
-  "display": "Windows",
+  "display": "headless",
   "engine": "4.6.2-stable (official)",
   "failures": []
 }
