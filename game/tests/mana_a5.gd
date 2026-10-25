@@ -92,6 +92,12 @@ func run() -> void:
 	calm()
 	arena.config.mana_regen = arena.config.mana_regen_steps[0]
 	await step(90)
+	var measured = arena.config.mana_regen
+	root.push_input(key, true)
+	var changed = JSON.parse_string(FileAccess.get_file_as_string(arena.last_log_path))
+	check(arena.last_log_path.ends_with("_settings_changed.json") and changed.settings.mana_regen == measured and arena.config.mana_regen != measured, "a settings change saves the log under the setting it measured")
+	calm()
+	await step(90)
 	var count = logs().size()
 	arena.damage_player(1000)
 	check(logs().size() == count + 1 and arena.last_log_path.ends_with("_death.json"), "death saves the session log")

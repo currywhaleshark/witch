@@ -290,34 +290,35 @@ func _unhandled_input(event: InputEvent) -> void:
 		slot = {KEY_Q: "q", KEY_W: "w", KEY_E: "e", KEY_R: "r"}.get(event.physical_keycode, "")
 		source = {"key": event.physical_keycode}
 		if event.physical_keycode == KEY_F4:
+			# Close the running log before the change so it keeps the settings it measured.
+			restart_probe("settings_changed")
 			var steps: Array = config.attack_speed_steps
 			config.attack_speed_score = steps[(steps.find(config.attack_speed_score) + 1) % steps.size()]
-			restart_probe("settings_changed")
 			show_message("공속 점수 %d · 기본 공격 %.2f초" % [config.attack_speed_score, attack_seconds()])
 			return
 		if event.physical_keycode == KEY_F8:
+			restart_probe("settings_changed")
 			var cast_steps: Array = config.cast_speed_steps
 			config.cast_speed_score = cast_steps[(cast_steps.find(config.cast_speed_score) + 1) % cast_steps.size()]
-			restart_probe("settings_changed")
 			show_message("시전 속도 점수 %d · 산탄 %.2f초 · 태엽인형 %.2f초" % [config.cast_speed_score, cast_seconds(rules.skills.shotgun), cast_seconds(rules.skills.automaton)])
 			return
 		if event.physical_keycode == KEY_F1:
 			cancel_pending_cast()
-			state = rules.bind(state, "lmb", "shotgun" if state.bindings.lmb == "basic_attack" else "basic_attack")
 			restart_probe("settings_changed")
+			state = rules.bind(state, "lmb", "shotgun" if state.bindings.lmb == "basic_attack" else "basic_attack")
 			return
 		if event.physical_keycode == KEY_F9:
 			cancel_pending_cast()
+			restart_probe("settings_changed")
 			var options: Array = config.r_slot_options
 			state = rules.bind(state, "r", options[(options.find(state.bindings.r) + 1) % options.size()])
-			restart_probe("settings_changed")
 			show_message("R 슬롯: " + rules.skills[state.bindings.r].name)
 			return
 		if event.physical_keycode in [KEY_F10, KEY_F11, KEY_F12]:
 			var key: String = {KEY_F10: "shield_level", KEY_F11: "dexterity", KEY_F12: "hit_recovery_score"}[event.physical_keycode]
+			restart_probe("settings_changed")
 			var options: Array = config[key + "_steps"]
 			config[key] = options[(options.find(config[key]) + 1) % options.size()]
-			restart_probe("settings_changed")
 			show_message("방패 Lv %d · 기교 %d · 막기 %d%% · 경직 %.2f초" % [config.shield_level, config.dexterity, roundi(100 * block_chance()), hit_recovery_seconds()])
 			return
 		if event.physical_keycode == KEY_F2:
@@ -338,9 +339,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			show_message("기록 저장: " + path.get_file() if path != "" else "저장할 교전 기록이 없습니다")
 			return
 		if event.physical_keycode == KEY_F7:
+			restart_probe("settings_changed")
 			var regen_steps: Array = config.mana_regen_steps
 			config.mana_regen = regen_steps[(regen_steps.find(config.mana_regen) + 1) % regen_steps.size()]
-			restart_probe("settings_changed")
 			show_message("마나 회복 %s/s" % str(config.mana_regen))
 			return
 	if slot != "" and (pointer_over_field() or event is InputEventKey):
@@ -410,6 +411,7 @@ func save_mana_log(reason: String) -> String:
 	var report = {"test": "A5", "status": config.status, "saved_at": Time.get_datetime_string_from_system(), "end_reason": reason,
 		"engine": Engine.get_version_info().string, "player_hp": hp, "metrics": probe.to_dict(),
 		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
+			"hit_recovery_score": config.hit_recovery_score, "shield_level": config.shield_level, "dexterity": config.dexterity,
 			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	if file == null:

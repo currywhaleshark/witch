@@ -14,6 +14,7 @@
     "manual save writes the session log with settings",
     "unchanged session is not saved twice",
     "regen change starts a fresh measurement",
+    "a settings change saves the log under the setting it measured",
     "death saves the session log",
     "turning A5 off restores the normal field"
   ],
