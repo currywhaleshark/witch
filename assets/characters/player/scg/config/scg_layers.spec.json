@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1-draft",
+  "status": "spec_only_no_production_png_layers_yet",
+  "character_id": "player",
+  "canvas": {
+    "width": 1086,
+    "height": 1448,
+    "origin": "top_left",
+    "color_space": "sRGB",
+    "transparent_background": true
+  },
+  "render_order": [
+    {
+      "order": 10,
+      "slot": "hair_back"
+    },
+    {
+      "order": 20,
+      "slot": "body_base"
+    },
+    {
+      "order": 30,
+      "slot": "outfit"
+    },
+    {
+      "order": 40,
+      "slot": "face_base"
+    },
+    {
+      "order": 50,
+      "slot": "eyes"
+    },
+    {
+      "order": 55,
+      "slot": "eyebrows"
+    },
+    {
+      "order": 56,
+      "slot": "mouth"
+    },
+    {
+      "order": 60,
+      "slot": "hair_front"
+    },
+    {
+      "order": 70,
+      "slot": "hair_over_clothes"
+    }
+  ],
+  "styles": {
+    "semilong_v1": {
+      "back": "layers/hair/semilong_v1/back.png",
+      "front": "layers/hair/semilong_v1/front.png",
+      "over_clothes": "layers/hair/semilong_v1/over_clothes.png",
+      "recolor_mask": "layers/hair/semilong_v1/recolor_mask.png"
+    },
+    "twintails_v1": {
+      "back": "layers/hair/twintails_v1/back.png",
+      "front": "layers/hair/twintails_v1/front.png",
+      "over_clothes": "layers/hair/twintails_v1/over_clothes.png",
+      "recolor_mask": "layers/hair/twintails_v1/recolor_mask.png"
+    }
+  },
+  "shared": {
+    "body_base": "layers/base/body_base.png",
+    "face_base": "layers/face/face_base.png",
+    "eyes_neutral": "layers/face/eyes/neutral_v1.png",
+    "iris_mask": "layers/face/eyes/iris_mask.png",
+    "brows_neutral": "layers/face/eyebrows/neutral.png",
+    "mouth_neutral": "layers/face/mouth/neutral.png",
+    "civilian_outfit": "layers/outfits/civilian_v1/outfit.png",
+    "transformed_outfit": "layers/outfits/transformed_v1/outfit.png"
+  },
+  "production_status": {
+    "body_base": "not_created",
+    "hair_styles": "reference_images_only",
+    "color_masks": "experimental_quality_only",
+    "3d_model": "not_created"
+  }
+}
