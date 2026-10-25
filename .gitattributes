@@ -1,0 +1,5 @@
+*.png binary
+assets/**/*.md text eol=lf
+assets/**/*.json text eol=lf
+experiments/**/*.md text eol=lf
+experiments/**/*.py text eol=lf

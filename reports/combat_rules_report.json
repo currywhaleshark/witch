@@ -1,0 +1,2704 @@
+{
+  "report_version": 1,
+  "scope": "headless_rule_checks_only_not_P0_completion",
+  "policy": {
+    "name": "trial_target_spatial_cooldown_mana_v1",
+    "failure_order": [
+      "target",
+      "spatial",
+      "cooldown",
+      "mana"
+    ],
+    "non_mana_failure": "reject_without_moving",
+    "manual_tool_release": "free_before_checks",
+    "zero_mana_cast_order": "cast_then_release"
+  },
+  "fixture_status": "test_values_not_approved_balance",
+  "summary": {
+    "cases": 13,
+    "passed": 13,
+    "failed": 0,
+    "steps": 38
+  },
+  "not_verified": [
+    "3D picking/navigation/collision",
+    "damage and enemy AI",
+    "HP/death",
+    "summon lifetime/AI/camera bounds",
+    "UI and combat feel",
+    "balance"
+  ],
+  "cases": [
+    {
+      "id": "A1_move_attack_force_cast",
+      "covers": [
+        "A1"
+      ],
+      "description": "바닥 이동, 적 기본 공격, Shift 지면 강제 시전",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "ground": [
+                4,
+                0,
+                5
+              ]
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "30"
+            },
+            "events": [
+              {
+                "type": "move_requested",
+                "position": [
+                  4,
+                  0,
+                  5
+                ]
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "move_requested",
+                "position": [
+                  4,
+                  0,
+                  5
+                ]
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "enemy_id": "enemy_1",
+              "ground": [
+                4,
+                0,
+                5
+              ]
+            }
+          },
+          "expected": {
+            "events": [
+              {
+                "type": "cast",
+                "skill": "basic_attack",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast",
+                "slot": "lmb",
+                "skill": "basic_attack",
+                "active_tool": null,
+                "origin": "player",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 3,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "shift": true,
+            "cursor": {
+              "ground": [
+                4,
+                0,
+                5
+              ]
+            }
+          },
+          "expected": {
+            "events": [
+              {
+                "type": "cast",
+                "skill": "basic_attack",
+                "position": [
+                  4,
+                  0,
+                  5
+                ]
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast",
+                "slot": "lmb",
+                "skill": "basic_attack",
+                "active_tool": null,
+                "origin": "player",
+                "position": [
+                  4,
+                  0,
+                  5
+                ]
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A2_immediate_cursor_snapshot",
+      "covers": [
+        "A2"
+      ],
+      "description": "추가 클릭 없이 입력 순간 표적 사용",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "rmb",
+            "cursor": {
+              "ground": [
+                3,
+                0,
+                2
+              ]
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "20"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "position": [
+                  3,
+                  0,
+                  2
+                ]
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "20",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "10"
+              },
+              {
+                "type": "cast",
+                "slot": "rmb",
+                "skill": "trial_shot",
+                "active_tool": null,
+                "origin": "player",
+                "position": [
+                  3,
+                  0,
+                  2
+                ]
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "20",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_shot": "2"
+            }
+          },
+          "action": {
+            "op": "press",
+            "slot": "r",
+            "cursor": {
+              "enemy_id": "enemy_2"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "10"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "target_enemy": "enemy_2"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "10",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2",
+                "trial_target": "1"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "10"
+              },
+              {
+                "type": "cast",
+                "slot": "r",
+                "skill": "trial_target",
+                "active_tool": null,
+                "origin": "player",
+                "target_enemy": "enemy_2"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A2_self_without_cursor",
+      "covers": [
+        "A2"
+      ],
+      "description": "자기 강화는 커서 표적 없이 즉시 발동",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_self"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "r"
+          },
+          "expected": {
+            "state": {
+              "mana": "25"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "origin": "player"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "25",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_self"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "5"
+              },
+              {
+                "type": "cast",
+                "slot": "r",
+                "skill": "trial_self",
+                "active_tool": null,
+                "origin": "player"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A3_mobile_summon_anchor",
+      "covers": [
+        "A2",
+        "A3"
+      ],
+      "description": "적 위와 지면 위 모두 플레이어 옆 생성, 초기 표적만 다름",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "w",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "15"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "origin": "player_adjacent",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "15",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_summon": "3"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "15"
+              },
+              {
+                "type": "cast",
+                "slot": "w",
+                "skill": "trial_summon",
+                "active_tool": null,
+                "origin": "player_adjacent",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "15",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_summon": "3"
+            }
+          },
+          "action": {
+            "op": "advance",
+            "seconds": "3"
+          },
+          "expected": {
+            "state": {
+              "cooldowns": {}
+            },
+            "events": []
+          },
+          "actual": {
+            "state": {
+              "mana": "15",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": []
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 3,
+          "before": {
+            "mana": "15",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "w",
+            "cursor": {
+              "ground": [
+                8,
+                0,
+                8
+              ]
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "0"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "origin": "player_adjacent",
+                "target_enemy": null
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_summon": "3"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "15"
+              },
+              {
+                "type": "cast",
+                "slot": "w",
+                "skill": "trial_summon",
+                "active_tool": null,
+                "origin": "player_adjacent",
+                "target_enemy": null
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A3_ground_placement",
+      "covers": [
+        "A2",
+        "A3"
+      ],
+      "description": "설치 요청은 유효 커서 지면에 생성",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "e",
+            "cursor": {
+              "ground": [
+                7,
+                0,
+                6
+              ]
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "18"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "origin": "cursor_ground",
+                "position": [
+                  7,
+                  0,
+                  6
+                ]
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "18",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_placement": "3"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "12"
+              },
+              {
+                "type": "cast",
+                "slot": "e",
+                "skill": "trial_placement",
+                "active_tool": null,
+                "origin": "cursor_ground",
+                "position": [
+                  7,
+                  0,
+                  6
+                ]
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A3_left_summon_shift",
+      "covers": [
+        "A1",
+        "A3"
+      ],
+      "description": "소환을 좌클릭에 등록해도 빈 바닥은 이동, Shift는 소환",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_summon",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "ground": [
+                2,
+                0,
+                2
+              ]
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "30"
+            },
+            "events": [
+              {
+                "type": "move_requested"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_summon",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "move_requested",
+                "position": [
+                  2,
+                  0,
+                  2
+                ]
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_summon",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "shift": true,
+            "cursor": {
+              "ground": [
+                2,
+                0,
+                2
+              ]
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "15"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "origin": "player_adjacent",
+                "target_enemy": null
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "15",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_summon",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_summon": "3"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "15"
+              },
+              {
+                "type": "cast",
+                "slot": "lmb",
+                "skill": "trial_summon",
+                "active_tool": null,
+                "origin": "player_adjacent",
+                "target_enemy": null
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A4_tool_lifecycle",
+      "covers": [
+        "A4"
+      ],
+      "description": "다른 스킬·이동 중 공구 유지, 다른 공구로 교체, 같은 공구로 해제",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "q"
+          },
+          "expected": {
+            "state": {
+              "active_tool": "trial_tool_a"
+            },
+            "events": [
+              {
+                "type": "tool_changed",
+                "previous": null
+              },
+              {
+                "type": "cast"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": "trial_tool_a",
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "tool_changed",
+                "previous": null,
+                "tool": "trial_tool_a"
+              },
+              {
+                "type": "cast",
+                "slot": "q",
+                "skill": "trial_tool_a",
+                "active_tool": "trial_tool_a",
+                "origin": "player"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": "trial_tool_a",
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "rmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "20",
+              "active_tool": "trial_tool_a"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "active_tool": "trial_tool_a"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "20",
+              "max_mana": "30",
+              "active_tool": "trial_tool_a",
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "10"
+              },
+              {
+                "type": "cast",
+                "slot": "rmb",
+                "skill": "trial_shot",
+                "active_tool": "trial_tool_a",
+                "origin": "player",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 3,
+          "before": {
+            "mana": "20",
+            "max_mana": "30",
+            "active_tool": "trial_tool_a",
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_shot": "2"
+            }
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "ground": [
+                1,
+                0,
+                1
+              ]
+            }
+          },
+          "expected": {
+            "state": {
+              "active_tool": "trial_tool_a"
+            },
+            "events": [
+              {
+                "type": "move_requested"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "20",
+              "max_mana": "30",
+              "active_tool": "trial_tool_a",
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "move_requested",
+                "position": [
+                  1,
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 4,
+          "before": {
+            "mana": "20",
+            "max_mana": "30",
+            "active_tool": "trial_tool_a",
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_shot": "2"
+            }
+          },
+          "action": {
+            "op": "advance",
+            "seconds": "1.5"
+          },
+          "expected": {
+            "state": {
+              "mana": "17"
+            },
+            "events": [
+              {
+                "type": "tool_upkeep",
+                "amount": "3"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "17",
+              "max_mana": "30",
+              "active_tool": "trial_tool_a",
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "0.5"
+              }
+            },
+            "events": [
+              {
+                "type": "tool_upkeep",
+                "tool": "trial_tool_a",
+                "amount": "3"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 5,
+          "before": {
+            "mana": "17",
+            "max_mana": "30",
+            "active_tool": "trial_tool_a",
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_shot": "0.5"
+            }
+          },
+          "action": {
+            "op": "bind",
+            "slot": "q",
+            "skill": "trial_tool_b"
+          },
+          "expected": {
+            "state": {
+              "active_tool": "trial_tool_a"
+            },
+            "events": []
+          },
+          "actual": {
+            "state": {
+              "mana": "17",
+              "max_mana": "30",
+              "active_tool": "trial_tool_a",
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_b",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "0.5"
+              }
+            },
+            "events": []
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 6,
+          "before": {
+            "mana": "17",
+            "max_mana": "30",
+            "active_tool": "trial_tool_a",
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_b",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_shot": "0.5"
+            }
+          },
+          "action": {
+            "op": "press",
+            "slot": "q"
+          },
+          "expected": {
+            "state": {
+              "active_tool": "trial_tool_b"
+            },
+            "events": [
+              {
+                "type": "tool_changed",
+                "previous": "trial_tool_a",
+                "tool": "trial_tool_b"
+              },
+              {
+                "type": "cast"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "17",
+              "max_mana": "30",
+              "active_tool": "trial_tool_b",
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_b",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "0.5"
+              }
+            },
+            "events": [
+              {
+                "type": "tool_changed",
+                "previous": "trial_tool_a",
+                "tool": "trial_tool_b"
+              },
+              {
+                "type": "cast",
+                "slot": "q",
+                "skill": "trial_tool_b",
+                "active_tool": "trial_tool_b",
+                "origin": "player"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 7,
+          "before": {
+            "mana": "17",
+            "max_mana": "30",
+            "active_tool": "trial_tool_b",
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_b",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_shot": "0.5"
+            }
+          },
+          "action": {
+            "op": "press",
+            "slot": "q"
+          },
+          "expected": {
+            "state": {
+              "active_tool": null,
+              "mana": "17"
+            },
+            "events": [
+              {
+                "type": "tool_released",
+                "reason": "manual"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "17",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_b",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "0.5"
+              }
+            },
+            "events": [
+              {
+                "type": "tool_released",
+                "tool": "trial_tool_b",
+                "reason": "manual"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A5_upkeep_exhaustion",
+      "covers": [
+        "A4",
+        "A5"
+      ],
+      "description": "유지비로 0에 도달하면 해제, 기본 공격은 가능하며 회복은 명시적으로 공급",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "2",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "q"
+          },
+          "expected": {
+            "events": [
+              {
+                "type": "tool_changed"
+              },
+              {
+                "type": "cast"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "2",
+              "max_mana": "30",
+              "active_tool": "trial_tool_a",
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "tool_changed",
+                "previous": null,
+                "tool": "trial_tool_a"
+              },
+              {
+                "type": "cast",
+                "slot": "q",
+                "skill": "trial_tool_a",
+                "active_tool": "trial_tool_a",
+                "origin": "player"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "2",
+            "max_mana": "30",
+            "active_tool": "trial_tool_a",
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "advance",
+            "seconds": "1"
+          },
+          "expected": {
+            "state": {
+              "mana": "0",
+              "active_tool": null
+            },
+            "events": [
+              {
+                "type": "tool_upkeep",
+                "amount": "2"
+              },
+              {
+                "type": "tool_released",
+                "reason": "mana_empty"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "tool_upkeep",
+                "tool": "trial_tool_a",
+                "amount": "2"
+              },
+              {
+                "type": "tool_released",
+                "tool": "trial_tool_a",
+                "reason": "mana_empty"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 3,
+          "before": {
+            "mana": "0",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "events": [
+              {
+                "type": "cast",
+                "skill": "basic_attack",
+                "active_tool": null
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast",
+                "slot": "lmb",
+                "skill": "basic_attack",
+                "active_tool": null,
+                "origin": "player",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 4,
+          "before": {
+            "mana": "0",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "rmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "events": [
+              {
+                "type": "cast_failed",
+                "reason": "insufficient_mana"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "slot": "rmb",
+                "skill": "trial_shot",
+                "reason": "insufficient_mana"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 5,
+          "before": {
+            "mana": "0",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "advance",
+            "seconds": "5"
+          },
+          "expected": {
+            "state": {
+              "mana": "0",
+              "active_tool": null
+            },
+            "events": []
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": []
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 6,
+          "before": {
+            "mana": "0",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "restore_mana",
+            "amount": "10"
+          },
+          "expected": {
+            "state": {
+              "mana": "10",
+              "active_tool": null
+            },
+            "events": [
+              {
+                "type": "mana_restored"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "10",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "mana_restored",
+                "amount": "10"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 7,
+          "before": {
+            "mana": "10",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "rmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "0"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "skill": "trial_shot"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "10"
+              },
+              {
+                "type": "cast",
+                "slot": "rmb",
+                "skill": "trial_shot",
+                "active_tool": null,
+                "origin": "player",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A5_left_fallback_preserves_binding",
+      "covers": [
+        "A1",
+        "A5"
+      ],
+      "description": "좌클릭 마나 부족 시 이번 사용만 대체하고 회복 후 원래 기술 사용",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "0",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_shot",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "state": {
+              "bindings": {
+                "lmb": "trial_shot"
+              }
+            },
+            "events": [
+              {
+                "type": "basic_attack_fallback"
+              },
+              {
+                "type": "cast",
+                "skill": "basic_attack"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_shot",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "basic_attack_fallback",
+                "requested_skill": "trial_shot",
+                "skill": "basic_attack",
+                "reason": "insufficient_mana"
+              },
+              {
+                "type": "cast",
+                "slot": "lmb",
+                "skill": "basic_attack",
+                "active_tool": null,
+                "origin": "player",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "0",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_shot",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "restore_mana",
+            "amount": "10"
+          },
+          "expected": {
+            "events": [
+              {
+                "type": "mana_restored"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "10",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_shot",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "mana_restored",
+                "amount": "10"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 3,
+          "before": {
+            "mana": "10",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_shot",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "0",
+              "bindings": {
+                "lmb": "trial_shot"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "skill": "trial_shot"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_shot",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "10"
+              },
+              {
+                "type": "cast",
+                "slot": "lmb",
+                "skill": "trial_shot",
+                "active_tool": null,
+                "origin": "player",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "A4_cast_cost_releases_tool",
+      "covers": [
+        "A4",
+        "A5"
+      ],
+      "description": "시험 순서: 스킬 시전 뒤 비용으로 0이 된 공구 해제",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "10",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "q"
+          },
+          "expected": {
+            "events": [
+              {
+                "type": "tool_changed"
+              },
+              {
+                "type": "cast"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "10",
+              "max_mana": "30",
+              "active_tool": "trial_tool_a",
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "tool_changed",
+                "previous": null,
+                "tool": "trial_tool_a"
+              },
+              {
+                "type": "cast",
+                "slot": "q",
+                "skill": "trial_tool_a",
+                "active_tool": "trial_tool_a",
+                "origin": "player"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "10",
+            "max_mana": "30",
+            "active_tool": "trial_tool_a",
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "rmb",
+            "cursor": {
+              "ground": [
+                1,
+                0,
+                0
+              ]
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "0",
+              "active_tool": null
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast",
+                "active_tool": "trial_tool_a"
+              },
+              {
+                "type": "tool_released",
+                "reason": "mana_empty"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "0",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "10"
+              },
+              {
+                "type": "cast",
+                "slot": "rmb",
+                "skill": "trial_shot",
+                "active_tool": "trial_tool_a",
+                "origin": "player",
+                "position": [
+                  1,
+                  0,
+                  0
+                ]
+              },
+              {
+                "type": "tool_released",
+                "tool": "trial_tool_a",
+                "reason": "mana_empty"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "trial_target_and_range_failures",
+      "covers": [
+        "A1",
+        "A2"
+      ],
+      "description": "미결 예외 시험 정책: 대상/사거리 실패는 자원 차감·이동·대체 없음",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_target",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "r"
+          },
+          "expected": {
+            "state": {
+              "mana": "30",
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "reason": "invalid_target"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_target",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "slot": "r",
+                "skill": "trial_target",
+                "reason": "invalid_target"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_target",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            },
+            "spatial_failures": {
+              "trial_target": "out_of_range"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "30",
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "reason": "out_of_range"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_target",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "slot": "lmb",
+                "skill": "trial_target",
+                "reason": "out_of_range"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "trial_cooldown_no_fallback",
+      "covers": [
+        "A1",
+        "A2"
+      ],
+      "description": "미결 예외 시험 정책: 쿨다운 실패는 기본 공격으로 대체하지 않음",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_shot",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "20"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "20",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_shot",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "10"
+              },
+              {
+                "type": "cast",
+                "slot": "lmb",
+                "skill": "trial_shot",
+                "active_tool": null,
+                "origin": "player",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 2,
+          "before": {
+            "mana": "20",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_shot",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_shot": "2"
+            }
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "20"
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "reason": "cooldown"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "20",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_shot",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "slot": "lmb",
+                "skill": "trial_shot",
+                "reason": "cooldown"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 3,
+          "before": {
+            "mana": "20",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_shot",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {
+              "trial_shot": "2"
+            }
+          },
+          "action": {
+            "op": "advance",
+            "seconds": "2"
+          },
+          "expected": {
+            "state": {
+              "cooldowns": {}
+            },
+            "events": []
+          },
+          "actual": {
+            "state": {
+              "mana": "20",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_shot",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": []
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 4,
+          "before": {
+            "mana": "20",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_shot",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "lmb",
+            "cursor": {
+              "enemy_id": "enemy_1"
+            }
+          },
+          "expected": {
+            "state": {
+              "mana": "10"
+            },
+            "events": [
+              {
+                "type": "mana_spent"
+              },
+              {
+                "type": "cast"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "10",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_shot",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {
+                "trial_shot": "2"
+              }
+            },
+            "events": [
+              {
+                "type": "mana_spent",
+                "amount": "10"
+              },
+              {
+                "type": "cast",
+                "slot": "lmb",
+                "skill": "trial_shot",
+                "active_tool": null,
+                "origin": "player",
+                "target_enemy": "enemy_1"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "potion_keys_outside_active_slots",
+      "covers": [
+        "A1"
+      ],
+      "description": "숫자 물약 입력은 액티브 슬롯으로 해석하지 않음",
+      "passed": true,
+      "steps": [
+        {
+          "step": 1,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "basic_attack",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "1"
+          },
+          "expected": {
+            "state": {
+              "mana": "30"
+            },
+            "events": [
+              {
+                "type": "input_ignored",
+                "reason": "outside_active_slots"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "basic_attack",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "input_ignored",
+                "input": "1",
+                "reason": "outside_active_slots"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

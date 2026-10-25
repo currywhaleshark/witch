@@ -1,0 +1,424 @@
+{
+  "report_version": 1,
+  "source_checksum_verification": {
+    "status": "matched",
+    "manifest": "assets/reference/character/handoff/MANIFEST.json",
+    "files": [
+      {
+        "source": "README.md",
+        "destination": "assets/reference/character/handoff/README.md",
+        "status": "matched",
+        "sha256": "99dcba77e2671724e1cf718f164de437655ba10e5efb574f8886ff0ddbd99906",
+        "bytes": 1769
+      },
+      {
+        "source": "assets/characters/player/3d/exports/README.md",
+        "destination": "assets/characters/player/3d/exports/README.md",
+        "status": "matched",
+        "sha256": "1a0231a79cc88565d5b8d76835d64df5035d567a8f579c4a262521bb8b6b85ba",
+        "bytes": 151
+      },
+      {
+        "source": "assets/characters/player/3d/source/README.md",
+        "destination": "assets/characters/player/3d/source/README.md",
+        "status": "matched",
+        "sha256": "b56e074335d23d80723a932476f5aeb5de7389e18649b60e2dcdd962f57b6601",
+        "bytes": 294
+      },
+      {
+        "source": "assets/characters/player/scg/config/appearance.default.json",
+        "destination": "assets/characters/player/scg/config/appearance.default.json",
+        "status": "matched",
+        "sha256": "76708979958678bc0875274a8e0676cbaa36d173e6780c6d5c7213ada0d31c66",
+        "bytes": 285
+      },
+      {
+        "source": "assets/characters/player/scg/config/scg_layers.spec.json",
+        "destination": "assets/characters/player/scg/config/scg_layers.spec.json",
+        "status": "matched",
+        "sha256": "c44bd0b9e4852cacb00e5ad3b9b914332eecd1b83dc48ff044cff8dd39169124",
+        "bytes": 1996
+      },
+      {
+        "source": "assets/characters/player/scg/layers/README.md",
+        "destination": "assets/characters/player/scg/layers/README.md",
+        "status": "matched",
+        "sha256": "af3ea6bd9603a538da99567b23dae23efef47427be9dee1f552a6a7799589f1d",
+        "bytes": 411
+      },
+      {
+        "source": "assets/reference/character/scg/README.md",
+        "destination": "assets/reference/character/scg/README.md",
+        "status": "matched",
+        "sha256": "642b2dd278a751bd877da1a4ce7794a18e91a9b7bd20d74f5a1b58af08bcfc7f",
+        "bytes": 823
+      },
+      {
+        "source": "assets/reference/character/scg/dialogue_ui_reference.png",
+        "destination": "assets/reference/character/scg/dialogue_ui_reference.png",
+        "status": "matched",
+        "sha256": "d950ca02832e60c1024d618e63bd3506cbd00d670f0d67309ec39da06f8f66df",
+        "bytes": 1414379
+      },
+      {
+        "source": "assets/reference/character/scg/hair_color_variations.png",
+        "destination": "assets/reference/character/scg/hair_color_variations.png",
+        "status": "matched",
+        "sha256": "db26454eeb6121462b55b166b973a8d7ca9ff142525aa4baf6d7d3779fa34de2",
+        "bytes": 600740
+      },
+      {
+        "source": "assets/reference/character/scg/hair_swap_comparison.png",
+        "destination": "assets/reference/character/scg/hair_swap_comparison.png",
+        "status": "matched",
+        "sha256": "5e18334342a40b53618feefba875819c21b9b3fa49bb240fc65543c0cca5d5b6",
+        "bytes": 509802
+      },
+      {
+        "source": "assets/reference/character/scg/hair_swap_mask_overlay.png",
+        "destination": "assets/reference/character/scg/hair_swap_mask_overlay.png",
+        "status": "matched",
+        "sha256": "338d726c14623d0fea3fdeb37c7ec745599926f6d5d0807fc553f71769d17ae0",
+        "bytes": 66337
+      },
+      {
+        "source": "assets/reference/character/scg/mask_quality_check.png",
+        "destination": "assets/reference/character/scg/mask_quality_check.png",
+        "status": "matched",
+        "sha256": "e2bbc42debb7cd00fd833771958f289430547bf28b9e39377fa676dc304f6799",
+        "bytes": 645443
+      },
+      {
+        "source": "assets/reference/character/scg/semilong_reference.png",
+        "destination": "assets/reference/character/scg/semilong_reference.png",
+        "status": "matched",
+        "sha256": "773f045f4f05bfadc9294f80ff47cc17e56bf1e2b1174c104b5ab8ec61c1d882",
+        "bytes": 1716829
+      },
+      {
+        "source": "assets/reference/character/scg/twintails_reference.png",
+        "destination": "assets/reference/character/scg/twintails_reference.png",
+        "status": "matched",
+        "sha256": "c11c4ffba0ea7d21001276a58fd515d1d456ae08f2ab25bf05117a264a8d1dd5",
+        "bytes": 1775213
+      },
+      {
+        "source": "experiments/previous_hair_swap_not_production/CAUTION.md",
+        "destination": "experiments/previous_hair_swap_not_production/CAUTION.md",
+        "status": "matched",
+        "sha256": "8d39b0b57f1c13c3ed8943058370cb4210b47b65cbc4df3526300ef28711375a",
+        "bytes": 408
+      },
+      {
+        "source": "experiments/previous_hair_swap_not_production/README_legacy.md",
+        "destination": "experiments/previous_hair_swap_not_production/README_legacy.md",
+        "status": "matched",
+        "sha256": "827bbc0ad27b69886b860e22b98f143585ceba5c6fc6e1393b2f840207abb81e",
+        "bytes": 1801
+      },
+      {
+        "source": "experiments/previous_hair_swap_not_production/build_colors_experimental.py",
+        "destination": "experiments/previous_hair_swap_not_production/build_colors_experimental.py",
+        "status": "matched",
+        "sha256": "c90d70691c09defe6243e7021b2933f1a367b2e281cde85f3e3e139afe39c504",
+        "bytes": 3210
+      },
+      {
+        "source": "experiments/previous_hair_swap_not_production/build_swap_experimental.py",
+        "destination": "experiments/previous_hair_swap_not_production/build_swap_experimental.py",
+        "status": "matched",
+        "sha256": "aaa052e636836d7bcc53c8255b2a1abb835fc67fb9d9523377f4b2795a81d844",
+        "bytes": 4670
+      },
+      {
+        "source": "experiments/previous_hair_swap_not_production/swap_mask_experimental.png",
+        "destination": "experiments/previous_hair_swap_not_production/swap_mask_experimental.png",
+        "status": "matched",
+        "sha256": "f3c61d002aab527852caf107c9f2b919ad8c65359d212e9ff2c5540d80b6c635",
+        "bytes": 46595
+      },
+      {
+        "source": "experiments/previous_hair_swap_not_production/twin_hair_delta_experimental.png",
+        "destination": "experiments/previous_hair_swap_not_production/twin_hair_delta_experimental.png",
+        "status": "matched",
+        "sha256": "7edff7cd3e969a3101ce09ca917fd976fcf971fa84edc13690feea6a52d9f884",
+        "bytes": 1755109
+      }
+    ]
+  },
+  "summary": {
+    "references": {
+      "missing": 0,
+      "invalid": 0,
+      "technical_checks_passed": 7
+    },
+    "production_pngs": {
+      "missing": 16,
+      "invalid": 0,
+      "technical_checks_passed": 0
+    },
+    "selected_appearance": "blocked_missing_or_invalid_layers",
+    "production_art_approval": "not_established_by_this_tool",
+    "model_files_found": 0,
+    "rig_and_animation_validation": "not_performed"
+  },
+  "references": [
+    {
+      "path": "assets/reference/character/scg/semilong_reference.png",
+      "status": "technical_checks_passed",
+      "errors": [],
+      "bytes": 1716829,
+      "sha256": "773f045f4f05bfadc9294f80ff47cc17e56bf1e2b1174c104b5ab8ec61c1d882",
+      "width": 1086,
+      "height": 1448,
+      "mode": "RGB",
+      "has_alpha": false,
+      "classification": "canonical_flat_illustration"
+    },
+    {
+      "path": "assets/reference/character/scg/twintails_reference.png",
+      "status": "technical_checks_passed",
+      "errors": [],
+      "bytes": 1775213,
+      "sha256": "c11c4ffba0ea7d21001276a58fd515d1d456ae08f2ab25bf05117a264a8d1dd5",
+      "width": 1086,
+      "height": 1448,
+      "mode": "RGB",
+      "has_alpha": false,
+      "classification": "hair_design_flat_illustration"
+    },
+    {
+      "path": "assets/reference/character/scg/hair_swap_comparison.png",
+      "status": "technical_checks_passed",
+      "errors": [],
+      "bytes": 509802,
+      "sha256": "5e18334342a40b53618feefba875819c21b9b3fa49bb240fc65543c0cca5d5b6",
+      "width": 1170,
+      "height": 568,
+      "mode": "RGB",
+      "has_alpha": false,
+      "classification": "delta_patch_experiment"
+    },
+    {
+      "path": "assets/reference/character/scg/hair_color_variations.png",
+      "status": "technical_checks_passed",
+      "errors": [],
+      "bytes": 600740,
+      "sha256": "db26454eeb6121462b55b166b973a8d7ca9ff142525aa4baf6d7d3779fa34de2",
+      "width": 1518,
+      "height": 636,
+      "mode": "RGB",
+      "has_alpha": false,
+      "classification": "color_mask_experiment"
+    },
+    {
+      "path": "assets/reference/character/scg/dialogue_ui_reference.png",
+      "status": "technical_checks_passed",
+      "errors": [],
+      "bytes": 1414379,
+      "sha256": "d950ca02832e60c1024d618e63bd3506cbd00d670f0d67309ec39da06f8f66df",
+      "width": 1086,
+      "height": 1448,
+      "mode": "RGB",
+      "has_alpha": false,
+      "classification": "unapproved_ui_reference"
+    },
+    {
+      "path": "assets/reference/character/scg/mask_quality_check.png",
+      "status": "technical_checks_passed",
+      "errors": [],
+      "bytes": 645443,
+      "sha256": "e2bbc42debb7cd00fd833771958f289430547bf28b9e39377fa676dc304f6799",
+      "width": 1629,
+      "height": 724,
+      "mode": "RGB",
+      "has_alpha": false,
+      "classification": "mask_quality_inspection"
+    },
+    {
+      "path": "assets/reference/character/scg/hair_swap_mask_overlay.png",
+      "status": "technical_checks_passed",
+      "errors": [],
+      "bytes": 66337,
+      "sha256": "338d726c14623d0fea3fdeb37c7ec745599926f6d5d0807fc553f71769d17ae0",
+      "width": 1086,
+      "height": 1448,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "alpha_range": [
+        0,
+        122
+      ],
+      "classification": "delta_patch_error_analysis"
+    }
+  ],
+  "production_pngs": [
+    {
+      "path": "assets/characters/player/scg/layers/base/body_base.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/face/eyebrows/neutral.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/face/eyes/iris_mask.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/face/eyes/neutral_v1.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/face/face_base.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/face/mouth/neutral.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/hair/semilong_v1/back.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/hair/semilong_v1/front.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/hair/semilong_v1/over_clothes.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/hair/semilong_v1/recolor_mask.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/hair/twintails_v1/back.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/hair/twintails_v1/front.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/hair/twintails_v1/over_clothes.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/hair/twintails_v1/recolor_mask.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/outfits/civilian_v1/outfit.png",
+      "status": "missing",
+      "errors": []
+    },
+    {
+      "path": "assets/characters/player/scg/layers/outfits/transformed_v1/outfit.png",
+      "status": "missing",
+      "errors": []
+    }
+  ],
+  "layer_plan": {
+    "status": "draft_plan_not_asset_approval",
+    "canvas": {
+      "width": 1086,
+      "height": 1448,
+      "origin": "top_left",
+      "color_space": "sRGB",
+      "transparent_background": true
+    },
+    "appearance": {
+      "schema_version": "0.1-draft",
+      "character_id": "player",
+      "body_preset": "standard_v1",
+      "hair_style": "semilong_v1",
+      "hair_color": "#282630",
+      "eye_shape": "neutral_v1",
+      "eye_color": "#72707A",
+      "expression": "neutral",
+      "outfit": "civilian_v1",
+      "form": "civilian"
+    },
+    "layers": [
+      {
+        "slot": "hair_back",
+        "order": 10,
+        "path": "layers/hair/semilong_v1/back.png"
+      },
+      {
+        "slot": "body_base",
+        "order": 20,
+        "path": "layers/base/body_base.png"
+      },
+      {
+        "slot": "outfit",
+        "order": 30,
+        "path": "layers/outfits/civilian_v1/outfit.png"
+      },
+      {
+        "slot": "face_base",
+        "order": 40,
+        "path": "layers/face/face_base.png"
+      },
+      {
+        "slot": "eyes",
+        "order": 50,
+        "path": "layers/face/eyes/neutral_v1.png"
+      },
+      {
+        "slot": "eyebrows",
+        "order": 55,
+        "path": "layers/face/eyebrows/neutral.png"
+      },
+      {
+        "slot": "mouth",
+        "order": 56,
+        "path": "layers/face/mouth/neutral.png"
+      },
+      {
+        "slot": "hair_front",
+        "order": 60,
+        "path": "layers/hair/semilong_v1/front.png"
+      },
+      {
+        "slot": "hair_over_clothes",
+        "order": 70,
+        "path": "layers/hair/semilong_v1/over_clothes.png"
+      }
+    ],
+    "masks": {
+      "hair_color": {
+        "path": "layers/hair/semilong_v1/recolor_mask.png",
+        "color": "#282630"
+      },
+      "eye_color": {
+        "path": "layers/face/eyes/iris_mask.png",
+        "color": "#72707A"
+      }
+    }
+  },
+  "model_files": [],
+  "manual_checks_required": [
+    "Verify sRGB/profile, fringe, occlusion and alignment visually.",
+    "Confirm hairless shared body restoration and independent hair content.",
+    "Confirm tint masks do not affect skin, eye whites or background.",
+    "Civilian outfit tint_mask.png is described in docs/09 but absent from the draft manifest.",
+    "Inspect any supplied 3D model, shared rig, weights and animation clips."
+  ]
+}

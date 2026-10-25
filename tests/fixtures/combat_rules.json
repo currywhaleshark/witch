@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "status": "test_values_not_approved_balance",
+  "rules_source": "docs/02_combat.md",
+  "verification_source": "docs/06_vertical_slice.md#2",
+  "policy": {
+    "name": "trial_target_spatial_cooldown_mana_v1",
+    "failure_order": ["target", "spatial", "cooldown", "mana"],
+    "non_mana_failure": "reject_without_moving",
+    "manual_tool_release": "free_before_checks",
+    "zero_mana_cast_order": "cast_then_release"
+  },
+  "max_mana": "30",
+  "basic_attack_id": "basic_attack",
+  "skills": [
+    {"id": "basic_attack", "kind": "aim", "mana_cost": "0", "cooldown_seconds": "0", "upkeep_per_second": "0"},
+    {"id": "trial_shot", "kind": "aim", "mana_cost": "10", "cooldown_seconds": "2", "upkeep_per_second": "0"},
+    {"id": "trial_target", "kind": "enemy", "mana_cost": "10", "cooldown_seconds": "1", "upkeep_per_second": "0"},
+    {"id": "trial_placement", "kind": "ground", "mana_cost": "12", "cooldown_seconds": "3", "upkeep_per_second": "0"},
+    {"id": "trial_summon", "kind": "mobile_summon", "mana_cost": "15", "cooldown_seconds": "3", "upkeep_per_second": "0"},
+    {"id": "trial_tool_a", "kind": "tool", "mana_cost": "0", "cooldown_seconds": "0", "upkeep_per_second": "2"},
+    {"id": "trial_tool_b", "kind": "tool", "mana_cost": "0", "cooldown_seconds": "0", "upkeep_per_second": "3"},
+    {"id": "trial_costly_tool", "kind": "tool", "mana_cost": "10", "cooldown_seconds": "2", "upkeep_per_second": "2"},
+    {"id": "trial_self", "kind": "self", "mana_cost": "5", "cooldown_seconds": "0", "upkeep_per_second": "0"}
+  ],
+  "bindings": {"rmb": "trial_shot", "q": "trial_tool_a", "w": "trial_summon", "e": "trial_placement", "r": "trial_target"},
+  "cases": [
+    {
+      "id": "A1_move_attack_force_cast", "covers": ["A1"],
+      "description": "바닥 이동, 적 기본 공격, Shift 지면 강제 시전",
+      "initial_mana": "30",
+      "steps": [
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"ground": [4, 0, 5]}}, "expect": {"state": {"mana": "30"}, "events": [{"type": "move_requested", "position": [4, 0, 5]}]}},
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1", "ground": [4, 0, 5]}}, "expect": {"events": [{"type": "cast", "skill": "basic_attack", "target_enemy": "enemy_1"}]}},
+        {"action": {"op": "press", "slot": "lmb", "shift": true, "cursor": {"ground": [4, 0, 5]}}, "expect": {"events": [{"type": "cast", "skill": "basic_attack", "position": [4, 0, 5]}]}}
+      ]
+    },
+    {
+      "id": "A2_immediate_cursor_snapshot", "covers": ["A2"],
+      "description": "추가 클릭 없이 입력 순간 표적 사용",
+      "initial_mana": "30",
+      "steps": [
+        {"action": {"op": "press", "slot": "rmb", "cursor": {"ground": [3, 0, 2]}}, "expect": {"state": {"mana": "20"}, "events": [{"type": "mana_spent"}, {"type": "cast", "position": [3, 0, 2]}]}},
+        {"action": {"op": "press", "slot": "r", "cursor": {"enemy_id": "enemy_2"}}, "expect": {"state": {"mana": "10"}, "events": [{"type": "mana_spent"}, {"type": "cast", "target_enemy": "enemy_2"}]}}
+      ]
+    },
+    {
+      "id": "A2_self_without_cursor", "covers": ["A2"],
+      "description": "자기 강화는 커서 표적 없이 즉시 발동",
+      "initial_mana": "30", "bindings": {"r": "trial_self"},
+      "steps": [
+        {"action": {"op": "press", "slot": "r"}, "expect": {"state": {"mana": "25"}, "events": [{"type": "mana_spent"}, {"type": "cast", "origin": "player"}]}}
+      ]
+    },
+    {
+      "id": "A3_mobile_summon_anchor", "covers": ["A2", "A3"],
+      "description": "적 위와 지면 위 모두 플레이어 옆 생성, 초기 표적만 다름",
+      "initial_mana": "30",
+      "steps": [
+        {"action": {"op": "press", "slot": "w", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"state": {"mana": "15"}, "events": [{"type": "mana_spent"}, {"type": "cast", "origin": "player_adjacent", "target_enemy": "enemy_1"}]}},
+        {"action": {"op": "advance", "seconds": "3"}, "expect": {"state": {"cooldowns": {}}, "events": []}},
+        {"action": {"op": "press", "slot": "w", "cursor": {"ground": [8, 0, 8]}}, "expect": {"state": {"mana": "0"}, "events": [{"type": "mana_spent"}, {"type": "cast", "origin": "player_adjacent", "target_enemy": null}]}}
+      ]
+    },
+    {
+      "id": "A3_ground_placement", "covers": ["A2", "A3"],
+      "description": "설치 요청은 유효 커서 지면에 생성",
+      "initial_mana": "30",
+      "steps": [
+        {"action": {"op": "press", "slot": "e", "cursor": {"ground": [7, 0, 6]}}, "expect": {"state": {"mana": "18"}, "events": [{"type": "mana_spent"}, {"type": "cast", "origin": "cursor_ground", "position": [7, 0, 6]}]}}
+      ]
+    },
+    {
+      "id": "A3_left_summon_shift", "covers": ["A1", "A3"],
+      "description": "소환을 좌클릭에 등록해도 빈 바닥은 이동, Shift는 소환",
+      "initial_mana": "30", "bindings": {"lmb": "trial_summon"},
+      "steps": [
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"ground": [2, 0, 2]}}, "expect": {"state": {"mana": "30"}, "events": [{"type": "move_requested"}]}},
+        {"action": {"op": "press", "slot": "lmb", "shift": true, "cursor": {"ground": [2, 0, 2]}}, "expect": {"state": {"mana": "15"}, "events": [{"type": "mana_spent"}, {"type": "cast", "origin": "player_adjacent", "target_enemy": null}]}}
+      ]
+    },
+    {
+      "id": "A4_tool_lifecycle", "covers": ["A4"],
+      "description": "다른 스킬·이동 중 공구 유지, 다른 공구로 교체, 같은 공구로 해제",
+      "initial_mana": "30",
+      "steps": [
+        {"action": {"op": "press", "slot": "q"}, "expect": {"state": {"active_tool": "trial_tool_a"}, "events": [{"type": "tool_changed", "previous": null}, {"type": "cast"}]}},
+        {"action": {"op": "press", "slot": "rmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"state": {"mana": "20", "active_tool": "trial_tool_a"}, "events": [{"type": "mana_spent"}, {"type": "cast", "active_tool": "trial_tool_a"}]}},
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"ground": [1, 0, 1]}}, "expect": {"state": {"active_tool": "trial_tool_a"}, "events": [{"type": "move_requested"}]}},
+        {"action": {"op": "advance", "seconds": "1.5"}, "expect": {"state": {"mana": "17"}, "events": [{"type": "tool_upkeep", "amount": "3"}]}},
+        {"action": {"op": "bind", "slot": "q", "skill": "trial_tool_b"}, "expect": {"state": {"active_tool": "trial_tool_a"}, "events": []}},
+        {"action": {"op": "press", "slot": "q"}, "expect": {"state": {"active_tool": "trial_tool_b"}, "events": [{"type": "tool_changed", "previous": "trial_tool_a", "tool": "trial_tool_b"}, {"type": "cast"}]}},
+        {"action": {"op": "press", "slot": "q"}, "expect": {"state": {"active_tool": null, "mana": "17"}, "events": [{"type": "tool_released", "reason": "manual"}]}}
+      ]
+    },
+    {
+      "id": "A5_upkeep_exhaustion", "covers": ["A4", "A5"],
+      "description": "유지비로 0에 도달하면 해제, 기본 공격은 가능하며 회복은 명시적으로 공급",
+      "initial_mana": "2",
+      "steps": [
+        {"action": {"op": "press", "slot": "q"}, "expect": {"events": [{"type": "tool_changed"}, {"type": "cast"}]}},
+        {"action": {"op": "advance", "seconds": "1"}, "expect": {"state": {"mana": "0", "active_tool": null}, "events": [{"type": "tool_upkeep", "amount": "2"}, {"type": "tool_released", "reason": "mana_empty"}]}},
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"events": [{"type": "cast", "skill": "basic_attack", "active_tool": null}]}},
+        {"action": {"op": "press", "slot": "rmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"events": [{"type": "cast_failed", "reason": "insufficient_mana"}]}},
+        {"action": {"op": "advance", "seconds": "5"}, "expect": {"state": {"mana": "0", "active_tool": null}, "events": []}},
+        {"action": {"op": "restore_mana", "amount": "10"}, "expect": {"state": {"mana": "10", "active_tool": null}, "events": [{"type": "mana_restored"}]}},
+        {"action": {"op": "press", "slot": "rmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"state": {"mana": "0"}, "events": [{"type": "mana_spent"}, {"type": "cast", "skill": "trial_shot"}]}}
+      ]
+    },
+    {
+      "id": "A5_left_fallback_preserves_binding", "covers": ["A1", "A5"],
+      "description": "좌클릭 마나 부족 시 이번 사용만 대체하고 회복 후 원래 기술 사용",
+      "initial_mana": "0", "bindings": {"lmb": "trial_shot"},
+      "steps": [
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"state": {"bindings": {"lmb": "trial_shot"}}, "events": [{"type": "basic_attack_fallback"}, {"type": "cast", "skill": "basic_attack"}]}},
+        {"action": {"op": "restore_mana", "amount": "10"}, "expect": {"events": [{"type": "mana_restored"}]}},
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"state": {"mana": "0", "bindings": {"lmb": "trial_shot"}}, "events": [{"type": "mana_spent"}, {"type": "cast", "skill": "trial_shot"}]}}
+      ]
+    },
+    {
+      "id": "A4_cast_cost_releases_tool", "covers": ["A4", "A5"],
+      "description": "시험 순서: 스킬 시전 뒤 비용으로 0이 된 공구 해제",
+      "initial_mana": "10",
+      "steps": [
+        {"action": {"op": "press", "slot": "q"}, "expect": {"events": [{"type": "tool_changed"}, {"type": "cast"}]}},
+        {"action": {"op": "press", "slot": "rmb", "cursor": {"ground": [1, 0, 0]}}, "expect": {"state": {"mana": "0", "active_tool": null}, "events": [{"type": "mana_spent"}, {"type": "cast", "active_tool": "trial_tool_a"}, {"type": "tool_released", "reason": "mana_empty"}]}}
+      ]
+    },
+    {
+      "id": "trial_target_and_range_failures", "covers": ["A1", "A2"],
+      "description": "미결 예외 시험 정책: 대상/사거리 실패는 자원 차감·이동·대체 없음",
+      "initial_mana": "30", "bindings": {"lmb": "trial_target"},
+      "steps": [
+        {"action": {"op": "press", "slot": "r"}, "expect": {"state": {"mana": "30", "cooldowns": {}}, "events": [{"type": "cast_failed", "reason": "invalid_target"}]}},
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1"}, "spatial_failures": {"trial_target": "out_of_range"}}, "expect": {"state": {"mana": "30", "cooldowns": {}}, "events": [{"type": "cast_failed", "reason": "out_of_range"}]}}
+      ]
+    },
+    {
+      "id": "trial_cooldown_no_fallback", "covers": ["A1", "A2"],
+      "description": "미결 예외 시험 정책: 쿨다운 실패는 기본 공격으로 대체하지 않음",
+      "initial_mana": "30", "bindings": {"lmb": "trial_shot"},
+      "steps": [
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"state": {"mana": "20"}, "events": [{"type": "mana_spent"}, {"type": "cast"}]}},
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"state": {"mana": "20"}, "events": [{"type": "cast_failed", "reason": "cooldown"}]}},
+        {"action": {"op": "advance", "seconds": "2"}, "expect": {"state": {"cooldowns": {}}, "events": []}},
+        {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1"}}, "expect": {"state": {"mana": "10"}, "events": [{"type": "mana_spent"}, {"type": "cast"}]}}
+      ]
+    },
+    {
+      "id": "potion_keys_outside_active_slots", "covers": ["A1"],
+      "description": "숫자 물약 입력은 액티브 슬롯으로 해석하지 않음",
+      "initial_mana": "30",
+      "steps": [
+        {"action": {"op": "press", "slot": "1"}, "expect": {"state": {"mana": "30"}, "events": [{"type": "input_ignored", "reason": "outside_active_slots"}]}}
+      ]
+    }
+  ]
+}

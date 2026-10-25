@@ -1,0 +1,106 @@
+{
+  "version": "2026-10-25",
+  "canvas": "1086x1448",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1769,
+      "sha256": "99dcba77e2671724e1cf718f164de437655ba10e5efb574f8886ff0ddbd99906"
+    },
+    {
+      "path": "assets/characters/player/3d/exports/README.md",
+      "bytes": 151,
+      "sha256": "1a0231a79cc88565d5b8d76835d64df5035d567a8f579c4a262521bb8b6b85ba"
+    },
+    {
+      "path": "assets/characters/player/3d/source/README.md",
+      "bytes": 294,
+      "sha256": "b56e074335d23d80723a932476f5aeb5de7389e18649b60e2dcdd962f57b6601"
+    },
+    {
+      "path": "assets/characters/player/scg/config/appearance.default.json",
+      "bytes": 285,
+      "sha256": "76708979958678bc0875274a8e0676cbaa36d173e6780c6d5c7213ada0d31c66"
+    },
+    {
+      "path": "assets/characters/player/scg/config/scg_layers.spec.json",
+      "bytes": 1996,
+      "sha256": "c44bd0b9e4852cacb00e5ad3b9b914332eecd1b83dc48ff044cff8dd39169124"
+    },
+    {
+      "path": "assets/characters/player/scg/layers/README.md",
+      "bytes": 411,
+      "sha256": "af3ea6bd9603a538da99567b23dae23efef47427be9dee1f552a6a7799589f1d"
+    },
+    {
+      "path": "assets/reference/character/scg/README.md",
+      "bytes": 823,
+      "sha256": "642b2dd278a751bd877da1a4ce7794a18e91a9b7bd20d74f5a1b58af08bcfc7f"
+    },
+    {
+      "path": "assets/reference/character/scg/dialogue_ui_reference.png",
+      "bytes": 1414379,
+      "sha256": "d950ca02832e60c1024d618e63bd3506cbd00d670f0d67309ec39da06f8f66df"
+    },
+    {
+      "path": "assets/reference/character/scg/hair_color_variations.png",
+      "bytes": 600740,
+      "sha256": "db26454eeb6121462b55b166b973a8d7ca9ff142525aa4baf6d7d3779fa34de2"
+    },
+    {
+      "path": "assets/reference/character/scg/hair_swap_comparison.png",
+      "bytes": 509802,
+      "sha256": "5e18334342a40b53618feefba875819c21b9b3fa49bb240fc65543c0cca5d5b6"
+    },
+    {
+      "path": "assets/reference/character/scg/hair_swap_mask_overlay.png",
+      "bytes": 66337,
+      "sha256": "338d726c14623d0fea3fdeb37c7ec745599926f6d5d0807fc553f71769d17ae0"
+    },
+    {
+      "path": "assets/reference/character/scg/mask_quality_check.png",
+      "bytes": 645443,
+      "sha256": "e2bbc42debb7cd00fd833771958f289430547bf28b9e39377fa676dc304f6799"
+    },
+    {
+      "path": "assets/reference/character/scg/semilong_reference.png",
+      "bytes": 1716829,
+      "sha256": "773f045f4f05bfadc9294f80ff47cc17e56bf1e2b1174c104b5ab8ec61c1d882"
+    },
+    {
+      "path": "assets/reference/character/scg/twintails_reference.png",
+      "bytes": 1775213,
+      "sha256": "c11c4ffba0ea7d21001276a58fd515d1d456ae08f2ab25bf05117a264a8d1dd5"
+    },
+    {
+      "path": "experiments/previous_hair_swap_not_production/CAUTION.md",
+      "bytes": 408,
+      "sha256": "8d39b0b57f1c13c3ed8943058370cb4210b47b65cbc4df3526300ef28711375a"
+    },
+    {
+      "path": "experiments/previous_hair_swap_not_production/README_legacy.md",
+      "bytes": 1801,
+      "sha256": "827bbc0ad27b69886b860e22b98f143585ceba5c6fc6e1393b2f840207abb81e"
+    },
+    {
+      "path": "experiments/previous_hair_swap_not_production/build_colors_experimental.py",
+      "bytes": 3210,
+      "sha256": "c90d70691c09defe6243e7021b2933f1a367b2e281cde85f3e3e139afe39c504"
+    },
+    {
+      "path": "experiments/previous_hair_swap_not_production/build_swap_experimental.py",
+      "bytes": 4670,
+      "sha256": "aaa052e636836d7bcc53c8255b2a1abb835fc67fb9d9523377f4b2795a81d844"
+    },
+    {
+      "path": "experiments/previous_hair_swap_not_production/swap_mask_experimental.png",
+      "bytes": 46595,
+      "sha256": "f3c61d002aab527852caf107c9f2b919ad8c65359d212e9ff2c5540d80b6c635"
+    },
+    {
+      "path": "experiments/previous_hair_swap_not_production/twin_hair_delta_experimental.png",
+      "bytes": 1755109,
+      "sha256": "7edff7cd3e969a3101ce09ca917fd976fcf971fa84edc13690feea6a52d9f884"
+    }
+  ]
+}
