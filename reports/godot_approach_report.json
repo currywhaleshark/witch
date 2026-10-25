@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "distant enemy click begins approach",
+    "approach start has no hit, mana cost or cooldown",
+    "moving target is followed and attacked once",
+    "attack stops inside actual basic range",
+    "single click does not repeat attacks",
+    "ranged skill approaches and spends mana exactly once on cast",
+    "ranged skill stops at its own range instead of melee range",
+    "ground skill approaches and preserves picked location",
+    "placement spends mana only once",
+    "left-bound ground skill remains a cast after approaching",
+    "Shift distant attack cancels movement and never approaches",
+    "Shift cannot hit a distant target",
+    "ground move cancels queued attack",
+    "cancelled attack does not fire later",
+    "target death cancels approach even when it is the last enemy",
+    "unusable skill does not begin walking",
+    "mana fallback approaches to basic range while preserving binding",
+    "mana loss during approach cancels without casting",
+    "pause preserves queued target without moving",
+    "player death clears queued cast",
+    "restart clears queued cast",
+    "blocked approach stops without damaging target"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

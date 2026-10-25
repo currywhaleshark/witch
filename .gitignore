@@ -1,3 +1,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+.godot/
+game/audio/*_source.wav
+game/audio/*_source.wav.import
+reports/*_runtime.log

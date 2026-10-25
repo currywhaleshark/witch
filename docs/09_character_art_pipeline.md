@@ -2,7 +2,7 @@
 
 > **v0.3 / 2026-10-25 / 제작 지침·검토안**. 시안/기술 파이프라인의 단일 원본. 이미 승인된 게임 입력·전투는 [02](02_combat.md), [06](06_vertical_slice.md) 참조. **새 원화 생성, 실제 헤어리스 바디 제작, Tripo 모델 생성이나 리깅까지 완료했다는 뜻은 아니다.**
 
-> **2026-10-25 로컬 인계 점검:** 제공된 ZIP의 참조 PNG 7장과 실험 자료를 로컬 저장소로 가져왔고 MANIFEST의 20개 파일 체크섬을 확인했다. 실제 치수·이미지 관찰·미제작 파츠·엔진 독립 준비 결과는 [인계 점검 기록](handoff_status.md) 참조. GitHub 업로드와 독립 파츠/3D 제작 완료 여부는 별도다.
+> **2026-10-25 인계 점검:** 제공된 ZIP의 참조 PNG 7장과 실험 자료를 반입하고 MANIFEST의 20개 파일 체크섬을 확인했다. `9e8aa55`에 커밋했으며 `9b711cd`까지 GitHub `main`에 푸시했다. 실제 치수·이미지 관찰·미제작 파츠는 [인계 점검 기록](handoff_status.md) 참조. 참조 업로드는 독립 파츠/3D 제작 완료를 뜻하지 않는다.
 
 ## 0. 구현 범위와 결정 상태
 
@@ -19,7 +19,7 @@
 
 ## 1. 시안 원화 및 실험 결과 — 우선 읽기
 
-기존 채팅에서 만들어 둔 원화/실험 결과의 **원본 7장**은 동봉된 **witch_character_art_codex_handoff.zip**의 아래 폴더에서 가져온다. **이 Markdown은 GitHub에 반영됐지만 PNG 바이너리는 아직 GitHub에 업로드하지 않았다.** Codex가 ZIP의 assets 디렉터리를 프로젝트 루트로 복사한 다음 커밋해야 아래 상대 경로가 실제 파일이 된다. **깨진 이미지 링크를 실제 커밋 전 성공으로 간주하지 말 것.**
+기존 채팅에서 만들어 둔 원화/실험 결과의 **원본 7장**은 **witch_character_art_codex_handoff.zip**에서 아래 경로로 반입했다. **2026-10-25 GitHub 업로드 완료**(`9e8aa55`, `main`의 `9b711cd`에 포함). 아래 경로는 실제 참조 파일이며 생산용 독립 파츠는 아니다.
 
 | 참조 에셋 (ZIP 내부 경로) | 의미 | 제작 상태 |
 |---|---|---|
@@ -183,7 +183,7 @@ assets/characters/player/
 5. **헤어 프리셋:** 3D 헤어 메시를 semilong/twintails 형태로 별도 장착, 동일 두상과 머리 기준 본에 결합. 긴 트윈테일은 단순 정적 헤어로 시작해 필요 시 추가 본/헤어 카드/간단한 애니메이션을 후속 제공.
 6. **얼굴/색:** 눈 모양은 교체 가능한 메시/텍스처 프리셋, 눈동자색과 머리색은 전용 머티리얼 파라미터. 원본 통짜 텍스처를 일괄 tint해서 피부·눈흰자까지 물들이지 않는다.
 7. **변신 전후:** 평상복/변신복 **두 의상 세트**를 같은 스켈레톤에 스키닝하여 교체. 기존 캐릭터 리그와 애니메이션을 교체하지 않는다. 소매/치마/어깨/허리·머리카락 교차를 확인.
-8. **엔진 임포트·실전 테스트:** idle, run, melee attack, ranged attack, hit, death, transformation 샘플 애니메이션에서 각 머리·의상이 이상 없이 동작하는지 확인. 엔진이 미정이므로 Unity/Godot/Unreal 전용 구현은 지금 확정하지 않는다.
+8. **엔진 임포트·실전 테스트:** idle, run, melee attack, ranged attack, hit, death, transformation 샘플 애니메이션에서 각 머리·의상이 이상 없이 동작하는지 확인. 첫 전투 필드는 Godot 4.6으로 착수했으나([실행 안내](godot_prototype.md)), 실제 캐릭터 임포트·리그·셰이더는 자산 도착 뒤 검증한다.
 
 **지원 범위 확인(2026-10):** Tripo 공식 문서는 Humanoid 자동 스켈레톤/웨이트와 FBX/GLB 내보내기를 설명한다. **지원 = 교체형 헤어·의상 리깅 결과가 자동으로 완성된다는 뜻은 아님**. 관련 문서: [Tripo Rigging & Animation](https://www.tripo3d.ai/product-doc/module-post-processing/rigging-animation), [Tripo Export](https://www.tripo3d.ai/product-doc/export-and-integration/export-dcc), [Auto Rig API](https://developers.tripo3d.ai/en/docs/animations-rig), [Blender Armature Modifier](https://docs.blender.org/manual/en/latest/modeling/modifiers/deform/armature.html), [Blender Data Transfer](https://docs.blender.org/manual/en/4.5/modeling/modifiers/modify/data_transfer.html).
 
@@ -235,7 +235,7 @@ assets/characters/player/
 - [x] 기존 세미롱·트윈테일 기준 원화 및 2D 시안/합성 실험 확인
 - [x] SCG 공통 바디/교체 파츠/색상 마스크 계약과 JSON 예시 작성
 - [x] Tripo→Blender→엔진 경로와 3D 커스터마이징 범위 정리
-- [ ] **참조 PNG를 GitHub 저장소 assets/에 직접 업로드** — 현재 별도 ZIP에서 Codex가 수행해야 함
+- [x] **참조 PNG를 GitHub 저장소 assets/에 직접 업로드** — 2026-10-25 `9e8aa55`, `9b711cd`에 포함하여 푸시
 - [ ] **진짜 공통 헤어리스 base_body 제작**
 - [ ] **독립적인 세미롱·트윈테일 front/back 투명 PNG 제작**
 - [ ] 동일 얼굴·몸체와 독립 헤어 파츠로 합성 성공 및 마스크/알파 검수

@@ -1,0 +1,15 @@
+{
+  "source": "game\\audio\\mechanical_impact_source.wav",
+  "source_sha256": "22839ace5f053a0d4042750d39de0df3594a4c5022c6848eaf486004fdb18d3a",
+  "generator": "Agent Audio / Stable Audio 3 Medium / local tflite CPU",
+  "source_seconds": 3.0,
+  "output": "game\\audio\\mechanical_impact.wav",
+  "seconds": 0.4549886621315193,
+  "sample_rate": 44100,
+  "channels": 2,
+  "peak_dbfs": -1.9383327973301165,
+  "rms_dbfs": -32.05863928682249,
+  "clipped_samples": 0,
+  "listened_by_agent": false,
+  "processing": "First impact, 5ms edge fades, peak capped at -1.94dBFS; runtime -15dB gain and event pitch variation."
+}

@@ -1,6 +1,8 @@
 # witch
 
-마녀도시 세계관을 바탕으로 구상 중인 **디아블로 2형 쿼터뷰 핵앤슬래시 RPG**. 현재는 인계 자산 검증과 엔진 독립 전투 규칙 코드까지 준비된 단계이며, 플레이 가능한 3D 전투 시안은 아직 없습니다.
+마녀도시 세계관을 바탕으로 구상 중인 **디아블로 2형 쿼터뷰 핵앤슬래시 RPG**. **Godot 4.6 + GDScript로 첫 도형 3D 전투 필드**를 구현했습니다. 기계장치의 마녀·적 2종·클릭 이동·기본 공격·산탄·공구 토글·태엽인형·포탑·HP/MP를 시험할 수 있습니다. 완성 아트와 성장/파밍 시스템은 아직 없습니다.
+
+- **[전투 시안 실행·조작법·검증 결과](docs/godot_prototype.md)** — Godot에서 `game/project.godot` 열기, 또는 `powershell -ExecutionPolicy Bypass -File tools/run_godot.ps1`
 
 - [인계 점검 결과·검증 도구 실행법·P0 구현 순서](docs/handoff_status.md)
 - [전투 규칙 코드·시나리오 실행법·검증 범위](docs/combat_rules_harness.md) — `python -m combat_rules`
