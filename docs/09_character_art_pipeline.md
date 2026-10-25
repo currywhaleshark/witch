@@ -29,6 +29,24 @@
 | assets/reference/character/scg/mask_quality_check.png | 색상 마스크 번짐·의복/얼굴 경계 검사 | **[품질 검사]** |
 | assets/reference/character/scg/hair_swap_mask_overlay.png | 이전 합성에서 교체 영역을 시각화 | **[오류 분석]** |
 
+<details>
+<summary>원화·헤어 교체 실험·대화창 시안 미리보기 (참조 PNG를 저장소로 가져온 뒤 표시됨)</summary>
+
+<table><tr>
+<td><strong>세미롱 기준 원화</strong><br/><img src="../assets/reference/character/scg/semilong_reference.png" width="245" alt="세미롱 기준 원화"/></td>
+<td><strong>트윈테일 참고 원화</strong><br/><img src="../assets/reference/character/scg/twintails_reference.png" width="245" alt="트윈테일 참고 원화"/></td>
+</tr></table>
+
+**기존 헤어 교체 실험 비교 (독립 파츠가 아닌 델타 패치):**
+
+<img src="../assets/reference/character/scg/hair_swap_comparison.png" width="660" alt="세미롱 기준, 델타 합성, 트윈테일 원화 비교"/>
+
+**대화 UI 스타일 시안:**
+
+<img src="../assets/reference/character/scg/dialogue_ui_reference.png" width="660" alt="비주얼 노벨 스타일 대화창 시안"/>
+
+</details>
+
 **실험 코드 보존:** ZIP의 experiments/previous_hair_swap_not_production 디렉터리는 과거의 마스크/패치/생성 스크립트다. 기존 전환 데모는 **트윈테일 그림을 델타 영역으로 덮어씌운 것**이고 **진짜 독립된 머리카락 PNG 파츠가 아니다**. 부분적인 배경·피부·옷 픽셀이 패치에 포함될 수 있으므로 프로덕션 헤어로 재사용하지 않는다. 제작 성공 사례가 아니라 **어떤 오류를 피할지 보여주는 회귀 실험**이다.
 
 **참조 우선순위:** 세미롱 기준 원화 = 최종 공통 얼굴·자세·어깨 위치의 원점. 트윈테일 원화 = 새 헤어 디자인 **참조**. 색상·대화창 실험 이미지는 완성 품질 보증이 아니다. 새 완성 원화를 반복 생성해 두 장을 바꿔치기하는 것을 **진짜 커스터마이징 구현으로 간주하지 않는다**.
