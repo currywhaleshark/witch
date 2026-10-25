@@ -8,4 +8,4 @@ The referenced images are supplied separately in the chat attachment **witch_cha
 - hair_color_variations.png, dialogue_ui_reference.png — earlier color/UI experiments
 - mask_quality_check.png, hair_swap_mask_overlay.png — artifact/error inspection
 
-See [character art pipeline](../../../docs/09_character_art_pipeline.md). Do not treat the old experimental delta patch as a genuine isolated hairstyle.
+See [character art pipeline](../../../../docs/09_character_art_pipeline.md). Do not treat the old experimental delta patch as a genuine isolated hairstyle.
