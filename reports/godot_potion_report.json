@@ -1,0 +1,24 @@
+{
+  "checks": [
+    "four quickslots start with the trial loadout",
+    "a health potion is spent but does not heal at once",
+    "the whole refill is pending for the HUD",
+    "health refills over time",
+    "the full amount arrives by the end",
+    "same group is blocked while on cooldown",
+    "a mana potion is not blocked by the health cooldown",
+    "a rejuvenation potion waits for both cooldowns",
+    "cooldown is a little longer than the refill",
+    "rejuvenation starts both health and mana cooldowns",
+    "an empty stack does nothing and is never restocked",
+    "Shift+number cycles that slot's potion type for testing",
+    "full mana refills to the maximum over its time",
+    "the speed potion starts a buff whose cooldown outlasts it",
+    "the speed buff makes the witch walk faster",
+    "the speed buff wears off",
+    "drinking during an attack windup neither waits nor cancels it",
+    "potions can be drunk during hit recovery"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

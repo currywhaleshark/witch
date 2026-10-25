@@ -9,6 +9,7 @@ var current_gap = 0.0
 var unaffordable_seconds: Dictionary = {}
 var counts = {"mana_failures": 0, "fallback_attacks": 0, "tool_auto_releases": 0, "tool_manual_releases": 0, "deaths": 0, "kills": 0, "debug_mana_edits": 0}
 var casts: Dictionary = {}
+var potions: Dictionary = {}
 
 func tick(dt: float, gap: bool, unaffordable: Array) -> void:
 	combat_seconds += dt
@@ -43,4 +44,4 @@ func to_dict() -> Dictionary:
 		rounded[id] = snappedf(unaffordable_seconds[id], 0.01)
 	return {"combat_seconds": snappedf(combat_seconds, 0.01), "skill_gap": {"seconds": snappedf(gap_seconds, 0.01),
 		"share": snappedf(gap_share(), 0.001), "count": gap_count, "longest_seconds": snappedf(longest_gap, 0.01)},
-		"unaffordable_seconds": rounded, "counts": counts, "casts": casts}
+		"unaffordable_seconds": rounded, "counts": counts, "casts": casts, "potions": potions}

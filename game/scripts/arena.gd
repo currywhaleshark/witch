@@ -49,6 +49,11 @@ var hit_time = 0.0
 var stun_time = 0.0
 var shield_time = 0.0
 var shield_ring: MeshInstance3D
+# Potion quickslots 1-4: refills over time, cooldowns shared per group, no auto-restock.
+var potion_slots: Array = []
+var potion_cooldowns: Dictionary = {}
+var potion_effects: Array = []
+var speed_buff = 0.0
 var elapsed = 0.0
 var last_events: Array = []
 var hover_id = ""
@@ -206,6 +211,12 @@ func reset_arena() -> void:
 	hit_time = 0
 	stun_time = 0
 	shield_time = 0
+	potion_slots = []
+	for entry in config.potion_loadout:
+		potion_slots.append({"id": entry.id, "count": int(entry.count)})
+	potion_cooldowns.clear()
+	potion_effects.clear()
+	speed_buff = 0
 	fallback_time = 0
 	move_marker.visible = false
 	probe = ManaProbe.new()
@@ -256,6 +267,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and not event.pressed and hold.get("key") == event.physical_keycode:
 		hold.clear()
 	if paused or hp <= 0:
+		return
+	if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode in [KEY_1, KEY_2, KEY_3, KEY_4]:
+		var index: int = [KEY_1, KEY_2, KEY_3, KEY_4].find(event.physical_keycode)
+		if event.shift_pressed:
+			cycle_potion(index)
+		else:
+			drink(index)
 		return
 	var slot = ""
 	var shift = false
@@ -786,6 +804,63 @@ func damage_enemy(id: String, amount: float) -> void:
 		if enemies.is_empty():
 			cancel_pending_cast()
 
+func potion_cooldown(id: String) -> float:
+	var longest = 0.0
+	for group in config.potions[id].groups:
+		longest = maxf(longest, potion_cooldowns.get(group, 0.0))
+	return longest
+
+func drink(index: int) -> void:
+	# Drinking is instant and never waits for or cancels a motion, approach or hit recovery.
+	var slot: Dictionary = potion_slots[index]
+	if slot.count <= 0:
+		return
+	var potion: Dictionary = config.potions[slot.id]
+	if potion_cooldown(slot.id) > 0:
+		show_message("물약 준비 중입니다")
+		return
+	slot.count -= 1
+	for group in potion.groups:
+		potion_cooldowns[group] = float(potion.cooldown_seconds)
+	var seconds: float = potion.seconds
+	if potion.kind == "speed":
+		speed_buff = seconds
+	else:
+		var full: bool = potion.get("full", false)
+		potion_effects.append({"time": seconds,
+			"hp_rate": (config.max_hp if full else potion.get("hp", 0.0)) / seconds if potion.kind != "mp" else 0.0,
+			"mp_rate": (state.max_mana if full else potion.get("mp", 0.0)) / seconds if potion.kind != "hp" else 0.0})
+	probe.potions[slot.id] = probe.potions.get(slot.id, 0) + 1
+	pulse(player.position + Vector3.UP * 0.5, {"hp": RED, "mp": TEAL, "both": Color("c9a0dc"), "speed": Color("a8d672")}[potion.kind], 0.5)
+	play_cue(1.4)
+
+func cycle_potion(index: int) -> void:
+	# Test tool: Shift+1-4 swaps that slot's potion type and restocks it.
+	var ids: Array = config.potions.keys()
+	var slot: Dictionary = potion_slots[index]
+	slot.id = ids[(ids.find(slot.id) + 1) % ids.size()]
+	slot.count = int(config.potion_test_count)
+	show_message("%d번: %s ×%d" % [index + 1, config.potions[slot.id].name, slot.count])
+
+func tick_potions(dt: float) -> void:
+	for group in potion_cooldowns.keys():
+		potion_cooldowns[group] = maxf(0, potion_cooldowns[group] - dt)
+	speed_buff = maxf(0, speed_buff - dt)
+	for effect in potion_effects.duplicate():
+		var spent: float = minf(dt, effect.time)
+		hp = minf(config.max_hp, hp + effect.hp_rate * spent)
+		state = rules.restore_mana(state, effect.mp_rate * spent).state
+		effect.time -= spent
+		if effect.time <= 0:
+			potion_effects.erase(effect)
+
+func pending_fill(key: String) -> float:
+	# What running potions will still add; the HUD shows it as a pale layer.
+	var total = 0.0
+	for effect in potion_effects:
+		total += effect[key] * effect.time
+	return total
+
 func block_chance() -> float:
 	# Trial formula from shield level and dexterity; it only applies while the shield is up.
 	var shield: Dictionary = rules.skills.shield
@@ -870,6 +945,7 @@ func _physics_process(dt: float) -> void:
 		if a5_mode:
 			probe.tick(dt, skill_gap(), unaffordable_skills())
 			tick_respawns(dt)
+		tick_potions(dt)
 		tick_windup(dt)
 		if action_time > 0:
 			action_time = maxf(0, action_time - dt)
@@ -886,7 +962,8 @@ func _physics_process(dt: float) -> void:
 				moving = false
 				move_marker.visible = false
 			else:
-				player.velocity = delta.normalized() * minf(config.player_speed, delta.length() / dt)
+				var speed: float = config.player_speed * (1.0 + (config.potions.speed.speed_bonus if speed_buff > 0 else 0.0))
+				player.velocity = delta.normalized() * minf(speed, delta.length() / dt)
 				player.move_and_slide()
 				player_model.look_at(player.position + delta.normalized())
 		for id in enemies.keys():

@@ -52,6 +52,23 @@
   "summon_detection_range": 12,
   "turret_detection_range": 7,
   "summon_explosion_range": 2.5,
+  "potions": {
+    "health_s": {"name": "체력 물약 (소)", "mark": "소", "kind": "hp", "hp": 25, "seconds": 5, "cooldown_seconds": 6, "groups": ["hp"]},
+    "health_m": {"name": "체력 물약 (중)", "mark": "중", "kind": "hp", "hp": 45, "seconds": 5, "cooldown_seconds": 6, "groups": ["hp"]},
+    "health_l": {"name": "체력 물약 (대)", "mark": "대", "kind": "hp", "hp": 70, "seconds": 5, "cooldown_seconds": 6, "groups": ["hp"]},
+    "mana_s": {"name": "마나 물약 (소)", "mark": "소", "kind": "mp", "mp": 20, "seconds": 5, "cooldown_seconds": 6, "groups": ["mp"]},
+    "mana_m": {"name": "마나 물약 (중)", "mark": "중", "kind": "mp", "mp": 35, "seconds": 5, "cooldown_seconds": 6, "groups": ["mp"]},
+    "mana_l": {"name": "마나 물약 (대)", "mark": "대", "kind": "mp", "mp": 55, "seconds": 5, "cooldown_seconds": 6, "groups": ["mp"]},
+    "rejuv_s": {"name": "회복 물약 (소)", "mark": "소", "kind": "both", "hp": 15, "mp": 12, "seconds": 5, "cooldown_seconds": 6, "groups": ["hp", "mp"]},
+    "rejuv_m": {"name": "회복 물약 (중)", "mark": "중", "kind": "both", "hp": 30, "mp": 22, "seconds": 5, "cooldown_seconds": 6, "groups": ["hp", "mp"]},
+    "rejuv_l": {"name": "회복 물약 (대)", "mark": "대", "kind": "both", "hp": 45, "mp": 35, "seconds": 5, "cooldown_seconds": 6, "groups": ["hp", "mp"]},
+    "full_health": {"name": "체력 완전 회복", "mark": "완", "kind": "hp", "full": true, "seconds": 3, "cooldown_seconds": 6, "groups": ["hp"]},
+    "full_mana": {"name": "마나 완전 회복", "mark": "완", "kind": "mp", "full": true, "seconds": 3, "cooldown_seconds": 6, "groups": ["mp"]},
+    "full_rejuv": {"name": "완전 회복", "mark": "완", "kind": "both", "full": true, "seconds": 3, "cooldown_seconds": 6, "groups": ["hp", "mp"]},
+    "speed": {"name": "이동 속도 물약", "mark": "속", "kind": "speed", "speed_bonus": 0.2, "seconds": 20, "cooldown_seconds": 60, "groups": ["speed"]}
+  },
+  "potion_loadout": [{"id": "health_m", "count": 5}, {"id": "mana_m", "count": 5}, {"id": "rejuv_s", "count": 3}, {"id": "speed", "count": 2}],
+  "potion_test_count": 5,
   "bindings": {"lmb": "basic_attack", "rmb": "shotgun", "q": "bolt_cutter", "w": "automaton", "e": "turret", "r": "shield"},
   "r_slot_options": ["shield", "grinder", "relay"],
   "skills": [
