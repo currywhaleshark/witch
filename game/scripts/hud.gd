@@ -120,7 +120,9 @@ func _draw() -> void:
 	label_at(Vector2(sx + 615, h - 38), "효과음", 13, MUTED)
 	if arena.hit_time > 0:
 		draw_rect(Rect2(3, 3, w - 6, h - 6), Color(0.93, 0.35, 0.22, arena.hit_time * 2), false, 6)
-	if arena.paused or arena.hp <= 0 or arena.enemies.is_empty():
+	if arena.a5_mode:
+		a5_panel(Vector2(24, 163))
+	if arena.paused or arena.hp <= 0 or arena.field_cleared():
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0.025, 0.055, 0.07, 0.82))
 		var title = "잠시 정지" if arena.paused else ("마녀가 쓰러졌습니다" if arena.hp <= 0 else "필드 정리 완료")
 		centered(Vector2(w / 2, h / 2 - 82), "MACHINERY / TEST FIELD", 13, GOLD)
@@ -129,6 +131,19 @@ func _draw() -> void:
 		if arena.paused:
 			centered(Vector2(w / 2, h / 2 + 53), "Esc  계속하기", 16, TEAL)
 			centered(Vector2(w / 2, h / 2 + 110), "시험 도구   F1 좌클릭 기본/산탄   ·   F2 마나 소진   ·   F3 마나 회복   ·   F4 공속 점수", 13, MUTED)
+			centered(Vector2(w / 2, h / 2 + 134), "A5 마나 시험   F5 연속 교전 켜기/끄기   ·   F6 기록 저장   ·   F7 마나 회복량", 13, MUTED)
+
+func a5_panel(pos: Vector2) -> void:
+	# Live A5 readout; the saved JSON log holds the same numbers plus per-skill detail.
+	var probe = arena.probe
+	var gap_now: bool = probe.current_gap > 0
+	panel(Rect2(pos, Vector2(300, 150)), Color("14262fee"), RED if gap_now else Color("50625f"))
+	label_at(pos + Vector2(18, 23), "A5 마나 시험  ·  연속 교전", 12, GOLD, true)
+	label_at(pos + Vector2(18, 46), "교전 %d초  ·  회복 %s/s  ·  공구 유지 %s/s" % [probe.combat_seconds, str(arena.config.mana_regen), str(arena.rules.skills.bolt_cutter.upkeep_per_second)], 12, MUTED)
+	label_at(pos + Vector2(18, 72), "기술 공백 %.1f초 (%d%%) · %d회" % [probe.gap_seconds, roundi(probe.gap_share() * 100), probe.gap_count], 14, PAPER)
+	label_at(pos + Vector2(18, 95), ("지금 공백 %.1f초" % probe.current_gap if gap_now else "지금 쓸 수 있는 기술 있음") + "  ·  최장 %.1f초" % probe.longest_gap, 13, RED if gap_now else TEAL)
+	label_at(pos + Vector2(18, 118), "마나 부족 %d  ·  대체 공격 %d  ·  공구 해제 %d" % [probe.counts.mana_failures, probe.counts.fallback_attacks, probe.counts.tool_auto_releases], 12, MUTED)
+	label_at(pos + Vector2(18, 139), "F6 기록 저장   ·   F7 회복량   ·   F5 종료", 11, MUTED)
 
 func gauge(pos: Vector2, value: float, maximum: float, color: Color, title: String) -> void:
 	panel(Rect2(pos, Vector2(52, 100)), INK, GOLD)

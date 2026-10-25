@@ -11,6 +11,8 @@
   "max_mana": 60,
   "max_hp": 100,
   "mana_regen": 2,
+  "mana_regen_steps": [1, 2, 4],
+  "a5_respawn_seconds": 2.5,
   "player_speed": 5,
   "enemy_speed": 2.1,
   "enemy_damage": 9,

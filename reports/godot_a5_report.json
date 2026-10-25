@@ -1,0 +1,22 @@
+{
+  "checks": [
+    "A5 mode measures combat time with skills available",
+    "tool auto release at zero mana is counted",
+    "zero mana without a tool starts a skill gap",
+    "mana failure presses are counted",
+    "skill gap time accumulates per second of combat",
+    "affordable shotgun ends the gap while dearer skills stay unaffordable",
+    "separate gaps are counted with the longest kept",
+    "kill schedules a respawn",
+    "respawn returns from a field edge away from the witch",
+    "endless field never counts as cleared",
+    "casting still works while the field refills",
+    "manual save writes the session log with settings",
+    "unchanged session is not saved twice",
+    "regen change starts a fresh measurement",
+    "death saves the session log",
+    "turning A5 off restores the normal field"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

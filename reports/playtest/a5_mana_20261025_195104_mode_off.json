@@ -1,0 +1,92 @@
+{
+  "end_reason": "mode_off",
+  "engine": "4.6.2-stable (official)",
+  "metrics": {
+    "casts": {
+      "automaton": 2,
+      "basic_attack": 14,
+      "bolt_cutter": 2,
+      "shotgun": 9,
+      "turret": 1
+    },
+    "combat_seconds": 61.48,
+    "counts": {
+      "deaths": 0,
+      "debug_mana_edits": 0,
+      "fallback_attacks": 0,
+      "kills": 15,
+      "mana_failures": 0,
+      "tool_auto_releases": 1,
+      "tool_manual_releases": 1
+    },
+    "skill_gap": {
+      "count": 1,
+      "longest_seconds": 0.73,
+      "seconds": 0.73,
+      "share": 0.012
+    },
+    "unaffordable_seconds": {
+      "automaton": 28.13,
+      "relay": 3.65,
+      "shotgun": 15.88,
+      "turret": 28.13
+    },
+    "zero_mana_seconds": 0.0
+  },
+  "player_hp": 30.7,
+  "saved_at": "2026-10-25T19:51:04",
+  "settings": {
+    "attack_speed_score": 0.0,
+    "bindings": {
+      "e": "turret",
+      "lmb": "basic_attack",
+      "q": "bolt_cutter",
+      "r": "relay",
+      "rmb": "shotgun",
+      "w": "automaton"
+    },
+    "mana_regen": 4.0,
+    "max_mana": 60.0,
+    "respawn_seconds": 2.5,
+    "skills": [
+      {
+        "cooldown_seconds": 0.0,
+        "id": "basic_attack",
+        "mana_cost": 0.0,
+        "upkeep_per_second": 0.0
+      },
+      {
+        "cooldown_seconds": 1.2,
+        "id": "shotgun",
+        "mana_cost": 10.0,
+        "upkeep_per_second": 0.0
+      },
+      {
+        "cooldown_seconds": 0.0,
+        "id": "bolt_cutter",
+        "mana_cost": 0.0,
+        "upkeep_per_second": 5.0
+      },
+      {
+        "cooldown_seconds": 4.0,
+        "id": "automaton",
+        "mana_cost": 15.0,
+        "upkeep_per_second": 0.0
+      },
+      {
+        "cooldown_seconds": 5.0,
+        "id": "turret",
+        "mana_cost": 15.0,
+        "upkeep_per_second": 0.0
+      },
+      {
+        "cooldown_seconds": 0.5,
+        "id": "relay",
+        "mana_cost": 3.0,
+        "upkeep_per_second": 0.0
+      }
+    ]
+  },
+  "status": "test_values_not_approved_balance",
+  "test": "A5"
+}

@@ -1,0 +1,90 @@
+{
+  "end_reason": "settings_changed",
+  "engine": "4.6.2-stable (official)",
+  "metrics": {
+    "casts": {
+      "basic_attack": 3,
+      "bolt_cutter": 2,
+      "shotgun": 1
+    },
+    "combat_seconds": 21.4,
+    "counts": {
+      "deaths": 0,
+      "debug_mana_edits": 0,
+      "fallback_attacks": 0,
+      "kills": 2,
+      "mana_failures": 2,
+      "tool_auto_releases": 2,
+      "tool_manual_releases": 0
+    },
+    "skill_gap": {
+      "count": 2,
+      "longest_seconds": 2.98,
+      "seconds": 5.97,
+      "share": 0.279
+    },
+    "unaffordable_seconds": {
+      "automaton": 18.7,
+      "relay": 7.47,
+      "shotgun": 17.45,
+      "turret": 18.7
+    },
+    "zero_mana_seconds": 0.0
+  },
+  "player_hp": 27.1,
+  "saved_at": "2026-10-25T19:47:13",
+  "settings": {
+    "attack_speed_score": 0.0,
+    "bindings": {
+      "e": "turret",
+      "lmb": "basic_attack",
+      "q": "bolt_cutter",
+      "r": "relay",
+      "rmb": "shotgun",
+      "w": "automaton"
+    },
+    "mana_regen": 2.0,
+    "max_mana": 60.0,
+    "respawn_seconds": 2.5,
+    "skills": [
+      {
+        "cooldown_seconds": 0.0,
+        "id": "basic_attack",
+        "mana_cost": 0.0,
+        "upkeep_per_second": 0.0
+      },
+      {
+        "cooldown_seconds": 1.2,
+        "id": "shotgun",
+        "mana_cost": 10.0,
+        "upkeep_per_second": 0.0
+      },
+      {
+        "cooldown_seconds": 0.0,
+        "id": "bolt_cutter",
+        "mana_cost": 0.0,
+        "upkeep_per_second": 5.0
+      },
+      {
+        "cooldown_seconds": 4.0,
+        "id": "automaton",
+        "mana_cost": 15.0,
+        "upkeep_per_second": 0.0
+      },
+      {
+        "cooldown_seconds": 5.0,
+        "id": "turret",
+        "mana_cost": 15.0,
+        "upkeep_per_second": 0.0
+      },
+      {
+        "cooldown_seconds": 0.5,
+        "id": "relay",
+        "mana_cost": 3.0,
+        "upkeep_per_second": 0.0
+      }
+    ]
+  },
+  "status": "test_values_not_approved_balance",
+  "test": "A5"
+}

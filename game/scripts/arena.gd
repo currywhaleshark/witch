@@ -2,6 +2,7 @@ extends Node3D
 const Rules = preload("res://scripts/combat_rules.gd")
 const Shape = preload("res://scripts/shapes.gd")
 const Hud = preload("res://scripts/hud.gd")
+const ManaProbe = preload("res://scripts/mana_probe.gd")
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
@@ -44,6 +45,15 @@ var hover_ring: MeshInstance3D
 var move_marker: MeshInstance3D
 var tool_ring: MeshInstance3D
 var tool_visual: Node3D
+# A5 mana test: endless engagement, measurement and session logs.
+var a5_mode = false
+var probe: RefCounted
+var logged_seconds = -1.0
+var log_dir = ""
+var last_log_path = ""
+var respawns: Array = []
+var spawn_serial = 0
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
@@ -177,9 +187,14 @@ func reset_arena() -> void:
 	hit_time = 0
 	fallback_time = 0
 	move_marker.visible = false
+	probe = ManaProbe.new()
+	logged_seconds = -1.0
+	respawns.clear()
+	rng.seed = 2510
 	var positions = [Vector3(-4, 0, -4), Vector3(3, 0, -5), Vector3(6, 0, 0), Vector3(-7, 0, 3), Vector3(2, 0, -9), Vector3(-8, 0, -8)]
 	for i in positions.size():
 		spawn_enemy("enemy_" + str(i), positions[i], i >= 4)
+	spawn_serial = positions.size()
 
 func spawn_enemy(id: String, pos: Vector3, heavy: bool = false) -> void:
 	var body = Shape.body(world, pos, 2)
@@ -198,7 +213,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				paused = not paused
 				return
 			KEY_ENTER:
-				if hp <= 0 or enemies.is_empty() or paused:
+				if hp <= 0 or field_cleared() or paused:
+					save_mana_log("restart")
 					reset_arena()
 				return
 			KEY_M:
@@ -234,19 +250,36 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.physical_keycode == KEY_F4:
 			var steps: Array = config.attack_speed_steps
 			config.attack_speed_score = steps[(steps.find(config.attack_speed_score) + 1) % steps.size()]
+			restart_probe("settings_changed")
 			show_message("공속 점수 %d · 기본 공격 %.2f초" % [config.attack_speed_score, attack_seconds(false)])
 			return
 		if event.physical_keycode == KEY_F1:
 			cancel_pending_cast()
 			state = rules.bind(state, "lmb", "shotgun" if state.bindings.lmb == "basic_attack" else "basic_attack")
+			restart_probe("settings_changed")
 			return
 		if event.physical_keycode == KEY_F2:
 			state.mana = 0.0
 			var events: Array = []
 			rules.release_at_zero(state, events)
+			probe.counts.debug_mana_edits += 1
 			return
 		if event.physical_keycode == KEY_F3:
 			state = rules.restore_mana(state, state.max_mana).state
+			probe.counts.debug_mana_edits += 1
+			return
+		if event.physical_keycode == KEY_F5:
+			set_a5_mode(not a5_mode)
+			return
+		if event.physical_keycode == KEY_F6:
+			var path = save_mana_log("manual")
+			show_message("기록 저장: " + path.get_file() if path != "" else "저장할 교전 기록이 없습니다")
+			return
+		if event.physical_keycode == KEY_F7:
+			var regen_steps: Array = config.mana_regen_steps
+			config.mana_regen = regen_steps[(regen_steps.find(config.mana_regen) + 1) % regen_steps.size()]
+			restart_probe("settings_changed")
+			show_message("마나 회복 %s/s" % str(config.mana_regen))
 			return
 	if slot != "" and (pointer_over_field() or event is InputEventKey):
 		var cursor = field_cursor()
@@ -257,6 +290,84 @@ func _unhandled_input(event: InputEvent) -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		hold.clear()
+	elif what == NOTIFICATION_WM_CLOSE_REQUEST:
+		save_mana_log("quit")
+
+func field_cleared() -> bool:
+	return enemies.is_empty() and not a5_mode
+
+func set_a5_mode(enabled: bool) -> void:
+	save_mana_log("mode_off" if a5_mode else "mode_on")
+	a5_mode = enabled
+	reset_arena()
+	show_message("A5 마나 시험 시작 · 연속 교전" if enabled else "A5 마나 시험 종료")
+
+func restart_probe(reason: String) -> void:
+	# Settings changes split the measurement so one log never mixes two configurations.
+	if a5_mode:
+		save_mana_log(reason)
+	probe = ManaProbe.new()
+	logged_seconds = -1.0
+
+func unaffordable_skills() -> Array:
+	var result: Array = []
+	for slot in rules.SLOTS:
+		var id = state.bindings[slot]
+		if id != null and rules.skills[id].mana_cost > 0 and state.mana + rules.EPS < rules.skills[id].mana_cost and id not in result:
+			result.append(id)
+	return result
+
+func skill_gap() -> bool:
+	# Only the basic attack is left: no tool running and every mana-costing slot unaffordable.
+	if state.active_tool != null:
+		return false
+	var unaffordable = unaffordable_skills()
+	for slot in rules.SLOTS:
+		var id = state.bindings[slot]
+		if id != null and rules.skills[id].mana_cost > 0 and id not in unaffordable:
+			return false
+	return true
+
+func save_mana_log(reason: String) -> String:
+	if not a5_mode or probe.combat_seconds < 1.0 or probe.combat_seconds == logged_seconds:
+		return ""
+	var directory = log_dir if log_dir != "" else ProjectSettings.globalize_path("res://").path_join("../reports/playtest").simplify_path()
+	DirAccess.make_dir_recursive_absolute(directory)
+	var now = Time.get_datetime_dict_from_system()
+	var stamp = "%04d%02d%02d_%02d%02d%02d" % [now.year, now.month, now.day, now.hour, now.minute, now.second]
+	var path = directory.path_join("a5_mana_%s_%s.json" % [stamp, reason])
+	var skills: Array = []
+	for id in rules.skills:
+		var skill: Dictionary = rules.skills[id]
+		skills.append({"id": id, "mana_cost": skill.mana_cost, "cooldown_seconds": skill.cooldown_seconds, "upkeep_per_second": skill.upkeep_per_second})
+	var report = {"test": "A5", "status": config.status, "saved_at": Time.get_datetime_string_from_system(), "end_reason": reason,
+		"engine": Engine.get_version_info().string, "player_hp": hp, "metrics": probe.to_dict(),
+		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score,
+			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	if file == null:
+		show_message("기록을 저장하지 못했습니다")
+		return ""
+	file.store_string(JSON.stringify(report, "  ") + "\n")
+	logged_seconds = probe.combat_seconds
+	last_log_path = path
+	return path
+
+func tick_respawns(dt: float) -> void:
+	for entry in respawns.duplicate():
+		entry.time -= dt
+		if entry.time > 0:
+			continue
+		respawns.erase(entry)
+		# Re-enter from a field edge away from the witch to keep a steady engagement.
+		var pos = Vector3.ZERO
+		for attempt in 12:
+			var along = rng.randf_range(-1, 1)
+			pos = [Vector3(13, 0, along * 11), Vector3(-13, 0, along * 11), Vector3(along * 13, 0, 11), Vector3(along * 13, 0, -11)][rng.randi() % 4]
+			if pos.distance_to(player.position) >= 8:
+				break
+		spawn_enemy("enemy_" + str(spawn_serial), pos, entry.heavy)
+		spawn_serial += 1
 
 func pointer_over_field() -> bool:
 	return pointer.y < get_viewport().get_visible_rect().size.y - 155
@@ -333,7 +444,7 @@ func cast_event(result: Dictionary) -> Dictionary:
 	return {}
 
 func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void:
-	if paused or hp <= 0 or enemies.is_empty():
+	if paused or hp <= 0 or field_cleared():
 		return
 	if slot not in rules.SLOTS:
 		return
@@ -452,6 +563,7 @@ func tick_pending_cast(dt: float) -> void:
 func apply_transition(result: Dictionary) -> void:
 	state = result.state
 	last_events = result.events
+	probe.record(last_events)
 	for event in last_events:
 		match event.type:
 			"move_requested": set_destination(point(event.position))
@@ -537,6 +649,9 @@ func damage_enemy(id: String, amount: float) -> void:
 		enemy.body.queue_free()
 		enemies.erase(id)
 		kills += 1
+		probe.counts.kills += 1
+		if a5_mode:
+			respawns.append({"time": float(config.a5_respawn_seconds), "heavy": enemy.heavy})
 		if pending_cast.get("cursor", {}).get("enemy_id") == id:
 			cancel_pending_cast()
 			show_message("대상이 사라졌습니다")
@@ -555,6 +670,8 @@ func damage_player(amount: float) -> void:
 	pulse(player.position, RED, 0.55)
 	play_cue(0.75)
 	if hp == 0:
+		probe.counts.deaths += 1
+		save_mana_log("death")
 		cancel_pending_cast()
 		hold.clear()
 		queued_input.clear()
@@ -591,14 +708,18 @@ func eligible(ally: Dictionary, id: String) -> bool:
 func _physics_process(dt: float) -> void:
 	if not is_instance_valid(player):
 		return
-	if not paused and hp > 0 and not enemies.is_empty():
+	if not paused and hp > 0 and not field_cleared():
 		elapsed += dt
 		var advanced: Dictionary = rules.advance(state, dt)
 		state = advanced.state
+		probe.record(advanced.events)
 		for event in advanced.events:
 			if event.type == "tool_released":
 				show_message("마나 소진 · 공구 해제")
 		state = rules.restore_mana(state, config.mana_regen * dt).state
+		if a5_mode:
+			probe.tick(dt, skill_gap(), unaffordable_skills())
+			tick_respawns(dt)
 		if action_time > 0:
 			action_time = maxf(0, action_time - dt)
 			if action_time == 0 and not queued_input.is_empty():
