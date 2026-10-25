@@ -18,7 +18,7 @@
     "cases": 13,
     "passed": 13,
     "failed": 0,
-    "steps": 38
+    "steps": 39
   },
   "not_verified": [
     "3D picking/navigation/collision",
@@ -2302,6 +2302,65 @@
         },
         {
           "step": 2,
+          "before": {
+            "mana": "30",
+            "max_mana": "30",
+            "active_tool": null,
+            "bindings": {
+              "lmb": "trial_target",
+              "rmb": "trial_shot",
+              "q": "trial_tool_a",
+              "w": "trial_summon",
+              "e": "trial_placement",
+              "r": "trial_target"
+            },
+            "cooldowns": {}
+          },
+          "action": {
+            "op": "press",
+            "slot": "e"
+          },
+          "expected": {
+            "state": {
+              "mana": "30",
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "reason": "invalid_ground"
+              }
+            ]
+          },
+          "actual": {
+            "state": {
+              "mana": "30",
+              "max_mana": "30",
+              "active_tool": null,
+              "bindings": {
+                "lmb": "trial_target",
+                "rmb": "trial_shot",
+                "q": "trial_tool_a",
+                "w": "trial_summon",
+                "e": "trial_placement",
+                "r": "trial_target"
+              },
+              "cooldowns": {}
+            },
+            "events": [
+              {
+                "type": "cast_failed",
+                "slot": "e",
+                "skill": "trial_placement",
+                "reason": "invalid_ground"
+              }
+            ]
+          },
+          "passed": true,
+          "errors": []
+        },
+        {
+          "step": 3,
           "before": {
             "mana": "30",
             "max_mana": "30",

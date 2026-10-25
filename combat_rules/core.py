@@ -197,7 +197,8 @@ class CombatRules:
     def _failure(self, state: State, skill: Skill, cursor: Cursor, spatial_check: SpatialCheck) -> str | None:
         for check in self.policy.failure_order:
             if check == "target" and self._target(skill, cursor) is None:
-                return "invalid_target"
+                # A placement with no floor under the cursor is a ground failure, not a missing enemy.
+                return "invalid_ground" if skill.kind == SkillKind.GROUND else "invalid_target"
             if check == "spatial" and skill.kind not in {SkillKind.SELF, SkillKind.TOOL}:
                 reason = spatial_check(skill, cursor)
                 if reason not in {None, "out_of_range", "invalid_ground"}:

@@ -132,6 +132,7 @@
       "initial_mana": "30", "bindings": {"lmb": "trial_target"},
       "steps": [
         {"action": {"op": "press", "slot": "r"}, "expect": {"state": {"mana": "30", "cooldowns": {}}, "events": [{"type": "cast_failed", "reason": "invalid_target"}]}},
+        {"action": {"op": "press", "slot": "e"}, "expect": {"state": {"mana": "30", "cooldowns": {}}, "events": [{"type": "cast_failed", "reason": "invalid_ground"}]}},
         {"action": {"op": "press", "slot": "lmb", "cursor": {"enemy_id": "enemy_1"}, "spatial_failures": {"trial_target": "out_of_range"}}, "expect": {"state": {"mana": "30", "cooldowns": {}}, "events": [{"type": "cast_failed", "reason": "out_of_range"}]}}
       ]
     },

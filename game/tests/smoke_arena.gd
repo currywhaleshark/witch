@@ -84,6 +84,11 @@ func run() -> void:
 	arena.request_slot("e", {"ground": [placement.x, 0, placement.z]})
 	release()
 	check(arena.allies.size() == 2 and arena.allies[1].node.position.is_equal_approx(placement), "turret spawns on picked ground")
+	arena.action_time = 0
+	arena.state.cooldowns.clear()
+	mp = arena.state.mana
+	arena.request_slot("e", arena.pick_cursor(Vector2(-500, -500)))
+	check(arena.message == "설치할 수 없습니다" and arena.state.mana == mp and arena.allies.size() == 2, "placement off the floor reports unplaceable ground")
 	arena.state = arena.rules.advance(arena.state, 30).state
 	check(arena.state.mana == 0 and arena.state.active_tool == null, "upkeep depletes MP and releases tool")
 	arena.state = arena.rules.bind(arena.state, "lmb", "shotgun")

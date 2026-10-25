@@ -112,10 +112,11 @@ class CombatRuleTests(unittest.TestCase):
 
     def test_invalid_ground_and_missing_target_do_not_spend_or_start_cooldown(self):
         state = self.state()
-        for cursor, check, expected in ((Cursor(), lambda skill, cursor: None, "invalid_target"),
-                                        (GROUND, lambda skill, cursor: "invalid_ground", "invalid_ground")):
-            with self.subTest(expected=expected):
-                result = self.press(state, "e", cursor, spatial_check=check)
+        for slot, cursor, check, expected in (("r", Cursor(), lambda skill, cursor: None, "invalid_target"),
+                                              ("e", Cursor(), lambda skill, cursor: None, "invalid_ground"),
+                                              ("e", GROUND, lambda skill, cursor: "invalid_ground", "invalid_ground")):
+            with self.subTest(slot=slot, expected=expected):
+                result = self.press(state, slot, cursor, spatial_check=check)
                 self.assertEqual(result.state, state)
                 self.assertEqual(result.events[-1]["reason"], expected)
 

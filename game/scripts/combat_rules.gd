@@ -57,7 +57,8 @@ func target(skill: Dictionary, cursor: Dictionary):
 func failure(state: Dictionary, skill: Dictionary, cursor: Dictionary, spatial: Callable):
 	for check in policy.failure_order:
 		if check == "target" and target(skill, cursor) == null:
-			return "invalid_target"
+			# A placement with no floor under the cursor is a ground failure, not a missing enemy.
+			return "invalid_ground" if skill.kind == "ground" else "invalid_target"
 		if check == "spatial" and skill.kind not in ["self", "tool"]:
 			var reason = spatial.call(skill, cursor)
 			assert(reason == null or reason in ["out_of_range", "invalid_ground"])

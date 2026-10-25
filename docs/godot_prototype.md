@@ -76,7 +76,7 @@ powershell -ExecutionPolicy Bypass -File tools/run_godot.ps1 -RenderCheck
 ```
 
 - Python 회귀 검사 43개 통과.
-- [Godot 규칙 재생](../game/tests/replay_rules.gd): **동일한** [JSON 입력 시나리오](../tests/fixtures/combat_rules.json) 13개·38단계와 소수 유지비 검사를 통과. [보고서](../reports/godot_rules_report.json).
+- [Godot 규칙 재생](../game/tests/replay_rules.gd): **동일한** [JSON 입력 시나리오](../tests/fixtures/combat_rules.json) 13개·39단계와 소수 유지비 검사를 통과. [보고서](../reports/godot_rules_report.json).
 - [전투 통합 검사](../game/tests/smoke_arena.gd): 실제 물리 레이·뷰포트 마우스 입력·이동·HP 피해·사거리·소환 위치·공구 유지/고갈·대체 공격·정지·사망/재시작 등을 검사. [보고서](../reports/godot_smoke_report.json)는 실행 때 갱신된다.
 - [누르고 있기 검사](../game/tests/hold_input.gd): 바닥 유지 이동 갱신, 적 위를 지나가도 공격하지 않음, 적 고정 반복 공격과 커서 이탈, 뗄 때 정지, 표적 이동·사망, 모델 전체 선택, 공격 속도에 따른 간격, 동작 중 입력 대기, 우클릭 반복, 토글·소환 키의 단일 시전을 검사한다. [보고서](../reports/godot_hold_report.json).
 - [A5 시험 도구 검사](../game/tests/mana_a5.gd): 공구 자동 해제·마나 부족 실패 집계, 기술 공백 시작·누적·종료·최장값, 비용별 부족 판정, 처치 후 가장자리 재등장, 연속 교전의 필드 미정리, 기록 저장과 중복 방지, 회복량 변경 시 새 측정, 사망 시 저장, 모드 종료 복귀를 검사한다. [보고서](../reports/godot_a5_report.json).

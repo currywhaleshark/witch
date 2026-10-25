@@ -19,6 +19,7 @@
     "summon stores cursor target",
     "summon cast preserves active tool",
     "turret spawns on picked ground",
+    "placement off the floor reports unplaceable ground",
     "upkeep depletes MP and releases tool",
     "left fallback preserves binding in live scene",
     "right click fails at zero MP",
@@ -29,10 +30,9 @@
     "dead player cannot cast",
     "restart rebuilds actors and resources",
     "offscreen automaton returns toward player",
-    "kills remove targets and complete arena",
-    "rendered viewport screenshot saved"
+    "kills remove targets and complete arena"
   ],
-  "display": "Windows",
+  "display": "headless",
   "engine": "4.6.2-stable (official)",
   "failures": []
 }
