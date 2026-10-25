@@ -33,17 +33,25 @@ func run() -> void:
 	move.position = arena.camera.unproject_position(arena.player.position + Vector3(2, 0, 0))
 	root.push_input(move, true)
 	check(arena.moving, "viewport mouse event requests movement")
+	var release = move.duplicate()
+	release.pressed = false
+	root.push_input(release, true)
 	var start: Vector3 = arena.player.position
+	var view: Basis = arena.camera.global_basis
+	var offset: Vector3 = arena.camera.position - arena.player.position
 	await frame(25)
 	check(arena.player.position.distance_to(start) > 0.5, "physics player moves toward clicked ground")
+	check(arena.camera.global_basis.is_equal_approx(view) and (arena.camera.position - arena.player.position).is_equal_approx(offset), "camera keeps a fixed angle and follows by translation")
 	arena.request_slot("lmb", {"ground": [10, 0, 10]}, true)
 	check(not arena.moving, "Shift force attack stops previous movement")
 	check(arena.last_events[-1].type == "cast", "Shift ground casts basic attack immediately")
-	arena.state.cooldowns.clear()
+	check(arena.action_time > 0 and not arena.state.cooldowns.has("basic_attack"), "basic attack starts an attack motion instead of a cooldown")
+	arena.action_time = 0.0
 	arena.enemies.enemy_0.body.position = arena.player.position + Vector3(1.8, 0, 0)
 	var before: float = arena.enemies.enemy_0.hp
 	arena.request_slot("lmb", {"enemy_id": "enemy_0"})
 	check(arena.enemies.enemy_0.hp < before, "targeted basic attack deals real HP damage")
+	arena.action_time = 0.0
 	var mp: float = arena.state.mana
 	arena.enemies.enemy_5.body.position = Vector3(-13, 0, -11)
 	arena.request_slot("rmb", {"enemy_id": "enemy_5"})
@@ -64,6 +72,7 @@ func run() -> void:
 	arena.request_slot("lmb", {"enemy_id": "enemy_0"})
 	check(arena.last_events[0].type == "basic_attack_fallback" and arena.state.bindings.lmb == "shotgun", "left fallback preserves binding in live scene")
 	arena.state.cooldowns.clear()
+	arena.action_time = 0.0
 	arena.request_slot("rmb", {"ground": [2, 0, 2]})
 	check(arena.last_events[-1].reason == "insufficient_mana", "right click fails at zero MP")
 	check(arena.message_time > 0, "failure creates overhead feedback")

@@ -25,7 +25,8 @@ func _init(catalog: Dictionary) -> void:
 		assert((skill.kind == "tool") == (skill.upkeep_per_second > 0))
 		skills[skill.id] = skill
 	basic_id = catalog.basic_attack_id
-	assert(skills[basic_id].kind == "aim" and skills[basic_id].mana_cost == 0)
+	# Basic attack pacing comes from attack speed outside this module, never a cooldown.
+	assert(skills[basic_id].kind == "aim" and skills[basic_id].mana_cost == 0 and skills[basic_id].cooldown_seconds == 0)
 
 func initial_state(maximum: float, mana = null) -> Dictionary:
 	var current: float = maximum if mana == null else float(mana)

@@ -255,6 +255,8 @@ class CombatRuleTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             Skill("bad", SkillKind.TOOL, "0", "0", "0")
         with self.assertRaises(ValueError):
+            CombatRules([Skill("basic_attack", SkillKind.AIM, "0", "0.6", "0")], "basic_attack", self.rules.policy)
+        with self.assertRaises(ValueError):
             replace(self.rules.policy, non_mana_failure="auto_move_and_cast")
         with self.assertRaises(ValueError):
             replace(self.rules.policy, failure_order=("mana", "mana", "target", "spatial"))

@@ -61,6 +61,22 @@ static func body(parent: Node3D, pos: Vector3, layer: int) -> CharacterBody3D:
 	node.add_child(shape)
 	return node
 
+static func pick_volume(parent: Node3D, radius: float, height: float, layer: int) -> Area3D:
+	# Cursor-only volume covering the drawn silhouette at any facing; movement keeps the capsule.
+	var area = Area3D.new()
+	area.collision_layer = layer
+	area.collision_mask = 0
+	area.monitoring = false
+	parent.add_child(area)
+	var shape = CollisionShape3D.new()
+	var cylinder_shape = CylinderShape3D.new()
+	cylinder_shape.radius = radius
+	cylinder_shape.height = height
+	shape.shape = cylinder_shape
+	shape.position.y = height / 2
+	area.add_child(shape)
+	return area
+
 static func witch(parent: Node3D) -> Node3D:
 	var model = Node3D.new()
 	parent.add_child(model)

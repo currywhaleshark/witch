@@ -5,6 +5,9 @@ const Hud = preload("res://scripts/hud.gd")
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
+const PICK_LAYER = 8
+# Held inputs repeat only attack-like casts; toggles, summons and placement stay one per press.
+const REPEAT_KINDS = ["aim", "enemy"]
 var config: Dictionary
 var rules: RefCounted
 var state: Dictionary
@@ -17,6 +20,10 @@ var hp: float
 var destination: Vector3
 var moving = false
 var pending_cast: Dictionary = {}
+var hold: Dictionary = {}
+var queued_input: Dictionary = {}
+var action_time = 0.0
+var pointer = Vector2.ZERO
 var enemies: Dictionary = {}
 var allies: Array = []
 var effects: Array = []
@@ -99,13 +106,19 @@ func _build_field() -> void:
 	camera.size = 20
 	camera.far = 100
 	add_child(camera)
-	camera.position = Vector3(12, 16, 16)
-	camera.look_at(Vector3.ZERO)
+	# 45° yaw and 30° pitch draw floor tiles as 2:1 diamonds, like a 2D quarter view.
+	camera.rotation_degrees = Vector3(-30, 45, 0)
+	place_camera(Vector3.ZERO)
 	camera.current = true
 	hover_ring = Shape.ring(world, Vector3.ZERO, 0.65, RED)
 	move_marker = Shape.ring(world, Vector3.ZERO, 0.3, TEAL)
 	hover_ring.visible = false
 	move_marker.visible = false
+
+func place_camera(focus: Vector3) -> void:
+	# The angle never changes; the view only slides with the witch, kept a little below center.
+	var screen_up = Vector3(-camera.basis.z.x, 0, -camera.basis.z.z).normalized()
+	camera.position = focus + screen_up + camera.basis.z * 30
 
 func _build_audio() -> void:
 	if not ResourceLoader.exists("res://audio/mechanical_impact.wav"):
@@ -157,6 +170,9 @@ func reset_arena() -> void:
 	paused = false
 	moving = false
 	pending_cast.clear()
+	hold.clear()
+	queued_input.clear()
+	action_time = 0
 	message_time = 0
 	hit_time = 0
 	fallback_time = 0
@@ -169,6 +185,9 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false) -> void:
 	var body = Shape.body(world, pos, 2)
 	body.set_meta("enemy_id", id)
 	var model = Shape.enemy(body, heavy)
+	var size = 1.15 if heavy else 1.0
+	var pick = Shape.pick_volume(body, 0.7 * size, 1.65 * size, PICK_LAYER)
+	pick.set_meta("enemy_id", id)
 	var maximum: float = config.heavy_hp if heavy else config.enemy_hp
 	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": heavy, "cooldown": 1.0, "windup": 0.0, "slow": 0.0, "flash": 0.0}
 
@@ -190,21 +209,33 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_H:
 				help_visible = not help_visible
 				return
+	if event is InputEventMouse:
+		pointer = event.position
+	if event is InputEventMouseButton and not event.pressed and hold.get("button") == event.button_index:
+		hold.clear()
+	if event is InputEventKey and not event.pressed and hold.get("key") == event.physical_keycode:
+		hold.clear()
 	if paused or hp <= 0:
 		return
 	var slot = ""
 	var shift = false
-	var pointer = get_viewport().get_mouse_position()
+	var source = {}
 	if event is InputEventMouseButton and event.pressed:
-		pointer = event.position
 		shift = event.shift_pressed
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			slot = "lmb"
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			slot = "rmb"
+		source = {"button": event.button_index}
 	elif event is InputEventKey and event.pressed and not event.echo:
 		shift = event.shift_pressed
 		slot = {KEY_Q: "q", KEY_W: "w", KEY_E: "e", KEY_R: "r"}.get(event.physical_keycode, "")
+		source = {"key": event.physical_keycode}
+		if event.physical_keycode == KEY_F4:
+			var steps: Array = config.attack_speed_steps
+			config.attack_speed_score = steps[(steps.find(config.attack_speed_score) + 1) % steps.size()]
+			show_message("공속 점수 %d · 기본 공격 %.2f초" % [config.attack_speed_score, attack_seconds(false)])
+			return
 		if event.physical_keycode == KEY_F1:
 			cancel_pending_cast()
 			state = rules.bind(state, "lmb", "shotgun" if state.bindings.lmb == "basic_attack" else "basic_attack")
@@ -217,10 +248,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.physical_keycode == KEY_F3:
 			state = rules.restore_mana(state, state.max_mana).state
 			return
-	if slot != "":
-		var over_field = pointer.y < get_viewport().get_visible_rect().size.y - 155
-		if over_field or event is InputEventKey:
-			request_slot(slot, pick_cursor(pointer) if over_field else {}, shift)
+	if slot != "" and (pointer_over_field() or event is InputEventKey):
+		var cursor = field_cursor()
+		# Pressing on an enemy locks it for the whole hold; otherwise the hold follows the cursor.
+		hold = source.merged({"slot": slot, "shift": shift, "enemy_id": cursor.get("enemy_id", "")})
+		request_slot(slot, cursor, shift)
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		hold.clear()
+
+func pointer_over_field() -> bool:
+	return pointer.y < get_viewport().get_visible_rect().size.y - 155
+
+func field_cursor() -> Dictionary:
+	return pick_cursor(pointer) if pointer_over_field() else {}
 
 func pick_cursor(screen: Vector2) -> Dictionary:
 	var origin = camera.project_ray_origin(screen)
@@ -229,7 +271,9 @@ func pick_cursor(screen: Vector2) -> Dictionary:
 	var cursor: Dictionary = {}
 	if point != null and absf(point.x) < 14.25 and absf(point.z) < 12.25:
 		cursor.ground = [point.x, 0, point.z]
-	var query = PhysicsRayQueryParameters3D.create(origin, origin + direction * 100, 2)
+	var query = PhysicsRayQueryParameters3D.create(origin, origin + direction * 100, PICK_LAYER)
+	query.collide_with_areas = true
+	query.collide_with_bodies = false
 	var hit = get_world_3d().direct_space_state.intersect_ray(query)
 	if not hit.is_empty() and hit.collider.has_meta("enemy_id"):
 		var id: String = hit.collider.get_meta("enemy_id")
@@ -290,6 +334,10 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		return
 	if slot not in rules.SLOTS:
 		return
+	if action_time > 0:
+		# An attack motion finishes first; the latest input runs right after it.
+		queued_input = {"slot": slot, "cursor": cursor.duplicate(true), "shift": shift}
+		return
 	cancel_pending_cast()
 	var stationary = shift and slot == "lmb"
 	if stationary:
@@ -316,6 +364,45 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		tick_pending_cast(0)
 		return
 	apply_transition(result)
+
+func tick_hold() -> void:
+	if hold.is_empty():
+		return
+	var slot: String = hold.slot
+	var locked: String = hold.enemy_id
+	if locked != "" and not enemies.has(locked):
+		hold.clear()
+		return
+	var cursor = field_cursor()
+	if slot == "lmb" and not hold.shift and locked == "":
+		# A held ground click steers movement; sweeping over enemies never starts an attack.
+		if cursor.get("ground") != null and queued_input.is_empty():
+			set_destination(point(cursor.ground))
+		return
+	if action_time > 0 or not pending_cast.is_empty() or not queued_input.is_empty():
+		return
+	if locked != "":
+		cursor = {"enemy_id": locked}
+	elif cursor.get("ground") != null:
+		cursor = {"ground": cursor.ground}
+	else:
+		return
+	# Repeat only when the cast is available now; cooldown or mana gaps wait silently.
+	var cast = cast_event(rules.press(state, slot, cursor, spatial_without_range, true))
+	if not cast.is_empty() and rules.skills[cast.skill].kind in REPEAT_KINDS:
+		request_slot(slot, cursor, hold.shift)
+
+func attack_seconds(tool: bool) -> float:
+	# Soft-cap shape proposed in 04 §4.1; every constant is a trial value.
+	var base: float = config.tool_attack_seconds if tool else config.basic_attack_seconds
+	var minimum: float = config.min_attack_seconds
+	return minimum + (base - minimum) / (1.0 + config.attack_speed_k * config.attack_speed_score)
+
+func set_destination(pos: Vector3) -> void:
+	destination = pos
+	moving = true
+	move_marker.position = pos + Vector3(0, 0.04, 0)
+	move_marker.visible = true
 
 func tick_pending_cast(dt: float) -> void:
 	if pending_cast.is_empty():
@@ -364,11 +451,7 @@ func apply_transition(result: Dictionary) -> void:
 	last_events = result.events
 	for event in last_events:
 		match event.type:
-			"move_requested":
-				destination = point(event.position)
-				moving = true
-				move_marker.position = destination + Vector3(0, 0.04, 0)
-				move_marker.visible = true
+			"move_requested": set_destination(point(event.position))
 			"cast":
 				# Every successful stationary cast cancels previous click movement.
 				moving = false
@@ -402,8 +485,7 @@ func execute_cast(event: Dictionary) -> void:
 					damage_enemy(best, damage)
 				else:
 					damage_enemy(best, damage)
-			if tool:
-				state.cooldowns.basic_attack = config.tool_attack_cooldown
+			action_time = attack_seconds(tool)
 			beam(player.position + Vector3.UP, player.position + direction * 2.3 + Vector3.UP, BRASS if tool else TEAL, 0.12)
 			play_cue(0.8 if tool else 1.2)
 		"shotgun":
@@ -455,6 +537,10 @@ func damage_enemy(id: String, amount: float) -> void:
 		if pending_cast.get("cursor", {}).get("enemy_id") == id:
 			cancel_pending_cast()
 			show_message("대상이 사라졌습니다")
+		if queued_input.get("cursor", {}).get("enemy_id") == id:
+			queued_input.clear()
+		if hold.get("enemy_id") == id:
+			hold.clear()
 		if enemies.is_empty():
 			cancel_pending_cast()
 
@@ -467,6 +553,8 @@ func damage_player(amount: float) -> void:
 	play_cue(0.75)
 	if hp == 0:
 		cancel_pending_cast()
+		hold.clear()
+		queued_input.clear()
 		moving = false
 		state.active_tool = null
 		move_marker.visible = false
@@ -508,8 +596,16 @@ func _physics_process(dt: float) -> void:
 			if event.type == "tool_released":
 				show_message("마나 소진 · 공구 해제")
 		state = rules.restore_mana(state, config.mana_regen * dt).state
+		if action_time > 0:
+			action_time = maxf(0, action_time - dt)
+			if action_time == 0 and not queued_input.is_empty():
+				var queued = queued_input
+				queued_input = {}
+				request_slot(queued.slot, queued.cursor, queued.shift)
+		tick_hold()
 		tick_pending_cast(dt)
-		if moving:
+		# The witch stands still for the attack motion; held steering resumes afterwards.
+		if moving and action_time <= 0:
 			var delta: Vector3 = destination - player.position
 			if delta.length() < (0.01 if not pending_cast.is_empty() else 0.15):
 				moving = false
@@ -524,9 +620,7 @@ func _physics_process(dt: float) -> void:
 	tool_ring.visible = state.active_tool != null
 	tool_visual.visible = state.active_tool != null
 	player_model.rotation.z = sin(elapsed * 26) * 0.08 if hit_time > 0 else 0.0
-	var look_target = player.position + Vector3(0, 0, -1.0)
-	camera.position = camera.position.lerp(look_target + Vector3(12, 16, 16), 1.0 - exp(-6 * dt))
-	camera.look_at(look_target)
+	place_camera(player.position)
 	var hovered = pick_cursor(get_viewport().get_mouse_position())
 	hover_id = hovered.get("enemy_id", "")
 	hover_ring.visible = enemies.has(hover_id)

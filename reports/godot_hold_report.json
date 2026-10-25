@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "whole normal enemy silhouette is clickable",
+    "whole heavy enemy silhouette is clickable",
+    "ground press starts movement",
+    "held ground click follows the cursor",
+    "held move sweeping over an enemy does not attack",
+    "release stops steering",
+    "press on enemy head attacks immediately",
+    "basic attack uses no cooldown",
+    "held attack repeats once per basic attack motion",
+    "held target stays locked when cursor leaves it",
+    "release stops repeated attacks",
+    "attack speed shortens motion above its floor",
+    "faster attack speed fits more held attacks in the same time",
+    "held lock follows a target that moves out of range",
+    "input during attack motion waits",
+    "queued move runs after the attack motion",
+    "target death ends the held lock",
+    "held right click repeats an attack skill at its cooldown",
+    "held tool key toggles only once",
+    "held summon key spawns only once"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

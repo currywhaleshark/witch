@@ -136,6 +136,9 @@ class CombatRules:
         basic = self.skills[basic_attack_id]
         if basic.kind != SkillKind.AIM or basic.mana_cost != ZERO:
             raise ValueError("The basic attack must support aimed force-casting at zero mana cost")
+        if basic.cooldown_seconds != ZERO:
+            # Its repeat rate is the engine's attack-speed action time, not a cooldown.
+            raise ValueError("The basic attack must not have a cooldown")
         self.basic_attack_id = basic_attack_id
         self.policy = policy
 
