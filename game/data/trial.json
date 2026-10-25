@@ -28,6 +28,10 @@
   "attack_speed_k": 0.04,
   "attack_speed_score": 0,
   "attack_speed_steps": [0, 20, 40],
+  "min_cast_ratio": 0.4,
+  "cast_speed_k": 0.04,
+  "cast_speed_score": 0,
+  "cast_speed_steps": [0, 20, 40],
   "tool_slow_seconds": 2,
   "shot_damage": 30,
   "summon_damage": 12,
@@ -41,11 +45,11 @@
   "summon_explosion_range": 2.5,
   "bindings": {"lmb": "basic_attack", "rmb": "shotgun", "q": "bolt_cutter", "w": "automaton", "e": "turret", "r": "relay"},
   "skills": [
-    {"id": "basic_attack", "kind": "aim", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 0, "range": 2.6},
-    {"id": "shotgun", "kind": "aim", "mana_cost": 10, "cooldown_seconds": 1.2, "upkeep_per_second": 0, "range": 8, "targeting": "direction"},
-    {"id": "bolt_cutter", "kind": "tool", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 5, "range": 0},
-    {"id": "automaton", "kind": "mobile_summon", "mana_cost": 15, "cooldown_seconds": 4, "upkeep_per_second": 0, "range": 14},
-    {"id": "turret", "kind": "ground", "mana_cost": 15, "cooldown_seconds": 5, "upkeep_per_second": 0, "range": 9},
-    {"id": "relay", "kind": "enemy", "mana_cost": 3, "cooldown_seconds": 0.5, "upkeep_per_second": 0, "range": 14}
+    {"id": "basic_attack", "kind": "aim", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 0, "range": 2.6, "release_ratio": 0.5},
+    {"id": "shotgun", "kind": "aim", "mana_cost": 10, "cooldown_seconds": 1.2, "upkeep_per_second": 0, "range": 8, "targeting": "direction", "cast_seconds": 0.25, "release_ratio": 0.5},
+    {"id": "bolt_cutter", "kind": "tool", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 5, "range": 0, "while_moving": true},
+    {"id": "automaton", "kind": "mobile_summon", "mana_cost": 15, "cooldown_seconds": 4, "upkeep_per_second": 0, "range": 14, "cast_seconds": 0.6, "release_ratio": 0.85},
+    {"id": "turret", "kind": "ground", "mana_cost": 15, "cooldown_seconds": 5, "upkeep_per_second": 0, "range": 9, "cast_seconds": 0.6, "release_ratio": 0.85},
+    {"id": "relay", "kind": "enemy", "mana_cost": 3, "cooldown_seconds": 0.5, "upkeep_per_second": 0, "range": 14, "while_moving": true}
   ]
 }

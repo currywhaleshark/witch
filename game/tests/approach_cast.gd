@@ -17,6 +17,13 @@ func step(count: int = 1) -> void:
 		await physics_frame
 		arena._physics_process(1.0 / 60.0 * Engine.time_scale)
 
+
+func release() -> void:
+	# Fast-forward the started motion to its release point.
+	if not arena.windup.is_empty():
+		arena.windup.release = 0.0
+		arena.tick_windup(0.0)
+
 func fresh(target: Vector3 = Vector3(8, 0, 0)) -> void:
 	arena.reset_arena()
 	arena.player.position = Vector3.ZERO
@@ -33,6 +40,7 @@ func fresh(target: Vector3 = Vector3(8, 0, 0)) -> void:
 func finish_approach() -> void:
 	for i in 240:
 		if arena.pending_cast.is_empty():
+			release()
 			return
 		await step()
 	check(false, "approach completes within test limit")
@@ -57,10 +65,13 @@ func run() -> void:
 
 	await fresh(Vector3(12, 0, 0))
 	arena.request_slot("rmb", {"enemy_id": "target"})
+	release()
 	check(arena.pending_cast.is_empty() and arena.player.position.is_equal_approx(Vector3.ZERO) and arena.state.mana == 50, "direction skill fires at a distant enemy without walking")
 	check(arena.enemies.target.hp == 60, "direction skill range still limits its reach")
 	arena.state.cooldowns.clear()
+	arena.action_time = 0
 	arena.request_slot("rmb", {"ground": [-12, 0, 0]})
+	release()
 	check(arena.pending_cast.is_empty() and arena.state.mana == 40 and not arena.moving, "direction skill aimed at far ground fires in place")
 
 	await fresh(Vector3(12, 0, 0))

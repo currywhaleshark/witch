@@ -16,6 +16,12 @@ func frame(count: int = 1) -> void:
 	for i in count:
 		await physics_frame
 
+func release() -> void:
+	# Fast-forward the started motion to its release point.
+	if not arena.windup.is_empty():
+		arena.windup.release = 0.0
+		arena.tick_windup(0.0)
+
 func run() -> void:
 	arena = load("res://main.tscn").instantiate()
 	root.add_child(arena)
@@ -44,12 +50,16 @@ func run() -> void:
 	check(arena.camera.global_basis.is_equal_approx(view) and (arena.camera.position - arena.player.position).is_equal_approx(offset), "camera keeps a fixed angle and follows by translation")
 	arena.request_slot("lmb", {"ground": [10, 0, 10]}, true)
 	check(not arena.moving, "Shift force attack stops previous movement")
-	check(arena.last_events[-1].type == "cast", "Shift ground casts basic attack immediately")
+	check(arena.last_events[-1].type == "windup_started" and arena.state.cooldowns.is_empty(), "attack starts its motion before the hit")
+	release()
+	check(arena.last_events[-1].type == "cast", "Shift ground casts basic attack at the release point")
 	check(arena.action_time > 0 and not arena.state.cooldowns.has("basic_attack"), "basic attack starts an attack motion instead of a cooldown")
 	arena.action_time = 0.0
 	arena.enemies.enemy_0.body.position = arena.player.position + Vector3(1.8, 0, 0)
 	var before: float = arena.enemies.enemy_0.hp
 	arena.request_slot("lmb", {"enemy_id": "enemy_0"})
+	check(arena.enemies.enemy_0.hp == before, "targeted basic attack waits for its release point")
+	release()
 	check(arena.enemies.enemy_0.hp < before, "targeted basic attack deals real HP damage")
 	arena.action_time = 0.0
 	var mp: float = arena.state.mana
@@ -59,17 +69,25 @@ func run() -> void:
 	arena.state.cooldowns.clear()
 	arena.request_slot("q", {})
 	check(arena.state.active_tool == "bolt_cutter", "tool activates without cursor")
+	mp = arena.state.mana
 	arena.request_slot("w", {"enemy_id": "enemy_0"})
+	check(arena.allies.is_empty() and arena.state.mana == mp, "summon spends nothing before its release point")
+	release()
 	check(arena.allies.size() == 1 and arena.allies[0].node.position.distance_to(arena.player.position) < 1.3, "automaton spawns beside player")
 	check(arena.allies[0].target == "enemy_0", "summon stores cursor target")
 	check(arena.state.active_tool == "bolt_cutter", "summon cast preserves active tool")
+	# Skip the summon cast motion; inputs during it are queued.
+	arena.action_time = 0
 	var placement: Vector3 = arena.player.position + Vector3(0, 0, 3)
 	arena.request_slot("e", {"ground": [placement.x, 0, placement.z]})
+	release()
 	check(arena.allies.size() == 2 and arena.allies[1].node.position.is_equal_approx(placement), "turret spawns on picked ground")
 	arena.state = arena.rules.advance(arena.state, 30).state
 	check(arena.state.mana == 0 and arena.state.active_tool == null, "upkeep depletes MP and releases tool")
 	arena.state = arena.rules.bind(arena.state, "lmb", "shotgun")
+	arena.action_time = 0
 	arena.request_slot("lmb", {"enemy_id": "enemy_0"})
+	release()
 	check(arena.last_events[0].type == "basic_attack_fallback" and arena.state.bindings.lmb == "shotgun", "left fallback preserves binding in live scene")
 	arena.state.cooldowns.clear()
 	arena.action_time = 0.0
@@ -108,7 +126,10 @@ func run() -> void:
 	arena.muted = true
 	arena.request_slot("q", {})
 	arena.request_slot("w", {"ground": [0, 0, 0]})
+	release()
+	arena.action_time = 0
 	arena.request_slot("e", {"ground": [-2, 0, 1]})
+	release()
 	await frame(15)
 	arena.paused = true
 	# Freeze simulation without the pause overlay for the captured play view.

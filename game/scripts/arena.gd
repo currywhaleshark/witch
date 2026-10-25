@@ -21,7 +21,11 @@ var hp: float
 var destination: Vector3
 var moving = false
 var pending_cast: Dictionary = {}
+# A started motion waits here until its release point fires the effect.
+var windup: Dictionary = {}
 var hold: Dictionary = {}
+# A held ground click keeps steering on its own, so skill presses never replace it.
+var move_hold: Dictionary = {}
 var queued_input: Dictionary = {}
 var action_time = 0.0
 var pointer = Vector2.ZERO
@@ -180,7 +184,9 @@ func reset_arena() -> void:
 	paused = false
 	moving = false
 	pending_cast.clear()
+	windup.clear()
 	hold.clear()
+	move_hold.clear()
 	queued_input.clear()
 	action_time = 0
 	message_time = 0
@@ -227,8 +233,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				return
 	if event is InputEventMouse:
 		pointer = event.position
-	if event is InputEventMouseButton and not event.pressed and hold.get("button") == event.button_index:
-		hold.clear()
+	if event is InputEventMouseButton and not event.pressed:
+		if hold.get("button") == event.button_index:
+			hold.clear()
+		if move_hold.get("button") == event.button_index:
+			move_hold.clear()
 	if event is InputEventKey and not event.pressed and hold.get("key") == event.physical_keycode:
 		hold.clear()
 	if paused or hp <= 0:
@@ -252,6 +261,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			config.attack_speed_score = steps[(steps.find(config.attack_speed_score) + 1) % steps.size()]
 			restart_probe("settings_changed")
 			show_message("공속 점수 %d · 기본 공격 %.2f초" % [config.attack_speed_score, attack_seconds(false)])
+			return
+		if event.physical_keycode == KEY_F8:
+			var cast_steps: Array = config.cast_speed_steps
+			config.cast_speed_score = cast_steps[(cast_steps.find(config.cast_speed_score) + 1) % cast_steps.size()]
+			restart_probe("settings_changed")
+			show_message("시전 속도 점수 %d · 산탄 %.2f초 · 태엽인형 %.2f초" % [config.cast_speed_score, cast_seconds(rules.skills.shotgun), cast_seconds(rules.skills.automaton)])
 			return
 		if event.physical_keycode == KEY_F1:
 			cancel_pending_cast()
@@ -283,13 +298,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 	if slot != "" and (pointer_over_field() or event is InputEventKey):
 		var cursor = field_cursor()
-		# Pressing on an enemy locks it for the whole hold; otherwise the hold follows the cursor.
-		hold = source.merged({"slot": slot, "shift": shift, "enemy_id": cursor.get("enemy_id", "")})
+		if slot == "lmb" and not shift and cursor.get("enemy_id") == null:
+			move_hold = source
+		else:
+			# Pressing on an enemy locks it for the whole hold; otherwise the hold follows the cursor.
+			hold = source.merged({"slot": slot, "shift": shift, "enemy_id": cursor.get("enemy_id", "")})
 		request_slot(slot, cursor, shift)
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		hold.clear()
+		move_hold.clear()
 	elif what == NOTIFICATION_WM_CLOSE_REQUEST:
 		save_mana_log("quit")
 
@@ -339,10 +358,11 @@ func save_mana_log(reason: String) -> String:
 	var skills: Array = []
 	for id in rules.skills:
 		var skill: Dictionary = rules.skills[id]
-		skills.append({"id": id, "mana_cost": skill.mana_cost, "cooldown_seconds": skill.cooldown_seconds, "upkeep_per_second": skill.upkeep_per_second})
+		skills.append({"id": id, "mana_cost": skill.mana_cost, "cooldown_seconds": skill.cooldown_seconds, "upkeep_per_second": skill.upkeep_per_second,
+			"while_moving": skill.get("while_moving", false), "cast_seconds": cast_seconds(skill)})
 	var report = {"test": "A5", "status": config.status, "saved_at": Time.get_datetime_string_from_system(), "end_reason": reason,
 		"engine": Engine.get_version_info().string, "player_hp": hp, "metrics": probe.to_dict(),
-		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score,
+		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
 			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	if file == null:
@@ -477,9 +497,73 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		message_time = 0
 		tick_pending_cast(0)
 		return
+	begin_cast(slot, cursor, shift, stationary, result)
+
+func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool, result: Dictionary) -> void:
+	var cast = cast_event(result)
+	var skill: Dictionary = {} if cast.is_empty() else rules.skills[cast.skill]
+	var seconds = 0.0
+	if cast.get("skill") == rules.basic_id:
+		seconds = attack_seconds(cast.active_tool != null)
+	elif not skill.is_empty() and not skill.get("while_moving", false):
+		seconds = cast_seconds(skill)
+	if seconds <= 0:
+		apply_transition(result)
+		return
+	# The motion starts now; checks, costs, cooldown and the effect wait for its release point.
+	var snapshot = cursor.duplicate(true)
+	if skill.kind == "ground":
+		snapshot.erase("enemy_id")
+	elif skill.get("targeting") == "direction" and snapshot.get("enemy_id") != null:
+		# Keep aiming at the enemy, but still fire toward its last spot if it dies first.
+		var aim: Vector3 = enemies[snapshot.enemy_id].body.position
+		snapshot.ground = [aim.x, 0, aim.z]
+	if slot == "lmb":
+		moving = false
+		move_marker.visible = false
+	action_time = seconds
+	windup = {"slot": slot, "binding": state.bindings[slot], "cursor": snapshot, "shift": shift, "stationary": stationary,
+		"skill": cast.skill, "release": seconds * float(skill.get("release_ratio", 1.0))}
+	player_model.look_at(player.position + cast_direction(cast))
+	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
+
+func tick_windup(dt: float) -> void:
+	if windup.is_empty():
+		return
+	windup.release -= dt
+	if windup.release > 0:
+		return
+	var started: Dictionary = windup
+	windup = {}
+	if state.bindings[started.slot] != started.binding:
+		return
+	var cursor: Dictionary = started.cursor
+	if cursor.get("enemy_id") != null and not enemies.has(cursor.enemy_id):
+		if rules.skills[started.skill].get("targeting") != "direction":
+			show_message("대상이 사라졌습니다")
+			return
+		cursor.erase("enemy_id")
+	# Everything is checked again at release; a failed release spends nothing.
+	var checker: Callable = stationary_spatial_check if started.stationary else spatial_check
+	var result: Dictionary = rules.press(state, started.slot, cursor, checker, started.shift)
+	if result.events[-1].get("reason") == "out_of_range":
+		# A whiff stays silent; the missing hit sound and effect tell it apart.
+		last_events = result.events
+		probe.record(last_events)
+		return
 	apply_transition(result)
 
+func tick_move_hold() -> void:
+	# A held ground click steers movement; sweeping over enemies never starts an attack.
+	# An approach-cast or queued input takes over until it finishes, then steering resumes.
+	if move_hold.is_empty() or not pending_cast.is_empty() or not queued_input.is_empty():
+		return
+	var cursor = field_cursor()
+	if cursor.get("ground") != null:
+		set_destination(point(cursor.ground))
+
 func tick_hold() -> void:
+	tick_move_hold()
 	if hold.is_empty():
 		return
 	var slot: String = hold.slot
@@ -488,11 +572,6 @@ func tick_hold() -> void:
 		hold.clear()
 		return
 	var cursor = field_cursor()
-	if slot == "lmb" and not hold.shift and locked == "":
-		# A held ground click steers movement; sweeping over enemies never starts an attack.
-		if cursor.get("ground") != null and queued_input.is_empty():
-			set_destination(point(cursor.ground))
-		return
 	if action_time > 0 or not pending_cast.is_empty() or not queued_input.is_empty():
 		return
 	if locked != "":
@@ -506,11 +585,18 @@ func tick_hold() -> void:
 	if not cast.is_empty() and rules.skills[cast.skill].kind in REPEAT_KINDS:
 		request_slot(slot, cursor, hold.shift)
 
-func attack_seconds(tool: bool) -> float:
+func motion_seconds(base: float, minimum: float, k: float, score: float) -> float:
 	# Soft-cap shape proposed in 04 §4.1; every constant is a trial value.
+	return minimum + (base - minimum) / (1.0 + k * score)
+
+func attack_seconds(tool: bool) -> float:
 	var base: float = config.tool_attack_seconds if tool else config.basic_attack_seconds
-	var minimum: float = config.min_attack_seconds
-	return minimum + (base - minimum) / (1.0 + config.attack_speed_k * config.attack_speed_score)
+	return motion_seconds(base, config.min_attack_seconds, config.attack_speed_k, config.attack_speed_score)
+
+func cast_seconds(skill: Dictionary) -> float:
+	# The cast motion is the stop time; cast rate (FCR) is its own axis, apart from attack speed.
+	var base: float = skill.get("cast_seconds", 0.0)
+	return motion_seconds(base, base * config.min_cast_ratio, config.cast_speed_k, config.cast_speed_score)
 
 func set_destination(pos: Vector3) -> void:
 	destination = pos
@@ -542,7 +628,7 @@ func tick_pending_cast(dt: float) -> void:
 	var skill: Dictionary = rules.skills[cast.skill]
 	if spatial_check(skill, cursor) == null:
 		cancel_pending_cast()
-		apply_transition(rules.press(state, slot, cursor, spatial_check, true))
+		begin_cast(slot, cursor, true, false, rules.press(state, slot, cursor, spatial_check, true))
 		return
 	var target: Vector3 = enemies[cursor.enemy_id].body.position if cursor.get("enemy_id") != null else point(cursor.ground)
 	var direction: Vector3 = (target - player.position).normalized()
@@ -568,24 +654,30 @@ func apply_transition(result: Dictionary) -> void:
 		match event.type:
 			"move_requested": set_destination(point(event.position))
 			"cast":
-				# Every successful stationary cast cancels previous click movement.
-				moving = false
-				move_marker.visible = false
+				if event.slot == "lmb":
+					# A left-click cast is a new LMB command and replaces click movement.
+					moving = false
+					move_marker.visible = false
 				execute_cast(event)
 			"cast_failed", "input_failed":
 				show_message({"invalid_target": "대상이 없습니다", "out_of_range": "너무 멉니다", "invalid_ground": "설치할 수 없습니다", "cooldown": "아직 준비 중입니다", "insufficient_mana": "마나가 부족합니다", "empty_slot": "빈 슬롯입니다"}.get(event.reason, "사용할 수 없습니다"))
 			"basic_attack_fallback": fallback_time = 0.7
 			"tool_changed": play_cue(1.65)
 
-func execute_cast(event: Dictionary) -> void:
-	var target = player.position - player_model.basis.z
+func cast_target(event: Dictionary) -> Vector3:
 	if event.get("target_enemy") != null and enemies.has(event.target_enemy):
-		target = enemies[event.target_enemy].body.position
-	elif event.get("position") != null:
-		target = point(event.position)
-	var direction: Vector3 = (target - player.position).normalized()
-	if direction.length() < 0.01:
-		direction = Vector3.FORWARD
+		return enemies[event.target_enemy].body.position
+	if event.get("position") != null:
+		return point(event.position)
+	return player.position - player_model.basis.z
+
+func cast_direction(event: Dictionary) -> Vector3:
+	var direction: Vector3 = (cast_target(event) - player.position).normalized()
+	return direction if direction.length() >= 0.01 else Vector3.FORWARD
+
+func execute_cast(event: Dictionary) -> void:
+	var target = cast_target(event)
+	var direction = cast_direction(event)
 	player_model.look_at(player.position + direction)
 	match event.skill:
 		"basic_attack":
@@ -600,7 +692,6 @@ func execute_cast(event: Dictionary) -> void:
 					damage_enemy(best, damage)
 				else:
 					damage_enemy(best, damage)
-			action_time = attack_seconds(tool)
 			beam(player.position + Vector3.UP, player.position + direction * 2.3 + Vector3.UP, BRASS if tool else TEAL, 0.12)
 			play_cue(0.8 if tool else 1.2)
 		"shotgun":
@@ -673,7 +764,9 @@ func damage_player(amount: float) -> void:
 		probe.counts.deaths += 1
 		save_mana_log("death")
 		cancel_pending_cast()
+		windup.clear()
 		hold.clear()
+		move_hold.clear()
 		queued_input.clear()
 		moving = false
 		state.active_tool = null
@@ -720,6 +813,7 @@ func _physics_process(dt: float) -> void:
 		if a5_mode:
 			probe.tick(dt, skill_gap(), unaffordable_skills())
 			tick_respawns(dt)
+		tick_windup(dt)
 		if action_time > 0:
 			action_time = maxf(0, action_time - dt)
 			if action_time == 0 and not queued_input.is_empty():
@@ -744,6 +838,8 @@ func _physics_process(dt: float) -> void:
 	tool_ring.visible = state.active_tool != null
 	tool_visual.visible = state.active_tool != null
 	player_model.rotation.z = sin(elapsed * 26) * 0.08 if hit_time > 0 else 0.0
+	# Placeholder windup pose until real attack/cast animations exist.
+	player_model.rotation.x = -0.22 if not windup.is_empty() else 0.0
 	place_camera(player.position)
 	var hovered = pick_cursor(get_viewport().get_mouse_position())
 	hover_id = hovered.get("enemy_id", "")

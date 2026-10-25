@@ -18,6 +18,13 @@ func step(count: int = 1) -> void:
 		await physics_frame
 		arena._physics_process(1.0 / 60.0)
 
+
+func release() -> void:
+	# Fast-forward the started motion to its release point.
+	if not arena.windup.is_empty():
+		arena.windup.release = 0.0
+		arena.tick_windup(0.0)
+
 func calm() -> void:
 	arena.config.enemy_speed = 0
 	arena.config.mana_regen = 0
@@ -70,6 +77,7 @@ func run() -> void:
 	check(not arena.field_cleared(), "endless field never counts as cleared")
 	arena.state = arena.rules.restore_mana(arena.state, 60).state
 	arena.request_slot("rmb", {"ground": [3, 0, 3]})
+	release()
 	check(arena.last_events[-1].type == "cast", "casting still works while the field refills")
 
 	var path: String = arena.save_mana_log("manual")

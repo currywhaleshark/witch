@@ -51,7 +51,7 @@ func _draw() -> void:
 	if arena.help_visible:
 		panel(Rect2(w - 292, 120, 268, 151), Color("11232de8"), Color("3c5358"))
 		label_at(Vector2(w - 274, 146), "현장 조작", 14, GOLD, true)
-		var hints = ["좌클릭 (유지)   이동 / 적 공격", "Shift + 좌클릭   제자리 공격", "우클릭 · QWER   커서 지정 · 접근 시전", "Esc   일시정지     H   도움말"]
+		var hints = ["좌클릭 (유지)   이동 / 적 공격", "Shift + 좌클릭   제자리 공격", "우클릭 · QWER   커서 지정 · 이동 유지", "Esc   일시정지     H   도움말"]
 		for i in hints.size():
 			label_at(Vector2(w - 274, 172 + i * 24), hints[i], 13, PAPER)
 	for id in arena.enemies:
@@ -108,6 +108,8 @@ func _draw() -> void:
 			detail = "유지 %s/s" % str(upkeep)
 		elif skill.id == "basic_attack":
 			detail = "동작 %.2f초" % arena.attack_seconds(active)
+		elif skill.get("cast_seconds", 0.0) > 0:
+			detail = "MP %d · %.2f초" % [skill.mana_cost, arena.cast_seconds(skill)]
 		centered(rect.position + Vector2(45, 98), detail, 11, MUTED)
 		if cooldown > 0:
 			draw_rect(Rect2(rect.position + Vector2(1, 23), Vector2(89, 42)), Color(0.02, 0.05, 0.07, 0.85))
@@ -130,7 +132,7 @@ func _draw() -> void:
 		centered(Vector2(w / 2, h / 2 + 14), "Enter  다시 시작    ·    M  효과음 전환", 17, MUTED)
 		if arena.paused:
 			centered(Vector2(w / 2, h / 2 + 53), "Esc  계속하기", 16, TEAL)
-			centered(Vector2(w / 2, h / 2 + 110), "시험 도구   F1 좌클릭 기본/산탄   ·   F2 마나 소진   ·   F3 마나 회복   ·   F4 공속 점수", 13, MUTED)
+			centered(Vector2(w / 2, h / 2 + 110), "시험 도구   F1 좌클릭 기본/산탄   ·   F2 마나 소진   ·   F3 마나 회복   ·   F4 공속 점수   ·   F8 시전 속도 점수", 13, MUTED)
 			centered(Vector2(w / 2, h / 2 + 134), "A5 마나 시험   F5 연속 교전 켜기/끄기   ·   F6 기록 저장   ·   F7 마나 회복량", 13, MUTED)
 
 func a5_panel(pos: Vector2) -> void:
