@@ -45,6 +45,10 @@ var message = ""
 var message_time = 0.0
 var fallback_time = 0.0
 var hit_time = 0.0
+# Hit recovery: an unblocked hit stuns the witch and cancels what she was doing.
+var stun_time = 0.0
+var shield_time = 0.0
+var shield_ring: MeshInstance3D
 var elapsed = 0.0
 var last_events: Array = []
 var hover_id = ""
@@ -62,6 +66,8 @@ var last_log_path = ""
 var respawns: Array = []
 var spawn_serial = 0
 var rng = RandomNumberGenerator.new()
+# Block rolls use their own stream so they never shift A5 respawn positions.
+var block_rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
@@ -183,6 +189,7 @@ func reset_arena() -> void:
 	grinder_disk = Shape.cylinder(tool_visuals.grinder, Vector3(0.57, 1.7, -0.1), 0.24, 0.05, STEEL)
 	grinder_disk.rotation.z = PI / 2
 	Shape.ring(player, Vector3(0, 0.035, 0), 0.55, TEAL)
+	shield_ring = Shape.ring(player, Vector3(0, 1.0, 0), 0.85, STEEL, 0.06)
 	destination = player.position
 	hp = config.max_hp
 	kills = 0
@@ -197,6 +204,8 @@ func reset_arena() -> void:
 	action_time = 0
 	message_time = 0
 	hit_time = 0
+	stun_time = 0
+	shield_time = 0
 	fallback_time = 0
 	move_marker.visible = false
 	probe = ManaProbe.new()
@@ -285,6 +294,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			state = rules.bind(state, "r", options[(options.find(state.bindings.r) + 1) % options.size()])
 			restart_probe("settings_changed")
 			show_message("R 슬롯: " + rules.skills[state.bindings.r].name)
+			return
+		if event.physical_keycode in [KEY_F10, KEY_F11, KEY_F12]:
+			var key: String = {KEY_F10: "shield_level", KEY_F11: "dexterity", KEY_F12: "hit_recovery_score"}[event.physical_keycode]
+			var options: Array = config[key + "_steps"]
+			config[key] = options[(options.find(config[key]) + 1) % options.size()]
+			restart_probe("settings_changed")
+			show_message("방패 Lv %d · 기교 %d · 막기 %d%% · 경직 %.2f초" % [config.shield_level, config.dexterity, roundi(100 * block_chance()), hit_recovery_seconds()])
 			return
 		if event.physical_keycode == KEY_F2:
 			state.mana = 0.0
@@ -716,6 +732,9 @@ func execute_cast(event: Dictionary) -> void:
 				beam(player.position + Vector3.UP, player.position + direction.rotated(Vector3.UP, angle) * rules.skills.shotgun.range + Vector3.UP, BRASS)
 			play_cue(0.65)
 		"bolt_cutter", "grinder": pulse(player.position, TOOL_COLORS[event.skill], 0.8)
+		"shield":
+			shield_time = float(rules.skills.shield.duration_seconds)
+			pulse(player.position + Vector3.UP, STEEL, 0.9)
 		"automaton":
 			var pos = player.position + Vector3(1, 0, 0.6)
 			pos.x = clampf(pos.x, -14, 14)
@@ -767,13 +786,37 @@ func damage_enemy(id: String, amount: float) -> void:
 		if enemies.is_empty():
 			cancel_pending_cast()
 
+func block_chance() -> float:
+	# Trial formula from shield level and dexterity; it only applies while the shield is up.
+	var shield: Dictionary = rules.skills.shield
+	var chance: float = shield.block_base + shield.block_per_level * (config.shield_level - 1) + shield.block_per_dexterity * config.dexterity
+	return clampf(chance, 0.0, shield.block_cap)
+
+func hit_recovery_seconds() -> float:
+	return motion_seconds(config.hit_recovery_seconds, config.min_hit_recovery_seconds, config.hit_recovery_k, config.hit_recovery_score)
+
 func damage_player(amount: float) -> void:
 	if hp <= 0:
+		return
+	if shield_time > 0 and block_rng.randf() < block_chance():
+		# A blocked hit deals nothing and never interrupts; sound and flash tell it apart.
+		pulse(player.position + Vector3.UP, STEEL, 0.75)
+		play_cue(2.2)
 		return
 	hp = maxf(0, hp - amount)
 	hit_time = 0.25
 	pulse(player.position, RED, 0.55)
 	play_cue(0.75)
+	if hp > 0 and amount >= config.max_hp * config.hit_stun_min_ratio:
+		# Only a heavy enough hit stuns. Hit recovery cancels the motion, approach, click move
+		# and queued input; nothing was spent yet.
+		windup.clear()
+		cancel_pending_cast()
+		queued_input.clear()
+		moving = false
+		move_marker.visible = false
+		stun_time = hit_recovery_seconds()
+		action_time = stun_time
 	if hp == 0:
 		probe.counts.deaths += 1
 		save_mana_log("death")
@@ -854,7 +897,8 @@ func _physics_process(dt: float) -> void:
 		tool_rings[id].visible = state.active_tool == id
 	if state.active_tool == "grinder" and not paused:
 		grinder_disk.rotate_object_local(Vector3.UP, dt * 18)
-	player_model.rotation.z = sin(elapsed * 26) * 0.08 if hit_time > 0 else 0.0
+	player_model.rotation.z = sin(elapsed * 26) * 0.08 if hit_time > 0 or stun_time > 0 else 0.0
+	shield_ring.visible = shield_time > 0
 	# Placeholder windup pose until real attack/cast animations exist.
 	player_model.rotation.x = -0.22 if not windup.is_empty() else 0.0
 	place_camera(player.position)
@@ -867,6 +911,8 @@ func _physics_process(dt: float) -> void:
 		message_time = maxf(0, message_time - dt)
 		fallback_time = maxf(0, fallback_time - dt)
 		hit_time = maxf(0, hit_time - dt)
+		stun_time = maxf(0, stun_time - dt)
+		shield_time = maxf(0, shield_time - dt)
 		for fx in effects.duplicate():
 			fx.life -= dt
 			if fx.life <= 0:

@@ -35,6 +35,8 @@ func fresh() -> void:
 	arena.enemies.clear()
 	arena.spawn_enemy("target", Vector3(2, 0, 0), true)
 	arena.enemies.target.cooldown = 999
+	# R defaults to the shield; these checks need the grinder there.
+	arena.state = arena.rules.bind(arena.state, "r", "grinder")
 	# Enough HP to survive a whole comparison sequence.
 	arena.enemies.target.hp = 1000.0
 	arena.enemies.target.max_hp = 1000.0
@@ -111,9 +113,11 @@ func run() -> void:
 
 	await fresh()
 	key(KEY_F9)
-	check(arena.state.bindings.r == "relay" and arena.state.bindings.q == "bolt_cutter", "F9 swaps R to the target relay")
+	check(arena.state.bindings.r == "relay" and arena.state.bindings.q == "bolt_cutter", "F9 cycles R from the grinder to the target relay")
 	key(KEY_F9)
-	check(arena.state.bindings.r == "grinder", "F9 swaps R back to the grinder")
+	check(arena.state.bindings.r == "shield", "F9 cycles R on to the shield")
+	key(KEY_F9)
+	check(arena.state.bindings.r == "grinder", "F9 cycles R back to the grinder")
 
 	var report = {"engine": Engine.get_version_info().string, "checks": checks, "failures": failures}
 	var out = ProjectSettings.globalize_path("res://").path_join("../reports/godot_tool_report.json").simplify_path()
