@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "the field mixes normal, champion and elite enemies",
+    "an elite has more HP and a bigger body",
+    "a normal enemy is hit at the base chance",
+    "grade evasion lowers the hit chance",
+    "dexterity raises the hit chance up to its cap",
+    "dexterity raises the witch's crit chance but not her summons'",
+    "a summon's hit chance ignores dexterity and still meets grade evasion",
+    "summon skill level raises its hit and crit chances",
+    "Shift+F10 cycles the automaton level, not the shield",
+    "Ctrl+F10 cycles the turret level",
+    "summon attacks can miss now that they roll to hit",
+    "a missed swing deals nothing and leaves no debuff",
+    "area attacks skip the hit roll",
+    "a crit multiplies damage and shakes the view",
+    "one shotgun blast rolls crit separately for each enemy",
+    "graded enemies hit harder",
+    "B brings in a heavy boss with boss HP",
+    "a test boss does not respawn in A5 mode",
+    "the log splits hits, misses and crits by source",
+    "the log keeps damage per source and the old totals",
+    "the log counts damage taken and stuns by attacker grade",
+    "the log counts kills by grade"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

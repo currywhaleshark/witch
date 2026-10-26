@@ -25,6 +25,8 @@ func release() -> void:
 func run() -> void:
 	arena = load("res://main.tscn").instantiate()
 	root.add_child(arena)
+	# Pin hit and crit rolls; stage B rolls have their own suite.
+	arena.force_rolls = {"hit": true, "crit": false}
 	await frame(3)
 	arena.muted = true
 	arena.config.mana_regen = 0

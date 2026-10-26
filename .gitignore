@@ -5,3 +5,7 @@ __pycache__/
 game/audio/*_source.wav
 game/audio/*_source.wav.import
 reports/*_runtime.log
+
+# Downloaded Mixamo source motions stay local; commercial game use is distinct
+# from publishing standalone source motion files in the repository.
+assets/characters/player/3d/source/motion_library/mixamo_local/

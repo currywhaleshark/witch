@@ -51,6 +51,8 @@ func run() -> void:
 	Engine.time_scale = 4
 	arena = load("res://main.tscn").instantiate()
 	root.add_child(arena)
+	# Pin hit and crit rolls; stage B rolls have their own suite.
+	arena.force_rolls = {"hit": true, "crit": false}
 	arena.set_physics_process(false)
 	await fresh()
 	var initial_mp: float = arena.state.mana

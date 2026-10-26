@@ -1,13 +1,22 @@
-; Godot 4.6 prototype. All balance is explicitly provisional.
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
+
 config/name="마녀도시 · 기계장치 전투 시험"
 run/main_scene="res://main.tscn"
-run/max_fps=120
 config/features=PackedStringArray("4.6", "GL Compatibility")
+run/max_fps=120
 
 [display]
+
 window/size/viewport_width=1280
 window/size/viewport_height=800
 window/size/window_width_override=1280
@@ -15,9 +24,7 @@ window/size/window_height_override=800
 window/stretch/mode="canvas_items"
 
 [rendering]
+
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.035, 0.055, 0.07, 1)
-
-[audio]
-driver/enable_input=false

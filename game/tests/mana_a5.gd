@@ -38,6 +38,8 @@ func logs() -> PackedStringArray:
 func run() -> void:
 	arena = load("res://main.tscn").instantiate()
 	root.add_child(arena)
+	# Pin hit and crit rolls; stage B rolls have their own suite.
+	arena.force_rolls = {"hit": true, "crit": false}
 	arena.set_physics_process(false)
 	arena.log_dir = OS.get_user_data_dir().path_join("a5_test_logs")
 	DirAccess.make_dir_recursive_absolute(arena.log_dir)

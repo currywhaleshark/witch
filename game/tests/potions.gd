@@ -47,6 +47,8 @@ func potion(index: int) -> Dictionary:
 func run() -> void:
 	arena = load("res://main.tscn").instantiate()
 	root.add_child(arena)
+	# Pin hit and crit rolls; stage B rolls have their own suite.
+	arena.force_rolls = {"hit": true, "crit": false}
 	arena.set_physics_process(false)
 
 	await fresh()

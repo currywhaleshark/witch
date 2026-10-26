@@ -3,10 +3,12 @@ const Rules = preload("res://scripts/combat_rules.gd")
 const Shape = preload("res://scripts/shapes.gd")
 const Hud = preload("res://scripts/hud.gd")
 const ManaProbe = preload("res://scripts/mana_probe.gd")
+const PlayerVisual = preload("res://scripts/player_visual.gd")
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
 const STEEL = Color("a9c1d6")
+const GOLD_FLASH = Color("ffe08a")
 # Each tool keeps its own colour on the witch, its ring and its swings.
 const TOOL_COLORS = {"bolt_cutter": BRASS, "grinder": STEEL}
 const PICK_LAYER = 8
@@ -17,6 +19,7 @@ var rules: RefCounted
 var state: Dictionary
 var player: CharacterBody3D
 var player_model: Node3D
+var player_visual: PlayerVisual
 var camera: Camera3D
 var world: Node3D
 var hud: Control
@@ -73,10 +76,17 @@ var spawn_serial = 0
 var rng = RandomNumberGenerator.new()
 # Block rolls use their own stream so they never shift A5 respawn positions.
 var block_rng = RandomNumberGenerator.new()
+# Hit and crit rolls; tests pin outcomes with force_rolls {"hit": bool, "crit": bool}.
+var combat_rng = RandomNumberGenerator.new()
+var force_rolls: Dictionary = {}
+var shake_time = 0.0
+var boss_serial = 0
 
 func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
 	rules = Rules.new(config)
+	block_rng.randomize()
+	combat_rng.randomize()
 	_build_field()
 	_build_audio()
 	var canvas = CanvasLayer.new()
@@ -132,7 +142,7 @@ func _build_field() -> void:
 			Shape.sphere(world, Vector3(x, 1.35, z), 0.15, TEAL)
 	camera = Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	camera.size = 20
+	camera.size = 20.0 / 1.75
 	camera.far = 100
 	add_child(camera)
 	# 45° yaw and 30° pitch draw floor tiles as 2:1 diamonds, like a 2D quarter view.
@@ -183,16 +193,14 @@ func reset_arena() -> void:
 	for slot in config.bindings:
 		state = rules.bind(state, slot, config.bindings[slot])
 	player = Shape.body(world, Vector3(0, 0, 2), 4)
-	player_model = Shape.witch(player)
-	tool_visuals = {"bolt_cutter": Node3D.new(), "grinder": Node3D.new()}
-	for id in tool_visuals:
-		player_model.add_child(tool_visuals[id])
+	player_visual = PlayerVisual.new()
+	player.add_child(player_visual)
+	player_visual.initialize()
+	player_model = player_visual
+	tool_visuals = player_visual.tool_visuals
+	grinder_disk = player_visual.grinder_disk
+	for id in TOOL_COLORS:
 		tool_rings[id] = Shape.ring(player, Vector3(0, 0.08, 0), 0.7, TOOL_COLORS[id])
-	for x in [-0.13, 0.13]:
-		var jaw = Shape.box(tool_visuals.bolt_cutter, Vector3(0.57 + x, 1.66, -0.1), Vector3(0.10, 0.43, 0.16), BRASS)
-		jaw.rotation.z = x * 1.5
-	grinder_disk = Shape.cylinder(tool_visuals.grinder, Vector3(0.57, 1.7, -0.1), 0.24, 0.05, STEEL)
-	grinder_disk.rotation.z = PI / 2
 	Shape.ring(player, Vector3(0, 0.035, 0), 0.55, TEAL)
 	shield_ring = Shape.ring(player, Vector3(0, 1.0, 0), 0.85, STEEL, 0.06)
 	destination = player.position
@@ -225,18 +233,26 @@ func reset_arena() -> void:
 	rng.seed = 2510
 	var positions = [Vector3(-4, 0, -4), Vector3(3, 0, -5), Vector3(6, 0, 0), Vector3(-7, 0, 3), Vector3(2, 0, -9), Vector3(-8, 0, -8)]
 	for i in positions.size():
-		spawn_enemy("enemy_" + str(i), positions[i], i >= 4)
+		spawn_enemy("enemy_" + str(i), positions[i], i >= 4, config.field_grades[i])
 	spawn_serial = positions.size()
+	if not player_visual.loaded_ok:
+		show_message("캐릭터 자산을 불러오지 못했습니다")
 
-func spawn_enemy(id: String, pos: Vector3, heavy: bool = false) -> void:
+func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = "normal") -> void:
+	var rank: Dictionary = config.grades[grade]
 	var body = Shape.body(world, pos, 2)
 	body.set_meta("enemy_id", id)
 	var model = Shape.enemy(body, heavy)
-	var size = 1.15 if heavy else 1.0
+	var size: float = (1.15 if heavy else 1.0) * rank.scale
+	if rank.has("color"):
+		# Graded enemies wear their grade colour as a ground ring and a head band.
+		Shape.ring(body, Vector3(0, 0.05, 0), 0.75 * size, Color(rank.color), 0.06)
+		Shape.box(model, Vector3(0, 1.45, 0), Vector3(0.62, 0.1, 0.5), Color(rank.color))
 	var pick = Shape.pick_volume(body, 0.7 * size, 1.65 * size, PICK_LAYER)
 	pick.set_meta("enemy_id", id)
-	var maximum: float = config.heavy_hp if heavy else config.enemy_hp
-	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": heavy, "cooldown": 1.0, "windup": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0}
+	var maximum: float = (config.heavy_hp if heavy else config.enemy_hp) * rank.hp
+	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": heavy, "grade": grade, "size": size,
+		"cooldown": 1.0, "windup": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0}
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -316,10 +332,25 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		if event.physical_keycode in [KEY_F10, KEY_F11, KEY_F12]:
 			var key: String = {KEY_F10: "shield_level", KEY_F11: "dexterity", KEY_F12: "hit_recovery_score"}[event.physical_keycode]
+			if event.physical_keycode == KEY_F10 and (event.shift_pressed or event.ctrl_pressed):
+				# Shift/Ctrl+F10: automaton/turret skill level for summon accuracy and crit.
+				key = "automaton_level" if event.shift_pressed else "turret_level"
+				restart_probe("settings_changed")
+				var levels: Array = config.summon_level_steps
+				config[key] = levels[(levels.find(config[key]) + 1) % levels.size()]
+				var roller: String = key.trim_suffix("_level")
+				show_message("%s Lv %d · 명중 %d%% · 치명 %d%%" % [rules.skills[roller].name, config[key], roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[key] - 1), config.hit_min, config.hit_cap)), roundi(100 * crit_chance(roller))])
+				return
 			restart_probe("settings_changed")
 			var options: Array = config[key + "_steps"]
 			config[key] = options[(options.find(config[key]) + 1) % options.size()]
 			show_message("방패 Lv %d · 기교 %d · 막기 %d%% · 경직 %.2f초" % [config.shield_level, config.dexterity, roundi(100 * block_chance()), hit_recovery_seconds()])
+			return
+		if event.physical_keycode == KEY_B:
+			# Test tool: a boss walks in from a field edge.
+			spawn_enemy("boss_" + str(boss_serial), edge_point(), true, "boss")
+			boss_serial += 1
+			show_message("보스 등장")
 			return
 		if event.physical_keycode == KEY_F2:
 			state.mana = 0.0
@@ -412,6 +443,7 @@ func save_mana_log(reason: String) -> String:
 		"engine": Engine.get_version_info().string, "player_hp": hp, "metrics": probe.to_dict(),
 		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
 			"hit_recovery_score": config.hit_recovery_score, "shield_level": config.shield_level, "dexterity": config.dexterity,
+			"automaton_level": config.automaton_level, "turret_level": config.turret_level,
 			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	if file == null:
@@ -428,15 +460,18 @@ func tick_respawns(dt: float) -> void:
 		if entry.time > 0:
 			continue
 		respawns.erase(entry)
-		# Re-enter from a field edge away from the witch to keep a steady engagement.
-		var pos = Vector3.ZERO
-		for attempt in 12:
-			var along = rng.randf_range(-1, 1)
-			pos = [Vector3(13, 0, along * 11), Vector3(-13, 0, along * 11), Vector3(along * 13, 0, 11), Vector3(along * 13, 0, -11)][rng.randi() % 4]
-			if pos.distance_to(player.position) >= 8:
-				break
-		spawn_enemy("enemy_" + str(spawn_serial), pos, entry.heavy)
+		spawn_enemy("enemy_" + str(spawn_serial), edge_point(), entry.heavy, entry.grade)
 		spawn_serial += 1
+
+func edge_point() -> Vector3:
+	# Enter from a field edge away from the witch to keep a steady engagement.
+	var pos = Vector3.ZERO
+	for attempt in 12:
+		var along = rng.randf_range(-1, 1)
+		pos = [Vector3(13, 0, along * 11), Vector3(-13, 0, along * 11), Vector3(along * 13, 0, 11), Vector3(along * 13, 0, -11)][rng.randi() % 4]
+		if pos.distance_to(player.position) >= 8:
+			break
+	return pos
 
 func pointer_over_field() -> bool:
 	return pointer.y < get_viewport().get_visible_rect().size.y - 155
@@ -574,6 +609,7 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	windup = {"slot": slot, "binding": state.bindings[slot], "cursor": snapshot, "shift": shift, "stationary": stationary,
 		"skill": cast.skill, "release": seconds * float(skill.get("release_ratio", 1.0))}
 	player_model.look_at(player.position + cast_direction(cast))
+	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else "cast", seconds, float(skill.get("release_ratio", 1.0)))
 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
 
 func tick_windup(dt: float) -> void:
@@ -584,6 +620,7 @@ func tick_windup(dt: float) -> void:
 		return
 	var started: Dictionary = windup
 	windup = {}
+	player_visual.mark_release()
 	if state.bindings[started.slot] != started.binding:
 		return
 	var cursor: Dictionary = started.cursor
@@ -736,18 +773,24 @@ func execute_cast(event: Dictionary) -> void:
 			var best = nearest_enemy(player.position, rules.skills.basic_attack.range, direction, 0.2)
 			if event.get("target_enemy") != null and enemies.has(event.target_enemy):
 				best = event.target_enemy
-			if best != "":
-				if tool != null:
-					# Debuffs of different tools coexist; switching tools never clears them.
-					enemies[best][rules.skills[tool].debuff] = float(rules.skills[tool].debuff_seconds)
-				damage_enemy(best, damage)
 			beam(player.position + Vector3.UP, player.position + direction * 2.3 + Vector3.UP, TOOL_COLORS.get(tool, TEAL), 0.12)
-			play_cue({"bolt_cutter": 0.8, "grinder": 1.55}.get(tool, 1.2))
+			# A miss swings silently: no hit sound, no flash, no debuff.
+			if best != "" and tool != null:
+				var debuff: String = rules.skills[tool].debuff
+				var before: float = enemies[best][debuff]
+				# Debuffs of different tools coexist; switching tools never clears them.
+				enemies[best][debuff] = float(rules.skills[tool].debuff_seconds)
+				if strike(best, damage, true, "witch", tool) == "miss":
+					enemies[best][debuff] = before
+				else:
+					play_cue({"bolt_cutter": 0.8, "grinder": 1.55}[tool])
+			elif best != "" and strike(best, damage, true, "witch", "staff") != "miss":
+				play_cue(1.2)
 		"shotgun":
 			for id in enemies.keys():
 				var delta: Vector3 = enemies[id].body.position - player.position
 				if delta.length() <= rules.skills.shotgun.range and delta.normalized().dot(direction) > 0.86:
-					damage_enemy(id, config.shot_damage)
+					strike(id, config.shot_damage, false, "witch", "shotgun")
 			for angle in [-0.34, -0.17, 0, 0.17, 0.34]:
 				beam(player.position + Vector3.UP, player.position + direction.rotated(Vector3.UP, angle) * rules.skills.shotgun.range + Vector3.UP, BRASS)
 			play_cue(0.65)
@@ -781,11 +824,51 @@ func nearest_enemy(pos: Vector3, distance: float, direction: Vector3 = Vector3.Z
 			best = id
 	return best
 
-func damage_enemy(id: String, amount: float) -> void:
+func enemy_name(id: String) -> String:
+	var enemy: Dictionary = enemies[id]
+	return config.grades[enemy.grade].name + (" 중장형" if enemy.heavy else " 돌격형")
+
+func summon_level(roller: String) -> int:
+	return int(config[roller + "_level"])
+
+func hit_chance(id: String, roller: String = "witch") -> float:
+	# Trial accuracy against the target's grade evasion. The witch's comes from dexterity;
+	# a summon's comes from the level of the skill that built it, never from her stats (07 §2.1).
+	var chance: float = config.hit_base + config.hit_per_dexterity * config.dexterity
+	if roller != "witch":
+		chance = config.summon_hit_base + config.summon_hit_per_level * (summon_level(roller) - 1)
+	return clampf(chance - config.grades[enemies[id].grade].evasion, config.hit_min, config.hit_cap)
+
+func crit_chance(roller: String = "witch") -> float:
+	if roller != "witch":
+		return minf(config.crit_cap, config.summon_crit_base + config.summon_crit_per_level * (summon_level(roller) - 1))
+	return minf(config.crit_cap, config.crit_base + config.crit_per_dexterity * config.dexterity)
+
+func strike(id: String, amount: float, accuracy_roll: bool, roller: String, source: String) -> String:
+	# roller is "witch" or the summon skill ("automaton", "turret") whose level drives the rolls.
+	# One direct damage event: optional hit roll, then its own crit roll (area attacks call this per enemy).
 	if not enemies.has(id):
-		return
+		return "miss"
+	if accuracy_roll and not force_rolls.get("hit", combat_rng.randf() < hit_chance(id, roller)):
+		probe.strike(source, "miss", 0.0)
+		return "miss"
+	var crit: bool = force_rolls.get("crit", combat_rng.randf() < crit_chance(roller))
+	var at: Vector3 = enemies[id].body.position
+	var dealt: float = damage_enemy(id, amount * (config.crit_multiplier if crit else 1.0))
+	probe.strike(source, "crit" if crit else "hit", dealt)
+	if crit:
+		pulse(at + Vector3.UP * 0.9, GOLD_FLASH, 0.9)
+		play_cue(0.55)
+		shake_time = 0.12
+	return "crit" if crit else "hit"
+
+func damage_enemy(id: String, amount: float) -> float:
+	# Returns the HP actually removed, for the A5 log.
+	if not enemies.has(id):
+		return 0.0
 	var enemy: Dictionary = enemies[id]
 	# Trial shred: no armour formula exists yet, so shredded enemies take more direct damage.
+	var dealt: float = minf(maxf(enemy.hp, 0.0), amount * (config.shred_damage_taken if enemy.shred > 0 else 1.0))
 	enemy.hp -= amount * (config.shred_damage_taken if enemy.shred > 0 else 1.0)
 	enemy.flash = 0.16
 	if enemy.hp <= 0:
@@ -794,8 +877,10 @@ func damage_enemy(id: String, amount: float) -> void:
 		enemies.erase(id)
 		kills += 1
 		probe.counts.kills += 1
-		if a5_mode:
-			respawns.append({"time": float(config.a5_respawn_seconds), "heavy": enemy.heavy})
+		probe.grade(enemy.grade).kills += 1
+		# A test boss is a one-off; everything else keeps the A5 field topped up.
+		if a5_mode and enemy.grade != "boss":
+			respawns.append({"time": float(config.a5_respawn_seconds), "heavy": enemy.heavy, "grade": enemy.grade})
 		if pending_cast.get("cursor", {}).get("enemy_id") == id:
 			cancel_pending_cast()
 			show_message("대상이 사라졌습니다")
@@ -805,6 +890,7 @@ func damage_enemy(id: String, amount: float) -> void:
 			hold.clear()
 		if enemies.is_empty():
 			cancel_pending_cast()
+	return dealt
 
 func potion_cooldown(id: String) -> float:
 	var longest = 0.0
@@ -872,21 +958,25 @@ func block_chance() -> float:
 func hit_recovery_seconds() -> float:
 	return motion_seconds(config.hit_recovery_seconds, config.min_hit_recovery_seconds, config.hit_recovery_k, config.hit_recovery_score)
 
-func damage_player(amount: float) -> void:
+func damage_player(amount: float, by_grade: String = "unknown") -> void:
+	# by_grade names the attacker's grade for the A5 log; direct test calls leave it unknown.
 	if hp <= 0:
 		return
 	if shield_time > 0 and block_rng.randf() < block_chance():
 		# A blocked hit deals nothing and never interrupts; sound and flash tell it apart.
 		pulse(player.position + Vector3.UP, STEEL, 0.75)
 		play_cue(2.2)
+		probe.witch_hit(by_grade, 0.0, false, true)
 		return
+	# Only a heavy enough hit that leaves her standing stuns.
+	var stunned: bool = hp - amount > 0 and amount >= config.max_hp * config.hit_stun_min_ratio
+	probe.witch_hit(by_grade, minf(hp, amount), stunned, false)
 	hp = maxf(0, hp - amount)
 	hit_time = 0.25
 	pulse(player.position, RED, 0.55)
 	play_cue(0.75)
-	if hp > 0 and amount >= config.max_hp * config.hit_stun_min_ratio:
-		# Only a heavy enough hit stuns. Hit recovery cancels the motion, approach, click move
-		# and queued input; nothing was spent yet.
+	if stunned:
+		# Hit recovery cancels the motion, approach, click move and queued input; nothing was spent yet.
 		windup.clear()
 		cancel_pending_cast()
 		queued_input.clear()
@@ -894,6 +984,7 @@ func damage_player(amount: float) -> void:
 		move_marker.visible = false
 		stun_time = hit_recovery_seconds()
 		action_time = stun_time
+		player_visual.hit_react(stun_time)
 	if hp == 0:
 		probe.counts.deaths += 1
 		save_mana_log("death")
@@ -905,6 +996,7 @@ func damage_player(amount: float) -> void:
 		moving = false
 		state.active_tool = null
 		move_marker.visible = false
+		player_visual.freeze_for_death()
 
 func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	var node = Node3D.new()
@@ -935,6 +1027,7 @@ func eligible(ally: Dictionary, id: String) -> bool:
 func _physics_process(dt: float) -> void:
 	if not is_instance_valid(player):
 		return
+	var visual_start_position := player.position
 	if not paused and hp > 0 and not field_cleared():
 		elapsed += dt
 		var advanced: Dictionary = rules.advance(state, dt)
@@ -971,16 +1064,19 @@ func _physics_process(dt: float) -> void:
 		for id in enemies.keys():
 			_tick_enemy(enemies[id], dt)
 		_tick_allies(dt)
-	for id in tool_visuals:
-		tool_visuals[id].visible = state.active_tool == id
+	player_visual.set_active_tool(state.active_tool)
+	for id in tool_rings:
 		tool_rings[id].visible = state.active_tool == id
-	if state.active_tool == "grinder" and not paused:
+	if is_instance_valid(grinder_disk) and state.active_tool == "grinder" and not paused and hp > 0 and not field_cleared():
 		grinder_disk.rotate_object_local(Vector3.UP, dt * 18)
-	player_model.rotation.z = sin(elapsed * 26) * 0.08 if hit_time > 0 or stun_time > 0 else 0.0
+	var visual_distance := player.position.distance_to(visual_start_position)
+	player_visual.sync_state(dt, visual_distance > 0.0001, action_time, paused, hp <= 0, field_cleared(), visual_distance / maxf(dt, 0.000001))
 	shield_ring.visible = shield_time > 0
-	# Placeholder windup pose until real attack/cast animations exist.
-	player_model.rotation.x = -0.22 if not windup.is_empty() else 0.0
 	place_camera(player.position)
+	if shake_time > 0:
+		# Short crit jolt; the camera angle never changes, only a small offset.
+		shake_time = maxf(0, shake_time - dt)
+		camera.position += Vector3(sin(elapsed * 90), 0, cos(elapsed * 77)) * 0.06
 	var hovered = pick_cursor(get_viewport().get_mouse_position())
 	hover_id = hovered.get("enemy_id", "")
 	hover_ring.visible = enemies.has(hover_id)
@@ -1006,13 +1102,13 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	enemy.slow = maxf(0, enemy.slow - dt)
 	enemy.shred = maxf(0, enemy.shred - dt)
 	enemy.flash = maxf(0, enemy.flash - dt)
-	enemy.model.scale = Vector3.ONE * (1.15 if enemy.heavy else 1.0) * (1.08 if enemy.flash > 0 else 1.0)
+	enemy.model.scale = Vector3.ONE * enemy.size * (1.08 if enemy.flash > 0 else 1.0)
 	if enemy.windup > 0:
 		enemy.windup -= dt
 		enemy.model.rotation.z = sin(enemy.windup * 35) * 0.12
 		if enemy.windup <= 0:
 			if delta.length() < 1.65:
-				damage_player(config.enemy_damage * (1.7 if enemy.heavy else 1.0))
+				damage_player(config.enemy_damage * (1.7 if enemy.heavy else 1.0) * config.grades[enemy.grade].damage, enemy.grade)
 			enemy.cooldown = config.enemy_cooldown
 			enemy.model.rotation.z = 0
 		return
@@ -1020,7 +1116,7 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	if delta.length() > 11:
 		return
 	if delta.length() > 1.2:
-		enemy.body.velocity = delta.normalized() * config.enemy_speed * (0.65 if enemy.heavy else 1) * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
+		enemy.body.velocity = delta.normalized() * config.enemy_speed * (0.65 if enemy.heavy else 1) * config.grades[enemy.grade].speed * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
 		enemy.body.move_and_slide()
 		enemy.model.look_at(player.position)
 	elif enemy.cooldown <= 0:
@@ -1034,7 +1130,7 @@ func _tick_allies(dt: float) -> void:
 			if ally.mobile:
 				for id in enemies.keys():
 					if ally.node.position.distance_to(enemies[id].body.position) < config.summon_explosion_range:
-						damage_enemy(id, config.shot_damage)
+						strike(id, config.shot_damage, false, "automaton", "automaton_blast")
 				pulse(ally.node.position, BRASS, config.summon_explosion_range)
 			ally.node.queue_free()
 			allies.erase(ally)
@@ -1056,7 +1152,7 @@ func _tick_allies(dt: float) -> void:
 		ally.cooldown -= dt
 		if ally.cooldown <= 0 and (not ally.mobile or ally.node.position.distance_to(target) <= 1.8):
 			beam(ally.node.position + Vector3.UP * 0.8, target + Vector3.UP * 0.8, TEAL, 0.065)
-			damage_enemy(ally.target, config.summon_damage if ally.mobile else config.turret_damage)
+			strike(ally.target, config.summon_damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret")
 			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown
 
 func show_message(value: String) -> void:

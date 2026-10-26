@@ -56,6 +56,7 @@ func _draw() -> void:
 	panel(Rect2(24, 115, 300, 38), INK, GOLD if active else EDGE)
 	draw_circle(Vector2(44, 134), 5, GOLD if active else MUTED)
 	label_at(Vector2(61, 140), status, 14, GOLD if active else MUTED)
+	target_panel(w)
 	label_at(Vector2(w - 230, 42), "FIELD / 001", 12, GOLD, true)
 	label_at(Vector2(w - 230, 72), "남은 적  %02d" % arena.enemies.size(), 23, PAPER, true)
 	label_at(Vector2(w - 230, 96), "처치 %d   ·   소환체 %d" % [arena.kills, arena.allies.size()], 14, MUTED)
@@ -74,7 +75,9 @@ func _draw() -> void:
 			continue
 		var length = 64.0 if enemy.heavy else 48.0
 		draw_rect(Rect2(p.x - length / 2 - 2, p.y - 2, length + 4, 9), INK)
-		draw_rect(Rect2(p.x - length / 2, p.y, length * maxf(0, enemy.hp) / enemy.max_hp, 5), GOLD if enemy.heavy else RED)
+		var rank: Dictionary = arena.config.grades[enemy.grade]
+		var bar = Color(rank.color) if rank.has("color") else (GOLD if enemy.heavy else RED)
+		draw_rect(Rect2(p.x - length / 2, p.y, length * maxf(0, enemy.hp) / enemy.max_hp, 5), bar)
 		var debuffs: Array = []
 		if enemy.slow > 0:
 			debuffs.append("둔화")
@@ -131,7 +134,11 @@ func _draw() -> void:
 		panel(rect, PANEL, color if running else EDGE)
 		label_at(rect.position + Vector2(8, 17), KEYS[i], 11, color, true)
 		icon(rect.position + Vector2(45, 45), ICONS[skill.id], color)
-		centered(rect.position + Vector2(45, 80), skill.name, 13, PAPER)
+		var title: String = skill.name
+		if arena.config.has(skill.id + "_level"):
+			# Trial skill levels exist only for the shield and the summons so far.
+			title += " Lv%d" % arena.config[skill.id + "_level"]
+		centered(rect.position + Vector2(45, 80), title, 13, PAPER)
 		var detail = "MP %d" % skill.mana_cost
 		if skill.kind == "tool":
 			detail = "유지 %s · %.2f초" % [str(skill.upkeep_per_second), arena.attack_seconds(skill.id)]
@@ -169,7 +176,8 @@ func _draw() -> void:
 		if arena.paused:
 			centered(Vector2(w / 2, h / 2 + 53), "Esc  계속하기", 16, TEAL)
 			centered(Vector2(w / 2, h / 2 + 110), "시험 도구   F1 좌클릭 기본/산탄   ·   F2 마나 소진   ·   F3 마나 회복   ·   F4 공속 점수   ·   F8 시전 속도 점수", 13, MUTED)
-			centered(Vector2(w / 2, h / 2 + 158), "F9 R 방패/그라인더/중계   ·   F10 방패 레벨   ·   F11 기교   ·   F12 타격 회복 점수   ·   Shift+1~4 물약 종류", 13, MUTED)
+			centered(Vector2(w / 2, h / 2 + 158), "F9 R 방패/그라인더/중계   ·   F10 방패 레벨   ·   F11 기교   ·   F12 타격 회복 점수", 13, MUTED)
+			centered(Vector2(w / 2, h / 2 + 182), "Shift+1~4 물약 종류   ·   B 보스 소환   ·   Shift/Ctrl+F10 태엽인형/포탑 레벨", 13, MUTED)
 			centered(Vector2(w / 2, h / 2 + 134), "A5 마나 시험   F5 연속 교전 켜기/끄기   ·   F6 기록 저장   ·   F7 마나 회복량", 13, MUTED)
 
 func a5_panel(pos: Vector2) -> void:
@@ -183,6 +191,24 @@ func a5_panel(pos: Vector2) -> void:
 	label_at(pos + Vector2(18, 95), ("지금 공백 %.1f초" % probe.current_gap if gap_now else "지금 쓸 수 있는 기술 있음") + "  ·  최장 %.1f초" % probe.longest_gap, 13, RED if gap_now else TEAL)
 	label_at(pos + Vector2(18, 118), "마나 부족 %d  ·  대체 공격 %d  ·  공구 해제 %d" % [probe.counts.mana_failures, probe.counts.fallback_attacks, probe.counts.tool_auto_releases], 12, MUTED)
 	label_at(pos + Vector2(18, 139), "F6 기록 저장   ·   F7 회복량   ·   F5 종료", 11, MUTED)
+
+func target_panel(w: float) -> void:
+	# Top-centre target: the hovered enemy, otherwise a living boss. Grade shows by name and colour.
+	var id: String = arena.hover_id if arena.enemies.has(arena.hover_id) else ""
+	if id == "":
+		for other in arena.enemies:
+			if arena.enemies[other].grade == "boss":
+				id = other
+				break
+	if id == "":
+		return
+	var enemy: Dictionary = arena.enemies[id]
+	var rank: Dictionary = arena.config.grades[enemy.grade]
+	var tint = Color(rank.color) if rank.has("color") else PAPER
+	panel(Rect2(w / 2 - 160, 24, 320, 48), Color("14262fee"), tint if rank.has("color") else EDGE)
+	centered(Vector2(w / 2, 45), arena.enemy_name(id), 15, tint)
+	draw_rect(Rect2(w / 2 - 140, 54, 280, 8), INK)
+	draw_rect(Rect2(w / 2 - 140, 54, 280 * maxf(0, enemy.hp) / enemy.max_hp, 8), tint.darkened(0.15) if rank.has("color") else RED)
 
 func gauge(pos: Vector2, value: float, maximum: float, color: Color, title: String, pending: float = 0.0) -> void:
 	panel(Rect2(pos, Vector2(52, 100)), INK, GOLD)
