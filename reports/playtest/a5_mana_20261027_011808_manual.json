@@ -1,0 +1,204 @@
+{
+  "end_reason": "manual",
+  "engine": "4.6.2-stable (official)",
+  "metrics": {
+    "by_grade": {
+      "boss": {
+        "blocked": 1,
+        "damage_to_witch": 67.3,
+        "hits_on_witch": 2,
+        "kills": 1,
+        "stuns": 2
+      },
+      "champion": {
+        "blocked": 0,
+        "damage_to_witch": 7.8,
+        "hits_on_witch": 1,
+        "kills": 2,
+        "stuns": 0
+      },
+      "elite": {
+        "blocked": 0,
+        "damage_to_witch": 0.0,
+        "hits_on_witch": 0,
+        "kills": 1,
+        "stuns": 0
+      },
+      "normal": {
+        "blocked": 0,
+        "damage_to_witch": 26.0,
+        "hits_on_witch": 3,
+        "kills": 16,
+        "stuns": 1
+      }
+    },
+    "by_source": {
+      "automaton": {
+        "crits": 2,
+        "damage": 498.0,
+        "hits": 42,
+        "misses": 27
+      },
+      "automaton_blast": {
+        "crits": 0,
+        "damage": 155.0,
+        "hits": 6,
+        "misses": 0
+      },
+      "bolt_cutter": {
+        "crits": 0,
+        "damage": 232.0,
+        "hits": 7,
+        "misses": 0
+      },
+      "shotgun": {
+        "crits": 3,
+        "damage": 850.0,
+        "hits": 30,
+        "misses": 0
+      },
+      "staff": {
+        "crits": 0,
+        "damage": 18.0,
+        "hits": 1,
+        "misses": 5
+      },
+      "turret": {
+        "crits": 3,
+        "damage": 463.0,
+        "hits": 51,
+        "misses": 32
+      }
+    },
+    "casts": {
+      "automaton": 5,
+      "basic_attack": 13,
+      "bolt_cutter": 3,
+      "shield": 1,
+      "shotgun": 14,
+      "turret": 4
+    },
+    "combat_seconds": 112.13,
+    "counts": {
+      "blocks": 1,
+      "crits": 8,
+      "deaths": 0,
+      "debug_mana_edits": 0,
+      "fallback_attacks": 0,
+      "hits": 137,
+      "kills": 20,
+      "mana_failures": 5,
+      "misses": 64,
+      "stuns": 3,
+      "tool_auto_releases": 3,
+      "tool_manual_releases": 0
+    },
+    "potions": {
+      "health_m": 1,
+      "mana_m": 5,
+      "rejuv_s": 1
+    },
+    "skill_gap": {
+      "count": 8,
+      "longest_seconds": 4.98,
+      "seconds": 23.42,
+      "share": 0.209
+    },
+    "unaffordable_seconds": {
+      "automaton": 57.57,
+      "shield": 46.77,
+      "shotgun": 37.83,
+      "turret": 57.57
+    }
+  },
+  "player_hp": 58.8799999999989,
+  "saved_at": "2026-10-27T01:18:08",
+  "settings": {
+    "attack_speed_score": 0.0,
+    "automaton_level": 1.0,
+    "bindings": {
+      "e": "turret",
+      "lmb": "basic_attack",
+      "q": "bolt_cutter",
+      "r": "shield",
+      "rmb": "shotgun",
+      "w": "automaton"
+    },
+    "cast_speed_score": 0.0,
+    "dexterity": 0.0,
+    "hit_recovery_score": 0.0,
+    "mana_regen": 2.0,
+    "max_mana": 60.0,
+    "respawn_seconds": 2.5,
+    "shield_level": 1.0,
+    "skills": [
+      {
+        "cast_seconds": 0.0,
+        "cooldown_seconds": 0.0,
+        "id": "basic_attack",
+        "mana_cost": 0.0,
+        "upkeep_per_second": 0.0,
+        "while_moving": false
+      },
+      {
+        "cast_seconds": 0.25,
+        "cooldown_seconds": 1.2,
+        "id": "shotgun",
+        "mana_cost": 10.0,
+        "upkeep_per_second": 0.0,
+        "while_moving": false
+      },
+      {
+        "cast_seconds": 0.0,
+        "cooldown_seconds": 0.0,
+        "id": "bolt_cutter",
+        "mana_cost": 0.0,
+        "upkeep_per_second": 5.0,
+        "while_moving": true
+      },
+      {
+        "cast_seconds": 0.0,
+        "cooldown_seconds": 0.0,
+        "id": "grinder",
+        "mana_cost": 0.0,
+        "upkeep_per_second": 5.0,
+        "while_moving": true
+      },
+      {
+        "cast_seconds": 0.0,
+        "cooldown_seconds": 10.0,
+        "id": "shield",
+        "mana_cost": 12.0,
+        "upkeep_per_second": 0.0,
+        "while_moving": true
+      },
+      {
+        "cast_seconds": 0.6,
+        "cooldown_seconds": 4.0,
+        "id": "automaton",
+        "mana_cost": 15.0,
+        "upkeep_per_second": 0.0,
+        "while_moving": false
+      },
+      {
+        "cast_seconds": 0.6,
+        "cooldown_seconds": 5.0,
+        "id": "turret",
+        "mana_cost": 15.0,
+        "upkeep_per_second": 0.0,
+        "while_moving": false
+      },
+      {
+        "cast_seconds": 0.0,
+        "cooldown_seconds": 0.5,
+        "id": "relay",
+        "mana_cost": 3.0,
+        "upkeep_per_second": 0.0,
+        "while_moving": true
+      }
+    ],
+    "turret_level": 1.0
+  },
+  "status": "test_values_not_approved_balance",
+  "test": "A5"
+}

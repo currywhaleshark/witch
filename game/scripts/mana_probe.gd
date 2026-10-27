@@ -7,7 +7,7 @@ var gap_count = 0
 var longest_gap = 0.0
 var current_gap = 0.0
 var unaffordable_seconds: Dictionary = {}
-var counts = {"mana_failures": 0, "fallback_attacks": 0, "tool_auto_releases": 0, "tool_manual_releases": 0, "deaths": 0, "kills": 0, "debug_mana_edits": 0, "hits": 0, "misses": 0, "crits": 0, "stuns": 0, "blocks": 0}
+var counts = {"mana_failures": 0, "fallback_attacks": 0, "tool_auto_releases": 0, "tool_manual_releases": 0, "deaths": 0, "kills": 0, "debug_mana_edits": 0, "hits": 0, "misses": 0, "crits": 0, "stuns": 0, "blocks": 0, "allies_lost": 0}
 var casts: Dictionary = {}
 var potions: Dictionary = {}
 # Stage B breakdowns: direct damage dealt per source, and what each enemy grade did and suffered.
@@ -31,7 +31,16 @@ func strike(source: String, result: String, dealt: float) -> void:
 	row.damage += dealt
 
 func grade(id: String) -> Dictionary:
-	return grades.get_or_add(id, {"kills": 0, "hits_on_witch": 0, "damage_to_witch": 0.0, "stuns": 0, "blocked": 0})
+	return grades.get_or_add(id, {"kills": 0, "hits_on_witch": 0, "damage_to_witch": 0.0, "stuns": 0, "blocked": 0,
+		"hits_on_allies": 0, "damage_to_allies": 0.0, "allies_destroyed": 0})
+
+func ally_hit(by: String, taken: float, destroyed: bool) -> void:
+	var row: Dictionary = grade(by)
+	row.hits_on_allies += 1
+	row.damage_to_allies += taken
+	if destroyed:
+		row.allies_destroyed += 1
+		counts.allies_lost += 1
 
 func witch_hit(by: String, taken: float, stunned: bool, blocked: bool) -> void:
 	var row: Dictionary = grade(by)
@@ -82,6 +91,7 @@ func to_dict() -> Dictionary:
 	var by_grade = grades.duplicate(true)
 	for id in by_grade:
 		by_grade[id].damage_to_witch = snappedf(by_grade[id].damage_to_witch, 0.1)
+		by_grade[id].damage_to_allies = snappedf(by_grade[id].damage_to_allies, 0.1)
 	return {"combat_seconds": snappedf(combat_seconds, 0.01), "skill_gap": {"seconds": snappedf(gap_seconds, 0.01),
 		"share": snappedf(gap_share(), 0.001), "count": gap_count, "longest_seconds": snappedf(longest_gap, 0.01)},
 		"unaffordable_seconds": rounded, "counts": counts, "casts": casts, "potions": potions,

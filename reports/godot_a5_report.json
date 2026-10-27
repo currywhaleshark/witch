@@ -12,6 +12,7 @@
     "endless field never counts as cleared",
     "casting still works while the field refills",
     "manual save writes the session log with settings",
+    "the log carries a build stamp: commit and content hashes",
     "unchanged session is not saved twice",
     "regen change starts a fresh measurement",
     "a settings change saves the log under the setting it measured",

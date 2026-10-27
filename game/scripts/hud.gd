@@ -70,10 +70,11 @@ func _draw() -> void:
 		var enemy: Dictionary = arena.enemies[id]
 		if arena.camera.is_position_behind(enemy.body.position):
 			continue
-		var p: Vector2 = arena.camera.unproject_position(enemy.body.position + Vector3(0, 1.9, 0))
+		var p: Vector2 = arena.camera.unproject_position(enemy.body.position + Vector3(0, 0.35 + 1.55 * enemy.size, 0))
 		if p.y > h - 180:
 			continue
-		var length = 64.0 if enemy.heavy else 48.0
+		# Bar width follows body size, so a rag-ghoul pack reads smaller than a brute.
+		var length: float = 48.0 * clampf(enemy.size, 0.75, 1.6)
 		draw_rect(Rect2(p.x - length / 2 - 2, p.y - 2, length + 4, 9), INK)
 		var rank: Dictionary = arena.config.grades[enemy.grade]
 		var bar = Color(rank.color) if rank.has("color") else (GOLD if enemy.heavy else RED)
@@ -87,6 +88,13 @@ func _draw() -> void:
 			centered(p + Vector2(0, -8), " · ".join(debuffs), 11, TEAL)
 		elif enemy.windup > 0:
 			centered(p + Vector2(0, -8), "!", 17, RED)
+	for ally in arena.allies:
+		# Summon durability: a thin teal bar only once it has been hit.
+		if ally.hp >= ally.max_hp or arena.camera.is_position_behind(ally.node.position):
+			continue
+		var q: Vector2 = arena.camera.unproject_position(ally.node.position + Vector3(0, 1.45, 0))
+		draw_rect(Rect2(q.x - 19, q.y - 1, 38, 6), INK)
+		draw_rect(Rect2(q.x - 18, q.y, 36 * maxf(0, ally.hp) / ally.max_hp, 4), TEAL)
 	if arena.message_time > 0:
 		var p: Vector2 = arena.camera.unproject_position(arena.player.position + Vector3(0, 2.6, 0))
 		var text_width = font.get_string_size(arena.message, HORIZONTAL_ALIGNMENT_LEFT, -1, 16).x

@@ -52,8 +52,12 @@ func run() -> void:
 	for id in arena.enemies:
 		grades.append(arena.enemies[id].grade)
 	check("champion" in grades and "elite" in grades and "boss" not in grades, "the field mixes normal, champion and elite enemies")
-	var elite: Dictionary = arena.enemies.enemy_5
-	check(elite.max_hp == arena.config.heavy_hp * arena.config.grades.elite.hp and elite.size > 1.15, "an elite has more HP and a bigger body")
+	var elite: Dictionary = {}
+	for id in arena.enemies:
+		if arena.enemies[id].grade == "elite":
+			elite = arena.enemies[id]
+	var base: Dictionary = arena.config.enemy_types[elite.kind]
+	check(elite.max_hp == base.hp * arena.config.grades.elite.hp and elite.size > base.scale, "an elite has more HP and a bigger body")
 
 	await fresh([Vector3(2, 0, 0)], "normal")
 	var normal_hit: float = arena.hit_chance("t0")
@@ -137,7 +141,7 @@ func run() -> void:
 		if arena.hp < arena.config.max_hp:
 			break
 		await step()
-	check(is_equal_approx(arena.config.max_hp - arena.hp, arena.config.enemy_damage * arena.config.grades.elite.damage), "graded enemies hit harder")
+	check(is_equal_approx(arena.config.max_hp - arena.hp, arena.config.enemy_types.light.damage * arena.config.grades.elite.damage), "graded enemies hit harder")
 
 	await fresh()
 	arena.set_a5_mode(true)
@@ -150,7 +154,7 @@ func run() -> void:
 	for id in arena.enemies:
 		if arena.enemies[id].grade == "boss":
 			boss_id = id
-	check(boss_id != "" and arena.enemies[boss_id].max_hp == arena.config.heavy_hp * arena.config.grades.boss.hp, "B brings in a heavy boss with boss HP")
+	check(boss_id != "" and arena.enemies[boss_id].max_hp == arena.config.enemy_types.heavy.hp * arena.config.grades.boss.hp, "B brings in a heavy boss with boss HP")
 	var respawning: int = arena.respawns.size()
 	arena.damage_enemy(boss_id, 100000)
 	check(arena.respawns.size() == respawning, "a test boss does not respawn in A5 mode")

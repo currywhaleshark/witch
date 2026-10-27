@@ -69,11 +69,11 @@ func run() -> void:
 
 	var first: String = arena.enemies.keys()[0]
 	arena.damage_enemy(first, 1000)
-	check(arena.enemies.size() == 5 and arena.respawns.size() == 1, "kill schedules a respawn")
+	check(arena.enemies.size() == arena.config.field.size() - 1 and arena.respawns.size() == 1, "kill schedules a respawn")
 	await step(int(arena.config.a5_respawn_seconds * 60) + 5)
 	calm()
 	var fresh_id = "enemy_6"
-	check(arena.enemies.size() == 6 and arena.enemies.has(fresh_id) and arena.enemies[fresh_id].body.position.distance_to(arena.player.position) >= 8, "respawn returns from a field edge away from the witch")
+	check(arena.enemies.size() == arena.config.field.size() and arena.enemies.has(fresh_id) and arena.enemies[fresh_id].body.position.distance_to(arena.player.position) >= 8, "respawn returns from a field edge away from the witch")
 	for id in arena.enemies.keys():
 		arena.damage_enemy(id, 1000)
 	check(not arena.field_cleared(), "endless field never counts as cleared")
@@ -85,6 +85,8 @@ func run() -> void:
 	var path: String = arena.save_mana_log("manual")
 	var report = JSON.parse_string(FileAccess.get_file_as_string(path)) if path != "" else null
 	check(report != null and report.test == "A5" and report.metrics.skill_gap.count == 2 and report.settings.mana_regen == 0 and report.metrics.counts.tool_auto_releases == 1, "manual save writes the session log with settings")
+	var head = FileAccess.get_file_as_string(ProjectSettings.globalize_path("res://").path_join("../.git/HEAD").simplify_path())
+	check(report != null and report.build.trial_md5.length() == 32 and report.build.scripts_md5.length() == 32 and (head.is_empty() or report.build.git_commit.length() == 7), "the log carries a build stamp: commit and content hashes")
 	check(arena.save_mana_log("manual") == "", "unchanged session is not saved twice")
 	var key = InputEventKey.new()
 	key.physical_keycode = KEY_F7
@@ -104,7 +106,7 @@ func run() -> void:
 	arena.damage_player(1000)
 	check(logs().size() == count + 1 and arena.last_log_path.ends_with("_death.json"), "death saves the session log")
 	arena.set_a5_mode(false)
-	check(not arena.a5_mode and arena.enemies.size() == 6 and arena.respawns.is_empty(), "turning A5 off restores the normal field")
+	check(not arena.a5_mode and arena.enemies.size() == arena.config.field.size() and arena.respawns.is_empty(), "turning A5 off restores the normal field")
 
 	for file in logs():
 		DirAccess.remove_absolute(arena.log_dir.path_join(file))

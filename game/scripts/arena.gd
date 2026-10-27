@@ -37,7 +37,10 @@ var action_time = 0.0
 var pointer = Vector2.ZERO
 var enemies: Dictionary = {}
 var allies: Array = []
+var ally_serial = 0
 var effects: Array = []
+# Wire-crow orbs in flight; each hits the witch at most once.
+var bolts: Array = []
 var sounds: Array[AudioStreamPlayer] = []
 var sound_index = 0
 var kills = 0
@@ -187,6 +190,9 @@ func reset_arena() -> void:
 	for fx in effects:
 		fx.node.free()
 	effects.clear()
+	for bolt in bolts:
+		bolt.node.free()
+	bolts.clear()
 	if is_instance_valid(player):
 		player.free()
 	state = rules.initial_state(float(config.max_mana))
@@ -231,28 +237,34 @@ func reset_arena() -> void:
 	logged_seconds = -1.0
 	respawns.clear()
 	rng.seed = 2510
-	var positions = [Vector3(-4, 0, -4), Vector3(3, 0, -5), Vector3(6, 0, 0), Vector3(-7, 0, 3), Vector3(2, 0, -9), Vector3(-8, 0, -8)]
-	for i in positions.size():
-		spawn_enemy("enemy_" + str(i), positions[i], i >= 4, config.field_grades[i])
-	spawn_serial = positions.size()
+	# Trial field from 08 §6.2: a rag-ghoul pack, two wire crows and an iron-door brute.
+	for i in config.field.size():
+		var entry: Dictionary = config.field[i]
+		spawn_enemy("enemy_" + str(i), point(entry.pos), false, entry.grade, entry.kind)
+	spawn_serial = config.field.size()
 	if not player_visual.loaded_ok:
 		show_message("캐릭터 자산을 불러오지 못했습니다")
 
-func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = "normal") -> void:
+func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = "normal", kind: String = "") -> void:
+	# kind picks an enemy type; without one, heavy keeps the original light/heavy test dummies.
+	if kind == "":
+		kind = "heavy" if heavy else "light"
+	var type: Dictionary = config.enemy_types[kind]
 	var rank: Dictionary = config.grades[grade]
 	var body = Shape.body(world, pos, 2)
 	body.set_meta("enemy_id", id)
-	var model = Shape.enemy(body, heavy)
-	var size: float = (1.15 if heavy else 1.0) * rank.scale
+	var model = Shape.enemy(body, kind)
+	var size: float = type.scale * rank.scale
 	if rank.has("color"):
 		# Graded enemies wear their grade colour as a ground ring and a head band.
 		Shape.ring(body, Vector3(0, 0.05, 0), 0.75 * size, Color(rank.color), 0.06)
 		Shape.box(model, Vector3(0, 1.45, 0), Vector3(0.62, 0.1, 0.5), Color(rank.color))
 	var pick = Shape.pick_volume(body, 0.7 * size, 1.65 * size, PICK_LAYER)
 	pick.set_meta("enemy_id", id)
-	var maximum: float = (config.heavy_hp if heavy else config.enemy_hp) * rank.hp
-	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": heavy, "grade": grade, "size": size,
-		"cooldown": 1.0, "windup": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0}
+	var maximum: float = type.hp * rank.hp
+	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": type.get("heavy", false), "kind": kind,
+		"grade": grade, "size": size, "cooldown": 1.0, "windup": 0.0, "attack": "", "charge_cooldown": 1.0, "charging": 0.0,
+		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0}
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -426,6 +438,33 @@ func skill_gap() -> bool:
 			return false
 	return true
 
+func build_stamp() -> Dictionary:
+	# Tells logs from different builds apart: the commit, plus content hashes that also catch
+	# uncommitted edits to the trial values or the game scripts.
+	var scripts: PackedStringArray = []
+	for file in DirAccess.get_files_at("res://scripts"):
+		if file.ends_with(".gd"):
+			scripts.append(file)
+	scripts.sort()
+	var digests = ""
+	for file in scripts:
+		digests += file + ":" + FileAccess.get_md5("res://scripts/" + file) + "\n"
+	return {"git_commit": git_commit(), "trial_md5": FileAccess.get_md5("res://data/trial.json"), "scripts_md5": digests.md5_text()}
+
+func git_commit() -> String:
+	# Short hash of the checked-out commit when run from the repository; "unknown" elsewhere.
+	var git_dir = ProjectSettings.globalize_path("res://").path_join("../.git").simplify_path()
+	var head = FileAccess.get_file_as_string(git_dir.path_join("HEAD")).strip_edges()
+	if not head.begins_with("ref: "):
+		return head.left(7) if head.length() >= 7 else "unknown"
+	var ref = head.trim_prefix("ref: ")
+	var hash = FileAccess.get_file_as_string(git_dir.path_join(ref)).strip_edges()
+	if hash.is_empty():
+		for line in FileAccess.get_file_as_string(git_dir.path_join("packed-refs")).split("\n"):
+			if line.ends_with(" " + ref):
+				hash = line.get_slice(" ", 0)
+	return hash.left(7) if hash.length() >= 7 else "unknown"
+
 func save_mana_log(reason: String) -> String:
 	if not a5_mode or probe.combat_seconds < 1.0 or probe.combat_seconds == logged_seconds:
 		return ""
@@ -440,7 +479,7 @@ func save_mana_log(reason: String) -> String:
 		skills.append({"id": id, "mana_cost": skill.mana_cost, "cooldown_seconds": skill.cooldown_seconds, "upkeep_per_second": skill.upkeep_per_second,
 			"while_moving": skill.get("while_moving", false), "cast_seconds": cast_seconds(skill)})
 	var report = {"test": "A5", "status": config.status, "saved_at": Time.get_datetime_string_from_system(), "end_reason": reason,
-		"engine": Engine.get_version_info().string, "player_hp": hp, "metrics": probe.to_dict(),
+		"engine": Engine.get_version_info().string, "build": build_stamp(), "player_hp": hp, "metrics": probe.to_dict(),
 		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
 			"hit_recovery_score": config.hit_recovery_score, "shield_level": config.shield_level, "dexterity": config.dexterity,
 			"automaton_level": config.automaton_level, "turret_level": config.turret_level,
@@ -460,7 +499,7 @@ func tick_respawns(dt: float) -> void:
 		if entry.time > 0:
 			continue
 		respawns.erase(entry)
-		spawn_enemy("enemy_" + str(spawn_serial), edge_point(), entry.heavy, entry.grade)
+		spawn_enemy("enemy_" + str(spawn_serial), edge_point(), false, entry.grade, entry.kind)
 		spawn_serial += 1
 
 func edge_point() -> Vector3:
@@ -826,7 +865,7 @@ func nearest_enemy(pos: Vector3, distance: float, direction: Vector3 = Vector3.Z
 
 func enemy_name(id: String) -> String:
 	var enemy: Dictionary = enemies[id]
-	return config.grades[enemy.grade].name + (" 중장형" if enemy.heavy else " 돌격형")
+	return config.grades[enemy.grade].name + " " + config.enemy_types[enemy.kind].name
 
 func summon_level(roller: String) -> int:
 	return int(config[roller + "_level"])
@@ -880,7 +919,7 @@ func damage_enemy(id: String, amount: float) -> float:
 		probe.grade(enemy.grade).kills += 1
 		# A test boss is a one-off; everything else keeps the A5 field topped up.
 		if a5_mode and enemy.grade != "boss":
-			respawns.append({"time": float(config.a5_respawn_seconds), "heavy": enemy.heavy, "grade": enemy.grade})
+			respawns.append({"time": float(config.a5_respawn_seconds), "kind": enemy.kind, "grade": enemy.grade})
 		if pending_cast.get("cursor", {}).get("enemy_id") == id:
 			cancel_pending_cast()
 			show_message("대상이 사라졌습니다")
@@ -1009,7 +1048,10 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	else:
 		Shape.box(node, Vector3(0, 0.75, -0.35), Vector3(0.16, 0.16, 0.75), BRASS)
 	Shape.ring(node, Vector3(0, 0.04, 0), 0.43, TEAL)
-	allies.append({"node": node, "mobile": mobile, "target": target_id if target_id != null else "", "cooldown": 0.2, "life": config.summon_lifetime if mobile else config.turret_lifetime})
+	var durability: float = config.automaton_hp if mobile else config.turret_hp
+	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "target": target_id if target_id != null else "", "cooldown": 0.2,
+		"life": config.summon_lifetime if mobile else config.turret_lifetime, "hp": durability, "max_hp": durability})
+	ally_serial += 1
 	pulse(pos, TEAL, 0.65)
 	play_cue(1.8)
 
@@ -1041,6 +1083,7 @@ func _physics_process(dt: float) -> void:
 			probe.tick(dt, skill_gap(), unaffordable_skills())
 			tick_respawns(dt)
 		tick_potions(dt)
+		tick_bolts(dt)
 		tick_windup(dt)
 		if action_time > 0:
 			action_time = maxf(0, action_time - dt)
@@ -1097,31 +1140,184 @@ func _physics_process(dt: float) -> void:
 				fx.node.scale += Vector3.ONE * dt * 2
 	hud.queue_redraw()
 
+func ally_by_id(id: String) -> Dictionary:
+	for ally in allies:
+		if ally.id == id:
+			return ally
+	return {}
+
+func foe_position(target: String) -> Vector3:
+	# "" is the witch; anything else is a summon or turret id.
+	var ally: Dictionary = ally_by_id(target)
+	return player.position if ally.is_empty() else ally.node.position
+
+func aggro_distance(enemy: Dictionary, target: String) -> float:
+	# The witch counts a little closer than she is, so summons don't soak every hit.
+	if target == "":
+		return INF if hp <= 0 else enemy.body.position.distance_to(player.position) - config.aggro_witch_bias
+	var ally: Dictionary = ally_by_id(target)
+	return INF if ally.is_empty() else enemy.body.position.distance_to(ally.node.position)
+
+func nearest_foe(enemy: Dictionary) -> String:
+	# Aggro goes to whatever is closest, so summons and turrets can draw enemies off the witch.
+	var best = ""
+	var best_distance: float = aggro_distance(enemy, "")
+	for ally in allies:
+		var d: float = aggro_distance(enemy, ally.id)
+		if d < best_distance:
+			best_distance = d
+			best = ally.id
+	# Sticky target: switch only when the new one is clearly closer, so an enemy standing
+	# between two targets doesn't flip back and forth.
+	var current: float = aggro_distance(enemy, enemy.target)
+	if best != enemy.target and current < INF and best_distance > current - config.aggro_switch_margin:
+		return enemy.target
+	return best
+
+func hit_foe(target: String, amount: float, grade: String) -> void:
+	var ally: Dictionary = ally_by_id(target)
+	if ally.is_empty():
+		damage_player(amount, grade)
+	else:
+		damage_ally(ally, amount, grade)
+
+func damage_ally(ally: Dictionary, amount: float, grade: String) -> void:
+	ally.hp -= amount
+	probe.ally_hit(grade, minf(amount, maxf(ally.hp + amount, 0.0)), ally.hp <= 0)
+	pulse(ally.node.position, RED, 0.45)
+	if ally.hp <= 0:
+		# Destroyed summons break apart without the end-of-life self-destruct blast.
+		pulse(ally.node.position, BRASS, 0.7)
+		ally.node.queue_free()
+		allies.erase(ally)
+
+func foe_in_reach(at: Vector3, reach: float) -> String:
+	# First thing within reach of a moving hit (orb or charge): the witch, else the nearest summon.
+	var flat: Vector3 = player.position - at
+	flat.y = 0
+	if hp > 0 and flat.length() < reach:
+		return ""
+	for ally in allies:
+		flat = ally.node.position - at
+		flat.y = 0
+		if flat.length() < reach:
+			return ally.id
+	return "none"
+
 func _tick_enemy(enemy: Dictionary, dt: float) -> void:
-	var delta: Vector3 = player.position - enemy.body.position
+	if enemy.target != "" and ally_by_id(enemy.target).is_empty():
+		enemy.target = ""
+		enemy.retarget = 0.0
+	var aim: Vector3 = foe_position(enemy.target)
+	var delta: Vector3 = aim - enemy.body.position
 	enemy.slow = maxf(0, enemy.slow - dt)
 	enemy.shred = maxf(0, enemy.shred - dt)
 	enemy.flash = maxf(0, enemy.flash - dt)
 	enemy.model.scale = Vector3.ONE * enemy.size * (1.08 if enemy.flash > 0 else 1.0)
+	var type: Dictionary = config.enemy_types[enemy.kind]
+	var power: float = config.grades[enemy.grade].damage
+	var pace: float = config.enemy_speed * type.speed * config.grades[enemy.grade].speed * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
+	enemy.charge_cooldown = maxf(0, enemy.charge_cooldown - dt)
+	if enemy.charging > 0:
+		# Brute charge: a straight dash along the telegraphed line that hits the witch at most once.
+		var charge: Dictionary = type.charge
+		enemy.charging = maxf(0, enemy.charging - dt)
+		enemy.body.velocity = enemy.charge_dir * config.enemy_speed * charge.speed_factor * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
+		enemy.body.move_and_slide()
+		var struck: String = foe_in_reach(enemy.body.position, charge.reach) if not enemy.charge_hit else "none"
+		if struck != "none":
+			enemy.charge_hit = true
+			enemy.charging = 0.0
+			hit_foe(struck, charge.damage * power, enemy.grade)
+		return
 	if enemy.windup > 0:
 		enemy.windup -= dt
 		enemy.model.rotation.z = sin(enemy.windup * 35) * 0.12
 		if enemy.windup <= 0:
-			if delta.length() < 1.65:
-				damage_player(config.enemy_damage * (1.7 if enemy.heavy else 1.0) * config.grades[enemy.grade].damage, enemy.grade)
-			enemy.cooldown = config.enemy_cooldown
 			enemy.model.rotation.z = 0
+			enemy.cooldown = type.cooldown
+			match enemy.attack:
+				"bolt": fire_bolt(enemy, aim, type.ranged, type.damage * power)
+				"charge":
+					enemy.charge_cooldown = type.charge.cooldown
+					enemy.charging = type.charge.distance / maxf(0.01, config.enemy_speed * type.charge.speed_factor)
+					enemy.charge_hit = false
+				_:
+					# Reach and stop distances are absolute: capsules keep bodies apart regardless of model size.
+					if delta.length() < type.reach:
+						hit_foe(enemy.target, type.damage * power, enemy.grade)
 		return
 	enemy.cooldown = maxf(0, enemy.cooldown - dt)
-	if delta.length() > 11:
+	# Pick a target only between attacks; a wound-up attack keeps the one it started on.
+	enemy.retarget = maxf(0, enemy.retarget - dt)
+	if enemy.retarget <= 0:
+		enemy.target = nearest_foe(enemy)
+		enemy.retarget = config.aggro_retarget_seconds
+		aim = foe_position(enemy.target)
+		delta = aim - enemy.body.position
+	var distance: float = delta.length()
+	if distance > 11:
 		return
-	if delta.length() > 1.2:
-		enemy.body.velocity = delta.normalized() * config.enemy_speed * (0.65 if enemy.heavy else 1) * config.grades[enemy.grade].speed * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
+	enemy.model.look_at(Vector3(aim.x, enemy.body.global_position.y, aim.z))
+	if type.has("ranged"):
+		# Wire crows hold a firing band: back off when crowded, close in when too far, shoot between.
+		var band: Dictionary = type.ranged
+		var step = Vector3.ZERO
+		if distance > band.keep_max:
+			step = delta.normalized()
+		elif distance < band.keep_min:
+			step = -delta.normalized()
+		enemy.body.velocity = step * pace
 		enemy.body.move_and_slide()
-		enemy.model.look_at(player.position)
+		if enemy.cooldown <= 0 and distance <= band.bolt_range:
+			start_enemy_attack(enemy, "bolt", type.windup, TEAL)
+		return
+	if type.has("charge") and enemy.charge_cooldown <= 0 and enemy.cooldown <= 0 and distance >= type.charge.min and distance <= type.charge.max:
+		enemy.charge_dir = Vector3(delta.x, 0, delta.z).normalized()
+		start_enemy_attack(enemy, "charge", type.charge.windup, RED)
+		telegraph(enemy.body.position, enemy.charge_dir, type.charge.distance, type.charge.width, type.charge.windup)
+		return
+	if distance > type.stop:
+		enemy.body.velocity = delta.normalized() * pace
+		enemy.body.move_and_slide()
 	elif enemy.cooldown <= 0:
-		enemy.windup = config.enemy_windup
-		pulse(enemy.body.position, RED, 0.55)
+		start_enemy_attack(enemy, "melee", type.windup, RED)
+
+func start_enemy_attack(enemy: Dictionary, attack: String, windup: float, color: Color) -> void:
+	enemy.attack = attack
+	enemy.windup = windup
+	pulse(enemy.body.position, color, 0.55 * enemy.size)
+
+func telegraph(from: Vector3, direction: Vector3, length: float, width: float, life: float) -> void:
+	# Flat warning strip on the ground for the time the attack winds up.
+	var center: Vector3 = from + direction * length / 2 + Vector3(0, 0.03, 0)
+	var strip = Shape.box(world, center, Vector3(width, 0.02, length), Color("a8453a"))
+	strip.look_at(center + direction)
+	effects.append({"node": strip, "life": life, "grow": false})
+
+func fire_bolt(enemy: Dictionary, at: Vector3, band: Dictionary, damage: float) -> void:
+	# The orb flies toward where its target stands at release, so stepping aside dodges it.
+	var origin: Vector3 = enemy.body.position + Vector3.UP * 1.0 * enemy.size
+	var aim: Vector3 = at - origin
+	aim.y = 0
+	var node = Shape.sphere(world, origin, 0.2, Color("bfe8ff"))
+	node.material_override = Shape.material(Color("bfe8ff"), true)
+	bolts.append({"node": node, "dir": aim.normalized(), "speed": float(band.bolt_speed), "left": float(band.bolt_range),
+		"radius": float(band.bolt_radius), "damage": damage, "grade": enemy.grade})
+	play_cue(1.9)
+
+func tick_bolts(dt: float) -> void:
+	for bolt in bolts.duplicate():
+		var travel: float = bolt.speed * dt
+		bolt.node.position += bolt.dir * travel
+		bolt.left -= travel
+		var struck: String = foe_in_reach(bolt.node.position, bolt.radius)
+		if struck != "none":
+			hit_foe(struck, bolt.damage, bolt.grade)
+			bolt.left = 0
+		if bolt.left <= 0 or absf(bolt.node.position.x) > 15 or absf(bolt.node.position.z) > 13:
+			bolt.node.queue_free()
+			bolts.erase(bolt)
 
 func _tick_allies(dt: float) -> void:
 	for ally in allies.duplicate():

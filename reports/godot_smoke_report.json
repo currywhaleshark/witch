@@ -1,6 +1,6 @@
 {
   "checks": [
-    "scene starts with witch and six enemies",
+    "scene starts with witch and the trial field",
     "physics ray selects enemy collider",
     "outside floor is not valid ground",
     "viewport mouse event requests movement",
@@ -30,10 +30,9 @@
     "dead player cannot cast",
     "restart rebuilds actors and resources",
     "offscreen automaton returns toward player",
-    "kills remove targets and complete arena",
-    "rendered viewport screenshot saved"
+    "kills remove targets and complete arena"
   ],
-  "display": "Windows",
+  "display": "headless",
   "engine": "4.6.2-stable (official)",
   "failures": []
 }

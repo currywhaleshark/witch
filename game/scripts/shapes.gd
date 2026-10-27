@@ -94,16 +94,40 @@ static func witch(parent: Node3D) -> Node3D:
 	ring(model, Vector3(0.57, 1.69, -0.1), 0.14, Color("8ce7d0"))
 	return model
 
-static func enemy(parent: Node3D, heavy: bool) -> Node3D:
+static func enemy(parent: Node3D, kind: String) -> Node3D:
+	# Placeholder silhouettes per enemy type; the arena scales the whole model.
 	var model = Node3D.new()
 	parent.add_child(model)
-	var tint = Color("755249") if heavy else Color("55646a")
-	box(model, Vector3(0, 0.7, 0), Vector3(0.75, 0.8, 0.56), tint)
-	box(model, Vector3(0, 1.22, 0), Vector3(0.58, 0.36, 0.45), Color("9b8c77"))
-	box(model, Vector3(0, 1.23, -0.24), Vector3(0.32, 0.075, 0.025), Color("ff946f"))
-	for x in [-0.3, 0.3]:
-		cylinder(model, Vector3(x, 0.2, 0), 0.16, 0.4, tint)
-		box(model, Vector3(x * 1.7, 0.7, 0), Vector3(0.22, 0.65, 0.3), tint)
-	if heavy:
-		model.scale = Vector3.ONE * 1.15
+	match kind:
+		"rag":
+			# Soot rag-ghoul: hunched black-plastic heap with torn flyer scraps for a face.
+			box(model, Vector3(0, 0.55, 0), Vector3(0.8, 0.75, 0.7), Color("23272b"))
+			box(model, Vector3(0, 1.0, -0.05), Vector3(0.55, 0.35, 0.5), Color("2e3338"))
+			for x in [-0.14, 0.12]:
+				box(model, Vector3(x, 1.02, -0.31), Vector3(0.16, 0.2, 0.02), Color("d9d2bf"))
+			for x in [-0.42, 0.42]:
+				box(model, Vector3(x, 0.45, -0.1), Vector3(0.14, 0.55, 0.14), Color("1b1e21"))
+		"crow":
+			# Wire crow: bulb head on a wire-bundle body, frayed cable wings, raised off the ground.
+			box(model, Vector3(0, 1.05, 0), Vector3(0.42, 0.36, 0.7), Color("3a3f44"))
+			sphere(model, Vector3(0, 1.32, -0.32), 0.17, Color("f2d27a"))
+			for x in [-1, 1]:
+				var wing = box(model, Vector3(x * 0.45, 1.1, 0.05), Vector3(0.55, 0.05, 0.4), Color("6b5a3e"))
+				wing.rotation.z = x * 0.35
+			cylinder(model, Vector3(0, 0.5, 0.05), 0.04, 0.9, Color("6b5a3e"))
+		"brute":
+			# Iron-door brute: brick body with rusted blue gate leaves strapped to both arms.
+			box(model, Vector3(0, 0.75, 0), Vector3(0.85, 0.95, 0.6), Color("8a4b3b"))
+			box(model, Vector3(0, 1.36, 0), Vector3(0.5, 0.32, 0.42), Color("6d6255"))
+			for x in [-1, 1]:
+				box(model, Vector3(x * 0.62, 0.75, -0.12), Vector3(0.12, 1.0, 0.75), Color("3f6fa8"))
+				cylinder(model, Vector3(x * 0.28, 0.2, 0), 0.18, 0.4, Color("5a3a30"))
+		_:
+			var tint = Color("755249") if kind == "heavy" else Color("55646a")
+			box(model, Vector3(0, 0.7, 0), Vector3(0.75, 0.8, 0.56), tint)
+			box(model, Vector3(0, 1.22, 0), Vector3(0.58, 0.36, 0.45), Color("9b8c77"))
+			box(model, Vector3(0, 1.23, -0.24), Vector3(0.32, 0.075, 0.025), Color("ff946f"))
+			for x in [-0.3, 0.3]:
+				cylinder(model, Vector3(x, 0.2, 0), 0.16, 0.4, tint)
+				box(model, Vector3(x * 1.7, 0.7, 0), Vector3(0.22, 0.65, 0.3), tint)
 	return model

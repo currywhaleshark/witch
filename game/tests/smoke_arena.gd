@@ -30,7 +30,7 @@ func run() -> void:
 	await frame(3)
 	arena.muted = true
 	arena.config.mana_regen = 0
-	check(arena.enemies.size() == 6 and arena.hp == 100, "scene starts with witch and six enemies")
+	check(arena.enemies.size() == arena.config.field.size() and arena.hp == 100, "scene starts with witch and the trial field")
 	var enemy = arena.enemies.enemy_0.body
 	var screen: Vector2 = arena.camera.unproject_position(enemy.position + Vector3.UP * 0.8)
 	check(arena.pick_cursor(screen).get("enemy_id") == "enemy_0", "physics ray selects enemy collider")
@@ -122,14 +122,14 @@ func run() -> void:
 	arena.request_slot("w", {"ground": [0, 0, 0]})
 	check(arena.state.mana == mp and arena.allies.is_empty(), "dead player cannot cast")
 	arena.reset_arena()
-	check(arena.hp == 100 and arena.enemies.size() == 6 and arena.allies.is_empty(), "restart rebuilds actors and resources")
+	check(arena.hp == 100 and arena.enemies.size() == arena.config.field.size() and arena.allies.is_empty(), "restart rebuilds actors and resources")
 	arena.spawn_ally(Vector3(14, 0, -12), true, "enemy_0")
 	start = arena.allies[0].node.position
 	arena._tick_allies(0.2)
 	check(arena.allies[0].node.position.distance_to(arena.player.position) < start.distance_to(arena.player.position), "offscreen automaton returns toward player")
 	for id in arena.enemies.keys():
 		arena.damage_enemy(id, 1000)
-	check(arena.kills == 6 and arena.enemies.is_empty(), "kills remove targets and complete arena")
+	check(arena.kills == arena.config.field.size() and arena.enemies.is_empty(), "kills remove targets and complete arena")
 	# Render a reproducible live scene with both automation samples and tool HUD.
 	arena.reset_arena()
 	arena.muted = true
