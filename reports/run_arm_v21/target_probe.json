@@ -1,0 +1,1186 @@
+[
+  {
+    "follow": 0.4,
+    "offset": [
+      0,
+      -0.03,
+      0
+    ],
+    "rows": [
+      {
+        "frame": 1,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.01545987069606781,
+          "closest": {
+            "mesh": "TF_sleeve_L_v4",
+            "axial_m": -0.31199999999999994,
+            "position": [
+              0.23723530769348145,
+              -0.2263072431087494,
+              0.9749840497970581
+            ],
+            "surface": [
+              0.22363455593585968,
+              -0.21281659603118896,
+              0.991753876209259
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.11827350407838821,
+              -0.162216916680336,
+              1.1290100812911987
+            ],
+            "elbow": [
+              -0.06840916723012924,
+              -0.3273589611053467,
+              0.950259804725647
+            ],
+            "wrist": [
+              0.009545252658426762,
+              -0.3577978312969208,
+              1.1501215696334839
+            ],
+            "flexion_degrees": 119.87566657565331,
+            "wrist_deflection_degrees": 26.872382081796346,
+            "upper_arm_from_down_degrees": 83.09940091431176,
+            "upper_arm_from_world_down_degrees": 43.98157223566599,
+            "humerus_hinge_roll_error_degrees": 1.7075474553475873e-05,
+            "ulna_hinge_roll_error_degrees": -3.4150949106951746e-05
+          },
+          "L": {
+            "shoulder": [
+              0.12622258067131042,
+              0.04884197935461998,
+              1.2343817949295044
+            ],
+            "elbow": [
+              0.18672522902488708,
+              0.015138356015086174,
+              0.9958159923553467
+            ],
+            "wrist": [
+              0.19875672459602356,
+              -0.19847534596920013,
+              1.0300581455230713
+            ],
+            "flexion_degrees": 90.25708399464828,
+            "wrist_deflection_degrees": 25.6420481537709,
+            "upper_arm_from_down_degrees": 51.83139253554576,
+            "upper_arm_from_world_down_degrees": 16.188263795245778,
+            "humerus_hinge_roll_error_degrees": 5.122641877509563e-05,
+            "ulna_hinge_roll_error_degrees": 1.36603799684695e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 25,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": -0.004053474627435208,
+          "closest": {
+            "mesh": "TF_skirt_v4",
+            "axial_m": -0.408,
+            "position": [
+              0.15636737644672394,
+              -0.32027772068977356,
+              0.9510536193847656
+            ],
+            "surface": [
+              0.15505649149417877,
+              -0.31459546089172363,
+              0.9522175192832947
+            ]
+          },
+          "near_probe_count": 4
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.16884610056877136,
+              0.008792120032012463,
+              1.2440509796142578
+            ],
+            "elbow": [
+              -0.21216635406017303,
+              -0.13408562541007996,
+              1.0455081462860107
+            ],
+            "wrist": [
+              -0.1720203012228012,
+              -0.28510746359825134,
+              1.1956040859222412
+            ],
+            "flexion_degrees": 100.66575270480328,
+            "wrist_deflection_degrees": 18.525950680196004,
+            "upper_arm_from_down_degrees": 81.42845660557066,
+            "upper_arm_from_world_down_degrees": 36.94251246573967,
+            "humerus_hinge_roll_error_degrees": 5.464151336010201e-05,
+            "ulna_hinge_roll_error_degrees": 6.830190798456748e-06
+          },
+          "L": {
+            "shoulder": [
+              0.1334446221590042,
+              -0.1387300044298172,
+              1.1944772005081177
+            ],
+            "elbow": [
+              0.19548600912094116,
+              -0.1393699198961258,
+              0.9539353251457214
+            ],
+            "wrist": [
+              0.06317222863435745,
+              -0.26944759488105774,
+              1.0658328533172607
+            ],
+            "flexion_degrees": 130.61903504570645,
+            "wrist_deflection_degrees": 51.4599361126292,
+            "upper_arm_from_down_degrees": 42.15218461365353,
+            "upper_arm_from_world_down_degrees": 14.463456614709969,
+            "humerus_hinge_roll_error_degrees": -4.6103780154474065e-05,
+            "ulna_hinge_roll_error_degrees": 3.4150949106951746e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 49,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.006658920794725418,
+          "closest": {
+            "mesh": "SourceOutfit_Cardigan_v11",
+            "axial_m": -0.31999999999999995,
+            "position": [
+              0.05990281701087952,
+              -0.3348100781440735,
+              0.9696927070617676
+            ],
+            "surface": [
+              0.06582188606262207,
+              -0.320883572101593,
+              0.9766595363616943
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.1388464868068695,
+              0.05262424424290657,
+              1.2208714485168457
+            ],
+            "elbow": [
+              -0.20485787093639374,
+              -0.08811669051647186,
+              1.0271074771881104
+            ],
+            "wrist": [
+              -0.1940675526857376,
+              -0.26142868399620056,
+              1.1567010879516602
+            ],
+            "flexion_degrees": 91.52319616109354,
+            "wrist_deflection_degrees": 15.733540536157594,
+            "upper_arm_from_down_degrees": 74.4488980285989,
+            "upper_arm_from_world_down_degrees": 38.739313255221994,
+            "humerus_hinge_roll_error_degrees": 1.7075472925031877e-05,
+            "ulna_hinge_roll_error_degrees": 1.0245285383463124e-05
+          },
+          "L": {
+            "shoulder": [
+              0.11512511223554611,
+              -0.1604335606098175,
+              1.1453442573547363
+            ],
+            "elbow": [
+              0.17760370671749115,
+              -0.16673117876052856,
+              0.9049971699714661
+            ],
+            "wrist": [
+              0.035935115069150925,
+              -0.2814004123210907,
+              1.0221683979034424
+            ],
+            "flexion_degrees": 132.39470664499135,
+            "wrist_deflection_degrees": 50.65152175265566,
+            "upper_arm_from_down_degrees": 34.372633299954856,
+            "upper_arm_from_world_down_degrees": 14.642288042653828,
+            "humerus_hinge_roll_error_degrees": -4.2688682312579695e-05,
+            "ulna_hinge_roll_error_degrees": 6.488679711512113e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 73,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.015336243212223053,
+          "closest": {
+            "mesh": "TF_sleeve_L_v4",
+            "axial_m": -0.31199999999999994,
+            "position": [
+              0.21851299703121185,
+              -0.26084476709365845,
+              1.0165319442749023
+            ],
+            "surface": [
+              0.2063925862312317,
+              -0.2458283007144928,
+              1.0329492092132568
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.1438717544078827,
+              -0.13220874965190887,
+              1.1905708312988281
+            ],
+            "elbow": [
+              -0.11239500343799591,
+              -0.29124364256858826,
+              1.002350091934204
+            ],
+            "wrist": [
+              -0.027560269460082054,
+              -0.3529917895793915,
+              1.1919245719909668
+            ],
+            "flexion_degrees": 115.52239086663232,
+            "wrist_deflection_degrees": 24.078088513094308,
+            "upper_arm_from_down_degrees": 76.06944920164364,
+            "upper_arm_from_world_down_degrees": 40.739271191377185,
+            "humerus_hinge_roll_error_degrees": -1.7075472925031877e-05,
+            "ulna_hinge_roll_error_degrees": 1.3660376711581505e-05
+          },
+          "L": {
+            "shoulder": [
+              0.1472945213317871,
+              0.022144865244627,
+              1.2739609479904175
+            ],
+            "elbow": [
+              0.2016417235136032,
+              -0.014903156086802483,
+              1.034411907196045
+            ],
+            "wrist": [
+              0.18391980230808258,
+              -0.22768962383270264,
+              1.0712352991104126
+            ],
+            "flexion_degrees": 92.02380804612045,
+            "wrist_deflection_degrees": 26.013799982369065,
+            "upper_arm_from_down_degrees": 46.77500007789073,
+            "upper_arm_from_world_down_degrees": 15.35349173526516,
+            "humerus_hinge_roll_error_degrees": -2.390566209504463e-05,
+            "ulna_hinge_roll_error_degrees": -1.0245283755019126e-05
+          }
+        },
+        "clamp": 0.0
+      }
+    ],
+    "crossings": 0,
+    "minimum": -0.004053474627435208
+  },
+  {
+    "follow": 0.4,
+    "offset": [
+      0,
+      -0.04,
+      -0.02
+    ],
+    "rows": [
+      {
+        "frame": 1,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.01648869901895523,
+          "closest": {
+            "mesh": "TF_sleeve_R_v4",
+            "axial_m": -0.04799999999999993,
+            "position": [
+              0.07338069379329681,
+              -0.3321366608142853,
+              1.1349363327026367
+            ],
+            "surface": [
+              0.052812278270721436,
+              -0.3467356860637665,
+              1.1268455982208252
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.11827350407838821,
+              -0.162216916680336,
+              1.1290100812911987
+            ],
+            "elbow": [
+              -0.0766582116484642,
+              -0.31513044238090515,
+              0.9377102851867676
+            ],
+            "wrist": [
+              0.010572196915745735,
+              -0.362533301115036,
+              1.1303026676177979
+            ],
+            "flexion_degrees": 118.84094755790974,
+            "wrist_deflection_degrees": 25.505966879842152,
+            "upper_arm_from_down_degrees": 78.74379611078379,
+            "upper_arm_from_world_down_degrees": 39.63878086702098,
+            "humerus_hinge_roll_error_degrees": 3.0735848008169385e-05,
+            "ulna_hinge_roll_error_degrees": -4.4396223091306896e-05
+          },
+          "L": {
+            "shoulder": [
+              0.12622258067131042,
+              0.04884197935461998,
+              1.2343817949295044
+            ],
+            "elbow": [
+              0.18723340332508087,
+              0.007127363234758377,
+              0.997215986251831
+            ],
+            "wrist": [
+              0.2043771743774414,
+              -0.20837964117527008,
+              1.011741280555725
+            ],
+            "flexion_degrees": 82.96656056514418,
+            "wrist_deflection_degrees": 21.03605373791215,
+            "upper_arm_from_down_degrees": 53.57403334000447,
+            "upper_arm_from_world_down_degrees": 17.308658998390698,
+            "humerus_hinge_roll_error_degrees": 3.0735848008169385e-05,
+            "ulna_hinge_roll_error_degrees": -1.3660378340025502e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 25,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": -0.0002561744675040247,
+          "closest": {
+            "mesh": "TF_skirt_v4",
+            "axial_m": -0.35999999999999993,
+            "position": [
+              0.1189199835062027,
+              -0.3286903500556946,
+              0.9637719988822937
+            ],
+            "surface": [
+              0.11336633563041687,
+              -0.3214145600795746,
+              0.9604310393333435
+            ]
+          },
+          "near_probe_count": 5
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.16884610056877136,
+              0.008792120032012463,
+              1.2440509796142578
+            ],
+            "elbow": [
+              -0.21161781251430511,
+              -0.12738855183124542,
+              1.0407397747039795
+            ],
+            "wrist": [
+              -0.17288696765899658,
+              -0.2912978231906891,
+              1.177054762840271
+            ],
+            "flexion_degrees": 97.5258259508892,
+            "wrist_deflection_degrees": 16.11326319551716,
+            "upper_arm_from_down_degrees": 79.55863767876632,
+            "upper_arm_from_world_down_degrees": 35.07170999169483,
+            "humerus_hinge_roll_error_degrees": 1.7075476181919872e-05,
+            "ulna_hinge_roll_error_degrees": -1.0245282940797129e-05
+          },
+          "L": {
+            "shoulder": [
+              0.1334446221590042,
+              -0.1387300044298172,
+              1.1944772005081177
+            ],
+            "elbow": [
+              0.19648610055446625,
+              -0.1385289430618286,
+              0.9541947245597839
+            ],
+            "wrist": [
+              0.06341642141342163,
+              -0.281046062707901,
+              1.048690915107727
+            ],
+            "flexion_degrees": 125.32602092954008,
+            "wrist_deflection_degrees": 46.75389479335539,
+            "upper_arm_from_down_degrees": 41.95014761800456,
+            "upper_arm_from_world_down_degrees": 14.70109084876576,
+            "humerus_hinge_roll_error_degrees": 4.781132419008926e-05,
+            "ulna_hinge_roll_error_degrees": -4.09811382769645e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 49,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.012498795762658119,
+          "closest": {
+            "mesh": "SourceOutfit_Cardigan_v11",
+            "axial_m": -0.31999999999999995,
+            "position": [
+              0.05658738315105438,
+              -0.34424424171447754,
+              0.9496933221817017
+            ],
+            "surface": [
+              0.06722959876060486,
+              -0.3263958990573883,
+              0.9583174586296082
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.1388464868068695,
+              0.05262424424290657,
+              1.2208714485168457
+            ],
+            "elbow": [
+              -0.20302265882492065,
+              -0.08432019501924515,
+              1.0237988233566284
+            ],
+            "wrist": [
+              -0.19531580805778503,
+              -0.2680642902851105,
+              1.1383711099624634
+            ],
+            "flexion_degrees": 87.77566943899348,
+            "wrist_deflection_degrees": 13.185733126675684,
+            "upper_arm_from_down_degrees": 73.2140203172281,
+            "upper_arm_from_world_down_degrees": 37.50310365696305,
+            "humerus_hinge_roll_error_degrees": -2.3905668608820618e-05,
+            "ulna_hinge_roll_error_degrees": 1.7075472925031877e-05
+          },
+          "L": {
+            "shoulder": [
+              0.11512511223554611,
+              -0.1604335606098175,
+              1.1453442573547363
+            ],
+            "elbow": [
+              0.1791248321533203,
+              -0.1654128134250641,
+              0.9053666591644287
+            ],
+            "wrist": [
+              0.035141732543706894,
+              -0.29287970066070557,
+              1.005212664604187
+            ],
+            "flexion_degrees": 127.19761570552863,
+            "wrist_deflection_degrees": 45.97766428475095,
+            "upper_arm_from_down_degrees": 34.06794539126976,
+            "upper_arm_from_world_down_degrees": 14.975783981710748,
+            "humerus_hinge_roll_error_degrees": 5.122641877509563e-06,
+            "ulna_hinge_roll_error_degrees": -1.3660381596913497e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 73,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.01093713916838169,
+          "closest": {
+            "mesh": "TF_skirt_v4",
+            "axial_m": -0.36799999999999994,
+            "position": [
+              0.25903093814849854,
+              -0.25529611110687256,
+              0.9583597183227539
+            ],
+            "surface": [
+              0.24686186015605927,
+              -0.25583359599113464,
+              0.9413306713104248
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.1438717544078827,
+              -0.13220874965190887,
+              1.1905708312988281
+            ],
+            "elbow": [
+              -0.11831634491682053,
+              -0.2799740731716156,
+              0.9925245642662048
+            ],
+            "wrist": [
+              -0.026347871869802475,
+              -0.3580680191516876,
+              1.1725001335144043
+            ],
+            "flexion_degrees": 113.83801157579381,
+            "wrist_deflection_degrees": 22.082891218790618,
+            "upper_arm_from_down_degrees": 72.49672068078254,
+            "upper_arm_from_world_down_degrees": 37.13268883789492,
+            "humerus_hinge_roll_error_degrees": 2.049056913848225e-05,
+            "ulna_hinge_roll_error_degrees": 1.0245283755019126e-05
+          },
+          "L": {
+            "shoulder": [
+              0.1472945213317871,
+              0.022144865244627,
+              1.2739609479904175
+            ],
+            "elbow": [
+              0.20122388005256653,
+              -0.02256782352924347,
+              1.0356284379959106
+            ],
+            "wrist": [
+              0.1884075105190277,
+              -0.2381715029478073,
+              1.0529173612594604
+            ],
+            "flexion_degrees": 84.85322956863095,
+            "wrist_deflection_degrees": 21.42566309609531,
+            "upper_arm_from_down_degrees": 48.45106702850933,
+            "upper_arm_from_world_down_degrees": 16.37990695052529,
+            "humerus_hinge_roll_error_degrees": -2.7320756680051004e-05,
+            "ulna_hinge_roll_error_degrees": -3.4150945850063755e-06
+          }
+        },
+        "clamp": 0.0
+      }
+    ],
+    "crossings": 0,
+    "minimum": -0.0002561744675040247
+  },
+  {
+    "follow": 0.5,
+    "offset": [
+      0,
+      -0.05,
+      0
+    ],
+    "rows": [
+      {
+        "frame": 1,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.015679515674710272,
+          "closest": {
+            "mesh": "TF_sleeve_L_v4",
+            "axial_m": -0.31199999999999994,
+            "position": [
+              0.2659398317337036,
+              -0.22098295390605927,
+              0.9749838709831238
+            ],
+            "surface": [
+              0.25115400552749634,
+              -0.20815712213516235,
+              0.991606593132019
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.11827350407838821,
+              -0.162216916680336,
+              1.1290100812911987
+            ],
+            "elbow": [
+              -0.04411649703979492,
+              -0.32684025168418884,
+              0.9583937525749207
+            ],
+            "wrist": [
+              0.04781189188361168,
+              -0.3675377070903778,
+              1.1503337621688843
+            ],
+            "flexion_degrees": 110.93380831051523,
+            "wrist_deflection_degrees": 25.390159314917295,
+            "upper_arm_from_down_degrees": 85.53736180646693,
+            "upper_arm_from_world_down_degrees": 46.621122746079514,
+            "humerus_hinge_roll_error_degrees": 1.0245285383463124e-05,
+            "ulna_hinge_roll_error_degrees": -3.5858489885678946e-05
+          },
+          "L": {
+            "shoulder": [
+              0.12622258067131042,
+              0.04884197935461998,
+              1.2343817949295044
+            ],
+            "elbow": [
+              0.1912851482629776,
+              0.014824469573795795,
+              0.9970642328262329
+            ],
+            "wrist": [
+              0.22496820986270905,
+              -0.19667832553386688,
+              1.0299298763275146
+            ],
+            "flexion_degrees": 88.3107396283831,
+            "wrist_deflection_degrees": 24.886299674940037,
+            "upper_arm_from_down_degrees": 52.417477407846214,
+            "upper_arm_from_world_down_degrees": 17.190486480465722,
+            "humerus_hinge_roll_error_degrees": 3.4150942593175764e-05,
+            "ulna_hinge_roll_error_degrees": -3.756604043507013e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 25,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.006949675977230072,
+          "closest": {
+            "mesh": "SourceOutfit_Cardigan_v11",
+            "axial_m": -0.31999999999999995,
+            "position": [
+              0.06651346385478973,
+              -0.34151947498321533,
+              1.011037826538086
+            ],
+            "surface": [
+              0.07140200585126877,
+              -0.3272372782230377,
+              1.01874577999115
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.16884610056877136,
+              0.008792120032012463,
+              1.2440509796142578
+            ],
+            "elbow": [
+              -0.222791850566864,
+              -0.13533760607242584,
+              1.0490472316741943
+            ],
+            "wrist": [
+              -0.19457866251468658,
+              -0.2919839024543762,
+              1.196064829826355
+            ],
+            "flexion_degrees": 98.13173203216104,
+            "wrist_deflection_degrees": 18.462592137907674,
+            "upper_arm_from_down_degrees": 82.72943005753967,
+            "upper_arm_from_world_down_degrees": 38.28005816561951,
+            "humerus_hinge_roll_error_degrees": 2.3905665351932623e-05,
+            "ulna_hinge_roll_error_degrees": 6.830189170012751e-06
+          },
+          "L": {
+            "shoulder": [
+              0.1334446221590042,
+              -0.1387300044298172,
+              1.1944772005081177
+            ],
+            "elbow": [
+              0.17640972137451172,
+              -0.16680236160755157,
+              0.9514216184616089
+            ],
+            "wrist": [
+              0.03979605808854103,
+              -0.2909003496170044,
+              1.0649317502975464
+            ],
+            "flexion_degrees": 123.84142467192446,
+            "wrist_deflection_degrees": 50.88486492036539,
+            "upper_arm_from_down_degrees": 48.80247001602273,
+            "upper_arm_from_world_down_degrees": 11.923289625588362,
+            "humerus_hinge_roll_error_degrees": 3.4150945850063755e-06,
+            "ulna_hinge_roll_error_degrees": 1.0245285383463124e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 49,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.006684895381331444,
+          "closest": {
+            "mesh": "SourceOutfit_Cardigan_v11",
+            "axial_m": -0.31999999999999995,
+            "position": [
+              0.022601410746574402,
+              -0.3558206558227539,
+              0.9696933031082153
+            ],
+            "surface": [
+              0.02965393289923668,
+              -0.3422227203845978,
+              0.976307213306427
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.1388464868068695,
+              0.05262424424290657,
+              1.2208714485168457
+            ],
+            "elbow": [
+              -0.21780067682266235,
+              -0.08529204875230789,
+              1.0299391746520996
+            ],
+            "wrist": [
+              -0.22375242412090302,
+              -0.26064983010292053,
+              1.157070517539978
+            ],
+            "flexion_degrees": 89.59428926777942,
+            "wrist_deflection_degrees": 15.586831487880305,
+            "upper_arm_from_down_degrees": 75.29469401389993,
+            "upper_arm_from_world_down_degrees": 39.771365084094676,
+            "humerus_hinge_roll_error_degrees": -2.0490570766926247e-05,
+            "ulna_hinge_roll_error_degrees": 2.7320756680051004e-05
+          },
+          "L": {
+            "shoulder": [
+              0.11512511223554611,
+              -0.1604335606098175,
+              1.1453442573547363
+            ],
+            "elbow": [
+              0.15125174820423126,
+              -0.19679006934165955,
+              0.9022741317749023
+            ],
+            "wrist": [
+              0.0026093656197190285,
+              -0.3000648617744446,
+              1.0213871002197266
+            ],
+            "flexion_degrees": 124.60471197205172,
+            "wrist_deflection_degrees": 50.48005326863707,
+            "upper_arm_from_down_degrees": 41.77574215264286,
+            "upper_arm_from_world_down_degrees": 11.906914247053257,
+            "humerus_hinge_roll_error_degrees": 3.415094992117375e-06,
+            "ulna_hinge_roll_error_degrees": -1.7075474553475873e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 73,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.0156310049444437,
+          "closest": {
+            "mesh": "TF_sleeve_L_v4",
+            "axial_m": -0.31199999999999994,
+            "position": [
+              0.24112871289253235,
+              -0.265333890914917,
+              1.0165315866470337
+            ],
+            "surface": [
+              0.22819489240646362,
+              -0.2502724230289459,
+              1.032743215560913
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.1438717544078827,
+              -0.13220874965190887,
+              1.1905708312988281
+            ],
+            "elbow": [
+              -0.09526822715997696,
+              -0.29717281460762024,
+              1.0113096237182617
+            ],
+            "wrist": [
+              -0.00014739208563696593,
+              -0.36850395798683167,
+              1.1924506425857544
+            ],
+            "flexion_degrees": 107.38358526296932,
+            "wrist_deflection_degrees": 22.528366401742606,
+            "upper_arm_from_down_degrees": 78.8886097815664,
+            "upper_arm_from_world_down_degrees": 43.811620053643146,
+            "humerus_hinge_roll_error_degrees": -2.0490570766926247e-05,
+            "ulna_hinge_roll_error_degrees": 3.415094177895376e-06
+          },
+          "L": {
+            "shoulder": [
+              0.1472945213317871,
+              0.022144865244627,
+              1.2739609479904175
+            ],
+            "elbow": [
+              0.20502594113349915,
+              -0.02050669863820076,
+              1.0361418724060059
+            ],
+            "wrist": [
+              0.2043127864599228,
+              -0.2343491166830063,
+              1.0710563659667969
+            ],
+            "flexion_degrees": 89.17371353944671,
+            "wrist_deflection_degrees": 24.96071800104191,
+            "upper_arm_from_down_degrees": 48.298221055262786,
+            "upper_arm_from_world_down_degrees": 16.794729952029552,
+            "humerus_hinge_roll_error_degrees": -2.7320759936939e-05,
+            "ulna_hinge_roll_error_degrees": -6.83018998423475e-06
+          }
+        },
+        "clamp": 0.0
+      }
+    ],
+    "crossings": 0,
+    "minimum": 0.006684895381331444
+  },
+  {
+    "follow": 0.5,
+    "offset": [
+      0,
+      -0.07,
+      -0.02
+    ],
+    "rows": [
+      {
+        "frame": 1,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.016276251301169394,
+          "closest": {
+            "mesh": "TF_sleeve_R_v4",
+            "axial_m": -0.04799999999999993,
+            "position": [
+              0.11651591211557388,
+              -0.350040465593338,
+              1.1349369287490845
+            ],
+            "surface": [
+              0.09430626034736633,
+              -0.3612542748451233,
+              1.1264857053756714
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.11827350407838821,
+              -0.162216916680336,
+              1.1290100812911987
+            ],
+            "elbow": [
+              -0.05002596229314804,
+              -0.3207055330276489,
+              0.9503105878829956
+            ],
+            "wrist": [
+              0.05355199798941612,
+              -0.38022321462631226,
+              1.1310794353485107
+            ],
+            "flexion_degrees": 107.07180078773658,
+            "wrist_deflection_degrees": 23.45150232656297,
+            "upper_arm_from_down_degrees": 82.97119826359061,
+            "upper_arm_from_world_down_degrees": 43.99837450102422,
+            "humerus_hinge_roll_error_degrees": -1.0245283755019126e-05,
+            "ulna_hinge_roll_error_degrees": -6.830189170012751e-06
+          },
+          "L": {
+            "shoulder": [
+              0.12622258067131042,
+              0.04884197935461998,
+              1.2343817949295044
+            ],
+            "elbow": [
+              0.19462181627750397,
+              -0.0025910483673214912,
+              1.001173734664917
+            ],
+            "wrist": [
+              0.23581752181053162,
+              -0.21505562961101532,
+              1.0116513967514038
+            ],
+            "flexion_degrees": 77.879087331671,
+            "wrist_deflection_degrees": 19.359566730659598,
+            "upper_arm_from_down_degrees": 56.47468832200924,
+            "upper_arm_from_world_down_degrees": 20.151383730950005,
+            "humerus_hinge_roll_error_degrees": 0.0,
+            "ulna_hinge_roll_error_degrees": -3.0735854521945374e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 25,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.013236937820911407,
+          "closest": {
+            "mesh": "SourceOutfit_Cardigan_v11",
+            "axial_m": -0.31999999999999995,
+            "position": [
+              0.06066828966140747,
+              -0.36064594984054565,
+              0.9910374879837036
+            ],
+            "surface": [
+              0.07017260789871216,
+              -0.3417855501174927,
+              1.0007281303405762
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.16884610056877136,
+              0.008792120032012463,
+              1.2440509796142578
+            ],
+            "elbow": [
+              -0.22208517789840698,
+              -0.13481871783733368,
+              1.048471212387085
+            ],
+            "wrist": [
+              -0.19815075397491455,
+              -0.30682069063186646,
+              1.1780493259429932
+            ],
+            "flexion_degrees": 92.03970872650824,
+            "wrist_deflection_degrees": 15.736096734454472,
+            "upper_arm_from_down_degrees": 82.51874604240146,
+            "upper_arm_from_world_down_degrees": 38.06505064073668,
+            "humerus_hinge_roll_error_degrees": 5.8056607945108387e-05,
+            "ulna_hinge_roll_error_degrees": 2.7320759936939e-05
+          },
+          "L": {
+            "shoulder": [
+              0.1334446221590042,
+              -0.1387300044298172,
+              1.1944772005081177
+            ],
+            "elbow": [
+              0.17284584045410156,
+              -0.1735985428094864,
+              0.951697826385498
+            ],
+            "wrist": [
+              0.036286164075136185,
+              -0.31180259585380554,
+              1.0476105213165283
+            ],
+            "flexion_degrees": 116.2985462431559,
+            "wrist_deflection_degrees": 45.70444305757211,
+            "upper_arm_from_down_degrees": 50.463879380682485,
+            "upper_arm_from_world_down_degrees": 12.22787081256768,
+            "humerus_hinge_roll_error_degrees": 3.0735854521945374e-05,
+            "ulna_hinge_roll_error_degrees": -2.3905665351932623e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 49,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.013067925125360489,
+          "closest": {
+            "mesh": "SourceOutfit_Cardigan_v11",
+            "axial_m": -0.31999999999999995,
+            "position": [
+              0.014402046799659729,
+              -0.37406256794929504,
+              0.949692964553833
+            ],
+            "surface": [
+              0.026581833139061928,
+              -0.35618236660957336,
+              0.9576979875564575
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.1388464868068695,
+              0.05262424424290657,
+              1.2208714485168457
+            ],
+            "elbow": [
+              -0.21660977602005005,
+              -0.08805865049362183,
+              1.0314749479293823
+            ],
+            "wrist": [
+              -0.2288895845413208,
+              -0.2755735516548157,
+              1.1393426656723022
+            ],
+            "flexion_degrees": 82.6291628805239,
+            "wrist_deflection_degrees": 12.610160769281524,
+            "upper_arm_from_down_degrees": 75.88869507544842,
+            "upper_arm_from_world_down_degrees": 40.321919312332724,
+            "humerus_hinge_roll_error_degrees": 4.0981135020076506e-05,
+            "ulna_hinge_roll_error_degrees": 2.0490567510038253e-05
+          },
+          "L": {
+            "shoulder": [
+              0.11512511223554611,
+              -0.1604335606098175,
+              1.1453442573547363
+            ],
+            "elbow": [
+              0.14755934476852417,
+              -0.20262159407138824,
+              0.9026962518692017
+            ],
+            "wrist": [
+              -0.0033318852074444294,
+              -0.320345401763916,
+              1.004288911819458
+            ],
+            "flexion_degrees": 117.17047453222138,
+            "wrist_deflection_degrees": 45.333799427166774,
+            "upper_arm_from_down_degrees": 43.2448031449913,
+            "upper_arm_from_world_down_degrees": 12.369615167092016,
+            "humerus_hinge_roll_error_degrees": -4.4396232861970876e-05,
+            "ulna_hinge_roll_error_degrees": 2.049056913848225e-05
+          }
+        },
+        "clamp": 0.0
+      },
+      {
+        "frame": 73,
+        "contact": {
+          "shaft_crossings": [],
+          "minimum_probe_clearance_m": 0.017016583830118177,
+          "closest": {
+            "mesh": "TF_sleeve_R_v4",
+            "axial_m": -0.04799999999999993,
+            "position": [
+              0.072832390666008,
+              -0.36727917194366455,
+              1.1764843463897705
+            ],
+            "surface": [
+              0.04723089933395386,
+              -0.36851584911346436,
+              1.1679444313049316
+            ]
+          },
+          "near_probe_count": 0
+        },
+        "arms": {
+          "R": {
+            "shoulder": [
+              -0.1438717544078827,
+              -0.13220874965190887,
+              1.1905708312988281
+            ],
+            "elbow": [
+              -0.09877467155456543,
+              -0.29196107387542725,
+              1.0057590007781982
+            ],
+            "wrist": [
+              0.0045518288388848305,
+              -0.3820911943912506,
+              1.1735336780548096
+            ],
+            "flexion_degrees": 102.82576587887397,
+            "wrist_deflection_degrees": 20.078982018200577,
+            "upper_arm_from_down_degrees": 77.05617931027871,
+            "upper_arm_from_world_down_degrees": 41.92977999389958,
+            "humerus_hinge_roll_error_degrees": 2.0490567510038253e-05,
+            "ulna_hinge_roll_error_degrees": -1.0245283755019126e-05
+          },
+          "L": {
+            "shoulder": [
+              0.1472945213317871,
+              0.022144865244627,
+              1.2739609479904175
+            ],
+            "elbow": [
+              0.2057788372039795,
+              -0.03784086927771568,
+              1.0400992631912231
+            ],
+            "wrist": [
+              0.21256165206432343,
+              -0.25403890013694763,
+              1.052769422531128
+            ],
+            "flexion_degrees": 78.85676060946663,
+            "wrist_deflection_degrees": 19.424888952334307,
+            "upper_arm_from_down_degrees": 52.26960039722085,
+            "upper_arm_from_world_down_degrees": 19.709356085981582,
+            "humerus_hinge_roll_error_degrees": 6.830189170012751e-06,
+            "ulna_hinge_roll_error_degrees": -0.0
+          }
+        },
+        "clamp": 0.0
+      }
+    ],
+    "crossings": 0,
+    "minimum": 0.013067925125360489
+  }
+]

@@ -1,0 +1,20 @@
+test_corrupt_png_is_rejected (test_scg_assets.ImageInspectionTests) ... ok
+test_empty_full_size_placeholder_is_rejected (test_scg_assets.ImageInspectionTests) ... ok
+test_escape_is_rejected_before_reading (test_scg_assets.ImageInspectionTests) ... ok
+test_missing_is_not_success (test_scg_assets.ImageInspectionTests) ... ok
+test_one_pixel_placeholder_is_rejected (test_scg_assets.ImageInspectionTests) ... ok
+test_rgb_and_opaque_backgrounds_are_rejected (test_scg_assets.ImageInspectionTests) ... ok
+test_valid_png_has_hash_but_only_technical_pass (test_scg_assets.ImageInspectionTests) ... ok
+test_bad_canvas_and_duplicate_slots_are_rejected (test_scg_assets.LayerContractTests) ... ok
+test_hair_switch_preserves_shared_assets_and_order (test_scg_assets.LayerContractTests) ... ok
+test_plan_does_not_mutate_data_and_roundtrips (test_scg_assets.LayerContractTests) ... ok
+test_reference_and_traversal_cannot_be_used_as_layers (test_scg_assets.LayerContractTests) ... ok
+test_unknown_presets_fail_without_fallback (test_scg_assets.LayerContractTests) ... ok
+test_changed_and_missing_imports_cannot_pass (test_scg_assets.SourceIntegrityTests) ... ok
+test_imported_readme_is_checked_without_overwriting_project_readme (test_scg_assets.SourceIntegrityTests) ... ok
+test_manifest_traversal_is_rejected (test_scg_assets.SourceIntegrityTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.568s
+
+OK

@@ -1,0 +1,17 @@
+{
+  "import": {
+    "exit_code": 0,
+    "completion_marker": true,
+    "stderr": "ERROR: Could not open 'user://' directory: 'user://'.\n   at: _get_and_create_snapshot_storage_dir (modules/objectdb_profiler/editor/objectdb_profiler_panel.cpp:154)\n"
+  },
+  "gameplay": {
+    "exit_code": 0,
+    "completion_marker": true,
+    "stderr": "ERROR: Can't create shader cache folder, no shader caching will happen: user://\n   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:335)\n"
+  },
+  "variants": {
+    "exit_code": 0,
+    "completion_marker": true,
+    "stderr": "ERROR: Can't create shader cache folder, no shader caching will happen: user://\n   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:335)\n"
+  }
+}

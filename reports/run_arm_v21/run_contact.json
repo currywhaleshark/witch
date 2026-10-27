@@ -1,0 +1,509 @@
+{
+  "passed": true,
+  "samples": 25,
+  "crossing_frames": [],
+  "minimum_clearance_m": 0.010689314231276512,
+  "rows": [
+    {
+      "frame": 1,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.017066016569733618,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.27339035272598267,
+          -0.2398577332496643,
+          0.9563474655151367
+        ],
+        "surface": [
+          0.2611648440361023,
+          -0.2216828614473343,
+          0.972246527671814
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 5,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.016046970859169958,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.25830262899398804,
+          -0.25580427050590515,
+          0.9118064641952515
+        ],
+        "surface": [
+          0.2470594197511673,
+          -0.23868271708488464,
+          0.9278964400291443
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 9,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.014209087714552879,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.22297386825084686,
+          -0.28912657499313354,
+          0.8928433656692505
+        ],
+        "surface": [
+          0.2129177451133728,
+          -0.27434781193733215,
+          0.9091694951057434
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 13,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.012990640252828598,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.1761157065629959,
+          -0.32148900628089905,
+          0.9034221172332764
+        ],
+        "surface": [
+          0.1654548943042755,
+          -0.3097062408924103,
+          0.9200378656387329
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 17,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.013516783490777015,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.12774893641471863,
+          -0.3433995246887207,
+          0.9339950680732727
+        ],
+        "surface": [
+          0.11473648250102997,
+          -0.33338800072669983,
+          0.9508320689201355
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 21,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.01493414469063282,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.08676661550998688,
+          -0.3546515107154846,
+          0.9699999094009399
+        ],
+        "surface": [
+          0.07132545113563538,
+          -0.344666063785553,
+          0.9868395328521729
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 25,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.013237122222781181,
+      "closest": {
+        "mesh": "SourceOutfit_Cardigan_v11",
+        "axial_m": -0.31999999999999995,
+        "position": [
+          0.06066827476024628,
+          -0.36064600944519043,
+          0.9910373687744141
+        ],
+        "surface": [
+          0.07017356902360916,
+          -0.3417859971523285,
+          1.0007282495498657
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 29,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.01136601135134697,
+      "closest": {
+        "mesh": "SourceOutfit_Cardigan_v11",
+        "axial_m": -0.31999999999999995,
+        "position": [
+          0.03742145001888275,
+          -0.36363643407821655,
+          1.001968264579773
+        ],
+        "surface": [
+          0.047402191907167435,
+          -0.34692952036857605,
+          1.010787010192871
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 33,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.010689314231276512,
+      "closest": {
+        "mesh": "SourceOutfit_Cardigan_v11",
+        "axial_m": -0.31999999999999995,
+        "position": [
+          0.023248478770256042,
+          -0.3656367063522339,
+          0.9969164729118347
+        ],
+        "surface": [
+          0.03321370482444763,
+          -0.3495021462440491,
+          1.00518798828125
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 37,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.01071794681251049,
+      "closest": {
+        "mesh": "SourceOutfit_Cardigan_v11",
+        "axial_m": -0.31999999999999995,
+        "position": [
+          0.015899598598480225,
+          -0.3674945831298828,
+          0.9869728088378906
+        ],
+        "surface": [
+          0.026143133640289307,
+          -0.35135382413864136,
+          0.9949589967727661
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 41,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.011236255764961242,
+      "closest": {
+        "mesh": "SourceOutfit_Cardigan_v11",
+        "axial_m": -0.31999999999999995,
+        "position": [
+          0.013308003544807434,
+          -0.36955583095550537,
+          0.9820557832717896
+        ],
+        "surface": [
+          0.024161070585250854,
+          -0.3531026840209961,
+          0.9899604320526123
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 45,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.012073755040764808,
+      "closest": {
+        "mesh": "SourceOutfit_Cardigan_v11",
+        "axial_m": -0.31999999999999995,
+        "position": [
+          0.013422906398773193,
+          -0.37180086970329285,
+          0.9710946083068848
+        ],
+        "surface": [
+          0.025104135274887085,
+          -0.3548435568809509,
+          0.9790475368499756
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 49,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.013067856207489967,
+      "closest": {
+        "mesh": "SourceOutfit_Cardigan_v11",
+        "axial_m": -0.31999999999999995,
+        "position": [
+          0.014402016997337341,
+          -0.3740626573562622,
+          0.9496932029724121
+        ],
+        "surface": [
+          0.026581473648548126,
+          -0.35618218779563904,
+          0.9576979279518127
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 53,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.014803459644317627,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.03559704124927521,
+          -0.3736143112182617,
+          0.9122745394706726
+        ],
+        "surface": [
+          0.02182561159133911,
+          -0.360103964805603,
+          0.9278639554977417
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 57,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.013089677095413208,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.09414011240005493,
+          -0.36624354124069214,
+          0.8930344581604004
+        ],
+        "surface": [
+          0.08397278189659119,
+          -0.3525383174419403,
+          0.9085884094238281
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 61,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.013410983383655548,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.1546502411365509,
+          -0.34643688797950745,
+          0.9034814238548279
+        ],
+        "surface": [
+          0.14651568233966827,
+          -0.3308257758617401,
+          0.9189150333404541
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 65,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.014674391373991966,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.19737157225608826,
+          -0.32381293177604675,
+          0.9340069890022278
+        ],
+        "surface": [
+          0.18934494256973267,
+          -0.3062759041786194,
+          0.9493969678878784
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 69,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.015929458439350126,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.2260356992483139,
+          -0.3031761348247528,
+          0.9700139760971069
+        ],
+        "surface": [
+          0.21737176179885864,
+          -0.2842046618461609,
+          0.9854203462600708
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 73,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.01698238007724285,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.24597373604774475,
+          -0.2849876284599304,
+          0.9978948831558228
+        ],
+        "surface": [
+          0.23642376065254211,
+          -0.26503416895866394,
+          1.0133450031280518
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 77,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.017627093717455862,
+      "closest": {
+        "mesh": "TF_sleeve_R_v4",
+        "axial_m": -0.04999999999999993,
+        "position": [
+          0.09151609987020493,
+          -0.3615650534629822,
+          1.1859079599380493
+        ],
+        "surface": [
+          0.06535014510154724,
+          -0.3667113184928894,
+          1.178688883781433
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 81,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.017441285550594328,
+      "closest": {
+        "mesh": "TF_sleeve_R_v4",
+        "axial_m": -0.04999999999999993,
+        "position": [
+          0.10318152606487274,
+          -0.3570961654186249,
+          1.1808080673217773
+        ],
+        "surface": [
+          0.07784843444824219,
+          -0.3647823929786682,
+          1.1735844612121582
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 85,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.0173408368229866,
+      "closest": {
+        "mesh": "TF_sleeve_R_v4",
+        "axial_m": -0.04999999999999993,
+        "position": [
+          0.11050601303577423,
+          -0.3536955416202545,
+          1.1715896129608154
+        ],
+        "surface": [
+          0.0859231948852539,
+          -0.3632507920265198,
+          1.164385199546814
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 89,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.017296351268887518,
+      "closest": {
+        "mesh": "TF_sleeve_R_v4",
+        "axial_m": -0.04999999999999993,
+        "position": [
+          0.11473485082387924,
+          -0.35157257318496704,
+          1.1669628620147705
+        ],
+        "surface": [
+          0.09071555733680725,
+          -0.3623763620853424,
+          1.1597905158996582
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 93,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.017276298031210897,
+      "closest": {
+        "mesh": "TF_sleeve_R_v4",
+        "axial_m": -0.04999999999999993,
+        "position": [
+          0.11676029860973358,
+          -0.35011065006256104,
+          1.157166838645935
+        ],
+        "surface": [
+          0.09313228726387024,
+          -0.36172324419021606,
+          1.1500351428985596
+        ]
+      },
+      "near_probe_count": 0
+    },
+    {
+      "frame": 97,
+      "shaft_crossings": [],
+      "minimum_probe_clearance_m": 0.017066016569733618,
+      "closest": {
+        "mesh": "TF_sleeve_L_v4",
+        "axial_m": -0.30999999999999994,
+        "position": [
+          0.27339035272598267,
+          -0.2398577332496643,
+          0.9563474655151367
+        ],
+        "surface": [
+          0.2611648440361023,
+          -0.2216828614473343,
+          0.972246527671814
+        ]
+      },
+      "near_probe_count": 0
+    }
+  ],
+  "scope": "25 run samples, evaluated core/civilian/transformed surfaces; same shaft/head and intentional cuff/hand exclusions as v20. Not a general cloth-body collision test."
+}

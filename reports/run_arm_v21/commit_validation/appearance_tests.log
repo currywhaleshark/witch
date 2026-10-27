@@ -1,0 +1,12 @@
+test_2d_and_3d_resolve_the_same_active_outfit (test_character_appearance.ModularAppearanceTests) ... ok
+test_civilian_export_resolves_but_transformed_design_stays_missing (test_character_appearance.ModularAppearanceTests) ... ok
+test_legacy_migration_and_ambiguous_state_rejection (test_character_appearance.ModularAppearanceTests) ... ok
+test_missing_asset_fixture_blocks_both_forms (test_character_appearance.ModularAppearanceTests) ... ok
+test_missing_files_and_nonproduction_sources_cannot_pass (test_character_appearance.ModularAppearanceTests) ... ok
+test_transformed_outfit_change_survives_untransform_and_save_load (test_character_appearance.ModularAppearanceTests) ... ok
+test_wrong_form_body_or_rig_rejected_without_mutation (test_character_appearance.ModularAppearanceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.126s
+
+OK

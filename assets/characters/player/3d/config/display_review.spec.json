@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1",
+  "status": "user_selected_character_art_review_scale",
+  "selected_on": "2026-10-25",
+  "source_of_truth": "docs/09_character_art_pipeline.md#31-아트-우선순위",
+  "viewport_px": [
+    1280,
+    800
+  ],
+  "camera": {
+    "projection": "orthogonal",
+    "rotation_degrees_godot": [
+      -30,
+      45,
+      0
+    ],
+    "keep_aspect": "KEEP_HEIGHT",
+    "baseline_size": 20.0,
+    "relative_zoom": 1.75,
+    "size": 11.428571428571429,
+    "placement": "game/scripts/arena.gd::place_camera(player.position)"
+  },
+  "reference_character": {
+    "asset": "assets/characters/player/3d/source/middle_school_v1/optimization_trial/quality_refinement_v2/civilian_80k_v2.glb",
+    "height_game_units": 1.7,
+    "height_status": "review_normalization_not_canonical_physical_height",
+    "projected_geometry_height_px": 110.526092529297,
+    "pose": "static_imported_a_pose"
+  },
+  "measurement": "reports/character_display_scale/camera_framing_v2/measurement.json",
+  "game_integration_status": "user_selected_1_75_integrated_and_runtime_validated",
+  "game_integration": {
+    "configured_on": "2026-10-27",
+    "arena": "game/scripts/arena.gd",
+    "visual_controller": "game/scripts/player_visual.gd",
+    "character_scale": 1.0,
+    "runtime_asset_family": "game/assets/characters/player/run_arm_v21/",
+    "runtime_validation": "v21_main_game_GPU_parity_hand_order_gameplay_and_equal_attack_variants",
+    "validated_on": "2026-10-27",
+    "source_sha256": "80e04f5ec89e992ed351364095115b87fb3f8b98b2cd7a5833f2a7fda2d32ad7",
+    "gameplay_report": "reports/run_arm_v21/integration/gameplay/player_visual_validation.json",
+    "pose_parity_report": "reports/run_arm_v21/integration/godot_pose_parity.json",
+    "review": "reports/run_arm_v21/review.html",
+    "delivery_manifest": "reports/run_arm_v21/integration/delivery_manifest.json",
+    "base_runtime_checks": 193,
+    "gameplay_checks_including_capture_validation": 1287,
+    "captures": 547,
+    "failures": 0,
+    "reference_measurement_scope": "historical_static_art_reference_not_new_gameplay_measurement",
+    "selected_run": "combat_run_rh_v21",
+    "run_cycle_distance_m": 3.242813140153885,
+    "selected_motions": {
+      "idle": "combat_idle_rh_v20",
+      "run": "combat_run_rh_v21",
+      "attack": "combat_heavy_swing_rh_v20",
+      "attack_thrust": "combat_thrust_rh_v20",
+      "hit_react": "combat_hit_rh_v20",
+      "cast": "combat_cast_rh_v20",
+      "collapse": "combat_collapse_rh_v20"
+    }
+  },
+  "closeup_cinematics": "undecided",
+  "polygon_budget": "not_finalized"
+}

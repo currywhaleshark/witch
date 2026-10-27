@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1-draft",
+  "schema_version": "0.2-draft",
   "character_id": "player",
   "body_preset": "standard_v1",
   "hair_style": "semilong_v1",
@@ -7,6 +7,9 @@
   "eye_shape": "neutral_v1",
   "eye_color": "#72707A",
   "expression": "neutral",
-  "outfit": "civilian_v1",
+  "outfits_by_form": {
+    "civilian": "civilian_v1",
+    "transformed": "transformed_v1"
+  },
   "form": "civilian"
 }

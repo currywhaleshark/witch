@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "base_commit": "cbecce62d7506da41ab6d0d9587dd344562f137a",
+  "scope": "Selected v21 runtime, complete exported family, editable Blender source, current comparison images, character registry, authoring helpers and validation records. Concurrent combat/HUD changes remain outside this commit.",
+  "validation": "Game and Python tests ran from files extracted from the Git index, with HEAD combat code rather than uncommitted combat changes.",
+  "python_appearance_tests": 7,
+  "python_scg_tests": 15,
+  "engine": {
+    "import": {
+      "exit_code": 0,
+      "completion_marker": true,
+      "stderr": "ERROR: Could not open 'user://' directory: 'user://'.\n   at: _get_and_create_snapshot_storage_dir (modules/objectdb_profiler/editor/objectdb_profiler_panel.cpp:154)\n"
+    },
+    "gameplay": {
+      "exit_code": 0,
+      "completion_marker": true,
+      "stderr": "ERROR: Can't create shader cache folder, no shader caching will happen: user://\n   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:335)\n"
+    },
+    "variants": {
+      "exit_code": 0,
+      "completion_marker": true,
+      "stderr": "ERROR: Can't create shader cache folder, no shader caching will happen: user://\n   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:335)\n"
+    }
+  },
+  "reports": {
+    "gameplay": {
+      "passed": true,
+      "check_count": 192,
+      "report": "gameplay/player_visual_validation.json"
+    },
+    "variants": {
+      "passed": true,
+      "check_count": 787,
+      "report": "variants/variant_validation.json"
+    }
+  },
+  "staged_source_sha256": {
+    "game/scripts/arena.gd": "b8a813b95ad9bca707aff6358512db046020069a26da5b1f441455b41354a22f",
+    "game/scripts/player_visual.gd": "1f8107cdcdd2427b3cf4c807a391fa7343f8553dcb8011fc86b957173ba88d63",
+    "game/scripts/hud.gd": "3533a883a9a8bcad40c853f90f415b54d507597cdcc84da60ab4c7a80e5b6f66",
+    "game/data/trial.json": "3faec1423e5f65f724b4bd7fdcba60e109446ec9748852b4870ed34bf6bfdb6c"
+  },
+  "archive_note": "Earlier source versions, raw downloads, Blender autosaves, portable engine, duplicated project snapshots and bulk gameplay captures remain local. Original delivery manifests describe their original full validation workspace; repository text files follow Git line-ending rules."
+}

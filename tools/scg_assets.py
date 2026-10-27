@@ -14,6 +14,11 @@ from pathlib import Path, PurePosixPath
 
 from PIL import Image
 
+try:
+    from tools.character_appearance import AppearanceError, legacy_renderer_view
+except ModuleNotFoundError:  # Direct invocation: python tools/scg_assets.py
+    from character_appearance import AppearanceError, legacy_renderer_view
+
 
 SCG_ROOT = Path("assets/characters/player/scg")
 REFERENCE_ROOT = Path("assets/reference/character/scg")
@@ -72,6 +77,8 @@ def resolve_layer_plan(spec: dict, appearance: dict) -> dict:
     The same shared body/face/outfit paths serve both supported hair styles.
     """
     try:
+        if appearance.get("schema_version") == "0.2-draft":
+            appearance = legacy_renderer_view(appearance)
         if spec["schema_version"] != "0.1-draft" or appearance["schema_version"] != "0.1-draft":
             raise ContractError("Unsupported schema version")
         canvas = spec["canvas"]
@@ -129,7 +136,7 @@ def resolve_layer_plan(spec: dict, appearance: dict) -> dict:
                               "color": appearance["eye_color"]},
             },
         }
-    except (KeyError, TypeError) as exc:
+    except (KeyError, TypeError, AppearanceError) as exc:
         raise ContractError(f"Missing or unsupported draft field: {exc}") from exc
 
 

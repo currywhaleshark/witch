@@ -1,0 +1,539 @@
+{
+  "passed": true,
+  "max_influences": 8,
+  "files": {
+    "body_standard_v21.glb": {
+      "bytes": 3376572,
+      "sha256": "a73a82b8277312c017adfe85fb171c54b36cc63e0bc9374706bbaf38ef12ecc4",
+      "meshes": 9,
+      "triangles": 30044,
+      "exported_vertices": 15540,
+      "bones": 107,
+      "animations": [
+        "combat_cast_rh_v20",
+        "combat_collapse_rh_v20",
+        "combat_heavy_swing_rh_v20",
+        "combat_hit_rh_v20",
+        "combat_idle_rh_v20",
+        "combat_run_rh_v20",
+        "combat_run_rh_v21",
+        "combat_thrust_rh_v20"
+      ],
+      "images": [
+        {
+          "name": "shared_head_basecolor_v8",
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "sha256": "82b553ccb13d3ad0a9db7e9f853cee2a0eea7299ee4c61d03079f04a6a910be0"
+        }
+      ],
+      "maximum_influences": 4,
+      "maximum_weight_sum_error": 1.2665987014770508e-07,
+      "vertices_with_more_than_four_influences": 0,
+      "parts": {
+        "Body_Arms_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 4,
+              "maximum_weight_sum_error": 1.1920928955078125e-07,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Body_Feet_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 7.636845111846924e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Body_Hands_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 8.940696716308594e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Body_LowerLegs_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 7.636845111846924e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Body_Pelvis_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 8.940696716308594e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Body_Torso_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 4,
+              "maximum_weight_sum_error": 1.2665987014770508e-07,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Body_UpperLegs_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 4,
+              "maximum_weight_sum_error": 8.940696716308594e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Face_Core_v8": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 2,
+              "maximum_weight_sum_error": 2.9802322387695312e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Face_Ears_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 1,
+              "maximum_weight_sum_error": 0.0,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        }
+      },
+      "identical_bind_matrices": true,
+      "finite_geometry_and_animation": true
+    },
+    "hair_semilong_v21.glb": {
+      "bytes": 5913412,
+      "sha256": "e110830cc91de0a0c596d7568886eae91cfe6d92f31d8b1f2e5eee541bc65832",
+      "meshes": 1,
+      "triangles": 25209,
+      "exported_vertices": 20945,
+      "bones": 107,
+      "animations": [],
+      "images": [
+        {
+          "name": "civilian_shared_atlas_2k",
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "sha256": "de008c2a6bceeebc2eff0d63ea6bb741a2c356dd58cbcaa7a406fa56fc3091ea"
+        }
+      ],
+      "maximum_influences": 2,
+      "maximum_weight_sum_error": 2.9802322387695312e-08,
+      "vertices_with_more_than_four_influences": 0,
+      "parts": {
+        "Hair_Semilong_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 2,
+              "maximum_weight_sum_error": 2.9802322387695312e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        }
+      },
+      "identical_bind_matrices": true,
+      "finite_geometry_and_animation": true
+    },
+    "eyes_neutral_v21.glb": {
+      "bytes": 1425440,
+      "sha256": "c7f6931e64338e4f0680f6a59d6aa6f19def22db25ae3d1c6dcb34380a0f02b4",
+      "meshes": 1,
+      "triangles": 864,
+      "exported_vertices": 482,
+      "bones": 107,
+      "animations": [],
+      "images": [
+        {
+          "name": "shared_head_basecolor_v8",
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "sha256": "82b553ccb13d3ad0a9db7e9f853cee2a0eea7299ee4c61d03079f04a6a910be0"
+        }
+      ],
+      "maximum_influences": 1,
+      "maximum_weight_sum_error": 0.0,
+      "vertices_with_more_than_four_influences": 0,
+      "parts": {
+        "Eyes_Iris_v8": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 1,
+              "maximum_weight_sum_error": 0.0,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        }
+      },
+      "identical_bind_matrices": true,
+      "finite_geometry_and_animation": true
+    },
+    "outfit_civilian_v21.glb": {
+      "bytes": 12870132,
+      "sha256": "c5e18428b027beb03f173e4270bf19fb898587416da99c3f774704dd01ee9caa",
+      "meshes": 6,
+      "triangles": 43820,
+      "exported_vertices": 37328,
+      "bones": 107,
+      "animations": [],
+      "images": [
+        {
+          "name": "civilian_shared_atlas_2k",
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "sha256": "de008c2a6bceeebc2eff0d63ea6bb741a2c356dd58cbcaa7a406fa56fc3091ea"
+        },
+        {
+          "name": "Runtime2K_witch_semilong_middle_school_v1_raw_basecolor",
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "sha256": "5746811e7fb80dfdef04386652c15309218f476d20e7b0ee6c16aadfcace4539"
+        }
+      ],
+      "maximum_influences": 8,
+      "maximum_weight_sum_error": 1.5296973288059235e-07,
+      "vertices_with_more_than_four_influences": 14756,
+      "parts": {
+        "Outfit_Shoes_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 1.0360963642597198e-07,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Outfit_Socks_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 7.636845111846924e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "SourceOutfit_Cardigan_v11": {
+          "influence_limit": 8,
+          "primitives": [
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 1.5296973288059235e-07,
+              "vertices_with_more_than_four_influences": 7249
+            }
+          ]
+        },
+        "SourceOutfit_Inner_v11": {
+          "influence_limit": 8,
+          "primitives": [
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 1.1920928955078125e-07,
+              "vertices_with_more_than_four_influences": 422
+            },
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 8.940696716308594e-08,
+              "vertices_with_more_than_four_influences": 10
+            }
+          ]
+        },
+        "SourceOutfit_Skirt_v11": {
+          "influence_limit": 8,
+          "primitives": [
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 1.3969838619232178e-07,
+              "vertices_with_more_than_four_influences": 5647
+            }
+          ]
+        },
+        "SourceOutfit_SkirtLining_v11": {
+          "influence_limit": 8,
+          "primitives": [
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 1.2898817658424377e-07,
+              "vertices_with_more_than_four_influences": 1428
+            }
+          ]
+        }
+      },
+      "identical_bind_matrices": true,
+      "finite_geometry_and_animation": true
+    },
+    "civilian_assembled_v21.glb": {
+      "bytes": 17266412,
+      "sha256": "3010be16173eb793acdc0435f2ad4ecd643bd0e9866257f77072f7cb4a58004e",
+      "meshes": 13,
+      "triangles": 92765,
+      "exported_vertices": 70455,
+      "bones": 107,
+      "animations": [
+        "combat_cast_rh_v20",
+        "combat_collapse_rh_v20",
+        "combat_heavy_swing_rh_v20",
+        "combat_hit_rh_v20",
+        "combat_idle_rh_v20",
+        "combat_run_rh_v20",
+        "combat_run_rh_v21",
+        "combat_thrust_rh_v20"
+      ],
+      "images": [
+        {
+          "name": "shared_head_basecolor_v8",
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "sha256": "82b553ccb13d3ad0a9db7e9f853cee2a0eea7299ee4c61d03079f04a6a910be0"
+        },
+        {
+          "name": "civilian_shared_atlas_2k",
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "sha256": "de008c2a6bceeebc2eff0d63ea6bb741a2c356dd58cbcaa7a406fa56fc3091ea"
+        },
+        {
+          "name": "Runtime2K_witch_semilong_middle_school_v1_raw_basecolor",
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "sha256": "5746811e7fb80dfdef04386652c15309218f476d20e7b0ee6c16aadfcace4539"
+        }
+      ],
+      "maximum_influences": 8,
+      "maximum_weight_sum_error": 1.5296973288059235e-07,
+      "vertices_with_more_than_four_influences": 14756,
+      "parts": {
+        "Body_Hands_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 8.940696716308594e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Body_Pelvis_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 8.940696716308594e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Body_UpperLegs_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 4,
+              "maximum_weight_sum_error": 8.940696716308594e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Eyes_Iris_v8": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 1,
+              "maximum_weight_sum_error": 0.0,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Face_Core_v8": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 2,
+              "maximum_weight_sum_error": 2.9802322387695312e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Face_Ears_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 1,
+              "maximum_weight_sum_error": 0.0,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Hair_Semilong_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 2,
+              "maximum_weight_sum_error": 2.9802322387695312e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Outfit_Shoes_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 1.0360963642597198e-07,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "Outfit_Socks_v7": {
+          "influence_limit": 4,
+          "primitives": [
+            {
+              "skin_sets": 1,
+              "maximum_influences": 3,
+              "maximum_weight_sum_error": 7.636845111846924e-08,
+              "vertices_with_more_than_four_influences": 0
+            }
+          ]
+        },
+        "SourceOutfit_Cardigan_v11": {
+          "influence_limit": 8,
+          "primitives": [
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 1.5296973288059235e-07,
+              "vertices_with_more_than_four_influences": 7249
+            }
+          ]
+        },
+        "SourceOutfit_Inner_v11": {
+          "influence_limit": 8,
+          "primitives": [
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 1.1920928955078125e-07,
+              "vertices_with_more_than_four_influences": 422
+            },
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 8.940696716308594e-08,
+              "vertices_with_more_than_four_influences": 10
+            }
+          ]
+        },
+        "SourceOutfit_Skirt_v11": {
+          "influence_limit": 8,
+          "primitives": [
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 1.3969838619232178e-07,
+              "vertices_with_more_than_four_influences": 5647
+            }
+          ]
+        },
+        "SourceOutfit_SkirtLining_v11": {
+          "influence_limit": 8,
+          "primitives": [
+            {
+              "skin_sets": 2,
+              "maximum_influences": 8,
+              "maximum_weight_sum_error": 1.2898817658424377e-07,
+              "vertices_with_more_than_four_influences": 1428
+            }
+          ]
+        }
+      },
+      "identical_bind_matrices": true,
+      "finite_geometry_and_animation": true
+    }
+  },
+  "rig_bindings_sha256": "d8dea7879dbe65fbd01d01d59b2f9a1783f1376f65534d7dc3f46ce647798414",
+  "unique_image_payloads": 3,
+  "texture_reuse": [
+    [
+      "body_standard_v21.glb",
+      "eyes_neutral_v21.glb",
+      "civilian_assembled_v21.glb"
+    ],
+    [
+      "hair_semilong_v21.glb",
+      "outfit_civilian_v21.glb",
+      "civilian_assembled_v21.glb"
+    ],
+    [
+      "outfit_civilian_v21.glb",
+      "civilian_assembled_v21.glb"
+    ]
+  ],
+  "scope": "Stored GLB data; Godot import and visual motion require a separate runtime check."
+}

@@ -9,3 +9,6 @@ reports/*_runtime.log
 # Downloaded Mixamo source motions stay local; commercial game use is distinct
 # from publishing standalone source motion files in the repository.
 assets/characters/player/3d/source/motion_library/mixamo_local/
+
+# Task-local copy of the installed engine and its disposable editor settings.
+reports/combat_motion_v18/portable_godot/

@@ -1,0 +1,246 @@
+{
+  "schema_version": "0.1-modular-draft",
+  "character_id": "player",
+  "status": "combat_prototype_v21_user_selected_right_hand_motion_family",
+  "rig": {
+    "id": "player_humanoid_v11",
+    "asset": "exports/run_arm_v21/body_standard_v21.glb",
+    "status": "validated",
+    "deform_bones": 107,
+    "max_influences": 8,
+    "bind_signature_sha256": "d8dea7879dbe65fbd01d01d59b2f9a1783f1376f65534d7dc3f46ce647798414"
+  },
+  "bodies": {
+    "standard_v1": {
+      "id": "standard_v1",
+      "body_preset": "standard_v1",
+      "rig_id": "player_humanoid_v11",
+      "asset": "exports/run_arm_v21/body_standard_v21.glb",
+      "status": "validated",
+      "sha256": "a73a82b8277312c017adfe85fb171c54b36cc63e0bc9374706bbaf38ef12ecc4",
+      "regions": [
+        "torso",
+        "arms",
+        "hands",
+        "pelvis",
+        "upperlegs",
+        "lowerlegs",
+        "feet"
+      ],
+      "max_influences": 4,
+      "runtime_asset": "res://assets/characters/player/run_arm_v21/body_standard_v21.glb"
+    }
+  },
+  "hair": {
+    "semilong_v1": {
+      "id": "semilong_v1",
+      "body_preset": "standard_v1",
+      "rig_id": "player_humanoid_v11",
+      "asset": "exports/run_arm_v21/hair_semilong_v21.glb",
+      "status": "validated",
+      "sha256": "e110830cc91de0a0c596d7568886eae91cfe6d92f31d8b1f2e5eee541bc65832",
+      "max_influences": 4,
+      "runtime_asset": "res://assets/characters/player/run_arm_v21/hair_semilong_v21.glb"
+    },
+    "twintails_v1": {
+      "id": "twintails_v1",
+      "body_preset": "standard_v1",
+      "rig_id": "player_humanoid_v11",
+      "asset": null,
+      "status": "source_preserved_not_runtime_ready",
+      "source_asset": "assets/characters/player/3d/source/transformed_v1/hair_library/twintails_source_v1/twintails_source_v1.glb",
+      "source_sha256": "5dbd0a543d40a8e0f2ea0b8d120d509abf5bb4cab00a0d9fb62f295d1cd47c4d",
+      "source_readme": "assets/characters/player/3d/source/transformed_v1/hair_library/twintails_source_v1/README.md",
+      "source_manifest": "assets/characters/player/3d/source/transformed_v1/hair_library/twintails_source_v1/manifest.json"
+    }
+  },
+  "eyes": {
+    "neutral_v1": {
+      "id": "neutral_v1",
+      "body_preset": "standard_v1",
+      "rig_id": "player_humanoid_v11",
+      "asset": "exports/run_arm_v21/eyes_neutral_v21.glb",
+      "status": "validated",
+      "sha256": "c7f6931e64338e4f0680f6a59d6aa6f19def22db25ae3d1c6dcb34380a0f02b4",
+      "max_influences": 4,
+      "runtime_asset": "res://assets/characters/player/run_arm_v21/eyes_neutral_v21.glb"
+    }
+  },
+  "outfits": {
+    "civilian_v1": {
+      "id": "civilian_v1",
+      "form": "civilian",
+      "body_preset": "standard_v1",
+      "rig_id": "player_humanoid_v11",
+      "asset": "exports/run_arm_v21/outfit_civilian_v21.glb",
+      "status": "validated",
+      "hide_body_regions": [
+        "torso",
+        "arms",
+        "lowerlegs",
+        "feet"
+      ],
+      "sha256": "c5e18428b027beb03f173e4270bf19fb898587416da99c3f774704dd01ee9caa",
+      "max_influences": 8,
+      "runtime_asset": "res://assets/characters/player/run_arm_v21/outfit_civilian_v21.glb"
+    },
+    "transformed_v1": {
+      "id": "transformed_v1",
+      "form": "transformed",
+      "body_preset": "standard_v1",
+      "rig_id": "player_humanoid_v11",
+      "asset": null,
+      "status": "source_parts_separated_not_runtime_ready",
+      "hide_body_regions": [],
+      "concept_reference": "assets/reference/character/outfits/transformed_v1/concept_2026-10-27.jpg",
+      "concept_manifest": "assets/reference/character/outfits/transformed_v1/manifest.json",
+      "design_status": "user_supplied_draft",
+      "staff_design_status": "undecided",
+      "raw_source": "assets/characters/player/3d/source/transformed_v1/witch_transformed_v1_raw.glb",
+      "raw_source_sha256": "1ebf2e3826fcb44895ff5fb543c54bbe7aa207eee4a5647e894d423960e14e74",
+      "source_readme": "assets/characters/player/3d/source/transformed_v1/README.md",
+      "source_parts": "assets/characters/player/3d/source/transformed_v1/parts_v2/transformed_parts_source_v2.blend",
+      "source_parts_readme": "assets/characters/player/3d/source/transformed_v1/parts_v2/README.md"
+    }
+  },
+  "production_requirements": [
+    "one_common_body_and_rig_with_identical_rest_pose_and_bind_matrices",
+    "body_under_clothes_must_be_authored_not_cut_from_the_fused_surface",
+    "independent_hair_and_iris_color_regions_preserve_skin_and_eye_whites",
+    "outfits_are_whole_sets_and_multiple_sets_per_form_are_supported",
+    "each_outfit_declares_body_regions_to_hide_without_deleting_body_geometry",
+    "each_LOD_preserves_bindings_material_regions_and_part_boundaries",
+    "texture_rebake_and_joint_deformation_review_before_production_export"
+  ],
+  "validation": {
+    "scope": "v21_user_selected_main_game_7_current_motions_8_exported_clips_215_GPU_poses_actual_gameplay_and_variant_equivalence",
+    "art_review_zoom": 1.75,
+    "visible_civilian_triangles": 92765,
+    "engine": "4.6.2-stable (official)",
+    "report": "reports/run_arm_v21/integration/gameplay/player_visual_validation.json",
+    "visual_approval": "User accepted the v21 run correction and requested this motion family as the game default; final cloth contacts and balance remain separate.",
+    "live_cloth_simulation": false,
+    "new_animations_require_bake": true,
+    "lods": [
+      "lod0"
+    ],
+    "not_created": [
+      "hair/twintails_v1",
+      "outfits/transformed_v1"
+    ],
+    "default_color_semantics": "absolute swatches normalized to #282630 hair and #72707A iris; use apply_appearance_colors",
+    "pose_report": "reports/run_arm_v21/integration/godot_pose_parity.json",
+    "glb_report": "reports/run_arm_v21/glb_validation.json",
+    "source_blend": "source/middle_school_v1/run_arm_v21/run_arm_v21.blend",
+    "source_blend_sha256": "80e04f5ec89e992ed351364095115b87fb3f8b98b2cd7a5833f2a7fda2d32ad7",
+    "next_outfit": "source/middle_school_v1/run_arm_v21/GAME_INTEGRATION.md",
+    "game_integration": "game/scripts/player_visual.gd",
+    "combat_clips": [
+      "combat_idle_rh_v20",
+      "combat_run_rh_v21",
+      "combat_heavy_swing_rh_v20",
+      "combat_thrust_rh_v20",
+      "combat_hit_rh_v20",
+      "combat_cast_rh_v20",
+      "combat_collapse_rh_v20"
+    ],
+    "display_spec": "assets/characters/player/3d/config/display_review.spec.json",
+    "hand_report": "reports/run_arm_v21/integration/runtime_hand_validation.json",
+    "external_motion_trials": [
+      {
+        "clip": "combat_idle_rh_v20",
+        "provider": "Quaternius",
+        "license": "CC0-1.0",
+        "source_clip": "Idle_Loop",
+        "default_selected": true,
+        "status": "adapted_right_hand_motion_selected_for_current_prototype",
+        "previous_clip": "trial_two_hand_idle_v16"
+      },
+      {
+        "clip": "combat_run_rh_v21",
+        "provider": "Quaternius",
+        "license": "CC0-1.0",
+        "source_clip": "Jog_Fwd_Loop",
+        "default_selected": true,
+        "status": "adapted_right_hand_motion_selected_for_current_prototype",
+        "previous_clip": "trial_two_hand_run_v17"
+      },
+      {
+        "clip": "trial_two_hand_attack_v17",
+        "provider": "Quaternius",
+        "license": "CC0-1.0",
+        "source_clip": "Sword_Attack",
+        "default_selected": false,
+        "status": "historical_replaced_by_authored_v18_staff_attacks"
+      },
+      {
+        "clip": "combat_cast_rh_v20",
+        "provider": "Adobe Mixamo",
+        "license": "Adobe Mixamo royalty-free use; not CC0",
+        "source_clip": "Standing 1H Magic Attack 01",
+        "default_selected": true,
+        "status": "adapted_right_hand_motion_selected_for_current_prototype",
+        "previous_clip": "trial_one_hand_cast_v17"
+      },
+      {
+        "clip": "combat_hit_rh_v20",
+        "provider": "Quaternius",
+        "license": "CC0-1.0",
+        "source_clip": "Hit_Chest",
+        "default_selected": true,
+        "status": "adapted_right_hand_motion_selected_for_current_prototype",
+        "previous_clip": "trial_two_hand_hit_v16"
+      },
+      {
+        "clip": "combat_collapse_rh_v20",
+        "provider": "Quaternius",
+        "license": "CC0-1.0",
+        "source_clip": "Death01",
+        "default_selected": true,
+        "status": "adapted_right_hand_motion_selected_for_current_prototype",
+        "previous_clip": "combat_collapse_v18"
+      },
+      {
+        "clip": "combat_heavy_swing_rh_v20",
+        "provider": "Adobe Mixamo",
+        "license": "Adobe Mixamo royalty-free use; not CC0",
+        "source_clip": "Heavy Weapon Swing",
+        "source_sha256": "2c657ce760a6622975a2fec34f689467f5ed6df1360da9a306c0e123103a85f0",
+        "default_selected": true,
+        "status": "user_supplied_adjusted_motion_with_v20_right_hand_entry_correction",
+        "raw_source_policy": "local/gitignored original preserved"
+      }
+    ],
+    "comparison_clips": [
+      "combat_run_rh_v20"
+    ],
+    "run_motion_approval": {
+      "status": "selected_for_current_prototype",
+      "date": "2026-10-27",
+      "clip": "combat_run_rh_v21",
+      "scope": "User accepted corrected elbows/wrists and requested main-game promotion; original compact gait and cycle distance retained."
+    },
+    "refinement_report": "reports/run_arm_v21/independent_validation.json",
+    "motion_approval": {
+      "status": "user_selected_and_integrated",
+      "date": "2026-10-27",
+      "clips": {
+        "idle": "combat_idle_rh_v20",
+        "run": "combat_run_rh_v21",
+        "attack": "combat_heavy_swing_rh_v20",
+        "attack_thrust": "combat_thrust_rh_v20",
+        "hit_react": "combat_hit_rh_v20",
+        "cast": "combat_cast_rh_v20",
+        "collapse": "combat_collapse_rh_v20"
+      },
+      "scope": "v21 run with six v20 right-handed motions promoted to the actual game at the user request."
+    },
+    "variant_equivalence_report": "reports/run_arm_v21/integration/variants/variant_validation.json",
+    "source_hand_reports": [
+      "reports/heavy_swing_v20/independent_validation.json",
+      "reports/run_arm_v21/independent_validation.json"
+    ],
+    "runtime_contract": "game/assets/characters/player/run_arm_v21/runtime_contract.json",
+    "delivery_manifest": "reports/run_arm_v21/integration/delivery_manifest.json"
+  }
+}

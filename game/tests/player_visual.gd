@@ -1,16 +1,16 @@
 extends SceneTree
 ## Runtime regression of the combat-linked character, not a source-code check.
-## Run with --script res://tests/player_visual.gd after the selected v17 assets are imported.
+## Run with --script res://tests/player_visual.gd after the selected character assets are imported.
 ## Optional --capture records the same gameplay events through the real viewport.
 
 const DT := 1.0 / 60.0
 const HEAVY_HIT := 15.0
 const EXPECTED_CLIPS := {
-	"idle": "trial_two_hand_idle_v16", "run": "trial_two_hand_run_v17",
-	"attack": "trial_two_hand_attack_v17", "cast": "trial_one_hand_cast_v17", "hit": "trial_two_hand_hit_v16",
+	"idle": "combat_idle_rh_v20", "run": "combat_run_rh_v21",
+	"attack": "combat_heavy_swing_rh_v20", "cast": "combat_cast_rh_v20", "hit": "combat_hit_rh_v20",
 }
 const EXPECTED_RUN_CYCLE_DISTANCE := 3.242813140153885
-const EXPECTED_RUN_LENGTH := 1.0
+const EXPECTED_RUN_LENGTH := 4.0
 var arena: Node3D
 var failures: Array = []
 var checks: Array = []
@@ -33,7 +33,7 @@ func _initialize() -> void:
 		elif argument.begins_with("--output="):
 			report_dir = argument.trim_prefix("--output=")
 	if report_dir.is_empty():
-		report_dir = ProjectSettings.globalize_path("res://").path_join("../reports/combat_motion_v17/integration/gameplay").simplify_path()
+		report_dir = ProjectSettings.globalize_path("res://").path_join("../reports/run_arm_v21/integration/gameplay").simplify_path()
 	DirAccess.make_dir_recursive_absolute(report_dir)
 	call_deferred("run")
 
@@ -72,7 +72,7 @@ func check_state(expected: String, label: String) -> void:
 	check(snap.get("loaded_ok", false) and snap.get("state", "") == expected, label)
 	var clip: String = snap.get("clip", "")
 	check(not clip.is_empty() and animation_player().has_animation(clip), label + ": actual clip exists")
-	check(clip.get_file() == EXPECTED_CLIPS[expected], label + ": selected authored clip matches the gameplay contract")
+	check(clip.get_file() in ["combat_heavy_swing_rh_v20", "combat_thrust_rh_v20"] if expected == "attack" else clip.get_file() == EXPECTED_CLIPS[expected], label + ": selected authored clip matches the gameplay contract")
 	if not clip.is_empty() and animation_player().has_animation(clip):
 		check(animation_player().current_animation == clip, label + ": AnimationPlayer selected the clip")
 	if expected == "run":
@@ -236,7 +236,7 @@ func run() -> void:
 	if not check(is_instance_valid(visual()) and visual().has_method("debug_state"), "arena owns the real character visual controller"):
 		finish()
 		return
-	if not check(visual().get("loaded_ok") == true, "selected v17 character assets load successfully: " + str(visual().get("last_error"))):
+	if not check(visual().get("loaded_ok") == true, "selected v21 character assets load successfully: " + str(visual().get("last_error"))):
 		finish()
 		return
 	await fresh()
@@ -387,7 +387,7 @@ func run() -> void:
 	check_state("attack", "minor non-stunning damage also preserves attack animation")
 	check(is_equal_approx(float(state().get("motion_elapsed", -1)), float(minor_snap.get("motion_elapsed", -2))), "minor damage does not restart animation time")
 
-	# Pause and death must freeze actual evaluated bones, not only debug counters.
+	# Pause freezes evaluated bones; incapacitation plays and then holds a fall.
 	await fresh()
 	arena.request_slot("lmb", {"enemy_id": "target"})
 	await step(5)
@@ -409,9 +409,21 @@ func run() -> void:
 	var death_state := state()
 	var death_pose := pose_snapshot()
 	var death_position: Vector3 = arena.player.position
+	await step(12, "collapse_motion")
+	check(arena.hp == 0 and state().get("dead", false), "HP zero starts incapacitation")
+	check(str(state().get("clip", "")).get_file() == "combat_collapse_rh_v20" and not same_pose(death_pose, pose_snapshot()), "incapacitation advances the actual collapse bones")
+	var fall_time: float = state().get("clip_time", 0.0)
+	var fall_pose := pose_snapshot()
+	arena.paused = true
+	await step(8)
+	check(is_equal_approx(float(state().get("clip_time", -1)), fall_time) and same_pose(fall_pose, pose_snapshot()), "pause freezes a fall in progress")
+	arena.paused = false
+	await step(150, "collapse_motion")
+	death_pose = pose_snapshot()
+	death_state = state()
 	await step(12)
-	check(arena.hp == 0 and state().get("dead", false), "death reaches the visual freeze state")
-	check(is_equal_approx(float(state().get("clip_time", -1)), float(death_state.get("clip_time", -2))) and same_pose(death_pose, pose_snapshot()), "death freezes actual clip and bones")
+	check(state().get("state", "") == "dead" and is_equal_approx(float(state().get("normalized_time", 0)), 1.0), "collapse completes and holds its final frame")
+	check(same_pose(death_pose, pose_snapshot()) and state().get("clip_time") == death_state.get("clip_time"), "settled incapacitation freezes the actual bones")
 	check(arena.player.position.is_equal_approx(death_position), "dead player does not move")
 	var previous_visual_id := visual().get_instance_id()
 	input_key(KEY_ENTER)
@@ -442,7 +454,7 @@ func finish() -> void:
 	check(run_phase_samples > 0 and run_loop_wraps > 0, "actual movement exercises the run phase and a loop wrap")
 	check(run_phase_max_error < 0.00001, "actual run animation phase follows displacement divided by authored cycle distance")
 	check(run_rate_max_error < 0.00001 and run_speed_max_error < 0.00001, "run playback rate follows actual displacement speed")
-	check(run_length_max_error < 0.00001, "selected compact run retains its authored one-second cycle")
+	check(run_length_max_error < 0.00001, "selected compact run retains its denser authoring and measured cycle distance")
 	observations.run_playback_contract = {"clip": EXPECTED_CLIPS.run, "cycle_distance_m": EXPECTED_RUN_CYCLE_DISTANCE,
 		"authored_length_seconds": EXPECTED_RUN_LENGTH, "sample_count": run_phase_samples, "loop_wraps": run_loop_wraps,
 		"max_normalized_phase_error": run_phase_max_error, "max_playback_rate_error": run_rate_max_error,

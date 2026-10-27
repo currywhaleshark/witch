@@ -1,0 +1,64 @@
+{
+  "bone_count": 107,
+  "passed": true,
+  "pose_checks": [
+    {
+      "clip": "combat_cast_rh_v20",
+      "maximum_bone_head_error": 0.0000442111886513885,
+      "maximum_cloth_vertex_error": 0.0000386700958188158,
+      "samples": 17,
+      "tracks": 321
+    },
+    {
+      "clip": "combat_collapse_rh_v20",
+      "maximum_bone_head_error": 0.0000438826646131929,
+      "maximum_cloth_vertex_error": 0.000103281090559904,
+      "samples": 30,
+      "tracks": 321
+    },
+    {
+      "clip": "combat_heavy_swing_rh_v20",
+      "maximum_bone_head_error": 0.0000287763996311696,
+      "maximum_cloth_vertex_error": 0.0000423869169026148,
+      "samples": 25,
+      "tracks": 321
+    },
+    {
+      "clip": "combat_hit_rh_v20",
+      "maximum_bone_head_error": 0.000102378762676381,
+      "maximum_cloth_vertex_error": 0.0000748402380850166,
+      "samples": 7,
+      "tracks": 321
+    },
+    {
+      "clip": "combat_idle_rh_v20",
+      "maximum_bone_head_error": 0.0000165726341947448,
+      "maximum_cloth_vertex_error": 0.0000352009847119916,
+      "samples": 25,
+      "tracks": 321
+    },
+    {
+      "clip": "combat_run_rh_v20",
+      "maximum_bone_head_error": 0.0000879410072229803,
+      "maximum_cloth_vertex_error": 0.0000806182069936767,
+      "samples": 49,
+      "tracks": 321
+    },
+    {
+      "clip": "combat_run_rh_v21",
+      "maximum_bone_head_error": 0.0000880108709679917,
+      "maximum_cloth_vertex_error": 0.0000806053431006148,
+      "samples": 49,
+      "tracks": 321
+    },
+    {
+      "clip": "combat_thrust_rh_v20",
+      "maximum_bone_head_error": 0.0000589410992688499,
+      "maximum_cloth_vertex_error": 0.0000485667515022215,
+      "samples": 13,
+      "tracks": 321
+    }
+  ],
+  "scope": "PackedScene import, all bone heads, sampled actual 8-weight garment vertices; not arbitrary pose clearance.",
+  "source_reference": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\run_arm_v21\\export_reference.json"
+}

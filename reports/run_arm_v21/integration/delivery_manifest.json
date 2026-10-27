@@ -1,0 +1,130 @@
+{
+  "passed": true,
+  "user_selected": true,
+  "main_game_promoted": true,
+  "selected_on": "2026-10-27",
+  "source_sha256": "80e04f5ec89e992ed351364095115b87fb3f8b98b2cd7a5833f2a7fda2d32ad7",
+  "runtime_asset_family": "game/assets/characters/player/run_arm_v21/",
+  "runtime_default_clips": {
+    "idle": "combat_idle_rh_v20",
+    "run": "combat_run_rh_v21",
+    "attack": "combat_heavy_swing_rh_v20",
+    "attack_thrust": "combat_thrust_rh_v20",
+    "hit_react": "combat_hit_rh_v20",
+    "cast": "combat_cast_rh_v20",
+    "collapse": "combat_collapse_rh_v20"
+  },
+  "approved_art_files_preserved": 24,
+  "existing_game_and_appearance_files_preserved": 133,
+  "gpu_clips": 8,
+  "gpu_poses": 215,
+  "runtime_hand_samples": 343,
+  "gameplay_checks": 1287,
+  "gameplay_captures": 547,
+  "variant_checks": 931,
+  "appearance_tests": 7,
+  "run_playback": {
+    "authored_length_seconds": 4.0,
+    "clip": "combat_run_rh_v21",
+    "cycle_distance_m": 3.24281314015388,
+    "loop_wraps": 4,
+    "max_actual_speed_error_mps": 0.0,
+    "max_clip_length_error_seconds": 0.0,
+    "max_normalized_phase_error": 6.93889390390723e-17,
+    "max_playback_rate_error": 0.0,
+    "sample_count": 196
+  },
+  "execution": {
+    "import_initial": {
+      "engine_exit_code": 0,
+      "stderr_empty": false,
+      "editor_profiler_storage_diagnostic_only": true,
+      "completion_marker": true,
+      "shader_cache_diagnostic_only": false
+    },
+    "import_settings": {
+      "engine_exit_code": 0,
+      "stderr_empty": true,
+      "editor_profiler_storage_diagnostic_only": false,
+      "completion_marker": true,
+      "shader_cache_diagnostic_only": false
+    },
+    "import_final": {
+      "engine_exit_code": 0,
+      "stderr_empty": false,
+      "editor_profiler_storage_diagnostic_only": true,
+      "completion_marker": true,
+      "shader_cache_diagnostic_only": false
+    },
+    "parity": {
+      "completion_marker": true,
+      "engine_exit_code": 0,
+      "stderr_empty": false,
+      "editor_profiler_storage_diagnostic_only": false,
+      "shader_cache_diagnostic_only": true
+    },
+    "hands": {
+      "completion_marker": true,
+      "engine_exit_code": 0,
+      "stderr_empty": false,
+      "editor_profiler_storage_diagnostic_only": false,
+      "shader_cache_diagnostic_only": true
+    },
+    "gameplay": {
+      "completion_marker": true,
+      "engine_exit_code": 0,
+      "stderr_empty": false,
+      "editor_profiler_storage_diagnostic_only": false,
+      "shader_cache_diagnostic_only": true
+    },
+    "variants": {
+      "completion_marker": true,
+      "engine_exit_code": 0,
+      "stderr_empty": false,
+      "editor_profiler_storage_diagnostic_only": false,
+      "shader_cache_diagnostic_only": true
+    }
+  },
+  "files": {
+    "game/scripts/player_visual.gd": "679351831430b40bf3d7d8e440d82930038cf47aa7e6c888b9027c7c69e6b76e",
+    "game/tests/player_visual.gd": "db74bfd12762027242b612837fd99547cf41207e33d344df80e32f0b08254e0b",
+    "game/tests/player_motion_v18.gd": "fae432e08ffab9157ff9a601c08afdd1e87ca544be771d49f2b0996e11232ebf",
+    "game/assets/characters/player/run_arm_v21/body_standard_v21.glb": "a73a82b8277312c017adfe85fb171c54b36cc63e0bc9374706bbaf38ef12ecc4",
+    "game/assets/characters/player/run_arm_v21/body_standard_v21.glb.import": "a38754450ca1c267dd7e8caf2ae1f2de4dce5b68da015784df968f41474a400a",
+    "game/assets/characters/player/run_arm_v21/body_standard_v21_shared_head_basecolor_v8.png": "82b553ccb13d3ad0a9db7e9f853cee2a0eea7299ee4c61d03079f04a6a910be0",
+    "game/assets/characters/player/run_arm_v21/body_standard_v21_shared_head_basecolor_v8.png.import": "7ab9d4037ebfcd0e35f55ef71083308042595b3ec06f37cbb0217468a7603d03",
+    "game/assets/characters/player/run_arm_v21/eyes_neutral_v21.glb": "c7f6931e64338e4f0680f6a59d6aa6f19def22db25ae3d1c6dcb34380a0f02b4",
+    "game/assets/characters/player/run_arm_v21/eyes_neutral_v21.glb.import": "0aac4a8dfc63903be66ab5239a75848d4f4ba64c757ec4d9a9c84ed5799d5322",
+    "game/assets/characters/player/run_arm_v21/eyes_neutral_v21_shared_head_basecolor_v8.png": "82b553ccb13d3ad0a9db7e9f853cee2a0eea7299ee4c61d03079f04a6a910be0",
+    "game/assets/characters/player/run_arm_v21/eyes_neutral_v21_shared_head_basecolor_v8.png.import": "5f33267751c0b2bd56f13c1f6b92367e420b0ff51caad333c5280610068d4331",
+    "game/assets/characters/player/run_arm_v21/hair_semilong_v21.glb": "e110830cc91de0a0c596d7568886eae91cfe6d92f31d8b1f2e5eee541bc65832",
+    "game/assets/characters/player/run_arm_v21/hair_semilong_v21.glb.import": "cedcf6a416fe64dfe1b404f7a9032a592836ca9cfa19619ad2d5a49835e4e50f",
+    "game/assets/characters/player/run_arm_v21/hair_semilong_v21_civilian_shared_atlas_2k.png": "de008c2a6bceeebc2eff0d63ea6bb741a2c356dd58cbcaa7a406fa56fc3091ea",
+    "game/assets/characters/player/run_arm_v21/hair_semilong_v21_civilian_shared_atlas_2k.png.import": "0d392ec3ff9291ba097a6044490c1fb05d82be824722c317403d8eba22d42261",
+    "game/assets/characters/player/run_arm_v21/outfit_civilian_v21.glb": "c5e18428b027beb03f173e4270bf19fb898587416da99c3f774704dd01ee9caa",
+    "game/assets/characters/player/run_arm_v21/outfit_civilian_v21.glb.import": "f0cac7e8eef26d53db0fb79f918d67f302e6e0be023c8a6055d40f7fe7629141",
+    "game/assets/characters/player/run_arm_v21/outfit_civilian_v21_civilian_shared_atlas_2k.png": "de008c2a6bceeebc2eff0d63ea6bb741a2c356dd58cbcaa7a406fa56fc3091ea",
+    "game/assets/characters/player/run_arm_v21/outfit_civilian_v21_civilian_shared_atlas_2k.png.import": "493a14b28801d6d9cb1cb0ccb9cf157f1406d2afa4bcedd416762087c3d46f3e",
+    "game/assets/characters/player/run_arm_v21/outfit_civilian_v21_Runtime2K_witch_semilong_middle_school_v1_raw_basecolor.png": "5746811e7fb80dfdef04386652c15309218f476d20e7b0ee6c16aadfcace4539",
+    "game/assets/characters/player/run_arm_v21/outfit_civilian_v21_Runtime2K_witch_semilong_middle_school_v1_raw_basecolor.png.import": "20e96a88515e4a98c9f89901b28fc40f06400abc183032db726fb1e4ff495446",
+    "game/assets/characters/player/run_arm_v21/runtime_contract.json": "30788e767e6115bfaa89445013f83c9e8d00cf3d30cc51d514c5f4c1d5fb6d04",
+    "assets/characters/player/3d/config/modular_character.spec.json": "86f22a2a448bd8a082f0e37a0f456e8ba1da5af08dac5a7f312dc07f7ff0fa9b",
+    "assets/characters/player/3d/config/display_review.spec.json": "ae107049d84db3281db3e7dd0765504b8fa028460366dac4e67d95acec1d8be4",
+    "docs/godot_prototype.md": "a485b6815b9fca6e1c7f5e8a8e0b128c19df3605bf7ea2eae683cac0250a4a84",
+    "docs/09_character_art_pipeline.md": "f45ab8c10ca40bf13ff6da799d878ee970c025cdd2e86ff233e7e04532c4c134",
+    "assets/characters/player/3d/source/README.md": "3e6c34996a33c956376b3a0176991acf25e0ca46c8045dcd9e73629bffe834e2",
+    "assets/characters/player/3d/source/middle_school_v1/run_arm_v21/GAME_INTEGRATION.md": "5007d1a5418e1fd98cb4e3cd42ac73069315b95af87f338ce76d2738a0c14c47",
+    "AGENTS.md": "1ea3b8d971e0a1741f89ffd5108eb2d1dfc6f6ef34c7e7997c86145de0f35051",
+    "reports/run_arm_v21/integration/godot_pose_parity.json": "64e340cb0946db6848d3354c5891eb3b8c3b259cd869d626f349fc1a7fd459a1",
+    "reports/run_arm_v21/integration/runtime_hand_validation.json": "bea496842b31663f90f96a99f4b70fc224b8cd4da2cebf56b27fa170ecee5330",
+    "reports/run_arm_v21/integration/gameplay/player_visual_validation.json": "f04621e6120a8a90ec5ba9f533c6678fec0935ea75ee0cddfb1ef6e9d1555109",
+    "reports/run_arm_v21/integration/variants/variant_validation.json": "93351292c5c590117453a351f2af713dfb2634fa4fb6898f503bc0ea003c722c",
+    "reports/run_arm_v21/integration/appearance_validation.json": "17c897f56244e71d5ece69988d5cdeb3f51a7144417ec0805e874ab888afa0e1",
+    "reports/run_arm_v21/integration/promotion_baseline.json": "8393b8537fe88ad1cb53caee7cbe5830cfd4af9a85c4d80c3fc44dfa52044813",
+    "tools/promote_run_v21.py": "5cd3b3ad1c245e3b042db6c3914312b281e1126729dfc0de4bbfe8abf85ce243",
+    "tools/validate_run_game_v21.ps1": "611b05a8a64114224485faeb1263819a1ac50e5418593731905c2f209ef589fc",
+    "tools/register_run_game_v21.py": "a3cc23a69e306c8e5ab99da3d93f760838bd52f10a2027631a5821398a72c1e0",
+    "tools/package_run_game_v21.py": "28fe9560bf3fd7e7e25dc3150487be24cabe8c2c2744a00c9fa0f14ae811d37a"
+  },
+  "scope": "Actual main-game promotion requested by user. Motion/attachment only; current combat, saved appearance, approved authoring assets and historical review preserved. No arbitrary-pose cloth clearance or final balance/budget claim."
+}
