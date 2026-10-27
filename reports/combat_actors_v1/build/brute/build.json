@@ -1,0 +1,115 @@
+{
+  "id": "brute",
+  "source_sha256": "154711b1ceff2d2b26494e9f2779048ba8d46f75658427da66b8879157e254bc",
+  "source_triangles": 78772,
+  "runtime_triangles": 17999,
+  "vertices": 15142,
+  "height_m": 1.6,
+  "front": "-Z in Godot",
+  "bones": 14,
+  "weighted_vertex_counts": {
+    "root": 0,
+    "torso": 4583,
+    "head": 2149,
+    "arm_L": 800,
+    "forearm_L": 2906,
+    "thigh_L": 1094,
+    "shin_L": 422,
+    "foot_L": 784,
+    "arm_R": 469,
+    "forearm_R": 2719,
+    "thigh_R": 1016,
+    "shin_R": 472,
+    "foot_R": 787,
+    "muzzle": 0
+  },
+  "max_influences": 3,
+  "textures": [
+    {
+      "name": "brute_basecolor_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "brute_normal_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "brute_rm_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0,
+      "loop": true
+    },
+    "move": {
+      "frames": 33,
+      "seconds": 1.3333333333333333,
+      "loop": true
+    },
+    "attack": {
+      "frames": 25,
+      "seconds": 1.0,
+      "loop": false
+    },
+    "hit": {
+      "frames": 13,
+      "seconds": 0.5,
+      "loop": false
+    },
+    "death": {
+      "frames": 31,
+      "seconds": 1.25,
+      "loop": false
+    },
+    "charge": {
+      "frames": 25,
+      "seconds": 1.0,
+      "loop": true
+    }
+  },
+  "ground_min_z": {
+    "idle": [
+      1.0244548320770264e-08,
+      1.0244548320770264e-08
+    ],
+    "move": [
+      -2.5494955480098724e-08,
+      3.958120942115784e-08
+    ],
+    "attack": [
+      1.0244548320770264e-08,
+      1.0244548320770264e-08
+    ],
+    "hit": [
+      1.0244548320770264e-08,
+      1.0244548320770264e-08
+    ],
+    "death": [
+      -1.1920928955078125e-07,
+      2.9802322387695312e-08
+    ],
+    "charge": [
+      -2.7474015951156616e-08,
+      2.962769940495491e-08
+    ]
+  },
+  "glb_sha256": "0cf61f360b84a178d92aa199eac2c1db98be9444c06df11249a30c8be5909e68",
+  "glb_bytes": 4727972,
+  "limitations": [
+    "Prototype authored animation; no motion-capture source.",
+    "UV-preserving decimation and region weights; not manually rebuilt deformation topology.",
+    "Generated fused surfaces can compress at large joint angles; only the delivered clips are reviewed."
+  ]
+}

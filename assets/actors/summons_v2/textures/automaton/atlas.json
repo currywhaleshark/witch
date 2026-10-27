@@ -1,0 +1,80 @@
+{
+  "size": 1024,
+  "padding": 3,
+  "scale": 0.46,
+  "materials": {
+    "Material_tripo_part_0": {
+      "x": 3,
+      "y": 3,
+      "size": 471,
+      "original_size": 1024
+    },
+    "Material_tripo_part_1": {
+      "x": 480,
+      "y": 3,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_10": {
+      "x": 722,
+      "y": 3,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_2": {
+      "x": 3,
+      "y": 480,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_3": {
+      "x": 245,
+      "y": 480,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_4": {
+      "x": 487,
+      "y": 480,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_5": {
+      "x": 729,
+      "y": 480,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_6": {
+      "x": 3,
+      "y": 722,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_8": {
+      "x": 245,
+      "y": 722,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_9": {
+      "x": 487,
+      "y": 722,
+      "size": 236,
+      "original_size": 512
+    },
+    "Material_tripo_part_11": {
+      "x": 729,
+      "y": 722,
+      "size": 118,
+      "original_size": 256
+    },
+    "Material_tripo_part_13": {
+      "x": 853,
+      "y": 722,
+      "size": 118,
+      "original_size": 256
+    }
+  },
+  "source_sha256": "ecb4864d4e5ccacc455022dde42fa5d02f69b21e84afe4bb42cda6645c239794"
+}

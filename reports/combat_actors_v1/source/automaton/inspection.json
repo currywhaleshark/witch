@@ -1,0 +1,48 @@
+{
+  "actor": "automaton",
+  "bounds": [
+    [
+      -0.5,
+      -0.2437591850757599,
+      0.0
+    ],
+    [
+      0.5,
+      0.2437591850757599,
+      0.9910888671875
+    ]
+  ],
+  "meshes": [
+    {
+      "name": "tripo_node_e224a916-24c0-4ec0-a3b0-03bf7a02be9f",
+      "vertices": 45251,
+      "triangles": 79652,
+      "materials": [
+        "tripo_material_e224a916-24c0-4ec0-a3b0-03bf7a02be9f"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "automaton_tripo_h31_raw_basecolor.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "automaton_tripo_h31_raw_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "automaton_tripo_h31_raw_rm.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}

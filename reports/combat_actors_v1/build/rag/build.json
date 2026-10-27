@@ -1,0 +1,106 @@
+{
+  "id": "rag",
+  "source_sha256": "ec54fccebca2d370c77f4824b535aaa05d4c74225bccae9e3eaa812718644209",
+  "source_triangles": 76767,
+  "runtime_triangles": 12000,
+  "vertices": 11303,
+  "height_m": 1.5,
+  "front": "-Z in Godot",
+  "bones": 14,
+  "weighted_vertex_counts": {
+    "root": 0,
+    "torso": 3158,
+    "head": 2838,
+    "arm_L": 858,
+    "forearm_L": 1357,
+    "thigh_L": 811,
+    "shin_L": 397,
+    "foot_L": 521,
+    "arm_R": 1053,
+    "forearm_R": 1239,
+    "thigh_R": 829,
+    "shin_R": 403,
+    "foot_R": 454,
+    "muzzle": 0
+  },
+  "max_influences": 3,
+  "textures": [
+    {
+      "name": "rag_basecolor_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "rag_normal_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "rag_rm_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0,
+      "loop": true
+    },
+    "move": {
+      "frames": 25,
+      "seconds": 1.0,
+      "loop": true
+    },
+    "attack": {
+      "frames": 25,
+      "seconds": 1.0,
+      "loop": false
+    },
+    "hit": {
+      "frames": 13,
+      "seconds": 0.5,
+      "loop": false
+    },
+    "death": {
+      "frames": 31,
+      "seconds": 1.25,
+      "loop": false
+    }
+  },
+  "ground_min_z": {
+    "idle": [
+      2.9976945370435715e-09,
+      2.9976945370435715e-09
+    ],
+    "move": [
+      -4.470348358154297e-08,
+      4.810863174498081e-08
+    ],
+    "attack": [
+      2.9976945370435715e-09,
+      2.9976945370435715e-09
+    ],
+    "hit": [
+      2.9976945370435715e-09,
+      2.9976945370435715e-09
+    ],
+    "death": [
+      -1.1920928955078125e-07,
+      2.9802322387695312e-08
+    ]
+  },
+  "glb_sha256": "707ac4ea25fcc48eff6bc18027ad0a22b1acfc429337fe605473c01638984b2f",
+  "glb_bytes": 4421688,
+  "limitations": [
+    "Prototype authored animation; no motion-capture source.",
+    "UV-preserving decimation and region weights; not manually rebuilt deformation topology.",
+    "Generated fused surfaces can compress at large joint angles; only the delivered clips are reviewed."
+  ]
+}

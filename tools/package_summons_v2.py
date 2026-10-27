@@ -1,0 +1,54 @@
+"""Publish a local review of actual Godot captures and hashes, not concept renders."""
+import json,hashlib,html
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'assets/actors/summons_v2';OUT=ROOT/'reports/summons_v2'
+def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def text_sha(p):return hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+glb=read(OUT/'glb_validation.json');runtime=read(OUT/'runtime/result.json');capture=read(OUT/'review/capture.json')
+approval=read(BASE/'approval.json') if (BASE/'approval.json').exists() else {'status':'integrated_review_candidate','art_approved':False}
+assert glb['passed'] and runtime['passed'] and capture['passed']
+regressions={}
+for name,global_report in [('combat_actors',None),('enemy_types','godot_enemy_types_report.json'),('boss','godot_boss_report.json'),('smoke_arena','godot_smoke_report.json')]:
+    execution=read(OUT/name/'execution.json');assert execution['exit_code']==0
+    report=read(ROOT/'reports'/global_report) if global_report else read(OUT/name/'result.json')
+    assert not report['failures']
+    regressions[name]={'execution':execution,'checks':len(report['checks']) if isinstance(report['checks'],list) else report['checks'],'failures':report['failures']}
+files={}
+for path in BASE.rglob('*'):
+    if path.is_file() and path.suffix in ['.glb','.blend','.png','.json','.md']:
+        files[path.relative_to(ROOT).as_posix()]={'sha256':sha(path),'bytes':path.stat().st_size}
+code=['game/scripts/actor_visual.gd','game/scripts/arena.gd','game/scripts/combat_rules.gd','game/data/trial.json','game/scripts/player_visual.gd','game/tests/summons_v2.gd','game/tests/review_summons_v2.gd','tools/build_summons_v2.py','tools/export_summons_v2.py','tools/pack_summon_atlases_v2.py','tools/validate_summons_v2.py','tools/run_summons_v2.ps1']
+previous=read(ROOT/'reports/combat_actors_v1/delivery_manifest.json')
+preserved={}
+for asset in previous['assets']:
+    for name,meta in asset['files'].items():
+        preserved[name]=sha(ROOT/name)==meta['sha256']
+assert all(preserved.values())
+for name in ['game/scripts/combat_rules.gd','game/data/trial.json','game/scripts/player_visual.gd']:
+    if name in previous.get('code_text_sha256',{}):
+        assert text_sha(ROOT/name)==previous['code_text_sha256'][name]
+    else:
+        assert sha(ROOT/name)==previous['code_sha256'][name]
+for seq in capture['sequences']:
+    for view in ['close','native']:
+        for i in range(seq['frames']):assert (OUT/'review'/seq['id']/view/f'{i:03}.png').is_file()
+manifest={'status':'integrated_review_candidate','art_approved':False,'source':'User-completed Tripo segmentation, downloaded without starting new generation or segmentation.','tripo_pages':{'automaton':'https://studio.tripo3d.ai/ko/workspace/segmentation/159e5476-f05f-439e-b171-d9b2b5232eb7','turret':'https://studio.tripo3d.ai/ko/workspace/segmentation/dd0a4284-090a-470b-8ca4-adfaf96a39bd'},'files':files,'code_sha256':{p:sha(ROOT/p) for p in code},'v1_source_and_exports_preserved':preserved,'glb':glb,'runtime':runtime,'regressions':regressions,'capture':capture,'execution':{phase:read(OUT/phase/'execution.json') for phase in ['import','runtime','review']},'limits':['Baked controlled rigid-part flight and floor bounce, not a live physics solver.','No inter-part/wall collision or arbitrary terrain clearance.','Some internal segment surfaces and reduced metal rims remain visible on close inspection.','User art/motion and final performance approval are pending.']}
+manifest.update(status=approval['status'],art_approved=approval['art_approved'],approval=approval)
+manifest['code_text_sha256']={p:text_sha(ROOT/p) for p in code}
+manifest['code_hash_note']='code_sha256 records validated working-copy bytes; code_text_sha256 normalizes CRLF to LF for Git checkouts. Binary asset hashes are always byte-exact.'
+manifest['limits'][-1]='Current prototype appearance/motions selected by the user on 2026-10-28; arbitrary-terrain and final performance validation remain separate.' if approval['art_approved'] else 'User art/motion and final performance approval are pending.'
+(OUT/'delivery_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+data=json.dumps(capture['sequences'],ensure_ascii=False)
+page='''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>소환물 v2 — 부품 붕괴와 자폭</title>
+<style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#141e22;color:#eff4f1;font:16px/1.65 system-ui,'Malgun Gothic',sans-serif}main{max-width:1120px;margin:auto;padding:36px 24px}h1{font-size:32px;margin:8px 0}h2{font-size:23px;margin:36px 0 14px}p,small{color:#bed0cc}.eyebrow{font-size:13px;letter-spacing:.15em;color:#c9aa70}.lead{max-width:880px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{padding:14px;background:#203036;border:1px solid #355056;border-radius:12px}img{display:block;width:100%;border-radius:8px}figcaption{margin:10px 0 0;color:#cad8d2}figure{margin:0}.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:14px 0}select,button{padding:9px 12px;border:1px solid #6a8885;border-radius:6px;background:#29444a;color:#f5faf7;font:inherit}button{cursor:pointer}label{font-size:14px;color:#c2d6ce}input{width:100%;accent-color:#9cd8c6}.viewer{background:#203036;padding:16px;border-radius:12px;border:1px solid #355056}#frame{width:min(100%,600px);margin:auto}#frame.native{width:100%}.note{border-left:3px solid #c9aa70;padding:12px 18px;background:#243136}.links{display:flex;gap:24px;flex-wrap:wrap}a{color:#9bdfca}table{width:100%;border-collapse:collapse}td,th{padding:10px;border-bottom:1px solid #355056;text-align:left}@media(max-width:680px){main{padding:24px 14px}.grid{grid-template-columns:1fr}h1{font-size:27px}}</style>
+<main><div class="eyebrow">WITCH · SUMMONS · V2</div><h1>부품이 풀려 무너지고, 자폭하면 흩어집니다</h1><p class="lead">사용자가 나눈 Tripo 파트로 교체했습니다. 포탑은 받침을 고정한 채 상부와 구동부가 단단하게 회전합니다. 일반 파괴는 아래로 무너지고, 태엽인형의 수명 종료 자폭은 섬광과 함께 부품이 바깥으로 튑니다.</p>
+<div class="grid"><figure class="card"><img src="review/turret_aim/close/012.png" alt="늘어나지 않는 포탑 회전부"><figcaption>포탑 · 받침 고정 / 회전대·포신·톱니·태엽 분리</figcaption></figure><figure class="card"><img src="review/automaton_explode/close/009.png" alt="자폭으로 흩어지는 인형의 부품"><figcaption>태엽인형 · 몸통·머리·팔다리·태엽의 독립 비산</figcaption></figure></div>
+<h2>동작과 실제 표시 크기</h2><div class="viewer"><div class="controls"><label>동작 <select id="sequence"></select></label><label>화면 <select id="view"><option value="close">확대</option><option value="native">게임 크기 · 1.75배 카메라</option></select></label><label>속도 <select id="speed"><option value="1">1배</option><option value=".5">0.5배</option></select></label><button id="play">일시정지</button></div><img id="frame" alt="실제 Godot 동작"><input id="scrub" aria-label="재생 프레임" type="range" min="0" max="48" value="0"><small id="counter"></small></div>
+<h2>포탑 파괴 전후</h2><div class="grid"><figure class="card"><img id="before" src="review/turret_old_death/close/000.png" alt="이전 포탑 쓰러짐"><figcaption>이전 · 하나로 붙은 몸체가 앞으로 넘어짐</figcaption></figure><figure class="card"><img id="after" src="review/turret_death/close/000.png" alt="수정된 부품 붕괴"><figcaption>수정 · 조준 자세에서 이어져 부품이 따로 내려앉음</figcaption></figure></div><p>아래 비교는 두 동작을 같은 시간으로 반복합니다. 위에서 ‘수정: 부품 붕괴’를 고르면 프레임별로 멈춰 확인할 수 있습니다.</p>
+<h2>게임 연결</h2><p>일반 파괴와 수명 종료 자폭을 구분하며, 자폭 피해와 범위는 기존 값을 유지합니다. 파괴된 소환물은 즉시 목표·충돌에서 빠지고 잔해만 잠시 남습니다. 일시정지하면 잔해도 멈추고, 필드 초기화 때 모두 정리됩니다.</p><table><tr><th>종류</th><th>독립 부품</th><th>삼각형</th><th>재질</th></tr><tr><td>태엽인형</td><td>13</td><td>9,791</td><td>1개 · 1K PBR</td></tr><tr><td>자동포탑</td><td>86</td><td>17,556</td><td>1개 · 1K PBR</td></tr></table>
+<p>원본 12개로 나뉜 인형에서 한 파트에 같이 묶였던 좌우 다리 축만 추가 분리했습니다. 포탑의 작은 테두리와 톱니를 남기기 위해 이전 통합면보다 삼각형 예산을 늘렸습니다. 파트별 재질을 아틀라스로 합쳐 소환물마다 한 재질로 그립니다.</p>
+<p class="note">실제 게임 자산으로 촬영한 검토본입니다. 중력·바닥 튕김을 미리 구운 연출이며, 잔해끼리나 벽과의 실시간 충돌은 포함하지 않습니다. 부품 안쪽과 일부 금속 테두리는 확대 시 거칠 수 있습니다.</p><p>모든 삼각형의 단일 강체 연결, 360도 조준, 실제 파괴/자폭 분기와 피해·범위·시작 자세·정리 동작을 검사했습니다. 기존 전투·적 종류·보스·기본 실행 회귀도 통과했습니다.</p><div class="links"><a href="delivery_manifest.json">최종 검증·파일 해시</a><a href="../../assets/actors/summons_v2/README.md">Blender 작업 파일·인계</a><a href="../combat_actors_v1/review.html">이전 5종 리뷰</a></div></main>
+<script>const data=DATA,sel=document.querySelector('#sequence'),view=document.querySelector('#view'),img=document.querySelector('#frame'),scrub=document.querySelector('#scrub'),count=document.querySelector('#counter'),play=document.querySelector('#play');let active,elapsed=0,compareTime=0,playing=true,previous=performance.now();for(const s of data)sel.add(new Option(s.label,s.id));sel.value='turret_death';function show(frame){img.src='review/'+active.id+'/'+view.value+'/'+String(frame).padStart(3,'0')+'.png';img.className=view.value==='native'?'native':'';scrub.value=frame;count.textContent=(frame+1)+' / 49 · '+(frame/48*active.seconds).toFixed(2)+'초';}function select(){active=data.find(s=>s.id===sel.value);elapsed=0;show(0);for(let i=0;i<49;i++){let p=new Image;p.src='review/'+active.id+'/'+view.value+'/'+String(i).padStart(3,'0')+'.png'}}sel.onchange=select;view.onchange=()=>{const f=Number(scrub.value);show(f)};play.onclick=()=>{playing=!playing;play.textContent=playing?'일시정지':'재생'};scrub.oninput=()=>{playing=false;play.textContent='재생';elapsed=Number(scrub.value)/48*active.seconds;show(Number(scrub.value))};function tick(now){let dt=(now-previous)/1000;previous=now;if(playing){elapsed+=dt*Number(document.querySelector('#speed').value);const length=active.seconds+.35;show(Math.min(48,Math.floor((elapsed%length)/active.seconds*48)));}compareTime+=dt;const f=String(Math.min(48,Math.floor((compareTime%2.4)/2*48))).padStart(3,'0');document.querySelector('#before').src='review/turret_old_death/close/'+f+'.png';document.querySelector('#after').src='review/turret_death/close/'+f+'.png';requestAnimationFrame(tick)}select();requestAnimationFrame(tick);</script></html>'''
+(OUT/'review.html').write_text(page.replace('DATA',data),encoding='utf-8')
+print('SUMMONS_V2_PACKAGE_COMPLETE',sum(a['triangles'] for a in glb['assets']),runtime['checks'],capture['capture_count'])

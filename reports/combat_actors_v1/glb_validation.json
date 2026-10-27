@@ -1,0 +1,282 @@
+{
+  "passed": true,
+  "errors": [],
+  "files": [
+    {
+      "id": "rag",
+      "file": "rag_v1.glb",
+      "triangles": 12000,
+      "bones": 14,
+      "max_weight_sum_error": 1.1920928955078125e-07,
+      "max_influences": 3,
+      "images": [
+        {
+          "name": "rag_normal_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "rag_basecolor_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "rag_rm_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "attack": {
+          "seconds": 1.0416666269302368,
+          "channels": 42
+        },
+        "death": {
+          "seconds": 1.2916666269302368,
+          "channels": 42
+        },
+        "hit": {
+          "seconds": 0.5416666865348816,
+          "channels": 42
+        },
+        "idle": {
+          "seconds": 2.0416667461395264,
+          "channels": 42
+        },
+        "move": {
+          "seconds": 1.0416666269302368,
+          "channels": 42
+        }
+      },
+      "bytes": 4421688,
+      "sha256": "707ac4ea25fcc48eff6bc18027ad0a22b1acfc429337fe605473c01638984b2f"
+    },
+    {
+      "id": "crow",
+      "file": "crow_v1.glb",
+      "triangles": 10000,
+      "bones": 11,
+      "max_weight_sum_error": 1.1920928955078125e-07,
+      "max_influences": 3,
+      "images": [
+        {
+          "name": "crow_normal_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "crow_basecolor_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "crow_rm_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "attack": {
+          "seconds": 1.0416666269302368,
+          "channels": 33
+        },
+        "death": {
+          "seconds": 1.2916666269302368,
+          "channels": 33
+        },
+        "hit": {
+          "seconds": 0.5416666865348816,
+          "channels": 33
+        },
+        "idle": {
+          "seconds": 2.0416667461395264,
+          "channels": 33
+        },
+        "move": {
+          "seconds": 1.0416666269302368,
+          "channels": 33
+        }
+      },
+      "bytes": 3938224,
+      "sha256": "2c89d8c3435aa19575fdbe134d07603160e9e98a96c28ff2dd148a6b3bd85807"
+    },
+    {
+      "id": "brute",
+      "file": "brute_v1.glb",
+      "triangles": 17999,
+      "bones": 14,
+      "max_weight_sum_error": 1.1920928955078125e-07,
+      "max_influences": 3,
+      "images": [
+        {
+          "name": "brute_normal_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "brute_basecolor_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "brute_rm_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "attack": {
+          "seconds": 1.0416666269302368,
+          "channels": 42
+        },
+        "charge": {
+          "seconds": 1.0416666269302368,
+          "channels": 42
+        },
+        "death": {
+          "seconds": 1.2916666269302368,
+          "channels": 42
+        },
+        "hit": {
+          "seconds": 0.5416666865348816,
+          "channels": 42
+        },
+        "idle": {
+          "seconds": 2.0416667461395264,
+          "channels": 42
+        },
+        "move": {
+          "seconds": 1.375,
+          "channels": 42
+        }
+      },
+      "bytes": 4727972,
+      "sha256": "0cf61f360b84a178d92aa199eac2c1db98be9444c06df11249a30c8be5909e68"
+    },
+    {
+      "id": "automaton",
+      "file": "automaton_v1.glb",
+      "triangles": 10000,
+      "bones": 15,
+      "max_weight_sum_error": 1.1920928955078125e-07,
+      "max_influences": 3,
+      "images": [
+        {
+          "name": "automaton_normal_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "automaton_basecolor_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "automaton_rm_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "attack": {
+          "seconds": 1.0416666269302368,
+          "channels": 45
+        },
+        "death": {
+          "seconds": 1.2916666269302368,
+          "channels": 45
+        },
+        "hit": {
+          "seconds": 0.5416666865348816,
+          "channels": 45
+        },
+        "idle": {
+          "seconds": 2.0416667461395264,
+          "channels": 45
+        },
+        "move": {
+          "seconds": 1.0416666269302368,
+          "channels": 45
+        }
+      },
+      "bytes": 4207904,
+      "sha256": "2eb8b4bfba054944e5d3490fba0310e220c8a2169090198810130ee57cdf00bf"
+    },
+    {
+      "id": "turret",
+      "file": "turret_v1.glb",
+      "triangles": 7999,
+      "bones": 5,
+      "max_weight_sum_error": 1.1920928955078125e-07,
+      "max_influences": 3,
+      "images": [
+        {
+          "name": "turret_normal_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "turret_basecolor_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "turret_rm_1k",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "attack": {
+          "seconds": 1.0416666269302368,
+          "channels": 15
+        },
+        "death": {
+          "seconds": 1.2916666269302368,
+          "channels": 15
+        },
+        "hit": {
+          "seconds": 0.5416666865348816,
+          "channels": 15
+        },
+        "idle": {
+          "seconds": 2.0416667461395264,
+          "channels": 15
+        }
+      },
+      "bytes": 4209772,
+      "sha256": "72bd581cd59e7f0b9ed689f836461ca84e7a394293a49c69670e74c9dd616408"
+    }
+  ],
+  "total_triangles": 57998
+}

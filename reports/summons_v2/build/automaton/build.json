@@ -1,0 +1,185 @@
+{
+  "id": "automaton",
+  "source_sha256": "ecb4864d4e5ccacc455022dde42fa5d02f69b21e84afe4bb42cda6645c239794",
+  "source_triangles": 93163,
+  "source_part_count": 12,
+  "rigid_parts": 13,
+  "runtime_triangles": 9791,
+  "bones": 26,
+  "max_influences": 1,
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "move": {
+      "frames": 25,
+      "seconds": 1.0
+    },
+    "attack": {
+      "frames": 25,
+      "seconds": 1.0
+    },
+    "hit": {
+      "frames": 13,
+      "seconds": 0.5
+    },
+    "death": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "explode": {
+      "frames": 49,
+      "seconds": 2.0
+    }
+  },
+  "parts": [
+    {
+      "bone": "part_000",
+      "source_part": 0,
+      "parent": "torso",
+      "center": [
+        0.009723246097564697,
+        0.01997094601392746,
+        0.3941989541053772
+      ],
+      "triangles": 2296
+    },
+    {
+      "bone": "part_001",
+      "source_part": 1,
+      "parent": "forearm_L",
+      "center": [
+        0.33448538184165955,
+        0.08974914997816086,
+        0.2919897139072418
+      ],
+      "triangles": 844
+    },
+    {
+      "bone": "part_010",
+      "source_part": 10,
+      "parent": "arm_R",
+      "center": [
+        -0.20721863210201263,
+        0.020954806357622147,
+        0.4311404824256897
+      ],
+      "triangles": 398
+    },
+    {
+      "bone": "part_011",
+      "source_part": 11,
+      "parent": "head",
+      "center": [
+        0.010236749425530434,
+        0.0568610280752182,
+        0.5479840040206909
+      ],
+      "triangles": 191
+    },
+    {
+      "bone": "part_013",
+      "source_part": 13,
+      "parent": "torso",
+      "center": [
+        0.010201608762145042,
+        0.05094904080033302,
+        0.5293009877204895
+      ],
+      "triangles": 148
+    },
+    {
+      "bone": "part_002",
+      "source_part": 2,
+      "parent": "head",
+      "center": [
+        0.010195791721343994,
+        0.08638585358858109,
+        0.6514416933059692
+      ],
+      "triangles": 842
+    },
+    {
+      "bone": "part_003",
+      "source_part": 3,
+      "parent": "foot_R",
+      "center": [
+        -0.17263877391815186,
+        0.04116382449865341,
+        0.05985020846128464
+      ],
+      "triangles": 896
+    },
+    {
+      "bone": "part_004",
+      "source_part": 4,
+      "parent": "forearm_R",
+      "center": [
+        -0.32333648204803467,
+        0.005877457559108734,
+        0.2881562411785126
+      ],
+      "triangles": 804
+    },
+    {
+      "bone": "part_005",
+      "source_part": 5,
+      "parent": "foot_L",
+      "center": [
+        0.181136354804039,
+        0.0592082180082798,
+        0.06062597036361694
+      ],
+      "triangles": 908
+    },
+    {
+      "bone": "part_006",
+      "source_part": 6,
+      "parent": "key",
+      "center": [
+        -0.1186077892780304,
+        -0.1261306256055832,
+        0.6646981239318848
+      ],
+      "triangles": 836
+    },
+    {
+      "bone": "part_008_L",
+      "source_part": 8,
+      "parent": "leg_L",
+      "center": [
+        0.1554826945066452,
+        0.021769024431705475,
+        0.18361467123031616
+      ],
+      "triangles": 614
+    },
+    {
+      "bone": "part_008_R",
+      "source_part": 8,
+      "parent": "leg_R",
+      "center": [
+        -0.1284244954586029,
+        0.012788163498044014,
+        0.18331381678581238
+      ],
+      "triangles": 584
+    },
+    {
+      "bone": "part_009",
+      "source_part": 9,
+      "parent": "arm_L",
+      "center": [
+        0.22880615293979645,
+        0.024142399430274963,
+        0.42947492003440857
+      ],
+      "triangles": 430
+    }
+  ],
+  "sha256": "c879b2c88c4fd4c9eed60768ddffa062f6365e8c4ea96159111ad4a23afddeb5",
+  "bytes": 4478636,
+  "raw_unchanged": true,
+  "destruction": "Baked separate rigid transforms, gravity, damped floor bounce; no inter-part collision solver."
+}

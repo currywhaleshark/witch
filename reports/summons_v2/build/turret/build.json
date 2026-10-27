@@ -1,0 +1,980 @@
+{
+  "id": "turret",
+  "source_sha256": "7aa7a635a0a39b36188c56bf5ef0a2e1c90cb00ab4c8f69108a4bbdfec053ad9",
+  "source_triangles": 166205,
+  "source_part_count": 86,
+  "rigid_parts": 86,
+  "runtime_triangles": 17556,
+  "bones": 92,
+  "max_influences": 1,
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "attack": {
+      "frames": 25,
+      "seconds": 1.0
+    },
+    "hit": {
+      "frames": 13,
+      "seconds": 0.5
+    },
+    "death": {
+      "frames": 49,
+      "seconds": 2.0
+    }
+  },
+  "parts": [
+    {
+      "bone": "part_000",
+      "source_part": 0,
+      "parent": "drive_gear",
+      "center": [
+        0.0002177506685256958,
+        -0.18594445288181305,
+        0.6441381573677063
+      ],
+      "triangles": 1018
+    },
+    {
+      "bone": "part_001",
+      "source_part": 1,
+      "parent": "barrel",
+      "center": [
+        0.000642925500869751,
+        0.41026902198791504,
+        0.6509915590286255
+      ],
+      "triangles": 566
+    },
+    {
+      "bone": "part_010",
+      "source_part": 10,
+      "parent": "root",
+      "center": [
+        -0.3812906742095947,
+        -0.18693052232265472,
+        0.0734773501753807
+      ],
+      "triangles": 288
+    },
+    {
+      "bone": "part_011",
+      "source_part": 11,
+      "parent": "root",
+      "center": [
+        -0.30529218912124634,
+        -0.09834558516740799,
+        0.12468203902244568
+      ],
+      "triangles": 188
+    },
+    {
+      "bone": "part_013",
+      "source_part": 13,
+      "parent": "carriage",
+      "center": [
+        0.0002465173602104187,
+        0.1593053638935089,
+        0.8205353021621704
+      ],
+      "triangles": 312
+    },
+    {
+      "bone": "part_014",
+      "source_part": 14,
+      "parent": "root",
+      "center": [
+        -0.18809828162193298,
+        0.2882077097892761,
+        0.12870647013187408
+      ],
+      "triangles": 306
+    },
+    {
+      "bone": "part_015",
+      "source_part": 15,
+      "parent": "carriage",
+      "center": [
+        -0.00011038780212402344,
+        0.0568828210234642,
+        0.40976762771606445
+      ],
+      "triangles": 379
+    },
+    {
+      "bone": "part_016",
+      "source_part": 16,
+      "parent": "key",
+      "center": [
+        3.410503268241882e-05,
+        -0.3510771691799164,
+        0.6397020816802979
+      ],
+      "triangles": 282
+    },
+    {
+      "bone": "part_017",
+      "source_part": 17,
+      "parent": "carriage",
+      "center": [
+        -0.020051687955856323,
+        -0.11639688909053802,
+        0.630610466003418
+      ],
+      "triangles": 437
+    },
+    {
+      "bone": "part_018",
+      "source_part": 18,
+      "parent": "carriage",
+      "center": [
+        -0.20764467120170593,
+        0.02938571199774742,
+        0.569046676158905
+      ],
+      "triangles": 360
+    },
+    {
+      "bone": "part_019",
+      "source_part": 19,
+      "parent": "carriage",
+      "center": [
+        0.0005095787346363068,
+        0.030356857925653458,
+        0.8283228874206543
+      ],
+      "triangles": 198
+    },
+    {
+      "bone": "part_002",
+      "source_part": 2,
+      "parent": "root",
+      "center": [
+        4.053860902786255e-05,
+        0.052000001072883606,
+        0.15019819140434265
+      ],
+      "triangles": 814
+    },
+    {
+      "bone": "part_020",
+      "source_part": 20,
+      "parent": "root",
+      "center": [
+        -0.18756571412086487,
+        -0.09077465534210205,
+        0.16586458683013916
+      ],
+      "triangles": 170
+    },
+    {
+      "bone": "part_021",
+      "source_part": 21,
+      "parent": "root",
+      "center": [
+        0.18298949301242828,
+        -0.09154430776834488,
+        0.16715115308761597
+      ],
+      "triangles": 162
+    },
+    {
+      "bone": "part_022",
+      "source_part": 22,
+      "parent": "root",
+      "center": [
+        0.15269820392131805,
+        0.2526420056819916,
+        0.16809816658496857
+      ],
+      "triangles": 166
+    },
+    {
+      "bone": "part_023",
+      "source_part": 23,
+      "parent": "carriage",
+      "center": [
+        -0.22640128433704376,
+        0.06489815562963486,
+        0.5485037565231323
+      ],
+      "triangles": 131
+    },
+    {
+      "bone": "part_024",
+      "source_part": 24,
+      "parent": "root",
+      "center": [
+        -0.14065615832805634,
+        0.09489491581916809,
+        0.21879351139068604
+      ],
+      "triangles": 158
+    },
+    {
+      "bone": "part_025",
+      "source_part": 25,
+      "parent": "key",
+      "center": [
+        0.0006140954792499542,
+        -0.2310352623462677,
+        0.6451617479324341
+      ],
+      "triangles": 312
+    },
+    {
+      "bone": "part_026",
+      "source_part": 26,
+      "parent": "key",
+      "center": [
+        -2.757832407951355e-05,
+        -0.26008081436157227,
+        0.6410378217697144
+      ],
+      "triangles": 254
+    },
+    {
+      "bone": "part_027",
+      "source_part": 27,
+      "parent": "key",
+      "center": [
+        -0.0002994164824485779,
+        -0.3123280704021454,
+        0.6375855207443237
+      ],
+      "triangles": 208
+    },
+    {
+      "bone": "part_028",
+      "source_part": 28,
+      "parent": "barrel",
+      "center": [
+        -0.07930544018745422,
+        0.3004675507545471,
+        0.5894384384155273
+      ],
+      "triangles": 58
+    },
+    {
+      "bone": "part_029",
+      "source_part": 29,
+      "parent": "root",
+      "center": [
+        0.3420616388320923,
+        -0.18671341240406036,
+        0.07332924008369446
+      ],
+      "triangles": 364
+    },
+    {
+      "bone": "part_003",
+      "source_part": 3,
+      "parent": "carriage",
+      "center": [
+        0.00032722949981689453,
+        0.07154633104801178,
+        0.6204431653022766
+      ],
+      "triangles": 1524
+    },
+    {
+      "bone": "part_030",
+      "source_part": 30,
+      "parent": "key",
+      "center": [
+        -0.005811944603919983,
+        -0.4694279730319977,
+        0.6283228397369385
+      ],
+      "triangles": 308
+    },
+    {
+      "bone": "part_031",
+      "source_part": 31,
+      "parent": "root",
+      "center": [
+        0.14683640003204346,
+        0.27669820189476013,
+        0.23029053211212158
+      ],
+      "triangles": 308
+    },
+    {
+      "bone": "part_032",
+      "source_part": 32,
+      "parent": "root",
+      "center": [
+        0.00018814951181411743,
+        0.05592687427997589,
+        0.315151572227478
+      ],
+      "triangles": 506
+    },
+    {
+      "bone": "part_033",
+      "source_part": 33,
+      "parent": "root",
+      "center": [
+        -0.1744503378868103,
+        -0.07568556070327759,
+        0.24390944838523865
+      ],
+      "triangles": 274
+    },
+    {
+      "bone": "part_034",
+      "source_part": 34,
+      "parent": "root",
+      "center": [
+        -0.2573951184749603,
+        -0.15207868814468384,
+        0.06948137283325195
+      ],
+      "triangles": 144
+    },
+    {
+      "bone": "part_035",
+      "source_part": 35,
+      "parent": "root",
+      "center": [
+        0.2672150731086731,
+        -0.19851814210414886,
+        0.12927603721618652
+      ],
+      "triangles": 160
+    },
+    {
+      "bone": "part_036",
+      "source_part": 36,
+      "parent": "root",
+      "center": [
+        -0.2681748867034912,
+        -0.19770950078964233,
+        0.1294809728860855
+      ],
+      "triangles": 164
+    },
+    {
+      "bone": "part_037",
+      "source_part": 37,
+      "parent": "root",
+      "center": [
+        0.3061109781265259,
+        -0.09889999777078629,
+        0.12428014725446701
+      ],
+      "triangles": 144
+    },
+    {
+      "bone": "part_038",
+      "source_part": 38,
+      "parent": "carriage",
+      "center": [
+        0.00026038289070129395,
+        0.05712155997753143,
+        0.44759267568588257
+      ],
+      "triangles": 398
+    },
+    {
+      "bone": "part_039",
+      "source_part": 39,
+      "parent": "carriage",
+      "center": [
+        0.1882868856191635,
+        0.07470209896564484,
+        0.5867615938186646
+      ],
+      "triangles": 204
+    },
+    {
+      "bone": "part_004",
+      "source_part": 4,
+      "parent": "carriage",
+      "center": [
+        0.000836297869682312,
+        0.2101650834083557,
+        0.6159142255783081
+      ],
+      "triangles": 536
+    },
+    {
+      "bone": "part_040",
+      "source_part": 40,
+      "parent": "carriage",
+      "center": [
+        0.00010776706039905548,
+        -0.2050882875919342,
+        0.8328026533126831
+      ],
+      "triangles": 92
+    },
+    {
+      "bone": "part_041",
+      "source_part": 41,
+      "parent": "root",
+      "center": [
+        -0.20686805248260498,
+        0.3678218722343445,
+        0.16677230596542358
+      ],
+      "triangles": 108
+    },
+    {
+      "bone": "part_042",
+      "source_part": 42,
+      "parent": "root",
+      "center": [
+        0.18101239204406738,
+        0.37229180335998535,
+        0.12305212020874023
+      ],
+      "triangles": 146
+    },
+    {
+      "bone": "part_043",
+      "source_part": 43,
+      "parent": "carriage",
+      "center": [
+        0.03424976393580437,
+        -0.08639217913150787,
+        0.6132291555404663
+      ],
+      "triangles": 124
+    },
+    {
+      "bone": "part_044",
+      "source_part": 44,
+      "parent": "root",
+      "center": [
+        0.2998523712158203,
+        -0.15990720689296722,
+        0.17044535279273987
+      ],
+      "triangles": 94
+    },
+    {
+      "bone": "part_045",
+      "source_part": 45,
+      "parent": "carriage",
+      "center": [
+        0.00014684349298477173,
+        -0.05005970597267151,
+        0.8023201823234558
+      ],
+      "triangles": 130
+    },
+    {
+      "bone": "part_046",
+      "source_part": 46,
+      "parent": "root",
+      "center": [
+        0.2512913942337036,
+        0.35474637150764465,
+        0.13031038641929626
+      ],
+      "triangles": 146
+    },
+    {
+      "bone": "part_047",
+      "source_part": 47,
+      "parent": "root",
+      "center": [
+        0.23851560056209564,
+        0.33924829959869385,
+        0.06149079650640488
+      ],
+      "triangles": 104
+    },
+    {
+      "bone": "part_048",
+      "source_part": 48,
+      "parent": "barrel",
+      "center": [
+        0.080021433532238,
+        0.2998376786708832,
+        0.5888357162475586
+      ],
+      "triangles": 66
+    },
+    {
+      "bone": "part_049",
+      "source_part": 49,
+      "parent": "root",
+      "center": [
+        0.15298885107040405,
+        0.09475165605545044,
+        0.219124436378479
+      ],
+      "triangles": 132
+    },
+    {
+      "bone": "part_005",
+      "source_part": 5,
+      "parent": "root",
+      "center": [
+        -0.27290934324264526,
+        0.4656461775302887,
+        0.06620233505964279
+      ],
+      "triangles": 334
+    },
+    {
+      "bone": "part_050",
+      "source_part": 50,
+      "parent": "root",
+      "center": [
+        -0.3025381565093994,
+        -0.1602517068386078,
+        0.17237424850463867
+      ],
+      "triangles": 88
+    },
+    {
+      "bone": "part_051",
+      "source_part": 51,
+      "parent": "carriage",
+      "center": [
+        0.17581038177013397,
+        -0.03939637169241905,
+        0.6601424217224121
+      ],
+      "triangles": 112
+    },
+    {
+      "bone": "part_052",
+      "source_part": 52,
+      "parent": "barrel",
+      "center": [
+        0.0007909759879112244,
+        0.2411523163318634,
+        0.6309618949890137
+      ],
+      "triangles": 256
+    },
+    {
+      "bone": "part_053",
+      "source_part": 53,
+      "parent": "carriage",
+      "center": [
+        -0.17948570847511292,
+        -0.0370272696018219,
+        0.6607558131217957
+      ],
+      "triangles": 92
+    },
+    {
+      "bone": "part_054",
+      "source_part": 54,
+      "parent": "carriage",
+      "center": [
+        -0.25383687019348145,
+        0.0761537253856659,
+        0.576378345489502
+      ],
+      "triangles": 104
+    },
+    {
+      "bone": "part_055",
+      "source_part": 55,
+      "parent": "key",
+      "center": [
+        0.0014181192964315414,
+        -0.36129337549209595,
+        0.6373331546783447
+      ],
+      "triangles": 148
+    },
+    {
+      "bone": "part_056",
+      "source_part": 56,
+      "parent": "root",
+      "center": [
+        -0.02082694321870804,
+        -0.11409899592399597,
+        0.219059020280838
+      ],
+      "triangles": 112
+    },
+    {
+      "bone": "part_057",
+      "source_part": 57,
+      "parent": "root",
+      "center": [
+        0.11897990107536316,
+        0.24478313326835632,
+        0.2813628315925598
+      ],
+      "triangles": 68
+    },
+    {
+      "bone": "part_058",
+      "source_part": 58,
+      "parent": "root",
+      "center": [
+        0.26547563076019287,
+        0.33062466979026794,
+        0.13980457186698914
+      ],
+      "triangles": 70
+    },
+    {
+      "bone": "part_006",
+      "source_part": 6,
+      "parent": "carriage",
+      "center": [
+        0.0012285113334655762,
+        0.056154072284698486,
+        0.3605448603630066
+      ],
+      "triangles": 524
+    },
+    {
+      "bone": "part_060",
+      "source_part": 60,
+      "parent": "root",
+      "center": [
+        0.002099018543958664,
+        0.23695217072963715,
+        0.21932479739189148
+      ],
+      "triangles": 106
+    },
+    {
+      "bone": "part_061",
+      "source_part": 61,
+      "parent": "carriage",
+      "center": [
+        -0.14444950222969055,
+        0.2104981541633606,
+        0.737768292427063
+      ],
+      "triangles": 72
+    },
+    {
+      "bone": "part_062",
+      "source_part": 62,
+      "parent": "root",
+      "center": [
+        -0.12900634109973907,
+        -0.11872811615467072,
+        0.278171181678772
+      ],
+      "triangles": 48
+    },
+    {
+      "bone": "part_063",
+      "source_part": 63,
+      "parent": "root",
+      "center": [
+        0.1306276023387909,
+        -0.123397096991539,
+        0.2790107727050781
+      ],
+      "triangles": 52
+    },
+    {
+      "bone": "part_064",
+      "source_part": 64,
+      "parent": "root",
+      "center": [
+        -0.12768837809562683,
+        0.26409876346588135,
+        0.2698459029197693
+      ],
+      "triangles": 64
+    },
+    {
+      "bone": "part_065",
+      "source_part": 65,
+      "parent": "carriage",
+      "center": [
+        -0.15737003087997437,
+        -0.042557138949632645,
+        0.7563583850860596
+      ],
+      "triangles": 64
+    },
+    {
+      "bone": "part_066",
+      "source_part": 66,
+      "parent": "root",
+      "center": [
+        0.20418962836265564,
+        -0.04700569435954094,
+        0.27762556076049805
+      ],
+      "triangles": 72
+    },
+    {
+      "bone": "part_067",
+      "source_part": 67,
+      "parent": "root",
+      "center": [
+        0.14338523149490356,
+        0.36801987886428833,
+        0.14175647497177124
+      ],
+      "triangles": 64
+    },
+    {
+      "bone": "part_068",
+      "source_part": 68,
+      "parent": "root",
+      "center": [
+        -0.20374883711338043,
+        -0.04711247980594635,
+        0.27737709879875183
+      ],
+      "triangles": 62
+    },
+    {
+      "bone": "part_069",
+      "source_part": 69,
+      "parent": "carriage",
+      "center": [
+        0.15853768587112427,
+        -0.04303295910358429,
+        0.7557427883148193
+      ],
+      "triangles": 68
+    },
+    {
+      "bone": "part_007",
+      "source_part": 7,
+      "parent": "root",
+      "center": [
+        0.17421050369739532,
+        -0.07286210358142853,
+        0.2444307655096054
+      ],
+      "triangles": 324
+    },
+    {
+      "bone": "part_070",
+      "source_part": 70,
+      "parent": "carriage",
+      "center": [
+        0.000978703610599041,
+        0.13682077825069427,
+        0.8852580785751343
+      ],
+      "triangles": 48
+    },
+    {
+      "bone": "part_071",
+      "source_part": 71,
+      "parent": "carriage",
+      "center": [
+        -0.18433938920497894,
+        0.17062702775001526,
+        0.6891731023788452
+      ],
+      "triangles": 44
+    },
+    {
+      "bone": "part_072",
+      "source_part": 72,
+      "parent": "root",
+      "center": [
+        -0.14298903942108154,
+        0.38196513056755066,
+        0.13751636445522308
+      ],
+      "triangles": 54
+    },
+    {
+      "bone": "part_073",
+      "source_part": 73,
+      "parent": "carriage",
+      "center": [
+        0.18531958758831024,
+        0.17070288956165314,
+        0.6893031001091003
+      ],
+      "triangles": 32
+    },
+    {
+      "bone": "part_074",
+      "source_part": 74,
+      "parent": "carriage",
+      "center": [
+        0.23639121651649475,
+        0.02962489053606987,
+        0.550904393196106
+      ],
+      "triangles": 316
+    },
+    {
+      "bone": "part_075",
+      "source_part": 75,
+      "parent": "carriage",
+      "center": [
+        0.14650702476501465,
+        0.21015319228172302,
+        0.7413393259048462
+      ],
+      "triangles": 36
+    },
+    {
+      "bone": "part_076",
+      "source_part": 76,
+      "parent": "carriage",
+      "center": [
+        0.22584110498428345,
+        0.10508407652378082,
+        0.6112184524536133
+      ],
+      "triangles": 38
+    },
+    {
+      "bone": "part_077",
+      "source_part": 77,
+      "parent": "carriage",
+      "center": [
+        -0.1850813925266266,
+        0.17906326055526733,
+        0.5401079058647156
+      ],
+      "triangles": 24
+    },
+    {
+      "bone": "part_078",
+      "source_part": 78,
+      "parent": "carriage",
+      "center": [
+        0.18637625873088837,
+        0.17855507135391235,
+        0.5405923128128052
+      ],
+      "triangles": 24
+    },
+    {
+      "bone": "part_079",
+      "source_part": 79,
+      "parent": "barrel",
+      "center": [
+        -0.0005718804895877838,
+        0.3387041389942169,
+        0.7355183362960815
+      ],
+      "triangles": 34
+    },
+    {
+      "bone": "part_008",
+      "source_part": 8,
+      "parent": "root",
+      "center": [
+        0.2579135298728943,
+        0.4706113338470459,
+        0.07332034409046173
+      ],
+      "triangles": 262
+    },
+    {
+      "bone": "part_081",
+      "source_part": 81,
+      "parent": "root",
+      "center": [
+        0.171553373336792,
+        0.1799771934747696,
+        0.27371442317962646
+      ],
+      "triangles": 30
+    },
+    {
+      "bone": "part_082",
+      "source_part": 82,
+      "parent": "root",
+      "center": [
+        -0.05723082274198532,
+        0.2657787799835205,
+        0.25551438331604004
+      ],
+      "triangles": 32
+    },
+    {
+      "bone": "part_083",
+      "source_part": 83,
+      "parent": "carriage",
+      "center": [
+        0.18520961701869965,
+        -0.04675868898630142,
+        0.54551100730896
+      ],
+      "triangles": 40
+    },
+    {
+      "bone": "part_084",
+      "source_part": 84,
+      "parent": "root",
+      "center": [
+        -0.17271313071250916,
+        0.1921810507774353,
+        0.26717251539230347
+      ],
+      "triangles": 28
+    },
+    {
+      "bone": "part_085",
+      "source_part": 85,
+      "parent": "carriage",
+      "center": [
+        0.20168659090995789,
+        -0.039990730583667755,
+        0.6597782373428345
+      ],
+      "triangles": 28
+    },
+    {
+      "bone": "part_086",
+      "source_part": 86,
+      "parent": "carriage",
+      "center": [
+        -0.252243310213089,
+        -0.058954376727342606,
+        0.5274761915206909
+      ],
+      "triangles": 32
+    },
+    {
+      "bone": "part_087",
+      "source_part": 87,
+      "parent": "root",
+      "center": [
+        -0.25782039761543274,
+        0.31782978773117065,
+        0.1437205970287323
+      ],
+      "triangles": 28
+    },
+    {
+      "bone": "part_088",
+      "source_part": 88,
+      "parent": "root",
+      "center": [
+        0.254050612449646,
+        -0.13193346560001373,
+        0.20079852640628815
+      ],
+      "triangles": 24
+    },
+    {
+      "bone": "part_009",
+      "source_part": 9,
+      "parent": "root",
+      "center": [
+        -0.16192744672298431,
+        0.2956259548664093,
+        0.17646077275276184
+      ],
+      "triangles": 555
+    }
+  ],
+  "sha256": "ab48e0c89d4a0a39b8af36bfe7489c042005082f6c9801fafb55278ddbb9e2a0",
+  "bytes": 5809916,
+  "raw_unchanged": true,
+  "destruction": "Baked separate rigid transforms, gravity, damped floor bounce; no inter-part collision solver."
+}

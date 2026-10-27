@@ -1,0 +1,88 @@
+{
+  "id": "turret",
+  "source_sha256": "e0031d0a5351bba30a3534762af742123930b3b6c5b4595d742dbe93e1f3cbbb",
+  "source_triangles": 77445,
+  "runtime_triangles": 7999,
+  "vertices": 7433,
+  "height_m": 0.9,
+  "front": "-Z in Godot",
+  "bones": 5,
+  "weighted_vertex_counts": {
+    "root": 3035,
+    "carriage": 3388,
+    "barrel": 1533,
+    "key": 314,
+    "muzzle": 0
+  },
+  "max_influences": 3,
+  "textures": [
+    {
+      "name": "turret_basecolor_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "turret_normal_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "turret_rm_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0,
+      "loop": true
+    },
+    "attack": {
+      "frames": 25,
+      "seconds": 1.0,
+      "loop": false
+    },
+    "hit": {
+      "frames": 13,
+      "seconds": 0.5,
+      "loop": false
+    },
+    "death": {
+      "frames": 31,
+      "seconds": 1.25,
+      "loop": false
+    }
+  },
+  "ground_min_z": {
+    "idle": [
+      -1.7462298274040222e-10,
+      -1.7462298274040222e-10
+    ],
+    "attack": [
+      -1.7462298274040222e-10,
+      -1.7462298274040222e-10
+    ],
+    "hit": [
+      -1.7462298274040222e-10,
+      -1.7462298274040222e-10
+    ],
+    "death": [
+      -1.7462298274040222e-10,
+      1.7881393432617188e-07
+    ]
+  },
+  "glb_sha256": "72bd581cd59e7f0b9ed689f836461ca84e7a394293a49c69670e74c9dd616408",
+  "glb_bytes": 4209772,
+  "limitations": [
+    "Prototype authored animation; no motion-capture source.",
+    "UV-preserving decimation and region weights; not manually rebuilt deformation topology.",
+    "Generated fused surfaces can compress at large joint angles; only the delivered clips are reviewed."
+  ]
+}

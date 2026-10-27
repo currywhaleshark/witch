@@ -4,6 +4,7 @@ const Shape = preload("res://scripts/shapes.gd")
 const Hud = preload("res://scripts/hud.gd")
 const ManaProbe = preload("res://scripts/mana_probe.gd")
 const PlayerVisual = preload("res://scripts/player_visual.gd")
+const ActorVisual = preload("res://scripts/actor_visual.gd")
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
@@ -184,6 +185,9 @@ func play_cue(pitch: float = 1.0) -> void:
 	sound.play()
 
 func reset_arena() -> void:
+	for child in world.get_children():
+		if child.is_in_group("actor_corpses"):
+			child.free()
 	for id in enemies:
 		enemies[id].body.free()
 	enemies.clear()
@@ -916,6 +920,8 @@ func damage_enemy(id: String, amount: float) -> float:
 	enemy.flash = 0.16
 	if enemy.hp <= 0:
 		pulse(enemy.body.position, RED, 0.6)
+		if enemy.model.has_method("detach_for_death"):
+			enemy.model.detach_for_death(world, self)
 		enemy.body.queue_free()
 		enemies.erase(id)
 		kills += 1
@@ -1045,12 +1051,7 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	var node = Node3D.new()
 	world.add_child(node)
 	node.position = pos
-	Shape.cylinder(node, Vector3(0, 0.25, 0), 0.33, 0.5, BRASS)
-	Shape.box(node, Vector3(0, 0.65, 0), Vector3(0.5, 0.4, 0.48), Color("719b98"))
-	if mobile:
-		Shape.sphere(node, Vector3(0, 0.98, 0), 0.18, TEAL)
-	else:
-		Shape.box(node, Vector3(0, 0.75, -0.35), Vector3(0.16, 0.16, 0.75), BRASS)
+	ActorVisual.create(node, "automaton" if mobile else "turret")
 	Shape.ring(node, Vector3(0, 0.04, 0), 0.43, TEAL)
 	var durability: float = config.automaton_hp if mobile else config.turret_hp
 	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "target": target_id if target_id != null else "", "cooldown": 0.2,
@@ -1110,7 +1111,13 @@ func _physics_process(dt: float) -> void:
 				player_model.look_at(player.position + delta.normalized())
 		for id in enemies.keys():
 			_tick_enemy(enemies[id], dt)
+			if enemies.has(id) and enemies[id].model.has_method("sync_enemy"):
+				enemies[id].model.sync_enemy(enemies[id], dt)
 		_tick_allies(dt)
+		for ally in allies:
+			var art: Node = ally.node.get_node_or_null("ActorVisual")
+			if art != null:
+				art.sync_ally(ally, dt)
 	player_visual.set_active_tool(state.active_tool)
 	for id in tool_rings:
 		tool_rings[id].visible = state.active_tool == id
@@ -1196,6 +1203,10 @@ func damage_ally(ally: Dictionary, amount: float, grade: String) -> void:
 	if ally.hp <= 0:
 		# Destroyed summons break apart without the end-of-life self-destruct blast.
 		pulse(ally.node.position, BRASS, 0.7)
+		play_cue(1.15)
+		var art: Node = ally.node.get_node_or_null("ActorVisual")
+		if art != null:
+			art.detach_for_death(world, self)
 		ally.node.queue_free()
 		allies.erase(ally)
 
@@ -1243,7 +1254,8 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 		return
 	if enemy.windup > 0:
 		enemy.windup -= dt
-		enemy.model.rotation.z = sin(enemy.windup * 35) * 0.12
+		if not enemy.model.has_method("sync_enemy"):
+			enemy.model.rotation.z = sin(enemy.windup * 35) * 0.12
 		if enemy.windup <= 0:
 			enemy.model.rotation.z = 0
 			enemy.cooldown = type.cooldown
@@ -1433,6 +1445,8 @@ func disc_warning(at: Vector3, radius: float, life: float) -> void:
 func start_enemy_attack(enemy: Dictionary, attack: String, windup: float, color: Color) -> void:
 	enemy.attack = attack
 	enemy.windup = windup
+	if enemy.model.has_method("begin_attack"):
+		enemy.model.begin_attack(attack, windup)
 	pulse(enemy.body.position, color, 0.55 * enemy.size)
 
 func telegraph(from: Vector3, direction: Vector3, length: float, width: float, life: float) -> void:
@@ -1489,6 +1503,10 @@ func _tick_allies(dt: float) -> void:
 					if ally.node.position.distance_to(enemies[id].body.position) < config.summon_explosion_range:
 						strike(id, config.shot_damage, false, "automaton", "automaton_blast")
 				pulse(ally.node.position, BRASS, config.summon_explosion_range)
+			var expired_art: Node = ally.node.get_node_or_null("ActorVisual")
+			if expired_art != null:
+				expired_art.detach_for_death(world, self, ally.mobile)
+			play_cue(0.65 if ally.mobile else 1.15)
 			ally.node.queue_free()
 			allies.erase(ally)
 			continue
@@ -1508,7 +1526,12 @@ func _tick_allies(dt: float) -> void:
 			ally.node.position = ally.node.position.move_toward(target, dt * 4)
 		ally.cooldown -= dt
 		if ally.cooldown <= 0 and (not ally.mobile or ally.node.position.distance_to(target) <= 1.8):
-			beam(ally.node.position + Vector3.UP * 0.8, target + Vector3.UP * 0.8, TEAL, 0.065)
+			var shot_origin: Vector3 = ally.node.position + Vector3.UP * 0.8
+			var art: Node = ally.node.get_node_or_null("ActorVisual")
+			if art != null:
+				art.preview_shot(ally)
+				shot_origin = art.muzzle_position()
+			beam(shot_origin, target + Vector3.UP * 0.8, TEAL, 0.065)
 			strike(ally.target, config.summon_damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret")
 			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown
 

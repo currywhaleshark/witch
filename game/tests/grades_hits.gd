@@ -161,6 +161,10 @@ func run() -> void:
 	arena.set_a5_mode(false)
 
 	arena.log_dir = OS.get_user_data_dir().path_join("grade_log_test")
+	# CI/sandbox runners may keep the same log assertions in a writable task directory.
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--test-log-dir="):
+			arena.log_dir = arg.trim_prefix("--test-log-dir=")
 	DirAccess.make_dir_recursive_absolute(arena.log_dir)
 	# A5 mode rebuilds the field, so turn it on before placing the test enemy.
 	arena.set_a5_mode(true)

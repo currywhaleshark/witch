@@ -1,0 +1,26 @@
+[
+  {
+    "clip": "attack",
+    "over_2_5": 0,
+    "max_ratio": 1.7533120807517606,
+    "worst": []
+  },
+  {
+    "clip": "death",
+    "over_2_5": 0,
+    "max_ratio": 2.340400221413708,
+    "worst": []
+  },
+  {
+    "clip": "hit",
+    "over_2_5": 0,
+    "max_ratio": 1.3192121948241837,
+    "worst": []
+  },
+  {
+    "clip": "idle",
+    "over_2_5": 0,
+    "max_ratio": 1.1711311806409437,
+    "worst": []
+  }
+]

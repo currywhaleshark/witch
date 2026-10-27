@@ -1,0 +1,48 @@
+{
+  "actor": "crow",
+  "bounds": [
+    [
+      -0.5,
+      -0.306671142578125,
+      0.0
+    ],
+    [
+      0.5,
+      0.306671142578125,
+      0.54345703125
+    ]
+  ],
+  "meshes": [
+    {
+      "name": "tripo_node_bb104e95-e1a4-47a0-9e19-3c4fba72c7f2",
+      "vertices": 44304,
+      "triangles": 77336,
+      "materials": [
+        "tripo_material_bb104e95-e1a4-47a0-9e19-3c4fba72c7f2"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "crow_tripo_h31_raw_basecolor.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "crow_tripo_h31_raw_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "crow_tripo_h31_raw_rm.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}

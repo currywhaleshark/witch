@@ -1,0 +1,593 @@
+{
+  "status": "integrated_review_candidate",
+  "art_approved": false,
+  "source_scenario": "docs/08_scenario_draft.md @ 7fa2416 section 6.2",
+  "style": "aged brass and deep teal, user selected",
+  "assets": [
+    {
+      "id": "rag",
+      "name": "그을음 넝마귀",
+      "tripo_job": "c3463e93-67d5-4260-a79d-97d797a7abf1",
+      "files": {
+        "assets/actors/combat_set_v1/source/rag_tripo_h31_raw.glb": {
+          "sha256": "ec54fccebca2d370c77f4824b535aaa05d4c74225bccae9e3eaa812718644209",
+          "bytes": 6844180
+        },
+        "assets/actors/combat_set_v1/source/rag_tripo_h31_raw.blend": {
+          "sha256": "4b30d6dfc2c152bfbf8266143c8f6c612ba69d820b64a321c94bbd6475605ddd",
+          "bytes": 7420909
+        },
+        "assets/actors/combat_set_v1/authoring/rag_v1.blend": {
+          "sha256": "f9643706f8c5995fa9ee72b6d69d35f51fe8c2b24166570d187a0fb312910198",
+          "bytes": 4456422
+        },
+        "assets/actors/combat_set_v1/exports/rag_v1.glb": {
+          "sha256": "707ac4ea25fcc48eff6bc18027ad0a22b1acfc429337fe605473c01638984b2f",
+          "bytes": 4421688
+        },
+        "assets/reference/actors/combat_set_v1/rag_concept_v1.png": {
+          "sha256": "07ec61551a36f4ec7276e454938cc5d4b63dd726e1922f979e3a88990e3bf140",
+          "bytes": 2484866
+        }
+      }
+    },
+    {
+      "id": "crow",
+      "name": "전선 까마귀",
+      "tripo_job": "4c32aedb-d26d-4ef8-a662-208c7656b458",
+      "files": {
+        "assets/actors/combat_set_v1/source/crow_tripo_h31_raw.glb": {
+          "sha256": "67ca02a0c233dbc7ccdf86ab6e8a6d685806c40966063e3efeb223ce8b4ed08a",
+          "bytes": 5820860
+        },
+        "assets/actors/combat_set_v1/source/crow_tripo_h31_raw.blend": {
+          "sha256": "d97fa460b6ba5db5e45346aad7b0eb4f63124c459b6282f956957c1834ea1aef",
+          "bytes": 6461162
+        },
+        "assets/actors/combat_set_v1/authoring/crow_v1.blend": {
+          "sha256": "44b00dd783dbee6a4d5ac7e82469cb026d5a2eede43132a73c9a5885c2e1048b",
+          "bytes": 3986643
+        },
+        "assets/actors/combat_set_v1/exports/crow_v1.glb": {
+          "sha256": "2c89d8c3435aa19575fdbe134d07603160e9e98a96c28ff2dd148a6b3bd85807",
+          "bytes": 3938224
+        },
+        "assets/reference/actors/combat_set_v1/crow_concept_v1.png": {
+          "sha256": "3662a192e6dba746f5bc0727dfd7f7308a105c16b8d4d4c2fb18b110a2f7f113",
+          "bytes": 2043402
+        }
+      }
+    },
+    {
+      "id": "brute",
+      "name": "철문 아귀",
+      "tripo_job": "ccbb8002-e2e0-4e36-9d57-8f1d75b11d5c",
+      "files": {
+        "assets/actors/combat_set_v1/source/brute_tripo_h31_raw.glb": {
+          "sha256": "154711b1ceff2d2b26494e9f2779048ba8d46f75658427da66b8879157e254bc",
+          "bytes": 6749952
+        },
+        "assets/actors/combat_set_v1/source/brute_tripo_h31_raw.blend": {
+          "sha256": "84f5a9adb9f4fafe46a6361b6ab28fb831152838f7c620c10aac7dc32215fe48",
+          "bytes": 7347936
+        },
+        "assets/actors/combat_set_v1/authoring/brute_v1.blend": {
+          "sha256": "25d5dcecaad0fdc819a3359a81122da95a972e19378ffc1daf8014ef6916114f",
+          "bytes": 4776007
+        },
+        "assets/actors/combat_set_v1/exports/brute_v1.glb": {
+          "sha256": "0cf61f360b84a178d92aa199eac2c1db98be9444c06df11249a30c8be5909e68",
+          "bytes": 4727972
+        },
+        "assets/reference/actors/combat_set_v1/brute_concept_v1.png": {
+          "sha256": "b6d361a41af7ce706765a48ca5129cda60901a1c6347af28283be10f56dd3b4c",
+          "bytes": 2493734
+        }
+      }
+    },
+    {
+      "id": "automaton",
+      "name": "태엽인형",
+      "tripo_job": "159e5476-f05f-439e-b171-d9b2b5232eb7",
+      "files": {
+        "assets/actors/combat_set_v1/source/automaton_tripo_h31_raw.glb": {
+          "sha256": "d8e2daf0430f7ebdd224b3c153d6d3723a8efe063da5faaaebb91c1b3ea805cb",
+          "bytes": 6414604
+        },
+        "assets/actors/combat_set_v1/source/automaton_tripo_h31_raw.blend": {
+          "sha256": "c88eecb474ee5182d7a1c7543a1c114b9e896a03868cdaf20046fa37e0deee1c",
+          "bytes": 7090313
+        },
+        "assets/actors/combat_set_v1/authoring/automaton_v1.blend": {
+          "sha256": "5706b9ce541ed8d69205f1665954dcd550d34abedbe29465b3816d66ac0f1918",
+          "bytes": 4279151
+        },
+        "assets/actors/combat_set_v1/exports/automaton_v1.glb": {
+          "sha256": "2eb8b4bfba054944e5d3490fba0310e220c8a2169090198810130ee57cdf00bf",
+          "bytes": 4207904
+        },
+        "assets/reference/actors/combat_set_v1/automaton_concept_v1.png": {
+          "sha256": "64504f190fda44fd3ae53e9cc4d860fc8e477868374057be674c784d60b5be3f",
+          "bytes": 2112403
+        }
+      }
+    },
+    {
+      "id": "turret",
+      "name": "자동포탑",
+      "tripo_job": "dd0a4284-090a-470b-8ca4-adfaf96a39bd",
+      "files": {
+        "assets/actors/combat_set_v1/source/turret_tripo_h31_raw.glb": {
+          "sha256": "e0031d0a5351bba30a3534762af742123930b3b6c5b4595d742dbe93e1f3cbbb",
+          "bytes": 6470128
+        },
+        "assets/actors/combat_set_v1/source/turret_tripo_h31_raw.blend": {
+          "sha256": "287533548e0984d2b3cf33687c622ac4e46ec06694920caa1e47ee0c97f68227",
+          "bytes": 7085432
+        },
+        "assets/actors/combat_set_v1/authoring/turret_v1.blend": {
+          "sha256": "9c7b8216ab0921b53864cb055a8dafa465161829a08f6ecff2f7964bc51679fd",
+          "bytes": 4259631
+        },
+        "assets/actors/combat_set_v1/exports/turret_v1.glb": {
+          "sha256": "72bd581cd59e7f0b9ed689f836461ca84e7a394293a49c69670e74c9dd616408",
+          "bytes": 4209772
+        },
+        "assets/reference/actors/combat_set_v1/turret_concept_v1.png": {
+          "sha256": "65cbc86668de8e044246e53299a39a0069d2ad931488ce9cf31c064507b39fd7",
+          "bytes": 1859342
+        }
+      }
+    }
+  ],
+  "glb_validation": {
+    "passed": true,
+    "errors": [],
+    "files": [
+      {
+        "id": "rag",
+        "file": "rag_v1.glb",
+        "triangles": 12000,
+        "bones": 14,
+        "max_weight_sum_error": 1.1920928955078125e-07,
+        "max_influences": 3,
+        "images": [
+          {
+            "name": "rag_normal_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "rag_basecolor_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "rag_rm_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "animations": {
+          "attack": {
+            "seconds": 1.0416666269302368,
+            "channels": 42
+          },
+          "death": {
+            "seconds": 1.2916666269302368,
+            "channels": 42
+          },
+          "hit": {
+            "seconds": 0.5416666865348816,
+            "channels": 42
+          },
+          "idle": {
+            "seconds": 2.0416667461395264,
+            "channels": 42
+          },
+          "move": {
+            "seconds": 1.0416666269302368,
+            "channels": 42
+          }
+        },
+        "bytes": 4421688,
+        "sha256": "707ac4ea25fcc48eff6bc18027ad0a22b1acfc429337fe605473c01638984b2f"
+      },
+      {
+        "id": "crow",
+        "file": "crow_v1.glb",
+        "triangles": 10000,
+        "bones": 11,
+        "max_weight_sum_error": 1.1920928955078125e-07,
+        "max_influences": 3,
+        "images": [
+          {
+            "name": "crow_normal_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "crow_basecolor_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "crow_rm_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "animations": {
+          "attack": {
+            "seconds": 1.0416666269302368,
+            "channels": 33
+          },
+          "death": {
+            "seconds": 1.2916666269302368,
+            "channels": 33
+          },
+          "hit": {
+            "seconds": 0.5416666865348816,
+            "channels": 33
+          },
+          "idle": {
+            "seconds": 2.0416667461395264,
+            "channels": 33
+          },
+          "move": {
+            "seconds": 1.0416666269302368,
+            "channels": 33
+          }
+        },
+        "bytes": 3938224,
+        "sha256": "2c89d8c3435aa19575fdbe134d07603160e9e98a96c28ff2dd148a6b3bd85807"
+      },
+      {
+        "id": "brute",
+        "file": "brute_v1.glb",
+        "triangles": 17999,
+        "bones": 14,
+        "max_weight_sum_error": 1.1920928955078125e-07,
+        "max_influences": 3,
+        "images": [
+          {
+            "name": "brute_normal_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "brute_basecolor_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "brute_rm_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "animations": {
+          "attack": {
+            "seconds": 1.0416666269302368,
+            "channels": 42
+          },
+          "charge": {
+            "seconds": 1.0416666269302368,
+            "channels": 42
+          },
+          "death": {
+            "seconds": 1.2916666269302368,
+            "channels": 42
+          },
+          "hit": {
+            "seconds": 0.5416666865348816,
+            "channels": 42
+          },
+          "idle": {
+            "seconds": 2.0416667461395264,
+            "channels": 42
+          },
+          "move": {
+            "seconds": 1.375,
+            "channels": 42
+          }
+        },
+        "bytes": 4727972,
+        "sha256": "0cf61f360b84a178d92aa199eac2c1db98be9444c06df11249a30c8be5909e68"
+      },
+      {
+        "id": "automaton",
+        "file": "automaton_v1.glb",
+        "triangles": 10000,
+        "bones": 15,
+        "max_weight_sum_error": 1.1920928955078125e-07,
+        "max_influences": 3,
+        "images": [
+          {
+            "name": "automaton_normal_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "automaton_basecolor_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "automaton_rm_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "animations": {
+          "attack": {
+            "seconds": 1.0416666269302368,
+            "channels": 45
+          },
+          "death": {
+            "seconds": 1.2916666269302368,
+            "channels": 45
+          },
+          "hit": {
+            "seconds": 0.5416666865348816,
+            "channels": 45
+          },
+          "idle": {
+            "seconds": 2.0416667461395264,
+            "channels": 45
+          },
+          "move": {
+            "seconds": 1.0416666269302368,
+            "channels": 45
+          }
+        },
+        "bytes": 4207904,
+        "sha256": "2eb8b4bfba054944e5d3490fba0310e220c8a2169090198810130ee57cdf00bf"
+      },
+      {
+        "id": "turret",
+        "file": "turret_v1.glb",
+        "triangles": 7999,
+        "bones": 5,
+        "max_weight_sum_error": 1.1920928955078125e-07,
+        "max_influences": 3,
+        "images": [
+          {
+            "name": "turret_normal_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "turret_basecolor_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "turret_rm_1k",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "animations": {
+          "attack": {
+            "seconds": 1.0416666269302368,
+            "channels": 15
+          },
+          "death": {
+            "seconds": 1.2916666269302368,
+            "channels": 15
+          },
+          "hit": {
+            "seconds": 0.5416666865348816,
+            "channels": 15
+          },
+          "idle": {
+            "seconds": 2.0416667461395264,
+            "channels": 15
+          }
+        },
+        "bytes": 4209772,
+        "sha256": "72bd581cd59e7f0b9ed689f836461ca84e7a394293a49c69670e74c9dd616408"
+      }
+    ],
+    "total_triangles": 57998
+  },
+  "runtime_validation": {
+    "assets": [
+      {
+        "bones": 14,
+        "clips": [
+          "attack",
+          "death",
+          "hit",
+          "idle",
+          "move"
+        ],
+        "dead": false,
+        "fraction": 0.0,
+        "kind": "rag",
+        "loaded": true,
+        "release_samples": [],
+        "state": "idle"
+      },
+      {
+        "bones": 11,
+        "clips": [
+          "attack",
+          "death",
+          "hit",
+          "idle",
+          "move"
+        ],
+        "dead": false,
+        "fraction": 0.0,
+        "kind": "crow",
+        "loaded": true,
+        "release_samples": [],
+        "state": "idle"
+      },
+      {
+        "bones": 14,
+        "clips": [
+          "attack",
+          "charge",
+          "death",
+          "hit",
+          "idle",
+          "move"
+        ],
+        "dead": false,
+        "fraction": 0.0,
+        "kind": "brute",
+        "loaded": true,
+        "release_samples": [],
+        "state": "idle"
+      },
+      {
+        "bones": 15,
+        "clips": [
+          "attack",
+          "death",
+          "hit",
+          "idle",
+          "move"
+        ],
+        "dead": false,
+        "fraction": 0.0,
+        "kind": "automaton",
+        "loaded": true,
+        "release_samples": [],
+        "state": "idle"
+      },
+      {
+        "bones": 5,
+        "clips": [
+          "attack",
+          "death",
+          "hit",
+          "idle"
+        ],
+        "dead": false,
+        "fraction": 0.0,
+        "kind": "turret",
+        "loaded": true,
+        "release_samples": [],
+        "state": "idle"
+      }
+    ],
+    "checks": 1811,
+    "failures": [],
+    "passed": true
+  },
+  "regressions": [
+    {
+      "name": "enemy_types",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "test": "enemy_types",
+      "workspace_cache_diagnostic_only": false,
+      "phase": "test"
+    },
+    {
+      "name": "boss",
+      "exit_code": 0,
+      "stderr_empty": true,
+      "test": "boss",
+      "workspace_cache_diagnostic_only": false,
+      "phase": "test"
+    },
+    {
+      "name": "grades_hits",
+      "exit_code": 0,
+      "test": "grades_hits",
+      "workspace_cache_diagnostic_only": false,
+      "phase": "test",
+      "stderr_empty": true
+    },
+    {
+      "name": "smoke_arena",
+      "exit_code": 0,
+      "test": "smoke_arena",
+      "workspace_cache_diagnostic_only": false,
+      "phase": "test",
+      "stderr_empty": true
+    }
+  ],
+  "capture_count": 427,
+  "execution": {
+    "import": {
+      "stderr_empty": false,
+      "phase": "import",
+      "test": "combat_actors",
+      "workspace_cache_diagnostic_only": true,
+      "exit_code": 0
+    },
+    "runtime": {
+      "stderr_empty": false,
+      "phase": "runtime",
+      "test": "combat_actors",
+      "workspace_cache_diagnostic_only": true,
+      "exit_code": 0
+    },
+    "review": {
+      "stderr_empty": false,
+      "phase": "review",
+      "workspace_cache_diagnostic_only": true,
+      "exit_code": 0,
+      "test": "combat_actors"
+    }
+  },
+  "limitations": [
+    "Initial authored motions, not final art/animation approval.",
+    "Large local edge stretches still exist at some fused joints; see build/*/deformation.json. No arbitrary-pose or performance-budget approval.",
+    "Known workspace user:// shader/editor cache diagnostics are recorded; runtime and renderer checks exited 0."
+  ],
+  "code_sha256": {
+    "game/scripts/actor_visual.gd": "5a6972fe631ae0aef1530123b7ba0f7358f9502769ceb61e51ecb0cb368b5bd1",
+    "game/scripts/shapes.gd": "c32f69d519b789190078f4788ed8373d13efe6936d1aba6db3a0f2be84a7fcb1",
+    "game/scripts/arena.gd": "e1df6c9eb40e7ac34422326b9a02a8c329554823e1f82c45a5b486d25c0629a8",
+    "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+    "game/data/trial.json": "3217128b4d995f6ed227df390b0d7ce4cc2e9d54a7b0e4cacec3d0c2a1f8acf5",
+    "game/scripts/player_visual.gd": "679351831430b40bf3d7d8e440d82930038cf47aa7e6c888b9027c7c69e6b76e",
+    "game/tests/combat_actors.gd": "672fdbf198bbd1b5d469d4359d381d991d853123594803159ff4c069a237bb7c",
+    "game/tests/review_combat_actors.gd": "5ce5b82d39d27965627b44b5bb1fe14c1afee89eb80620552af770ca5c252f49",
+    "tools/build_combat_actors_v1.py": "c9f3d556d2fa3e348872884cf42b2f638332e57bcf1f7bec5857b30a585b73f5"
+  },
+  "baseline_note": "Integration preserves the concurrent boss commit 595e858; initial production.json game hashes predate that worker commit.",
+  "code_text_sha256": {
+    "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+    "game/data/trial.json": "3217128b4d995f6ed227df390b0d7ce4cc2e9d54a7b0e4cacec3d0c2a1f8acf5",
+    "game/scripts/player_visual.gd": "1f8107cdcdd2427b3cf4c807a391fa7343f8553dcb8011fc86b957173ba88d63"
+  },
+  "code_hash_note": "Original working-copy byte hashes are historical; the three unchanged gameplay files also carry CRLF-to-LF normalized hashes for Git checkouts."
+}

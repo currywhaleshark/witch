@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "test": "grades_hits",
+  "workspace_cache_diagnostic_only": false,
+  "phase": "test",
+  "stderr_empty": true
+}

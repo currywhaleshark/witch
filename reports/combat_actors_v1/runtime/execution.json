@@ -1,0 +1,7 @@
+{
+  "stderr_empty": false,
+  "phase": "runtime",
+  "test": "combat_actors",
+  "workspace_cache_diagnostic_only": true,
+  "exit_code": 0
+}

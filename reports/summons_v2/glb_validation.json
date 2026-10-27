@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "errors": [],
+  "assets": [
+    {
+      "id": "automaton",
+      "sha256": "c879b2c88c4fd4c9eed60768ddffa062f6365e8c4ea96159111ad4a23afddeb5",
+      "bytes": 4478636,
+      "triangles": 9791,
+      "parts": 13,
+      "bones": 26,
+      "materials": 1,
+      "atlas_size": 1024,
+      "max_influences": 1,
+      "animations": {
+        "attack": {
+          "seconds": 1.0,
+          "tracks": 78
+        },
+        "death": {
+          "seconds": 2.0,
+          "tracks": 78
+        },
+        "explode": {
+          "seconds": 2.0,
+          "tracks": 78
+        },
+        "hit": {
+          "seconds": 0.5,
+          "tracks": 78
+        },
+        "idle": {
+          "seconds": 2.0,
+          "tracks": 78
+        },
+        "move": {
+          "seconds": 1.0,
+          "tracks": 78
+        }
+      }
+    },
+    {
+      "id": "turret",
+      "sha256": "ab48e0c89d4a0a39b8af36bfe7489c042005082f6c9801fafb55278ddbb9e2a0",
+      "bytes": 5809916,
+      "triangles": 17556,
+      "parts": 86,
+      "bones": 92,
+      "materials": 1,
+      "atlas_size": 1024,
+      "max_influences": 1,
+      "animations": {
+        "attack": {
+          "seconds": 1.0,
+          "tracks": 276
+        },
+        "death": {
+          "seconds": 2.0,
+          "tracks": 276
+        },
+        "hit": {
+          "seconds": 0.5,
+          "tracks": 276
+        },
+        "idle": {
+          "seconds": 2.0,
+          "tracks": 276
+        }
+      }
+    }
+  ],
+  "scope": "All exported triangles have one shared rigid joint; every scale key is one. No inter-part or arbitrary environment collision claim."
+}

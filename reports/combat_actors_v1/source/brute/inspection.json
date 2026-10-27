@@ -1,0 +1,48 @@
+{
+  "actor": "brute",
+  "bounds": [
+    [
+      -0.5,
+      -0.1660308986902237,
+      0.0
+    ],
+    [
+      0.5,
+      0.1660308986902237,
+      0.77783203125
+    ]
+  ],
+  "meshes": [
+    {
+      "name": "tripo_node_a2e5129e-4eae-411e-94fb-965f765fe0f6",
+      "vertices": 47772,
+      "triangles": 78772,
+      "materials": [
+        "tripo_material_a2e5129e-4eae-411e-94fb-965f765fe0f6"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "brute_tripo_h31_raw_basecolor.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "brute_tripo_h31_raw_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "brute_tripo_h31_raw_rm.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}

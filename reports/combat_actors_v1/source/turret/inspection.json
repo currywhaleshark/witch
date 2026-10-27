@@ -1,0 +1,48 @@
+{
+  "actor": "turret",
+  "bounds": [
+    [
+      -0.5,
+      -0.4210205078125,
+      0.0
+    ],
+    [
+      0.5,
+      0.4210205078125,
+      0.78216552734375
+    ]
+  ],
+  "meshes": [
+    {
+      "name": "tripo_node_ab051199-42b2-4a63-a22e-eac76a9ec2aa",
+      "vertices": 45632,
+      "triangles": 77445,
+      "materials": [
+        "tripo_material_ab051199-42b2-4a63-a22e-eac76a9ec2aa"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "turret_tripo_h31_raw_basecolor.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "turret_tripo_h31_raw_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "turret_tripo_h31_raw_rm.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}

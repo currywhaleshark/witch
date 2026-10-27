@@ -1,0 +1,386 @@
+{
+  "status": "user_selected_prototype",
+  "art_approved": true,
+  "source": "User-completed Tripo segmentation, downloaded without starting new generation or segmentation.",
+  "tripo_pages": {
+    "automaton": "https://studio.tripo3d.ai/ko/workspace/segmentation/159e5476-f05f-439e-b171-d9b2b5232eb7",
+    "turret": "https://studio.tripo3d.ai/ko/workspace/segmentation/dd0a4284-090a-470b-8ca4-adfaf96a39bd"
+  },
+  "files": {
+    "assets/actors/summons_v2/approval.json": {
+      "sha256": "d2a5cc69614fb6d9588f41e30598841c0ffb1c6f3ad16716857700bf9090a729",
+      "bytes": 380
+    },
+    "assets/actors/summons_v2/README.md": {
+      "sha256": "b9aca7dc4bce33ffe0f40d84a849f833e148d96d632443bb124ff072f4a3f648",
+      "bytes": 5564
+    },
+    "assets/actors/summons_v2/authoring/automaton_v2.blend": {
+      "sha256": "3984623532d7b4f64e2276681aa5bb07f7b1196f5bf07f98f60a3556a582b074",
+      "bytes": 4708863
+    },
+    "assets/actors/summons_v2/authoring/turret_v2.blend": {
+      "sha256": "86fe712fdd82da6c89c7605d2faf230f06481a3bdb3e72f29a0eff9683901426",
+      "bytes": 5368456
+    },
+    "assets/actors/summons_v2/exports/automaton_v2.glb": {
+      "sha256": "c879b2c88c4fd4c9eed60768ddffa062f6365e8c4ea96159111ad4a23afddeb5",
+      "bytes": 4478636
+    },
+    "assets/actors/summons_v2/exports/turret_v2.glb": {
+      "sha256": "ab48e0c89d4a0a39b8af36bfe7489c042005082f6c9801fafb55278ddbb9e2a0",
+      "bytes": 5809916
+    },
+    "assets/actors/summons_v2/source/automaton_segmented_v2.blend": {
+      "sha256": "949e1a8deee40b37def97c62b5d067672fb5b6f8bd5275ac4e681ecd6e4967e1",
+      "bytes": 10447223
+    },
+    "assets/actors/summons_v2/source/automaton_segmented_v2.glb": {
+      "sha256": "ecb4864d4e5ccacc455022dde42fa5d02f69b21e84afe4bb42cda6645c239794",
+      "bytes": 10604956
+    },
+    "assets/actors/summons_v2/source/turret_segmented_v2.blend": {
+      "sha256": "17665bcbd92266bdaa943729a6e11c470088d336376e30bc4168cc8959c5f1a9",
+      "bytes": 14826018
+    },
+    "assets/actors/summons_v2/source/turret_segmented_v2.glb": {
+      "sha256": "7aa7a635a0a39b36188c56bf5ef0a2e1c90cb00ab4c8f69108a4bbdfec053ad9",
+      "bytes": 14850836
+    },
+    "assets/actors/summons_v2/textures/automaton/atlas.json": {
+      "sha256": "565eb3a0bdb133dc5a7f63fb0d1a222554b405b2fa5384da6d7d3d09650f1a0f",
+      "bytes": 1543
+    },
+    "assets/actors/summons_v2/textures/automaton/color.png": {
+      "sha256": "8b3d9b0788e7ce85749ce4a01c6c7ab450f43a315d08c2fa9cde2dab5aedab58",
+      "bytes": 1324550
+    },
+    "assets/actors/summons_v2/textures/automaton/metal_rough.png": {
+      "sha256": "a3d0b7b5b3ef722850cb9072fca802231e5e5d56dfb1c2e4cbb4fbbee99c69f9",
+      "bytes": 1064257
+    },
+    "assets/actors/summons_v2/textures/automaton/normal.png": {
+      "sha256": "b5a773b22d31dca2bab0c10fc13ea795ed70e5d5e2b29f5f62ba05e22821caf4",
+      "bytes": 1065086
+    },
+    "assets/actors/summons_v2/textures/turret/atlas.json": {
+      "sha256": "9a48c5d9d49294b5bbb84685187a62b6ea386ceafad52b2ba3d05f58c6e0a4b8",
+      "bytes": 10117
+    },
+    "assets/actors/summons_v2/textures/turret/color.png": {
+      "sha256": "dc8936c9c9045defbf12b1fee5c73556f0ef80a1088341f2a432b068bed1e62a",
+      "bytes": 1413168
+    },
+    "assets/actors/summons_v2/textures/turret/metal_rough.png": {
+      "sha256": "7e917ee740e55700e1d08d019c58c78e0ce7e1705c9c17489a28ceed657d38fc",
+      "bytes": 1205619
+    },
+    "assets/actors/summons_v2/textures/turret/normal.png": {
+      "sha256": "7112ca3ed98cc7e545d676ef1e1f335f110bb5c89133b8aee37c0ad9753faf84",
+      "bytes": 1338300
+    }
+  },
+  "code_sha256": {
+    "game/scripts/actor_visual.gd": "ed0d2ce5119755f12731aea1726f79ea5061406c13df40e34059cf72e0666a2f",
+    "game/scripts/arena.gd": "c0f27a728a8fb86541dd8a4a0b5d326909868e44172014cd44b924a0db241a9b",
+    "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+    "game/data/trial.json": "3217128b4d995f6ed227df390b0d7ce4cc2e9d54a7b0e4cacec3d0c2a1f8acf5",
+    "game/scripts/player_visual.gd": "679351831430b40bf3d7d8e440d82930038cf47aa7e6c888b9027c7c69e6b76e",
+    "game/tests/summons_v2.gd": "94589803f210715aa610f3f22b9d5e6c8d273fef9a1c4bfcfddc5baf8f33da3d",
+    "game/tests/review_summons_v2.gd": "5c4f8592df6ae13c4e6f305a9382352267f929f9ddfa82c43a12e03537aa6b56",
+    "tools/build_summons_v2.py": "b3527b427fe682f9c97be58bb0a7c8a477d713fcccf30638383be13595d88655",
+    "tools/export_summons_v2.py": "a2875dc1673c080c224d2760436a22f322299e784d3fe5dbdcbbd4792f6255a9",
+    "tools/pack_summon_atlases_v2.py": "a39d05d556001ee9f17ed3f341908403a0349c152147a14dab2f502becb00457",
+    "tools/validate_summons_v2.py": "9499fa9e867087952857b2240612c59f542faee385123bbe028029639b4e434b",
+    "tools/run_summons_v2.ps1": "147e2c7eeffe67b7a85f8d8437f6b7dca96a2cfc560ef530acbd4c218d245d3a"
+  },
+  "v1_source_and_exports_preserved": {
+    "assets/actors/combat_set_v1/source/rag_tripo_h31_raw.glb": true,
+    "assets/actors/combat_set_v1/source/rag_tripo_h31_raw.blend": true,
+    "assets/actors/combat_set_v1/authoring/rag_v1.blend": true,
+    "assets/actors/combat_set_v1/exports/rag_v1.glb": true,
+    "assets/reference/actors/combat_set_v1/rag_concept_v1.png": true,
+    "assets/actors/combat_set_v1/source/crow_tripo_h31_raw.glb": true,
+    "assets/actors/combat_set_v1/source/crow_tripo_h31_raw.blend": true,
+    "assets/actors/combat_set_v1/authoring/crow_v1.blend": true,
+    "assets/actors/combat_set_v1/exports/crow_v1.glb": true,
+    "assets/reference/actors/combat_set_v1/crow_concept_v1.png": true,
+    "assets/actors/combat_set_v1/source/brute_tripo_h31_raw.glb": true,
+    "assets/actors/combat_set_v1/source/brute_tripo_h31_raw.blend": true,
+    "assets/actors/combat_set_v1/authoring/brute_v1.blend": true,
+    "assets/actors/combat_set_v1/exports/brute_v1.glb": true,
+    "assets/reference/actors/combat_set_v1/brute_concept_v1.png": true,
+    "assets/actors/combat_set_v1/source/automaton_tripo_h31_raw.glb": true,
+    "assets/actors/combat_set_v1/source/automaton_tripo_h31_raw.blend": true,
+    "assets/actors/combat_set_v1/authoring/automaton_v1.blend": true,
+    "assets/actors/combat_set_v1/exports/automaton_v1.glb": true,
+    "assets/reference/actors/combat_set_v1/automaton_concept_v1.png": true,
+    "assets/actors/combat_set_v1/source/turret_tripo_h31_raw.glb": true,
+    "assets/actors/combat_set_v1/source/turret_tripo_h31_raw.blend": true,
+    "assets/actors/combat_set_v1/authoring/turret_v1.blend": true,
+    "assets/actors/combat_set_v1/exports/turret_v1.glb": true,
+    "assets/reference/actors/combat_set_v1/turret_concept_v1.png": true
+  },
+  "glb": {
+    "passed": true,
+    "errors": [],
+    "assets": [
+      {
+        "id": "automaton",
+        "sha256": "c879b2c88c4fd4c9eed60768ddffa062f6365e8c4ea96159111ad4a23afddeb5",
+        "bytes": 4478636,
+        "triangles": 9791,
+        "parts": 13,
+        "bones": 26,
+        "materials": 1,
+        "atlas_size": 1024,
+        "max_influences": 1,
+        "animations": {
+          "attack": {
+            "seconds": 1.0,
+            "tracks": 78
+          },
+          "death": {
+            "seconds": 2.0,
+            "tracks": 78
+          },
+          "explode": {
+            "seconds": 2.0,
+            "tracks": 78
+          },
+          "hit": {
+            "seconds": 0.5,
+            "tracks": 78
+          },
+          "idle": {
+            "seconds": 2.0,
+            "tracks": 78
+          },
+          "move": {
+            "seconds": 1.0,
+            "tracks": 78
+          }
+        }
+      },
+      {
+        "id": "turret",
+        "sha256": "ab48e0c89d4a0a39b8af36bfe7489c042005082f6c9801fafb55278ddbb9e2a0",
+        "bytes": 5809916,
+        "triangles": 17556,
+        "parts": 86,
+        "bones": 92,
+        "materials": 1,
+        "atlas_size": 1024,
+        "max_influences": 1,
+        "animations": {
+          "attack": {
+            "seconds": 1.0,
+            "tracks": 276
+          },
+          "death": {
+            "seconds": 2.0,
+            "tracks": 276
+          },
+          "hit": {
+            "seconds": 0.5,
+            "tracks": 276
+          },
+          "idle": {
+            "seconds": 2.0,
+            "tracks": 276
+          }
+        }
+      }
+    ],
+    "scope": "All exported triangles have one shared rigid joint; every scale key is one. No inter-part or arbitrary environment collision claim."
+  },
+  "runtime": {
+    "checks": 50821,
+    "failures": [],
+    "metrics": {
+      "automaton": {
+        "collapse_radius": 0.50478458404541,
+        "final_minimum_y": 0.000999957323074341,
+        "maximum_rigid_basis_error": 4.8748665903986e-07,
+        "parts": 13
+      },
+      "scatter_radius": 2.23884391784668,
+      "turret": {
+        "collapse_radius": 0.748610973358154,
+        "final_minimum_y": 0.000999944284558296,
+        "maximum_rigid_basis_error": 5.41658380370791e-07,
+        "parts": 86
+      }
+    },
+    "passed": true
+  },
+  "regressions": {
+    "combat_actors": {
+      "execution": {
+        "stderr_empty": true,
+        "phase": "test",
+        "test": "combat_actors",
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": false
+      },
+      "checks": 4070,
+      "failures": []
+    },
+    "enemy_types": {
+      "execution": {
+        "test": "enemy_types",
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0,
+        "stderr_empty": true,
+        "phase": "test"
+      },
+      "checks": 25,
+      "failures": []
+    },
+    "boss": {
+      "execution": {
+        "test": "boss",
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0,
+        "stderr_empty": true,
+        "phase": "test"
+      },
+      "checks": 21,
+      "failures": []
+    },
+    "smoke_arena": {
+      "execution": {
+        "test": "smoke_arena",
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0,
+        "stderr_empty": true,
+        "phase": "test"
+      },
+      "checks": 31,
+      "failures": []
+    }
+  },
+  "capture": {
+    "capture_count": 686,
+    "passed": true,
+    "scope": "Actual game meshes, shader, skeleton, aiming controller and destruction start/process; damage tested separately.",
+    "sequences": [
+      {
+        "actor": "turret",
+        "clip": "idle",
+        "frames": 49,
+        "id": "turret_aim",
+        "label": "포탑 360° 회전",
+        "seconds": 3.0,
+        "size": 1.65
+      },
+      {
+        "actor": "turret",
+        "clip": "attack",
+        "frames": 49,
+        "id": "turret_attack",
+        "label": "포신 반동",
+        "seconds": 1.0,
+        "size": 1.65
+      },
+      {
+        "actor": "turret",
+        "clip": "death",
+        "frames": 49,
+        "id": "turret_old_death",
+        "label": "이전: 통째로 넘어짐",
+        "old": true,
+        "seconds": 2.0,
+        "size": 2.2
+      },
+      {
+        "actor": "turret",
+        "clip": "death",
+        "frames": 49,
+        "id": "turret_death",
+        "label": "수정: 부품 붕괴",
+        "seconds": 2.0,
+        "size": 2.2
+      },
+      {
+        "actor": "automaton",
+        "clip": "move",
+        "frames": 49,
+        "id": "automaton_move",
+        "label": "분할 인형 이동",
+        "seconds": 1.0,
+        "size": 1.65
+      },
+      {
+        "actor": "automaton",
+        "clip": "death",
+        "frames": 49,
+        "id": "automaton_death",
+        "label": "인형 일반 파괴",
+        "seconds": 2.0,
+        "size": 2.2
+      },
+      {
+        "actor": "automaton",
+        "clip": "explode",
+        "frames": 49,
+        "id": "automaton_explode",
+        "label": "인형 자폭·부품 비산",
+        "seconds": 2.0,
+        "size": 5.4
+      }
+    ]
+  },
+  "execution": {
+    "import": {
+      "stderr_empty": false,
+      "phase": "import",
+      "test": "summons_v2",
+      "exit_code": 0,
+      "workspace_cache_diagnostic_only": true
+    },
+    "runtime": {
+      "stderr_empty": false,
+      "phase": "runtime",
+      "test": "summons_v2",
+      "exit_code": 0,
+      "workspace_cache_diagnostic_only": true
+    },
+    "review": {
+      "stderr_empty": false,
+      "phase": "review",
+      "test": "summons_v2",
+      "exit_code": 0,
+      "workspace_cache_diagnostic_only": true
+    }
+  },
+  "limits": [
+    "Baked controlled rigid-part flight and floor bounce, not a live physics solver.",
+    "No inter-part/wall collision or arbitrary terrain clearance.",
+    "Some internal segment surfaces and reduced metal rims remain visible on close inspection.",
+    "Current prototype appearance/motions selected by the user on 2026-10-28; arbitrary-terrain and final performance validation remain separate."
+  ],
+  "approval": {
+    "status": "user_selected_prototype",
+    "date": "2026-10-28",
+    "user_quote": "좋네 이걸로 하고 커밋하자",
+    "art_approved": true,
+    "scope": "현재 시험판의 분할 소환물 v2 외형·회전·부품 붕괴·태엽인형 자폭 비산 연출 채택",
+    "remaining_scope": "임의 지형/부품 상호 충돌 및 최종 성능 예산은 별도 검증 대상"
+  },
+  "code_text_sha256": {
+    "game/scripts/actor_visual.gd": "ed0d2ce5119755f12731aea1726f79ea5061406c13df40e34059cf72e0666a2f",
+    "game/scripts/arena.gd": "c0f27a728a8fb86541dd8a4a0b5d326909868e44172014cd44b924a0db241a9b",
+    "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+    "game/data/trial.json": "3217128b4d995f6ed227df390b0d7ce4cc2e9d54a7b0e4cacec3d0c2a1f8acf5",
+    "game/scripts/player_visual.gd": "1f8107cdcdd2427b3cf4c807a391fa7343f8553dcb8011fc86b957173ba88d63",
+    "game/tests/summons_v2.gd": "94589803f210715aa610f3f22b9d5e6c8d273fef9a1c4bfcfddc5baf8f33da3d",
+    "game/tests/review_summons_v2.gd": "5c4f8592df6ae13c4e6f305a9382352267f929f9ddfa82c43a12e03537aa6b56",
+    "tools/build_summons_v2.py": "b3527b427fe682f9c97be58bb0a7c8a477d713fcccf30638383be13595d88655",
+    "tools/export_summons_v2.py": "a2875dc1673c080c224d2760436a22f322299e784d3fe5dbdcbbd4792f6255a9",
+    "tools/pack_summon_atlases_v2.py": "a39d05d556001ee9f17ed3f341908403a0349c152147a14dab2f502becb00457",
+    "tools/validate_summons_v2.py": "9499fa9e867087952857b2240612c59f542faee385123bbe028029639b4e434b",
+    "tools/run_summons_v2.ps1": "674bf1aec17f35c1d339a03c4be56cecd966c619629f12359ca8a984eb133859"
+  },
+  "code_hash_note": "code_sha256 records validated working-copy bytes; code_text_sha256 normalizes CRLF to LF for Git checkouts. Binary asset hashes are always byte-exact."
+}

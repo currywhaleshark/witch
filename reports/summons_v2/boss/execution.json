@@ -1,0 +1,7 @@
+{
+  "test": "boss",
+  "workspace_cache_diagnostic_only": false,
+  "exit_code": 0,
+  "stderr_empty": true,
+  "phase": "test"
+}

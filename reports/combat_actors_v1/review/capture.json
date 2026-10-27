@@ -1,0 +1,186 @@
+{
+  "native_camera_size": 11.4285714285714,
+  "passed": true,
+  "scope": "Actual game assets and animation controller, sampled manually; combat timing verified separately.",
+  "sequences": [
+    {
+      "actor": "rag",
+      "clip": "attack",
+      "folder": "rag_attack",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "rag",
+      "clip": "death",
+      "folder": "rag_death",
+      "frames": 17,
+      "seconds": 1.29166662693024
+    },
+    {
+      "actor": "rag",
+      "clip": "hit",
+      "folder": "rag_hit",
+      "frames": 17,
+      "seconds": 0.541666686534882
+    },
+    {
+      "actor": "rag",
+      "clip": "idle",
+      "folder": "rag_idle",
+      "frames": 17,
+      "seconds": 2.04166674613953
+    },
+    {
+      "actor": "rag",
+      "clip": "move",
+      "folder": "rag_move",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "crow",
+      "clip": "attack",
+      "folder": "crow_attack",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "crow",
+      "clip": "death",
+      "folder": "crow_death",
+      "frames": 17,
+      "seconds": 1.29166662693024
+    },
+    {
+      "actor": "crow",
+      "clip": "hit",
+      "folder": "crow_hit",
+      "frames": 17,
+      "seconds": 0.541666686534882
+    },
+    {
+      "actor": "crow",
+      "clip": "idle",
+      "folder": "crow_idle",
+      "frames": 17,
+      "seconds": 2.04166674613953
+    },
+    {
+      "actor": "crow",
+      "clip": "move",
+      "folder": "crow_move",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "brute",
+      "clip": "attack",
+      "folder": "brute_attack",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "brute",
+      "clip": "charge",
+      "folder": "brute_charge",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "brute",
+      "clip": "death",
+      "folder": "brute_death",
+      "frames": 17,
+      "seconds": 1.29166662693024
+    },
+    {
+      "actor": "brute",
+      "clip": "hit",
+      "folder": "brute_hit",
+      "frames": 17,
+      "seconds": 0.541666686534882
+    },
+    {
+      "actor": "brute",
+      "clip": "idle",
+      "folder": "brute_idle",
+      "frames": 17,
+      "seconds": 2.04166674613953
+    },
+    {
+      "actor": "brute",
+      "clip": "move",
+      "folder": "brute_move",
+      "frames": 17,
+      "seconds": 1.375
+    },
+    {
+      "actor": "automaton",
+      "clip": "attack",
+      "folder": "automaton_attack",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "automaton",
+      "clip": "death",
+      "folder": "automaton_death",
+      "frames": 17,
+      "seconds": 1.29166662693024
+    },
+    {
+      "actor": "automaton",
+      "clip": "hit",
+      "folder": "automaton_hit",
+      "frames": 17,
+      "seconds": 0.541666686534882
+    },
+    {
+      "actor": "automaton",
+      "clip": "idle",
+      "folder": "automaton_idle",
+      "frames": 17,
+      "seconds": 2.04166674613953
+    },
+    {
+      "actor": "automaton",
+      "clip": "move",
+      "folder": "automaton_move",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "turret",
+      "clip": "attack",
+      "folder": "turret_attack",
+      "frames": 17,
+      "seconds": 1.04166662693024
+    },
+    {
+      "actor": "turret",
+      "clip": "death",
+      "folder": "turret_death",
+      "frames": 17,
+      "seconds": 1.29166662693024
+    },
+    {
+      "actor": "turret",
+      "clip": "hit",
+      "folder": "turret_hit",
+      "frames": 17,
+      "seconds": 0.541666686534882
+    },
+    {
+      "actor": "turret",
+      "clip": "idle",
+      "folder": "turret_idle",
+      "frames": 17,
+      "seconds": 2.04166674613953
+    }
+  ],
+  "viewport": [
+    1280,
+    800
+  ]
+}

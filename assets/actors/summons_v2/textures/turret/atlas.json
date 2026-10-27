@@ -1,0 +1,524 @@
+{
+  "size": 1024,
+  "padding": 3,
+  "scale": 0.4324,
+  "materials": {
+    "Material_tripo_part_0": {
+      "x": 3,
+      "y": 3,
+      "size": 221,
+      "original_size": 512
+    },
+    "Material_tripo_part_1": {
+      "x": 230,
+      "y": 3,
+      "size": 221,
+      "original_size": 512
+    },
+    "Material_tripo_part_17": {
+      "x": 457,
+      "y": 3,
+      "size": 221,
+      "original_size": 512
+    },
+    "Material_tripo_part_2": {
+      "x": 684,
+      "y": 3,
+      "size": 221,
+      "original_size": 512
+    },
+    "Material_tripo_part_3": {
+      "x": 3,
+      "y": 230,
+      "size": 221,
+      "original_size": 512
+    },
+    "Material_tripo_part_32": {
+      "x": 230,
+      "y": 230,
+      "size": 221,
+      "original_size": 512
+    },
+    "Material_tripo_part_4": {
+      "x": 457,
+      "y": 230,
+      "size": 221,
+      "original_size": 512
+    },
+    "Material_tripo_part_6": {
+      "x": 684,
+      "y": 230,
+      "size": 221,
+      "original_size": 512
+    },
+    "Material_tripo_part_10": {
+      "x": 3,
+      "y": 457,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_13": {
+      "x": 120,
+      "y": 457,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_14": {
+      "x": 237,
+      "y": 457,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_15": {
+      "x": 354,
+      "y": 457,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_16": {
+      "x": 471,
+      "y": 457,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_18": {
+      "x": 588,
+      "y": 457,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_19": {
+      "x": 705,
+      "y": 457,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_20": {
+      "x": 822,
+      "y": 457,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_21": {
+      "x": 3,
+      "y": 574,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_22": {
+      "x": 120,
+      "y": 574,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_23": {
+      "x": 237,
+      "y": 574,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_24": {
+      "x": 354,
+      "y": 574,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_25": {
+      "x": 471,
+      "y": 574,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_26": {
+      "x": 588,
+      "y": 574,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_27": {
+      "x": 705,
+      "y": 574,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_29": {
+      "x": 822,
+      "y": 574,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_30": {
+      "x": 3,
+      "y": 691,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_31": {
+      "x": 120,
+      "y": 691,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_33": {
+      "x": 237,
+      "y": 691,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_38": {
+      "x": 354,
+      "y": 691,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_43": {
+      "x": 471,
+      "y": 691,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_49": {
+      "x": 588,
+      "y": 691,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_5": {
+      "x": 705,
+      "y": 691,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_52": {
+      "x": 822,
+      "y": 691,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_56": {
+      "x": 3,
+      "y": 808,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_7": {
+      "x": 120,
+      "y": 808,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_74": {
+      "x": 237,
+      "y": 808,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_8": {
+      "x": 354,
+      "y": 808,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_9": {
+      "x": 471,
+      "y": 808,
+      "size": 111,
+      "original_size": 256
+    },
+    "Material_tripo_part_11": {
+      "x": 939,
+      "y": 457,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_28": {
+      "x": 939,
+      "y": 574,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_34": {
+      "x": 939,
+      "y": 691,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_35": {
+      "x": 911,
+      "y": 3,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_36": {
+      "x": 911,
+      "y": 64,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_37": {
+      "x": 911,
+      "y": 125,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_39": {
+      "x": 911,
+      "y": 230,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_40": {
+      "x": 911,
+      "y": 291,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_41": {
+      "x": 911,
+      "y": 352,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_42": {
+      "x": 588,
+      "y": 808,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_44": {
+      "x": 649,
+      "y": 808,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_45": {
+      "x": 710,
+      "y": 808,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_46": {
+      "x": 771,
+      "y": 808,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_47": {
+      "x": 832,
+      "y": 808,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_48": {
+      "x": 893,
+      "y": 808,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_50": {
+      "x": 954,
+      "y": 808,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_51": {
+      "x": 3,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_53": {
+      "x": 64,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_54": {
+      "x": 125,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_55": {
+      "x": 186,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_57": {
+      "x": 247,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_58": {
+      "x": 308,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_60": {
+      "x": 369,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_61": {
+      "x": 430,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_62": {
+      "x": 491,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_70": {
+      "x": 552,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_75": {
+      "x": 613,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_76": {
+      "x": 674,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_79": {
+      "x": 735,
+      "y": 925,
+      "size": 55,
+      "original_size": 128
+    },
+    "Material_tripo_part_63": {
+      "x": 972,
+      "y": 3,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_64": {
+      "x": 972,
+      "y": 64,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_65": {
+      "x": 972,
+      "y": 125,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_66": {
+      "x": 972,
+      "y": 230,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_67": {
+      "x": 972,
+      "y": 291,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_68": {
+      "x": 972,
+      "y": 352,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_69": {
+      "x": 939,
+      "y": 518,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_71": {
+      "x": 973,
+      "y": 518,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_72": {
+      "x": 939,
+      "y": 635,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_73": {
+      "x": 973,
+      "y": 635,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_77": {
+      "x": 939,
+      "y": 752,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_78": {
+      "x": 973,
+      "y": 752,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_81": {
+      "x": 911,
+      "y": 186,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_82": {
+      "x": 945,
+      "y": 186,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_83": {
+      "x": 979,
+      "y": 186,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_84": {
+      "x": 911,
+      "y": 413,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_85": {
+      "x": 945,
+      "y": 413,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_87": {
+      "x": 979,
+      "y": 413,
+      "size": 28,
+      "original_size": 64
+    },
+    "Material_tripo_part_86": {
+      "x": 1007,
+      "y": 518,
+      "size": 14,
+      "original_size": 32
+    },
+    "Material_tripo_part_88": {
+      "x": 1007,
+      "y": 635,
+      "size": 14,
+      "original_size": 32
+    }
+  },
+  "source_sha256": "7aa7a635a0a39b36188c56bf5ef0a2e1c90cb00ab4c8f69108a4bbdfec053ad9"
+}

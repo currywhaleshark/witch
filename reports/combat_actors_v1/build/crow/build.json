@@ -1,0 +1,103 @@
+{
+  "id": "crow",
+  "source_sha256": "67ca02a0c233dbc7ccdf86ab6e8a6d685806c40966063e3efeb223ce8b4ed08a",
+  "source_triangles": 77336,
+  "runtime_triangles": 10000,
+  "vertices": 8596,
+  "height_m": 1.0,
+  "front": "-Z in Godot",
+  "bones": 11,
+  "weighted_vertex_counts": {
+    "root": 0,
+    "torso": 3515,
+    "head": 1029,
+    "tail": 357,
+    "wing_L": 1409,
+    "tip_L": 1063,
+    "leg_L": 515,
+    "wing_R": 1405,
+    "tip_R": 788,
+    "leg_R": 466,
+    "muzzle": 0
+  },
+  "max_influences": 3,
+  "textures": [
+    {
+      "name": "crow_basecolor_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "crow_normal_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "crow_rm_1k",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0,
+      "loop": true
+    },
+    "move": {
+      "frames": 25,
+      "seconds": 1.0,
+      "loop": true
+    },
+    "attack": {
+      "frames": 25,
+      "seconds": 1.0,
+      "loop": false
+    },
+    "hit": {
+      "frames": 13,
+      "seconds": 0.5,
+      "loop": false
+    },
+    "death": {
+      "frames": 31,
+      "seconds": 1.25,
+      "loop": false
+    }
+  },
+  "ground_min_z": {
+    "idle": [
+      0.32472217082977295,
+      0.3747221827507019
+    ],
+    "move": [
+      0.32472217082977295,
+      0.3747221827507019
+    ],
+    "attack": [
+      0.31100642681121826,
+      0.37542924284935
+    ],
+    "hit": [
+      0.26843807101249695,
+      0.37233880162239075
+    ],
+    "death": [
+      -5.960464477539063e-08,
+      0.34972214698791504
+    ]
+  },
+  "glb_sha256": "2c89d8c3435aa19575fdbe134d07603160e9e98a96c28ff2dd148a6b3bd85807",
+  "glb_bytes": 3938224,
+  "limitations": [
+    "Prototype authored animation; no motion-capture source.",
+    "UV-preserving decimation and region weights; not manually rebuilt deformation topology.",
+    "Generated fused surfaces can compress at large joint angles; only the delivered clips are reviewed."
+  ]
+}

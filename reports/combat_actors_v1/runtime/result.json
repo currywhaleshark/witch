@@ -1,0 +1,87 @@
+{
+  "assets": [
+    {
+      "bones": 14,
+      "clips": [
+        "attack",
+        "death",
+        "hit",
+        "idle",
+        "move"
+      ],
+      "dead": false,
+      "fraction": 0.0,
+      "kind": "rag",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 11,
+      "clips": [
+        "attack",
+        "death",
+        "hit",
+        "idle",
+        "move"
+      ],
+      "dead": false,
+      "fraction": 0.0,
+      "kind": "crow",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 14,
+      "clips": [
+        "attack",
+        "charge",
+        "death",
+        "hit",
+        "idle",
+        "move"
+      ],
+      "dead": false,
+      "fraction": 0.0,
+      "kind": "brute",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 15,
+      "clips": [
+        "attack",
+        "death",
+        "hit",
+        "idle",
+        "move"
+      ],
+      "dead": false,
+      "fraction": 0.0,
+      "kind": "automaton",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 5,
+      "clips": [
+        "attack",
+        "death",
+        "hit",
+        "idle"
+      ],
+      "dead": false,
+      "fraction": 0.0,
+      "kind": "turret",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    }
+  ],
+  "checks": 1811,
+  "failures": [],
+  "passed": true
+}

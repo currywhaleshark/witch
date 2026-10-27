@@ -1,0 +1,71 @@
+{
+  "capture_count": 686,
+  "passed": true,
+  "scope": "Actual game meshes, shader, skeleton, aiming controller and destruction start/process; damage tested separately.",
+  "sequences": [
+    {
+      "actor": "turret",
+      "clip": "idle",
+      "frames": 49,
+      "id": "turret_aim",
+      "label": "포탑 360° 회전",
+      "seconds": 3.0,
+      "size": 1.65
+    },
+    {
+      "actor": "turret",
+      "clip": "attack",
+      "frames": 49,
+      "id": "turret_attack",
+      "label": "포신 반동",
+      "seconds": 1.0,
+      "size": 1.65
+    },
+    {
+      "actor": "turret",
+      "clip": "death",
+      "frames": 49,
+      "id": "turret_old_death",
+      "label": "이전: 통째로 넘어짐",
+      "old": true,
+      "seconds": 2.0,
+      "size": 2.2
+    },
+    {
+      "actor": "turret",
+      "clip": "death",
+      "frames": 49,
+      "id": "turret_death",
+      "label": "수정: 부품 붕괴",
+      "seconds": 2.0,
+      "size": 2.2
+    },
+    {
+      "actor": "automaton",
+      "clip": "move",
+      "frames": 49,
+      "id": "automaton_move",
+      "label": "분할 인형 이동",
+      "seconds": 1.0,
+      "size": 1.65
+    },
+    {
+      "actor": "automaton",
+      "clip": "death",
+      "frames": 49,
+      "id": "automaton_death",
+      "label": "인형 일반 파괴",
+      "seconds": 2.0,
+      "size": 2.2
+    },
+    {
+      "actor": "automaton",
+      "clip": "explode",
+      "frames": 49,
+      "id": "automaton_explode",
+      "label": "인형 자폭·부품 비산",
+      "seconds": 2.0,
+      "size": 5.4
+    }
+  ]
+}

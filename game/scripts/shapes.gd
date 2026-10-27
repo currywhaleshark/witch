@@ -1,5 +1,6 @@
 extends RefCounted
-## Deliberately primitive geometry; not production character art.
+## Shared primitives and model factories. Unfinished enemy types retain their blockouts.
+const ActorVisual = preload("res://scripts/actor_visual.gd")
 static func material(color: Color, glow: bool = false) -> StandardMaterial3D:
 	var m = StandardMaterial3D.new()
 	m.albedo_color = color
@@ -122,7 +123,10 @@ static func witch(parent: Node3D) -> Node3D:
 	return model
 
 static func enemy(parent: Node3D, kind: String) -> Node3D:
-	# Placeholder silhouettes per enemy type; the arena scales the whole model.
+	var actor := ActorVisual.create(parent, kind)
+	if actor != null:
+		return actor
+	# The boss and legacy test types retain their existing silhouettes.
 	var model = Node3D.new()
 	parent.add_child(model)
 	match kind:

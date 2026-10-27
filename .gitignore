@@ -12,3 +12,7 @@ assets/characters/player/3d/source/motion_library/mixamo_local/
 
 # Task-local copy of the installed engine and its disposable editor settings.
 reports/combat_motion_v18/portable_godot/
+
+# Blender autosave copies of the reproducible combat-actor authoring files.
+assets/actors/combat_set_v1/authoring/*.blend1
+assets/actors/summons_v2/authoring/*.blend1
