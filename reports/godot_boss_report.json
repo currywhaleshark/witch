@@ -1,0 +1,27 @@
+{
+  "checks": [
+    "the latch boss spawns with boss HP and its name",
+    "up close the boss winds up a sweep with a fan warning",
+    "the warning fill is about half way at half the windup",
+    "the fill nearly reaches the edge just before impact",
+    "the sweep hits and stuns the witch inside the fan",
+    "the lock slam follows the sweep with extra time to step out",
+    "stepping behind the boss dodges both the sweep and the slam",
+    "at mid range the boss winds up the lock slam with a line warning",
+    "the slam hits the witch standing on the line",
+    "leaving the line dodges the slam",
+    "at range the boss opens two door frames beside the witch",
+    "the frames stand to the witch's sides",
+    "each frame fires an orb at release",
+    "the crossfire orbs come in from the sides and hit",
+    "boss area attacks also hit summons inside the warning",
+    "crossing 65% HP starts a shockwave with a ground disc",
+    "the shockwave hits the witch inside its radius",
+    "the shockwave calls rag-ghouls and crows",
+    "each HP mark triggers only once",
+    "crossing 30% HP triggers the second shockwave",
+    "called adds and the boss never respawn in A5 mode"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

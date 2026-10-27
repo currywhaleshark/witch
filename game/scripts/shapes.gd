@@ -45,6 +45,33 @@ static func ring(parent: Node3D, pos: Vector3, radius: float, color: Color, widt
 	geometry.ring_segments = 8
 	return mesh(parent, geometry, pos, color, true)
 
+static func fan(parent: Node3D, pos: Vector3, radius: float, angle: float, color: Color) -> MeshInstance3D:
+	# Flat circular sector facing -Z (look_at direction), used as a ground warning.
+	var surface = SurfaceTool.new()
+	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var steps = 16
+	var half: float = deg_to_rad(angle) / 2.0
+	for i in steps:
+		var a0: float = -half + 2.0 * half * i / steps
+		var a1: float = -half + 2.0 * half * (i + 1) / steps
+		surface.add_vertex(Vector3.ZERO)
+		surface.add_vertex(Vector3(sin(a1), 0, -cos(a1)) * radius)
+		surface.add_vertex(Vector3(sin(a0), 0, -cos(a0)) * radius)
+	var node = mesh(parent, surface.commit(), pos, color)
+	node.material_override.cull_mode = BaseMaterial3D.CULL_DISABLED
+	return node
+
+static func door_frame(parent: Node3D, pos: Vector3, color: Color) -> Node3D:
+	# Hovering wooden door frame for the boss crossfire pattern.
+	var frame = Node3D.new()
+	parent.add_child(frame)
+	frame.position = pos
+	for x in [-0.55, 0.55]:
+		box(frame, Vector3(x, 1.2, 0), Vector3(0.14, 2.2, 0.14), color)
+	box(frame, Vector3(0, 2.3, 0), Vector3(1.24, 0.14, 0.14), color)
+	box(frame, Vector3(0, 1.2, 0.02), Vector3(0.96, 2.0, 0.02), Color("1d2a33"))
+	return frame
+
 static func body(parent: Node3D, pos: Vector3, layer: int) -> CharacterBody3D:
 	var node = CharacterBody3D.new()
 	node.collision_layer = layer
@@ -115,6 +142,16 @@ static func enemy(parent: Node3D, kind: String) -> Node3D:
 				var wing = box(model, Vector3(x * 0.45, 1.1, 0.05), Vector3(0.55, 0.05, 0.4), Color("6b5a3e"))
 				wing.rotation.z = x * 0.35
 			cylinder(model, Vector3(0, 0.5, 0.05), 0.04, 0.9, Color("6b5a3e"))
+		"latch":
+			# Latch boss: door-frame torso of chained brass locks with a pale blue flame in the gap.
+			for x in [-0.4, 0.4]:
+				box(model, Vector3(x, 1.0, 0), Vector3(0.18, 1.5, 0.3), Color("6b4a32"))
+				box(model, Vector3(x * 1.3, 0.25, 0), Vector3(0.16, 0.5, 0.16), Color("4a3828"))
+			box(model, Vector3(0, 1.8, 0), Vector3(1.0, 0.2, 0.3), Color("6b4a32"))
+			sphere(model, Vector3(0, 1.1, 0), 0.22, Color("9fd8ff"))
+			for y in [0.7, 1.35]:
+				box(model, Vector3(0.62, y, -0.1), Vector3(0.26, 0.3, 0.12), Color("c69b62"))
+				box(model, Vector3(-0.62, y + 0.15, -0.1), Vector3(0.26, 0.3, 0.12), Color("c69b62"))
 		"brute":
 			# Iron-door brute: brick body with rusted blue gate leaves strapped to both arms.
 			box(model, Vector3(0, 0.75, 0), Vector3(0.85, 0.95, 0.6), Color("8a4b3b"))

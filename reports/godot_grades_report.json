@@ -16,7 +16,7 @@
     "a crit multiplies damage and shakes the view",
     "one shotgun blast rolls crit separately for each enemy",
     "graded enemies hit harder",
-    "B brings in a heavy boss with boss HP",
+    "B brings in the latch boss with boss HP",
     "a test boss does not respawn in A5 mode",
     "the log splits hits, misses and crits by source",
     "the log keeps damage per source and the old totals",

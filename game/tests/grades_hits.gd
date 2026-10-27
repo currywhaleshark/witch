@@ -154,7 +154,7 @@ func run() -> void:
 	for id in arena.enemies:
 		if arena.enemies[id].grade == "boss":
 			boss_id = id
-	check(boss_id != "" and arena.enemies[boss_id].max_hp == arena.config.enemy_types.heavy.hp * arena.config.grades.boss.hp, "B brings in a heavy boss with boss HP")
+	check(boss_id != "" and arena.enemies[boss_id].max_hp == arena.config.enemy_types.latch.hp * arena.config.grades.boss.hp, "B brings in the latch boss with boss HP")
 	var respawning: int = arena.respawns.size()
 	arena.damage_enemy(boss_id, 100000)
 	check(arena.respawns.size() == respawning, "a test boss does not respawn in A5 mode")

@@ -22,7 +22,13 @@
     "crow": {"name": "전선 까마귀", "hp": 40, "speed": 1.1, "damage": 8, "windup": 0.6, "cooldown": 2.2, "reach": 0, "stop": 0, "scale": 0.85,
       "ranged": {"keep_min": 4.5, "keep_max": 8, "bolt_speed": 7, "bolt_range": 12, "bolt_radius": 0.5}},
     "brute": {"name": "철문 아귀", "hp": 170, "speed": 0.6, "damage": 16, "windup": 0.8, "cooldown": 1.8, "reach": 1.9, "stop": 1.5, "scale": 1.3, "heavy": true,
-      "charge": {"min": 3.5, "max": 7.5, "windup": 0.8, "speed_factor": 4.3, "distance": 6, "damage": 14, "cooldown": 5, "width": 1.0, "reach": 1.7}}
+      "charge": {"min": 3.5, "max": 7.5, "windup": 0.8, "speed_factor": 4.3, "distance": 6, "damage": 14, "cooldown": 5, "width": 1.0, "reach": 1.7}},
+    "latch": {"name": "덜컥거리는 빗장의 이름", "hp": 120, "speed": 0.5, "damage": 0, "windup": 0, "cooldown": 0, "reach": 0, "stop": 0, "scale": 1.4, "heavy": true,
+      "boss": {"keep": 2.8,
+        "sweep": {"range": 3.4, "angle": 110, "windup": 1.4, "damage": 12, "cooldown": 4},
+        "slam": {"length": 8, "width": 1.6, "windup": 1.5, "chain_extra": 0.5, "damage": 18, "cooldown": 6},
+        "frames": {"offset": 5, "windup": 1.7, "damage": 8, "cooldown": 9, "bolt_speed": 8, "bolt_range": 10, "bolt_radius": 0.5},
+        "shockwave": {"radius": 6, "windup": 2.0, "damage": 10, "marks": [0.65, 0.3], "adds": {"rag": 5, "crow": 2}}}}
   },
   "basic_damage": 18,
   "basic_attack_seconds": 0.6,

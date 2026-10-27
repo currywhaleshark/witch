@@ -53,6 +53,7 @@ if ($Verify) {
     Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/potions.gd')
     Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/grades_hits.gd')
     Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/enemy_types.gd')
+    Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/boss.gd')
     Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/player_visual.gd')
 }
 if ($RenderCheck) {

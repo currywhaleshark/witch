@@ -9,6 +9,9 @@ const BRASS = Color("c69b62")
 const RED = Color("ee987d")
 const STEEL = Color("a9c1d6")
 const GOLD_FLASH = Color("ffe08a")
+# Ground warnings: dark area plus a bright fill that reaches the edge at impact.
+const WARN = Color("7a3a32")
+const WARN_FILL = Color("e8604c")
 # Each tool keeps its own colour on the witch, its ring and its swings.
 const TOOL_COLORS = {"bolt_cutter": BRASS, "grinder": STEEL}
 const PICK_LAYER = 8
@@ -264,7 +267,8 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 	var maximum: float = type.hp * rank.hp
 	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": type.get("heavy", false), "kind": kind,
 		"grade": grade, "size": size, "cooldown": 1.0, "windup": 0.0, "attack": "", "charge_cooldown": 1.0, "charging": 0.0,
-		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0}
+		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0,
+		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": []}
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -360,7 +364,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		if event.physical_keycode == KEY_B:
 			# Test tool: a boss walks in from a field edge.
-			spawn_enemy("boss_" + str(boss_serial), edge_point(), true, "boss")
+			spawn_enemy("boss_" + str(boss_serial), edge_point(), true, "boss", "latch")
 			boss_serial += 1
 			show_message("보스 등장")
 			return
@@ -918,7 +922,7 @@ func damage_enemy(id: String, amount: float) -> float:
 		probe.counts.kills += 1
 		probe.grade(enemy.grade).kills += 1
 		# A test boss is a one-off; everything else keeps the A5 field topped up.
-		if a5_mode and enemy.grade != "boss":
+		if a5_mode and enemy.grade != "boss" and enemy.respawn:
 			respawns.append({"time": float(config.a5_respawn_seconds), "kind": enemy.kind, "grade": enemy.grade})
 		if pending_cast.get("cursor", {}).get("enemy_id") == id:
 			cancel_pending_cast()
@@ -1138,6 +1142,10 @@ func _physics_process(dt: float) -> void:
 				effects.erase(fx)
 			elif fx.grow:
 				fx.node.scale += Vector3.ONE * dt * 2
+			elif fx.has("fill"):
+				# Warning fill: reaches the edge exactly when the attack lands.
+				var done: float = clampf(1.0 - fx.life / fx.fill, 0.02, 1.0)
+				fx.node.scale = Vector3(done, 1, done) if fx.axis == "radial" else Vector3(1, 1, done)
 	hud.queue_redraw()
 
 func ally_by_id(id: String) -> Dictionary:
@@ -1217,6 +1225,9 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	var type: Dictionary = config.enemy_types[enemy.kind]
 	var power: float = config.grades[enemy.grade].damage
 	var pace: float = config.enemy_speed * type.speed * config.grades[enemy.grade].speed * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
+	if type.has("boss"):
+		tick_boss(enemy, type.boss, power, pace, dt)
+		return
 	enemy.charge_cooldown = maxf(0, enemy.charge_cooldown - dt)
 	if enemy.charging > 0:
 		# Brute charge: a straight dash along the telegraphed line that hits the witch at most once.
@@ -1283,27 +1294,177 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	elif enemy.cooldown <= 0:
 		start_enemy_attack(enemy, "melee", type.windup, RED)
 
+func tick_boss(enemy: Dictionary, plan: Dictionary, power: float, pace: float, dt: float) -> void:
+	# 08 §6.3 trial boss: sweep then slam up close, door-frame crossfire at range,
+	# and a shockwave that calls adds at each HP mark. Every attack is telegraphed on the ground.
+	for key in enemy.timers.keys():
+		enemy.timers[key] = maxf(0, enemy.timers[key] - dt)
+	if enemy.windup > 0:
+		enemy.windup -= dt
+		enemy.model.rotation.z = sin(enemy.windup * 22) * 0.06
+		if enemy.windup <= 0:
+			enemy.model.rotation.z = 0
+			resolve_boss(enemy, plan, power)
+		return
+	for mark in plan.shockwave.marks:
+		if enemy.hp <= enemy.max_hp * mark and not enemy.phases_done.has(mark):
+			enemy.phases_done.append(mark)
+			begin_boss(enemy, "shockwave", plan.shockwave.windup)
+			disc_warning(enemy.body.position, plan.shockwave.radius, plan.shockwave.windup)
+			return
+	enemy.retarget = maxf(0, enemy.retarget - dt)
+	if enemy.retarget <= 0:
+		enemy.target = nearest_foe(enemy)
+		enemy.retarget = config.aggro_retarget_seconds
+	var aim: Vector3 = foe_position(enemy.target)
+	var delta: Vector3 = aim - enemy.body.position
+	delta.y = 0
+	var distance: float = delta.length()
+	if distance > 14:
+		return
+	enemy.model.look_at(Vector3(aim.x, enemy.body.global_position.y, aim.z))
+	enemy.pattern_dir = delta.normalized() if distance > 0.01 else Vector3.FORWARD
+	if distance <= plan.sweep.range and enemy.timers.get("sweep", 0.0) <= 0:
+		begin_boss(enemy, "sweep", plan.sweep.windup)
+		fan_warning(enemy.body.position, enemy.pattern_dir, plan.sweep.range, plan.sweep.angle, plan.sweep.windup)
+	elif distance <= plan.slam.length and enemy.timers.get("slam", 0.0) <= 0:
+		begin_slam(enemy, plan)
+	elif distance > plan.sweep.range and enemy.timers.get("frames", 0.0) <= 0:
+		begin_frames(enemy, plan, aim)
+	elif distance > plan.keep:
+		enemy.body.velocity = enemy.pattern_dir * pace
+		enemy.body.move_and_slide()
+
+func begin_boss(enemy: Dictionary, pattern: String, windup: float) -> void:
+	enemy.attack = pattern
+	enemy.windup = windup
+	pulse(enemy.body.position, RED, 1.2)
+
+func begin_slam(enemy: Dictionary, plan: Dictionary, extra: float = 0.0) -> void:
+	# extra: the slam that follows a sweep waits longer, so a witch stunned by the sweep can still step out.
+	begin_boss(enemy, "slam", plan.slam.windup + extra)
+	telegraph(enemy.body.position, enemy.pattern_dir, plan.slam.length, plan.slam.width, plan.slam.windup + extra)
+
+func begin_frames(enemy: Dictionary, plan: Dictionary, aim: Vector3) -> void:
+	# Two hovering door frames open beside the target; the shots come out of them, not the boss.
+	begin_boss(enemy, "frames", plan.frames.windup)
+	var side: Vector3 = enemy.pattern_dir.cross(Vector3.UP).normalized()
+	enemy.frames = []
+	for sign_x in [-1.0, 1.0]:
+		var spot: Vector3 = aim + side * sign_x * plan.frames.offset
+		spot.x = clampf(spot.x, -13.5, 13.5)
+		spot.z = clampf(spot.z, -11.5, 11.5)
+		enemy.frames.append(spot)
+		var frame: Node3D = Shape.door_frame(world, spot, Color("8a6a3a"))
+		frame.look_at(Vector3(aim.x, spot.y, aim.z))
+		effects.append({"node": frame, "life": plan.frames.windup + 0.35, "grow": false})
+		# Ground lane from the frame to the target spot, so the side threat reads before the shot.
+		var lane: Vector3 = Vector3(aim.x, 0, aim.z) - Vector3(spot.x, 0, spot.z)
+		telegraph(Vector3(spot.x, 0, spot.z), lane.normalized(), lane.length() + 1.0, 0.6, plan.frames.windup)
+
+func boss_area_hit(enemy: Dictionary, inside: Callable, damage: float) -> void:
+	# Area patterns hit the witch and every summon standing in the warned shape.
+	if hp > 0 and inside.call(player.position):
+		damage_player(damage, enemy.grade)
+	for ally in allies.duplicate():
+		if inside.call(ally.node.position):
+			damage_ally(ally, damage, enemy.grade)
+
+func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
+	var origin: Vector3 = enemy.body.position
+	var facing: Vector3 = enemy.pattern_dir
+	match enemy.attack:
+		"sweep":
+			var sweep: Dictionary = plan.sweep
+			enemy.timers.sweep = sweep.cooldown
+			var in_fan := func(at: Vector3) -> bool:
+				var flat: Vector3 = at - origin
+				flat.y = 0
+				return flat.length() <= sweep.range and (flat.length() < 0.01 or rad_to_deg(facing.angle_to(flat.normalized())) <= sweep.angle / 2.0)
+			boss_area_hit(enemy, in_fan, sweep.damage * power)
+			play_cue(0.5)
+			# The lock comes down right after the sweep along the same facing.
+			if enemy.timers.get("slam", 0.0) <= 0:
+				begin_slam(enemy, plan, plan.slam.chain_extra)
+		"slam":
+			var slam: Dictionary = plan.slam
+			enemy.timers.slam = slam.cooldown
+			var in_line := func(at: Vector3) -> bool:
+				var flat: Vector3 = at - origin
+				flat.y = 0
+				var along: float = flat.dot(facing)
+				return along >= 0 and along <= slam.length and absf(flat.dot(facing.cross(Vector3.UP))) <= slam.width / 2.0
+			boss_area_hit(enemy, in_line, slam.damage * power)
+			pulse(origin + facing * slam.length / 2.0, RED, 1.0)
+			play_cue(0.4)
+		"frames":
+			var frames: Dictionary = plan.frames
+			enemy.timers.frames = frames.cooldown
+			for spot in enemy.frames:
+				fire_bolt_from(spot, foe_position(enemy.target), frames, frames.damage * power, enemy.grade)
+		"shockwave":
+			var wave: Dictionary = plan.shockwave
+			var in_disc := func(at: Vector3) -> bool:
+				var flat: Vector3 = at - origin
+				flat.y = 0
+				return flat.length() <= wave.radius
+			boss_area_hit(enemy, in_disc, wave.damage * power)
+			pulse(origin, RED, wave.radius)
+			play_cue(0.35)
+			# Called adds join from the field edges and never respawn in A5 mode.
+			for kind in wave.adds:
+				for i in int(wave.adds[kind]):
+					var add_id: String = "add_" + str(spawn_serial)
+					spawn_serial += 1
+					spawn_enemy(add_id, edge_point(), false, "normal", kind)
+					enemies[add_id].respawn = false
+
+func fan_warning(from: Vector3, facing: Vector3, radius: float, angle: float, life: float) -> void:
+	for filled in [false, true]:
+		var fan: MeshInstance3D = Shape.fan(world, from + Vector3(0, 0.04 if filled else 0.03, 0), radius, angle, WARN_FILL if filled else WARN)
+		fan.look_at(fan.position + facing)
+		warn_effect(fan, life, filled, "radial")
+
+func disc_warning(at: Vector3, radius: float, life: float) -> void:
+	for filled in [false, true]:
+		var disc: MeshInstance3D = Shape.cylinder(world, at + Vector3(0, 0.04 if filled else 0.03, 0), radius, 0.02, WARN_FILL if filled else WARN)
+		warn_effect(disc, life, filled, "radial")
+
 func start_enemy_attack(enemy: Dictionary, attack: String, windup: float, color: Color) -> void:
 	enemy.attack = attack
 	enemy.windup = windup
 	pulse(enemy.body.position, color, 0.55 * enemy.size)
 
 func telegraph(from: Vector3, direction: Vector3, length: float, width: float, life: float) -> void:
-	# Flat warning strip on the ground for the time the attack winds up.
-	var center: Vector3 = from + direction * length / 2 + Vector3(0, 0.03, 0)
-	var strip = Shape.box(world, center, Vector3(width, 0.02, length), Color("a8453a"))
-	strip.look_at(center + direction)
-	effects.append({"node": strip, "life": life, "grow": false})
+	# Flat warning strip on the ground; a brighter strip fills it from the attacker outwards.
+	for filled in [false, true]:
+		var pivot = Node3D.new()
+		world.add_child(pivot)
+		pivot.position = from + Vector3(0, 0.04 if filled else 0.03, 0)
+		pivot.look_at(pivot.position + direction)
+		Shape.box(pivot, Vector3(0, 0, -length / 2), Vector3(width, 0.02, length), WARN_FILL if filled else WARN)
+		warn_effect(pivot, life, filled, "length")
+
+func warn_effect(node: Node3D, life: float, filled: bool, axis: String) -> void:
+	var fx = {"node": node, "life": life, "grow": false}
+	if filled:
+		fx.merge({"fill": life, "axis": axis})
+		node.scale = Vector3(0.02, 1, 0.02) if axis == "radial" else Vector3(1, 1, 0.02)
+	effects.append(fx)
 
 func fire_bolt(enemy: Dictionary, at: Vector3, band: Dictionary, damage: float) -> void:
 	# The orb flies toward where its target stands at release, so stepping aside dodges it.
-	var origin: Vector3 = enemy.body.position + Vector3.UP * 1.0 * enemy.size
+	fire_bolt_from(enemy.body.position + Vector3.UP * 1.0 * enemy.size, at, band, damage, enemy.grade)
+
+func fire_bolt_from(origin: Vector3, at: Vector3, band: Dictionary, damage: float, grade: String) -> void:
+	if origin.y < 0.5:
+		origin.y = 1.0
 	var aim: Vector3 = at - origin
 	aim.y = 0
 	var node = Shape.sphere(world, origin, 0.2, Color("bfe8ff"))
 	node.material_override = Shape.material(Color("bfe8ff"), true)
 	bolts.append({"node": node, "dir": aim.normalized(), "speed": float(band.bolt_speed), "left": float(band.bolt_range),
-		"radius": float(band.bolt_radius), "damage": damage, "grade": enemy.grade})
+		"radius": float(band.bolt_radius), "damage": damage, "grade": grade})
 	play_cue(1.9)
 
 func tick_bolts(dt: float) -> void:
