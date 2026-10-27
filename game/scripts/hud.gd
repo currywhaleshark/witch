@@ -57,7 +57,10 @@ func _draw() -> void:
 	draw_circle(Vector2(44, 134), 5, GOLD if active else MUTED)
 	label_at(Vector2(61, 140), status, 14, GOLD if active else MUTED)
 	target_panel(w)
-	label_at(Vector2(w - 230, 42), "FIELD / 001", 12, GOLD, true)
+	var zone: String = "FIELD / 001"
+	if arena.map.id != "flat":
+		zone = arena.map.zone_at(arena.player.position).get("name", arena.map.data.get("name", ""))
+	label_at(Vector2(w - 230, 42), zone, 12, GOLD, true)
 	label_at(Vector2(w - 230, 72), "남은 적  %02d" % arena.enemies.size(), 23, PAPER, true)
 	label_at(Vector2(w - 230, 96), "처치 %d   ·   소환체 %d" % [arena.kills, arena.allies.size()], 14, MUTED)
 	if arena.help_visible:

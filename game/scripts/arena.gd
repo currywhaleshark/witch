@@ -3,6 +3,7 @@ const Rules = preload("res://scripts/combat_rules.gd")
 const Shape = preload("res://scripts/shapes.gd")
 const Hud = preload("res://scripts/hud.gd")
 const ManaProbe = preload("res://scripts/mana_probe.gd")
+const FieldMap = preload("res://scripts/field_map.gd")
 const PlayerVisual = preload("res://scripts/player_visual.gd")
 const ActorVisual = preload("res://scripts/actor_visual.gd")
 const TEAL = Color("8dd8c4")
@@ -88,6 +89,10 @@ var combat_rng = RandomNumberGenerator.new()
 var force_rolls: Dictionary = {}
 var shake_time = 0.0
 var boss_serial = 0
+# Field layout and routes. Test harnesses start on the flat arena their checks assume.
+var map: Node3D
+var player_route: Dictionary = {}
+var boss_spawned = false
 
 func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
@@ -125,28 +130,9 @@ func _build_field() -> void:
 	add_child(sun)
 	world = Node3D.new()
 	add_child(world)
-	Shape.box(world, Vector3(0, -0.35, 0), Vector3(30, 0.7, 26), Color("334a50"))
-	for x in range(-14, 15, 2):
-		Shape.box(world, Vector3(x, 0.005, 0), Vector3(0.025, 0.01, 25.6), Color("40595e"))
-	for z in range(-12, 13, 2):
-		Shape.box(world, Vector3(0, 0.005, z), Vector3(29.6, 0.01, 0.025), Color("40595e"))
-	Shape.ring(world, Vector3(0, 0.02, 0), 5.0, Color("59716d"), 0.025)
-	Shape.ring(world, Vector3(0, 0.02, 0), 5.2, Color("8a795a"), 0.025)
-	for data in [[Vector3(-15, 0.6, 0), Vector3(0.5, 1.2, 26)], [Vector3(15, 0.6, 0), Vector3(0.5, 1.2, 26)], [Vector3(0, 0.6, -13), Vector3(30, 1.2, 0.5)], [Vector3(0, 0.6, 13), Vector3(30, 1.2, 0.5)]]:
-		var wall = StaticBody3D.new()
-		wall.collision_layer = 1
-		world.add_child(wall)
-		wall.position = data[0]
-		Shape.box(wall, Vector3.ZERO, data[1], Color("233740"))
-		var collision = CollisionShape3D.new()
-		var box = BoxShape3D.new()
-		box.size = data[1]
-		collision.shape = box
-		wall.add_child(collision)
-	for x in [-14, 14]:
-		for z in [-12, -6, 0, 6, 12]:
-			Shape.cylinder(world, Vector3(x, 0.65, z), 0.3, 1.3, BRASS)
-			Shape.sphere(world, Vector3(x, 1.35, z), 0.15, TEAL)
+	map = FieldMap.new()
+	world.add_child(map)
+	map.build("flat" if get_tree().get_script() != null else config.get("map", "flat"))
 	camera = Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
 	camera.size = 20.0 / 1.75
@@ -205,7 +191,9 @@ func reset_arena() -> void:
 	state = rules.initial_state(float(config.max_mana))
 	for slot in config.bindings:
 		state = rules.bind(state, slot, config.bindings[slot])
-	player = Shape.body(world, Vector3(0, 0, 2), 4)
+	player = Shape.body(world, map.start_point(), 4)
+	player_route = {}
+	boss_spawned = false
 	player_visual = PlayerVisual.new()
 	player.add_child(player_visual)
 	player_visual.initialize()
@@ -245,10 +233,11 @@ func reset_arena() -> void:
 	respawns.clear()
 	rng.seed = 2510
 	# Trial field from 08 §6.2: a rag-ghoul pack, two wire crows and an iron-door brute.
-	for i in config.field.size():
-		var entry: Dictionary = config.field[i]
+	var field: Array = config.field if map.data.is_empty() else map.data.spawns
+	for i in field.size():
+		var entry: Dictionary = field[i]
 		spawn_enemy("enemy_" + str(i), point(entry.pos), false, entry.grade, entry.kind)
-	spawn_serial = config.field.size()
+	spawn_serial = field.size()
 	if not player_visual.loaded_ok:
 		show_message("캐릭터 자산을 불러오지 못했습니다")
 
@@ -272,7 +261,7 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": type.get("heavy", false), "kind": kind,
 		"grade": grade, "size": size, "cooldown": 1.0, "windup": 0.0, "attack": "", "charge_cooldown": 1.0, "charging": 0.0,
 		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0,
-		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": []}
+		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": [], "route": {}}
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -383,6 +372,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			probe.counts.debug_mana_edits += 1
 			return
 		if event.physical_keycode == KEY_F5:
+			if event.shift_pressed:
+				# Test tool: swap between the alley trial map and the flat arena.
+				load_map("flat" if map.id != "flat" else config.get("map", "alley_v1"))
+				return
 			set_a5_mode(not a5_mode)
 			return
 		if event.physical_keycode == KEY_F6:
@@ -412,7 +405,39 @@ func _notification(what: int) -> void:
 		save_mana_log("quit")
 
 func field_cleared() -> bool:
-	return enemies.is_empty() and not a5_mode
+	# A map with a boss arena is only cleared once its boss has come out and fallen.
+	return enemies.is_empty() and not a5_mode and (not map.data.has("boss") or boss_spawned)
+
+func load_map(map_id: String) -> void:
+	restart_probe("settings_changed")
+	map.build(map_id)
+	reset_arena()
+	show_message(map.data.get("name", "평지 시험 경기장"))
+
+func follow(route: Dictionary, from: Vector3, goal: Vector3, every: float, dt: float) -> Vector3:
+	# Next waypoint toward goal; re-plans when the goal moves or the plan gets old.
+	route.age = route.get("age", INF) + dt
+	var last: Vector3 = route.get("goal", Vector3(INF, 0, INF))
+	if route.age >= every or Vector2(goal.x - last.x, goal.z - last.z).length() > 0.4 or route.get("points", PackedVector3Array()).is_empty():
+		route.points = map.route(from, goal)
+		route.goal = goal
+		route.age = 0.0
+		route.index = 0
+	var points: PackedVector3Array = route.points
+	while route.index < points.size() - 1 and Vector2(points[route.index].x - from.x, points[route.index].z - from.z).length() < 0.25:
+		route.index += 1
+	var next: Vector3 = points[mini(route.index, points.size() - 1)]
+	return Vector3(next.x, from.y, next.z)
+
+func tick_boss_trigger() -> void:
+	# Entering the arena zone calls the map's boss once per run.
+	if boss_spawned or not map.data.has("boss"):
+		return
+	var r: Array = map.data.boss.trigger
+	if player.position.x >= r[0] and player.position.x <= r[2] and player.position.z >= r[1] and player.position.z <= r[3]:
+		boss_spawned = true
+		spawn_enemy("boss_field", Vector3(map.data.boss.pos[0], 0, map.data.boss.pos[1]), true, "boss", "latch")
+		show_message("보스 등장")
 
 func set_a5_mode(enabled: bool) -> void:
 	save_mana_log("mode_off" if a5_mode else "mode_on")
@@ -490,7 +515,7 @@ func save_mana_log(reason: String) -> String:
 		"engine": Engine.get_version_info().string, "build": build_stamp(), "player_hp": hp, "metrics": probe.to_dict(),
 		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
 			"hit_recovery_score": config.hit_recovery_score, "shield_level": config.shield_level, "dexterity": config.dexterity,
-			"automaton_level": config.automaton_level, "turret_level": config.turret_level,
+			"automaton_level": config.automaton_level, "turret_level": config.turret_level, "map": map.id,
 			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	if file == null:
@@ -511,14 +536,8 @@ func tick_respawns(dt: float) -> void:
 		spawn_serial += 1
 
 func edge_point() -> Vector3:
-	# Enter from a field edge away from the witch to keep a steady engagement.
-	var pos = Vector3.ZERO
-	for attempt in 12:
-		var along = rng.randf_range(-1, 1)
-		pos = [Vector3(13, 0, along * 11), Vector3(-13, 0, along * 11), Vector3(along * 13, 0, 11), Vector3(along * 13, 0, -11)][rng.randi() % 4]
-		if pos.distance_to(player.position) >= 8:
-			break
-	return pos
+	# Enter away from the witch to keep a steady engagement: field edges, or the map's listed spots.
+	return map.respawn_point(player.position, rng)
 
 func pointer_over_field() -> bool:
 	return pointer.y < get_viewport().get_visible_rect().size.y - 155
@@ -531,7 +550,7 @@ func pick_cursor(screen: Vector2) -> Dictionary:
 	var direction = camera.project_ray_normal(screen)
 	var point = Plane(Vector3.UP, 0).intersects_ray(origin, direction)
 	var cursor: Dictionary = {}
-	if point != null and absf(point.x) < 14.25 and absf(point.z) < 12.25:
+	if point != null and map.bounds.has_point(Vector2(point.x, point.z)):
 		cursor.ground = [point.x, 0, point.z]
 	var query = PhysicsRayQueryParameters3D.create(origin, origin + direction * 100, PICK_LAYER)
 	query.collide_with_areas = true
@@ -548,7 +567,7 @@ func spatial_check(skill: Dictionary, cursor: Dictionary):
 		if cursor.get("ground") == null:
 			return "invalid_ground"
 		var pos = point(cursor.ground)
-		if absf(pos.x) >= 14.25 or absf(pos.z) >= 12.25:
+		if not map.walkable(pos):
 			return "invalid_ground"
 		if pos.distance_to(player.position) < 0.9:
 			return "invalid_ground"
@@ -566,6 +585,9 @@ func spatial_check(skill: Dictionary, cursor: Dictionary):
 		if not enemies.has(cursor.enemy_id):
 			return "out_of_range"
 		if player.position.distance_to(enemies[cursor.enemy_id].body.position) > float(skill.range):
+			return "out_of_range"
+		# Behind a wall counts as out of reach, so the witch walks around to a clear line.
+		if not map.sees(player.position, enemies[cursor.enemy_id].body.position):
 			return "out_of_range"
 	elif skill.kind == "aim" and cursor.get("ground") != null and player.position.distance_to(point(cursor.ground)) > float(skill.range):
 		return "out_of_range"
@@ -733,9 +755,9 @@ func cast_seconds(skill: Dictionary) -> float:
 	return motion_seconds(base, base * config.min_cast_ratio, config.cast_speed_k, config.cast_speed_score)
 
 func set_destination(pos: Vector3) -> void:
-	destination = pos
+	destination = map.snap(pos)
 	moving = true
-	move_marker.position = pos + Vector3(0, 0.04, 0)
+	move_marker.position = destination + Vector3(0, 0.04, 0)
 	move_marker.visible = true
 
 func tick_pending_cast(dt: float) -> void:
@@ -765,9 +787,8 @@ func tick_pending_cast(dt: float) -> void:
 		begin_cast(slot, cursor, true, false, rules.press(state, slot, cursor, spatial_check, true))
 		return
 	var target: Vector3 = enemies[cursor.enemy_id].body.position if cursor.get("enemy_id") != null else point(cursor.ground)
-	var direction: Vector3 = (target - player.position).normalized()
-	# Stop just inside the range boundary; never walk into the target collider.
-	destination = target - direction * maxf(0.1, float(skill.range) - 0.1)
+	# Walk the route toward the target; the cast fires as soon as range and sight line allow.
+	destination = map.snap(target) if cursor.get("enemy_id") == null else target
 	moving = true
 	move_marker.position = destination + Vector3(0, 0.04, 0)
 	move_marker.visible = true
@@ -817,7 +838,7 @@ func execute_cast(event: Dictionary) -> void:
 		"basic_attack":
 			var tool = event.active_tool
 			var damage: float = rules.skills[tool].attack_damage if tool != null else config.basic_damage
-			var best = nearest_enemy(player.position, rules.skills.basic_attack.range, direction, 0.2)
+			var best = nearest_enemy(player.position, rules.skills.basic_attack.range, direction, 0.2, false, true)
 			if event.get("target_enemy") != null and enemies.has(event.target_enemy):
 				best = event.target_enemy
 			beam(player.position + Vector3.UP, player.position + direction * 2.3 + Vector3.UP, TOOL_COLORS.get(tool, TEAL), 0.12)
@@ -836,7 +857,7 @@ func execute_cast(event: Dictionary) -> void:
 		"shotgun":
 			for id in enemies.keys():
 				var delta: Vector3 = enemies[id].body.position - player.position
-				if delta.length() <= rules.skills.shotgun.range and delta.normalized().dot(direction) > 0.86:
+				if delta.length() <= rules.skills.shotgun.range and delta.normalized().dot(direction) > 0.86 and map.sees(player.position, enemies[id].body.position):
 					strike(id, config.shot_damage, false, "witch", "shotgun")
 			for angle in [-0.34, -0.17, 0, 0.17, 0.34]:
 				beam(player.position + Vector3.UP, player.position + direction.rotated(Vector3.UP, angle) * rules.skills.shotgun.range + Vector3.UP, BRASS)
@@ -847,8 +868,10 @@ func execute_cast(event: Dictionary) -> void:
 			pulse(player.position + Vector3.UP, STEEL, 0.9)
 		"automaton":
 			var pos = player.position + Vector3(1, 0, 0.6)
-			pos.x = clampf(pos.x, -14, 14)
-			pos.z = clampf(pos.z, -12, 12)
+			pos.x = clampf(pos.x, map.bounds.position.x + 0.25, map.bounds.end.x - 0.25)
+			pos.z = clampf(pos.z, map.bounds.position.y + 0.25, map.bounds.end.y - 0.25)
+			if not map.walkable(pos):
+				pos = map.snap(pos)
 			spawn_ally(pos, true, event.get("target_enemy", ""))
 		"turret": spawn_ally(point(event.position), false, "")
 		"relay":
@@ -860,12 +883,14 @@ func execute_cast(event: Dictionary) -> void:
 func point(value: Array) -> Vector3:
 	return Vector3(value[0], value[1], value[2])
 
-func nearest_enemy(pos: Vector3, distance: float, direction: Vector3 = Vector3.ZERO, dot_min: float = -1.0, visible_only: bool = false) -> String:
+func nearest_enemy(pos: Vector3, distance: float, direction: Vector3 = Vector3.ZERO, dot_min: float = -1.0, visible_only: bool = false, need_sight: bool = false) -> String:
 	var best = ""
 	for id in enemies:
 		var delta: Vector3 = enemies[id].body.position - pos
 		if delta.length() < distance and (direction == Vector3.ZERO or delta.normalized().dot(direction) >= dot_min):
 			if visible_only and not on_screen(enemies[id].body.position):
+				continue
+			if need_sight and not map.sees(pos, enemies[id].body.position):
 				continue
 			distance = delta.length()
 			best = id
@@ -1054,7 +1079,7 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	ActorVisual.create(node, "automaton" if mobile else "turret")
 	Shape.ring(node, Vector3(0, 0.04, 0), 0.43, TEAL)
 	var durability: float = config.automaton_hp if mobile else config.turret_hp
-	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "target": target_id if target_id != null else "", "cooldown": 0.2,
+	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "route": {}, "target": target_id if target_id != null else "", "cooldown": 0.2,
 		"life": config.summon_lifetime if mobile else config.turret_lifetime, "hp": durability, "max_hp": durability})
 	ally_serial += 1
 	pulse(pos, TEAL, 0.65)
@@ -1069,7 +1094,7 @@ func on_screen(pos: Vector3) -> bool:
 	return rect.has_point(screen)
 
 func eligible(ally: Dictionary, id: String) -> bool:
-	return enemies.has(id) and on_screen(enemies[id].body.position) and ally.node.position.distance_to(enemies[id].body.position) <= (config.summon_detection_range if ally.mobile else config.turret_detection_range)
+	return enemies.has(id) and on_screen(enemies[id].body.position) and ally.node.position.distance_to(enemies[id].body.position) <= (config.summon_detection_range if ally.mobile else config.turret_detection_range) and map.sees(ally.node.position, enemies[id].body.position)
 
 func _physics_process(dt: float) -> void:
 	if not is_instance_valid(player):
@@ -1089,6 +1114,7 @@ func _physics_process(dt: float) -> void:
 			tick_respawns(dt)
 		tick_potions(dt)
 		tick_bolts(dt)
+		tick_boss_trigger()
 		tick_windup(dt)
 		if action_time > 0:
 			action_time = maxf(0, action_time - dt)
@@ -1106,9 +1132,13 @@ func _physics_process(dt: float) -> void:
 				move_marker.visible = false
 			else:
 				var speed: float = config.player_speed * (1.0 + (config.potions.speed.speed_bonus if speed_buff > 0 else 0.0))
-				player.velocity = delta.normalized() * minf(speed, delta.length() / dt)
+				var step: Vector3 = follow(player_route, player.position, destination, 0.5, dt) - player.position
+				step.y = 0
+				if step.length() < 0.001:
+					step = delta
+				player.velocity = step.normalized() * minf(speed, step.length() / dt)
 				player.move_and_slide()
-				player_model.look_at(player.position + delta.normalized())
+				player_model.look_at(player.position + step.normalized())
 		for id in enemies.keys():
 			_tick_enemy(enemies[id], dt)
 			if enemies.has(id) and enemies[id].model.has_method("sync_enemy"):
@@ -1127,6 +1157,7 @@ func _physics_process(dt: float) -> void:
 	player_visual.sync_state(dt, visual_distance > 0.0001, action_time, paused, hp <= 0, field_cleared(), visual_distance / maxf(dt, 0.000001))
 	shield_ring.visible = shield_time > 0
 	place_camera(player.position)
+	map.fade_between(camera.global_position, player.position + Vector3.UP)
 	if shake_time > 0:
 		# Short crit jolt; the camera angle never changes, only a small offset.
 		shake_time = maxf(0, shake_time - dt)
@@ -1267,7 +1298,7 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 					enemy.charge_hit = false
 				_:
 					# Reach and stop distances are absolute: capsules keep bodies apart regardless of model size.
-					if delta.length() < type.reach:
+					if delta.length() < type.reach and map.sees(enemy.body.position, aim):
 						hit_foe(enemy.target, type.damage * power, enemy.grade)
 		return
 	enemy.cooldown = maxf(0, enemy.cooldown - dt)
@@ -1285,23 +1316,29 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	if type.has("ranged"):
 		# Wire crows hold a firing band: back off when crowded, close in when too far, shoot between.
 		var band: Dictionary = type.ranged
+		var clear: bool = map.sees(enemy.body.position, aim)
 		var step = Vector3.ZERO
-		if distance > band.keep_max:
-			step = delta.normalized()
+		if distance > band.keep_max or not clear:
+			# Without a clear shot the crow walks the route until one opens.
+			step = (follow(enemy.route, enemy.body.position, aim, 0.35, dt) - enemy.body.position).normalized()
 		elif distance < band.keep_min:
 			step = -delta.normalized()
 		enemy.body.velocity = step * pace
 		enemy.body.move_and_slide()
-		if enemy.cooldown <= 0 and distance <= band.bolt_range:
+		if enemy.cooldown <= 0 and distance <= band.bolt_range and clear:
 			start_enemy_attack(enemy, "bolt", type.windup, TEAL)
 		return
-	if type.has("charge") and enemy.charge_cooldown <= 0 and enemy.cooldown <= 0 and distance >= type.charge.min and distance <= type.charge.max:
+	var in_sight: bool = map.sees(enemy.body.position, aim)
+	if type.has("charge") and enemy.charge_cooldown <= 0 and enemy.cooldown <= 0 and distance >= type.charge.min and distance <= type.charge.max and in_sight:
 		enemy.charge_dir = Vector3(delta.x, 0, delta.z).normalized()
 		start_enemy_attack(enemy, "charge", type.charge.windup, RED)
 		telegraph(enemy.body.position, enemy.charge_dir, type.charge.distance, type.charge.width, type.charge.windup)
 		return
-	if distance > type.stop:
-		enemy.body.velocity = delta.normalized() * pace
+	if distance > type.stop or not in_sight:
+		# Chase along the route so corners and low walls are walked around, not into.
+		var step: Vector3 = follow(enemy.route, enemy.body.position, aim, 0.35, dt) - enemy.body.position
+		step.y = 0
+		enemy.body.velocity = step.normalized() * pace
 		enemy.body.move_and_slide()
 	elif enemy.cooldown <= 0:
 		start_enemy_attack(enemy, "melee", type.windup, RED)
@@ -1336,15 +1373,18 @@ func tick_boss(enemy: Dictionary, plan: Dictionary, power: float, pace: float, d
 		return
 	enemy.model.look_at(Vector3(aim.x, enemy.body.global_position.y, aim.z))
 	enemy.pattern_dir = delta.normalized() if distance > 0.01 else Vector3.FORWARD
-	if distance <= plan.sweep.range and enemy.timers.get("sweep", 0.0) <= 0:
+	var clear: bool = map.sees(enemy.body.position, aim)
+	if distance <= plan.sweep.range and enemy.timers.get("sweep", 0.0) <= 0 and clear:
 		begin_boss(enemy, "sweep", plan.sweep.windup)
 		fan_warning(enemy.body.position, enemy.pattern_dir, plan.sweep.range, plan.sweep.angle, plan.sweep.windup)
-	elif distance <= plan.slam.length and enemy.timers.get("slam", 0.0) <= 0:
+	elif distance <= plan.slam.length and enemy.timers.get("slam", 0.0) <= 0 and clear:
 		begin_slam(enemy, plan)
 	elif distance > plan.sweep.range and enemy.timers.get("frames", 0.0) <= 0:
 		begin_frames(enemy, plan, aim)
-	elif distance > plan.keep:
-		enemy.body.velocity = enemy.pattern_dir * pace
+	elif distance > plan.keep or not clear:
+		var step: Vector3 = follow(enemy.route, enemy.body.position, aim, 0.4, dt) - enemy.body.position
+		step.y = 0
+		enemy.body.velocity = step.normalized() * pace
 		enemy.body.move_and_slide()
 
 func begin_boss(enemy: Dictionary, pattern: String, windup: float) -> void:
@@ -1364,8 +1404,8 @@ func begin_frames(enemy: Dictionary, plan: Dictionary, aim: Vector3) -> void:
 	enemy.frames = []
 	for sign_x in [-1.0, 1.0]:
 		var spot: Vector3 = aim + side * sign_x * plan.frames.offset
-		spot.x = clampf(spot.x, -13.5, 13.5)
-		spot.z = clampf(spot.z, -11.5, 11.5)
+		spot.x = clampf(spot.x, map.bounds.position.x + 0.75, map.bounds.end.x - 0.75)
+		spot.z = clampf(spot.z, map.bounds.position.y + 0.75, map.bounds.end.y - 0.75)
 		enemy.frames.append(spot)
 		var frame: Node3D = Shape.door_frame(world, spot, Color("8a6a3a"))
 		frame.look_at(Vector3(aim.x, spot.y, aim.z))
@@ -1471,8 +1511,8 @@ func fire_bolt(enemy: Dictionary, at: Vector3, band: Dictionary, damage: float) 
 	fire_bolt_from(enemy.body.position + Vector3.UP * 1.0 * enemy.size, at, band, damage, enemy.grade)
 
 func fire_bolt_from(origin: Vector3, at: Vector3, band: Dictionary, damage: float, grade: String) -> void:
-	if origin.y < 0.5:
-		origin.y = 1.0
+	# Orbs fly at sight height: over low walls, into tall ones.
+	origin.y = FieldMap.SIGHT_HEIGHT
 	var aim: Vector3 = at - origin
 	aim.y = 0
 	var node = Shape.sphere(world, origin, 0.2, Color("bfe8ff"))
@@ -1484,13 +1524,17 @@ func fire_bolt_from(origin: Vector3, at: Vector3, band: Dictionary, damage: floa
 func tick_bolts(dt: float) -> void:
 	for bolt in bolts.duplicate():
 		var travel: float = bolt.speed * dt
+		var before: Vector3 = bolt.node.position
 		bolt.node.position += bolt.dir * travel
+		if not map.sees(before, bolt.node.position):
+			pulse(before, Color("bfe8ff"), 0.4)
+			bolt.left = 0
 		bolt.left -= travel
 		var struck: String = foe_in_reach(bolt.node.position, bolt.radius)
 		if struck != "none":
 			hit_foe(struck, bolt.damage, bolt.grade)
 			bolt.left = 0
-		if bolt.left <= 0 or absf(bolt.node.position.x) > 15 or absf(bolt.node.position.z) > 13:
+		if bolt.left <= 0 or not map.bounds.grow(1.0).has_point(Vector2(bolt.node.position.x, bolt.node.position.z)):
 			bolt.node.queue_free()
 			bolts.erase(bolt)
 
@@ -1512,18 +1556,18 @@ func _tick_allies(dt: float) -> void:
 			continue
 		if ally.mobile and not on_screen(ally.node.position):
 			ally.target = ""
-			ally.node.position = ally.node.position.move_toward(player.position + Vector3(0.8, 0, 0.8), dt * 7)
+			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, player.position + Vector3(0.8, 0, 0.8), 0.4, dt), dt * 7)
 			continue
 		if not eligible(ally, ally.target):
-			ally.target = nearest_enemy(ally.node.position, config.summon_detection_range if ally.mobile else config.turret_detection_range, Vector3.ZERO, -1, true)
+			ally.target = nearest_enemy(ally.node.position, config.summon_detection_range if ally.mobile else config.turret_detection_range, Vector3.ZERO, -1, true, true)
 		if ally.target == "":
 			if ally.mobile:
-				ally.node.position = ally.node.position.move_toward(player.position + Vector3(0.8, 0, 0.8), dt * 4)
+				ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, player.position + Vector3(0.8, 0, 0.8), 0.4, dt), dt * 4)
 			continue
 		var target: Vector3 = enemies[ally.target].body.position
 		ally.node.look_at(target)
 		if ally.mobile and ally.node.position.distance_to(target) > 1.6:
-			ally.node.position = ally.node.position.move_toward(target, dt * 4)
+			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, target, 0.4, dt), dt * 4)
 		ally.cooldown -= dt
 		if ally.cooldown <= 0 and (not ally.mobile or ally.node.position.distance_to(target) <= 1.8):
 			var shot_origin: Vector3 = ally.node.position + Vector3.UP * 0.8
