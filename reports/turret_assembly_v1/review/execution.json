@@ -1,0 +1,8 @@
+{
+  "changed_inputs": [],
+  "phase": "review",
+  "workspace_cache_diagnostic_only": true,
+  "exit_code": 0,
+  "stderr_empty": false,
+  "test": "turret_assembly"
+}

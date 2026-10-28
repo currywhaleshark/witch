@@ -1,0 +1,237 @@
+{
+  "version": "shotgun_cast_v1",
+  "passed": true,
+  "user_art_approved": false,
+  "runtime_assertions": 436,
+  "checks": {
+    "shotgun_cast": {
+      "passed": true,
+      "assertions": 305,
+      "result": "shotgun_cast/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "shotgun_cast",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      }
+    },
+    "hit_block": {
+      "passed": true,
+      "assertions": 20,
+      "result": "hit_block/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "hit_block",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      }
+    },
+    "hold_input": {
+      "passed": true,
+      "assertions": 41,
+      "result": "hold_input/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "hold_input",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      }
+    },
+    "grades_hits": {
+      "passed": true,
+      "assertions": 22,
+      "result": "grades_hits/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "grades_hits",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      }
+    },
+    "approach_cast": {
+      "passed": true,
+      "assertions": 27,
+      "result": "approach_cast/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "approach_cast",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      }
+    },
+    "tool_switch": {
+      "passed": true,
+      "assertions": 21,
+      "result": "tool_switch/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "tool_switch",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      }
+    },
+    "gpu_review": {
+      "passed": true,
+      "captures": 344,
+      "sequences": 7,
+      "model_stills": 1,
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": false,
+        "test": "shotgun_cast",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": true,
+        "phase": "review"
+      }
+    },
+    "model": {
+      "passed": true,
+      "parts": 40,
+      "triangles": 8732,
+      "materials": 1,
+      "source_unchanged": true,
+      "method": "Selected upper carriage/barrel/gear/key surfaces, no legs or turntable. Original UV/PBR atlas retained; uniform 0.72 scale and muzzle-origin translation only."
+    }
+  },
+  "base_commit": "85803170c8d9e117983d470e98240a64abd1b700",
+  "files": [
+    {
+      "path": "assets/actors/shotgun_cast_v1/authoring/shotgun_parts.blend",
+      "sha256": "31cc13556d864ced6ef30b0422f981cbc2012996089fa218dcbd10554e2cad22",
+      "bytes": 4490935
+    },
+    {
+      "path": "assets/actors/shotgun_cast_v1/parts.json",
+      "sha256": "415788c327de18906d9f61534f44771e746bf0db80988ab64f5df55e743234ba",
+      "bytes": 5698
+    },
+    {
+      "path": "assets/actors/shotgun_cast_v1/exports/shotgun_parts.glb",
+      "sha256": "acf01aec9b52d3a8cbcac11f068ebc8745561efc830556ed296455022f095a33",
+      "bytes": 4430332
+    },
+    {
+      "path": "game/assets/actors/shotgun_cast_v1/shotgun_parts.glb",
+      "sha256": "acf01aec9b52d3a8cbcac11f068ebc8745561efc830556ed296455022f095a33",
+      "bytes": 4430332
+    },
+    {
+      "path": "game/scripts/arena.gd",
+      "sha256": "5f57619dae0d5fbf8e5d425d5fb72b18eb32760799060fb7b69b3fc595fe57c0",
+      "bytes": 82068
+    },
+    {
+      "path": "game/scripts/shotgun_cast.gd",
+      "sha256": "19782625e8b20ae859fcb7fd9bdc1e18169b4ca240418b2b0a4646ae545265f6",
+      "bytes": 2878
+    },
+    {
+      "path": "game/scripts/shotgun_geometry.gd",
+      "sha256": "12e04bfc9dd0888eb2334d6a7c279e01b17e837d63f16eb77669ca441c98b27b",
+      "bytes": 3811
+    },
+    {
+      "path": "game/scripts/summon_assembly.gd",
+      "sha256": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+      "bytes": 8608
+    },
+    {
+      "path": "game/scripts/automaton_assembly.gd",
+      "sha256": "a3e35dc2e18180c07da30c24302b460bc3a1057e8ffb8fed62706c5277516541",
+      "bytes": 1273
+    },
+    {
+      "path": "game/scripts/turret_assembly.gd",
+      "sha256": "ea1b33b1dfeda6c34b29dbddab5f22f2603512055d20ea498061dace37778052",
+      "bytes": 2371
+    },
+    {
+      "path": "game/scripts/player_visual.gd",
+      "sha256": "09d7a15d147303dfa08490e08e3f015f326ea19106f99a0935458223e5eac470",
+      "bytes": 16500
+    },
+    {
+      "path": "game/scripts/combat_rules.gd",
+      "sha256": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+      "bytes": 6686
+    },
+    {
+      "path": "game/scripts/field_map.gd",
+      "sha256": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+      "bytes": 48115
+    },
+    {
+      "path": "game/data/trial.json",
+      "sha256": "1b33a710389cf1d77bb8142d239da62d1595cd10d5130c8d1aa5236cc243349d",
+      "bytes": 9621
+    },
+    {
+      "path": "game/audio/mechanical_impact.wav",
+      "sha256": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+      "bytes": 80304
+    },
+    {
+      "path": "game/tests/shotgun_cast.gd",
+      "sha256": "b6c8c7e7c4ece5e0a938dcfd3412e2044a5949ae05e63c69aa663f7ab457f678",
+      "bytes": 8271
+    },
+    {
+      "path": "game/tests/review_shotgun_cast.gd",
+      "sha256": "98c7f28e01a21c2328ff501d07770cb8df4863c0c2c06c69b1651d0e89bf8b8f",
+      "bytes": 5192
+    },
+    {
+      "path": "tools/build_shotgun_cast_v1.py",
+      "sha256": "e56c0f583482ed91b5a2aad70d19e93139a21f8cb5ee51b0419fdc8abc50bd4d",
+      "bytes": 3373
+    },
+    {
+      "path": "tools/run_shotgun_cast_v1.ps1",
+      "sha256": "2921a039a2fc37e7d837a3834812e5a1f86ef6f41f72e37751eefb4c572d2358",
+      "bytes": 5193
+    },
+    {
+      "path": "tools/package_shotgun_cast_v1.py",
+      "sha256": "776941da24f87acedc31f2a4d4026867bd6c2078865237f95615e85f1eedb45e",
+      "bytes": 13585
+    }
+  ],
+  "muzzle": {
+    "local": [
+      0,
+      0,
+      0
+    ],
+    "default_forward_m": 0.62,
+    "default_right_m": 0.52,
+    "default_height_m": 1.12,
+    "close_targets": "Pull back and raise; prefer right, then clear left/overhead positions near walls.",
+    "range": "8m from the player; cone and wall rays start at the actual muzzle."
+  },
+  "timing": {
+    "release_seconds_fcr0": 0.125,
+    "release_seconds_fcr40": 0.0788461538461538,
+    "disappear_after_release_seconds": 0.45
+  },
+  "limits": [
+    "Cone vertex changed from player center to muzzle, so edge-of-fan/cover outcomes can differ; damage, mana, cooldown, maximum player-relative range and release timing are preserved.",
+    "Wall placement samples the barrel center and two side rays; not a swept-volume guarantee for every corner or pose.",
+    "Floating gun reuses the accepted turret upper surfaces; no new Tripo generation or new motion capture.",
+    "Airborne dissolve is presentation only, without part collision.",
+    "Existing mechanical audio reused; review captures are silent.",
+    "Browser UI interaction was not performed; local file policy had blocked that capability. Renderer images and static page syntax/links are checked separately.",
+    "Concurrent combat-worker changes retained; per-run input source copies and hashes identify the tested checkout."
+  ]
+}

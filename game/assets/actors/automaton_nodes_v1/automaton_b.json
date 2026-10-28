@@ -1,0 +1,124 @@
+{
+  "variant": "B",
+  "parts": [
+    {
+      "name": "part_000",
+      "triangles": 2296,
+      "delay": null
+    },
+    {
+      "name": "part_001",
+      "triangles": 844,
+      "delay": null
+    },
+    {
+      "name": "part_002",
+      "triangles": 842,
+      "delay": null
+    },
+    {
+      "name": "part_003",
+      "triangles": 896,
+      "delay": null
+    },
+    {
+      "name": "part_004",
+      "triangles": 804,
+      "delay": null
+    },
+    {
+      "name": "part_005",
+      "triangles": 908,
+      "delay": null
+    },
+    {
+      "name": "part_006",
+      "triangles": 836,
+      "delay": null
+    },
+    {
+      "name": "part_008_L",
+      "triangles": 614,
+      "delay": null
+    },
+    {
+      "name": "part_008_R",
+      "triangles": 584,
+      "delay": null
+    },
+    {
+      "name": "part_009",
+      "triangles": 430,
+      "delay": null
+    },
+    {
+      "name": "part_010",
+      "triangles": 398,
+      "delay": null
+    },
+    {
+      "name": "part_011",
+      "triangles": 191,
+      "delay": null
+    },
+    {
+      "name": "part_013",
+      "triangles": 148,
+      "delay": null
+    },
+    {
+      "name": "node_chest",
+      "triangles": 468,
+      "delay": 0.22
+    },
+    {
+      "name": "node_shoulder_L",
+      "triangles": 216,
+      "delay": 0.29
+    },
+    {
+      "name": "node_shoulder_R",
+      "triangles": 216,
+      "delay": 0.29
+    },
+    {
+      "name": "node_shin_L",
+      "triangles": 216,
+      "delay": 0.14
+    },
+    {
+      "name": "node_shin_R",
+      "triangles": 216,
+      "delay": 0.14
+    },
+    {
+      "name": "node_wrist_guard",
+      "triangles": 108,
+      "delay": 0.36
+    },
+    {
+      "name": "node_blade_mount",
+      "triangles": 168,
+      "delay": 0.39
+    },
+    {
+      "name": "node_blade",
+      "triangles": 428,
+      "delay": 0.48
+    }
+  ],
+  "triangles": 11827,
+  "bones": 34,
+  "source": "assets/actors/summons_v2/authoring/automaton_v2.blend",
+  "source_sha256": "3984623532d7b4f64e2276681aa5bb07f7b1196f5bf07f98f60a3556a582b074",
+  "source_unchanged": true,
+  "base_vertices_unchanged": true,
+  "base_rest_bones_preserved": 26,
+  "glb_sha256": "c2f273d35f42717557f22799873edd86aa444db3d33784c7b5482674739776ee",
+  "parts_sha256": "9741fb10883c48ae8f5ee90ab5543a87d095908518dbc136a450faed32839614",
+  "blade_axis_local": [
+    1.0,
+    0.0,
+    0.0
+  ]
+}

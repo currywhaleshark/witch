@@ -1,0 +1,3 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+
+AUTOMATON_VARIANT_COMPLETE {"checks":675,"failures":[],"metrics":{"cancel_15":{"born_parts":5,"mode":"collapse"},"cancel_50":{"born_parts":18,"mode":"collapse"},"cancel_85":{"born_parts":27,"mode":"collapse"},"fcr_0":{"maximum_surface_error_m":0.0000057774245760811,"release_seconds":0.51,"surface_samples":15587,"unmatched":0},"fcr_40":{"maximum_surface_error_m":0.0000057774245760811,"release_seconds":0.321692307692308,"surface_samples":15587,"unmatched":0},"variant":"A"},"passed":true}

@@ -7,6 +7,9 @@ const FieldMap = preload("res://scripts/field_map.gd")
 const PlayerVisual = preload("res://scripts/player_visual.gd")
 const ActorVisual = preload("res://scripts/actor_visual.gd")
 const AutomatonAssembly = preload("res://scripts/automaton_assembly.gd")
+const TurretAssembly = preload("res://scripts/turret_assembly.gd")
+const ShotgunCast = preload("res://scripts/shotgun_cast.gd")
+const ShotgunGeometry = preload("res://scripts/shotgun_geometry.gd")
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
@@ -42,6 +45,9 @@ var pending_cast: Dictionary = {}
 # A started motion waits here until its release point fires the effect.
 var windup: Dictionary = {}
 var automaton_assembly: Node3D
+var turret_assembly: Node3D
+var shotgun_assembly: Node3D
+var last_shotgun: Dictionary = {}
 var hold: Dictionary = {}
 # A held ground click keeps steering on its own, so skill presses never replace it.
 var move_hold: Dictionary = {}
@@ -189,6 +195,9 @@ func reset_arena() -> void:
 		if child.is_in_group("actor_corpses") or child.is_in_group("cast_assemblies"):
 			child.free()
 	automaton_assembly = null
+	turret_assembly = null
+	shotgun_assembly = null
+	last_shotgun.clear()
 	for id in enemies:
 		enemies[id].body.free()
 	enemies.clear()
@@ -730,9 +739,19 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	if cast.skill == "automaton":
 		windup.visual_duration = windup.release
 		automaton_assembly = AutomatonAssembly.new()
+		automaton_assembly.configure(str(config.automaton_node))
 		world.add_child(automaton_assembly)
 		automaton_assembly.position = map.grounded(automaton_spawn_position())
 		automaton_assembly.initialize(self)
+	elif cast.skill == "turret":
+		windup.visual_duration = windup.release
+		turret_assembly = TurretAssembly.new()
+		world.add_child(turret_assembly)
+		turret_assembly.position = map.grounded(point(snapshot.ground))
+		turret_assembly.initialize(self)
+	elif cast.skill == "shotgun":
+		windup.visual_duration = windup.release
+		begin_shotgun_visual(cast_target(cast))
 	player_model.look_at(player.position + cast_direction(cast))
 	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else "cast", seconds, float(skill.get("release_ratio", 1.0)))
 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
@@ -742,19 +761,34 @@ func tick_windup(dt: float) -> void:
 		return
 	windup.release -= dt
 	if is_instance_valid(automaton_assembly):
+		# The debug node selector can change mid-windup; match the actual release selection.
+		if automaton_assembly.appearance_node!=str(config.automaton_node):
+			var origin: Vector3=automaton_assembly.position
+			automaton_assembly.queue_free()
+			automaton_assembly=AutomatonAssembly.new()
+			automaton_assembly.configure(str(config.automaton_node))
+			world.add_child(automaton_assembly)
+			automaton_assembly.position=origin
+			automaton_assembly.initialize(self)
 		automaton_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if is_instance_valid(turret_assembly):
+		turret_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if is_instance_valid(shotgun_assembly):
+		var aim := {"target_enemy":windup.cursor.get("enemy_id"),"position":windup.cursor.get("ground")}
+		shotgun_assembly.global_transform = ShotgunGeometry.frame(self,cast_target(aim))
+		shotgun_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if windup.release > 0:
 		return
 	var started: Dictionary = windup
 	windup = {}
 	player_visual.mark_release()
 	if state.bindings[started.slot] != started.binding:
-		cancel_automaton_assembly("binding_changed")
+		cancel_summon_assemblies("binding_changed")
 		return
 	var cursor: Dictionary = started.cursor
 	if cursor.get("enemy_id") != null and not enemies.has(cursor.enemy_id):
 		if rules.skills[started.skill].get("targeting") != "direction":
-			cancel_automaton_assembly("target_lost")
+			cancel_summon_assemblies("target_lost")
 			show_message("대상이 사라졌습니다")
 			return
 		cursor.erase("enemy_id")
@@ -765,11 +799,11 @@ func tick_windup(dt: float) -> void:
 		# A whiff stays silent; the missing hit sound and effect tell it apart.
 		last_events = result.events
 		probe.record(last_events)
-		cancel_automaton_assembly("out_of_range")
+		cancel_summon_assemblies("out_of_range")
 		return
 	apply_transition(result)
 	# A failed recheck or LMB fallback must collapse its preview too.
-	cancel_automaton_assembly("release_failed")
+	cancel_summon_assemblies("release_failed")
 
 func automaton_spawn_position() -> Vector3:
 	# Casting and idle following share this anchor to avoid a step on release.
@@ -778,10 +812,42 @@ func automaton_spawn_position() -> Vector3:
 	pos.z = clampf(pos.z, map.bounds.position.y + 0.25, map.bounds.end.y - 0.25)
 	return map.snap(pos) if not map.walkable(pos) else pos
 
-func cancel_automaton_assembly(reason: String) -> void:
+func cancel_summon_assemblies(reason: String) -> void:
 	if is_instance_valid(automaton_assembly):
 		automaton_assembly.cancel(reason)
 	automaton_assembly = null
+	if is_instance_valid(turret_assembly):
+		turret_assembly.cancel(reason)
+	turret_assembly = null
+	if is_instance_valid(shotgun_assembly):
+		shotgun_assembly.cancel(reason)
+	shotgun_assembly = null
+
+func begin_shotgun_visual(target: Vector3) -> void:
+	shotgun_assembly=ShotgunCast.new()
+	world.add_child(shotgun_assembly)
+	shotgun_assembly.initialize(self)
+	shotgun_assembly.global_transform=ShotgunGeometry.frame(self,target)
+
+func fire_shotgun(target: Vector3) -> void:
+	var shot: Transform3D=ShotgunGeometry.frame(self,target)
+	if not is_instance_valid(shotgun_assembly): begin_shotgun_visual(target)
+	shotgun_assembly.fire(shot)
+	shotgun_assembly=null
+	var struck: Array[String]=[]
+	for id in enemies.keys():
+		if ShotgunGeometry.contains(self,shot,enemies[id].body):
+			struck.append(id)
+			strike(id,config.shot_damage,false,"witch","shotgun")
+	var endpoints: Array[Vector3]=ShotgunGeometry.traces(self,shot)
+	for end in endpoints:
+		var before_count := effects.size()
+		beam(shot.origin,end,Color(1.0,0.85,0.52),0.018)
+		if effects.size()>before_count:
+			effects[-1].life=0.08
+			effects[-1].node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	last_shotgun={"frame":shot,"origin":shot.origin,"direction":-shot.basis.z,"ends":endpoints,"struck":struck}
+	play_cue(0.65)
 
 func tick_move_hold() -> void:
 	# A held ground click steers movement; sweeping over enemies never starts an attack.
@@ -949,13 +1015,7 @@ func execute_cast(event: Dictionary) -> void:
 			elif best != "" and strike(best, damage, true, "witch", "staff") != "miss":
 				play_cue(1.2)
 		"shotgun":
-			for id in enemies.keys():
-				var delta: Vector3 = enemies[id].body.position - player.position
-				if delta.length() <= rules.skills.shotgun.range and delta.normalized().dot(direction) > 0.86 and map.sees(player.position, enemies[id].body.position):
-					strike(id, config.shot_damage, false, "witch", "shotgun")
-			for angle in [-0.34, -0.17, 0, 0.17, 0.34]:
-				beam(player.position + Vector3.UP, player.position + direction.rotated(Vector3.UP, angle) * rules.skills.shotgun.range + Vector3.UP, BRASS)
-			play_cue(0.65)
+			fire_shotgun(target)
 		"bolt_cutter", "grinder", "chainsaw": pulse(player.position, TOOL_COLORS[event.skill], 0.8)
 		"shield":
 			shield_time = float(rules.skills.shield.duration_seconds)
@@ -967,7 +1027,13 @@ func execute_cast(event: Dictionary) -> void:
 				automaton_assembly.complete()
 				automaton_assembly = null
 			spawn_ally(pos, true, event.get("target_enemy", ""))
-		"turret": spawn_ally(point(event.position), false, "")
+		"turret":
+			var pos := point(event.position)
+			if is_instance_valid(turret_assembly):
+				pos = turret_assembly.position
+				turret_assembly.complete()
+				turret_assembly = null
+			spawn_ally(pos, false, "")
 		"relay":
 			for ally in allies:
 				if eligible(ally, event.target_enemy):
@@ -1198,7 +1264,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 	play_cue(0.75)
 	if stunned:
 		# Hit recovery cancels the motion, approach, click move and queued input; nothing was spent yet.
-		cancel_automaton_assembly("hit_stun")
+		cancel_summon_assemblies("hit_stun")
 		windup.clear()
 		cancel_pending_cast()
 		queued_input.clear()
@@ -1208,7 +1274,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		action_time = stun_time
 		player_visual.hit_react(stun_time)
 	if hp == 0:
-		cancel_automaton_assembly("death")
+		cancel_summon_assemblies("death")
 		probe.counts.deaths += 1
 		save_mana_log("death")
 		cancel_pending_cast()
@@ -1225,7 +1291,7 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	var node = Node3D.new()
 	world.add_child(node)
 	node.position = map.grounded(pos)
-	ActorVisual.create(node, "automaton" if mobile else "turret")
+	ActorVisual.create(node, "automaton" if mobile else "turret", str(config.automaton_node) if mobile else "base", float(config.summon_lifetime))
 	Shape.ring(node, Vector3(0, 0.04, 0), 0.43, TEAL)
 	var durability: float = config.automaton_hp if mobile else config.turret_hp
 	# The automaton keeps the node it was summoned with; B never times out but only so many stay.
@@ -1284,7 +1350,7 @@ func _physics_process(dt: float) -> void:
 		return
 	sync_automaton_cost()
 	if not paused and field_cleared():
-		cancel_automaton_assembly("field_cleared")
+		cancel_summon_assemblies("field_cleared")
 	var visual_start_position := player.position
 	if not paused and hp > 0 and not field_cleared():
 		elapsed += dt
@@ -1339,7 +1405,7 @@ func _physics_process(dt: float) -> void:
 			ally.node.position.y = map.ground_y(ally.node.position)
 			var art: Node = ally.node.get_node_or_null("ActorVisual")
 			if art != null:
-				art.sync_ally(ally, dt)
+				art.sync_ally(ally, dt, ally.node.position.distance_to(enemies[ally.target].body.position) if enemies.has(ally.target) else INF)
 	player_visual.set_active_tool(state.active_tool)
 	for id in tool_rings:
 		tool_rings[id].visible = state.active_tool == id
@@ -1770,7 +1836,8 @@ func _tick_allies(dt: float) -> void:
 			if art != null:
 				art.preview_shot(ally)
 				shot_origin = art.muzzle_position()
-			beam(shot_origin, target + Vector3.UP * 0.8, TEAL, 0.065)
+			if not (ally.mobile and ally.node_kind=="B"):
+				beam(shot_origin, target + Vector3.UP * 0.8, TEAL, 0.065)
 			var damage: float = config.summon_damage * (float(config.automaton_nodes.B.damage_factor) if ally.node_kind == "B" else 1.0)
 			strike(ally.target, damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret")
 			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown

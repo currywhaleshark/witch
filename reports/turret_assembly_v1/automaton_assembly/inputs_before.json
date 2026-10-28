@@ -1,0 +1,12 @@
+{
+  "game/scripts/turret_assembly.gd": "ea1b33b1dfeda6c34b29dbddab5f22f2603512055d20ea498061dace37778052",
+  "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+  "game/tests/automaton_assembly.gd": "85089cc3990e63744869454f5661e9d3b2b84c8927e953cc9b944d14f4dbec02",
+  "game/data/trial.json": "13456789b47d9756bfe2b88f996dc3a934d76ff475ef83963b0baf412bc04a3e",
+  "game/scripts/actor_visual.gd": "8a7f3a978114e0774bfe11e21bac385bb677a9cbed19e98b0cabc8e272289745",
+  "game/scripts/summon_assembly.gd": "079e43751d4fdfb37de32b0cc6e9e1d32f47a319d6391192c71b4338cc2b7722",
+  "game/scripts/automaton_assembly.gd": "9fbb5bad060193c7afe1884c892cb41b42cc905fbfef2e1d6938cedc9ed4297a",
+  "game/scripts/player_visual.gd": "09d7a15d147303dfa08490e08e3f015f326ea19106f99a0935458223e5eac470",
+  "game/tests/review_turret_assembly.gd": "4af511c253a359540061e9024a5bee91b0c9edb3b13cf6bdce0fc8f9352cfd89",
+  "game/scripts/arena.gd": "9a4b6a226afc0d26250f647d695c11cb0d5a38cd407c2d527aa4aa9593fed958"
+}

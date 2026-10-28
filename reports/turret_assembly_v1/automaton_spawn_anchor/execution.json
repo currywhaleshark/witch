@@ -1,0 +1,8 @@
+{
+  "test": "automaton_spawn_anchor",
+  "exit_code": 0,
+  "stderr_empty": true,
+  "workspace_cache_diagnostic_only": false,
+  "changed_inputs": [],
+  "phase": "test"
+}

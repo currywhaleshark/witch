@@ -1,0 +1,8 @@
+{
+  "stderr_empty": true,
+  "test": "automaton_assembly",
+  "changed_inputs": [],
+  "workspace_cache_diagnostic_only": false,
+  "phase": "test",
+  "exit_code": 0
+}

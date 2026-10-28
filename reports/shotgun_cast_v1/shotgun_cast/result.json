@@ -1,0 +1,17 @@
+{
+  "checks": 305,
+  "failures": [],
+  "metrics": {
+    "fcr_0": {
+      "origin": "(0.62, 1.12, 0.52)",
+      "release_seconds": 0.125,
+      "triangles": 8732
+    },
+    "fcr_40": {
+      "origin": "(0.62, 1.12, 0.52)",
+      "release_seconds": 0.0788461538461538,
+      "triangles": 8732
+    }
+  },
+  "passed": true
+}

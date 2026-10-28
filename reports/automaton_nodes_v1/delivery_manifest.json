@@ -1,0 +1,432 @@
+{
+  "version": "automaton_nodes_v1",
+  "passed": true,
+  "user_art_approved": false,
+  "checks": {
+    "automaton_variant_a": {
+      "passed": true,
+      "checks": 675,
+      "result": "automaton_variant_a/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "automaton_variant_a",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      },
+      "metrics": {
+        "cancel_15": {
+          "born_parts": 5,
+          "mode": "collapse"
+        },
+        "cancel_50": {
+          "born_parts": 18,
+          "mode": "collapse"
+        },
+        "cancel_85": {
+          "born_parts": 27,
+          "mode": "collapse"
+        },
+        "fcr_0": {
+          "maximum_surface_error_m": 5.7774245760811e-06,
+          "release_seconds": 0.51,
+          "surface_samples": 15587,
+          "unmatched": 0
+        },
+        "fcr_40": {
+          "maximum_surface_error_m": 5.7774245760811e-06,
+          "release_seconds": 0.321692307692308,
+          "surface_samples": 15587,
+          "unmatched": 0
+        },
+        "variant": "A"
+      }
+    },
+    "automaton_variant_b": {
+      "passed": true,
+      "checks": 615,
+      "result": "automaton_variant_b/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "automaton_variant_b",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      },
+      "metrics": {
+        "cancel_15": {
+          "born_parts": 7,
+          "mode": "collapse"
+        },
+        "cancel_50": {
+          "born_parts": 20,
+          "mode": "collapse"
+        },
+        "cancel_85": {
+          "born_parts": 21,
+          "mode": "collapse"
+        },
+        "fcr_0": {
+          "maximum_surface_error_m": 4.86326052850927e-06,
+          "release_seconds": 0.51,
+          "surface_samples": 18283,
+          "unmatched": 0
+        },
+        "fcr_40": {
+          "maximum_surface_error_m": 4.86326052850927e-06,
+          "release_seconds": 0.321692307692308,
+          "surface_samples": 18283,
+          "unmatched": 0
+        },
+        "variant": "B"
+      }
+    },
+    "automaton_assembly": {
+      "passed": true,
+      "checks": 405,
+      "result": "automaton_assembly/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "automaton_assembly",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      },
+      "metrics": {
+        "cancel_15": {
+          "born_parts": 5,
+          "mode": "collapse"
+        },
+        "cancel_50": {
+          "born_parts": 12,
+          "mode": "collapse"
+        },
+        "cancel_85": {
+          "born_parts": 13,
+          "mode": "collapse"
+        },
+        "fcr_0": {
+          "maximum_surface_error_m": 2.08701385417953e-06,
+          "release_seconds": 0.51,
+          "surface_samples": 14585,
+          "unmatched": 0
+        },
+        "fcr_40": {
+          "maximum_surface_error_m": 2.08701385417953e-06,
+          "release_seconds": 0.321692307692308,
+          "surface_samples": 14585,
+          "unmatched": 0
+        }
+      }
+    },
+    "turret_assembly": {
+      "passed": true,
+      "checks": 2371,
+      "result": "turret_assembly/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "turret_assembly",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      },
+      "metrics": {
+        "anchors": [
+          {
+            "fcr": 0.0,
+            "fps": 30.0,
+            "maximum_drift_m": 0.0
+          },
+          {
+            "fcr": 40.0,
+            "fps": 30.0,
+            "maximum_drift_m": 0.0
+          },
+          {
+            "fcr": 0.0,
+            "fps": 60.0,
+            "maximum_drift_m": 0.0
+          },
+          {
+            "fcr": 40.0,
+            "fps": 60.0,
+            "maximum_drift_m": 0.0
+          }
+        ],
+        "cancel_15": {
+          "born_parts": 43,
+          "mode": "collapse"
+        },
+        "cancel_50": {
+          "born_parts": 80,
+          "mode": "collapse"
+        },
+        "cancel_85": {
+          "born_parts": 86,
+          "mode": "collapse"
+        },
+        "fcr_0": {
+          "maximum_surface_error_m": 7.45802753954194e-06,
+          "release_seconds": 0.51,
+          "surface_samples": 24333,
+          "unmatched": 0
+        },
+        "fcr_40": {
+          "maximum_surface_error_m": 7.45802753954194e-06,
+          "release_seconds": 0.321692307692308,
+          "surface_samples": 24333,
+          "unmatched": 0
+        }
+      }
+    },
+    "automaton_node_art_regression": {
+      "passed": true,
+      "checks": 15,
+      "result": "automaton_node_art_regression/result.json",
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "test": "automaton_node_art_regression",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      }
+    },
+    "gpu_capture": {
+      "passed": true,
+      "captures": 610,
+      "sequences": 9,
+      "lineup_stills": 1,
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": false,
+        "test": "automaton_variants",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": true,
+        "phase": "review"
+      },
+      "time_scale_note": "a_fuse advances simulation at 6x; other sequences are 1x."
+    },
+    "automaton_a.glb": {
+      "passed": true,
+      "triangles": 10583,
+      "meshes": 15,
+      "materials": 5,
+      "bones": 40,
+      "clips": 6,
+      "weighted_vertices": 15589,
+      "maximum_influences": 1
+    },
+    "automaton_a_parts.glb": {
+      "passed": true,
+      "triangles": 10583,
+      "meshes": 27,
+      "materials": 5,
+      "rigid_parts": 27
+    },
+    "automaton_b.glb": {
+      "passed": true,
+      "triangles": 11827,
+      "meshes": 9,
+      "materials": 4,
+      "bones": 34,
+      "clips": 6,
+      "weighted_vertices": 18277,
+      "maximum_influences": 1
+    },
+    "automaton_b_parts.glb": {
+      "passed": true,
+      "triangles": 11827,
+      "meshes": 21,
+      "materials": 4,
+      "rigid_parts": 21
+    }
+  },
+  "runtime_assertions": 4081,
+  "base_commit": "85803170c8d9e117983d470e98240a64abd1b700",
+  "files": [
+    {
+      "path": "assets/actors/automaton_nodes_v1/exports/automaton_a.glb",
+      "sha256": "fccb3bce9529a5456112ccc0c21513a5c718113dbf2c04a3baa24f6dbac06d66",
+      "bytes": 4672244
+    },
+    {
+      "path": "game/assets/actors/automaton_nodes_v1/automaton_a.glb",
+      "sha256": "fccb3bce9529a5456112ccc0c21513a5c718113dbf2c04a3baa24f6dbac06d66",
+      "bytes": 4672244
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/exports/automaton_a_parts.glb",
+      "sha256": "df328e89a2014bfcd295246e9508d17fc70d8553f027aed078bf2bc792db5009",
+      "bytes": 4041724
+    },
+    {
+      "path": "game/assets/actors/automaton_nodes_v1/automaton_a_parts.glb",
+      "sha256": "df328e89a2014bfcd295246e9508d17fc70d8553f027aed078bf2bc792db5009",
+      "bytes": 4041724
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/automaton_a.json",
+      "sha256": "98b63ae927d6e58ebaa04fe57eb59537f81c282c776fcf7c557ab9456920b9d0",
+      "bytes": 4212
+    },
+    {
+      "path": "game/assets/actors/automaton_nodes_v1/automaton_a.json",
+      "sha256": "98b63ae927d6e58ebaa04fe57eb59537f81c282c776fcf7c557ab9456920b9d0",
+      "bytes": 4212
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/authoring/automaton_a.blend",
+      "sha256": "ccdc128f85469e3829cc5aa8cd2800144dd9106b2e7792aa499a996ffb08a4be",
+      "bytes": 4915525
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/exports/automaton_b.glb",
+      "sha256": "c2f273d35f42717557f22799873edd86aa444db3d33784c7b5482674739776ee",
+      "bytes": 4762712
+    },
+    {
+      "path": "game/assets/actors/automaton_nodes_v1/automaton_b.glb",
+      "sha256": "c2f273d35f42717557f22799873edd86aa444db3d33784c7b5482674739776ee",
+      "bytes": 4762712
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/exports/automaton_b_parts.glb",
+      "sha256": "9741fb10883c48ae8f5ee90ab5543a87d095908518dbc136a450faed32839614",
+      "bytes": 4129812
+    },
+    {
+      "path": "game/assets/actors/automaton_nodes_v1/automaton_b_parts.glb",
+      "sha256": "9741fb10883c48ae8f5ee90ab5543a87d095908518dbc136a450faed32839614",
+      "bytes": 4129812
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/automaton_b.json",
+      "sha256": "e15728dc831e1a0f42ed5b136e5b0c6151c8325be44ccb8aa6af4f4675164125",
+      "bytes": 2464
+    },
+    {
+      "path": "game/assets/actors/automaton_nodes_v1/automaton_b.json",
+      "sha256": "e15728dc831e1a0f42ed5b136e5b0c6151c8325be44ccb8aa6af4f4675164125",
+      "bytes": 2464
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/authoring/automaton_b.blend",
+      "sha256": "5ea5f7646123e83fc58ac9f7741151492594720c5fe538c1e6c3cd5d9dfff350",
+      "bytes": 4846244
+    },
+    {
+      "path": "game/scripts/actor_visual.gd",
+      "sha256": "9e83a2e468be154013b2e5be0d9037b2a1c795ebc163e60378460a55b42428b8",
+      "bytes": 11595
+    },
+    {
+      "path": "game/scripts/automaton_node_effects.gd",
+      "sha256": "abc10d91699e9ec65dd4a06bf509291a45580d3ec671173d382ea49607cd3c8e",
+      "bytes": 4408
+    },
+    {
+      "path": "game/scripts/automaton_assembly.gd",
+      "sha256": "a3e35dc2e18180c07da30c24302b460bc3a1057e8ffb8fed62706c5277516541",
+      "bytes": 1273
+    },
+    {
+      "path": "game/scripts/summon_assembly.gd",
+      "sha256": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+      "bytes": 8608
+    },
+    {
+      "path": "game/scripts/turret_assembly.gd",
+      "sha256": "ea1b33b1dfeda6c34b29dbddab5f22f2603512055d20ea498061dace37778052",
+      "bytes": 2371
+    },
+    {
+      "path": "game/scripts/arena.gd",
+      "sha256": "5dfb06edbd19dcd0547325ff5ba61d9ddf4e225eadada0cef8239e67b17c00b0",
+      "bytes": 79655
+    },
+    {
+      "path": "game/data/trial.json",
+      "sha256": "92fee71521ad523635e22a7eaf90c7b10954780aa9320ee08fffd8593d7fe404",
+      "bytes": 9570
+    },
+    {
+      "path": "game/scripts/hud.gd",
+      "sha256": "82f869ccbf240d8f0b8f8b1ec78c2a5abe63236f9b70d398e296184d71d67fc2",
+      "bytes": 16528
+    },
+    {
+      "path": "game/scripts/player_visual.gd",
+      "sha256": "09d7a15d147303dfa08490e08e3f015f326ea19106f99a0935458223e5eac470",
+      "bytes": 16500
+    },
+    {
+      "path": "game/tests/automaton_variants.gd",
+      "sha256": "0ca556e2efc74eb912e72be79e91b7bf2949502d821b1e072eb9e67ec085c366",
+      "bytes": 11996
+    },
+    {
+      "path": "game/tests/review_automaton_variants.gd",
+      "sha256": "986abce2418307741dd6f93267c2c46fdda4e5211cc35a6683a3c7bfa4112efd",
+      "bytes": 6377
+    },
+    {
+      "path": "game/tests/automaton_variant_a.gd",
+      "sha256": "c3c3a9b2f1c50b4f9d79068cd5c5110336e8acff20d05849c8b28675bd0544a8",
+      "bytes": 90
+    },
+    {
+      "path": "game/tests/automaton_variant_b.gd",
+      "sha256": "c735b908d8c159b23a5de46ecf1c3276a42c14c51a5ff3552d290fab560dc675",
+      "bytes": 90
+    },
+    {
+      "path": "game/tests/automaton_node.gd",
+      "sha256": "ba28d1383054923e54885c7f436dcb24fdba3b6b12b3560464093835f4eabd59",
+      "bytes": 6679
+    },
+    {
+      "path": "game/tests/automaton_node_art_regression.gd",
+      "sha256": "5508e6264c1ce12e0e888beebf86c23f0f84c88f6054fc8a5fa1113f47a22922",
+      "bytes": 6862
+    },
+    {
+      "path": "tools/build_automaton_nodes_v1.py",
+      "sha256": "3b59c7565c73a0b95b8c89eca1d23d4b4372e153ca27eb640a9b2b0d2e8e9d6f",
+      "bytes": 13672
+    },
+    {
+      "path": "tools/run_automaton_nodes_v1.ps1",
+      "sha256": "383a0b1b3e75ffafa7bc824b34087b16547dccf2f37605ffd1ea8855ef9cf2bf",
+      "bytes": 4556
+    },
+    {
+      "path": "tools/package_automaton_nodes_v1.py",
+      "sha256": "4d49af92c5d0ce374f852de3859fe8d5c92e65bf2b76e69d61dd7c9114e01041",
+      "bytes": 16681
+    }
+  ],
+  "scope": "A copper charge and burning fuse; B reinforced teal/brass armor and rotating saw. Existing node combat behavior, accepted base automaton and turret are preserved.",
+  "controls": {
+    "node": "N",
+    "summon": "W"
+  },
+  "source": {
+    "path": "assets/actors/summons_v2/authoring/automaton_v2.blend",
+    "sha256": "3984623532d7b4f64e2276681aa5bb07f7b1196f5bf07f98f60a3556a582b074",
+    "unchanged": true
+  },
+  "limits": [
+    "Appearance follows the concurrent node rules, including B durability/damage multipliers; art introduces no additional bonuses.",
+    "Fuse consumption follows lifetime/approach as anticipation; arena owns the actual explosion trigger.",
+    "Additional debris uses baked floor trajectories, not live inter-part/wall collision.",
+    "This review has no audio; gameplay reuses the existing mechanical cues.",
+    "Level-dependent appearance is deferred at the user request.",
+    "First integrated art candidates; no final art or performance-budget approval.",
+    "Tests run against the combined checkout including the concurrent node implementation; per-run hashes are retained."
+  ]
+}

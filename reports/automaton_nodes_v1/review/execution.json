@@ -1,0 +1,10 @@
+﻿{
+    "exit_code":  0,
+    "stderr_empty":  false,
+    "test":  "automaton_variants",
+    "changed_inputs":  [
+
+                       ],
+    "workspace_cache_diagnostic_only":  true,
+    "phase":  "review"
+}

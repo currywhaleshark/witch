@@ -1,0 +1,93 @@
+00:06.328  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\actors\turret_assembly_v1\authoring\turret_parts.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.1\5.1\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+01:25:06 | INFO: Starting glTF 2.0 export
+01:25:06 | INFO: Extracting primitive: meshes[0].001
+01:25:06 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].088
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].089
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].090
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].091
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].092
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].093
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].094
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].095
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].096
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].097
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].098
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].099
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].100
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].101
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].102
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].103
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].104
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].105
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].106
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].107
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].108
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].109
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].110
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].111
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].112
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].113
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].114
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].115
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].116
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].117
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].118
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].119
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].120
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].121
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].122
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].123
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].124
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].125
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Extracting primitive: meshes[0].126
+01:25:06 | INFO: Primitives created: 1
+01:25:06 | INFO: Finished glTF 2.0 export in 0.7279887199401855 s
+00:08.766  image.write      | ERROR OpenImageIO write failed: Could not open file "C:\Users\yurib\.thumbnails\large\blender_20572_25bf7ac9b6789041601a81899a5febcc.png.png"
+
+Info: No new files have been packed
+Info: Saved as "shotgun_parts.blend"
+SHOTGUN_PARTS_COMPLETE 40 8732
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

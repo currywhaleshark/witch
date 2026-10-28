@@ -1,0 +1,167 @@
+{
+  "version": "turret_assembly_v1",
+  "passed": true,
+  "user_art_approved": false,
+  "checks": {
+    "turret_assembly": {
+      "passed": true,
+      "checks": 2371,
+      "result": "reports/turret_assembly_v1/turret_assembly/result.json",
+      "execution": {
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "changed_inputs": [],
+        "test": "turret_assembly",
+        "phase": "test",
+        "exit_code": 0
+      }
+    },
+    "automaton_assembly": {
+      "passed": true,
+      "checks": 405,
+      "result": "reports/turret_assembly_v1/automaton_assembly/result.json",
+      "execution": {
+        "stderr_empty": true,
+        "test": "automaton_assembly",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test",
+        "exit_code": 0
+      }
+    },
+    "automaton_spawn_anchor": {
+      "passed": true,
+      "checks": 20,
+      "result": "reports/turret_assembly_v1/automaton_spawn_anchor/result.json",
+      "execution": {
+        "test": "automaton_spawn_anchor",
+        "exit_code": 0,
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "changed_inputs": [],
+        "phase": "test"
+      }
+    },
+    "gpu_capture": {
+      "passed": true,
+      "captures": 370,
+      "sequences": 7,
+      "execution": {
+        "changed_inputs": [],
+        "phase": "review",
+        "workspace_cache_diagnostic_only": true,
+        "exit_code": 0,
+        "stderr_empty": false,
+        "test": "turret_assembly"
+      }
+    },
+    "static_parts": {
+      "passed": true,
+      "meshes": 86,
+      "triangles": 17556,
+      "materials": 1,
+      "source_unchanged": true
+    }
+  },
+  "base_commit": "85803170c8d9e117983d470e98240a64abd1b700",
+  "files": [
+    {
+      "path": "assets/actors/turret_assembly_v1/parts.json",
+      "sha256": "d350adc65be85833ff197cc0dca1968ec26255b7a2cb556893ae7b7e0a6293bd",
+      "bytes": 33668
+    },
+    {
+      "path": "assets/actors/turret_assembly_v1/authoring/turret_parts.blend",
+      "sha256": "46721bdbebec5ae0dcea6fb2af06b680c9a749789ef72f4fbba631bee449e462",
+      "bytes": 4953041
+    },
+    {
+      "path": "assets/actors/turret_assembly_v1/exports/turret_parts.glb",
+      "sha256": "f799887c350be5714662359d66c5eee444a8318d6b033b89da92e028082e310e",
+      "bytes": 4923212
+    },
+    {
+      "path": "game/assets/actors/turret_assembly_v1/turret_parts.glb",
+      "sha256": "f799887c350be5714662359d66c5eee444a8318d6b033b89da92e028082e310e",
+      "bytes": 4923212
+    },
+    {
+      "path": "game/scripts/summon_assembly.gd",
+      "sha256": "079e43751d4fdfb37de32b0cc6e9e1d32f47a319d6391192c71b4338cc2b7722",
+      "bytes": 8461
+    },
+    {
+      "path": "game/scripts/turret_assembly.gd",
+      "sha256": "ea1b33b1dfeda6c34b29dbddab5f22f2603512055d20ea498061dace37778052",
+      "bytes": 2371
+    },
+    {
+      "path": "game/scripts/automaton_assembly.gd",
+      "sha256": "9fbb5bad060193c7afe1884c892cb41b42cc905fbfef2e1d6938cedc9ed4297a",
+      "bytes": 551
+    },
+    {
+      "path": "game/scripts/arena.gd",
+      "sha256": "9a4b6a226afc0d26250f647d695c11cb0d5a38cd407c2d527aa4aa9593fed958",
+      "bytes": 78684
+    },
+    {
+      "path": "game/data/trial.json",
+      "sha256": "13456789b47d9756bfe2b88f996dc3a934d76ff475ef83963b0baf412bc04a3e",
+      "bytes": 9529
+    },
+    {
+      "path": "game/scripts/player_visual.gd",
+      "sha256": "09d7a15d147303dfa08490e08e3f015f326ea19106f99a0935458223e5eac470",
+      "bytes": 16500
+    },
+    {
+      "path": "game/scripts/actor_visual.gd",
+      "sha256": "8a7f3a978114e0774bfe11e21bac385bb677a9cbed19e98b0cabc8e272289745",
+      "bytes": 10304
+    },
+    {
+      "path": "game/audio/mechanical_impact.wav",
+      "sha256": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+      "bytes": 80304
+    },
+    {
+      "path": "game/tests/turret_assembly.gd",
+      "sha256": "e4285eaae6002443e2cdacc253b597bc5dbe486da46548384d5a3d561d69a295",
+      "bytes": 12067
+    },
+    {
+      "path": "game/tests/automaton_assembly.gd",
+      "sha256": "85089cc3990e63744869454f5661e9d3b2b84c8927e953cc9b944d14f4dbec02",
+      "bytes": 9278
+    },
+    {
+      "path": "game/tests/automaton_spawn_anchor.gd",
+      "sha256": "e57ebed5324b5f0f1275318f2c7b0d95ecd7e1eec897f15ecbbaae33556770d7",
+      "bytes": 3216
+    },
+    {
+      "path": "game/tests/review_turret_assembly.gd",
+      "sha256": "4af511c253a359540061e9024a5bee91b0c9edb3b13cf6bdce0fc8f9352cfd89",
+      "bytes": 4594
+    }
+  ],
+  "scope": "Turret cast assembly at the captured cursor-ground location. Existing timing/cost/cooldown and accepted v2 summon preserved; automaton assembly now shares the presentation implementation.",
+  "placement": {
+    "maximum_drift_m": 0.0,
+    "physics_rates": [
+      30,
+      60
+    ],
+    "fcr_scores": [
+      0,
+      40
+    ]
+  },
+  "limits": [
+    "Fixed-step cosmetic gravity with local floor support, not RigidBody inter-part/wall collision.",
+    "86 static part meshes during casting; final performance budget not approved.",
+    "Review is silent renderer captures; existing mechanical cue is connected in the game.",
+    "Concurrent automaton A/B changes are preserved. This task edits presentation; per-run input hashes identify the combined tested checkout."
+  ]
+}

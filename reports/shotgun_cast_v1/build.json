@@ -1,0 +1,268 @@
+{
+  "source": "assets/actors/turret_assembly_v1/authoring/turret_parts.blend",
+  "source_sha256": "46721bdbebec5ae0dcea6fb2af06b680c9a749789ef72f4fbba631bee449e462",
+  "source_unchanged": true,
+  "parts": [
+    {
+      "name": "part_000",
+      "source_parent": "drive_gear",
+      "delay": 0.16,
+      "triangles": 1018
+    },
+    {
+      "name": "part_001",
+      "source_parent": "barrel",
+      "delay": 0.375,
+      "triangles": 566
+    },
+    {
+      "name": "part_003",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 1524
+    },
+    {
+      "name": "part_004",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 536
+    },
+    {
+      "name": "part_013",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 312
+    },
+    {
+      "name": "part_016",
+      "source_parent": "key",
+      "delay": 0.255,
+      "triangles": 282
+    },
+    {
+      "name": "part_017",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 437
+    },
+    {
+      "name": "part_018",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 360
+    },
+    {
+      "name": "part_019",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 198
+    },
+    {
+      "name": "part_023",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 131
+    },
+    {
+      "name": "part_025",
+      "source_parent": "key",
+      "delay": 0.255,
+      "triangles": 312
+    },
+    {
+      "name": "part_026",
+      "source_parent": "key",
+      "delay": 0.28,
+      "triangles": 254
+    },
+    {
+      "name": "part_027",
+      "source_parent": "key",
+      "delay": 0.23,
+      "triangles": 208
+    },
+    {
+      "name": "part_028",
+      "source_parent": "barrel",
+      "delay": 0.375,
+      "triangles": 58
+    },
+    {
+      "name": "part_030",
+      "source_parent": "key",
+      "delay": 0.23,
+      "triangles": 308
+    },
+    {
+      "name": "part_039",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 204
+    },
+    {
+      "name": "part_040",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 92
+    },
+    {
+      "name": "part_043",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 124
+    },
+    {
+      "name": "part_045",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 130
+    },
+    {
+      "name": "part_048",
+      "source_parent": "barrel",
+      "delay": 0.35,
+      "triangles": 66
+    },
+    {
+      "name": "part_051",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 112
+    },
+    {
+      "name": "part_052",
+      "source_parent": "barrel",
+      "delay": 0.375,
+      "triangles": 256
+    },
+    {
+      "name": "part_053",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 92
+    },
+    {
+      "name": "part_054",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 104
+    },
+    {
+      "name": "part_055",
+      "source_parent": "key",
+      "delay": 0.255,
+      "triangles": 148
+    },
+    {
+      "name": "part_061",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 72
+    },
+    {
+      "name": "part_065",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 64
+    },
+    {
+      "name": "part_069",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 68
+    },
+    {
+      "name": "part_070",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 48
+    },
+    {
+      "name": "part_071",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 44
+    },
+    {
+      "name": "part_073",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 32
+    },
+    {
+      "name": "part_074",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 316
+    },
+    {
+      "name": "part_075",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 36
+    },
+    {
+      "name": "part_076",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 38
+    },
+    {
+      "name": "part_077",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 24
+    },
+    {
+      "name": "part_078",
+      "source_parent": "carriage",
+      "delay": 0.02,
+      "triangles": 24
+    },
+    {
+      "name": "part_079",
+      "source_parent": "barrel",
+      "delay": 0.375,
+      "triangles": 34
+    },
+    {
+      "name": "part_083",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 40
+    },
+    {
+      "name": "part_085",
+      "source_parent": "carriage",
+      "delay": 0.045,
+      "triangles": 28
+    },
+    {
+      "name": "part_086",
+      "source_parent": "carriage",
+      "delay": 0.07,
+      "triangles": 32
+    }
+  ],
+  "part_count": 40,
+  "triangles": 8732,
+  "scale_from_turret": 0.72,
+  "muzzle_local": [
+    0,
+    0,
+    0
+  ],
+  "forward_local": [
+    0,
+    0,
+    -1
+  ],
+  "export_sha256": "acf01aec9b52d3a8cbcac11f068ebc8745561efc830556ed296455022f095a33",
+  "placement": {
+    "forward_m": 0.62,
+    "side_m": 0.52,
+    "height_m": 1.12,
+    "near_distance_m": 1.8
+  },
+  "method": "Selected upper carriage/barrel/gear/key surfaces, no legs or turntable. Original UV/PBR atlas retained; uniform 0.72 scale and muzzle-origin translation only."
+}

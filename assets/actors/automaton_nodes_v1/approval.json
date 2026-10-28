@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-29",
+  "user_quote": "좋아",
+  "scope": "Current prototype A copper-charge/burning-fuse and B armored-saw appearances, assembly/cancel-collapse and combat presentation selected before the shotgun request.",
+  "not_covered": [
+    "Level-dependent appearance remains deferred.",
+    "No arbitrary-pose/contact or final performance-budget approval."
+  ],
+  "files": [
+    {
+      "path": "assets/actors/automaton_nodes_v1/exports/automaton_a.glb",
+      "sha256": "fccb3bce9529a5456112ccc0c21513a5c718113dbf2c04a3baa24f6dbac06d66"
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/exports/automaton_b.glb",
+      "sha256": "c2f273d35f42717557f22799873edd86aa444db3d33784c7b5482674739776ee"
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/exports/automaton_a_parts.glb",
+      "sha256": "df328e89a2014bfcd295246e9508d17fc70d8553f027aed078bf2bc792db5009"
+    },
+    {
+      "path": "assets/actors/automaton_nodes_v1/exports/automaton_b_parts.glb",
+      "sha256": "9741fb10883c48ae8f5ee90ab5543a87d095908518dbc136a450faed32839614"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+C:\Users\yurib\Documents\New project\witch\tools\build_automaton_nodes_v1.py:16: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.use_nodes=True

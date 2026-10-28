@@ -1,0 +1,13 @@
+﻿{
+    "game/scripts/shotgun_geometry.gd":  "12e04bfc9dd0888eb2334d6a7c279e01b17e837d63f16eb77669ca441c98b27b",
+    "game/scripts/combat_rules.gd":  "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+    "game/tests/shotgun_cast.gd":  "b6c8c7e7c4ece5e0a938dcfd3412e2044a5949ae05e63c69aa663f7ab457f678",
+    "game/scripts/actor_visual.gd":  "9e83a2e468be154013b2e5be0d9037b2a1c795ebc163e60378460a55b42428b8",
+    "game/scripts/player_visual.gd":  "09d7a15d147303dfa08490e08e3f015f326ea19106f99a0935458223e5eac470",
+    "game/scripts/shotgun_cast.gd":  "19782625e8b20ae859fcb7fd9bdc1e18169b4ca240418b2b0a4646ae545265f6",
+    "game/scripts/arena.gd":  "5f57619dae0d5fbf8e5d425d5fb72b18eb32760799060fb7b69b3fc595fe57c0",
+    "game/scripts/turret_assembly.gd":  "ea1b33b1dfeda6c34b29dbddab5f22f2603512055d20ea498061dace37778052",
+    "game/data/trial.json":  "1b33a710389cf1d77bb8142d239da62d1595cd10d5130c8d1aa5236cc243349d",
+    "game/scripts/automaton_assembly.gd":  "a3e35dc2e18180c07da30c24302b460bc3a1057e8ffb8fed62706c5277516541",
+    "game/scripts/summon_assembly.gd":  "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d"
+}

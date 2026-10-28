@@ -1,0 +1,10 @@
+﻿{
+    "exit_code":  0,
+    "stderr_empty":  true,
+    "test":  "approach_cast",
+    "changed_inputs":  [
+
+                       ],
+    "workspace_cache_diagnostic_only":  false,
+    "phase":  "test"
+}

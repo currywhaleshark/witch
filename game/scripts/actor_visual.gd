@@ -1,6 +1,9 @@
 extends Node3D
 ## Presentation only: the arena owns targets, clocks, movement, hits and summon lifetime.
+const NodeEffects = preload("res://scripts/automaton_node_effects.gd")
 const FILES := {
+	"automaton_A": "res://assets/actors/automaton_nodes_v1/automaton_a.glb",
+	"automaton_B": "res://assets/actors/automaton_nodes_v1/automaton_b.glb",
 	"rag": "res://assets/actors/combat_set_v1/rag_v1.glb",
 	"crow": "res://assets/actors/combat_set_v1/crow_v1.glb",
 	"brute": "res://assets/actors/combat_set_v1/brute_v1.glb",
@@ -10,6 +13,8 @@ const FILES := {
 }
 static var _scenes: Dictionary = {}
 var kind := ""
+var appearance_node := "base"
+var _node_effects: Node3D
 var loaded_ok := false
 var player: AnimationPlayer
 var skeleton: Skeleton3D
@@ -35,19 +40,21 @@ var _death_start_pose: Array[Transform3D] = []
 var _blast_flash: MeshInstance3D
 var _blast_sparks: Array[MeshInstance3D] = []
 
-static func create(parent: Node3D, actor_kind: String) -> Node3D:
-	if not FILES.has(actor_kind):
+static func create(parent: Node3D, actor_kind: String, node_kind: String = "base", total_life: float = 1.0) -> Node3D:
+	var asset_key := actor_kind+"_"+node_kind if actor_kind=="automaton" and node_kind in ["A","B"] else actor_kind
+	if not FILES.has(asset_key):
 		return null
-	if not _scenes.has(actor_kind):
-		_scenes[actor_kind] = load(FILES[actor_kind])
-	if not _scenes[actor_kind] is PackedScene:
+	if not _scenes.has(asset_key):
+		_scenes[asset_key] = load(FILES[asset_key])
+	if not _scenes[asset_key] is PackedScene:
 		return null
 	var script_path := "res://scripts/boss_visual.gd" if actor_kind == "latch" else "res://scripts/actor_visual.gd"
 	var visual = load(script_path).new()
 	visual.name = "ActorVisual"
 	visual.kind = actor_kind
+	visual.appearance_node = node_kind if asset_key!=actor_kind else "base"
 	parent.add_child(visual)
-	var model: Node = _scenes[actor_kind].instantiate()
+	var model: Node = _scenes[asset_key].instantiate()
 	visual.add_child(model)
 	visual.player = visual._find_node(model, "AnimationPlayer")
 	visual.skeleton = visual._find_node(model, "Skeleton3D")
@@ -66,6 +73,10 @@ static func create(parent: Node3D, actor_kind: String) -> Node3D:
 		for mesh in model.find_children("*", "MeshInstance3D", true, false):
 			mesh.custom_aabb = AABB(Vector3(-3.5, -0.2, -3.5), Vector3(7, 4.5 if actor_kind == "latch" else 3.5, 7))
 	visual.set_process(false)
+	if visual.appearance_node!="base":
+		visual._node_effects=NodeEffects.new()
+		visual.add_child(visual._node_effects)
+		visual._node_effects.initialize(visual,visual.appearance_node,total_life)
 	visual.sample("idle", 0.0)
 	return visual
 
@@ -99,6 +110,7 @@ func sample(clip: String, phase: float) -> void:
 			skeleton.set_bone_pose_rotation(index, yaw.get_rotation_quaternion() * skeleton.get_bone_pose_rotation(index))
 	skeleton.force_update_all_bone_transforms()
 	_sample_blast(clip, fraction)
+	if _node_effects!=null: _node_effects.apply_pose()
 
 func _sample_blast(clip: String, phase: float) -> void:
 	if kind != "automaton":
@@ -172,7 +184,8 @@ func sync_enemy(enemy: Dictionary, dt: float) -> void:
 	else:
 		sample("idle", fposmod(_clock / 2.0, 1.0))
 
-func sync_ally(ally: Dictionary, dt: float) -> void:
+func sync_ally(ally: Dictionary, dt: float, target_distance: float = INF) -> void:
+	if _node_effects!=null: _node_effects.sync(ally,dt,target_distance)
 	var distance: float = ally.node.global_position.distance_to(_last_position)
 	_last_position = ally.node.global_position
 	_clock += dt
@@ -233,6 +246,7 @@ func _blend_death_start() -> void:
 	for index in _death_start_pose.size():
 		skeleton.set_bone_pose(index, _death_start_pose[index].interpolate_with(skeleton.get_bone_pose(index), amount))
 	skeleton.force_update_all_bone_transforms()
+	if _node_effects!=null: _node_effects.apply_pose()
 
 func _process(dt: float) -> void:
 	if _death_time < 0 or (is_instance_valid(_pause_source) and _pause_source.paused):
@@ -256,7 +270,7 @@ func preview_shot(ally: Dictionary) -> void:
 	sample("attack", 0.5)
 
 func debug_state() -> Dictionary:
-	return {"kind": kind, "loaded": loaded_ok, "state": visual_state, "fraction": fraction,
+	return {"kind": kind, "appearance_node":appearance_node, "node_effects":_node_effects.debug_state() if _node_effects!=null else {}, "loaded": loaded_ok, "state": visual_state, "fraction": fraction,
 		"clips": clips.keys(), "bones": skeleton.get_bone_count() if skeleton else 0,
 		"release_samples": release_samples.duplicate(), "dead": _death_time >= 0,
 		"death_clip": _death_clip, "death_duration": _death_duration}

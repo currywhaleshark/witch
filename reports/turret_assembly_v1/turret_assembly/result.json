@@ -1,0 +1,53 @@
+{
+  "checks": 2371,
+  "failures": [],
+  "metrics": {
+    "anchors": [
+      {
+        "fcr": 0.0,
+        "fps": 30.0,
+        "maximum_drift_m": 0.0
+      },
+      {
+        "fcr": 40.0,
+        "fps": 30.0,
+        "maximum_drift_m": 0.0
+      },
+      {
+        "fcr": 0.0,
+        "fps": 60.0,
+        "maximum_drift_m": 0.0
+      },
+      {
+        "fcr": 40.0,
+        "fps": 60.0,
+        "maximum_drift_m": 0.0
+      }
+    ],
+    "cancel_15": {
+      "born_parts": 43,
+      "mode": "collapse"
+    },
+    "cancel_50": {
+      "born_parts": 80,
+      "mode": "collapse"
+    },
+    "cancel_85": {
+      "born_parts": 86,
+      "mode": "collapse"
+    },
+    "fcr_0": {
+      "maximum_surface_error_m": 0.00000745802753954194,
+      "release_seconds": 0.51,
+      "surface_samples": 24333,
+      "unmatched": 0
+    },
+    "fcr_40": {
+      "maximum_surface_error_m": 0.00000745802753954194,
+      "release_seconds": 0.321692307692308,
+      "surface_samples": 24333,
+      "unmatched": 0
+    }
+  },
+  "passed": true
+}
