@@ -1041,7 +1041,8 @@ func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 
 func bleed_plan(stacks: int) -> Dictionary:
 	# What a new bleed gets at the chainsaw's level. Growth A raises the share of max HP; growth B
-	# lengthens the bleed at the same rate per second and lets later stacks keep more of their weight.
+	# (chosen) lengthens the bleed at the same rate per second every level, and at every fifth level
+	# lets later stacks keep more of their weight.
 	var bleed: Dictionary = config.bleed
 	var level: int = int(config.chainsaw_level) - 1
 	var weights: Array = bleed.weights
@@ -1052,7 +1053,8 @@ func bleed_plan(stacks: int) -> Dictionary:
 		ratio += float(bleed.a_ratio_per_level) * level
 	else:
 		seconds += float(bleed.b_seconds_per_level) * level
-		weight += (1.0 - weight) * minf(1.0, float(bleed.b_weight_per_level) * level)
+		var milestones: int = floori(float(config.chainsaw_level) / float(bleed.b_weight_every))
+		weight += (1.0 - weight) * minf(1.0, float(bleed.b_weight_per_milestone) * milestones)
 	return {"ratio": ratio * seconds / float(bleed.seconds), "seconds": seconds, "weight": weight}
 
 func add_bleed(id: String) -> void:

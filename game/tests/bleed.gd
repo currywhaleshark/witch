@@ -66,6 +66,7 @@ func run() -> void:
 	arena.set_physics_process(false)
 	await step(2)
 	var bleed: Dictionary = arena.config.bleed
+	check(bleed.growth == "B", "the chosen growth B is the default")
 
 	check(arena.config.r_slot_options.has("chainsaw") and arena.rules.skills.chainsaw.kind == "tool", "the chainsaw is a tool the R slot can carry")
 	await fresh()
@@ -144,6 +145,14 @@ func run() -> void:
 	arena.config.bleed.growth = "B"
 	var plan_b: Dictionary = arena.bleed_plan(4)
 	check(plan_b.seconds > base_plan.seconds and is_equal_approx(plan_b.ratio, plan_b.seconds / bleed.seconds) and plan_b.weight > weights[4], "growth B: level lengthens the bleed at the same rate and lets later stacks keep more")
+	arena.config.chainsaw_level = 4.0
+	var plan_b4: Dictionary = arena.bleed_plan(4)
+	arena.config.chainsaw_level = 5.0
+	var plan_b5: Dictionary = arena.bleed_plan(4)
+	arena.config.chainsaw_level = 9.0
+	var plan_b9: Dictionary = arena.bleed_plan(4)
+	check(plan_b4.weight == weights[4] and plan_b5.weight > weights[4] and plan_b9.weight == plan_b5.weight and plan_b5.weight < plan_b.weight, "growth B: later stacks gain weight only at every fifth level")
+	check(plan_b5.seconds > plan_b4.seconds and plan_b9.seconds > plan_b5.seconds, "growth B: every level lengthens the bleed")
 
 	await fresh()
 	var key = InputEventKey.new()
