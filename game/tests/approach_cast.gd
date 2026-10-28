@@ -165,6 +165,15 @@ func run() -> void:
 	check(arena.enemies.target.hp == 60 and not arena.moving and arena.message == "접근할 수 없습니다", "blocked approach stops without damaging target")
 	wall.queue_free()
 
+	# Raised ground (stairs): a ground click is stored at floor height 0 while the witch stands higher.
+	await fresh(Vector3(2.5, 0, 0))
+	arena.player.position.y = 1.2
+	arena.enemies.target.body.position.y = 1.2
+	var before_shot: float = arena.enemies.target.hp
+	arena.request_slot("rmb", {"ground": [2.5, 0, 0]})
+	release()
+	check(absf(arena.player_model.global_basis.z.y) < 0.001 and arena.enemies.target.hp < before_shot, "on raised ground a near shot stays level: the witch does not tip and the shot still hits")
+
 	var report = {"engine": Engine.get_version_info().string, "checks": checks, "failures": failures}
 	var out = ProjectSettings.globalize_path("res://").path_join("../reports/godot_approach_report.json").simplify_path()
 	FileAccess.open(out, FileAccess.WRITE).store_string(JSON.stringify(report, "  ") + "\n")

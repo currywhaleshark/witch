@@ -62,7 +62,7 @@ func run() -> void:
 	check(absf(arena.probe.gap_seconds - before - 1.0) < 0.05, "skill gap time accumulates per second of combat")
 	arena.state = arena.rules.restore_mana(arena.state, 12).state
 	await step()
-	check(not arena.skill_gap() and arena.probe.current_gap == 0 and "automaton" in arena.unaffordable_skills(), "affordable shotgun ends the gap while dearer skills stay unaffordable")
+	check(not arena.skill_gap() and arena.probe.current_gap == 0 and "turret" in arena.unaffordable_skills(), "affordable shotgun ends the gap while dearer skills stay unaffordable")
 	arena.state.mana = 0.0
 	await step(30)
 	check(arena.probe.gap_count == 2 and arena.probe.longest_gap > 1.0 and arena.probe.longest_gap < 1.4, "separate gaps are counted with the longest kept")

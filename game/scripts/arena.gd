@@ -23,6 +23,8 @@ const PICK_LAYER = 8
 const REPEAT_KINDS = ["aim", "enemy"]
 var config: Dictionary
 var rules: RefCounted
+# The automaton skill's own cost, which nodes A and B keep; no node swaps in a cheaper, quicker one.
+var automaton_cost: Dictionary
 var state: Dictionary
 var player: CharacterBody3D
 var player_model: Node3D
@@ -103,6 +105,8 @@ var boss_spawned = false
 func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
 	rules = Rules.new(config)
+	automaton_cost = {"mana_cost": rules.skills.automaton.mana_cost, "cooldown_seconds": rules.skills.automaton.cooldown_seconds}
+	sync_automaton_cost()
 	block_rng.randomize()
 	combat_rng.randomize()
 	_build_field()
@@ -364,6 +368,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			state = rules.bind(state, "r", options[(options.find(state.bindings.r) + 1) % options.size()])
 			show_message("R 슬롯: " + rules.skills[state.bindings.r].name)
 			return
+		if event.physical_keycode == KEY_N:
+			# N: automaton node, no node -> A (blast on reach) -> B (keeps fighting).
+			restart_probe("settings_changed")
+			var nodes: Array = config.automaton_node_steps
+			config.automaton_node = nodes[(nodes.find(config.automaton_node) + 1) % nodes.size()]
+			sync_automaton_cost()
+			show_message("태엽인형 " + {"base": "기본형 · 싸게 많이 · 싸우다 자폭", "A": "A 자폭 특화 · 닿으면 자폭", "B": "B 지속공격 특화 · 자폭 없음 · 최대 %d기" % config.automaton_nodes.B.max_count}[config.automaton_node])
+			return
 		if event.physical_keycode in [KEY_F10, KEY_F11, KEY_F12]:
 			var key: String = {KEY_F10: "shield_level", KEY_F11: "dexterity", KEY_F12: "hit_recovery_score"}[event.physical_keycode]
 			if event.physical_keycode == KEY_F10 and (event.shift_pressed or event.ctrl_pressed):
@@ -542,6 +554,7 @@ func save_mana_log(reason: String) -> String:
 		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
 			"hit_recovery_score": config.hit_recovery_score, "shield_level": config.shield_level, "dexterity": config.dexterity,
 			"automaton_level": config.automaton_level, "turret_level": config.turret_level, "map": map.id,
+			"automaton_node": config.automaton_node,
 			"chainsaw_level": config.chainsaw_level, "bleed_growth": config.bleed.growth,
 			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
 	var file = FileAccess.open(path, FileAccess.WRITE)
@@ -646,7 +659,14 @@ func cast_event(result: Dictionary) -> Dictionary:
 			return event
 	return {}
 
+func sync_automaton_cost() -> void:
+	# No node is the cheap one to summon in numbers; A and B pay the skill's full cost and cooldown.
+	var cost: Dictionary = config.automaton_nodes.base if config.automaton_node == "base" else automaton_cost
+	rules.skills.automaton.mana_cost = float(cost.mana_cost)
+	rules.skills.automaton.cooldown_seconds = float(cost.cooldown_seconds)
+
 func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void:
+	sync_automaton_cost()
 	if paused or hp <= 0 or field_cleared():
 		return
 	if slot not in rules.SLOTS:
@@ -878,12 +898,16 @@ func cast_target(event: Dictionary) -> Vector3:
 	if event.get("target_enemy") != null and enemies.has(event.target_enemy):
 		return enemies[event.target_enemy].body.position
 	if event.get("position") != null:
-		return point(event.position)
+		# Ground clicks arrive at height 0; lift them onto the floor actually under the cursor.
+		return map.grounded(point(event.position))
 	return player.position - player_model.basis.z
 
 func cast_direction(event: Dictionary) -> Vector3:
-	var direction: Vector3 = (cast_target(event) - player.position).normalized()
-	return direction if direction.length() >= 0.01 else Vector3.FORWARD
+	# Aim and facing stay level. Ground clicks are stored at height 0, so on stairs or a raised
+	# floor the raw vector would tip the witch and her shots down into the ground.
+	var direction: Vector3 = cast_target(event) - player.position
+	direction.y = 0.0
+	return direction.normalized() if direction.length() >= 0.01 else Vector3.FORWARD
 
 func execute_cast(event: Dictionary) -> void:
 	var target = cast_target(event)
@@ -1204,11 +1228,45 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	ActorVisual.create(node, "automaton" if mobile else "turret")
 	Shape.ring(node, Vector3(0, 0.04, 0), 0.43, TEAL)
 	var durability: float = config.automaton_hp if mobile else config.turret_hp
-	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "route": {}, "target": target_id if target_id != null else "", "cooldown": 0.2,
-		"life": config.summon_lifetime if mobile else config.turret_lifetime, "hp": durability, "max_hp": durability})
+	# The automaton keeps the node it was summoned with; B never times out but only so many stay.
+	var kind: String = config.automaton_node if mobile else ""
+	var life: float = config.summon_lifetime if mobile else config.turret_lifetime
+	if kind == "B":
+		# The lasting B automaton is a tank: a little harder hitting and sturdier.
+		life = INF
+		durability *= float(config.automaton_nodes.B.hp_factor)
+		var kept: Array = allies.filter(func(other): return other.node_kind == "B")
+		if kept.size() >= int(config.automaton_nodes.B.max_count):
+			dismantle_ally(kept[0])
+	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "node_kind": kind, "route": {}, "target": target_id if target_id != null else "", "cooldown": 0.2,
+		"life": life, "hp": durability, "max_hp": durability})
 	ally_serial += 1
 	pulse(pos, TEAL, 0.65)
 	play_cue(1.8)
+
+func dismantle_ally(ally: Dictionary) -> void:
+	# The oldest B automaton makes room for a new one: it breaks apart with no blast.
+	var art: Node = ally.node.get_node_or_null("ActorVisual")
+	if art != null:
+		art.detach_for_death(world, self)
+	ally.node.queue_free()
+	allies.erase(ally)
+
+func expire_ally(ally: Dictionary) -> void:
+	# End of life: automatons self-destruct, turrets just shut down. An A automaton also lands
+	# here the moment it reaches its target, trading its repeated attacks for a bigger blast.
+	if ally.mobile:
+		var damage: float = config.shot_damage * (float(config.automaton_nodes.A.blast_factor) if ally.node_kind == "A" else 1.0)
+		for id in enemies.keys():
+			if enemies.has(id) and ally.node.position.distance_to(enemies[id].body.position) < config.summon_explosion_range:
+				strike(id, damage, false, "automaton", "automaton_blast")
+		pulse(ally.node.position, BRASS, config.summon_explosion_range)
+	var art: Node = ally.node.get_node_or_null("ActorVisual")
+	if art != null:
+		art.detach_for_death(world, self, ally.mobile)
+	play_cue(0.65 if ally.mobile else 1.15)
+	ally.node.queue_free()
+	allies.erase(ally)
 
 func on_screen(pos: Vector3) -> bool:
 	if camera.is_position_behind(pos):
@@ -1224,6 +1282,7 @@ func eligible(ally: Dictionary, id: String) -> bool:
 func _physics_process(dt: float) -> void:
 	if not is_instance_valid(player):
 		return
+	sync_automaton_cost()
 	if not paused and field_cleared():
 		cancel_automaton_assembly("field_cleared")
 	var visual_start_position := player.position
@@ -1684,17 +1743,7 @@ func _tick_allies(dt: float) -> void:
 	for ally in allies.duplicate():
 		ally.life -= dt
 		if ally.life <= 0:
-			if ally.mobile:
-				for id in enemies.keys():
-					if ally.node.position.distance_to(enemies[id].body.position) < config.summon_explosion_range:
-						strike(id, config.shot_damage, false, "automaton", "automaton_blast")
-				pulse(ally.node.position, BRASS, config.summon_explosion_range)
-			var expired_art: Node = ally.node.get_node_or_null("ActorVisual")
-			if expired_art != null:
-				expired_art.detach_for_death(world, self, ally.mobile)
-			play_cue(0.65 if ally.mobile else 1.15)
-			ally.node.queue_free()
-			allies.erase(ally)
+			expire_ally(ally)
 			continue
 		if ally.mobile and not on_screen(ally.node.position):
 			ally.target = ""
@@ -1708,8 +1757,12 @@ func _tick_allies(dt: float) -> void:
 			continue
 		var target: Vector3 = enemies[ally.target].body.position
 		ally.node.look_at(target)
+		if ally.node_kind == "A" and ally.node.position.distance_to(target) <= 1.8:
+			expire_ally(ally)
+			continue
 		if ally.mobile and ally.node.position.distance_to(target) > 1.6:
-			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, target, 0.4, dt), dt * 4)
+			var speed: float = 4.0 * (float(config.automaton_nodes.A.speed_factor) if ally.node_kind == "A" else 1.0)
+			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, target, 0.4, dt), dt * speed)
 		ally.cooldown -= dt
 		if ally.cooldown <= 0 and (not ally.mobile or ally.node.position.distance_to(target) <= 1.8):
 			var shot_origin: Vector3 = ally.node.position + Vector3.UP * 0.8
@@ -1718,7 +1771,8 @@ func _tick_allies(dt: float) -> void:
 				art.preview_shot(ally)
 				shot_origin = art.muzzle_position()
 			beam(shot_origin, target + Vector3.UP * 0.8, TEAL, 0.065)
-			strike(ally.target, config.summon_damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret")
+			var damage: float = config.summon_damage * (float(config.automaton_nodes.B.damage_factor) if ally.node_kind == "B" else 1.0)
+			strike(ally.target, damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret")
 			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown
 
 func show_message(value: String) -> void:

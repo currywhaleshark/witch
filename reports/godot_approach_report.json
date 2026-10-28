@@ -25,7 +25,8 @@
     "pause preserves queued target without moving",
     "player death clears queued cast",
     "restart clears queued cast",
-    "blocked approach stops without damaging target"
+    "blocked approach stops without damaging target",
+    "on raised ground a near shot stays level: the witch does not tip and the shot still hits"
   ],
   "engine": "4.6.2-stable (official)",
   "failures": []

@@ -68,7 +68,7 @@ func run() -> void:
 		check(arena.allies.size()==1 and arena.automaton_assembly==null,"successful release creates exactly one ally")
 		check(fx.mode=="complete" and fx.progress==1.0,"assembly reaches complete at existing release")
 		check(arena.allies[0].node.global_position.distance_to(origin)<0.00001,"ally replaces assembly at same fixed origin")
-		check(arena.state.mana==mana-15.0 and arena.state.cooldowns.automaton==4.0,"normal cost and cooldown only once")
+		check(is_equal_approx(arena.state.mana,mana-arena.rules.skills.automaton.mana_cost) and arena.state.cooldowns.automaton==arena.rules.skills.automaton.cooldown_seconds,"normal cost and cooldown only once")
 		check(arena.combat_rng.state==rng_state,"effect consumes no combat RNG")
 		# Independently compare the completed static pieces with real skinned idle vertices.
 		var art: Node3D = arena.allies[0].node.get_node("ActorVisual")

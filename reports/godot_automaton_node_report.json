@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "the automaton starts with no node invested",
+    "no node: a cheap, quick summon to spam",
+    "no node: the automaton fights for its lifetime",
+    "no node: it self-destructs when its time is up",
+    "A: it blasts on reaching the target without a single normal attack",
+    "A: its blast is stronger than the timed one",
+    "A: it runs to its target faster",
+    "A: with no enemy to reach it still goes off when its time is up",
+    "B: it keeps fighting past the old lifetime",
+    "B: it hits a little harder and has more HP to hold the line",
+    "B: it never self-destructs",
+    "B: a fourth replaces the oldest, so three stay",
+    "B: the replaced one breaks apart quietly, not as a loss or a blast",
+    "an automaton keeps the node it was summoned with",
+    "A and B pay the full cost and cooldown",
+    "N cycles the automaton node and nothing else",
+    "the A5 log records the automaton node"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}
