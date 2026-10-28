@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "test": "automaton_assembly",
+  "stderr_empty": false,
+  "phase": "import",
+  "workspace_cache_diagnostic_only": true
+}

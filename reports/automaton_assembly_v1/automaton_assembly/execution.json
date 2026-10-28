@@ -1,0 +1,7 @@
+{
+  "stderr_empty": true,
+  "exit_code": 0,
+  "workspace_cache_diagnostic_only": false,
+  "test": "automaton_assembly",
+  "phase": "test"
+}

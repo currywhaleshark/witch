@@ -1,0 +1,49 @@
+{
+  "checks": 20,
+  "failures": [
+    "idle ally stays at its assembled origin through release and following frames",
+    "no walk pose triggered by mismatched waiting coordinates",
+    "ally still follows player movement",
+    "idle ally stays at its assembled origin through release and following frames",
+    "no walk pose triggered by mismatched waiting coordinates",
+    "ally still follows player movement",
+    "idle ally stays at its assembled origin through release and following frames",
+    "no walk pose triggered by mismatched waiting coordinates",
+    "ally still follows player movement",
+    "idle ally stays at its assembled origin through release and following frames",
+    "no walk pose triggered by mismatched waiting coordinates",
+    "ally still follows player movement"
+  ],
+  "metrics": [
+    {
+      "fcr": 0.0,
+      "first_release_frame_drift_m": 0.133333325386047,
+      "fps": 30.0,
+      "maximum_idle_drift_m": 0.282842695713043,
+      "unwanted_walk_frames": 3
+    },
+    {
+      "fcr": 40.0,
+      "first_release_frame_drift_m": 0.133333325386047,
+      "fps": 30.0,
+      "maximum_idle_drift_m": 0.282842695713043,
+      "unwanted_walk_frames": 3
+    },
+    {
+      "fcr": 0.0,
+      "first_release_frame_drift_m": 0.0666667073965073,
+      "fps": 60.0,
+      "maximum_idle_drift_m": 0.282842695713043,
+      "unwanted_walk_frames": 5
+    },
+    {
+      "fcr": 40.0,
+      "first_release_frame_drift_m": 0.0666667073965073,
+      "fps": 60.0,
+      "maximum_idle_drift_m": 0.282842695713043,
+      "unwanted_walk_frames": 5
+    }
+  ],
+  "observe_only": false,
+  "passed": false
+}

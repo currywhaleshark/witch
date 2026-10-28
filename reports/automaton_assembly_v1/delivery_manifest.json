@@ -1,0 +1,175 @@
+{
+  "version": "automaton_assembly_v1",
+  "passed": true,
+  "user_art_approved": false,
+  "checks": {
+    "automaton_assembly": {
+      "passed": true,
+      "checks": 405,
+      "result": "reports/automaton_assembly_v1/automaton_assembly/result.json",
+      "execution": {
+        "stderr_empty": true,
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": false,
+        "test": "automaton_assembly",
+        "phase": "test"
+      }
+    },
+    "automaton_spawn_anchor": {
+      "passed": true,
+      "checks": 20,
+      "result": "reports/automaton_assembly_v1/automaton_spawn_anchor/result.json",
+      "execution": {
+        "exit_code": 0,
+        "test": "automaton_spawn_anchor",
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test",
+        "stderr_empty": true
+      }
+    },
+    "hit_block": {
+      "passed": true,
+      "checks": 20,
+      "result": "reports/automaton_assembly_v1/hit_block/result.json",
+      "execution": {
+        "phase": "test",
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0,
+        "test": "hit_block"
+      }
+    },
+    "approach_cast": {
+      "passed": true,
+      "checks": 26,
+      "result": "reports/automaton_assembly_v1/approach_cast/result.json",
+      "execution": {
+        "phase": "test",
+        "test": "approach_cast",
+        "stderr_empty": true,
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": false
+      }
+    },
+    "summons_v2": {
+      "passed": true,
+      "checks": 50821,
+      "result": "reports/automaton_assembly_v1/summons_v2/result.json",
+      "execution": {
+        "test": "summons_v2",
+        "phase": "test",
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": false,
+        "stderr_empty": true
+      }
+    },
+    "gpu_capture": {
+      "passed": true,
+      "captures": 370,
+      "sequences": 7,
+      "execution": {
+        "phase": "review",
+        "exit_code": 0,
+        "stderr_empty": false,
+        "workspace_cache_diagnostic_only": true,
+        "test": "automaton_assembly"
+      }
+    },
+    "static_parts": {
+      "passed": true,
+      "meshes": 13,
+      "triangles": 9791,
+      "materials": 1,
+      "source_unchanged": true
+    }
+  },
+  "base_commit": "8f6e4bd367b83535ffb8f40c7822fe9a52ab98bd",
+  "files": [
+    {
+      "path": "assets/actors/automaton_assembly_v1/parts.json",
+      "sha256": "1d4444ecba67e86eeb671cf3a2f5f67b7096f21ddedd36135631b9f2fbaa8b57",
+      "bytes": 3282
+    },
+    {
+      "path": "assets/actors/automaton_assembly_v1/authoring/automaton_parts.blend",
+      "sha256": "ac81361cb69fe9c2a0ee48f2ac0e1949da0be9de6b92a4da2fa53212f47e6250",
+      "bytes": 4502777
+    },
+    {
+      "path": "assets/actors/automaton_assembly_v1/exports/automaton_parts.glb",
+      "sha256": "cefb78216649b38e10d319d22d9f37c4e05546c1d24336e134411ea6da8308c3",
+      "bytes": 3992512
+    },
+    {
+      "path": "game/assets/actors/automaton_assembly_v1/automaton_parts.glb",
+      "sha256": "cefb78216649b38e10d319d22d9f37c4e05546c1d24336e134411ea6da8308c3",
+      "bytes": 3992512
+    },
+    {
+      "path": "game/scripts/automaton_assembly.gd",
+      "sha256": "16f2515108f9e0dc2e30938a7242661a544677ad0dac676fff0cdc6d3f12bc13",
+      "bytes": 8342
+    },
+    {
+      "path": "game/scripts/arena.gd",
+      "sha256": "9d56f46f03b1a2622e56de3925da11473f3854ceba9328d0c6c8230871e15594",
+      "bytes": 75910
+    },
+    {
+      "path": "game/data/trial.json",
+      "sha256": "52eae01454eecef262e49a9ff0a355d3b388d3160cea3aafbbe4cea677729235",
+      "bytes": 9335
+    },
+    {
+      "path": "game/scripts/player_visual.gd",
+      "sha256": "09d7a15d147303dfa08490e08e3f015f326ea19106f99a0935458223e5eac470",
+      "bytes": 16500
+    },
+    {
+      "path": "game/scripts/actor_visual.gd",
+      "sha256": "8a7f3a978114e0774bfe11e21bac385bb677a9cbed19e98b0cabc8e272289745",
+      "bytes": 10304
+    },
+    {
+      "path": "game/audio/mechanical_impact.wav",
+      "sha256": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+      "bytes": 80304
+    },
+    {
+      "path": "game/tests/automaton_assembly.gd",
+      "sha256": "85089cc3990e63744869454f5661e9d3b2b84c8927e953cc9b944d14f4dbec02",
+      "bytes": 9278
+    },
+    {
+      "path": "game/tests/automaton_spawn_anchor.gd",
+      "sha256": "e57ebed5324b5f0f1275318f2c7b0d95ecd7e1eec897f15ecbbaae33556770d7",
+      "bytes": 3216
+    },
+    {
+      "path": "game/tests/review_automaton_assembly.gd",
+      "sha256": "d624f5092fc29bf4ce648634bbe0cccf00a417bba69bf45ac667c8c5f20dfeae",
+      "bytes": 4510
+    }
+  ],
+  "scope": "Automaton cast presentation. Existing release/cost/cooldown and live v2 summon are retained. Concurrent chainsaw/bleed work in the shared game is outside this change.",
+  "anchor_fix": {
+    "before_maximum_idle_drift_m": 0.282842695713043,
+    "after_maximum_idle_drift_m": 0.0,
+    "rerun": [
+      "automaton_assembly",
+      "automaton_spawn_anchor",
+      "summons_v2",
+      "gpu_capture"
+    ],
+    "carried_forward": [
+      "hit_block",
+      "approach_cast"
+    ]
+  },
+  "limits": [
+    "Fixed-step cosmetic gravity with local floor support, not RigidBody inter-part/wall collision.",
+    "13 static part meshes during casting; final performance budget not approved.",
+    "Review is silent renderer captures; existing mechanical cue is connected in the game.",
+    "Existing uncommitted gameplay work is preserved; file hashes identify the combined tested checkout."
+  ]
+}

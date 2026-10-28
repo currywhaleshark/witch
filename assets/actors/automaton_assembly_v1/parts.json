@@ -1,0 +1,141 @@
+{
+  "source": "assets\\actors\\summons_v2\\authoring\\automaton_v2.blend",
+  "source_sha256": "3984623532d7b4f64e2276681aa5bb07f7b1196f5bf07f98f60a3556a582b074",
+  "source_unchanged": true,
+  "parts": [
+    {
+      "name": "part_000",
+      "triangles": 2296,
+      "godot_center": [
+        0.009723246097564697,
+        0.3941989541053772,
+        -0.01997094601392746
+      ],
+      "vertices": 1143
+    },
+    {
+      "name": "part_001",
+      "triangles": 844,
+      "godot_center": [
+        0.33448538184165955,
+        0.2919897139072418,
+        -0.08974914997816086
+      ],
+      "vertices": 422
+    },
+    {
+      "name": "part_002",
+      "triangles": 842,
+      "godot_center": [
+        0.010195791721343994,
+        0.6514416933059692,
+        -0.08638585358858109
+      ],
+      "vertices": 420
+    },
+    {
+      "name": "part_003",
+      "triangles": 896,
+      "godot_center": [
+        -0.17263877391815186,
+        0.05985020846128464,
+        -0.04116382449865341
+      ],
+      "vertices": 448
+    },
+    {
+      "name": "part_004",
+      "triangles": 804,
+      "godot_center": [
+        -0.32333648204803467,
+        0.2881562411785126,
+        -0.005877457559108734
+      ],
+      "vertices": 399
+    },
+    {
+      "name": "part_005",
+      "triangles": 908,
+      "godot_center": [
+        0.181136354804039,
+        0.06062597036361694,
+        -0.0592082180082798
+      ],
+      "vertices": 456
+    },
+    {
+      "name": "part_006",
+      "triangles": 836,
+      "godot_center": [
+        -0.1186077892780304,
+        0.6646981239318848,
+        0.1261306256055832
+      ],
+      "vertices": 413
+    },
+    {
+      "name": "part_008_L",
+      "triangles": 614,
+      "godot_center": [
+        0.1554826945066452,
+        0.18361467123031616,
+        -0.021769024431705475
+      ],
+      "vertices": 297
+    },
+    {
+      "name": "part_008_R",
+      "triangles": 584,
+      "godot_center": [
+        -0.1284244954586029,
+        0.18331381678581238,
+        -0.012788163498044014
+      ],
+      "vertices": 282
+    },
+    {
+      "name": "part_009",
+      "triangles": 430,
+      "godot_center": [
+        0.22880615293979645,
+        0.42947492003440857,
+        -0.024142399430274963
+      ],
+      "vertices": 217
+    },
+    {
+      "name": "part_010",
+      "triangles": 398,
+      "godot_center": [
+        -0.20721863210201263,
+        0.4311404824256897,
+        -0.020954806357622147
+      ],
+      "vertices": 199
+    },
+    {
+      "name": "part_011",
+      "triangles": 191,
+      "godot_center": [
+        0.010236749425530434,
+        0.5479840040206909,
+        -0.0568610280752182
+      ],
+      "vertices": 93
+    },
+    {
+      "name": "part_013",
+      "triangles": 148,
+      "godot_center": [
+        0.010201608762145042,
+        0.5293009877204895,
+        -0.05094904080033302
+      ],
+      "vertices": 75
+    }
+  ],
+  "triangles": 9791,
+  "part_count": 13,
+  "export_sha256": "cefb78216649b38e10d319d22d9f37c4e05546c1d24336e134411ea6da8308c3",
+  "method": "Evaluated accepted idle frame 1, split by rigid part membership; same surface, UV and PBR atlas. No new design or decimation."
+}

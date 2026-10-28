@@ -6,6 +6,7 @@ const ManaProbe = preload("res://scripts/mana_probe.gd")
 const FieldMap = preload("res://scripts/field_map.gd")
 const PlayerVisual = preload("res://scripts/player_visual.gd")
 const ActorVisual = preload("res://scripts/actor_visual.gd")
+const AutomatonAssembly = preload("res://scripts/automaton_assembly.gd")
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
@@ -38,6 +39,7 @@ var moving = false
 var pending_cast: Dictionary = {}
 # A started motion waits here until its release point fires the effect.
 var windup: Dictionary = {}
+var automaton_assembly: Node3D
 var hold: Dictionary = {}
 # A held ground click keeps steering on its own, so skill presses never replace it.
 var move_hold: Dictionary = {}
@@ -169,18 +171,20 @@ func _build_audio() -> void:
 		add_child(sound)
 		sounds.append(sound)
 
-func play_cue(pitch: float = 1.0) -> void:
+func play_cue(pitch: float = 1.0, gain_db: float = 0.0) -> void:
 	if muted or sounds.is_empty():
 		return
 	var sound = sounds[sound_index % sounds.size()]
 	sound_index += 1
 	sound.pitch_scale = pitch
+	sound.volume_db = -15.0 + gain_db
 	sound.play()
 
 func reset_arena() -> void:
 	for child in world.get_children():
-		if child.is_in_group("actor_corpses"):
+		if child.is_in_group("actor_corpses") or child.is_in_group("cast_assemblies"):
 			child.free()
+	automaton_assembly = null
 	for id in enemies:
 		enemies[id].body.free()
 	enemies.clear()
@@ -703,6 +707,12 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	action_time = seconds
 	windup = {"slot": slot, "binding": state.bindings[slot], "cursor": snapshot, "shift": shift, "stationary": stationary,
 		"skill": cast.skill, "release": seconds * float(skill.get("release_ratio", 1.0))}
+	if cast.skill == "automaton":
+		windup.visual_duration = windup.release
+		automaton_assembly = AutomatonAssembly.new()
+		world.add_child(automaton_assembly)
+		automaton_assembly.position = map.grounded(automaton_spawn_position())
+		automaton_assembly.initialize(self)
 	player_model.look_at(player.position + cast_direction(cast))
 	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else "cast", seconds, float(skill.get("release_ratio", 1.0)))
 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
@@ -711,16 +721,20 @@ func tick_windup(dt: float) -> void:
 	if windup.is_empty():
 		return
 	windup.release -= dt
+	if is_instance_valid(automaton_assembly):
+		automaton_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if windup.release > 0:
 		return
 	var started: Dictionary = windup
 	windup = {}
 	player_visual.mark_release()
 	if state.bindings[started.slot] != started.binding:
+		cancel_automaton_assembly("binding_changed")
 		return
 	var cursor: Dictionary = started.cursor
 	if cursor.get("enemy_id") != null and not enemies.has(cursor.enemy_id):
 		if rules.skills[started.skill].get("targeting") != "direction":
+			cancel_automaton_assembly("target_lost")
 			show_message("대상이 사라졌습니다")
 			return
 		cursor.erase("enemy_id")
@@ -731,8 +745,23 @@ func tick_windup(dt: float) -> void:
 		# A whiff stays silent; the missing hit sound and effect tell it apart.
 		last_events = result.events
 		probe.record(last_events)
+		cancel_automaton_assembly("out_of_range")
 		return
 	apply_transition(result)
+	# A failed recheck or LMB fallback must collapse its preview too.
+	cancel_automaton_assembly("release_failed")
+
+func automaton_spawn_position() -> Vector3:
+	# Casting and idle following share this anchor to avoid a step on release.
+	var pos := player.position + Vector3(1, 0, 0.6)
+	pos.x = clampf(pos.x, map.bounds.position.x + 0.25, map.bounds.end.x - 0.25)
+	pos.z = clampf(pos.z, map.bounds.position.y + 0.25, map.bounds.end.y - 0.25)
+	return map.snap(pos) if not map.walkable(pos) else pos
+
+func cancel_automaton_assembly(reason: String) -> void:
+	if is_instance_valid(automaton_assembly):
+		automaton_assembly.cancel(reason)
+	automaton_assembly = null
 
 func tick_move_hold() -> void:
 	# A held ground click steers movement; sweeping over enemies never starts an attack.
@@ -908,11 +937,11 @@ func execute_cast(event: Dictionary) -> void:
 			shield_time = float(rules.skills.shield.duration_seconds)
 			pulse(player.position + Vector3.UP, STEEL, 0.9)
 		"automaton":
-			var pos = player.position + Vector3(1, 0, 0.6)
-			pos.x = clampf(pos.x, map.bounds.position.x + 0.25, map.bounds.end.x - 0.25)
-			pos.z = clampf(pos.z, map.bounds.position.y + 0.25, map.bounds.end.y - 0.25)
-			if not map.walkable(pos):
-				pos = map.snap(pos)
+			var pos := automaton_spawn_position()
+			if is_instance_valid(automaton_assembly):
+				pos = automaton_assembly.position
+				automaton_assembly.complete()
+				automaton_assembly = null
 			spawn_ally(pos, true, event.get("target_enemy", ""))
 		"turret": spawn_ally(point(event.position), false, "")
 		"relay":
@@ -1143,6 +1172,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 	play_cue(0.75)
 	if stunned:
 		# Hit recovery cancels the motion, approach, click move and queued input; nothing was spent yet.
+		cancel_automaton_assembly("hit_stun")
 		windup.clear()
 		cancel_pending_cast()
 		queued_input.clear()
@@ -1152,6 +1182,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		action_time = stun_time
 		player_visual.hit_react(stun_time)
 	if hp == 0:
+		cancel_automaton_assembly("death")
 		probe.counts.deaths += 1
 		save_mana_log("death")
 		cancel_pending_cast()
@@ -1191,6 +1222,8 @@ func eligible(ally: Dictionary, id: String) -> bool:
 func _physics_process(dt: float) -> void:
 	if not is_instance_valid(player):
 		return
+	if not paused and field_cleared():
+		cancel_automaton_assembly("field_cleared")
 	var visual_start_position := player.position
 	if not paused and hp > 0 and not field_cleared():
 		elapsed += dt
@@ -1663,13 +1696,13 @@ func _tick_allies(dt: float) -> void:
 			continue
 		if ally.mobile and not on_screen(ally.node.position):
 			ally.target = ""
-			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, player.position + Vector3(0.8, 0, 0.8), 0.4, dt), dt * 7)
+			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, automaton_spawn_position(), 0.4, dt), dt * 7)
 			continue
 		if not eligible(ally, ally.target):
 			ally.target = nearest_enemy(ally.node.position, config.summon_detection_range if ally.mobile else config.turret_detection_range, Vector3.ZERO, -1, true, true)
 		if ally.target == "":
 			if ally.mobile:
-				ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, player.position + Vector3(0.8, 0, 0.8), 0.4, dt), dt * 4)
+				ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, automaton_spawn_position(), 0.4, dt), dt * 4)
 			continue
 		var target: Vector3 = enemies[ally.target].body.position
 		ally.node.look_at(target)

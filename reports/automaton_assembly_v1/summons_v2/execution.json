@@ -1,0 +1,7 @@
+{
+  "test": "summons_v2",
+  "phase": "test",
+  "exit_code": 0,
+  "workspace_cache_diagnostic_only": false,
+  "stderr_empty": true
+}
