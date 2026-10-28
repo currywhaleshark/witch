@@ -27,6 +27,9 @@ var player_model: Node3D
 var player_visual: PlayerVisual
 var camera: Camera3D
 var world: Node3D
+# The map sets its own time of day on these (see FieldMap.apply_lighting).
+var env: Environment
+var sun: DirectionalLight3D
 var hud: Control
 var hp: float
 var destination: Vector3
@@ -113,7 +116,7 @@ func _ready() -> void:
 
 func _build_field() -> void:
 	var environment = WorldEnvironment.new()
-	var env = Environment.new()
+	env = Environment.new()
 	env.background_mode = Environment.BG_COLOR
 	env.background_color = Color("101d25")
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
@@ -122,7 +125,7 @@ func _build_field() -> void:
 	env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	environment.environment = env
 	add_child(environment)
-	var sun = DirectionalLight3D.new()
+	sun = DirectionalLight3D.new()
 	sun.rotation_degrees = Vector3(-52, -30, 0)
 	sun.light_color = Color("ffddb0")
 	sun.light_energy = 0.85
@@ -133,6 +136,7 @@ func _build_field() -> void:
 	map = FieldMap.new()
 	world.add_child(map)
 	map.build("flat" if get_tree().get_script() != null else config.get("map", "flat"))
+	map.apply_lighting(env, sun)
 	camera = Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
 	camera.size = 20.0 / 1.75
@@ -247,6 +251,7 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 		kind = "heavy" if heavy else "light"
 	var type: Dictionary = config.enemy_types[kind]
 	var rank: Dictionary = config.grades[grade]
+	pos = map.grounded(pos)
 	var body = Shape.body(world, pos, 2)
 	body.set_meta("enemy_id", id)
 	var model = Shape.enemy(body, kind)
@@ -411,6 +416,7 @@ func field_cleared() -> bool:
 func load_map(map_id: String) -> void:
 	restart_probe("settings_changed")
 	map.build(map_id)
+	map.apply_lighting(env, sun)
 	reset_arena()
 	show_message(map.data.get("name", "평지 시험 경기장"))
 
@@ -548,7 +554,10 @@ func field_cursor() -> Dictionary:
 func pick_cursor(screen: Vector2) -> Dictionary:
 	var origin = camera.project_ray_origin(screen)
 	var direction = camera.project_ray_normal(screen)
-	var point = Plane(Vector3.UP, 0).intersects_ray(origin, direction)
+	# Floors and steps first; the flat arena (and the void off a map) falls back to the ground plane.
+	var point = map.pick_floor(origin, direction)
+	if point == null:
+		point = Plane(Vector3.UP, 0).intersects_ray(origin, direction)
 	var cursor: Dictionary = {}
 	if point != null and map.bounds.has_point(Vector2(point.x, point.z)):
 		cursor.ground = [point.x, 0, point.z]
@@ -1075,7 +1084,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	var node = Node3D.new()
 	world.add_child(node)
-	node.position = pos
+	node.position = map.grounded(pos)
 	ActorVisual.create(node, "automaton" if mobile else "turret")
 	Shape.ring(node, Vector3(0, 0.04, 0), 0.43, TEAL)
 	var durability: float = config.automaton_hp if mobile else config.turret_hp
@@ -1139,12 +1148,17 @@ func _physics_process(dt: float) -> void:
 				player.velocity = step.normalized() * minf(speed, step.length() / dt)
 				player.move_and_slide()
 				player_model.look_at(player.position + step.normalized())
+		# Feet follow the floor: bodies only collide with walls, so steps lift them here.
+		player.position.y = map.ground_y(player.position)
 		for id in enemies.keys():
 			_tick_enemy(enemies[id], dt)
+			if enemies.has(id):
+				enemies[id].body.position.y = map.ground_y(enemies[id].body.position)
 			if enemies.has(id) and enemies[id].model.has_method("sync_enemy"):
 				enemies[id].model.sync_enemy(enemies[id], dt)
 		_tick_allies(dt)
 		for ally in allies:
+			ally.node.position.y = map.ground_y(ally.node.position)
 			var art: Node = ally.node.get_node_or_null("ActorVisual")
 			if art != null:
 				art.sync_ally(ally, dt)
@@ -1511,8 +1525,8 @@ func fire_bolt(enemy: Dictionary, at: Vector3, band: Dictionary, damage: float) 
 	fire_bolt_from(enemy.body.position + Vector3.UP * 1.0 * enemy.size, at, band, damage, enemy.grade)
 
 func fire_bolt_from(origin: Vector3, at: Vector3, band: Dictionary, damage: float, grade: String) -> void:
-	# Orbs fly at sight height: over low walls, into tall ones.
-	origin.y = FieldMap.SIGHT_HEIGHT
+	# Orbs fly at sight height above the shooter's ground: over low walls, into tall ones.
+	origin.y = map.ground_y(origin) + FieldMap.SIGHT_HEIGHT
 	var aim: Vector3 = at - origin
 	aim.y = 0
 	var node = Shape.sphere(world, origin, 0.2, Color("bfe8ff"))
@@ -1526,7 +1540,7 @@ func tick_bolts(dt: float) -> void:
 		var travel: float = bolt.speed * dt
 		var before: Vector3 = bolt.node.position
 		bolt.node.position += bolt.dir * travel
-		if not map.sees(before, bolt.node.position):
+		if not map.clear(before, bolt.node.position):
 			pulse(before, Color("bfe8ff"), 0.4)
 			bolt.left = 0
 		bolt.left -= travel

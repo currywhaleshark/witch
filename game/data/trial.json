@@ -73,7 +73,7 @@
     "elite": {"name": "정예", "hp": 4, "damage": 1.6, "evasion": 0.1, "speed": 1, "scale": 1.15, "color": "d8b77b"},
     "boss": {"name": "보스", "hp": 12, "damage": 2.2, "evasion": 0.15, "speed": 0.9, "scale": 1.6, "color": "d0605a"}
   },
-  "map": "alley_v1",
+  "map": "alley_v2",
   "field": [
     {"kind": "rag", "pos": [-4, 0, -4], "grade": "normal"},
     {"kind": "rag", "pos": [-5.2, 0, -3.2], "grade": "normal"},

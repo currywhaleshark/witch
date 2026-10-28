@@ -1,0 +1,104 @@
+{
+  "brick": {
+    "source": "https://ambientcg.com/view?id=Bricks059",
+    "download": "Bricks059_1K-JPG.zip",
+    "download_sha256": "847dd2e4932563bbb67fdc2bad3cc08db72d74b3e81d242f31b663d8a3ea744b",
+    "license": "CC0 1.0",
+    "kept_colour": true,
+    "contrast": 1.0,
+    "reference": "9f735b",
+    "color": {
+      "file": "brick_color.jpg",
+      "sha256": "e1fc6ca9ef2e5db3f54c106d0e2ac2e6dd6575cdacafc9ab0d4b23de7f47f512"
+    },
+    "normal": {
+      "file": "brick_normal.jpg",
+      "sha256": "26ed83b3f2ad7f15b2e2ee8a2345aa1c5bfa5bd649c54fa3c2d824a7caa08afb"
+    }
+  },
+  "block": {
+    "source": "https://ambientcg.com/view?id=Bricks061",
+    "download": "Bricks061_1K-JPG.zip",
+    "download_sha256": "94db490365ff3d3374cc4bbffdc8ea09d12194350bbe28d3660b9b642649ac59",
+    "license": "CC0 1.0",
+    "kept_colour": false,
+    "contrast": 1.0,
+    "reference": "bebebe",
+    "color": {
+      "file": "block_color.jpg",
+      "sha256": "f6615daf04e7e633ad9cc88c68fc2344243e935dd72dc7df002026802b80f0a4"
+    },
+    "normal": {
+      "file": "block_normal.jpg",
+      "sha256": "f62f02eb5cdfd9e13937ef51cda0be7d5be9b327f87d239d5051530276476125"
+    }
+  },
+  "plaster": {
+    "source": "https://ambientcg.com/view?id=Plaster003",
+    "download": "Plaster003_1K-JPG.zip",
+    "download_sha256": "3a47249643273c82c53d8d31c9caef43aec940a4c926cf0c74858a8e96631bf1",
+    "license": "CC0 1.0",
+    "kept_colour": false,
+    "contrast": 1.8,
+    "reference": "bebebe",
+    "color": {
+      "file": "plaster_color.jpg",
+      "sha256": "4adc316f8b5af9d949a872b28c755d645a52883855aff1e332969e2337ed7f3f"
+    },
+    "normal": {
+      "file": "plaster_normal.jpg",
+      "sha256": "ed738e73367f9ddbdcce404fc92daadda54dd5c1b8e31c7bf6f2bba87aca23ac"
+    }
+  },
+  "concrete": {
+    "source": "https://ambientcg.com/view?id=Concrete034",
+    "download": "Concrete034_1K-JPG.zip",
+    "download_sha256": "5839d284d94ffb8d2a56df742ec522b13dd311c52dbd42b8fd33f0409ceedb81",
+    "license": "CC0 1.0",
+    "kept_colour": false,
+    "contrast": 1.8,
+    "reference": "bebebe",
+    "color": {
+      "file": "concrete_color.jpg",
+      "sha256": "6b7ce12d4d0f36c66b595b81189f2b2d2fe363a06948bf58acb7908baa677847"
+    },
+    "normal": {
+      "file": "concrete_normal.jpg",
+      "sha256": "077c5f9d7aa5ff519497a1bbbe79ac267f4d9b3efdd412e06a737cf93fc1f235"
+    }
+  },
+  "asphalt": {
+    "source": "https://ambientcg.com/view?id=Road013A",
+    "download": "Road013A_1K-JPG.zip",
+    "download_sha256": "5cb974b0adf4a7a793308c34641fffb99bee1befcc2629799406da5af3bb08d3",
+    "license": "CC0 1.0",
+    "kept_colour": false,
+    "contrast": 2.2,
+    "reference": "bebebe",
+    "color": {
+      "file": "asphalt_color.jpg",
+      "sha256": "9e96bec7c68543859de2afd6286dcbf2fdfbbf58555be4c5eed3b48d142951b9"
+    },
+    "normal": {
+      "file": "asphalt_normal.jpg",
+      "sha256": "ceaf731a2e403201f5feea3b78feb0aa0e48b4c3f6e16eeeef0409b7626335a1"
+    }
+  },
+  "metal": {
+    "source": "https://ambientcg.com/view?id=PaintedMetal014",
+    "download": "PaintedMetal014_1K-JPG.zip",
+    "download_sha256": "69319a005e7eb7cf09ea9e81a791e4843e42c6781f0fb171a10c5e6d7583d5c7",
+    "license": "CC0 1.0",
+    "kept_colour": false,
+    "contrast": 0.8,
+    "reference": "bebebe",
+    "color": {
+      "file": "metal_color.jpg",
+      "sha256": "454cec0e86a33a65e2da5653bf20e1f16b05370b3bc8c089d4d56937884efcb6"
+    },
+    "normal": {
+      "file": "metal_normal.jpg",
+      "sha256": "e5f2c0f71f9187e1c0f6467cbbb18da8d12f64a9e08d3e902790a07010326457"
+    }
+  }
+}
