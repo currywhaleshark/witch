@@ -1,0 +1,13 @@
+{
+  "id": "sign_v_inn_broken",
+  "variant": "a",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-53f3b639-7157-43ca-bae0-cf7aa3bfda85.png",
+  "raw": "raw/sign_v_inn_broken_a.png",
+  "generated_at": "2026-10-28T04:30:09.696Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE thin rectangular acrylic projecting sign front face, width:height 1:4, off-white board, dark red letters. The acrylic has one irregular broken hole; the character 인 is MISSING, leaving ONLY faint glue residue in its position. All other characters remain intact. Small top header EXACTLY \"\" (empty if not given). Main large Korean title EXACTLY \"언덕여인숙\", written VERTICALLY one syllable per row, dot retained between 사주 and 작명. Small horizontal bottom phone EXACTLY \"\" (empty if not given). Thin aluminum perimeter. No thickness, brackets, extra edges, shadow or tilt. Native board height at least 2048 pixels. Canvas portrait 1024x3072, board centered with 8% margins; outside flat #808080 gray.",
+  "transparent": false,
+  "reference_paths": []
+}

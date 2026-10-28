@@ -1,0 +1,15 @@
+{
+  "id": "sign_v_inn_broken",
+  "variant": "b",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-732ebb08-f4bc-4ffe-a590-4f3f8a9938a6.png",
+  "raw": "raw/sign_v_inn_broken_b.png",
+  "generated_at": "2026-10-28T04:32:51.755Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Edit this flat sign only. Keep color, metal border, weathering, gray #808080 background and overall dimensions. Fix the syllable order: exactly five vertical slots from top to bottom must be 언 / 덕 / 여 / [empty missing 인] / 숙. The third slot currently has a hole: repair it with aged off-white board and put the red syllable 여 there. The fourth slot currently says 여: remove that character and make the irregular broken acrylic hole at that fourth slot instead, showing the gray background; retain faint glue residue around this slot. Keep 언 덕 and 숙 completely unchanged. Do not add any characters, perspective, shadow or 3D thickness.",
+  "transparent": false,
+  "reference_paths": [
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\assets\\environment\\alley_decals_v1\\raw\\sign_v_inn_broken_a.png"
+  ]
+}

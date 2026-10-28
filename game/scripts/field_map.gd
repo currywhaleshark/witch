@@ -5,6 +5,7 @@ extends Node3D
 ## alley edges built as rows of lots (walled houses, open shopfronts, plain walls), with a navmesh
 ## baked at runtime.
 const Shape = preload("res://scripts/shapes.gd")
+const Decoration = preload("res://scripts/alley_decoration.gd")
 # Walls and props block bodies and sight; floors only carry feet and the navmesh.
 const WORLD_LAYER = 1
 const FLOOR_LAYER = 16
@@ -21,6 +22,8 @@ const PROP_TOP = 0.6
 const FENCE_H = 1.5
 const CUT_H = 2.2
 const STOREY = 2.8
+# Utility poles stand this far out from the far walls, inside the margin walkers keep from walls.
+const POLE_V = -0.26
 const LOT_WIDTH = {"house": [6.0, 8.4], "shop": [4.2, 6.0], "plain": [5.0, 7.5]}
 const SIGNS = ["세탁소", "철물점", "슈퍼", "미용실", "복덕방", "분식", "약국", "만화방"]
 const BRICK = ["8a4a38", "7a4a3c", "96604a"]
@@ -51,8 +54,10 @@ var faded: Array = []
 var floor_rects: Array = []
 var lots: Array = []
 var claimed: Array = []
+var poles: Array = []
 var sign_font: SystemFont
 var textures: Dictionary = {}
+var decorations = Decoration.new()
 # The arena's own light, kept so the flat arena can return to it after a lit map.
 var base_light: Dictionary = {}
 
@@ -65,8 +70,10 @@ func build(map_id: String) -> void:
 	floor_rects.clear()
 	lots.clear()
 	claimed.clear()
+	poles.clear()
 	region = null
 	data = {}
+	decorations.configure(map_id)
 	if map_id == "flat":
 		_build_flat()
 		return
@@ -99,11 +106,13 @@ func build(map_id: String) -> void:
 		_wall(entry)
 	for mark in data.get("marks", []):
 		# Flat floor paint (kerb lines, gear plates); purely visual.
+		if not decorations.layout.is_empty(): continue # Replaced by the generated erosion overlays.
 		var base: float = mark[5] if mark.size() > 5 else 0.0
 		Shape.box(self, Vector3((mark[0] + mark[2]) / 2.0, base + 0.006, (mark[1] + mark[3]) / 2.0), Vector3(mark[2] - mark[0], 0.012, mark[3] - mark[1]), Color(mark[4]))
 	var buildings: Array = data.get("buildings", [])
 	for i in buildings.size():
 		_building(self, buildings[i], str(i))
+	decorations.floors(self)
 	region.bake_navigation_mesh(false)
 	# The navigation server picks the new mesh up a few physics frames later; until then
 	# routes fall back to straight lines (see nav_ready).
@@ -212,6 +221,7 @@ func _wall(entry) -> void:
 	var base: float = 0.0 if entry is Array else float(entry.get("base", 0.0))
 	var kind: String = ("wall" if height > SIGHT_HEIGHT else "prop") if entry is Array else entry.get("kind", "wall")
 	var body: StaticBody3D = _solid(region, rect, base, base + height, color, WORLD_LAYER)
+	if kind == "prop": decorations.prop(body,rect,base,base+height)
 	if kind == "prop" or height <= SIGHT_HEIGHT:
 		return
 	_fadeable(body, rect)
@@ -342,10 +352,11 @@ func _edge(edge: Dictionary, index: int) -> void:
 			lot.kind = "house"
 		spans.append([u, u + w])
 		u += w
+	var first: int = lots.size()
 	for i in row.size():
 		var walled_next: bool = i + 1 < row.size() and row[i + 1].kind != "shop"
 		_lot(f, row[i], spans[i][0], spans[i][1], walled_next, rng, "%d:%d" % [index, i])
-	# Concrete utility poles stand just behind the walls of the far edges, each with a street lamp
+	# Concrete utility poles stand on the alley side of the far edges' walls, each with a street lamp
 	# reaching over the alley and wires running pole to pole. Camera-side edges get none.
 	if f.sign > 0 or not edge.get("poles", true):
 		return
@@ -353,24 +364,42 @@ func _edge(edge: Dictionary, index: int) -> void:
 	var tops: Array = []
 	var last := -INF
 	for i in row.size():
-		var at: float = spans[i][1] - 0.7
-		var foot: Vector3 = _at(f, at, 0.38, 0)
-		if row[i].kind == "shop" or at - last < gap or spans[i][1] - spans[i][0] < 1.6 or _hides_floor([foot.x - 0.2, foot.z - 0.2, foot.x + 0.2, foot.z + 0.2], 7.0):
+		if row[i].kind == "shop" or spans[i][1] - spans[i][0] < 1.6:
 			continue
-		last = at
-		tops.append(_pole(f, at, _grounds(f, spans[i][0], spans[i][1]).y))
+		# Near a lot end, but never in front of the gate and its posts.
+		var gate: Array = lots[first + i].get("gate_span", [])
+		for at in [spans[i][1] - 0.6, spans[i][0] + 0.6]:
+			var foot: Vector3 = _at(f, at, POLE_V, 0)
+			var clear_of_gate: bool = gate.is_empty() or at < gate[0] - 0.65 or at > gate[1] + 0.65
+			if clear_of_gate and at - last >= gap and not _hides_floor([foot.x - 0.2, foot.z - 0.2, foot.x + 0.2, foot.z + 0.2], 7.0):
+				last = at
+				tops.append(_pole(f, at, _grounds(f, at - 0.2, at + 0.2).y))
+				break
 	for i in tops.size() - 1:
 		for drop in [0.0, 0.3]:
 			_wire(tops[i] - Vector3(0, drop, 0), tops[i + 1] - Vector3(0, drop, 0))
+	# Each building on the edge takes its service cable from the nearest pole.
+	for i in row.size():
+		var drop: Vector3 = lots[first + i].get("drop", Vector3.INF)
+		if drop == Vector3.INF or tops.is_empty():
+			continue
+		var near: Vector3 = tops[0]
+		for top in tops:
+			if Vector2(top.x - drop.x, top.z - drop.z).length() < Vector2(near.x - drop.x, near.z - drop.z).length():
+				near = top
+		if Vector2(near.x - drop.x, near.z - drop.z).length() < 10.0:
+			_wire(near - Vector3(0, 0.9, 0), drop, 0.35, 2)
 
 func _pole(f: Dictionary, u: float, ground: float) -> Vector3:
-	var foot: Vector3 = _at(f, u, 0.38, ground)
+	var foot: Vector3 = _at(f, u, POLE_V, ground)
+	poles.append(foot)
 	_skin(Shape.cylinder(self, foot + Vector3(0, 3.5, 0), 0.13, 7.0, Color("8d8a82"), 0.1), "concrete")
-	_piece(self, f, u - 0.04, u + 0.04, -1.15, 0.38, ground + 5.0, ground + 5.08, Color("4f504e"))
-	_piece(self, f, u - 0.18, u + 0.18, -1.3, -0.95, ground + 4.86, ground + 5.0, Color("3d3f40"))
+	_piece(self, f, u - 0.04, u + 0.04, -1.3, POLE_V, ground + 5.0, ground + 5.08, Color("4f504e"))
+	_piece(self, f, u - 0.18, u + 0.18, -1.45, -1.1, ground + 4.86, ground + 5.0, Color("3d3f40"))
 	var bulb: Color = Color(data.get("lighting", {}).get("lamp_color", "ffd59a"))
-	_glow(_piece(self, f, u - 0.14, u + 0.14, -1.26, -0.99, ground + 4.82, ground + 4.86, bulb), bulb, 2.0)
-	_lamp(self, _at(f, u, -1.15, ground + 4.5), bulb, float(data.get("lighting", {}).get("lamp_energy", 1.6)), 9.0)
+	_glow(_piece(self, f, u - 0.14, u + 0.14, -1.41, -1.14, ground + 4.82, ground + 4.86, bulb), bulb, 2.0)
+	_lamp(self, _at(f, u, -1.28, ground + 4.5), bulb, float(data.get("lighting", {}).get("lamp_energy", 1.6)), 9.0)
+	decorations.pole(self, f, u, ground, POLE_V - 0.14)
 	return foot + Vector3(0, 6.6, 0)
 
 func _lamp(parent: Node3D, pos: Vector3, color: Color, energy: float, reach: float) -> void:
@@ -382,9 +411,21 @@ func _lamp(parent: Node3D, pos: Vector3, color: Color, energy: float, reach: flo
 	parent.add_child(light)
 	light.position = pos
 
-func _wire(a: Vector3, b: Vector3) -> void:
-	var wire: MeshInstance3D = Shape.box(self, (a + b) / 2.0, Vector3(0.025, 0.025, a.distance_to(b)), Color("1e1f22"))
-	wire.look_at_from_position((a + b) / 2.0, b, Vector3.UP)
+func _wire(a: Vector3, b: Vector3, slack: float = 0.45, strands: int = 3) -> void:
+	# With the alley decorations, wires hang in a sag with strands side by side; without, one straight run.
+	var segments := 12 if not decorations.layout.is_empty() else 1
+	var span: Vector3 = Vector3(b.x - a.x, 0, b.z - a.z)
+	var side: Vector3 = span.cross(Vector3.UP).normalized() * 0.055 if span.length() > 0.01 else Vector3(0.055, 0, 0)
+	for strand in (strands if segments > 1 else 1):
+		var previous: Vector3 = a + side * strand
+		for i in range(1,segments+1):
+			var t: float = float(i)/segments
+			var sag: float = (slack+strand*0.16)*4*t*(1-t) if segments > 1 else 0.0
+			var next: Vector3 = a.lerp(b,t)+side*strand+Vector3(0,-sag,0)
+			var gauge: float = 0.016 if segments > 1 else 0.025
+			var wire: MeshInstance3D = Shape.box(self,(previous+next)/2,Vector3(gauge,gauge,previous.distance_to(next)),Color("1e1f22"))
+			wire.look_at_from_position((previous+next)/2,next,Vector3.UP)
+			previous=next
 
 func _lot(f: Dictionary, lot: Dictionary, u0: float, u1: float, walled_next: bool, rng: RandomNumberGenerator, key: String) -> void:
 	# One lot: collision is a single block along the frontage; the look is assembled from kit pieces.
@@ -395,6 +436,8 @@ func _lot(f: Dictionary, lot: Dictionary, u0: float, u1: float, walled_next: boo
 	body.collision_layer = WORLD_LAYER
 	body.collision_mask = 0
 	region.add_child(body)
+	body.set_meta("alley_state",decorations.state(key,lot.get("faded",false)))
+	body.set_meta("lot_key",key)
 	var collision = CollisionShape3D.new()
 	var box = BoxShape3D.new()
 	var top: float = ground + (CUT_H if kind == "shop" else FENCE_H)
@@ -415,9 +458,15 @@ func _lot(f: Dictionary, lot: Dictionary, u0: float, u1: float, walled_next: boo
 		full = full and not _hides_floor(foot, storeys * STOREY + 0.6) and _claim(foot)
 		if full:
 			_ground_slab(body, f, u0, u1, depth + 0.6, ground)
-			_building(body, {"rect": foot, "floors": storeys, "color": WALLS[rng.randi() % WALLS.size()], "roof": ROOFS[rng.randi() % ROOFS.size()], "base": ground, "face": "z" if f.along_x else "x", "front": "store"}, key)
+			var shop_house: Node3D = _building(body, {"rect": foot, "floors": storeys, "color": WALLS[rng.randi() % WALLS.size()], "roof": ROOFS[rng.randi() % ROOFS.size()], "base": ground, "face": "z" if f.along_x else "x", "front": "store"}, key)
 			info.building = true
+			info.drop = shop_house.get_meta("drop")
 		info.sign = _storefront(body, f, u0, u1, ground, lot, rng, not full)
+		# Projecting signs and A-frames advertise this same trade, flush with the shopfront.
+		body.set_meta("business", info.sign)
+		body.set_meta("facade", 0.0)
+		body.set_meta("full_building",full)
+		decorations.shop(body, f, u0, u1, ground, lot, key)
 	else:
 		var palette: Array = BRICK if rng.randf() < 0.5 else CEMENT
 		var color = Color(lot.get("color", palette[rng.randi() % palette.size()]))
@@ -434,15 +483,18 @@ func _lot(f: Dictionary, lot: Dictionary, u0: float, u1: float, walled_next: boo
 			runs = [[u0 + 0.1, at - 0.22], [at + gw + 0.22, end]]
 			info.piers += _gate(body, f, at, gw, _grounds(f, at, at + gw).y, color, coping, surface, rng, full)
 			info.gate = true
+			info.gate_span = [at, at + gw]
 			var setback: float = rng.randf_range(1.4, 2.4)
+			body.set_meta("facade", setback)
 			var depth: float = rng.randf_range(5.0, 7.0)
 			var storeys: int = 2 if rng.randf() < 0.6 else 1
 			var foot: Array = _area(f, u0 + 0.6, u1 - 0.6, setback, setback + depth)
 			full = full and not _hides_floor(foot, storeys * STOREY + 0.6) and _claim(foot)
 			if full:
 				_ground_slab(body, f, u0, u1, setback + depth + 0.6, ground)
-				_building(body, {"rect": foot, "floors": storeys, "color": WALLS[rng.randi() % WALLS.size()], "roof": ROOFS[rng.randi() % ROOFS.size()], "base": ground, "face": "z" if f.along_x else "x", "front": "door"}, key)
+				var house: Node3D = _building(body, {"rect": foot, "floors": storeys, "color": WALLS[rng.randi() % WALLS.size()], "roof": ROOFS[rng.randi() % ROOFS.size()], "base": ground, "face": "z" if f.along_x else "x", "front": "door"}, key)
 				info.building = true
+				info.drop = house.get_meta("drop")
 		else:
 			full = full and rng.randf() < 0.5 and not _hides_floor(_area(f, u0, u1, 0.6, 2.6), 3.8)
 			if full:
@@ -454,6 +506,14 @@ func _lot(f: Dictionary, lot: Dictionary, u0: float, u1: float, walled_next: boo
 		for run in runs:
 			if run[1] - run[0] > 0.05:
 				_fence_run(body, f, run[0], run[1], color, coping, surface)
+		# Choose one real fence span, so notices never float across a doorway.
+		var decorated_run: Array = []
+		for run in runs:
+			if decorated_run.is_empty() or run[1]-run[0] > decorated_run[1]-decorated_run[0]: decorated_run=run
+		if not decorated_run.is_empty():
+			var mid: float = (decorated_run[0]+decorated_run[1])/2.0
+			decorations.decorate_run(body, f, decorated_run[0], decorated_run[1], _grounds(f, mid-0.1, mid+0.1).y, kind, key)
+	decorations.lot(body,f,u0,u1,ground,key,full and info.building)
 	info.cut = not full
 	lots.append(info)
 	_fadeable(body, strip)
@@ -510,6 +570,7 @@ func _storefront(body: Node3D, f: Dictionary, u0: float, u1: float, ground: floa
 		_skin(_piece(body, f, u0 + 0.3, u1 - 0.3, -0.16, 0.0, ground + 2.0, ground + 2.12, Color("8b9295")), "metal")
 	else:
 		var lit: bool = rng.randf() < float(data.get("lighting", {}).get("lit_shops", 0.3))
+		if body.get_meta("alley_state","original") in ["closed","vacant"]: lit=false
 		var door: float = rng.randf_range(u0 + 0.9, u1 - 0.9)
 		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.04, 0.0, ground, ground + 2.12, Color("d8d2c4"))
 		var pane: MeshInstance3D = _piece(body, f, u0 + 0.4, u1 - 0.4, -0.07, -0.04, ground + 0.35, ground + 2.02, Color("2a3a44"))
@@ -525,8 +586,10 @@ func _storefront(body: Node3D, f: Dictionary, u0: float, u1: float, ground: floa
 		return lot.get("sign", "")
 	if lot.has("tube"):
 		var tube = Color(lot.tube)
-		_glow(_piece(body, f, u0 + 0.8, u1 - 0.8, -0.32, -0.24, ground + 2.2, ground + 2.26, tube), tube, 1.6)
-		_lamp(body, _at(f, (u0 + u1) / 2.0, -0.6, ground + 2.0), tube, 0.9, 5.0)
+		var fixture := _piece(body,f,u0+0.8,u1-0.8,-0.32,-0.24,ground+2.2,ground+2.26,tube.darkened(0.35))
+		if body.get_meta("alley_state","original") in ["original","open"]:
+			_glow(fixture,tube,1.6)
+			_lamp(body,_at(f,(u0+u1)/2.0,-0.6,ground+2.0),tube,0.9,5.0)
 	var text: String = lot.get("sign", SIGNS[rng.randi() % SIGNS.size()])
 	var board = Color(lot.get("board", BOARDS[rng.randi() % BOARDS.size()]))
 	var ink = Color("2a2a2a") if board.get_luminance() > 0.55 else Color("f4efe4")
@@ -538,6 +601,8 @@ func _storefront(body: Node3D, f: Dictionary, u0: float, u1: float, ground: floa
 		var cloth = Color(["b8433a", "2f5d8a", "3f7a52"][rng.randi() % 3])
 		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.9, 0.0, ground + 2.16, ground + 2.22, cloth)
 		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.92, -0.88, ground + 1.98, ground + 2.22, cloth.lightened(0.3))
+	if decorations.sign(body, f, text, lot.get("faded",false), (u0+u1)/2.0, ground+2.6, u1-u0-0.4):
+		return text
 	if sign_font == null:
 		sign_font = SystemFont.new()
 		sign_font.font_names = PackedStringArray(["Malgun Gothic", "Noto Sans CJK KR", "sans-serif"])
@@ -567,7 +632,7 @@ func _on_floor(at: Vector3) -> bool:
 			return true
 	return false
 
-func _building(parent: Node3D, entry: Dictionary, key: String) -> void:
+func _building(parent: Node3D, entry: Dictionary, key: String) -> Node3D:
 	# House assembled from kit pieces: storey blocks, floor bands, framed windows, a ground-floor
 	# door or shop shutter, a roof parapet and rooftop clutter. No collision.
 	# A per-building seed varies the pieces so neighbours do not repeat. "face" names the alley face
@@ -586,6 +651,8 @@ func _building(parent: Node3D, entry: Dictionary, key: String) -> void:
 	var front: String = entry.get("front", "any")
 	var house = Node3D.new()
 	parent.add_child(house)
+	house.set_meta("lot_key",key)
+	house.set_meta("alley_state",parent.get_meta("alley_state",decorations.state(key)))
 	for level in storeys:
 		var y0: float = base + level * storey
 		_skin(Shape.box(house, Vector3(cx, y0 + storey / 2.0, cz), size, wall.darkened(0.04 * (level % 2))), "plaster")
@@ -611,16 +678,25 @@ func _building(parent: Node3D, entry: Dictionary, key: String) -> void:
 		Shape.cylinder(house, Vector3(cx + rng.randf_range(-size.x, size.x) * 0.25, roof_y + 0.7, cz - size.z * 0.2), 0.55, 1.2, Color("c9c2b0"))
 	for i in rng.randi_range(1, 3):
 		Shape.box(house, Vector3(cx + rng.randf_range(-0.4, 0.4) * size.x, base + storey * rng.randi_range(0, storeys - 1) + 2.2, r[3] + 0.3), Vector3(0.8, 0.55, 0.5), Color("d9d6cc"))
+	# Gas riser and meters on the alley face; "drop" is where the overhead service cable lands.
+	# Shops keep their alley face for the shopfront kit, so their fittings go on the other seen face.
+	var fitted: String = alley if alley != "" else "z"
+	if front == "store":
+		fitted = "x" if fitted == "z" else "z"
+	house.set_meta("drop", decorations.fixtures(house, r, base, storeys, fitted))
+	return house
 
 func _window(house: Node3D, face: String, cx: float, cz: float, size: Vector3, y: float, t: float, rng: RandomNumberGenerator) -> void:
 	# Some windows are lit from inside; at dusk they glow.
 	var lit: bool = rng.randf() < float(data.get("lighting", {}).get("lit_windows", 0.18))
+	if house.get_meta("alley_state","original") in ["closed","vacant"]: lit=false
 	if face == "z":
 		Shape.box(house, Vector3(cx + t, y, cz + size.z / 2.0 + 0.03), Vector3(1.15, 1.2, 0.05), Color("d8d2c4"))
 		_glass(house, Vector3(cx + t, y, cz + size.z / 2.0 + 0.06), Vector3(0.95, 1.0, 0.04), lit)
 	else:
 		Shape.box(house, Vector3(cx + size.x / 2.0 + 0.03, y, cz + t), Vector3(0.05, 1.2, 1.15), Color("d8d2c4"))
 		_glass(house, Vector3(cx + size.x / 2.0 + 0.06, y, cz + t), Vector3(0.04, 1.0, 0.95), lit)
+	decorations.window(house,face,cx,cz,size,y,t)
 
 func _glass(parent: Node3D, pos: Vector3, size: Vector3, lit: bool) -> MeshInstance3D:
 	var geometry = BoxMesh.new()
@@ -753,8 +829,9 @@ func _set_alpha(entry: Dictionary, alpha: float) -> void:
 			mesh.modulate.a = alpha
 			continue
 		var material: StandardMaterial3D = mesh.material_override
-		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA if alpha < 1.0 else BaseMaterial3D.TRANSPARENCY_DISABLED
-		material.albedo_color = Color(material.albedo_color, alpha)
+		var has_decal: bool = mesh.has_meta("decal_base_alpha")
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA if alpha < 1.0 or has_decal else BaseMaterial3D.TRANSPARENCY_DISABLED
+		material.albedo_color = Color(material.albedo_color, alpha * float(mesh.get_meta("decal_base_alpha",1.0)))
 
 func fade_between(eye: Vector3, target: Vector3) -> void:
 	# Tall walls between the camera and the witch turn see-through; the rest go back to their resting look.

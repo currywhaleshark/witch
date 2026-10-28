@@ -1,0 +1,1370 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "all 69 specified assets delivered, including optional erosion",
+      "passed": true
+    },
+    {
+      "check": "sign_laundry selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_laundry runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_laundry.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_hardware selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_hardware runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_hardware.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_super selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_super runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_super.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_salon selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_salon runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_salon.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_realty selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_realty runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_realty.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_snack selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_snack runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_snack.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_pharmacy selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_pharmacy runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_pharmacy.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_comics selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_comics runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_comics.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_stationery selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_stationery runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_stationery.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_stationery_faded selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_stationery_faded runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_stationery_faded.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "poster_redevelop_notice selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "poster_redevelop_notice runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "poster_redevelop_notice transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "poster_redevelop_notice.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "poster_demolition selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "poster_demolition runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "poster_demolition transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "poster_demolition.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "poster_tutoring selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "poster_tutoring runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "poster_tutoring transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "poster_tutoring.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "poster_moving selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "poster_moving runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "poster_moving transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "poster_moving.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "poster_lost_cat selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "poster_lost_cat runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "poster_lost_cat transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "poster_lost_cat.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "poster_volunteer selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "poster_volunteer runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "poster_volunteer transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "poster_volunteer.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "poster_circus selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "poster_circus runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "poster_circus transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "poster_circus.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "poster_torn_layers selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "poster_torn_layers runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "poster_torn_layers transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "poster_torn_layers.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "spray_demolish selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "spray_demolish runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "spray_demolish transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "spray_demolish.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "spray_x selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "spray_x runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "spray_x transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "spray_x.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "spray_vacant selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "spray_vacant runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "spray_vacant transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "spray_vacant.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "spray_no_entry selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "spray_no_entry runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "spray_no_entry transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "spray_no_entry.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "stencil_no_parking selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "stencil_no_parking runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "stencil_no_parking transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "stencil_no_parking.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "spray_number selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "spray_number runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "spray_number transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "spray_number.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_coping selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_coping runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_coping grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_coping alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_coping derived file hash",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_coping identical horizontal boundary",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_coping.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_coping_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_window selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_window runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_window grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_window alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_window derived file hash",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_window.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_streak_window_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_rust_run selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "grime_rust_run runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "grime_rust_run grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "grime_rust_run alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "grime_rust_run derived file hash",
+      "passed": true
+    },
+    {
+      "check": "grime_rust_run.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_rust_run_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_base_dirt selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "grime_base_dirt runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "grime_base_dirt grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "grime_base_dirt alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "grime_base_dirt derived file hash",
+      "passed": true
+    },
+    {
+      "check": "grime_base_dirt identical horizontal boundary",
+      "passed": true
+    },
+    {
+      "check": "grime_base_dirt.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_base_dirt_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_soot selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "grime_soot runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "grime_soot grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "grime_soot alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "grime_soot derived file hash",
+      "passed": true
+    },
+    {
+      "check": "grime_soot.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grime_soot_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_patch selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "floor_patch runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "floor_patch grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "floor_patch alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "floor_patch derived file hash",
+      "passed": true
+    },
+    {
+      "check": "floor_patch.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_patch_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_oil selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "floor_oil runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "floor_oil grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "floor_oil alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "floor_oil derived file hash",
+      "passed": true
+    },
+    {
+      "check": "floor_oil.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_oil_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_cracks selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "floor_cracks runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "floor_cracks grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "floor_cracks alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "floor_cracks derived file hash",
+      "passed": true
+    },
+    {
+      "check": "floor_cracks.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_cracks_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_puddle_stain selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "floor_puddle_stain runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "floor_puddle_stain grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "floor_puddle_stain alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "floor_puddle_stain derived file hash",
+      "passed": true
+    },
+    {
+      "check": "floor_puddle_stain.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_puddle_stain_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_manhole selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "floor_manhole runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "floor_manhole transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "floor_manhole.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_drain selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "floor_drain runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "floor_drain transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "floor_drain.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "plate_dog selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "plate_dog runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "plate_dog transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "plate_dog.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "plate_lot_number selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "plate_lot_number runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "plate_lot_number transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "plate_lot_number.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "plate_no_flyers selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "plate_no_flyers runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "plate_no_flyers transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "plate_no_flyers.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "box_meter selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "box_meter runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "box_meter transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "box_meter.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "box_milk selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "box_milk runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "box_milk transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "box_milk.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "erosion_crack_slab selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "erosion_crack_slab runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "erosion_crack_slab transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "erosion_crack_slab.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "erosion_gear_reveal selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "erosion_gear_reveal runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "erosion_gear_reveal transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "erosion_gear_reveal.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "erosion_blue_scorch selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "erosion_blue_scorch runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "erosion_blue_scorch transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "erosion_blue_scorch.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_v_realty selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_v_realty runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_v_realty.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_v_pharmacy selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_v_pharmacy runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_v_pharmacy.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_v_gukbap selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_v_gukbap runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_v_gukbap.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_v_sundries selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_v_sundries runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_v_sundries.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_v_fortune selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_v_fortune runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_v_fortune.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "sign_v_inn_broken selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "sign_v_inn_broken runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "sign_v_inn_broken transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "sign_v_inn_broken.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "aframe_realty selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "aframe_realty runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "aframe_realty transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "aframe_realty.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "aframe_snack selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "aframe_snack runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "aframe_snack transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "aframe_snack.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "banner_oppose selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "banner_oppose runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "banner_oppose transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "banner_oppose.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "banner_rights selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "banner_rights runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "banner_rights transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "banner_rights.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "banner_union selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "banner_union runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "banner_union transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "banner_union.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "banner_no_trespass selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "banner_no_trespass runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "banner_no_trespass transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "banner_no_trespass.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "glass_for_rent selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "glass_for_rent runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "glass_for_rent transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "glass_for_rent.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "glass_closing_sale selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "glass_closing_sale runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "glass_closing_sale transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "glass_closing_sale.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "glass_open selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "glass_open runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "glass_open transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "glass_open.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "boarded_window selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "boarded_window runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "boarded_window transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "boarded_window.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "boarded_door selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "boarded_door runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "boarded_door transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "boarded_door.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "glass_broken selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "glass_broken runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "glass_broken transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "glass_broken.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grille_window selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "grille_window runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "grille_window transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "grille_window.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "grille_window_green selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "grille_window_green runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "grille_window_green transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "grille_window_green.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "wall_gas_pipe selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "wall_gas_pipe runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "wall_gas_pipe transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "wall_gas_pipe.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "wall_cables selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "wall_cables runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "wall_cables transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "wall_cables identical horizontal boundary",
+      "passed": true
+    },
+    {
+      "check": "wall_cables.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_arrow selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "floor_arrow runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "floor_arrow grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "floor_arrow alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "floor_arrow derived file hash",
+      "passed": true
+    },
+    {
+      "check": "floor_arrow.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_arrow_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_text_slow selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "floor_text_slow runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "floor_text_slow grayscale mask",
+      "passed": true
+    },
+    {
+      "check": "floor_text_slow alpha is the inverse mask",
+      "passed": true
+    },
+    {
+      "check": "floor_text_slow derived file hash",
+      "passed": true
+    },
+    {
+      "check": "floor_text_slow.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "floor_text_slow_rgba.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "pole_ad_strip selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "pole_ad_strip runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "pole_ad_strip transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "pole_ad_strip.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "pole_number_plate selected source is byte-for-byte raw generation",
+      "passed": true
+    },
+    {
+      "check": "pole_number_plate runtime hash and dimensions",
+      "passed": true
+    },
+    {
+      "check": "pole_number_plate transparent background or holes",
+      "passed": true
+    },
+    {
+      "check": "pole_number_plate.png mipmap import setting",
+      "passed": true
+    },
+    {
+      "check": "actual GPU review and integration assertions",
+      "passed": true
+    },
+    {
+      "check": "existing map navigation/combat regressions",
+      "passed": true
+    },
+    {
+      "check": "import engine exited successfully",
+      "passed": true
+    },
+    {
+      "check": "review engine exited successfully",
+      "passed": true
+    },
+    {
+      "check": "map_nav engine exited successfully",
+      "passed": true
+    },
+    {
+      "check": "game/scripts/arena.gd unchanged",
+      "passed": true
+    },
+    {
+      "check": "game/scripts/combat_rules.gd unchanged",
+      "passed": true
+    },
+    {
+      "check": "game/scripts/player_visual.gd unchanged",
+      "passed": true
+    },
+    {
+      "check": "game/data/trial.json unchanged",
+      "passed": true
+    },
+    {
+      "check": "game/data/maps/alley_v2.json unchanged",
+      "passed": true
+    },
+    {
+      "check": "all actual scene captures are 1280x800",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "source_asset_count": 69,
+  "runtime_png_count": 80,
+  "runtime_png_bytes": 14032256,
+  "raw_candidate_count": 75,
+  "source_native_size_deviations": [
+    {
+      "id": "sign_laundry",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2040,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_hardware",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 1960,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_super",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 1982,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_salon",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2003,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_realty",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2012,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_snack",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2000,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_pharmacy",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 1960,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_comics",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 1966,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_stationery",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 1980,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_stationery_faded",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 1979,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_v_realty",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2003,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_v_pharmacy",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2016,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_v_gukbap",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2020,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_v_sundries",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2022,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    },
+    {
+      "id": "sign_v_fortune",
+      "constraint": "native board long edge >=2048px",
+      "actual_px": 2016,
+      "handling": "Original retained unchanged. Board cropped/resampled to the specified runtime dimensions. Native source-size requirement remains below target."
+    }
+  ],
+  "protected_files": {
+    "game/scripts/arena.gd": {
+      "before": "043e182d9f2adc74e61374230e48f55a8849b78e98cf23e900d4927f15560992",
+      "after": "043e182d9f2adc74e61374230e48f55a8849b78e98cf23e900d4927f15560992",
+      "unchanged": true
+    },
+    "game/scripts/combat_rules.gd": {
+      "before": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+      "after": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+      "unchanged": true
+    },
+    "game/scripts/player_visual.gd": {
+      "before": "679351831430b40bf3d7d8e440d82930038cf47aa7e6c888b9027c7c69e6b76e",
+      "after": "679351831430b40bf3d7d8e440d82930038cf47aa7e6c888b9027c7c69e6b76e",
+      "unchanged": true
+    },
+    "game/data/trial.json": {
+      "before": "ab8008404779103080b5b84bef7e4fd4bf98ca72c4b70f914c4c5cdc19fe7687",
+      "after": "ab8008404779103080b5b84bef7e4fd4bf98ca72c4b70f914c4c5cdc19fe7687",
+      "unchanged": true
+    },
+    "game/data/maps/alley_v2.json": {
+      "before": "606cbe75a0bd1f4bf2ab4f6ce7132789af183564446d6961d78a3126df0a78b8",
+      "after": "606cbe75a0bd1f4bf2ab4f6ce7132789af183564446d6961d78a3126df0a78b8",
+      "unchanged": true
+    }
+  },
+  "gpu_checks": 1171,
+  "map_regression_checks": 43,
+  "gpu_scope": "Actual GPU captures, resource import, navigation/collision/RNG parity, parent fade, deterministic reload. Art and play-feel approval remain with the user.",
+  "status": "runtime_verified_native_source_size_deviations_documented",
+  "user_art_approval": false
+}

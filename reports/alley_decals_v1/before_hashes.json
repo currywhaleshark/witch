@@ -1,0 +1,8 @@
+{
+  "game/scripts/arena.gd": "043e182d9f2adc74e61374230e48f55a8849b78e98cf23e900d4927f15560992",
+  "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+  "game/scripts/player_visual.gd": "679351831430b40bf3d7d8e440d82930038cf47aa7e6c888b9027c7c69e6b76e",
+  "game/data/trial.json": "ab8008404779103080b5b84bef7e4fd4bf98ca72c4b70f914c4c5cdc19fe7687",
+  "game/data/maps/alley_v2.json": "606cbe75a0bd1f4bf2ab4f6ce7132789af183564446d6961d78a3126df0a78b8",
+  "game/scripts/field_map.gd": "5d94408dea933246a6c1d07ab938a7a8ffdb5e341946629f16efcbddd47421c7"
+}

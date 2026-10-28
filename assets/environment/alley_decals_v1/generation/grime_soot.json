@@ -1,0 +1,12 @@
+{
+  "id": "grime_soot",
+  "variant": "a",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-4ed98407-d698-460d-a40b-02a72093b41a.png",
+  "raw": "raw/grime_soot_a.png",
+  "generated_at": "2026-10-28T03:59:48.632Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: irregular soft feathery soot smear left by a rag creature, restrained organic edges, soft transition to white. Mark overall width:height 1.2:1.2.",
+  "transparent": false
+}

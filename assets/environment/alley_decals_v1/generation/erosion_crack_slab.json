@@ -1,0 +1,12 @@
+{
+  "id": "erosion_crack_slab",
+  "variant": "a",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-de64dc41-e54f-4ddc-b972-a3dd0c75ed25.png",
+  "raw": "raw/erosion_crack_slab_a.png",
+  "generated_at": "2026-10-28T04:13:50.560Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on uniform solid magenta #FF00FF background,\n8% empty magenta margin, no shadow or backing plane. Keep the stated object proportions.\nThe opaque magenta is required; no magenta anywhere inside the object. Crisp detail with natural worn edges.\nSubject: a torn irregular opening in gray asphalt revealing very old gray stone paving slabs beneath, isolated top-down flat color decal. Width:height 3:2. Dark fissure, subdued detail, no glowing rim, no red/orange/teal areas.\nEvery pixel outside the irregular asset silhouette must be uniform bright magenta #FF00FF. No vignette, cast shadow or colored haze in the background.",
+  "transparent": false
+}

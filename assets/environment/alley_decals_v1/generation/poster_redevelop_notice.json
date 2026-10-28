@@ -1,0 +1,11 @@
+{
+  "id": "poster_redevelop_notice",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-43f827a8-3640-4f75-84d1-5537cd0ad4c9.png",
+  "raw": "raw/poster_redevelop_notice_a.png",
+  "generated_at": "2026-10-28T03:42:18.739Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: off-white official assembly notice, near-black bold Korean title arranged in two readable lines, simple thin rules, one red square seal made of abstract geometric lines with NO seal text. Blank lower body Exact title: \"재개발 조합 총회 안내\".",
+  "transparent": true
+}

@@ -183,8 +183,11 @@
      "front": "glass"
     },
     {
-     "kind": "house",
-     "w": 6.0
+     "kind": "shop",
+     "w": 6.0,
+     "sign": "복덕방",
+     "front": "glass",
+     "floors": 2
     },
     {
      "kind": "shop",
@@ -223,7 +226,10 @@
    "out": "-x",
    "lots": [
     {
-     "kind": "house"
+     "kind": "shop",
+     "sign": "약국",
+     "front": "glass",
+     "floors": 2
     }
    ]
   },
@@ -261,7 +267,10 @@
    "out": "-z",
    "lots": [
     {
-     "kind": "house"
+     "kind": "shop",
+     "sign": "분식",
+     "front": "glass",
+     "floors": 2
     }
    ]
   },

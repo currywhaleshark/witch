@@ -1,0 +1,19 @@
+{
+  "reviewed_at": "2026-10-28T05:10:50.773463+00:00",
+  "method": "Agent visually inspected all 69 generations, selected edits, category sheets and actual GPU captures; no OCR or user art approval claimed.",
+  "corrections": {
+    "spray_demolish": "Regenerated on magenta after native alpha lost lettering.",
+    "plate_dog": "Regenerated without native-alpha halo.",
+    "sign_stationery_faded": "ImageGen edit retains the original red subtitle.",
+    "plate_no_flyers": "ImageGen edit removes unwanted final period.",
+    "sign_v_inn_broken": "ImageGen edit moves the missing 인 to the fourth syllable slot.",
+    "aframe_snack": "ImageGen edit places middle-dot separators after prices."
+  },
+  "observations": [
+    "Large shop titles, demolition paint and banners remain legible at native 1.75x framing. Small body text and number plates are texture detail at this scale.",
+    "Generated mechanical recess uses an independent full gear texture under a separate stone-aperture shader; it is static, with an angle parameter reserved for later animation.",
+    "No real storefront photographs were supplied to generation. Blank pseudo-text areas, invented shop names and requested fictional numbers were used.",
+    "Source board dimensions have the explicitly listed deviations; the runtime dimensions are verified. Minor material-relief shading remains in generated albedo.",
+    "Reusable catalog includes six unused horizontal sign variants and any poster not selected by this map seed. Not every catalog image is placed in this single trial map."
+  ]
+}

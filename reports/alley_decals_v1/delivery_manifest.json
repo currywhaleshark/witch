@@ -1,0 +1,1685 @@
+{
+  "generated_at": "2026-10-28T05:10:50.817802+00:00",
+  "files": [
+    {
+      "path": "assets/environment/alley_decals_v1/provenance.json",
+      "sha256": "ddfd1a78720be030d402774acf947834d1d84da2b3daec74828274f3db847105",
+      "bytes": 253777
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/README.md",
+      "sha256": "888bcf96ebf44908da65353602dbdc74917efaf527101f40bd042e9dbf53cd43",
+      "bytes": 4638
+    },
+    {
+      "path": "game/assets/textures/decals_v1/manifest.json",
+      "sha256": "c01899486c560881dc5c6ea38db88c1bf8fb1b7b2c5385bf10372926983cb198",
+      "bytes": 248275
+    },
+    {
+      "path": "reports/alley_decals_v1/validation.json",
+      "sha256": "539a4875f7104df35511584a49477f60a7a3bb74e4259d92b539b8b47ede1f6e",
+      "bytes": 36481
+    },
+    {
+      "path": "reports/alley_decals_v1/visual_review.json",
+      "sha256": "3d81a01f7296eb025e4064ed53c0c45338bdd04a68d103cb7a8ff2942ebe55b4",
+      "bytes": 1564
+    },
+    {
+      "path": "reports/alley_decals_v1/review.html",
+      "sha256": "5a75935bff6dfbd1a3f113dafc2e0a4aa1d4cbe57ea9eaf0af70c76fb2247861",
+      "bytes": 34785
+    },
+    {
+      "path": "reports/alley_decals_v1/review/result.json",
+      "sha256": "ba8161232478d3e7b5da5668c94c2bad005e2d0094e897c05a32e846e0789e3f",
+      "bytes": 59366
+    },
+    {
+      "path": "reports/alley_decals_v1/map_nav/result.json",
+      "sha256": "8108433d6ad521d681063ba23bcfb30d51c51c8beec0d019561a8001de3afe0c",
+      "bytes": 2450
+    },
+    {
+      "path": "game/scripts/alley_decoration.gd",
+      "sha256": "1b30941504ff2257d9b152b0f1ab2c1f92fd463025b1296fb6bfa6e1b10260eb",
+      "bytes": 12799
+    },
+    {
+      "path": "game/scripts/field_map.gd",
+      "sha256": "134f054641ae524cdb17b9d3b4c60cbd4332a96fd023b75cb7bbae9e0e50c0e3",
+      "bytes": 41812
+    },
+    {
+      "path": "game/shaders/alley_gear_reveal.gdshader",
+      "sha256": "53e629fc541e91aa7478e579b41903e63429856addd69959368de44803fbc006",
+      "bytes": 1111
+    },
+    {
+      "path": "game/data/maps/alley_decals_v1.json",
+      "sha256": "a2bdbd6175bcbdae3c100d0aa879428c809fd45fa869c119ade2d914ade8e993",
+      "bytes": 1731
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_laundry.png",
+      "sha256": "3fc5a79a226d830722442fd87d18d0f0abfb9165dc58ca4f73524fde71171a61",
+      "bytes": 181746
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_hardware.png",
+      "sha256": "f2899ba4afcc272de648af44c47df0fbac103243bc857bfd78ed2431a110d74b",
+      "bytes": 217228
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_super.png",
+      "sha256": "0be395bf6fd305b809907ced014194cb0ee93e26897f693b43dff0c0b7b708e5",
+      "bytes": 195502
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_salon.png",
+      "sha256": "7edd4e5174a0d5c9aabbbedf6dd380bff41e05495585816b9ca74275ffffe128",
+      "bytes": 180736
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_realty.png",
+      "sha256": "90608391f5fb5bb287221b8a54002bb68c2e1d6ef6080efbad149ffd2e12a989",
+      "bytes": 193870
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_snack.png",
+      "sha256": "fe98d2d6c7ef226bf558150420240203ffb32da37f09440cf15b982577f3b551",
+      "bytes": 201260
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_pharmacy.png",
+      "sha256": "b2e4a0285e889bc20ad0268cc49b409b22b4ae1e7a2f1af1573b97ba0dbac243",
+      "bytes": 191145
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_comics.png",
+      "sha256": "d6f4cc44422f09b0a8589ad50b64040e90651529c2425aba40c76a52ad1c7ccd",
+      "bytes": 212903
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_stationery.png",
+      "sha256": "d285ab2a628f240f12e8c84aa1f6c7f5d3f784b33be1cd68eb6684eb85dbb6a7",
+      "bytes": 205901
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_stationery_faded.png",
+      "sha256": "99a6122d06585ce748a1b98ca8a58f17a4f15d1f900489e0b20c18f0a594c943",
+      "bytes": 223364
+    },
+    {
+      "path": "game/assets/textures/decals_v1/poster_redevelop_notice.png",
+      "sha256": "09a27d9d55f79717ad24ad1a10ec300ed8687362773a5aa331e253a2cb12ef3c",
+      "bytes": 149019
+    },
+    {
+      "path": "game/assets/textures/decals_v1/poster_demolition.png",
+      "sha256": "6245f94646196b9ff78cf8d62244ff3eee6a205f8c7c4fdd9818b5effaecf712",
+      "bytes": 165818
+    },
+    {
+      "path": "game/assets/textures/decals_v1/poster_tutoring.png",
+      "sha256": "8bab30ccd7a22766c1d979aad2070a01e93c4e515419637abe74240751dd82f9",
+      "bytes": 161213
+    },
+    {
+      "path": "game/assets/textures/decals_v1/poster_moving.png",
+      "sha256": "6b5b29fc35e988f6812ef0d78deca9c12a918a996058ca23dd92b1ae95b17f82",
+      "bytes": 139188
+    },
+    {
+      "path": "game/assets/textures/decals_v1/poster_lost_cat.png",
+      "sha256": "de3bd7adb762b48b453c827ee4d733caef98068501bec2a4a437333ec305746b",
+      "bytes": 154178
+    },
+    {
+      "path": "game/assets/textures/decals_v1/poster_volunteer.png",
+      "sha256": "4c2b976d3d8e50589af6c7ad3cc6767edce6232a2f10f093f3e2796459bdf93e",
+      "bytes": 160460
+    },
+    {
+      "path": "game/assets/textures/decals_v1/poster_circus.png",
+      "sha256": "c01b9c000da4ac078376913fd3cd16f43b530d2e88ffda667da355e99c874ccd",
+      "bytes": 200254
+    },
+    {
+      "path": "game/assets/textures/decals_v1/poster_torn_layers.png",
+      "sha256": "e1c3f976b77acf6eb33d3168924e8a64922827ed96378d3b9ebfadc62445aff7",
+      "bytes": 166982
+    },
+    {
+      "path": "game/assets/textures/decals_v1/spray_demolish.png",
+      "sha256": "28beb4c1e9735622f41cc1904cb0cbb31178c82ae8d013424a8f714c6621d0fa",
+      "bytes": 258894
+    },
+    {
+      "path": "game/assets/textures/decals_v1/spray_x.png",
+      "sha256": "13dd13654595048fd51685c47967be9772f8e40aa4ebc34408b162b49c94c9e0",
+      "bytes": 337335
+    },
+    {
+      "path": "game/assets/textures/decals_v1/spray_vacant.png",
+      "sha256": "093879fb7552c0d7a371d9d7817f3ed0313ebea3f8d5d460c1c683e86edd0384",
+      "bytes": 179426
+    },
+    {
+      "path": "game/assets/textures/decals_v1/spray_no_entry.png",
+      "sha256": "7a1058429784059fdbc2272e5d2970d5cf543d3f972119313a187c35b85be762",
+      "bytes": 156488
+    },
+    {
+      "path": "game/assets/textures/decals_v1/stencil_no_parking.png",
+      "sha256": "e08623338e64534c0005dbb90f0fa6187e55d7efd9e885649b70ce08ebe159e6",
+      "bytes": 112328
+    },
+    {
+      "path": "game/assets/textures/decals_v1/spray_number.png",
+      "sha256": "ab5e8e12d6461dbb831ef78663ec9bc60a51d0a6da30c3933b8b1506c94d38e2",
+      "bytes": 230654
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_streak_coping.png",
+      "sha256": "980664944e6b8b0658706de220fea2ce9baaecf4600a74fe42c3315ba6e90ae5",
+      "bytes": 51071
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_streak_coping_rgba.png",
+      "sha256": "4f19b961a6e80a77b173435dc77bfdea1bbb79c25cba3ac68fd3b3ee1d3aa78d",
+      "bytes": 70346
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_streak_window.png",
+      "sha256": "4c1c2ccadf53a8a1b3dfdad2b4ebac9b2f6b17d9f9346da722ee81b08e77864d",
+      "bytes": 33829
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_streak_window_rgba.png",
+      "sha256": "2ebc9cc32a207e307b84a5bd02a307c2abdd00e032becf1b9d7c60760ea196d2",
+      "bytes": 52535
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_rust_run.png",
+      "sha256": "1dd9bf897d6e2282f8bba05f5151ab826e6f66b7b260b3581561f51f60ba5a37",
+      "bytes": 16130
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_rust_run_rgba.png",
+      "sha256": "6a190253b75189d71b1ebf4ace7b8532a61fe4fa73dc98f1f019f3924ef4dbd5",
+      "bytes": 25330
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_base_dirt.png",
+      "sha256": "9d1879c7e9b69a8872216298008161fd46364f4a253f6fb222bb17546bd6e117",
+      "bytes": 15223
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_base_dirt_rgba.png",
+      "sha256": "95120e5f2c46896670bf7b1551ba4c4cbba3e1d39af6fcd081e25ba6785a7952",
+      "bytes": 21567
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_soot.png",
+      "sha256": "02960cde94aee3bd8c47492bd4d248ef57c596fb34ab971a69448c50c1664621",
+      "bytes": 125594
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grime_soot_rgba.png",
+      "sha256": "af8b5411447662398e008bcfd9ee483d0968a9cb3f81c02446a4b477e89c3275",
+      "bytes": 177415
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_patch.png",
+      "sha256": "a7fb146da28b1f03f98c3b736a6bfb8b648fdb038e5e58efa7e726861176423f",
+      "bytes": 87274
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_patch_rgba.png",
+      "sha256": "73af0ba59dacc2eaa191f84de8f3ec373c108fdc7912434f8c669d6789a449d0",
+      "bytes": 122362
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_oil.png",
+      "sha256": "fec3a5b4534e68bec0c5c99cfb5103d8d5db2665617d1f1313c5fa9c30c88d49",
+      "bytes": 33078
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_oil_rgba.png",
+      "sha256": "f9e9f5e9b236169024323c8ea6597d870a95a0e78a33bab33d55b34e933fd440",
+      "bytes": 49887
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_cracks.png",
+      "sha256": "fe5ce31407380be82307124af80d98b3f9dad68a5b0966656efc1d640e8715cc",
+      "bytes": 43482
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_cracks_rgba.png",
+      "sha256": "a8641bb815c6be19cd799ae5f676eb4fa2c558ee609115a014fa2f1818999ea6",
+      "bytes": 62148
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_puddle_stain.png",
+      "sha256": "0f30216749c00e5bf001a6251e8f338396a8efc850b1a039398f728cb026ae57",
+      "bytes": 18464
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_puddle_stain_rgba.png",
+      "sha256": "ec7ab103fa9278e2e762362c0437e8cc0655d5bb91abd25b73d757c6eccfa199",
+      "bytes": 28579
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_manhole.png",
+      "sha256": "e8fc159268d55c3de1c9adfc4d903d0e1da2c9990c85ab8f38eb281f4ccda30f",
+      "bytes": 133929
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_drain.png",
+      "sha256": "dc6435cc8abd39165e3afcb6f9b07fe80888892926ee33f22f20b48a0a8519aa",
+      "bytes": 226686
+    },
+    {
+      "path": "game/assets/textures/decals_v1/plate_dog.png",
+      "sha256": "9063bd501b56aa6053d58639c112dc01b8242df60df2cd6966a4f10cf707972f",
+      "bytes": 93090
+    },
+    {
+      "path": "game/assets/textures/decals_v1/plate_lot_number.png",
+      "sha256": "2c101f52fc9f5cff8669df54231b2a504c97f75bd2da2514ea7d953712c7ed78",
+      "bytes": 70182
+    },
+    {
+      "path": "game/assets/textures/decals_v1/plate_no_flyers.png",
+      "sha256": "6c9ea4a8de7bdf07d4bbf9e9e0027597dec92a105251b60c264af145ef714f1e",
+      "bytes": 49869
+    },
+    {
+      "path": "game/assets/textures/decals_v1/box_meter.png",
+      "sha256": "39c6ba957233e3afdb4b4571e8a41fc0a4fa19ef9121145c1d193bf423500768",
+      "bytes": 173799
+    },
+    {
+      "path": "game/assets/textures/decals_v1/box_milk.png",
+      "sha256": "e37b37001354e82d8a686d4ade51079cc89f207a38bf6d8554e0ea92532fc89b",
+      "bytes": 132230
+    },
+    {
+      "path": "game/assets/textures/decals_v1/erosion_crack_slab.png",
+      "sha256": "a821adcdb9c7f519d71c4fbeb9c1b6be2e46b4eb47ec99608ec225be97e82a65",
+      "bytes": 870314
+    },
+    {
+      "path": "game/assets/textures/decals_v1/erosion_gear_reveal.png",
+      "sha256": "808e1403ad4b45f44895188733ba78599e108e6de3fbb000fadbc58307fd656c",
+      "bytes": 372072
+    },
+    {
+      "path": "game/assets/textures/decals_v1/erosion_blue_scorch.png",
+      "sha256": "6e72565e87e3a69c1d70602d96b6c34551425c9dc93c6dad031fcd665fa77662",
+      "bytes": 425845
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_v_realty.png",
+      "sha256": "7e58c6d30f247cc3800dd19b441d941b15b90aaa54f2a8d5d88b18e3664901b8",
+      "bytes": 101822
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_v_pharmacy.png",
+      "sha256": "385a1cb1d0d92f772392c47534a82976196c0584ed9a3005f5317d3da2d55739",
+      "bytes": 105085
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_v_gukbap.png",
+      "sha256": "62748592f872d0af0e4e8190255617968e7ad3d88fd99762dda4c700e450438f",
+      "bytes": 116374
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_v_sundries.png",
+      "sha256": "b36fe11b60c47ee43cfd29bc1ce28fe7835f3778a4ba123a5debcecc91fa8c33",
+      "bytes": 85742
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_v_fortune.png",
+      "sha256": "059bb053c0e41e9a52d8f71655418e8ef90a3acb702c0e61ba5c4c176835c674",
+      "bytes": 113076
+    },
+    {
+      "path": "game/assets/textures/decals_v1/sign_v_inn_broken.png",
+      "sha256": "ca7c11065133d453f6df24d0bae0789c0ce663620d81d5072dc46765380e0264",
+      "bytes": 121070
+    },
+    {
+      "path": "game/assets/textures/decals_v1/aframe_realty.png",
+      "sha256": "ef66641cca14352f10090196f232da2e63c961cf18b5a0c32b0982d8b8de4fd5",
+      "bytes": 261142
+    },
+    {
+      "path": "game/assets/textures/decals_v1/aframe_snack.png",
+      "sha256": "a8622e0f333dc0b739e6e88a70c0086297d36622d3dae00015eb27590d3048a8",
+      "bytes": 267091
+    },
+    {
+      "path": "game/assets/textures/decals_v1/banner_oppose.png",
+      "sha256": "d6cd2544f068cf6dc47b99213d331f841202939504a9c4e1f8b0ec46cfb0c3cb",
+      "bytes": 293241
+    },
+    {
+      "path": "game/assets/textures/decals_v1/banner_rights.png",
+      "sha256": "92c96686964f1ceaac0eda43dd8ef0f015bd0ab534866e519dd4395f840d05c9",
+      "bytes": 309769
+    },
+    {
+      "path": "game/assets/textures/decals_v1/banner_union.png",
+      "sha256": "f1a0e9029782e52075e70e508c53467e7cadec144a229fbca0fac6e8d4a8f688",
+      "bytes": 278256
+    },
+    {
+      "path": "game/assets/textures/decals_v1/banner_no_trespass.png",
+      "sha256": "e9a5462151c3a08f98f3bb1705d89f40cf21d755f9b47f82aed1f0b26dff870a",
+      "bytes": 311652
+    },
+    {
+      "path": "game/assets/textures/decals_v1/glass_for_rent.png",
+      "sha256": "e74b0a370b34005376a1ceba43f7f51c4606107bb67284252982765e88c5d6d2",
+      "bytes": 120393
+    },
+    {
+      "path": "game/assets/textures/decals_v1/glass_closing_sale.png",
+      "sha256": "74f77602011cf06de1bfb0d016ff7a39294b11e87a7745fd9455357e0edc0d44",
+      "bytes": 134824
+    },
+    {
+      "path": "game/assets/textures/decals_v1/glass_open.png",
+      "sha256": "549c9f66f8a34cf291d345ace963b15b5ceeb893d6ccf6ff015be547b6d74731",
+      "bytes": 120818
+    },
+    {
+      "path": "game/assets/textures/decals_v1/boarded_window.png",
+      "sha256": "667387714e30330a5c676b5a502e02816c22883ac9e22bc7651fd3d406f37872",
+      "bytes": 567335
+    },
+    {
+      "path": "game/assets/textures/decals_v1/boarded_door.png",
+      "sha256": "59bea90636a5bfeda9482f19d95ab5f853513f2b407f81d4af7aee5d7cf0d48f",
+      "bytes": 511401
+    },
+    {
+      "path": "game/assets/textures/decals_v1/glass_broken.png",
+      "sha256": "b0b2ca36bf53361522a5e7035b62ab6ec7033200f7b403e5094fba28f5b9765f",
+      "bytes": 499151
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grille_window.png",
+      "sha256": "00d9c0b5909e67723f57f472d725914bcac73a353583b4509f5e2734d2680a8c",
+      "bytes": 328758
+    },
+    {
+      "path": "game/assets/textures/decals_v1/grille_window_green.png",
+      "sha256": "191b8bc33a014b5214eb5e9b90aa8a31e4b066c5bfab382751cea5a32349778b",
+      "bytes": 340173
+    },
+    {
+      "path": "game/assets/textures/decals_v1/wall_gas_pipe.png",
+      "sha256": "1bb220b7f8d4401e43f97297ba3a5845304253d89f749fa4d32e43a7e59cbbaf",
+      "bytes": 381714
+    },
+    {
+      "path": "game/assets/textures/decals_v1/wall_cables.png",
+      "sha256": "a4ef5b87a7829522246cedff5ca9cdadd8df1ded8b8803b755a6622c68351c2d",
+      "bytes": 89924
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_arrow.png",
+      "sha256": "ea5913f04df6235dccd46767ad8b372a3dea10ca108d314531e4067e5cb20253",
+      "bytes": 43343
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_arrow_rgba.png",
+      "sha256": "e8128b58dd80865529b51fdbbe18f9afbf656ab308c8bf1cf340ccd5041482a4",
+      "bytes": 65831
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_text_slow.png",
+      "sha256": "a2625ee2f300efe7ea8be9ea8087c2d0e75573167c42b50342aa28cb2694d09b",
+      "bytes": 42020
+    },
+    {
+      "path": "game/assets/textures/decals_v1/floor_text_slow_rgba.png",
+      "sha256": "aace53b5a47ca00fca232a60c5fefeec0885f2a721f4e39be50d5360a045a6bd",
+      "bytes": 60164
+    },
+    {
+      "path": "game/assets/textures/decals_v1/pole_ad_strip.png",
+      "sha256": "6046082462a239fd85db0367953740534c0655ef807a1770f5941be8c079543e",
+      "bytes": 146643
+    },
+    {
+      "path": "game/assets/textures/decals_v1/pole_number_plate.png",
+      "sha256": "913407cbc87907ae256c628b617dcd9677c9dec64b951e89171fad4d03afdd8d",
+      "bytes": 57222
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_laundry.png",
+      "sha256": "979de92e113f78ca5dd0052737127e53499693579a5496bb71c3e5b470bb9cd1",
+      "bytes": 1613441
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_hardware.png",
+      "sha256": "7d5221b8c9b55af383f8f68672a6c94a4e923f3382ccd5661177e05641831397",
+      "bytes": 1799697
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_super.png",
+      "sha256": "824d4e4be3d9013b9a9f027d062c04a2de5b2645ac84b58ff6f9013116b1da1f",
+      "bytes": 1712252
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_salon.png",
+      "sha256": "e92d828a3017ec47d7c7947d918b9a19dd3b1a05884edcc6476e29e336ab9353",
+      "bytes": 1588095
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_realty.png",
+      "sha256": "32b06a7f519b58d26f4be44351972590bba0b41309679a303da58a3d20bbb7eb",
+      "bytes": 1654005
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_snack.png",
+      "sha256": "5040d1ac5bfd7509dede16e19b7556d70700c7769eb85d69abc196aaec057f20",
+      "bytes": 1770292
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_pharmacy.png",
+      "sha256": "dd3487a663d0ab95ac090f2c58a12c57172454bc45b89d4003e74815c5aa1a82",
+      "bytes": 1546078
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_comics.png",
+      "sha256": "974c01149fb5bc3db38f057671da9d042359dd01338ef5dc35cb2e5d2ff53c35",
+      "bytes": 1728203
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_stationery.png",
+      "sha256": "e2fffb3985d58cc90e05e7e4c21cf1e044b635181eabee8f365ba18026b0a590",
+      "bytes": 1722223
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_stationery_faded.png",
+      "sha256": "2513b58678932272c3ec450787df538659717ab65a0c68ef4c3e3e3d66c6d63c",
+      "bytes": 1950540
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/poster_redevelop_notice.png",
+      "sha256": "631b73caced75917a4a5bf7e4b8f6e93e84e051d3923a1f46310889d60b7ffda",
+      "bytes": 2646638
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/poster_demolition.png",
+      "sha256": "2a0fdb74766552dbc1c4335c69ec899d8246b85850ffa45d444ff85266b5b7b8",
+      "bytes": 2514062
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/poster_tutoring.png",
+      "sha256": "0eb1d9648df8c76b4b3a8fe94e8ea5024ae1562c27da0c32b0b914b40461e941",
+      "bytes": 2561824
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/poster_moving.png",
+      "sha256": "39c503b6fce7e79657afd3ac146f99a2cf6f34b451838c72dd6e4ecaa89de6ef",
+      "bytes": 2268117
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/poster_lost_cat.png",
+      "sha256": "d63e7e0f6a693f73407ceb82a578962b2fa4b96f99657724dfd01dbd7c8e65c2",
+      "bytes": 2617472
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/poster_volunteer.png",
+      "sha256": "02c80de89e274799bb7e158849ff002c38230728f392dcb9f21cc4f7403a7e8d",
+      "bytes": 2487692
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/poster_circus.png",
+      "sha256": "0f5c9bf93c16d19fee9cd958b50cf1e90eb24d65af0c7d7b9f83bf95d29123d7",
+      "bytes": 2938524
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/poster_torn_layers.png",
+      "sha256": "86c7e35d82d85125f08db389acad83985534bc47f2d598cf5edd7c3eb82827a7",
+      "bytes": 2873626
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/spray_demolish.png",
+      "sha256": "61803fba3de9a0df3e811181843efa29cf972b9d6a6cbb518339a8394149d561",
+      "bytes": 2106228
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/spray_x.png",
+      "sha256": "89e89ef848098521157c1975e418bd29489754d7e60966ad29659f6489cfe01b",
+      "bytes": 2147479
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/spray_vacant.png",
+      "sha256": "642117ec5fb894e2f521a81a20ed114c386b653cef9242c1a32514b72806d6cd",
+      "bytes": 1930784
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/spray_no_entry.png",
+      "sha256": "a077340f257c600d6c5288ea3d5f9d2cbcc8ebe31c92bf4b7141074554a633e4",
+      "bytes": 1959886
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/stencil_no_parking.png",
+      "sha256": "470ebef4842797c0e2c664839e48eff88a76982ee4f2068ba981fd81a2989a19",
+      "bytes": 1561596
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/spray_number.png",
+      "sha256": "4eac186c69c0da346a9b501ff42c7d7250ea4b732f3d1e6c576f7efddfd59112",
+      "bytes": 2029912
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/grime_streak_coping.png",
+      "sha256": "e7acc48cd9923c036bc5818dc94d905e0bc9f9a725a9d03d7b5f54c7dcdd5244",
+      "bytes": 1972644
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/grime_streak_window.png",
+      "sha256": "2899de61a69b08e31d4eeeee64668612f250371e2322e7643d2fc1d4f4f28525",
+      "bytes": 1411565
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/grime_rust_run.png",
+      "sha256": "cfea955731b5c7aa3b0ccf8f82b82261cc91e0c1f962c3b0c36b2c13f87a3dc1",
+      "bytes": 1208860
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/grime_base_dirt.png",
+      "sha256": "e90a7197143654d25d46adea0d44138f20ea48e069d0b47d223d93a56108e233",
+      "bytes": 1873715
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/grime_soot.png",
+      "sha256": "30b33da064abc20a951a29d3b8155ddd274d120248d3e22a79696c56218ab26a",
+      "bytes": 2549572
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/floor_patch.png",
+      "sha256": "8351bfcdfd383437ca3b12023684a709b328841c97defdb31d9435fd006c9205",
+      "bytes": 2801923
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/floor_oil.png",
+      "sha256": "cce34b2b42d5c7537fa48064a6b27b1c443df9450ffbfea5c168f7088c0d6c74",
+      "bytes": 1479965
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/floor_cracks.png",
+      "sha256": "6b09df319fd54c529569442ac528653bca607c5f4ac25f331b95f9a4ed824711",
+      "bytes": 1242547
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/floor_puddle_stain.png",
+      "sha256": "09ebe00ca7e4435f16fa712dc7626ada3311cb9138ff7fc7974c270e6eba6e63",
+      "bytes": 1264556
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/floor_manhole.png",
+      "sha256": "b189acd422d0e7c27f2523e293913bfc8976e885a80f5b87bdddd13b16d9460a",
+      "bytes": 3083361
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/floor_drain.png",
+      "sha256": "b5f6067c4d903c72dbd0d3c0bef8ae987c61c8b8f9da5963c52a908485659e3c",
+      "bytes": 2314173
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/plate_dog.png",
+      "sha256": "ca02dc00fa3d619975f72b2fac1396b9728abd59bd5980e68296a688d7216f71",
+      "bytes": 1983487
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/plate_lot_number.png",
+      "sha256": "e63d9b724b4dce3caf88279182547315bb65820332e1772626d4ffc40fc25a2d",
+      "bytes": 2153605
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/plate_no_flyers.png",
+      "sha256": "098001136956d5573914c6a7c5d250d517d3a13b43d4d3948093db672f7c8a5c",
+      "bytes": 1897273
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/box_meter.png",
+      "sha256": "17c11360b62549c55bf37a1133ecec8ac1fa22ab388f2923caa4b33657b0b202",
+      "bytes": 2111411
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/box_milk.png",
+      "sha256": "6a6147b836d08a3b67a5fc9d029cc40efefaa095b3a8c64282022454f0a19285",
+      "bytes": 2241543
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/erosion_crack_slab.png",
+      "sha256": "3ee6535e9c2233784585151efe88aab04be156ffd109df5dd654d7b53227f285",
+      "bytes": 3145242
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/erosion_gear_reveal.png",
+      "sha256": "d031aec15929e32267108a4e4dc638e20603b9f28f0431834ef2a0cbe5fa7bfe",
+      "bytes": 2414475
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/erosion_blue_scorch.png",
+      "sha256": "0947145eb6b007697808d7d6534296482570f573f819ce5f695bd361019de2d3",
+      "bytes": 2661303
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_v_realty.png",
+      "sha256": "03b4b2551b7a0673ec576e15d9e316f27f0e7fec717e992b31545aa2907ef644",
+      "bytes": 1739189
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_v_pharmacy.png",
+      "sha256": "9de369125a2e8cdf575531bc249c80bc599b1b16aff434dda9e25ece79aafa02",
+      "bytes": 1849255
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_v_gukbap.png",
+      "sha256": "6ca61473576bd74b755c9de2e1f3dc65e970474b94244a5c6d3e53ecaa5093d4",
+      "bytes": 1959687
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_v_sundries.png",
+      "sha256": "f1e6ba65f69e0b70aad3ceb11ab85e26dcbd4b0e75b87b51b516b017ab7b8779",
+      "bytes": 2106290
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_v_fortune.png",
+      "sha256": "017af054cf0df19e839a53cfcb098ab8cfae2b7562fc25067ea9d32e836290aa",
+      "bytes": 1930045
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/sign_v_inn_broken.png",
+      "sha256": "0f249e85ee717e2125a06e2c24cc2971cb0373ff2672a85d5c9ebe2c9f84ac81",
+      "bytes": 1947545
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/aframe_realty.png",
+      "sha256": "dcded3e371a9dcb2862537ba6b71f11351c4b33557c12611d61831cbd65d8568",
+      "bytes": 2207771
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/aframe_snack.png",
+      "sha256": "39b15a345be322527ad8c50e59b0e2f9f11001dcaa84228dfb81d1017dda6eec",
+      "bytes": 2317626
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/banner_oppose.png",
+      "sha256": "fc7970d10047b7b2eaba71e7e76fad36100ee7b9a79d68f73e347a65531be9fb",
+      "bytes": 2026241
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/banner_rights.png",
+      "sha256": "059363a04762aa5bdf55c1f8f65445cab423a67201cc6a477b6bef636fb95dc2",
+      "bytes": 2014720
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/banner_union.png",
+      "sha256": "108ac3163b26e13d65d701f113faf9a757462c2a2e72a42a5782d7443371d3cb",
+      "bytes": 1846250
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/banner_no_trespass.png",
+      "sha256": "bdb5f8af0b05f268918a4a35aed8de93581a41973107650ed23755fd6e55bdf3",
+      "bytes": 1980727
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/glass_for_rent.png",
+      "sha256": "768ec762c61fb84fa0f0a20513a756aa16917524d15a43e5e972e1dbe465fe23",
+      "bytes": 1814697
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/glass_closing_sale.png",
+      "sha256": "a62445ece96c57ab6364ac72a1ab280a28759d71c3a44663054eb9c9cd488340",
+      "bytes": 2106587
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/glass_open.png",
+      "sha256": "27825eb78373ab07b7e7d85fc0f324172fc7f850475b05f11383100bb5b60b16",
+      "bytes": 1706225
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/boarded_window.png",
+      "sha256": "668d9ca3138284d3e74ed817ae2964efdfd6a1cfaae944c8d56963e6d7c2c072",
+      "bytes": 3069384
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/boarded_door.png",
+      "sha256": "ef3a6af7e9700c3993861ed3e2fc330343965cb985d92e332a625205443746ab",
+      "bytes": 2349885
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/glass_broken.png",
+      "sha256": "06e03a37bdb8dbb2b63d9f480a26333d5f981c7c474df73d6b9e59f7b7e2ea88",
+      "bytes": 2787260
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/grille_window.png",
+      "sha256": "fbe23d13fef19d38db0008235fe550000aadf0aa37b6afd75bf883eaf284f883",
+      "bytes": 2067184
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/grille_window_green.png",
+      "sha256": "b35d53eb51b3da513ab66e0df7f94c005cbad3170847762dbe885fcde79e472e",
+      "bytes": 2200962
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/wall_gas_pipe.png",
+      "sha256": "81ccffa5bbcde4247ef92acddb0f50a19de0dc63e7ed14ef5c4a7d7232c6a450",
+      "bytes": 1454077
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/wall_cables.png",
+      "sha256": "79be4d3a48026c5253cf9cb29fcdf592b7beb63e6dd96cda0b8abca2e4874262",
+      "bytes": 1372354
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/floor_arrow.png",
+      "sha256": "c9dab3bca3ae3a83b13d57af0e315a7d287b42545fdd6974cfb5ea98667401a3",
+      "bytes": 1441973
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/floor_text_slow.png",
+      "sha256": "662317baba4d2d0e84789713e891a39279fcb0d81d4a2242107984785cae7c87",
+      "bytes": 2170940
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/pole_ad_strip.png",
+      "sha256": "0622c95201fe909254091c4f5985b082ae3cb9bb8967c0509286a0b09c492dbf",
+      "bytes": 1610503
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/source/pole_number_plate.png",
+      "sha256": "c3703249d3ec915f4713a31e9a1439f47d38d2a97be16e369f1d42ba8c8f3801",
+      "bytes": 2504671
+    },
+    {
+      "path": "reports/alley_decals_v1/review/before_a_laundry.png",
+      "sha256": "6687d083adaf59b21d92eb3275aa50d6e01c9d6a7d8ae0cd8f92f38a3d1f54ed",
+      "bytes": 1068980
+    },
+    {
+      "path": "reports/alley_decals_v1/review/before_a_stairs.png",
+      "sha256": "3b5ba7bd52bad5951ae3eb8a8910d1fab329d1cd2f39f6f9482f18ead4b314ef",
+      "bytes": 1102186
+    },
+    {
+      "path": "reports/alley_decals_v1/review/before_b_stationery.png",
+      "sha256": "50c957aef4ff8db5336ad8377b6926f330008b5a6a63aff17a7c293629b3c744",
+      "bytes": 1320309
+    },
+    {
+      "path": "reports/alley_decals_v1/review/before_b_houses.png",
+      "sha256": "3ae8dfbab380c4176f4cc87b1cad8a29f5f2d574fb06af335a0ea8ec9cc1eef0",
+      "bytes": 1282587
+    },
+    {
+      "path": "reports/alley_decals_v1/review/before_c_erosion.png",
+      "sha256": "d474f5a2204f6ac662917f6c2292b3cd193ef3ac7420058b57f8dbaa156c6159",
+      "bytes": 1134620
+    },
+    {
+      "path": "reports/alley_decals_v1/review/after_a_laundry.png",
+      "sha256": "38d157aadf091854ce58579b249ca6fadd33da0f198959898e7e89afcada4433",
+      "bytes": 1192769
+    },
+    {
+      "path": "reports/alley_decals_v1/review/close_a_laundry.png",
+      "sha256": "c4fba99e2efea06458fbafc691fe580d08b1770cf2fe0080c07a14b3f2c81d5f",
+      "bytes": 1221225
+    },
+    {
+      "path": "reports/alley_decals_v1/review/after_a_stairs.png",
+      "sha256": "852db268be7047fd63457def6d07cd6cc2d8b6ddebd010cfe4e8fa04319ce11a",
+      "bytes": 1191516
+    },
+    {
+      "path": "reports/alley_decals_v1/review/close_a_stairs.png",
+      "sha256": "c19c18b0d5633eaedce6c965bd767ad19678e185d3a96f173ec1b47a274127f5",
+      "bytes": 1336552
+    },
+    {
+      "path": "reports/alley_decals_v1/review/after_b_stationery.png",
+      "sha256": "16d670deb5eede319d3dd8eb3f2c6e0ac2f2d0beb7f579c182f2e8c8189ab9de",
+      "bytes": 1441383
+    },
+    {
+      "path": "reports/alley_decals_v1/review/close_b_stationery.png",
+      "sha256": "11d102261d00f818f7dd7b6450d217e7b75f7e1f93cb0f27ae9da6c71eed5c16",
+      "bytes": 1526920
+    },
+    {
+      "path": "reports/alley_decals_v1/review/after_b_houses.png",
+      "sha256": "1b7cdb921d64a1b3eaf69613b5a022464ec115324fe9ed217d4f8f55e25d618a",
+      "bytes": 1366337
+    },
+    {
+      "path": "reports/alley_decals_v1/review/close_b_houses.png",
+      "sha256": "ea5e0e8195de2152300057456ff3a5db435001b1412843e3f52a78acec7170e5",
+      "bytes": 1348983
+    },
+    {
+      "path": "reports/alley_decals_v1/review/after_c_erosion.png",
+      "sha256": "25aabf3c77ca54b6868c4f7fcbcde7bf41b514573efd27fbe800d86d0eb31f61",
+      "bytes": 1237941
+    },
+    {
+      "path": "reports/alley_decals_v1/review/close_c_erosion.png",
+      "sha256": "7753b08095d85b0b9df33e1c19ef1e5654aa5faed6014209810022703e54d4c6",
+      "bytes": 1243769
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/GENERATION_SPEC.md",
+      "sha256": "7fe15ee536402e4704a8036392395ea5c104a3ff17f302c11fc78a60dc50ca3c",
+      "bytes": 26149
+    },
+    {
+      "path": "docs/godot_prototype.md",
+      "sha256": "9bdd808eb53aa36099e80153fff3c16b11dd5d83228b19d8d0c6d221aa5896a1",
+      "bytes": 35057
+    },
+    {
+      "path": "game/tests/map_nav.gd",
+      "sha256": "66f992519d7146d451e2d4f314eed67076baca4ca86fbcab3e7a77a2a3304f2f",
+      "bytes": 12012
+    },
+    {
+      "path": "game/tests/review_alley_decals.gd",
+      "sha256": "0c3c9daf797f897b20094dfef55002cb7d080b31eecaaa1bd56d3e5027282ee2",
+      "bytes": 6818
+    },
+    {
+      "path": "tools/prepare_alley_decals_v1.py",
+      "sha256": "4a9076b7e16a5c2542c9feaf96c5c9f84ed382c209a79250de16276dac57da96",
+      "bytes": 19405
+    },
+    {
+      "path": "tools/package_alley_decals_v1.py",
+      "sha256": "b535152b00d83030a7597cdca07b0a32680455a3017464b5a646bc7f1b96fbb4",
+      "bytes": 12032
+    },
+    {
+      "path": "tools/finalize_alley_decals_v1.py",
+      "sha256": "1297f5ded278fa6667ec184648c8993f269967bda26acb17a50bfcc3f170c8eb",
+      "bytes": 19741
+    },
+    {
+      "path": "tools/run_alley_decals_v1.ps1",
+      "sha256": "f16fa8d6728ac35cc29e3a3003b6fd64f31b2d789b0eb1c732a501c20a0c46f1",
+      "bytes": 2775
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/aframe_realty.json",
+      "sha256": "02b8c7750baa0b3337c22e8ba3675fbf1e9716bfb9a84986cdf315f16757a83b",
+      "bytes": 2280
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/aframe_snack.json",
+      "sha256": "7381e7ba041986517b456eb6f668ce3007e8e7948482da5beef2e2d9e8754b42",
+      "bytes": 2314
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/aframe_snack_b.json",
+      "sha256": "27f4050b10176418c2daf11525e8dbc68944c437e2cb9e5d2e62e258a0e0a578",
+      "bytes": 1084
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/banner_no_trespass.json",
+      "sha256": "2ed49a5b099a263eb00f70976c11488bda72f7e1793ceea29b09aefca657c774",
+      "bytes": 2455
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/banner_oppose.json",
+      "sha256": "93b4e9090fdc67ff2e10064c9746f1480186025b1dcf1061ef666bdf8d1d80a2",
+      "bytes": 2425
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/banner_rights.json",
+      "sha256": "1d8a091dc0e52b48c9f75add21a5d799866a27e39b9d1efc0a6f71f31eb21da7",
+      "bytes": 2423
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/banner_union.json",
+      "sha256": "b75972cb2da21bfe3332a872c6851a20510c36880235e7f99408202bfbe4d86c",
+      "bytes": 2494
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/boarded_door.json",
+      "sha256": "602c2f72e722a9ef3a623bcb98e72bf443882d1e61b6278cef939bbd28ff8372",
+      "bytes": 2150
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/boarded_window.json",
+      "sha256": "249ce6f3a7f5333ba11175b8b5fb14fb031425cc545fd6e74c235a1f7dc623f9",
+      "bytes": 2192
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/box_meter.json",
+      "sha256": "df56221d454d5a939553c39e96a4e54f5d8aadd1a1fc74480de7c30c559e4d57",
+      "bytes": 2134
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/box_milk.json",
+      "sha256": "2c1df5059209c702056fe0b5e226739cf04243b6e70e7ad49b737ebe09d17441",
+      "bytes": 2116
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/erosion_blue_scorch.json",
+      "sha256": "8980b7ead5a9501730859dd672e65e8ee5d772affceacc5a694556d4a9dbb116",
+      "bytes": 2195
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/erosion_crack_slab.json",
+      "sha256": "84221cc46ddb7520d0e0412457164bbcf7582360f007353def370226e3f3bc31",
+      "bytes": 2161
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/erosion_gear_reveal.json",
+      "sha256": "fc88c31724d402656b51adac5bc82cf808c44ee125d9c21d164136c1d8a4fa44",
+      "bytes": 2288
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/floor_arrow.json",
+      "sha256": "522af8fc69260495a9d1ffe9ee6c87dc713177b9e05935abeb38abde13fcb5ea",
+      "bytes": 2090
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/floor_cracks.json",
+      "sha256": "d90659b5eb01c1ecf0bd5b49bda8faa23cc9c1f4fde018b49d7b1be5113b5c85",
+      "bytes": 2051
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/floor_drain.json",
+      "sha256": "134b23feeb4fda05e3cad2ed5367beeb739914f7814dc3834fb6d7aa8383a958",
+      "bytes": 1930
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/floor_manhole.json",
+      "sha256": "5a457b982ac1e2d8aedd74f8e41f1f56746fbedd83e6c42a1e29585a9eddb58d",
+      "bytes": 1984
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/floor_oil.json",
+      "sha256": "eef64709738b05ccf0ec45d1780bebb2aed7fa21413b7096b073cb35f180a82a",
+      "bytes": 2014
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/floor_patch.json",
+      "sha256": "353cead7b1055c532e2cccc7e0356150d0938fc83fbc0bdb8f6762595609dc63",
+      "bytes": 2092
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/floor_puddle_stain.json",
+      "sha256": "6b79fe4160db2f9fe80963c65086e24533e4e10a79039fb74b3808115b0716ed",
+      "bytes": 2045
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/floor_text_slow.json",
+      "sha256": "5b1bc268752a3f7b6c62585d26a1cc22a506ca08d3fca86b329139a865f56519",
+      "bytes": 2121
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/glass_broken.json",
+      "sha256": "f086effb6b9f1b5656baced109578012c15b63e8ab275cea8122b87e35e658c1",
+      "bytes": 2234
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/glass_closing_sale.json",
+      "sha256": "c9e3982213c5a9779d2c3070b985a172fa159b97986e516093fac3608a38d32a",
+      "bytes": 2299
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/glass_for_rent.json",
+      "sha256": "b28d538eee031ec0aa92dc28b685ef2926dcfe089adab3d318591489a6416593",
+      "bytes": 2271
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/glass_open.json",
+      "sha256": "2855acff2da6377a8a18c1e726d2f6e6f742a73fa6aa6e93fd674d86eacac1c3",
+      "bytes": 2234
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/grille_window.json",
+      "sha256": "58c4ec3c19651668c1d8fb1c8bc25a028c32a78bde2497d8340da80174baeb34",
+      "bytes": 2221
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/grille_window_green.json",
+      "sha256": "f3dcce6e225a0eb056924571eb969115a8f45c7b26eb2c41e64fb30d4c61848b",
+      "bytes": 2263
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/grime_base_dirt.json",
+      "sha256": "f117978e4dbd86a6ad08b64f0ceb09abee97d1f2eb94057a2af5bd8bfad06bcb",
+      "bytes": 2111
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/grime_rust_run.json",
+      "sha256": "07e1f251bcd8abdbf629ef80b53f574841bb394c10816c19a7ae43a2b2161117",
+      "bytes": 2038
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/grime_soot.json",
+      "sha256": "77e3a1aac3bb95ab0f933d2344add7dd35081faf7211711e57e0fe6090635fcc",
+      "bytes": 2044
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/grime_streak_coping.json",
+      "sha256": "e39384ee0a6df75f3305b6a3a012346bf124916412600135a804f8c5a0cd1d10",
+      "bytes": 2109
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/grime_streak_window.json",
+      "sha256": "1f27f1f18530483762b5120e64d088aeb14ed306f63076c586270b9083f15f93",
+      "bytes": 2076
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/plate_dog.json",
+      "sha256": "9e89b7105dc9e5cc23b789c2a2568dc302593afe8be5b7928bb8dbe26b824558",
+      "bytes": 1875
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/plate_dog_b.json",
+      "sha256": "4b315b1453edb53fb228e82e7ea06c52209771377c10a581fecd3715e3d2a632",
+      "bytes": 2074
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/plate_lot_number.json",
+      "sha256": "f668e5c3a6c72180c21ef376315ad274b9cc1ca4b70c97319c8eac988a040531",
+      "bytes": 2093
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/plate_no_flyers.json",
+      "sha256": "229b2fbce5bcb6ada2eb0410bf146c622073c4508208a73a5f07a4e82d97ad4f",
+      "bytes": 2080
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/plate_no_flyers_b.json",
+      "sha256": "fa785f90dee66a51e1e41567ece9a1a8c95fdef77a895e5b1ea1dbb7c0c22d5f",
+      "bytes": 938
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/pole_ad_strip.json",
+      "sha256": "e3e2badb7f7af8fe8aeced64f74b1c975c383bc8edeb8478bcf6d91a0083ef02",
+      "bytes": 2281
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/pole_number_plate.json",
+      "sha256": "ee8dd5a67c5d7d4755abb58bd91eb4d1b3e329d8f0ba11764b1be70096452201",
+      "bytes": 2199
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/poster_circus.json",
+      "sha256": "1fdea173f29474725e26998aed53ace3dbaa73bf9068383e0c35b0356b12986c",
+      "bytes": 2042
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/poster_demolition.json",
+      "sha256": "a31b00aa70528c47f4d326e893b8a92db5703ee1ceee5ac206967a5699b5a603",
+      "bytes": 2017
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/poster_lost_cat.json",
+      "sha256": "4861f96db13a057fe666831e84481d7335079985ad028640524df56d71047bc4",
+      "bytes": 1992
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/poster_moving.json",
+      "sha256": "15e8ae941b9ccde146bcdbbf9ca564f9f87f1dde64de96d6b2531da318f54b25",
+      "bytes": 1979
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/poster_redevelop_notice.json",
+      "sha256": "02e600349c86f6435df11f552a11a8d337f24d247c5b4d713306028bf49595e8",
+      "bytes": 2117
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/poster_torn_layers.json",
+      "sha256": "0cc2c1f816bef31549b4c34f08df828c0270d71cf01ddf496c4b682baa6d0fd0",
+      "bytes": 2045
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/poster_tutoring.json",
+      "sha256": "56152f04ca6b3457924ae15c81ac3f4fb0b270ed311a83d1d97d96604f7e59b9",
+      "bytes": 2037
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/poster_volunteer.json",
+      "sha256": "82c1e637865f11d1cea74d96401b0d2c7924a6deb9f3e8f1d597d8194016a97d",
+      "bytes": 2052
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/requests.json",
+      "sha256": "6a263bc59c4ab98d8a65bdb6f058f0f1182d72db641bbda1b0792a90b389ef38",
+      "bytes": 143834
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/selection.json",
+      "sha256": "f83671fc8c45577c63bf8cb627848dc2ef17e94c75c0e582a69d2c6898d8d36a",
+      "bytes": 165
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_comics.json",
+      "sha256": "0f421c20da04f2ade1c9ca9b256ae357ad8daf714d363e388c5661ffb23f0f64",
+      "bytes": 2218
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_hardware.json",
+      "sha256": "4e508fe56c63856c1daf995f7700925d9dcaa9f17531f0408285b6ef8bf7ff01",
+      "bytes": 2234
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_laundry.json",
+      "sha256": "d73e1017107c2dcfb5da8ec0ed054b3c99b19c28601cb541b0decc955f96344c",
+      "bytes": 2219
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_pharmacy.json",
+      "sha256": "6a7609069c97fee65d5e454fccce2e109315e0404e56156edda8ad5c948cb0af",
+      "bytes": 2266
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_realty.json",
+      "sha256": "a7db406ee4dac10ceda00f2e7b23bcafb6c4e9def5b5f27425bfbeb7521a9fed",
+      "bytes": 2235
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_salon.json",
+      "sha256": "3846e91d2f4bdab4f3ead31dbc7875c71def91a87c7fc53ca32fc4e9aaf0492b",
+      "bytes": 2211
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_snack.json",
+      "sha256": "cadacaea608456c85f2b33b1df2af9e21ca711a9444d3faa20bd58bef63bcaa7",
+      "bytes": 2222
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_stationery.json",
+      "sha256": "e4e42d969a10bb5fe3e697ae7b08524a50f84ef8bbacd6386ac49752b970654b",
+      "bytes": 2224
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_stationery_faded.json",
+      "sha256": "379ee6f5200de4bb8d38b48e08c90f534fe9535bbe6b723e6abd2c0414bcf056",
+      "bytes": 2335
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_stationery_faded_b.json",
+      "sha256": "81bc2f6f97565b1cebf511d7fd4c31c895fcc2b624760e9933544da21549da26",
+      "bytes": 1197
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_super.json",
+      "sha256": "6cc77f4a68c4d83f4bec7994f677ed3e8baa9fb285a7ff9ce0b120417cfb66da",
+      "bytes": 2222
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_v_fortune.json",
+      "sha256": "ef30592dbf5b9f70f6ee719725d04f502dabc51acb3d5fea90e425022899baca",
+      "bytes": 2367
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_v_gukbap.json",
+      "sha256": "adad15644a59a59ca208a09c6e15ce40594f2248949afe3d66664b782b5b382b",
+      "bytes": 2370
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_v_inn_broken.json",
+      "sha256": "eca0e8ec4dd81c7b419b27eecec54a4f00840ccf2c63ad3c0536edf796db8a7f",
+      "bytes": 2516
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_v_inn_broken_b.json",
+      "sha256": "52dd7a7fba077b73ea7667a845dfaae651f134c259eea61f66009620f6754c9f",
+      "bytes": 1228
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_v_pharmacy.json",
+      "sha256": "40afc3005a6e2fa55d6dc70c8129bbeb137ada356319daaddcaacbef3b6840fb",
+      "bytes": 2356
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_v_realty.json",
+      "sha256": "272853752cb3c02878457b89edb529a4cee636bae94aef4a284b6f1b063103f8",
+      "bytes": 2373
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/sign_v_sundries.json",
+      "sha256": "6f4a09f21f9a8408aeb9f6eafb23dfd22873784929324775df12b5f337e79b85",
+      "bytes": 2346
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/spray_demolish.json",
+      "sha256": "deeaff543148921d9f3c9f750fbab9d5a50d0e5fee58355187e8e65ef2b79c06",
+      "bytes": 1885
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/spray_demolish_b.json",
+      "sha256": "f690b1952f061568f3f4c0b4a9c04aeb333e81351f30242af6481cfd91bac81b",
+      "bytes": 2168
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/spray_no_entry.json",
+      "sha256": "023d0a1e35258f5cb8d87b5d2da868ee7395b9598822fde955d73aee7924beb7",
+      "bytes": 2137
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/spray_number.json",
+      "sha256": "6f792b0e405ac463f076220c282aa267c1441e96d202b76c9dd76d19cbb5f85a",
+      "bytes": 2133
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/spray_vacant.json",
+      "sha256": "37c5014f8afdc114f0223645f123a45d7c7b624d764deebc709562a1a7af0f01",
+      "bytes": 2109
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/spray_x.json",
+      "sha256": "a44ee3b7e5ce1435701ac823e78083580cde1fef5de1970c0432a2e767fb6e67",
+      "bytes": 2110
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/stencil_no_parking.json",
+      "sha256": "49b18f186949a803fc32ba766cde8ee576e0cebfbcbc9e4cacd57c5afe83b76a",
+      "bytes": 2179
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/wall_cables.json",
+      "sha256": "86c86d62905d4297a4f0f85617fa712d562a24cfe67a3f348d101296f713b1cb",
+      "bytes": 2229
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/generation/wall_gas_pipe.json",
+      "sha256": "d58e24a6b2037fa0811ee3a831e2798c9952ced24560bc0b5e4c0232acdc710f",
+      "bytes": 2182
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/aframe_realty_a.png",
+      "sha256": "dcded3e371a9dcb2862537ba6b71f11351c4b33557c12611d61831cbd65d8568",
+      "bytes": 2207771
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/aframe_snack_a.png",
+      "sha256": "50b5b22b59425faf779a1052692f5139a5dbd1c78c18b2960062f831734e2da7",
+      "bytes": 2787285
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/aframe_snack_b.png",
+      "sha256": "39b15a345be322527ad8c50e59b0e2f9f11001dcaa84228dfb81d1017dda6eec",
+      "bytes": 2317626
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/banner_no_trespass_a.png",
+      "sha256": "bdb5f8af0b05f268918a4a35aed8de93581a41973107650ed23755fd6e55bdf3",
+      "bytes": 1980727
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/banner_oppose_a.png",
+      "sha256": "fc7970d10047b7b2eaba71e7e76fad36100ee7b9a79d68f73e347a65531be9fb",
+      "bytes": 2026241
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/banner_rights_a.png",
+      "sha256": "059363a04762aa5bdf55c1f8f65445cab423a67201cc6a477b6bef636fb95dc2",
+      "bytes": 2014720
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/banner_union_a.png",
+      "sha256": "108ac3163b26e13d65d701f113faf9a757462c2a2e72a42a5782d7443371d3cb",
+      "bytes": 1846250
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/boarded_door_a.png",
+      "sha256": "ef3a6af7e9700c3993861ed3e2fc330343965cb985d92e332a625205443746ab",
+      "bytes": 2349885
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/boarded_window_a.png",
+      "sha256": "668d9ca3138284d3e74ed817ae2964efdfd6a1cfaae944c8d56963e6d7c2c072",
+      "bytes": 3069384
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/box_meter_a.png",
+      "sha256": "17c11360b62549c55bf37a1133ecec8ac1fa22ab388f2923caa4b33657b0b202",
+      "bytes": 2111411
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/box_milk_a.png",
+      "sha256": "6a6147b836d08a3b67a5fc9d029cc40efefaa095b3a8c64282022454f0a19285",
+      "bytes": 2241543
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/erosion_blue_scorch_a.png",
+      "sha256": "0947145eb6b007697808d7d6534296482570f573f819ce5f695bd361019de2d3",
+      "bytes": 2661303
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/erosion_crack_slab_a.png",
+      "sha256": "3ee6535e9c2233784585151efe88aab04be156ffd109df5dd654d7b53227f285",
+      "bytes": 3145242
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/erosion_gear_reveal_a.png",
+      "sha256": "d031aec15929e32267108a4e4dc638e20603b9f28f0431834ef2a0cbe5fa7bfe",
+      "bytes": 2414475
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/floor_arrow_a.png",
+      "sha256": "c9dab3bca3ae3a83b13d57af0e315a7d287b42545fdd6974cfb5ea98667401a3",
+      "bytes": 1441973
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/floor_cracks_a.png",
+      "sha256": "6b09df319fd54c529569442ac528653bca607c5f4ac25f331b95f9a4ed824711",
+      "bytes": 1242547
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/floor_drain_a.png",
+      "sha256": "b5f6067c4d903c72dbd0d3c0bef8ae987c61c8b8f9da5963c52a908485659e3c",
+      "bytes": 2314173
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/floor_manhole_a.png",
+      "sha256": "b189acd422d0e7c27f2523e293913bfc8976e885a80f5b87bdddd13b16d9460a",
+      "bytes": 3083361
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/floor_oil_a.png",
+      "sha256": "cce34b2b42d5c7537fa48064a6b27b1c443df9450ffbfea5c168f7088c0d6c74",
+      "bytes": 1479965
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/floor_patch_a.png",
+      "sha256": "8351bfcdfd383437ca3b12023684a709b328841c97defdb31d9435fd006c9205",
+      "bytes": 2801923
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/floor_puddle_stain_a.png",
+      "sha256": "09ebe00ca7e4435f16fa712dc7626ada3311cb9138ff7fc7974c270e6eba6e63",
+      "bytes": 1264556
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/floor_text_slow_a.png",
+      "sha256": "662317baba4d2d0e84789713e891a39279fcb0d81d4a2242107984785cae7c87",
+      "bytes": 2170940
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/glass_broken_a.png",
+      "sha256": "06e03a37bdb8dbb2b63d9f480a26333d5f981c7c474df73d6b9e59f7b7e2ea88",
+      "bytes": 2787260
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/glass_closing_sale_a.png",
+      "sha256": "a62445ece96c57ab6364ac72a1ab280a28759d71c3a44663054eb9c9cd488340",
+      "bytes": 2106587
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/glass_for_rent_a.png",
+      "sha256": "768ec762c61fb84fa0f0a20513a756aa16917524d15a43e5e972e1dbe465fe23",
+      "bytes": 1814697
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/glass_open_a.png",
+      "sha256": "27825eb78373ab07b7e7d85fc0f324172fc7f850475b05f11383100bb5b60b16",
+      "bytes": 1706225
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/grille_window_a.png",
+      "sha256": "fbe23d13fef19d38db0008235fe550000aadf0aa37b6afd75bf883eaf284f883",
+      "bytes": 2067184
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/grille_window_green_a.png",
+      "sha256": "b35d53eb51b3da513ab66e0df7f94c005cbad3170847762dbe885fcde79e472e",
+      "bytes": 2200962
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/grime_base_dirt_a.png",
+      "sha256": "e90a7197143654d25d46adea0d44138f20ea48e069d0b47d223d93a56108e233",
+      "bytes": 1873715
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/grime_rust_run_a.png",
+      "sha256": "cfea955731b5c7aa3b0ccf8f82b82261cc91e0c1f962c3b0c36b2c13f87a3dc1",
+      "bytes": 1208860
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/grime_soot_a.png",
+      "sha256": "30b33da064abc20a951a29d3b8155ddd274d120248d3e22a79696c56218ab26a",
+      "bytes": 2549572
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/grime_streak_coping_a.png",
+      "sha256": "e7acc48cd9923c036bc5818dc94d905e0bc9f9a725a9d03d7b5f54c7dcdd5244",
+      "bytes": 1972644
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/grime_streak_window_a.png",
+      "sha256": "2899de61a69b08e31d4eeeee64668612f250371e2322e7643d2fc1d4f4f28525",
+      "bytes": 1411565
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/plate_dog_a.png",
+      "sha256": "f971e9437e64d5cdfa0c2dff9b91c5f2db3cbfda5a0c6c537004522c3b5399cc",
+      "bytes": 1961408
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/plate_dog_b.png",
+      "sha256": "ca02dc00fa3d619975f72b2fac1396b9728abd59bd5980e68296a688d7216f71",
+      "bytes": 1983487
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/plate_lot_number_a.png",
+      "sha256": "e63d9b724b4dce3caf88279182547315bb65820332e1772626d4ffc40fc25a2d",
+      "bytes": 2153605
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/plate_no_flyers_a.png",
+      "sha256": "025d53e56de807e23811e9cb36c29af12ffdbb502da2587ae9565b811e7cdfb9",
+      "bytes": 2038397
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/plate_no_flyers_b.png",
+      "sha256": "098001136956d5573914c6a7c5d250d517d3a13b43d4d3948093db672f7c8a5c",
+      "bytes": 1897273
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/pole_ad_strip_a.png",
+      "sha256": "0622c95201fe909254091c4f5985b082ae3cb9bb8967c0509286a0b09c492dbf",
+      "bytes": 1610503
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/pole_number_plate_a.png",
+      "sha256": "c3703249d3ec915f4713a31e9a1439f47d38d2a97be16e369f1d42ba8c8f3801",
+      "bytes": 2504671
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/poster_circus_a.png",
+      "sha256": "0f5c9bf93c16d19fee9cd958b50cf1e90eb24d65af0c7d7b9f83bf95d29123d7",
+      "bytes": 2938524
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/poster_demolition_a.png",
+      "sha256": "2a0fdb74766552dbc1c4335c69ec899d8246b85850ffa45d444ff85266b5b7b8",
+      "bytes": 2514062
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/poster_lost_cat_a.png",
+      "sha256": "d63e7e0f6a693f73407ceb82a578962b2fa4b96f99657724dfd01dbd7c8e65c2",
+      "bytes": 2617472
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/poster_moving_a.png",
+      "sha256": "39c503b6fce7e79657afd3ac146f99a2cf6f34b451838c72dd6e4ecaa89de6ef",
+      "bytes": 2268117
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/poster_redevelop_notice_a.png",
+      "sha256": "631b73caced75917a4a5bf7e4b8f6e93e84e051d3923a1f46310889d60b7ffda",
+      "bytes": 2646638
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/poster_torn_layers_a.png",
+      "sha256": "86c7e35d82d85125f08db389acad83985534bc47f2d598cf5edd7c3eb82827a7",
+      "bytes": 2873626
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/poster_tutoring_a.png",
+      "sha256": "0eb1d9648df8c76b4b3a8fe94e8ea5024ae1562c27da0c32b0b914b40461e941",
+      "bytes": 2561824
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/poster_volunteer_a.png",
+      "sha256": "02c80de89e274799bb7e158849ff002c38230728f392dcb9f21cc4f7403a7e8d",
+      "bytes": 2487692
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_comics_a.png",
+      "sha256": "974c01149fb5bc3db38f057671da9d042359dd01338ef5dc35cb2e5d2ff53c35",
+      "bytes": 1728203
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_hardware_a.png",
+      "sha256": "7d5221b8c9b55af383f8f68672a6c94a4e923f3382ccd5661177e05641831397",
+      "bytes": 1799697
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_laundry_a.png",
+      "sha256": "979de92e113f78ca5dd0052737127e53499693579a5496bb71c3e5b470bb9cd1",
+      "bytes": 1613441
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_pharmacy_a.png",
+      "sha256": "dd3487a663d0ab95ac090f2c58a12c57172454bc45b89d4003e74815c5aa1a82",
+      "bytes": 1546078
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_realty_a.png",
+      "sha256": "32b06a7f519b58d26f4be44351972590bba0b41309679a303da58a3d20bbb7eb",
+      "bytes": 1654005
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_salon_a.png",
+      "sha256": "e92d828a3017ec47d7c7947d918b9a19dd3b1a05884edcc6476e29e336ab9353",
+      "bytes": 1588095
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_snack_a.png",
+      "sha256": "5040d1ac5bfd7509dede16e19b7556d70700c7769eb85d69abc196aaec057f20",
+      "bytes": 1770292
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_stationery_a.png",
+      "sha256": "e2fffb3985d58cc90e05e7e4c21cf1e044b635181eabee8f365ba18026b0a590",
+      "bytes": 1722223
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_stationery_faded_a.png",
+      "sha256": "3748219c8131d59d0975be853af2367e4de8ce27a983bf433cb9368c8ac1e0c8",
+      "bytes": 1860859
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_stationery_faded_b.png",
+      "sha256": "2513b58678932272c3ec450787df538659717ab65a0c68ef4c3e3e3d66c6d63c",
+      "bytes": 1950540
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_super_a.png",
+      "sha256": "824d4e4be3d9013b9a9f027d062c04a2de5b2645ac84b58ff6f9013116b1da1f",
+      "bytes": 1712252
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_v_fortune_a.png",
+      "sha256": "017af054cf0df19e839a53cfcb098ab8cfae2b7562fc25067ea9d32e836290aa",
+      "bytes": 1930045
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_v_gukbap_a.png",
+      "sha256": "6ca61473576bd74b755c9de2e1f3dc65e970474b94244a5c6d3e53ecaa5093d4",
+      "bytes": 1959687
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_v_inn_broken_a.png",
+      "sha256": "4b83282b9de683ad8d81b9eabdd5cd5bfd78b1f13c3443cec9da9fdfc7235fe0",
+      "bytes": 1978169
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_v_inn_broken_b.png",
+      "sha256": "0f249e85ee717e2125a06e2c24cc2971cb0373ff2672a85d5c9ebe2c9f84ac81",
+      "bytes": 1947545
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_v_pharmacy_a.png",
+      "sha256": "9de369125a2e8cdf575531bc249c80bc599b1b16aff434dda9e25ece79aafa02",
+      "bytes": 1849255
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_v_realty_a.png",
+      "sha256": "03b4b2551b7a0673ec576e15d9e316f27f0e7fec717e992b31545aa2907ef644",
+      "bytes": 1739189
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/sign_v_sundries_a.png",
+      "sha256": "f1e6ba65f69e0b70aad3ceb11ab85e26dcbd4b0e75b87b51b516b017ab7b8779",
+      "bytes": 2106290
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/spray_demolish_a.png",
+      "sha256": "1537b1116b9f2c898ab85f83cfd0bd0b5bcbc4661d02cc82ff761c9f4a6b1f51",
+      "bytes": 2168554
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/spray_demolish_b.png",
+      "sha256": "61803fba3de9a0df3e811181843efa29cf972b9d6a6cbb518339a8394149d561",
+      "bytes": 2106228
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/spray_no_entry_a.png",
+      "sha256": "a077340f257c600d6c5288ea3d5f9d2cbcc8ebe31c92bf4b7141074554a633e4",
+      "bytes": 1959886
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/spray_number_a.png",
+      "sha256": "4eac186c69c0da346a9b501ff42c7d7250ea4b732f3d1e6c576f7efddfd59112",
+      "bytes": 2029912
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/spray_vacant_a.png",
+      "sha256": "642117ec5fb894e2f521a81a20ed114c386b653cef9242c1a32514b72806d6cd",
+      "bytes": 1930784
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/spray_x_a.png",
+      "sha256": "89e89ef848098521157c1975e418bd29489754d7e60966ad29659f6489cfe01b",
+      "bytes": 2147479
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/stencil_no_parking_a.png",
+      "sha256": "470ebef4842797c0e2c664839e48eff88a76982ee4f2068ba981fd81a2989a19",
+      "bytes": 1561596
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/wall_cables_a.png",
+      "sha256": "79be4d3a48026c5253cf9cb29fcdf592b7beb63e6dd96cda0b8abca2e4874262",
+      "bytes": 1372354
+    },
+    {
+      "path": "assets/environment/alley_decals_v1/raw/wall_gas_pipe_a.png",
+      "sha256": "81ccffa5bbcde4247ef92acddb0f50a19de0dc63e7ed14ef5c4a7d7232c6a450",
+      "bytes": 1454077
+    }
+  ]
+}

@@ -97,8 +97,24 @@ func run() -> void:
 	check(houses.any(func(l): return l.gate and l.building and not l.cut), "far house lots have a garden wall, a closed gate and a house set back behind a yard")
 	check(shops.all(func(l): return l.piers == 0 and not l.gate) and shops.any(func(l): return l.building), "shop lots front the alley directly with no wall")
 	var sign_texts: Array = map.find_children("*", "Label3D", true, false).map(func(label): return label.text)
+	for decoration in map.decorations.nodes:
+		if decoration.has_meta("sign_text"): sign_texts.append(decoration.get_meta("sign_text"))
 	check(shops.any(func(l): return l.sign == "문방구" and l.building) and sign_texts.has("문방구"), "the shut stationery shop closes the dead-end alcove")
 	check(map.lots.all(func(l): return l.piers <= (4 if l.gate else 2)), "walls keep piers to lot ends and gate posts")
+	var trades_ok = true
+	var hung = 0
+	for l in map.lots:
+		var business: String = l.body.get_meta("business", "")
+		var allowed: Array = [map.decorations.VERTICAL_FOR.get(business, ""), map.decorations.AFRAME_FOR.get(business, "")] if business != "" else map.decorations.layout.home_signs.values()
+		for node in l.body.find_children("Decoration_*", "MeshInstance3D", true, false):
+			var trade: String = node.get_meta("decoration_id")
+			if trade.begins_with("sign_v_") or trade.begins_with("aframe_"):
+				hung += 1
+				trades_ok = trades_ok and allowed.has(trade)
+	check(hung > 0 and trades_ok, "projecting signs and A-frames repeat their own building's trade")
+	check(not map.poles.is_empty() and map.poles.all(func(p): return map._floor_top(p.x, p.z) >= 0.0), "utility poles stand on the alley side of the walls")
+	var stickers: Array = map.decorations.nodes.filter(func(n): return n.get_meta("decoration_id") in ["wall_gas_pipe", "wall_cables"])
+	check(stickers.is_empty() and map.lots.any(func(l): return l.get("drop", Vector3.INF) != Vector3.INF), "gas risers, meters and service cables are modelled, not flat pictures")
 	var cut_ok = true
 	for l in map.lots.filter(func(l): return l.cut):
 		for piece in l.body.find_children("*", "GeometryInstance3D", true, false):

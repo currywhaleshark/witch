@@ -1,0 +1,30 @@
+{
+  "map": "alley_v2",
+  "seed": 261028,
+  "lot_states": {"0:1":"open", "0:3":"closed", "8:0":"vacant", "9:1":"open"},
+  "home_signs": {"0:4":"sign_v_fortune", "17:0":"sign_v_inn_broken"},
+  "banners": {"0:0":"banner_oppose", "5:0":"banner_rights", "9:0":"banner_no_trespass", "13:0":"banner_union"},
+  "demolition_lots": ["5:0", "9:0", "13:0"],
+  "floor_decals": [
+    {"id":"floor_manhole","pos":[4.0,0.4],"yaw":-12},
+    {"id":"floor_drain","pos":[7.4,-2.55]},
+    {"id":"floor_arrow","pos":[14.6,0.5],"yaw":90,"opacity":0.42},
+    {"id":"floor_text_slow","pos":[18.6,-0.9],"yaw":90,"opacity":0.40},
+    {"id":"floor_patch","pos":[12.6,-1.7],"opacity":0.28},
+    {"id":"floor_oil","pos":[10.2,1.4],"opacity":0.22},
+    {"id":"floor_cracks","pos":[17.0,-1.2],"opacity":0.45},
+    {"id":"floor_puddle_stain","pos":[20.0,-2.1],"opacity":0.28},
+    {"id":"floor_drain","pos":[30.0,2.45]},
+    {"id":"floor_manhole","pos":[34.5,0.5],"yaw":20},
+    {"id":"floor_cracks","pos":[38.0,-8.1],"opacity":0.42},
+    {"id":"floor_puddle_stain","pos":[40.7,-12.9],"opacity":0.28},
+    {"id":"grime_soot","pos":[43.1,-12.1],"opacity":0.4},
+    {"id":"floor_patch","pos":[48.2,5.8],"opacity":0.25,"yaw":23},
+    {"id":"floor_drain","pos":[52.7,-10.2]},
+    {"id":"erosion_crack_slab","pos":[51.1,7.8],"opacity":0.8},
+    {"id":"floor_cracks","pos":[58.0,0.1],"opacity":0.5},
+    {"id":"erosion_gear_reveal","pos":[68.2,-5.4],"opacity":0.9,"lift":0.012},
+    {"id":"erosion_blue_scorch","pos":[77.4,6.2],"opacity":0.5},
+    {"id":"floor_cracks","pos":[75.0,-5.2],"opacity":0.38}
+  ]
+}

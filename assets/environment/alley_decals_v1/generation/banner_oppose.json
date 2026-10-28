@@ -1,0 +1,13 @@
+{
+  "id": "banner_oppose",
+  "variant": "a",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-da038ec7-3c46-4496-b47c-47892f6f0808.png",
+  "raw": "raw/banner_oppose_a.png",
+  "generated_at": "2026-10-28T04:32:51.733Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE long cloth banner width:height 5.5:1, front-on. off-white cloth and desaturated red letters. Exact large Korean text \"강제 철거 결사 반대\" in brush-style printed lettering, centered in one row. Subtle faded ink and very shallow sag, restrained wrinkles, one torn corner, four short tie strings at the corners. No other text. Native banner width at least 2048 pixels; landscape canvas 3072x1024.\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+  "transparent": false,
+  "reference_paths": []
+}

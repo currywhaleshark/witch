@@ -1,0 +1,11 @@
+{
+  "id": "sign_salon",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-d075c071-241e-4450-b94e-96ed4d54a237.png",
+  "raw": "raw/sign_salon_a.png",
+  "generated_at": "2026-10-28T03:37:33.736Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: pale pink board, deep purple letters. Main exact title: \"단골미용실\". Exact subtitle: \"파마 · 커트 · 염색\".",
+  "transparent": false
+}

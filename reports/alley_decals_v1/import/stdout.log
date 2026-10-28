@@ -1,0 +1,201 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 프로젝트 초기화 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 파일 구조 스캔 중...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 전역 클래스 이름을 불러오는 중...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtensions 검증 중...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 오토로드 스크립트를 만드는 중...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 플러그인을 초기화 중...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 파일 스캔 시작 중...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started 전역 클래스를 등록하는 중... (2 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started 액션 스캔 중... (80 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | aframe_realty.png[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | aframe_snack.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | banner_no_trespass.png[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | banner_oppose.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | banner_rights.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | banner_union.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | boarded_door.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | boarded_window.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | box_meter.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | box_milk.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | erosion_blue_scorch.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | erosion_crack_slab.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | erosion_gear_reveal.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | floor_arrow.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | floor_arrow_rgba.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | floor_cracks.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | floor_cracks_rgba.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | floor_drain.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | floor_manhole.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | floor_oil.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | floor_oil_rgba.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | floor_patch.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | floor_patch_rgba.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | floor_puddle_stain.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | floor_puddle_stain_rgba.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | floor_text_slow.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | floor_text_slow_rgba.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | glass_broken.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | glass_closing_sale.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | glass_for_rent.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | glass_open.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | grille_window.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | grille_window_green.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | grime_base_dirt.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | grime_base_dirt_rgba.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | grime_rust_run.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | grime_rust_run_rgba.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | grime_soot.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | grime_soot_rgba.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | grime_streak_coping.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | grime_streak_coping_rgba.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | grime_streak_window.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | grime_streak_window_rgba.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | plate_dog.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | plate_lot_number.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | plate_no_flyers.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | pole_ad_strip.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | pole_number_plate.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | poster_circus.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | poster_demolition.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | poster_lost_cat.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | poster_moving.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | poster_redevelop_notice.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | poster_torn_layers.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | poster_tutoring.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | poster_volunteer.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | sign_comics.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | sign_hardware.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | sign_laundry.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | sign_pharmacy.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | sign_realty.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | sign_salon.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | sign_snack.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | sign_stationery.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | sign_stationery_faded.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | sign_super.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | sign_v_fortune.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | sign_v_gukbap.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | sign_v_inn_broken.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | sign_v_pharmacy.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | sign_v_realty.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | sign_v_sundries.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | spray_demolish.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | spray_no_entry.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | spray_number.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | spray_vacant.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | spray_x.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | stencil_no_parking.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | wall_cables.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | wall_gas_pipe.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 애셋 (다시) 가져오는 중 (42 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[   2% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[   4% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[   6% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[   9% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  11% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  13% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  16% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  18% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  20% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  23% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  25% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  27% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  30% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  32% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  34% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  37% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  39% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  41% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  44% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  46% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  48% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  51% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  53% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  55% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  58% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  60% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  62% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  65% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  67% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  69% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  72% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  74% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  76% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  79% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  81% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  83% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  86% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  88% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  90% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  93% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  95% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[   0% ] [90m[1mreimport[22m | 다시 가져오기 전 작업을 수행 중...[39m[0m
+[   0% ] [90m[1mreimport[22m | plate_dog.png[39m[0m
+[   2% ] [90m[1mreimport[22m | plate_lot_number.png[39m[0m
+[   4% ] [90m[1mreimport[22m | plate_no_flyers.png[39m[0m
+[   6% ] [90m[1mreimport[22m | pole_ad_strip.png[39m[0m
+[   9% ] [90m[1mreimport[22m | pole_number_plate.png[39m[0m
+[  11% ] [90m[1mreimport[22m | poster_circus.png[39m[0m
+[  13% ] [90m[1mreimport[22m | poster_demolition.png[39m[0m
+[  16% ] [90m[1mreimport[22m | poster_lost_cat.png[39m[0m
+[  18% ] [90m[1mreimport[22m | poster_moving.png[39m[0m
+[  20% ] [90m[1mreimport[22m | poster_redevelop_notice.png[39m[0m
+[  23% ] [90m[1mreimport[22m | poster_torn_layers.png[39m[0m
+[  25% ] [90m[1mreimport[22m | poster_tutoring.png[39m[0m
+[  27% ] [90m[1mreimport[22m | poster_volunteer.png[39m[0m
+[  30% ] [90m[1mreimport[22m | spray_demolish.png[39m[0m
+[  32% ] [90m[1mreimport[22m | spray_no_entry.png[39m[0m
+[  34% ] [90m[1mreimport[22m | spray_number.png[39m[0m
+[  37% ] [90m[1mreimport[22m | spray_vacant.png[39m[0m
+[  39% ] [90m[1mreimport[22m | spray_x.png[39m[0m
+[  41% ] [90m[1mreimport[22m | stencil_no_parking.png[39m[0m
+[  44% ] [90m[1mreimport[22m | wall_cables.png[39m[0m
+[  46% ] [90m[1mreimport[22m | wall_gas_pipe.png[39m[0m
+[  48% ] [90m[1mreimport[22m | aframe_realty.png[39m[0m
+[  51% ] [90m[1mreimport[22m | aframe_snack.png[39m[0m
+[  53% ] [90m[1mreimport[22m | banner_no_trespass.png[39m[0m
+[  55% ] [90m[1mreimport[22m | banner_oppose.png[39m[0m
+[  58% ] [90m[1mreimport[22m | banner_rights.png[39m[0m
+[  60% ] [90m[1mreimport[22m | banner_union.png[39m[0m
+[  62% ] [90m[1mreimport[22m | boarded_door.png[39m[0m
+[  65% ] [90m[1mreimport[22m | boarded_window.png[39m[0m
+[  67% ] [90m[1mreimport[22m | box_meter.png[39m[0m
+[  69% ] [90m[1mreimport[22m | box_milk.png[39m[0m
+[  72% ] [90m[1mreimport[22m | erosion_blue_scorch.png[39m[0m
+[  74% ] [90m[1mreimport[22m | erosion_crack_slab.png[39m[0m
+[  76% ] [90m[1mreimport[22m | erosion_gear_reveal.png[39m[0m
+[  79% ] [90m[1mreimport[22m | floor_drain.png[39m[0m
+[  81% ] [90m[1mreimport[22m | floor_manhole.png[39m[0m
+[  83% ] [90m[1mreimport[22m | glass_broken.png[39m[0m
+[  86% ] [90m[1mreimport[22m | glass_closing_sale.png[39m[0m
+[  88% ] [90m[1mreimport[22m | glass_for_rent.png[39m[0m
+[  90% ] [90m[1mreimport[22m | glass_open.png[39m[0m
+[  93% ] [90m[1mreimport[22m | grille_window.png[39m[0m
+[  95% ] [90m[1mreimport[22m | grille_window_green.png[39m[0m
+[  97% ] [90m[1mreimport[22m | 애셋 가져오기 마무리 중...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 애셋 (다시) 가져오는 중 (42 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 다시 가져오기 후 작업을 수행 중...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started 편집기를 불러오는 중 (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | 편집기 레이아웃을 불러오는 중...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | 독을 불러오는 중...[39m[0m
+[  33% ] [90m[1mloading_editor_layout[22m | 씬을 다시 여는 중...[39m[0m
+[  50% ] [90m[1mloading_editor_layout[22m | 중앙 편집기 레이아웃을 불러오는 중...[39m[0m
+[  66% ] [90m[1mloading_editor_layout[22m | 플러그인 창 레이아웃을 불러오는 중...[39m[0m
+[  83% ] [90m[1mloading_editor_layout[22m | 편집기 레이아웃이 준비되었습니다.[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m

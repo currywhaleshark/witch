@@ -1,0 +1,15 @@
+{
+  "id": "sign_stationery_faded",
+  "variant": "b",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-cc3031ac-4b4b-452c-8d63-94de79de5d3b.png",
+  "raw": "raw/sign_stationery_faded_b.png",
+  "generated_at": "2026-10-28T04:17:56.372Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Edit target: the supplied stationery shop sign. Create its sun-faded closed-shop variant. Preserve EXACTLY the lettering, layout, proportions, frame and all spacing from this image. Main text 희망문방구 and subtitle 학용품 · 완구 · 뽑기 must both stay RED, faded muted red; do not turn subtitle black. Change only age: sun-faded pale yellow board, faded red lettering, some vinyl flaking around blank outer ends and a few subdued rust runoff streaks. Do not damage readability. Keep the entire board flat and front-on, gray #808080 outside, no shadows or added text. Keep the original canvas dimensions.",
+  "transparent": false,
+  "reference_paths": [
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\assets\\environment\\alley_decals_v1\\raw\\sign_stationery_a.png"
+  ]
+}

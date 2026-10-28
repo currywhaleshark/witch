@@ -1,0 +1,203 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+
+ERROR: Could not open 'user://' directory: 'user://'.
+   at: _get_and_create_snapshot_storage_dir (modules/objectdb_profiler/editor/objectdb_profiler_panel.cpp:154)
+[   0% ] first_scan_filesystem | Started 프로젝트 초기화 (5 steps)
+[   0% ] first_scan_filesystem | 파일 구조 스캔 중...
+[  16% ] first_scan_filesystem | 전역 클래스 이름을 불러오는 중...
+[  33% ] first_scan_filesystem | GDExtensions 검증 중...
+[  50% ] first_scan_filesystem | 오토로드 스크립트를 만드는 중...
+[  66% ] first_scan_filesystem | 플러그인을 초기화 중...
+[  83% ] first_scan_filesystem | 파일 스캔 시작 중...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started 전역 클래스를 등록하는 중... (2 steps)
+[   0% ] update_scripts_classes | 
+[  33% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started 액션 스캔 중... (80 steps)
+[   0% ] _update_scan_actions | aframe_realty.png
+[   1% ] _update_scan_actions | aframe_snack.png
+[   2% ] _update_scan_actions | banner_no_trespass.png
+[   3% ] _update_scan_actions | banner_oppose.png
+[   4% ] _update_scan_actions | banner_rights.png
+[   6% ] _update_scan_actions | banner_union.png
+[   7% ] _update_scan_actions | boarded_door.png
+[   8% ] _update_scan_actions | boarded_window.png
+[   9% ] _update_scan_actions | box_meter.png
+[  11% ] _update_scan_actions | box_milk.png
+[  12% ] _update_scan_actions | erosion_blue_scorch.png
+[  13% ] _update_scan_actions | erosion_crack_slab.png
+[  14% ] _update_scan_actions | erosion_gear_reveal.png
+[  16% ] _update_scan_actions | floor_arrow.png
+[  17% ] _update_scan_actions | floor_arrow_rgba.png
+[  18% ] _update_scan_actions | floor_cracks.png
+[  19% ] _update_scan_actions | floor_cracks_rgba.png
+[  20% ] _update_scan_actions | floor_drain.png
+[  22% ] _update_scan_actions | floor_manhole.png
+[  23% ] _update_scan_actions | floor_oil.png
+[  24% ] _update_scan_actions | floor_oil_rgba.png
+[  25% ] _update_scan_actions | floor_patch.png
+[  27% ] _update_scan_actions | floor_patch_rgba.png
+[  28% ] _update_scan_actions | floor_puddle_stain.png
+[  29% ] _update_scan_actions | floor_puddle_stain_rgba.png
+[  30% ] _update_scan_actions | floor_text_slow.png
+[  32% ] _update_scan_actions | floor_text_slow_rgba.png
+[  33% ] _update_scan_actions | glass_broken.png
+[  34% ] _update_scan_actions | glass_closing_sale.png
+[  35% ] _update_scan_actions | glass_for_rent.png
+[  37% ] _update_scan_actions | glass_open.png
+[  38% ] _update_scan_actions | grille_window.png
+[  39% ] _update_scan_actions | grille_window_green.png
+[  40% ] _update_scan_actions | grime_base_dirt.png
+[  41% ] _update_scan_actions | grime_base_dirt_rgba.png
+[  43% ] _update_scan_actions | grime_rust_run.png
+[  44% ] _update_scan_actions | grime_rust_run_rgba.png
+[  45% ] _update_scan_actions | grime_soot.png
+[  46% ] _update_scan_actions | grime_soot_rgba.png
+[  48% ] _update_scan_actions | grime_streak_coping.png
+[  49% ] _update_scan_actions | grime_streak_coping_rgba.png
+[  50% ] _update_scan_actions | grime_streak_window.png
+[  51% ] _update_scan_actions | grime_streak_window_rgba.png
+[  53% ] _update_scan_actions | plate_dog.png
+[  54% ] _update_scan_actions | plate_lot_number.png
+[  55% ] _update_scan_actions | plate_no_flyers.png
+[  56% ] _update_scan_actions | pole_ad_strip.png
+[  58% ] _update_scan_actions | pole_number_plate.png
+[  59% ] _update_scan_actions | poster_circus.png
+[  60% ] _update_scan_actions | poster_demolition.png
+[  61% ] _update_scan_actions | poster_lost_cat.png
+[  62% ] _update_scan_actions | poster_moving.png
+[  64% ] _update_scan_actions | poster_redevelop_notice.png
+[  65% ] _update_scan_actions | poster_torn_layers.png
+[  66% ] _update_scan_actions | poster_tutoring.png
+[  67% ] _update_scan_actions | poster_volunteer.png
+[  69% ] _update_scan_actions | sign_comics.png
+[  70% ] _update_scan_actions | sign_hardware.png
+[  71% ] _update_scan_actions | sign_laundry.png
+[  72% ] _update_scan_actions | sign_pharmacy.png
+[  74% ] _update_scan_actions | sign_realty.png
+[  75% ] _update_scan_actions | sign_salon.png
+[  76% ] _update_scan_actions | sign_snack.png
+[  77% ] _update_scan_actions | sign_stationery.png
+[  79% ] _update_scan_actions | sign_stationery_faded.png
+[  80% ] _update_scan_actions | sign_super.png
+[  81% ] _update_scan_actions | sign_v_fortune.png
+[  82% ] _update_scan_actions | sign_v_gukbap.png
+[  83% ] _update_scan_actions | sign_v_inn_broken.png
+[  85% ] _update_scan_actions | sign_v_pharmacy.png
+[  86% ] _update_scan_actions | sign_v_realty.png
+[  87% ] _update_scan_actions | sign_v_sundries.png
+[  88% ] _update_scan_actions | spray_demolish.png
+[  90% ] _update_scan_actions | spray_no_entry.png
+[  91% ] _update_scan_actions | spray_number.png
+[  92% ] _update_scan_actions | spray_vacant.png
+[  93% ] _update_scan_actions | spray_x.png
+[  95% ] _update_scan_actions | stencil_no_parking.png
+[  96% ] _update_scan_actions | wall_cables.png
+[  97% ] _update_scan_actions | wall_gas_pipe.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (42 steps)
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[   2% ] reimport | 다시 가져올 파일을 준비 중...
+[   4% ] reimport | 다시 가져올 파일을 준비 중...
+[   6% ] reimport | 다시 가져올 파일을 준비 중...
+[   9% ] reimport | 다시 가져올 파일을 준비 중...
+[  11% ] reimport | 다시 가져올 파일을 준비 중...
+[  13% ] reimport | 다시 가져올 파일을 준비 중...
+[  16% ] reimport | 다시 가져올 파일을 준비 중...
+[  18% ] reimport | 다시 가져올 파일을 준비 중...
+[  20% ] reimport | 다시 가져올 파일을 준비 중...
+[  23% ] reimport | 다시 가져올 파일을 준비 중...
+[  25% ] reimport | 다시 가져올 파일을 준비 중...
+[  27% ] reimport | 다시 가져올 파일을 준비 중...
+[  30% ] reimport | 다시 가져올 파일을 준비 중...
+[  32% ] reimport | 다시 가져올 파일을 준비 중...
+[  34% ] reimport | 다시 가져올 파일을 준비 중...
+[  37% ] reimport | 다시 가져올 파일을 준비 중...
+[  39% ] reimport | 다시 가져올 파일을 준비 중...
+[  41% ] reimport | 다시 가져올 파일을 준비 중...
+[  44% ] reimport | 다시 가져올 파일을 준비 중...
+[  46% ] reimport | 다시 가져올 파일을 준비 중...
+[  48% ] reimport | 다시 가져올 파일을 준비 중...
+[  51% ] reimport | 다시 가져올 파일을 준비 중...
+[  53% ] reimport | 다시 가져올 파일을 준비 중...
+[  55% ] reimport | 다시 가져올 파일을 준비 중...
+[  58% ] reimport | 다시 가져올 파일을 준비 중...
+[  60% ] reimport | 다시 가져올 파일을 준비 중...
+[  62% ] reimport | 다시 가져올 파일을 준비 중...
+[  65% ] reimport | 다시 가져올 파일을 준비 중...
+[  67% ] reimport | 다시 가져올 파일을 준비 중...
+[  69% ] reimport | 다시 가져올 파일을 준비 중...
+[  72% ] reimport | 다시 가져올 파일을 준비 중...
+[  74% ] reimport | 다시 가져올 파일을 준비 중...
+[  76% ] reimport | 다시 가져올 파일을 준비 중...
+[  79% ] reimport | 다시 가져올 파일을 준비 중...
+[  81% ] reimport | 다시 가져올 파일을 준비 중...
+[  83% ] reimport | 다시 가져올 파일을 준비 중...
+[  86% ] reimport | 다시 가져올 파일을 준비 중...
+[  88% ] reimport | 다시 가져올 파일을 준비 중...
+[  90% ] reimport | 다시 가져올 파일을 준비 중...
+[  93% ] reimport | 다시 가져올 파일을 준비 중...
+[  95% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져오기 전 작업을 수행 중...
+[   0% ] reimport | plate_dog.png
+[   2% ] reimport | plate_lot_number.png
+[   4% ] reimport | plate_no_flyers.png
+[   6% ] reimport | pole_ad_strip.png
+[   9% ] reimport | pole_number_plate.png
+[  11% ] reimport | poster_circus.png
+[  13% ] reimport | poster_demolition.png
+[  16% ] reimport | poster_lost_cat.png
+[  18% ] reimport | poster_moving.png
+[  20% ] reimport | poster_redevelop_notice.png
+[  23% ] reimport | poster_torn_layers.png
+[  25% ] reimport | poster_tutoring.png
+[  27% ] reimport | poster_volunteer.png
+[  30% ] reimport | spray_demolish.png
+[  32% ] reimport | spray_no_entry.png
+[  34% ] reimport | spray_number.png
+[  37% ] reimport | spray_vacant.png
+[  39% ] reimport | spray_x.png
+[  41% ] reimport | stencil_no_parking.png
+[  44% ] reimport | wall_cables.png
+[  46% ] reimport | wall_gas_pipe.png
+[  48% ] reimport | aframe_realty.png
+[  51% ] reimport | aframe_snack.png
+[  53% ] reimport | banner_no_trespass.png
+[  55% ] reimport | banner_oppose.png
+[  58% ] reimport | banner_rights.png
+[  60% ] reimport | banner_union.png
+[  62% ] reimport | boarded_door.png
+[  65% ] reimport | boarded_window.png
+[  67% ] reimport | box_meter.png
+[  69% ] reimport | box_milk.png
+[  72% ] reimport | erosion_blue_scorch.png
+[  74% ] reimport | erosion_crack_slab.png
+[  76% ] reimport | erosion_gear_reveal.png
+[  79% ] reimport | floor_drain.png
+[  81% ] reimport | floor_manhole.png
+[  83% ] reimport | glass_broken.png
+[  86% ] reimport | glass_closing_sale.png
+[  88% ] reimport | glass_for_rent.png
+[  90% ] reimport | glass_open.png
+[  93% ] reimport | grille_window.png
+[  95% ] reimport | grille_window_green.png
+[  97% ] reimport | 애셋 가져오기 마무리 중...
+[ DONE ] reimport
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (42 steps)
+[   0% ] reimport | 다시 가져오기 후 작업을 수행 중...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started 편집기를 불러오는 중 (5 steps)
+[   0% ] loading_editor_layout | 편집기 레이아웃을 불러오는 중...
+[  16% ] loading_editor_layout | 독을 불러오는 중...
+[  33% ] loading_editor_layout | 씬을 다시 여는 중...
+[  50% ] loading_editor_layout | 중앙 편집기 레이아웃을 불러오는 중...
+[  66% ] loading_editor_layout | 플러그인 창 레이아웃을 불러오는 중...
+[  83% ] loading_editor_layout | 편집기 레이아웃이 준비되었습니다.
+[ DONE ] loading_editor_layout
+

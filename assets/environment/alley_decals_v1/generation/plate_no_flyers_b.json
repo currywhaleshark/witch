@@ -1,0 +1,15 @@
+{
+  "id": "plate_no_flyers",
+  "variant": "b",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-68f36fb7-4a93-46c8-87a9-2b4178589a55.png",
+  "raw": "raw/plate_no_flyers_b.png",
+  "generated_at": "2026-10-28T04:17:56.378Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Edit target: supplied handwritten paper notice on a magenta background. Remove ONLY the black period/dot after 사절. The entire exact text must be 광고물 사절 with no period, punctuation or other characters. Keep all other letters, paper, tape, surface age, placement, colors and flat #FF00FF background completely unchanged. No shadows. Keep original dimensions.",
+  "transparent": false,
+  "reference_paths": [
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\assets\\environment\\alley_decals_v1\\raw\\plate_no_flyers_a.png"
+  ]
+}

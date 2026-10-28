@@ -1,0 +1,12 @@
+{
+  "id": "erosion_gear_reveal",
+  "variant": "a",
+  "source_generated_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-343431b9-2b5d-4f04-a1c5-cf443ad9e665.png",
+  "raw": "raw/erosion_gear_reveal_a.png",
+  "generated_at": "2026-10-28T04:15:46.723Z",
+  "tool": "image_gen.imagegen",
+  "model_version": "not exposed by tool",
+  "seed": null,
+  "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on uniform solid magenta #FF00FF background,\n8% empty magenta margin, no shadow or backing plane. Keep the stated object proportions.\nThe opaque magenta is required; no magenta anywhere inside the object. Crisp detail with natural worn edges.\nSubject: one COMPLETE circular weathered brass gear with 6 large intact teeth, viewed top-down. It belongs beneath cracked gray stone paving; generate only the intact wheel, no stone overlapping it, so the game can rotate it behind a separate slab-opening layer. Dull aged brass, no glow, red, orange or turquoise. All 6 teeth and whole circle visible.\nEvery pixel outside the irregular asset silhouette must be uniform bright magenta #FF00FF. No vignette, cast shadow or colored haze in the background.",
+  "transparent": false
+}

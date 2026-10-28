@@ -1,0 +1,1322 @@
+{
+  "schema": 1,
+  "spec": "GENERATION_SPEC.md",
+  "status": "generation_in_progress",
+  "tool": "image_gen.imagegen (built-in)",
+  "model_version": "not exposed by built-in tool",
+  "seed": null,
+  "asset_count": 69,
+  "assets": [
+    {
+      "id": "sign_laundry",
+      "filename": "sign_laundry.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "언덕세탁소",
+        "드라이 · 수선 · 운동화"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: navy blue board, off-white letters. Main exact title: \"언덕세탁소\". Exact subtitle: \"드라이 · 수선 · 운동화\"."
+    },
+    {
+      "id": "sign_hardware",
+      "filename": "sign_hardware.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "제일철물",
+        "열쇠 · 공구 · 페인트 · 보일러"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: desaturated red board, off-white letters. Main exact title: \"제일철물\". Exact subtitle: \"열쇠 · 공구 · 페인트 · 보일러\"."
+    },
+    {
+      "id": "sign_super",
+      "filename": "sign_super.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "행운슈퍼",
+        "생활용품 · 과일 · 아이스크림"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: off-white board, dark green letters. Main exact title: \"행운슈퍼\". Exact subtitle: \"생활용품 · 과일 · 아이스크림\"."
+    },
+    {
+      "id": "sign_salon",
+      "filename": "sign_salon.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "단골미용실",
+        "파마 · 커트 · 염색"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: pale pink board, deep purple letters. Main exact title: \"단골미용실\". Exact subtitle: \"파마 · 커트 · 염색\"."
+    },
+    {
+      "id": "sign_realty",
+      "filename": "sign_realty.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "행복복덕방",
+        "전세 · 월세 · 매매 · 재개발 상담"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: muted yellow board, near-black letters. Main exact title: \"행복복덕방\". Exact subtitle: \"전세 · 월세 · 매매 · 재개발 상담\"."
+    },
+    {
+      "id": "sign_snack",
+      "filename": "sign_snack.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "엄마분식",
+        "떡볶이 · 순대 · 튀김 · 김밥"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: muted orange board, off-white letters. Main exact title: \"엄마분식\". Exact subtitle: \"떡볶이 · 순대 · 튀김 · 김밥\"."
+    },
+    {
+      "id": "sign_pharmacy",
+      "filename": "sign_pharmacy.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "언덕약국",
+        "藥"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: off-white board, dark green letters; a large single Chinese character 藥 to the left of the title, within the central 70%; no subtitle. Main exact title: \"언덕약국\". "
+    },
+    {
+      "id": "sign_comics",
+      "filename": "sign_comics.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "별빛만화",
+        "만화 · 소설 · 비디오 대여"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: purple board, muted yellow letters. Main exact title: \"별빛만화\". Exact subtitle: \"만화 · 소설 · 비디오 대여\"."
+    },
+    {
+      "id": "sign_stationery",
+      "filename": "sign_stationery.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "희망문방구",
+        "학용품 · 완구 · 뽑기"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: muted yellow board, deep red letters. Main exact title: \"희망문방구\". Exact subtitle: \"학용품 · 완구 · 뽑기\"."
+    },
+    {
+      "id": "sign_stationery_faded",
+      "filename": "sign_stationery_faded.png",
+      "kind": "sign",
+      "transparent": false,
+      "required_text": [
+        "희망문방구",
+        "학용품 · 완구 · 뽑기"
+      ],
+      "runtime_size": [
+        1024,
+        128
+      ],
+      "world_size": [
+        4.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 3072x1024 pixels, landscape. Center ONE perfectly rectangular 8:1 horizontal sign board,\nexactly 2560x320 pixels, with its corners at (256,352) and (2816,672). All outside pixels flat #808080.\nThin dull aluminium edging, perfectly straight edges and square corners, no depth or mounting hardware.\nAll typography strictly inside the central 70% width; each outer 15% plain board color.\nMain title fills 55-65% of board height, subtitle 15-20%, on a separate line below.\nBold Korean gothic or rounded gothic like old acrylic/vinyl signs. Large readable lettering.\nSubtle dust and restrained age, no neon or emitted light.\nSubject: the same muted yellow and red stationery sign, now sun-faded, some vinyl peeling and restrained rust runoff, all letters still readable. Main exact title: \"희망문방구\". Exact subtitle: \"학용품 · 완구 · 뽑기\"."
+    },
+    {
+      "id": "poster_redevelop_notice",
+      "filename": "poster_redevelop_notice.png",
+      "kind": "poster",
+      "transparent": true,
+      "required_text": [
+        "재개발 조합 총회 안내"
+      ],
+      "runtime_size": [
+        256,
+        362
+      ],
+      "world_size": [
+        0.42,
+        0.594
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: off-white official assembly notice, near-black bold Korean title arranged in two readable lines, simple thin rules, one red square seal made of abstract geometric lines with NO seal text. Blank lower body Exact title: \"재개발 조합 총회 안내\"."
+    },
+    {
+      "id": "poster_demolition",
+      "filename": "poster_demolition.png",
+      "kind": "poster",
+      "transparent": true,
+      "required_text": [
+        "철거 예정 · 출입 금지"
+      ],
+      "runtime_size": [
+        256,
+        362
+      ],
+      "world_size": [
+        0.42,
+        0.594
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: muted yellow warning paper, bold near-black and restrained brick-red heading, no hazard stripes beyond simple border Exact title: \"철거 예정 · 출입 금지\"."
+    },
+    {
+      "id": "poster_tutoring",
+      "filename": "poster_tutoring.png",
+      "kind": "poster",
+      "transparent": true,
+      "required_text": [
+        "수학 · 영어 과외",
+        "02-012-0345"
+      ],
+      "runtime_size": [
+        256,
+        362
+      ],
+      "world_size": [
+        0.297,
+        0.42
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: off-white handwritten flyer, title exact. Bottom 7 tear-off strips, each prints ONLY the fictional unusable phone number 02-012-0345. No other text Exact title: \"수학 · 영어 과외\"."
+    },
+    {
+      "id": "poster_moving",
+      "filename": "poster_moving.png",
+      "kind": "poster",
+      "transparent": true,
+      "required_text": [
+        "이삿짐 · 용달"
+      ],
+      "runtime_size": [
+        256,
+        362
+      ],
+      "world_size": [
+        0.297,
+        0.42
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: off-white flyer with blue title, a small simple side-view unbranded moving truck icon, blank body Exact title: \"이삿짐 · 용달\"."
+    },
+    {
+      "id": "poster_lost_cat",
+      "filename": "poster_lost_cat.png",
+      "kind": "poster",
+      "transparent": true,
+      "required_text": [
+        "고양이를 찾습니다"
+      ],
+      "runtime_size": [
+        256,
+        362
+      ],
+      "world_size": [
+        0.297,
+        0.42
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: off-white flyer, large black heading and a simple grayscale drawing of a black cat below, blank body Exact title: \"고양이를 찾습니다\"."
+    },
+    {
+      "id": "poster_volunteer",
+      "filename": "poster_volunteer.png",
+      "kind": "poster",
+      "transparent": true,
+      "required_text": [
+        "여름방학 환경정화 봉사활동 모집",
+        "○○동사무소"
+      ],
+      "runtime_size": [
+        256,
+        362
+      ],
+      "world_size": [
+        0.42,
+        0.594
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: off-white public office announcement with muted green rules, bold title across 3 lines, exact bottom issuer ○○동사무소. Blank body Exact title: \"여름방학 환경정화 봉사활동 모집\"."
+    },
+    {
+      "id": "poster_circus",
+      "filename": "poster_circus.png",
+      "kind": "poster",
+      "transparent": true,
+      "required_text": [
+        "대 서커스 공연"
+      ],
+      "runtime_size": [
+        256,
+        362
+      ],
+      "world_size": [
+        0.42,
+        0.594
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: slightly faded colorful printed poster, large exact heading above a simple illustrated circus tent and juggling balls; no troupe name, no people, no other text Exact title: \"대 서커스 공연\"."
+    },
+    {
+      "id": "poster_torn_layers",
+      "filename": "poster_torn_layers.png",
+      "kind": "poster",
+      "transparent": true,
+      "required_text": [],
+      "runtime_size": [
+        256,
+        362
+      ],
+      "world_size": [
+        0.42,
+        0.594
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x2048 pixels. A single portrait A-series sheet (1:1.414 width:height),\ncentered with transparent margin, genuinely transparent RGBA background. Paper almost flat,\nslight wrinkles, a few torn corners and tape pieces, no drop shadow. Strong bold title and color masses.\nTypography must be spelled exactly; no body text unless explicitly supplied. No wall behind the paper.\nSubject: a small cluster of several overlapping torn paper layers in off-white, muted yellow and blue. No intact writing or pseudo-writing. Use blank paper fragments and torn color-block remnants only"
+    },
+    {
+      "id": "spray_demolish",
+      "filename": "spray_demolish.png",
+      "kind": "spray",
+      "transparent": true,
+      "required_text": [
+        "철거"
+      ],
+      "runtime_size": [
+        512,
+        341
+      ],
+      "world_size": [
+        1.2,
+        0.8
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: desaturated brick-red hand-sprayed Korean word 철거 surrounded by one rough spray circle, a few drips, overspray. Shape width:height 1.2:0.8."
+    },
+    {
+      "id": "spray_x",
+      "filename": "spray_x.png",
+      "kind": "spray",
+      "transparent": true,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        1,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: one large desaturated brick-red spray-painted X, overspray and a few drips. Shape width:height 1:1."
+    },
+    {
+      "id": "spray_vacant",
+      "filename": "spray_vacant.png",
+      "kind": "spray",
+      "transparent": true,
+      "required_text": [
+        "공가"
+      ],
+      "runtime_size": [
+        512,
+        307
+      ],
+      "world_size": [
+        1,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: near-black hand-sprayed Korean word 공가, natural overspray. Shape width:height 1:0.6."
+    },
+    {
+      "id": "spray_no_entry",
+      "filename": "spray_no_entry.png",
+      "kind": "spray",
+      "transparent": true,
+      "required_text": [
+        "출입금지"
+      ],
+      "runtime_size": [
+        512,
+        213
+      ],
+      "world_size": [
+        1.2,
+        0.5
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: off-white hand-sprayed Korean word 출입금지 for a dark shutter; no dark outline. Shape width:height 1.2:0.5."
+    },
+    {
+      "id": "stencil_no_parking",
+      "filename": "stencil_no_parking.png",
+      "kind": "spray",
+      "transparent": true,
+      "required_text": [
+        "주차금지"
+      ],
+      "runtime_size": [
+        512,
+        165
+      ],
+      "world_size": [
+        1.4,
+        0.45
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: off-white painted stencil word 주차금지 with visible bridge gaps in the strokes, a little paint wear, no outline. Shape width:height 1.4:0.45."
+    },
+    {
+      "id": "spray_number",
+      "filename": "spray_number.png",
+      "kind": "spray",
+      "transparent": true,
+      "required_text": [
+        "17-3"
+      ],
+      "runtime_size": [
+        512,
+        341
+      ],
+      "world_size": [
+        0.6,
+        0.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: near-black handwritten spray demolition management number 17-3, no extra characters. Shape width:height 0.6:0.4."
+    },
+    {
+      "id": "grime_streak_coping",
+      "filename": "grime_streak_coping.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        273
+      ],
+      "world_size": [
+        1.5,
+        0.8
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: rain runoff below a wall coping: many vertical streaks darker near top, thinning and fading downward. Seamless horizontally; 5% white padding top and bottom. Mark overall width:height 1.5:0.8."
+    },
+    {
+      "id": "grime_streak_window",
+      "filename": "grime_streak_window.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        439,
+        512
+      ],
+      "world_size": [
+        1.2,
+        1.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: exactly two irregular water stain trails descending from the two ends of an invisible window sill. No window or sill object. Mark overall width:height 1.2:1.4."
+    },
+    {
+      "id": "grime_rust_run",
+      "filename": "grime_rust_run.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        307,
+        512
+      ],
+      "world_size": [
+        0.6,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: narrow irregular rust runoff from an invisible iron hinge, strong origin tapering into thin drips. Mark overall width:height 0.6:1."
+    },
+    {
+      "id": "grime_base_dirt",
+      "filename": "grime_base_dirt.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        102
+      ],
+      "world_size": [
+        2,
+        0.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: low band of muddy splashes and moss staining at the foot of an invisible wall, dense at bottom and fading upward. Seamless horizontally; 5% white padding top and bottom. Mark overall width:height 2:0.4."
+    },
+    {
+      "id": "grime_soot",
+      "filename": "grime_soot.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        1.2,
+        1.2
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: irregular soft feathery soot smear left by a rag creature, restrained organic edges, soft transition to white. Mark overall width:height 1.2:1.2."
+    },
+    {
+      "id": "floor_patch",
+      "filename": "floor_patch.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        358
+      ],
+      "world_size": [
+        2,
+        1.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: a rectangular asphalt repair patch mask, mostly dark mid-gray block with subtly ragged but clearly defined boundary, soft one-pixel edge, no scene or surface. Mark overall width:height 2:1.4."
+    },
+    {
+      "id": "floor_oil",
+      "filename": "floor_oil.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        384
+      ],
+      "world_size": [
+        0.8,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: small irregular thin oil stain mask, sparse soft gray edge and uneven dark middle. Mark overall width:height 0.8:0.6."
+    },
+    {
+      "id": "floor_cracks",
+      "filename": "floor_cracks.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        2,
+        2
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: fine sparse branching network of cracks, mostly very thin black lines on white, no slab coloring or solid dark areas. Mark overall width:height 2:2."
+    },
+    {
+      "id": "floor_puddle_stain",
+      "filename": "floor_puddle_stain.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        320
+      ],
+      "world_size": [
+        1.6,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: irregular dried puddle outline ring, thin pale gray mineral rim, mostly white inside and outside. Mark overall width:height 1.6:1."
+    },
+    {
+      "id": "floor_manhole",
+      "filename": "floor_manhole.png",
+      "kind": "color",
+      "transparent": true,
+      "required_text": [
+        "오수"
+      ],
+      "runtime_size": [
+        256,
+        256
+      ],
+      "world_size": [
+        0.8,
+        0.8
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: circular flat dark cast-iron manhole cover, plain generic radial cast pattern, exact raised central Korean text \"오수\". Top-down albedo only; subtle relief represented without directional lighting. No surrounding pavement."
+    },
+    {
+      "id": "floor_drain",
+      "filename": "floor_drain.png",
+      "kind": "color",
+      "transparent": true,
+      "required_text": [],
+      "runtime_size": [
+        256,
+        640
+      ],
+      "world_size": [
+        0.4,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: long rectangular dark iron rainwater grate width:height 0.4:1.0, evenly spaced straight bars, dark openings, no words or maker logo. Strictly top-down flat albedo, no pavement."
+    },
+    {
+      "id": "plate_dog",
+      "filename": "plate_dog.png",
+      "kind": "plate",
+      "transparent": true,
+      "required_text": [
+        "개조심"
+      ],
+      "runtime_size": [
+        256,
+        171
+      ],
+      "world_size": [
+        0.3,
+        0.2
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: off-white flat rectangular tin plate with muted red exact text 개조심, a few tiny rust spots. Object width:height 0.3:0.2."
+    },
+    {
+      "id": "plate_lot_number",
+      "filename": "plate_lot_number.png",
+      "kind": "plate",
+      "transparent": true,
+      "required_text": [
+        "산 12-3"
+      ],
+      "runtime_size": [
+        256,
+        123
+      ],
+      "world_size": [
+        0.25,
+        0.12
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: old lot-number plate, dark blue background and off-white exact text 산 12-3, no neighborhood name. Object width:height 0.25:0.12."
+    },
+    {
+      "id": "plate_no_flyers",
+      "filename": "plate_no_flyers.png",
+      "kind": "plate",
+      "transparent": true,
+      "required_text": [
+        "광고물 사절"
+      ],
+      "runtime_size": [
+        256,
+        102
+      ],
+      "world_size": [
+        0.25,
+        0.1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: small paper rectangle taped by two tape pieces, black marker exact text 광고물 사절. Object width:height 0.25:0.1."
+    },
+    {
+      "id": "box_meter",
+      "filename": "box_meter.png",
+      "kind": "plate",
+      "transparent": true,
+      "required_text": [],
+      "runtime_size": [
+        256,
+        366
+      ],
+      "world_size": [
+        0.35,
+        0.5
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: flat front face of a small old gray electrical meter cabinet with little glass viewing window, abstract unlabelled meter dial, no text or numbers or brand. Object width:height 0.35:0.5."
+    },
+    {
+      "id": "box_milk",
+      "filename": "box_milk.png",
+      "kind": "plate",
+      "transparent": true,
+      "required_text": [],
+      "runtime_size": [
+        256,
+        256
+      ],
+      "world_size": [
+        0.3,
+        0.3
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: flat front face of small old generic milk delivery box attached beside a gate, a simple flap slot, muted gray blue paint, no label or brand. Object width:height 0.3:0.3."
+    },
+    {
+      "id": "erosion_crack_slab",
+      "filename": "erosion_crack_slab.png",
+      "kind": "erosion",
+      "transparent": true,
+      "required_text": [],
+      "runtime_size": [
+        768,
+        512
+      ],
+      "world_size": [
+        3,
+        2
+      ],
+      "optional": true,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: a torn irregular opening in gray asphalt revealing very old gray stone paving slabs beneath, isolated top-down flat color decal. Width:height 3:2. Dark fissure, subdued detail, no glowing rim, no red/orange/teal areas."
+    },
+    {
+      "id": "erosion_gear_reveal",
+      "filename": "erosion_gear_reveal.png",
+      "kind": "erosion",
+      "transparent": true,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        2.4,
+        2.4
+      ],
+      "optional": true,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: one COMPLETE circular weathered brass gear with 6 large intact teeth, viewed top-down. It belongs beneath cracked gray stone paving; generate only the intact wheel, no stone overlapping it, so the game can rotate it behind a separate slab-opening layer. Dull aged brass, no glow, red, orange or turquoise. All 6 teeth and whole circle visible."
+    },
+    {
+      "id": "erosion_blue_scorch",
+      "filename": "erosion_blue_scorch.png",
+      "kind": "erosion",
+      "transparent": true,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        1.6,
+        1.6
+      ],
+      "optional": true,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: an irregular scorch mark left by pale-blue flame, color only with a softly lighter center #9FD8FF, no emitted glow, no actual flames, dark ash feathering at edges. Predominantly cool gray and faint pale blue, avoid teal #8DD8C4 and warm warning reds."
+    },
+    {
+      "id": "sign_v_realty",
+      "filename": "sign_v_realty.png",
+      "kind": "vertical",
+      "transparent": false,
+      "required_text": [
+        "복덕방",
+        "행복부동산",
+        "☎ 0233-0467"
+      ],
+      "runtime_size": [
+        128,
+        512
+      ],
+      "world_size": [
+        0.6,
+        2.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE thin rectangular acrylic projecting sign front face, width:height 1:4, off-white board, deep blue letters. Small top header EXACTLY \"복덕방\" (empty if not given). Main large Korean title EXACTLY \"행복부동산\", written VERTICALLY one syllable per row, dot retained between 사주 and 작명. Small horizontal bottom phone EXACTLY \"☎ 0233-0467\" (empty if not given). Thin aluminum perimeter. No thickness, brackets, extra edges, shadow or tilt. Native board height at least 2048 pixels. Canvas portrait 1024x3072, board centered with 8% margins; outside flat #808080 gray.",
+      "spec_section": 13
+    },
+    {
+      "id": "sign_v_pharmacy",
+      "filename": "sign_v_pharmacy.png",
+      "kind": "vertical",
+      "transparent": false,
+      "required_text": [
+        "藥",
+        "언덕약국"
+      ],
+      "runtime_size": [
+        128,
+        512
+      ],
+      "world_size": [
+        0.6,
+        2.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE thin rectangular acrylic projecting sign front face, width:height 1:4, off-white board, dark green letters. Small top header EXACTLY \"藥\" (empty if not given). Main large Korean title EXACTLY \"언덕약국\", written VERTICALLY one syllable per row, dot retained between 사주 and 작명. Small horizontal bottom phone EXACTLY \"\" (empty if not given). Thin aluminum perimeter. No thickness, brackets, extra edges, shadow or tilt. Native board height at least 2048 pixels. Canvas portrait 1024x3072, board centered with 8% margins; outside flat #808080 gray.",
+      "spec_section": 13
+    },
+    {
+      "id": "sign_v_gukbap",
+      "filename": "sign_v_gukbap.png",
+      "kind": "vertical",
+      "transparent": false,
+      "required_text": [
+        "원조",
+        "순대국전문",
+        "☎ 0234-0870"
+      ],
+      "runtime_size": [
+        128,
+        512
+      ],
+      "world_size": [
+        0.6,
+        2.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE thin rectangular acrylic projecting sign front face, width:height 1:4, navy blue board, off-white letters. Small top header EXACTLY \"원조\" (empty if not given). Main large Korean title EXACTLY \"순대국전문\", written VERTICALLY one syllable per row, dot retained between 사주 and 작명. Small horizontal bottom phone EXACTLY \"☎ 0234-0870\" (empty if not given). Thin aluminum perimeter. No thickness, brackets, extra edges, shadow or tilt. Native board height at least 2048 pixels. Canvas portrait 1024x3072, board centered with 8% margins; outside flat #808080 gray.",
+      "spec_section": 13
+    },
+    {
+      "id": "sign_v_sundries",
+      "filename": "sign_v_sundries.png",
+      "kind": "vertical",
+      "transparent": false,
+      "required_text": [
+        "잡화"
+      ],
+      "runtime_size": [
+        128,
+        384
+      ],
+      "world_size": [
+        0.6,
+        1.7999999999999998
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE thin rectangular acrylic projecting sign front face, width:height 1:3, muted red board, off-white letters. Small top header EXACTLY \"\" (empty if not given). Main large Korean title EXACTLY \"잡화\", written VERTICALLY one syllable per row, dot retained between 사주 and 작명. Small horizontal bottom phone EXACTLY \"\" (empty if not given). Thin aluminum perimeter. No thickness, brackets, extra edges, shadow or tilt. Native board height at least 2048 pixels. Canvas portrait 1024x3072, board centered with 8% margins; outside flat #808080 gray.",
+      "spec_section": 13
+    },
+    {
+      "id": "sign_v_fortune",
+      "filename": "sign_v_fortune.png",
+      "kind": "vertical",
+      "transparent": false,
+      "required_text": [
+        "철학관",
+        "사주 · 작명"
+      ],
+      "runtime_size": [
+        128,
+        512
+      ],
+      "world_size": [
+        0.6,
+        2.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE thin rectangular acrylic projecting sign front face, width:height 1:4, muted yellow board, near-black letters. Small top header EXACTLY \"철학관\" (empty if not given). Main large Korean title EXACTLY \"사주 · 작명\", written VERTICALLY one syllable per row, dot retained between 사주 and 작명. Small horizontal bottom phone EXACTLY \"\" (empty if not given). Thin aluminum perimeter. No thickness, brackets, extra edges, shadow or tilt. Native board height at least 2048 pixels. Canvas portrait 1024x3072, board centered with 8% margins; outside flat #808080 gray.",
+      "spec_section": 13
+    },
+    {
+      "id": "sign_v_inn_broken",
+      "filename": "sign_v_inn_broken.png",
+      "kind": "vertical",
+      "transparent": false,
+      "required_text": [
+        "언덕여인숙"
+      ],
+      "runtime_size": [
+        128,
+        512
+      ],
+      "world_size": [
+        0.6,
+        2.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE thin rectangular acrylic projecting sign front face, width:height 1:4, off-white board, dark red letters. The acrylic has one irregular broken hole; the character 인 is MISSING, leaving ONLY faint glue residue in its position. All other characters remain intact. Small top header EXACTLY \"\" (empty if not given). Main large Korean title EXACTLY \"언덕여인숙\", written VERTICALLY one syllable per row, dot retained between 사주 and 작명. Small horizontal bottom phone EXACTLY \"\" (empty if not given). Thin aluminum perimeter. No thickness, brackets, extra edges, shadow or tilt. Native board height at least 2048 pixels. Canvas portrait 1024x3072, board centered with 8% margins; outside flat #808080 gray.",
+      "spec_section": 13
+    },
+    {
+      "id": "aframe_realty",
+      "filename": "aframe_realty.png",
+      "kind": "aframe",
+      "transparent": false,
+      "required_text": [
+        "부동산",
+        "전세 · 월세 · 매매"
+      ],
+      "runtime_size": [
+        256,
+        512
+      ],
+      "world_size": [
+        0.5,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: Flat FRONT PANEL ONLY of a pavement A-frame sign, width:height 1:2. Do not draw legs or perspective. off-white metal sign face, red and blue lettering, rusty straight metal edging. Large VERTICAL title 부동산. Small horizontal footer 전세 · 월세 · 매매\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "aframe_snack",
+      "filename": "aframe_snack.png",
+      "kind": "aframe",
+      "transparent": false,
+      "required_text": [
+        "분식",
+        "떡볶이 1,000 · 순대 1,500 · 김밥 1,000"
+      ],
+      "runtime_size": [
+        256,
+        512
+      ],
+      "world_size": [
+        0.5,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: Flat FRONT PANEL ONLY of a pavement A-frame sign, width:height 1:2. Do not draw legs or perspective. off-white metal sign face. Large title 분식. Beneath it the hand-corrected price list EXACTLY 떡볶이 1,000 · 순대 1,500 · 김밥 1,000; arrange one food and its price on each of three lines\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "banner_oppose",
+      "filename": "banner_oppose.png",
+      "kind": "banner",
+      "transparent": false,
+      "required_text": [
+        "강제 철거 결사 반대"
+      ],
+      "runtime_size": [
+        1024,
+        192
+      ],
+      "world_size": [
+        5,
+        0.9
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE long cloth banner width:height 5.5:1, front-on. off-white cloth and desaturated red letters. Exact large Korean text \"강제 철거 결사 반대\" in brush-style printed lettering, centered in one row. Subtle faded ink and very shallow sag, restrained wrinkles, one torn corner, four short tie strings at the corners. No other text. Native banner width at least 2048 pixels; landscape canvas 3072x1024.\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "banner_rights",
+      "filename": "banner_rights.png",
+      "kind": "banner",
+      "transparent": false,
+      "required_text": [
+        "세입자 생존권 보장하라"
+      ],
+      "runtime_size": [
+        1024,
+        192
+      ],
+      "world_size": [
+        5,
+        0.9
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE long cloth banner width:height 5.5:1, front-on. muted yellow cloth and black letters. Exact large Korean text \"세입자 생존권 보장하라\" in brush-style printed lettering, centered in one row. Subtle faded ink and very shallow sag, restrained wrinkles, one torn corner, four short tie strings at the corners. No other text. Native banner width at least 2048 pixels; landscape canvas 3072x1024.\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "banner_union",
+      "filename": "banner_union.png",
+      "kind": "banner",
+      "transparent": false,
+      "required_text": [
+        "언덕길 구역 주택재개발 조합 설립 인가",
+        "- 조합 -"
+      ],
+      "runtime_size": [
+        1024,
+        192
+      ],
+      "world_size": [
+        5,
+        0.9
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE long cloth banner width:height 5.5:1, front-on. off-white cloth and blue letters; add the exact small footer - 조합 - at the right end. Exact large Korean text \"언덕길 구역 주택재개발 조합 설립 인가\" in brush-style printed lettering, centered in one row. Subtle faded ink and very shallow sag, restrained wrinkles, one torn corner, four short tie strings at the corners. No other text. Native banner width at least 2048 pixels; landscape canvas 3072x1024.\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "banner_no_trespass",
+      "filename": "banner_no_trespass.png",
+      "kind": "banner",
+      "transparent": false,
+      "required_text": [
+        "이주 완료 · 빈집 무단 출입 금지"
+      ],
+      "runtime_size": [
+        1024,
+        192
+      ],
+      "world_size": [
+        5,
+        0.9
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: ONE long cloth banner width:height 5.5:1, front-on. muted yellow cloth and desaturated red letters. Exact large Korean text \"이주 완료 · 빈집 무단 출입 금지\" in brush-style printed lettering, centered in one row. Subtle faded ink and very shallow sag, restrained wrinkles, one torn corner, four short tie strings at the corners. No other text. Native banner width at least 2048 pixels; landscape canvas 3072x1024.\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "glass_for_rent",
+      "filename": "glass_for_rent.png",
+      "kind": "glass",
+      "transparent": false,
+      "required_text": [
+        "임대 문의 ☎ 0233-0158"
+      ],
+      "runtime_size": [
+        256,
+        320
+      ],
+      "world_size": [
+        0.8,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: Only flat glass-door vinyl sticker lettering, no glass, reflection, background or backing plate. Width:height 0.8:1. off-white vinyl lettering, 임대 large at top and 문의 ☎ 0233-0158 smaller below. Exact combined text: 임대 문의 ☎ 0233-0158\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "glass_closing_sale",
+      "filename": "glass_closing_sale.png",
+      "kind": "glass",
+      "transparent": false,
+      "required_text": [
+        "폐업 정리 · 전품목 할인"
+      ],
+      "runtime_size": [
+        256,
+        320
+      ],
+      "world_size": [
+        0.8,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: Only flat glass-door vinyl sticker lettering, no glass, reflection, background or backing plate. Width:height 0.8:1. off-white and desaturated red vinyl lettering, title 폐업 정리 and subtitle · 전품목 할인. Exact combined text: 폐업 정리 · 전품목 할인\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "glass_open",
+      "filename": "glass_open.png",
+      "kind": "glass",
+      "transparent": false,
+      "required_text": [
+        "영업중"
+      ],
+      "runtime_size": [
+        256,
+        320
+      ],
+      "world_size": [
+        0.8,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: Only flat glass-door vinyl sticker lettering, no glass, reflection, background or backing plate. Width:height 0.8:1. off-white vinyl letters inside a thin rounded muted-red rectangular border. Exact combined text: 영업중\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "boarded_window",
+      "filename": "boarded_window.png",
+      "kind": "window",
+      "transparent": false,
+      "required_text": [
+        "공가"
+      ],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        1.2,
+        1.2
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: two or three overlapping plywood boards nailed across an invisible square window frame, near-black spray word 공가 on one board. Straight front view, no wall or background\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "boarded_door",
+      "filename": "boarded_door.png",
+      "kind": "window",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        1024
+      ],
+      "world_size": [
+        1,
+        2
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: two rough timber battens nailed as a large X across an invisible tall doorway. No door, no frame, no wall; only timber X and nail heads\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "glass_broken",
+      "filename": "glass_broken.png",
+      "kind": "window",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        1,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: one square pane of cracked translucent gray glass, one irregular broken-away corner HOLE fully transparent, all crack lines slender. Glass occupies most of the square. No opaque backing, frame, reflections, text or wall\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "grille_window",
+      "filename": "grille_window.png",
+      "kind": "window",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        1.2,
+        1.2
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: a flat square old Korean window security grille, wavy flower-pattern steel bars with peeling off-white paint and tiny rust spots. All spaces BETWEEN bars must be completely transparent. No window or glass\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "grille_window_green",
+      "filename": "grille_window_green.png",
+      "kind": "window",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        512
+      ],
+      "world_size": [
+        1.2,
+        1.2
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: a flat square old Korean window security grille, looping diamond and wave pattern distinct from a flower pattern; peeling dull green paint and tiny rust spots. All spaces BETWEEN bars must be completely transparent. No window or glass\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "wall_gas_pipe",
+      "filename": "wall_gas_pipe.png",
+      "kind": "fixture",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        819
+      ],
+      "world_size": [
+        1,
+        1.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: two narrow dull yellow vertical gas pipes with simple elbows and one small unlabelled gas meter, isolated flat front elevation. No wall, brand, labels or extra pipes\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "wall_cables",
+      "filename": "wall_cables.png",
+      "kind": "fixture",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        512,
+        154
+      ],
+      "world_size": [
+        2,
+        0.6
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: a horizontal bundle of five sagging narrow near-black electric wires attached with three small wall clips. Width:height 2:0.6; same heights of cable endpoints at left and right for horizontal repeat. No wall or poles\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "floor_arrow",
+      "filename": "floor_arrow.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [],
+      "runtime_size": [
+        256,
+        768
+      ],
+      "world_size": [
+        0.8,
+        2.4
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: worn painted straight forward arrow mask, width:height 0.8:2.4, strong arrowhead, peeling gaps; black arrow on pure white, black means paint in engine. No pavement.",
+      "spec_section": 13
+    },
+    {
+      "id": "floor_text_slow",
+      "filename": "floor_text_slow.png",
+      "kind": "mask",
+      "transparent": false,
+      "required_text": [
+        "천천히"
+      ],
+      "runtime_size": [
+        512,
+        230
+      ],
+      "world_size": [
+        2,
+        0.9
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. GRAYSCALE MASK ONLY: pure white #FFFFFF background and\nblack/gray marks. No colored surface, no material background, no 3D depth, no text or frame.\nBlack is strongest stain, gray is partial opacity. Softly fade marks to white with 8% empty margins.\nFor a horizontally seamless asset, left/right edges must match, overriding side margins;\ntop/bottom should still be white. Do not tile other assets.\nSubject: exact Korean road paint word 천천히, broad simple worn brush-gothic, width:height 2:0.9. Black letters on pure white mask, black means paint in engine. No pavement, no additional text.",
+      "spec_section": 13
+    },
+    {
+      "id": "pole_ad_strip",
+      "filename": "pole_ad_strip.png",
+      "kind": "pole",
+      "transparent": false,
+      "required_text": [
+        "이삿짐 · 용달",
+        "02-012-0345"
+      ],
+      "runtime_size": [
+        128,
+        512
+      ],
+      "world_size": [
+        0.25,
+        1
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: one narrow partly torn vertical paper advertisement strip for a utility pole, width:height 1:4. Exact dark blue text 이삿짐 · 용달 written vertically. Only fictional unusable number 02-012-0345 at bottom. Flat unwrapped paper, no pole or cylindrical bending.\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    },
+    {
+      "id": "pole_number_plate",
+      "filename": "pole_number_plate.png",
+      "kind": "pole",
+      "transparent": false,
+      "required_text": [
+        "언덕 123"
+      ],
+      "runtime_size": [
+        128,
+        192
+      ],
+      "world_size": [
+        0.2,
+        0.3
+      ],
+      "optional": false,
+      "prompt": "Use case: historical-scene. Asset type: individual game decoration texture.\nFlat front-on orthographic texture, absolutely no perspective, camera angle, tilt or lens distortion.\nEarly-2000s South Korean old hillside neighborhood, worn but lived-in, realistic surface detail,\nmuted colors. Neutral even overcast diffuse color, no cast shadows, no directional highlights,\nno vignette, no sunset color, no glow or lighting baked into the image. This is a flat albedo asset,\nnot an object photographed in a room. No people, wall/background context, brand/logo/watermark,\nreal places, real phone numbers, QR codes, modern road address plates, English or extra text.\nOnly the explicitly requested Korean text is allowed, with exact spelling and punctuation.\nUnspecified small text areas must be blank, never filled with pseudo-writing.\nUse off-white around #EBEBEB and near-black around #141414 for the object (pure white only in mask backgrounds).\nGenerate exactly ONE asset, never a contact sheet, collage, multiple views or layout with labels.\nCanvas 1536x1536 pixels. One isolated flat asset centered on genuinely transparent RGBA background,\n8% transparent margin, no shadow or backing plane. Keep the stated object proportions.\nDo not paint a checkerboard or chroma-key background. Crisp detail with natural worn edges.\nSubject: one flat small rectangular utility-pole number plate, muted yellow board, near-black exact text 언덕 123, arranged on two lines. No other numbers or text. Width:height 2:3.\nBackground override: OPAQUE solid pure magenta #FF00FF behind the asset, no shadows. Never use magenta in the object. This overrides all previous transparent-background instructions. Keep open gaps magenta too for later chroma key.",
+      "spec_section": 13
+    }
+  ]
+}
