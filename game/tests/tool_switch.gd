@@ -117,6 +117,8 @@ func run() -> void:
 	key(KEY_F9)
 	check(arena.state.bindings.r == "relay" and arena.state.bindings.q == "bolt_cutter", "F9 cycles R from the grinder to the target relay")
 	key(KEY_F9)
+	check(arena.state.bindings.r == "chainsaw", "F9 cycles R on to the chainsaw")
+	key(KEY_F9)
 	check(arena.state.bindings.r == "shield", "F9 cycles R on to the shield")
 	key(KEY_F9)
 	check(arena.state.bindings.r == "grinder", "F9 cycles R back to the grinder")

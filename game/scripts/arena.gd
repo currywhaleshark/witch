@@ -15,7 +15,8 @@ const GOLD_FLASH = Color("ffe08a")
 const WARN = Color("7a3a32")
 const WARN_FILL = Color("e8604c")
 # Each tool keeps its own colour on the witch, its ring and its swings.
-const TOOL_COLORS = {"bolt_cutter": BRASS, "grinder": STEEL}
+const BLEED_RED = Color("c8463c")
+const TOOL_COLORS = {"bolt_cutter": BRASS, "grinder": STEEL, "chainsaw": BLEED_RED}
 const PICK_LAYER = 8
 # Held inputs repeat only attack-like casts; toggles, summons and placement stay one per press.
 const REPEAT_KINDS = ["aim", "enemy"]
@@ -268,7 +269,7 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 	var maximum: float = type.hp * rank.hp
 	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": type.get("heavy", false), "kind": kind,
 		"grade": grade, "size": size, "cooldown": 1.0, "windup": 0.0, "attack": "", "charge_cooldown": 1.0, "charging": 0.0,
-		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "flash": 0.0,
+		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "bleeds": [], "flash": 0.0,
 		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": [], "route": {}}
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -339,6 +340,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			cancel_pending_cast()
 			restart_probe("settings_changed")
 			state = rules.bind(state, "lmb", "shotgun" if state.bindings.lmb == "basic_attack" else "basic_attack")
+			return
+		if event.physical_keycode == KEY_F9 and (event.shift_pressed or event.ctrl_pressed):
+			# Shift+F9: chainsaw skill level; Ctrl+F9: which bleed growth (A rate / B upkeep) the level drives.
+			restart_probe("settings_changed")
+			if event.shift_pressed:
+				var levels: Array = config.chainsaw_level_steps
+				config.chainsaw_level = levels[(levels.find(config.chainsaw_level) + 1) % levels.size()]
+			else:
+				var growths: Array = config.bleed.growth_steps
+				config.bleed.growth = growths[(growths.find(config.bleed.growth) + 1) % growths.size()]
+			var plan: Dictionary = bleed_plan(0)
+			show_message("전기톱 Lv %d · 출혈 성장 %s안 · %.1f초 · 일반 %d%%" % [config.chainsaw_level, config.bleed.growth, plan.seconds, roundi(100 * plan.ratio * float(config.bleed.ratio.normal))])
 			return
 		if event.physical_keycode == KEY_F9:
 			cancel_pending_cast()
@@ -525,6 +538,7 @@ func save_mana_log(reason: String) -> String:
 		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
 			"hit_recovery_score": config.hit_recovery_score, "shield_level": config.shield_level, "dexterity": config.dexterity,
 			"automaton_level": config.automaton_level, "turret_level": config.turret_level, "map": map.id,
+			"chainsaw_level": config.chainsaw_level, "bleed_growth": config.bleed.growth,
 			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	if file == null:
@@ -855,7 +869,22 @@ func execute_cast(event: Dictionary) -> void:
 				best = event.target_enemy
 			beam(player.position + Vector3.UP, player.position + direction * 2.3 + Vector3.UP, TOOL_COLORS.get(tool, TEAL), 0.12)
 			# A miss swings silently: no hit sound, no flash, no debuff.
-			if best != "" and tool != null:
+			if tool == "chainsaw":
+				# A small forward fan: every enemy in it is struck on its own roll, and each hit bleeds.
+				var struck: Array = []
+				for id in enemies.keys():
+					var delta: Vector3 = enemies[id].body.position - player.position
+					if id == best or (delta.length() <= rules.skills.basic_attack.range and delta.normalized().dot(direction) >= float(rules.skills.chainsaw.fan_dot) and map.sees(player.position, enemies[id].body.position)):
+						struck.append(id)
+				var cut := false
+				for id in struck:
+					if enemies.has(id) and strike(id, damage, true, "witch", tool) != "miss":
+						cut = true
+						if enemies.has(id):
+							add_bleed(id)
+				if cut:
+					play_cue(1.05)
+			elif best != "" and tool != null:
 				var debuff: String = rules.skills[tool].debuff
 				var before: float = enemies[best][debuff]
 				# Debuffs of different tools coexist; switching tools never clears them.
@@ -874,7 +903,7 @@ func execute_cast(event: Dictionary) -> void:
 			for angle in [-0.34, -0.17, 0, 0.17, 0.34]:
 				beam(player.position + Vector3.UP, player.position + direction.rotated(Vector3.UP, angle) * rules.skills.shotgun.range + Vector3.UP, BRASS)
 			play_cue(0.65)
-		"bolt_cutter", "grinder": pulse(player.position, TOOL_COLORS[event.skill], 0.8)
+		"bolt_cutter", "grinder", "chainsaw": pulse(player.position, TOOL_COLORS[event.skill], 0.8)
 		"shield":
 			shield_time = float(rules.skills.shield.duration_seconds)
 			pulse(player.position + Vector3.UP, STEEL, 0.9)
@@ -946,15 +975,18 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 		shake_time = 0.12
 	return "crit" if crit else "hit"
 
-func damage_enemy(id: String, amount: float) -> float:
-	# Returns the HP actually removed, for the A5 log.
+func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
+	# Returns the HP actually removed, for the A5 log. Bleed ticks pass direct = false.
 	if not enemies.has(id):
 		return 0.0
 	var enemy: Dictionary = enemies[id]
 	# Trial shred: no armour formula exists yet, so shredded enemies take more direct damage.
-	var dealt: float = minf(maxf(enemy.hp, 0.0), amount * (config.shred_damage_taken if enemy.shred > 0 else 1.0))
-	enemy.hp -= amount * (config.shred_damage_taken if enemy.shred > 0 else 1.0)
-	enemy.flash = 0.16
+	# Bleed ignores defence, so shred never raises it (07 §2.2).
+	var taken: float = amount * (config.shred_damage_taken if enemy.shred > 0 and direct else 1.0)
+	var dealt: float = minf(maxf(enemy.hp, 0.0), taken)
+	enemy.hp -= taken
+	if direct:
+		enemy.flash = 0.16
 	if enemy.hp <= 0:
 		pulse(enemy.body.position, RED, 0.6)
 		if enemy.model.has_method("detach_for_death"):
@@ -977,6 +1009,54 @@ func damage_enemy(id: String, amount: float) -> float:
 		if enemies.is_empty():
 			cancel_pending_cast()
 	return dealt
+
+func bleed_plan(stacks: int) -> Dictionary:
+	# What a new bleed gets at the chainsaw's level. Growth A raises the share of max HP; growth B
+	# lengthens the bleed at the same rate per second and lets later stacks keep more of their weight.
+	var bleed: Dictionary = config.bleed
+	var level: int = int(config.chainsaw_level) - 1
+	var weights: Array = bleed.weights
+	var weight: float = float(weights[mini(stacks, weights.size() - 1)])
+	var ratio := 1.0
+	var seconds: float = float(bleed.seconds)
+	if bleed.growth == "A":
+		ratio += float(bleed.a_ratio_per_level) * level
+	else:
+		seconds += float(bleed.b_seconds_per_level) * level
+		weight += (1.0 - weight) * minf(1.0, float(bleed.b_weight_per_level) * level)
+	return {"ratio": ratio * seconds / float(bleed.seconds), "seconds": seconds, "weight": weight}
+
+func add_bleed(id: String) -> void:
+	# Up to five independent stacks per enemy, each with its own timer. A stack's total is
+	# max HP x grade share x its weight, fixed when applied by how many stacks were already running;
+	# a sixth bleed replaces the oldest (trial rule).
+	var enemy: Dictionary = enemies[id]
+	var stacks: Array = enemy.bleeds
+	if stacks.size() >= int(config.bleed.max_stacks):
+		stacks.pop_front()
+	var plan: Dictionary = bleed_plan(stacks.size())
+	var total: float = enemy.max_hp * float(config.bleed.ratio[enemy.grade]) * plan.ratio * plan.weight
+	var ticks: int = maxi(1, roundi(plan.seconds / float(config.bleed.tick_seconds)))
+	stacks.append({"left": ticks, "per_tick": total / ticks, "clock": 0.0})
+	probe.counts.bleeds_applied += 1
+
+func tick_bleeds(dt: float) -> void:
+	# Bleed is its own non-critical damage event: no hit roll, no crit, no defence, no stun.
+	var step: float = float(config.bleed.tick_seconds)
+	for id in enemies.keys():
+		if not enemies.has(id):
+			continue
+		var stacks: Array = enemies[id].bleeds
+		var amount := 0.0
+		for stack in stacks:
+			stack.clock += dt
+			while stack.clock >= step and stack.left > 0:
+				stack.clock -= step
+				stack.left -= 1
+				amount += stack.per_tick
+		enemies[id].bleeds = stacks.filter(func(stack): return stack.left > 0)
+		if amount > 0:
+			probe.bleed(damage_enemy(id, amount, false))
 
 func potion_cooldown(id: String) -> float:
 	var longest = 0.0
@@ -1126,6 +1206,7 @@ func _physics_process(dt: float) -> void:
 			tick_respawns(dt)
 		tick_potions(dt)
 		tick_bolts(dt)
+		tick_bleeds(dt)
 		tick_boss_trigger()
 		tick_windup(dt)
 		if action_time > 0:

@@ -7,7 +7,7 @@ var gap_count = 0
 var longest_gap = 0.0
 var current_gap = 0.0
 var unaffordable_seconds: Dictionary = {}
-var counts = {"mana_failures": 0, "fallback_attacks": 0, "tool_auto_releases": 0, "tool_manual_releases": 0, "deaths": 0, "kills": 0, "debug_mana_edits": 0, "hits": 0, "misses": 0, "crits": 0, "stuns": 0, "blocks": 0, "allies_lost": 0}
+var counts = {"mana_failures": 0, "fallback_attacks": 0, "tool_auto_releases": 0, "tool_manual_releases": 0, "deaths": 0, "kills": 0, "debug_mana_edits": 0, "hits": 0, "misses": 0, "crits": 0, "stuns": 0, "blocks": 0, "allies_lost": 0, "bleeds_applied": 0, "bleed_ticks": 0}
 var casts: Dictionary = {}
 var potions: Dictionary = {}
 # Stage B breakdowns: direct damage dealt per source, and what each enemy grade did and suffered.
@@ -29,6 +29,12 @@ func strike(source: String, result: String, dealt: float) -> void:
 			row.hits += 1
 			counts.hits += 1
 	row.damage += dealt
+
+func bleed(dealt: float) -> void:
+	# Bleed ticks count as damage under their own source, never as hits or misses.
+	var row: Dictionary = sources.get_or_add("bleed", {"hits": 0, "misses": 0, "crits": 0, "damage": 0.0})
+	row.damage += dealt
+	counts.bleed_ticks += 1
 
 func grade(id: String) -> Dictionary:
 	return grades.get_or_add(id, {"kills": 0, "hits_on_witch": 0, "damage_to_witch": 0.0, "stuns": 0, "blocked": 0,

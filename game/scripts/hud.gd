@@ -13,7 +13,7 @@ const RED = Color("ee987d")
 const KEYS = ["LMB", "RMB", "Q", "W", "E", "R"]
 const POTION_COLORS = {"hp": Color("ee987d"), "mp": Color("8dd8c4"), "both": Color("c9a0dc"), "speed": Color("a8d672")}
 # Slot icons follow the bound skill, not the slot position.
-const ICONS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7}
+const ICONS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8}
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -87,6 +87,8 @@ func _draw() -> void:
 			debuffs.append("둔화")
 		if enemy.shred > 0:
 			debuffs.append("방깎")
+		if not enemy.bleeds.is_empty():
+			debuffs.append("출혈 %d" % enemy.bleeds.size())
 		if not debuffs.is_empty():
 			centered(p + Vector2(0, -8), " · ".join(debuffs), 11, TEAL)
 		elif enemy.windup > 0:
@@ -279,3 +281,11 @@ func icon(p: Vector2, kind: int, color: Color) -> void:
 			var plate = PackedVector2Array([p + Vector2(-14, -15), p + Vector2(14, -15), p + Vector2(14, 2), p + Vector2(0, 17), p + Vector2(-14, 2), p + Vector2(-14, -15)])
 			draw_polyline(plate, color, 2)
 			draw_line(p + Vector2(0, -15), p + Vector2(0, 17), color, 2)
+		8:
+			# Chainsaw bar with teeth along its edge.
+			draw_line(p + Vector2(-16, 14), p + Vector2(-7, 5), color, 4)
+			var bar = PackedVector2Array([p + Vector2(-9, 3), p + Vector2(9, -15), p + Vector2(15, -9), p + Vector2(-3, 9), p + Vector2(-9, 3)])
+			draw_polyline(bar, color, 2)
+			for k in 4:
+				var at: Vector2 = p + Vector2(-5, 1) + Vector2(4.5, -4.5) * k
+				draw_line(at, at + Vector2(-3, -3), color, 2)

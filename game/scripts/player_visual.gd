@@ -149,7 +149,7 @@ func _build_staff() -> void:
 	Shape.box(staff_head, Vector3(0, 0.68, 0), Vector3(0.16, 0.09, 0.10), STEEL)
 	var crown := Shape.ring(staff_head, Vector3(0, 0.77, 0), 0.10, TEAL, 0.018)
 	crown.rotation.x = PI / 2.0
-	tool_visuals = {"bolt_cutter": Node3D.new(), "grinder": Node3D.new()}
+	tool_visuals = {"bolt_cutter": Node3D.new(), "grinder": Node3D.new(), "chainsaw": Node3D.new()}
 	for tool in tool_visuals:
 		tool_visuals[tool].name = tool
 		staff_root.add_child(tool_visuals[tool])
@@ -159,6 +159,10 @@ func _build_staff() -> void:
 		jaw.rotation.z = x * 1.5
 	grinder_disk = Shape.cylinder(tool_visuals.grinder, Vector3(0, 0.78, 0), 0.17, 0.045, STEEL)
 	grinder_disk.rotation.z = PI / 2.0
+	# Chainsaw: a motor housing on the staff head and a long flat bar with a dark chain round it.
+	Shape.box(tool_visuals.chainsaw, Vector3(0, 0.66, 0), Vector3(0.13, 0.12, 0.12), Color("8c3a32"))
+	Shape.box(tool_visuals.chainsaw, Vector3(0, 0.9, 0), Vector3(0.09, 0.38, 0.025), STEEL)
+	Shape.box(tool_visuals.chainsaw, Vector3(0, 0.9, 0), Vector3(0.11, 0.4, 0.015), Color("2b2f33"))
 
 func set_active_tool(tool) -> void:
 	if not loaded_ok:
