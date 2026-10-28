@@ -1,0 +1,48 @@
+{
+  "actor": "door",
+  "bounds": [
+    [
+      -0.32879638671875,
+      -0.2318267524242401,
+      0.0
+    ],
+    [
+      0.32879638671875,
+      0.2318267524242401,
+      1.0
+    ]
+  ],
+  "meshes": [
+    {
+      "name": "tripo_node_86a25cb0-61b8-4502-ad5d-8820020e0ee2",
+      "vertices": 42475,
+      "triangles": 72316,
+      "materials": [
+        "tripo_material_86a25cb0-61b8-4502-ad5d-8820020e0ee2"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "door_tripo_h31_raw_basecolor.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "door_tripo_h31_raw_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "door_tripo_h31_raw_rm.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}

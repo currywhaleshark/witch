@@ -1,0 +1,38 @@
+{
+  "id": "stake",
+  "source": "assets\\actors\\boss_trial_v1\\source\\stake_tripo_h31_raw.glb",
+  "source_sha256": "e76b3aab2e9e608e3968b156a8e61c61511413d94f4033cc91962062d21b891c",
+  "raw_unchanged": true,
+  "source_triangles": 76768,
+  "runtime_triangles": 6499,
+  "vertices": 5739,
+  "bones": 2,
+  "rigid_parts": 1,
+  "max_influences": 1,
+  "texture_size": 1024,
+  "materials": 1,
+  "height_m": 2.6,
+  "front": "Godot -Z",
+  "glb_sha256": "12b79f01405dd1696544961e9d8cf4d24000371ddd1d8e3aeadae2fd0b34ee2a",
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0
+    }
+  },
+  "sampled_rigid_edge_error_m": 0.0,
+  "ground_min_z": {
+    "idle": [
+      0.0,
+      0.0
+    ]
+  },
+  "parts": [
+    {
+      "bone": "part_000",
+      "source_part": 0,
+      "parent": "root",
+      "triangles": 6499
+    }
+  ]
+}

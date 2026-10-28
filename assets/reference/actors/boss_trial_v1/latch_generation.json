@@ -1,0 +1,11 @@
+{
+  "id": "latch",
+  "prompt": "Use case: stylized-concept. Create a single high quality 3D game enemy modeling reference, full body isolated on plain warm light grey background, no text, no sheet, no duplicates. Match the restrained stylized physically textured materials of the supplied brick golem reference, but make a DISTINCT boss: a hulking haunted doorway monster assembled from old Korean alley wooden entrance doorframes, splintered dark utility poles, weathered iron latches, large aged brass padlocks and heavy short chains. Its tall upper torso is a recognizable old wooden doorway with an OPEN dark central gap and one small pale cyan flame deep inside. No human face. Broken small lintel crown. Four clearly separate articulated timber-and-iron legs, two foreground and two behind visible at the sides, each with robust hinge knees and broad stable claw feet. Two asymmetrical arms clearly spaced away from torso and legs: screen left a segmented thick chain arm ending in a horizontal iron sliding-bolt club; screen right an arm ending in a massive brass padlock for overhead slamming. Locks and hardware attached rigidly in clustered readable forms, avoid sprawling hairlike chains. Rest modeling stance, arms slightly out, clear gaps between limbs. Slight front three-quarter camera only 10 degrees sideways, level camera, whole object including feet with 8 percent margin. Worn dark brown wood, oxidized muted brass, soot-black iron, tiny pale blue core; gritty fantasy Korean urban alley, not ornate palace, no brick armor, no grass, no ground platform, no environment, no writing, no motion blur. Strong readable silhouette at isometric gameplay size. Character itself fills canvas.",
+  "references": [
+    "C:/Users/yurib/Documents/New project/witch/assets/reference/actors/combat_set_v1/brute_concept_v1.png"
+  ],
+  "source_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-c011dfde-d83d-4187-948d-ebeed33b3402.png",
+  "destination": "assets/reference/actors/boss_trial_v1/latch_concept_v1.png",
+  "tool": "image_gen.imagegen",
+  "created_at": "2026-10-28T06:18:32.929Z"
+}

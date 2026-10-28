@@ -1,0 +1,16 @@
+00:05.922  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\actors\boss_trial_v1\authoring\latch_v1.blend"
+16:21:00 | INFO: Data are loaded, start creating Blender stuff
+16:21:00 | INFO: Blender create Mesh node Mesh_0
+16:21:02 | INFO: glTF import finished in 1.79s
+00:09.890  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\actors\boss_trial_v1\authoring\stake_v1.blend"
+16:21:02 | INFO: Data are loaded, start creating Blender stuff
+16:21:02 | INFO: Blender create Mesh node meshes[0]
+16:21:02 | INFO: glTF import finished in 0.06s
+00:10.500  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\actors\boss_trial_v1\authoring\door_v1.blend"
+16:21:03 | INFO: Data are loaded, start creating Blender stuff
+16:21:03 | INFO: Blender create Mesh node Mesh_0
+16:21:03 | INFO: glTF import finished in 0.26s
+BOSS_SAVED_VALIDATION {"passed": true, "errors": [], "files": [{"id": "latch", "format": "blend", "sha256": "e5686d9d678652ad9667e35d2eb371382159e2673358f3a69cb4988fd7a59ca2", "triangles": 27923, "bones": 119, "images": 3, "importer_bone_display_shapes": [], "sampled_poses": 24, "max_determinant_error": 1.5497207641601562e-06}, {"id": "latch", "format": "glb", "sha256": "134657d5f3c52397bbd41858a4467c9485f2e23a00ef4513f87edc9cfc7c7daa", "triangles": 27923, "bones": 119, "images": 3, "importer_bone_display_shapes": ["Icosphere"], "sampled_poses": 24, "max_determinant_error": 2.1457672119140625e-06}, {"id": "stake", "format": "blend", "sha256": "858b8ccece53252496271e9f6996a6702fd06d7f69b588bf031611e3aa4fef6d", "triangles": 6499, "bones": 2, "images": 3, "importer_bone_display_shapes": [], "sampled_poses": 3, "max_determinant_error": 5.960464477539063e-08}, {"id": "stake", "format": "glb", "sha256": "12b79f01405dd1696544961e9d8cf4d24000371ddd1d8e3aeadae2fd0b34ee2a", "triangles": 6499, "bones": 2, "images": 3, "importer_bone_display_shapes": ["Icosphere"], "sampled_poses": 3, "max_determinant_error": 5.960464477539063e-08}, {"id": "door", "format": "blend", "sha256": "85fe838100f52c8cb5444241edee875b45210a5d232e4897fe0f5b1e331be817", "triangles": 8962, "bones": 62, "images": 3, "importer_bone_display_shapes": [], "sampled_poses": 9, "max_determinant_error": 2.384185791015625e-07}, {"id": "door", "format": "glb", "sha256": "d525da0413b98dab74ca5c1e66743d11a38e2c54435d9f9ba49f5448bb96bfcd", "triangles": 8962, "bones": 62, "images": 3, "importer_bone_display_shapes": ["Icosphere"], "sampled_poses": 9, "max_determinant_error": 1.1920928955078125e-07}]}
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

@@ -1,0 +1,73 @@
+{
+  "status": "integrated_review_candidate",
+  "source_document": "docs/08_scenario_draft.md section 6.3",
+  "scope": "latch boss, lure stake, firing door frame; presentation assets only",
+  "concepts": "assets/reference/actors/boss_trial_v1",
+  "tripo_settings": {
+    "model": "H3.1",
+    "ultra": false,
+    "texture": "2K",
+    "pbr": true,
+    "triangles_requested": 80000,
+    "privacy": "private",
+    "credits_per_generation": 30
+  },
+  "assets": [
+    {
+      "id": "latch",
+      "source_job": "625e64c3-fc74-481b-83b4-410c3e6370ae",
+      "base_height_m": 2.0,
+      "target_triangles": 28000
+    },
+    {
+      "id": "stake",
+      "source_job": "1c0ccc1b-8270-4868-b405-e74bb87e44d3",
+      "height_m": 2.6,
+      "target_triangles": 6500
+    },
+    {
+      "id": "door",
+      "source_job": "f5fd2567-6c66-4219-9c54-8b4fb7e0ade3",
+      "height_m": 2.3,
+      "target_triangles": 9000
+    }
+  ],
+  "game_baseline_commit": "aea9543",
+  "authoring": "Blender 5.1.1 background authoring; immutable Tripo sources, rigid skinned parts, authored frame-baked clips; not manual retopology or mocap.",
+  "segmentation": {
+    "latch": {
+      "detail": "precise",
+      "parts_ui": 98,
+      "credits": 40,
+      "uv_packing": true
+    },
+    "door": {
+      "detail_ui": "precise",
+      "parts_ui": 60,
+      "credits": 40,
+      "uv_packing": true
+    }
+  },
+  "credits_consumed": 170,
+  "protected_files": {
+    "game\\data\\trial.json": "ab8008404779103080b5b84bef7e4fd4bf98ca72c4b70f914c4c5cdc19fe7687",
+    "game\\data\\maps\\alley_v2.json": "43257bf3cd96f1058ca7c6da918423ee05b87e07bc3bc35ec3fd83f1d40575b6",
+    "game\\scripts\\player_visual.gd": "679351831430b40bf3d7d8e440d82930038cf47aa7e6c888b9027c7c69e6b76e",
+    "game\\scripts\\modular_character_runtime.gd": "c01c9d3030fadb1c310a6240618a6a758fd51e916bbc519b7a20c37da70786dd",
+    "docs\\08_scenario_draft.md": "bcef173825130cd5e0e5222cf88d857e729fe03b3d064fe3274af29e4e8fb189"
+  },
+  "delivery_manifest": "reports/boss_trial_v1/delivery_manifest.json",
+  "runtime_triangles": 43384,
+  "game_height_m": {
+    "latch": 4.48,
+    "stake": 2.6,
+    "door": 2.3
+  },
+  "user_art_approved": false,
+  "door_fit_v2": {
+    "leaf_rest_width_factor": 1.28,
+    "hinge_frame_and_animation_unchanged": true,
+    "validation": "reports/door_fit_v2/fit_validation.json",
+    "review": "reports/door_fit_v2/review.html"
+  }
+}

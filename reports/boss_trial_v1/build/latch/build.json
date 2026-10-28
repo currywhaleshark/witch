@@ -1,0 +1,676 @@
+{
+  "id": "latch",
+  "source": "assets\\actors\\boss_trial_v1\\source\\latch_tripo_segmented.glb",
+  "source_sha256": "e7617ede790b6e8dd267f328f1d5c79b23be1a5669c53d1c0aed6ae59ac309cc",
+  "raw_unchanged": true,
+  "source_triangles": 76597,
+  "runtime_triangles": 27923,
+  "vertices": 27184,
+  "bones": 119,
+  "rigid_parts": 98,
+  "max_influences": 1,
+  "texture_size": 2048,
+  "materials": 2,
+  "height_m": 2.0,
+  "front": "Godot -Z",
+  "glb_sha256": "134657d5f3c52397bbd41858a4467c9485f2e23a00ef4513f87edc9cfc7c7daa",
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "move": {
+      "frames": 25,
+      "seconds": 1.0
+    },
+    "sweep": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "slam": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "frames": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "shockwave": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "hit": {
+      "frames": 13,
+      "seconds": 0.5
+    },
+    "death": {
+      "frames": 49,
+      "seconds": 2.0
+    }
+  },
+  "sampled_rigid_edge_error_m": 2.8574220642830356e-07,
+  "ground_min_z": {
+    "idle": [
+      3.6940432437404525e-06,
+      3.6940432437404525e-06
+    ],
+    "move": [
+      3.6940432437404525e-06,
+      0.005044871475547552
+    ],
+    "sweep": [
+      3.6940432437404525e-06,
+      3.6940432437404525e-06
+    ],
+    "slam": [
+      3.6940432437404525e-06,
+      3.6940432437404525e-06
+    ],
+    "frames": [
+      3.6940432437404525e-06,
+      3.6940432437404525e-06
+    ],
+    "shockwave": [
+      3.6940432437404525e-06,
+      3.6940432437404525e-06
+    ],
+    "hit": [
+      3.6940432437404525e-06,
+      3.6940432437404525e-06
+    ],
+    "death": [
+      3.6940432437404525e-06,
+      0.001999989151954651
+    ]
+  },
+  "parts": [
+    {
+      "bone": "part_000",
+      "source_part": 0,
+      "parent": "torso",
+      "triangles": 3768
+    },
+    {
+      "bone": "part_001",
+      "source_part": 1,
+      "parent": "weapon_lock",
+      "triangles": 1133
+    },
+    {
+      "bone": "part_010",
+      "source_part": 10,
+      "parent": "torso",
+      "triangles": 709
+    },
+    {
+      "bone": "part_011",
+      "source_part": 11,
+      "parent": "foot_front_L",
+      "triangles": 265
+    },
+    {
+      "bone": "part_012",
+      "source_part": 12,
+      "parent": "torso",
+      "triangles": 391
+    },
+    {
+      "bone": "part_013",
+      "source_part": 13,
+      "parent": "torso",
+      "triangles": 437
+    },
+    {
+      "bone": "part_014",
+      "source_part": 14,
+      "parent": "torso",
+      "triangles": 415
+    },
+    {
+      "bone": "part_015",
+      "source_part": 15,
+      "parent": "shin_rear_R",
+      "triangles": 386
+    },
+    {
+      "bone": "part_016",
+      "source_part": 16,
+      "parent": "foot_front_L",
+      "triangles": 149
+    },
+    {
+      "bone": "part_017",
+      "source_part": 17,
+      "parent": "foot_front_R",
+      "triangles": 472
+    },
+    {
+      "bone": "part_018",
+      "source_part": 18,
+      "parent": "forearm_chain",
+      "triangles": 393
+    },
+    {
+      "bone": "part_019",
+      "source_part": 19,
+      "parent": "shin_front_R",
+      "triangles": 388
+    },
+    {
+      "bone": "part_002",
+      "source_part": 2,
+      "parent": "forearm_lock",
+      "triangles": 542
+    },
+    {
+      "bone": "part_020",
+      "source_part": 20,
+      "parent": "foot_rear_L",
+      "triangles": 210
+    },
+    {
+      "bone": "part_021",
+      "source_part": 21,
+      "parent": "arm_chain",
+      "triangles": 655
+    },
+    {
+      "bone": "part_022",
+      "source_part": 22,
+      "parent": "thigh_front_R",
+      "triangles": 316
+    },
+    {
+      "bone": "part_023",
+      "source_part": 23,
+      "parent": "shin_rear_L",
+      "triangles": 310
+    },
+    {
+      "bone": "part_024",
+      "source_part": 24,
+      "parent": "foot_rear_R",
+      "triangles": 304
+    },
+    {
+      "bone": "part_025",
+      "source_part": 25,
+      "parent": "torso",
+      "triangles": 223
+    },
+    {
+      "bone": "part_026",
+      "source_part": 26,
+      "parent": "forearm_chain",
+      "triangles": 254
+    },
+    {
+      "bone": "part_027",
+      "source_part": 27,
+      "parent": "thigh_front_R",
+      "triangles": 273
+    },
+    {
+      "bone": "part_028",
+      "source_part": 28,
+      "parent": "thigh_front_L",
+      "triangles": 332
+    },
+    {
+      "bone": "part_029",
+      "source_part": 29,
+      "parent": "shin_front_L",
+      "triangles": 280
+    },
+    {
+      "bone": "part_003",
+      "source_part": 3,
+      "parent": "forearm_lock",
+      "triangles": 1013
+    },
+    {
+      "bone": "part_030",
+      "source_part": 30,
+      "parent": "foot_rear_R",
+      "triangles": 229
+    },
+    {
+      "bone": "part_031",
+      "source_part": 31,
+      "parent": "forearm_lock",
+      "triangles": 216
+    },
+    {
+      "bone": "part_032",
+      "source_part": 32,
+      "parent": "thigh_front_L",
+      "triangles": 201
+    },
+    {
+      "bone": "part_033",
+      "source_part": 33,
+      "parent": "foot_rear_R",
+      "triangles": 208
+    },
+    {
+      "bone": "part_034",
+      "source_part": 34,
+      "parent": "torso",
+      "triangles": 164
+    },
+    {
+      "bone": "part_035",
+      "source_part": 35,
+      "parent": "torso",
+      "triangles": 145
+    },
+    {
+      "bone": "part_036",
+      "source_part": 36,
+      "parent": "thigh_rear_R",
+      "triangles": 178
+    },
+    {
+      "bone": "part_037",
+      "source_part": 37,
+      "parent": "forearm_chain",
+      "triangles": 163
+    },
+    {
+      "bone": "part_038",
+      "source_part": 38,
+      "parent": "foot_front_R",
+      "triangles": 162
+    },
+    {
+      "bone": "part_039",
+      "source_part": 39,
+      "parent": "torso",
+      "triangles": 440
+    },
+    {
+      "bone": "part_004",
+      "source_part": 4,
+      "parent": "thigh_rear_L",
+      "triangles": 923
+    },
+    {
+      "bone": "part_040",
+      "source_part": 40,
+      "parent": "torso",
+      "triangles": 360
+    },
+    {
+      "bone": "part_041",
+      "source_part": 41,
+      "parent": "arm_lock",
+      "triangles": 322
+    },
+    {
+      "bone": "part_042",
+      "source_part": 42,
+      "parent": "forearm_lock",
+      "triangles": 322
+    },
+    {
+      "bone": "part_043",
+      "source_part": 43,
+      "parent": "foot_rear_L",
+      "triangles": 263
+    },
+    {
+      "bone": "part_044",
+      "source_part": 44,
+      "parent": "forearm_chain",
+      "triangles": 245
+    },
+    {
+      "bone": "part_045",
+      "source_part": 45,
+      "parent": "thigh_front_R",
+      "triangles": 248
+    },
+    {
+      "bone": "part_046",
+      "source_part": 46,
+      "parent": "foot_front_R",
+      "triangles": 202
+    },
+    {
+      "bone": "part_047",
+      "source_part": 47,
+      "parent": "torso",
+      "triangles": 205
+    },
+    {
+      "bone": "part_048",
+      "source_part": 48,
+      "parent": "foot_front_L",
+      "triangles": 196
+    },
+    {
+      "bone": "part_049",
+      "source_part": 49,
+      "parent": "torso",
+      "triangles": 188
+    },
+    {
+      "bone": "part_005",
+      "source_part": 5,
+      "parent": "weapon_chain",
+      "triangles": 1327
+    },
+    {
+      "bone": "part_050",
+      "source_part": 50,
+      "parent": "torso",
+      "triangles": 178
+    },
+    {
+      "bone": "part_051",
+      "source_part": 51,
+      "parent": "foot_front_L",
+      "triangles": 169
+    },
+    {
+      "bone": "part_052",
+      "source_part": 52,
+      "parent": "torso",
+      "triangles": 174
+    },
+    {
+      "bone": "part_053",
+      "source_part": 53,
+      "parent": "shin_front_L",
+      "triangles": 170
+    },
+    {
+      "bone": "part_054",
+      "source_part": 54,
+      "parent": "foot_front_L",
+      "triangles": 159
+    },
+    {
+      "bone": "part_055",
+      "source_part": 55,
+      "parent": "thigh_front_L",
+      "triangles": 158
+    },
+    {
+      "bone": "part_056",
+      "source_part": 56,
+      "parent": "foot_front_R",
+      "triangles": 156
+    },
+    {
+      "bone": "part_057",
+      "source_part": 57,
+      "parent": "foot_front_R",
+      "triangles": 152
+    },
+    {
+      "bone": "part_058",
+      "source_part": 58,
+      "parent": "torso",
+      "triangles": 154
+    },
+    {
+      "bone": "part_059",
+      "source_part": 59,
+      "parent": "foot_rear_L",
+      "triangles": 148
+    },
+    {
+      "bone": "part_006",
+      "source_part": 6,
+      "parent": "thigh_rear_R",
+      "triangles": 627
+    },
+    {
+      "bone": "part_060",
+      "source_part": 60,
+      "parent": "foot_rear_L",
+      "triangles": 146
+    },
+    {
+      "bone": "part_061",
+      "source_part": 61,
+      "parent": "foot_rear_L",
+      "triangles": 147
+    },
+    {
+      "bone": "part_062",
+      "source_part": 62,
+      "parent": "foot_rear_L",
+      "triangles": 146
+    },
+    {
+      "bone": "part_063",
+      "source_part": 63,
+      "parent": "foot_front_L",
+      "triangles": 137
+    },
+    {
+      "bone": "part_064",
+      "source_part": 64,
+      "parent": "shin_front_R",
+      "triangles": 140
+    },
+    {
+      "bone": "part_065",
+      "source_part": 65,
+      "parent": "torso",
+      "triangles": 137
+    },
+    {
+      "bone": "part_066",
+      "source_part": 66,
+      "parent": "torso",
+      "triangles": 119
+    },
+    {
+      "bone": "part_067",
+      "source_part": 67,
+      "parent": "thigh_rear_L",
+      "triangles": 122
+    },
+    {
+      "bone": "part_068",
+      "source_part": 68,
+      "parent": "torso",
+      "triangles": 117
+    },
+    {
+      "bone": "part_069",
+      "source_part": 69,
+      "parent": "foot_front_L",
+      "triangles": 107
+    },
+    {
+      "bone": "part_007",
+      "source_part": 7,
+      "parent": "arm_lock",
+      "triangles": 693
+    },
+    {
+      "bone": "part_070",
+      "source_part": 70,
+      "parent": "forearm_lock",
+      "triangles": 101
+    },
+    {
+      "bone": "part_071",
+      "source_part": 71,
+      "parent": "thigh_rear_L",
+      "triangles": 105
+    },
+    {
+      "bone": "part_072",
+      "source_part": 72,
+      "parent": "shin_front_L",
+      "triangles": 104
+    },
+    {
+      "bone": "part_073",
+      "source_part": 73,
+      "parent": "thigh_rear_R",
+      "triangles": 96
+    },
+    {
+      "bone": "part_074",
+      "source_part": 74,
+      "parent": "shin_front_R",
+      "triangles": 86
+    },
+    {
+      "bone": "part_075",
+      "source_part": 75,
+      "parent": "weapon_lock",
+      "triangles": 86
+    },
+    {
+      "bone": "part_076",
+      "source_part": 76,
+      "parent": "torso",
+      "triangles": 84
+    },
+    {
+      "bone": "part_077",
+      "source_part": 77,
+      "parent": "core",
+      "triangles": 80
+    },
+    {
+      "bone": "part_078",
+      "source_part": 78,
+      "parent": "shin_front_L",
+      "triangles": 77
+    },
+    {
+      "bone": "part_079",
+      "source_part": 79,
+      "parent": "torso",
+      "triangles": 76
+    },
+    {
+      "bone": "part_008",
+      "source_part": 8,
+      "parent": "torso",
+      "triangles": 643
+    },
+    {
+      "bone": "part_080",
+      "source_part": 80,
+      "parent": "shin_front_R",
+      "triangles": 69
+    },
+    {
+      "bone": "part_081",
+      "source_part": 81,
+      "parent": "shin_front_L",
+      "triangles": 68
+    },
+    {
+      "bone": "part_082",
+      "source_part": 82,
+      "parent": "shin_front_R",
+      "triangles": 70
+    },
+    {
+      "bone": "part_083",
+      "source_part": 83,
+      "parent": "forearm_lock",
+      "triangles": 65
+    },
+    {
+      "bone": "part_084",
+      "source_part": 84,
+      "parent": "thigh_front_R",
+      "triangles": 64
+    },
+    {
+      "bone": "part_085",
+      "source_part": 85,
+      "parent": "weapon_lock",
+      "triangles": 66
+    },
+    {
+      "bone": "part_086",
+      "source_part": 86,
+      "parent": "torso",
+      "triangles": 66
+    },
+    {
+      "bone": "part_087",
+      "source_part": 87,
+      "parent": "weapon_lock",
+      "triangles": 62
+    },
+    {
+      "bone": "part_088",
+      "source_part": 88,
+      "parent": "forearm_chain",
+      "triangles": 62
+    },
+    {
+      "bone": "part_089",
+      "source_part": 89,
+      "parent": "thigh_rear_R",
+      "triangles": 57
+    },
+    {
+      "bone": "part_009",
+      "source_part": 9,
+      "parent": "foot_rear_R",
+      "triangles": 591
+    },
+    {
+      "bone": "part_090",
+      "source_part": 90,
+      "parent": "thigh_rear_L",
+      "triangles": 54
+    },
+    {
+      "bone": "part_091",
+      "source_part": 91,
+      "parent": "shin_rear_L",
+      "triangles": 52
+    },
+    {
+      "bone": "part_092",
+      "source_part": 92,
+      "parent": "shin_front_L",
+      "triangles": 52
+    },
+    {
+      "bone": "part_093",
+      "source_part": 93,
+      "parent": "thigh_rear_R",
+      "triangles": 51
+    },
+    {
+      "bone": "part_094",
+      "source_part": 94,
+      "parent": "torso",
+      "triangles": 43
+    },
+    {
+      "bone": "part_095",
+      "source_part": 95,
+      "parent": "torso",
+      "triangles": 44
+    },
+    {
+      "bone": "part_096",
+      "source_part": 96,
+      "parent": "shin_front_L",
+      "triangles": 37
+    },
+    {
+      "bone": "part_097",
+      "source_part": 97,
+      "parent": "torso",
+      "triangles": 31
+    }
+  ]
+}

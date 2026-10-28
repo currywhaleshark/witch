@@ -1,0 +1,408 @@
+{
+  "id": "door",
+  "source": "assets\\actors\\boss_trial_v1\\source\\door_tripo_segmented.glb",
+  "source_sha256": "0a44a49e58820bf787d53c0aa533578abd2344310df609d015852f2fa7c42a17",
+  "raw_unchanged": true,
+  "source_triangles": 72316,
+  "runtime_triangles": 8962,
+  "vertices": 10476,
+  "bones": 62,
+  "rigid_parts": 60,
+  "max_influences": 1,
+  "texture_size": 1024,
+  "materials": 1,
+  "height_m": 2.3,
+  "front": "Godot -Z",
+  "glb_sha256": "17e37589a5146e06eb48599eb66330103f1ed720a5e68461dd2165c0a25bbb30",
+  "clips": {
+    "idle": {
+      "frames": 49,
+      "seconds": 2.0
+    },
+    "open": {
+      "frames": 25,
+      "seconds": 1.0
+    },
+    "close": {
+      "frames": 25,
+      "seconds": 1.0
+    }
+  },
+  "sampled_rigid_edge_error_m": 1.390586616412115e-07,
+  "ground_min_z": {
+    "idle": [
+      -0.00018899478891398758,
+      -0.00018899478891398758
+    ],
+    "open": [
+      -0.00018899478891398758,
+      -0.00018899478891398758
+    ],
+    "close": [
+      -0.00018899478891398758,
+      -0.00018899478891398758
+    ]
+  },
+  "parts": [
+    {
+      "bone": "part_000",
+      "source_part": 0,
+      "parent": "hinge",
+      "triangles": 1183
+    },
+    {
+      "bone": "part_001",
+      "source_part": 1,
+      "parent": "root",
+      "triangles": 1371
+    },
+    {
+      "bone": "part_010",
+      "source_part": 10,
+      "parent": "root",
+      "triangles": 77
+    },
+    {
+      "bone": "part_011",
+      "source_part": 11,
+      "parent": "root",
+      "triangles": 66
+    },
+    {
+      "bone": "part_012",
+      "source_part": 12,
+      "parent": "hinge",
+      "triangles": 133
+    },
+    {
+      "bone": "part_013",
+      "source_part": 13,
+      "parent": "root",
+      "triangles": 113
+    },
+    {
+      "bone": "part_014",
+      "source_part": 14,
+      "parent": "root",
+      "triangles": 133
+    },
+    {
+      "bone": "part_015",
+      "source_part": 15,
+      "parent": "hinge",
+      "triangles": 92
+    },
+    {
+      "bone": "part_016",
+      "source_part": 16,
+      "parent": "root",
+      "triangles": 74
+    },
+    {
+      "bone": "part_017",
+      "source_part": 17,
+      "parent": "root",
+      "triangles": 82
+    },
+    {
+      "bone": "part_018",
+      "source_part": 18,
+      "parent": "root",
+      "triangles": 80
+    },
+    {
+      "bone": "part_019",
+      "source_part": 19,
+      "parent": "hinge",
+      "triangles": 68
+    },
+    {
+      "bone": "part_002",
+      "source_part": 2,
+      "parent": "root",
+      "triangles": 898
+    },
+    {
+      "bone": "part_020",
+      "source_part": 20,
+      "parent": "root",
+      "triangles": 83
+    },
+    {
+      "bone": "part_021",
+      "source_part": 21,
+      "parent": "root",
+      "triangles": 57
+    },
+    {
+      "bone": "part_022",
+      "source_part": 22,
+      "parent": "root",
+      "triangles": 70
+    },
+    {
+      "bone": "part_023",
+      "source_part": 23,
+      "parent": "root",
+      "triangles": 482
+    },
+    {
+      "bone": "part_024",
+      "source_part": 24,
+      "parent": "hinge",
+      "triangles": 307
+    },
+    {
+      "bone": "part_025",
+      "source_part": 25,
+      "parent": "hinge",
+      "triangles": 121
+    },
+    {
+      "bone": "part_026",
+      "source_part": 26,
+      "parent": "hinge",
+      "triangles": 118
+    },
+    {
+      "bone": "part_027",
+      "source_part": 27,
+      "parent": "hinge",
+      "triangles": 114
+    },
+    {
+      "bone": "part_028",
+      "source_part": 28,
+      "parent": "hinge",
+      "triangles": 107
+    },
+    {
+      "bone": "part_029",
+      "source_part": 29,
+      "parent": "root",
+      "triangles": 89
+    },
+    {
+      "bone": "part_003",
+      "source_part": 3,
+      "parent": "root",
+      "triangles": 483
+    },
+    {
+      "bone": "part_030",
+      "source_part": 30,
+      "parent": "hinge",
+      "triangles": 86
+    },
+    {
+      "bone": "part_031",
+      "source_part": 31,
+      "parent": "root",
+      "triangles": 78
+    },
+    {
+      "bone": "part_032",
+      "source_part": 32,
+      "parent": "hinge",
+      "triangles": 80
+    },
+    {
+      "bone": "part_033",
+      "source_part": 33,
+      "parent": "root",
+      "triangles": 73
+    },
+    {
+      "bone": "part_034",
+      "source_part": 34,
+      "parent": "hinge",
+      "triangles": 61
+    },
+    {
+      "bone": "part_035",
+      "source_part": 35,
+      "parent": "hinge",
+      "triangles": 57
+    },
+    {
+      "bone": "part_036",
+      "source_part": 36,
+      "parent": "root",
+      "triangles": 48
+    },
+    {
+      "bone": "part_037",
+      "source_part": 37,
+      "parent": "hinge",
+      "triangles": 47
+    },
+    {
+      "bone": "part_038",
+      "source_part": 38,
+      "parent": "root",
+      "triangles": 41
+    },
+    {
+      "bone": "part_039",
+      "source_part": 39,
+      "parent": "root",
+      "triangles": 42
+    },
+    {
+      "bone": "part_004",
+      "source_part": 4,
+      "parent": "root",
+      "triangles": 378
+    },
+    {
+      "bone": "part_040",
+      "source_part": 40,
+      "parent": "root",
+      "triangles": 36
+    },
+    {
+      "bone": "part_041",
+      "source_part": 41,
+      "parent": "root",
+      "triangles": 37
+    },
+    {
+      "bone": "part_042",
+      "source_part": 42,
+      "parent": "root",
+      "triangles": 35
+    },
+    {
+      "bone": "part_043",
+      "source_part": 43,
+      "parent": "root",
+      "triangles": 33
+    },
+    {
+      "bone": "part_044",
+      "source_part": 44,
+      "parent": "hinge",
+      "triangles": 33
+    },
+    {
+      "bone": "part_045",
+      "source_part": 45,
+      "parent": "hinge",
+      "triangles": 32
+    },
+    {
+      "bone": "part_046",
+      "source_part": 46,
+      "parent": "root",
+      "triangles": 30
+    },
+    {
+      "bone": "part_047",
+      "source_part": 47,
+      "parent": "root",
+      "triangles": 25
+    },
+    {
+      "bone": "part_048",
+      "source_part": 48,
+      "parent": "root",
+      "triangles": 21
+    },
+    {
+      "bone": "part_049",
+      "source_part": 49,
+      "parent": "root",
+      "triangles": 18
+    },
+    {
+      "bone": "part_005",
+      "source_part": 5,
+      "parent": "root",
+      "triangles": 329
+    },
+    {
+      "bone": "part_050",
+      "source_part": 50,
+      "parent": "hinge",
+      "triangles": 16
+    },
+    {
+      "bone": "part_051",
+      "source_part": 51,
+      "parent": "hinge",
+      "triangles": 18
+    },
+    {
+      "bone": "part_052",
+      "source_part": 52,
+      "parent": "hinge",
+      "triangles": 16
+    },
+    {
+      "bone": "part_053",
+      "source_part": 53,
+      "parent": "root",
+      "triangles": 14
+    },
+    {
+      "bone": "part_054",
+      "source_part": 54,
+      "parent": "root",
+      "triangles": 13
+    },
+    {
+      "bone": "part_055",
+      "source_part": 55,
+      "parent": "hinge",
+      "triangles": 12
+    },
+    {
+      "bone": "part_056",
+      "source_part": 56,
+      "parent": "root",
+      "triangles": 11
+    },
+    {
+      "bone": "part_057",
+      "source_part": 57,
+      "parent": "root",
+      "triangles": 11
+    },
+    {
+      "bone": "part_058",
+      "source_part": 58,
+      "parent": "hinge",
+      "triangles": 10
+    },
+    {
+      "bone": "part_059",
+      "source_part": 59,
+      "parent": "hinge",
+      "triangles": 11
+    },
+    {
+      "bone": "part_006",
+      "source_part": 6,
+      "parent": "root",
+      "triangles": 246
+    },
+    {
+      "bone": "part_007",
+      "source_part": 7,
+      "parent": "hinge",
+      "triangles": 202
+    },
+    {
+      "bone": "part_008",
+      "source_part": 8,
+      "parent": "hinge",
+      "triangles": 128
+    },
+    {
+      "bone": "part_009",
+      "source_part": 9,
+      "parent": "hinge",
+      "triangles": 233
+    }
+  ]
+}

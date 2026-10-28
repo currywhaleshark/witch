@@ -1,0 +1,6 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 610.62 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2060
+
+CORE_MATERIAL 0 latch_PBR emission=false (0.0, 0.0, 0.0, 1.0) strength=1.0
+CORE_MATERIAL 1 latch_core emission=true (0.5271, 0.8808, 1.0, 1.0) strength=4.0
+CORE_PROBE_DONE

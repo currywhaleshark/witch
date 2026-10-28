@@ -1,0 +1,654 @@
+{
+  "captures": 325,
+  "combat_samples": [
+    {
+      "attack": "sweep",
+      "fraction": 0.0,
+      "hp": 100.0,
+      "time": 0.0333333333333333,
+      "visual": "sweep",
+      "windup": 1.4
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.0238095238095239,
+      "hp": 100.0,
+      "time": 0.1,
+      "visual": "sweep",
+      "windup": 1.33333333333333
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.0476190476190478,
+      "hp": 100.0,
+      "time": 0.166666666666667,
+      "visual": "sweep",
+      "windup": 1.26666666666667
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.0714285714285717,
+      "hp": 100.0,
+      "time": 0.233333333333333,
+      "visual": "sweep",
+      "windup": 1.2
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.0952380952380956,
+      "hp": 100.0,
+      "time": 0.3,
+      "visual": "sweep",
+      "windup": 1.13333333333333
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.119047619047619,
+      "hp": 100.0,
+      "time": 0.366666666666667,
+      "visual": "sweep",
+      "windup": 1.06666666666667
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.142857142857143,
+      "hp": 100.0,
+      "time": 0.433333333333333,
+      "visual": "sweep",
+      "windup": 0.999999999999999
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.166666666666667,
+      "hp": 100.0,
+      "time": 0.5,
+      "visual": "sweep",
+      "windup": 0.933333333333332
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.190476190476191,
+      "hp": 100.0,
+      "time": 0.566666666666667,
+      "visual": "sweep",
+      "windup": 0.866666666666665
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.214285714285715,
+      "hp": 100.0,
+      "time": 0.633333333333333,
+      "visual": "sweep",
+      "windup": 0.799999999999999
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.238095238095238,
+      "hp": 100.0,
+      "time": 0.7,
+      "visual": "sweep",
+      "windup": 0.733333333333332
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.261904761904762,
+      "hp": 100.0,
+      "time": 0.766666666666667,
+      "visual": "sweep",
+      "windup": 0.666666666666666
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.285714285714286,
+      "hp": 100.0,
+      "time": 0.833333333333333,
+      "visual": "sweep",
+      "windup": 0.599999999999999
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.30952380952381,
+      "hp": 100.0,
+      "time": 0.9,
+      "visual": "sweep",
+      "windup": 0.533333333333332
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.333333333333334,
+      "hp": 100.0,
+      "time": 0.966666666666667,
+      "visual": "sweep",
+      "windup": 0.466666666666666
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.357142857142858,
+      "hp": 100.0,
+      "time": 1.03333333333333,
+      "visual": "sweep",
+      "windup": 0.399999999999999
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.380952380952381,
+      "hp": 100.0,
+      "time": 1.1,
+      "visual": "sweep",
+      "windup": 0.333333333333332
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.404761904761905,
+      "hp": 100.0,
+      "time": 1.16666666666667,
+      "visual": "sweep",
+      "windup": 0.266666666666666
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.428571428571429,
+      "hp": 100.0,
+      "time": 1.23333333333333,
+      "visual": "sweep",
+      "windup": 0.199999999999999
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.452380952380953,
+      "hp": 100.0,
+      "time": 1.3,
+      "visual": "sweep",
+      "windup": 0.133333333333332
+    },
+    {
+      "attack": "sweep",
+      "fraction": 0.476190476190477,
+      "hp": 100.0,
+      "time": 1.36666666666667,
+      "visual": "sweep",
+      "windup": 0.0666666666666657
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.5,
+      "hp": 73.6,
+      "time": 1.43333333333333,
+      "visual": "sweep",
+      "windup": 2.0
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.0166666666666667,
+      "hp": 73.6,
+      "time": 1.5,
+      "visual": "slam",
+      "windup": 1.93333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.0333333333333334,
+      "hp": 73.6,
+      "time": 1.56666666666667,
+      "visual": "slam",
+      "windup": 1.86666666666667
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.0500000000000002,
+      "hp": 73.6,
+      "time": 1.63333333333333,
+      "visual": "slam",
+      "windup": 1.8
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.0666666666666669,
+      "hp": 73.6,
+      "time": 1.7,
+      "visual": "slam",
+      "windup": 1.73333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.0833333333333336,
+      "hp": 73.6,
+      "time": 1.76666666666667,
+      "visual": "slam",
+      "windup": 1.66666666666667
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.1,
+      "hp": 73.6,
+      "time": 1.83333333333333,
+      "visual": "slam",
+      "windup": 1.6
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.116666666666667,
+      "hp": 73.6,
+      "time": 1.9,
+      "visual": "slam",
+      "windup": 1.53333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.133333333333334,
+      "hp": 73.6,
+      "time": 1.96666666666667,
+      "visual": "slam",
+      "windup": 1.46666666666667
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.15,
+      "hp": 73.6,
+      "time": 2.03333333333333,
+      "visual": "slam",
+      "windup": 1.4
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.166666666666667,
+      "hp": 73.6,
+      "time": 2.1,
+      "visual": "slam",
+      "windup": 1.33333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.183333333333334,
+      "hp": 73.6,
+      "time": 2.16666666666667,
+      "visual": "slam",
+      "windup": 1.26666666666666
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.200000000000001,
+      "hp": 73.6,
+      "time": 2.23333333333333,
+      "visual": "slam",
+      "windup": 1.2
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.216666666666667,
+      "hp": 73.6,
+      "time": 2.3,
+      "visual": "slam",
+      "windup": 1.13333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.233333333333334,
+      "hp": 73.6,
+      "time": 2.36666666666667,
+      "visual": "slam",
+      "windup": 1.06666666666666
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.250000000000001,
+      "hp": 73.6,
+      "time": 2.43333333333333,
+      "visual": "slam",
+      "windup": 0.999999999999997
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.266666666666667,
+      "hp": 73.6,
+      "time": 2.5,
+      "visual": "slam",
+      "windup": 0.93333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.283333333333334,
+      "hp": 73.6,
+      "time": 2.56666666666667,
+      "visual": "slam",
+      "windup": 0.866666666666664
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.300000000000001,
+      "hp": 73.6,
+      "time": 2.63333333333333,
+      "visual": "slam",
+      "windup": 0.799999999999997
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.316666666666667,
+      "hp": 73.6,
+      "time": 2.7,
+      "visual": "slam",
+      "windup": 0.73333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.333333333333334,
+      "hp": 73.6,
+      "time": 2.76666666666667,
+      "visual": "slam",
+      "windup": 0.666666666666664
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.350000000000001,
+      "hp": 73.6,
+      "time": 2.83333333333333,
+      "visual": "slam",
+      "windup": 0.599999999999997
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.366666666666667,
+      "hp": 73.6,
+      "time": 2.9,
+      "visual": "slam",
+      "windup": 0.53333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.383333333333334,
+      "hp": 73.6,
+      "time": 2.96666666666667,
+      "visual": "slam",
+      "windup": 0.466666666666664
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.400000000000001,
+      "hp": 73.6,
+      "time": 3.03333333333333,
+      "visual": "slam",
+      "windup": 0.399999999999997
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.416666666666667,
+      "hp": 73.6,
+      "time": 3.1,
+      "visual": "slam",
+      "windup": 0.33333333333333
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.433333333333334,
+      "hp": 73.6,
+      "time": 3.16666666666667,
+      "visual": "slam",
+      "windup": 0.266666666666664
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.450000000000001,
+      "hp": 73.6,
+      "time": 3.23333333333333,
+      "visual": "slam",
+      "windup": 0.199999999999997
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.466666666666667,
+      "hp": 73.6,
+      "time": 3.3,
+      "visual": "slam",
+      "windup": 0.133333333333331
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.483333333333334,
+      "hp": 73.6,
+      "time": 3.36666666666667,
+      "visual": "slam",
+      "windup": 0.0666666666666639
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.5,
+      "hp": 34.0,
+      "time": 3.43333333333333,
+      "visual": "slam",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.611111111111111,
+      "hp": 34.0,
+      "time": 3.5,
+      "visual": "slam",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.722222222222222,
+      "hp": 34.0,
+      "time": 3.56666666666667,
+      "visual": "slam",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.833333333333333,
+      "hp": 34.0,
+      "time": 3.63333333333333,
+      "visual": "slam",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.944444444444444,
+      "hp": 34.0,
+      "time": 3.7,
+      "visual": "slam",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.883333333333332,
+      "hp": 34.0,
+      "time": 3.76666666666667,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.916666666666665,
+      "hp": 34.0,
+      "time": 3.83333333333333,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.949999999999998,
+      "hp": 34.0,
+      "time": 3.9,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.983333333333331,
+      "hp": 34.0,
+      "time": 3.96666666666667,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.0166666666666644,
+      "hp": 34.0,
+      "time": 4.03333333333333,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.0499999999999976,
+      "hp": 34.0,
+      "time": 4.1,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.0833333333333308,
+      "hp": 34.0,
+      "time": 4.16666666666667,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.116666666666664,
+      "hp": 34.0,
+      "time": 4.23333333333333,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.149999999999997,
+      "hp": 34.0,
+      "time": 4.3,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.18333333333333,
+      "hp": 34.0,
+      "time": 4.36666666666667,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.216666666666664,
+      "hp": 34.0,
+      "time": 4.43333333333333,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    },
+    {
+      "attack": "slam",
+      "fraction": 0.249999999999997,
+      "hp": 34.0,
+      "time": 4.5,
+      "visual": "idle",
+      "windup": -0.00000000000000278943534937071
+    }
+  ],
+  "native_camera_size": 11.4285714285714,
+  "passed": true,
+  "scope": "Actual Godot renderer and imported assets. combat_chain executes arena updates; closeup clips are manually sampled.",
+  "sequences": [
+    {
+      "actor": "combat",
+      "clip": "sweep_slam",
+      "folder": "combat_chain",
+      "frames": 68,
+      "native": true,
+      "seconds": 4.5
+    },
+    {
+      "actor": "latch",
+      "clip": "idle",
+      "folder": "latch_idle",
+      "frames": 25,
+      "native": false,
+      "seconds": 2.0
+    },
+    {
+      "actor": "latch",
+      "clip": "move",
+      "folder": "latch_move",
+      "frames": 25,
+      "native": false,
+      "seconds": 1.0
+    },
+    {
+      "actor": "latch",
+      "clip": "sweep",
+      "folder": "latch_sweep",
+      "frames": 25,
+      "native": false,
+      "seconds": 2.0
+    },
+    {
+      "actor": "latch",
+      "clip": "slam",
+      "folder": "latch_slam",
+      "frames": 25,
+      "native": false,
+      "seconds": 2.0
+    },
+    {
+      "actor": "latch",
+      "clip": "frames",
+      "folder": "latch_frames",
+      "frames": 25,
+      "native": false,
+      "seconds": 2.0
+    },
+    {
+      "actor": "latch",
+      "clip": "shockwave",
+      "folder": "latch_shockwave",
+      "frames": 25,
+      "native": false,
+      "seconds": 2.0
+    },
+    {
+      "actor": "latch",
+      "clip": "hit",
+      "folder": "latch_hit",
+      "frames": 25,
+      "native": false,
+      "seconds": 0.5
+    },
+    {
+      "actor": "latch",
+      "clip": "death",
+      "folder": "latch_death",
+      "frames": 25,
+      "native": false,
+      "seconds": 2.0
+    },
+    {
+      "actor": "door",
+      "clip": "open",
+      "folder": "door_open",
+      "frames": 17,
+      "native": false,
+      "seconds": 1.0
+    },
+    {
+      "actor": "door",
+      "clip": "close",
+      "folder": "door_close",
+      "frames": 17,
+      "native": false,
+      "seconds": 1.0
+    },
+    {
+      "actor": "stake",
+      "clip": "idle",
+      "folder": "stake_idle",
+      "frames": 17,
+      "native": false,
+      "seconds": 2.0
+    }
+  ],
+  "viewport": [
+    1280,
+    800
+  ]
+}

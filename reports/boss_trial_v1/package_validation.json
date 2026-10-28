@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "local_references_and_frames_checked": true,
+  "manifest_hashes_checked": 31,
+  "missing_or_mismatched": [],
+  "browser_check": "IAB tab title/URL listed; automatic page inspection blocked by file URL policy. Actual saved engine captures inspected separately."
+}

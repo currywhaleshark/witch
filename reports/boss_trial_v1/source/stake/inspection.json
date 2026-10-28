@@ -1,0 +1,48 @@
+{
+  "actor": "stake",
+  "bounds": [
+    [
+      -0.19482421875,
+      -0.169952392578125,
+      0.0
+    ],
+    [
+      0.19482421875,
+      0.169952392578125,
+      1.0
+    ]
+  ],
+  "meshes": [
+    {
+      "name": "tripo_node_028a67c4-efbe-48fd-bdba-977631e8082a",
+      "vertices": 42990,
+      "triangles": 76768,
+      "materials": [
+        "tripo_material_028a67c4-efbe-48fd-bdba-977631e8082a"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "stake_tripo_h31_raw_basecolor.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "stake_tripo_h31_raw_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "stake_tripo_h31_raw_rm.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}

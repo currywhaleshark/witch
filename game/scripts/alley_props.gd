@@ -168,37 +168,11 @@ static func _pyeongsang(root: Node3D, w: float, d: float) -> void:
 		Shape.cylinder(root, Vector3(w / 2.0 - 0.6, 0.57, z), 0.035, 0.24, Color("2f6b3a"))
 
 static func _stake(root: Node3D) -> void:
-	# The black lure stake driven into the clearing: a four-sided tapering post through upheaved
-	# slabs, bound with brass bands, pale blue light leaking from its seams.
-	for i in 6:
-		var a: float = TAU * i / 6.0
-		var slab: MeshInstance3D = Shape.box(root, Vector3(cos(a) * 0.38, 0.06, sin(a) * 0.38), Vector3(0.32, 0.08, 0.24), Color("3d3f40"))
-		slab.rotation_degrees = Vector3(0, -rad_to_deg(a), 14 + 6 * (i % 2))
-	var post = CylinderMesh.new()
-	post.bottom_radius = 0.34
-	post.top_radius = 0.1
-	post.height = 2.4
-	post.radial_segments = 4
-	_turned(Shape.mesh(root, post, Vector3(0, 1.2, 0), Color("1c1c1f")), Vector3(0, 45, 0))
-	var tip = CylinderMesh.new()
-	tip.bottom_radius = 0.1
-	tip.top_radius = 0.0
-	tip.height = 0.2
-	tip.radial_segments = 4
-	_turned(Shape.mesh(root, tip, Vector3(0, 2.5, 0), Color("1c1c1f")), Vector3(0, 45, 0))
-	for band in [[0.55, 0.3], [1.5, 0.21]]:
-		var ring = CylinderMesh.new()
-		ring.bottom_radius = band[1] + 0.03
-		ring.top_radius = band[1] + 0.02
-		ring.height = 0.08
-		ring.radial_segments = 4
-		_turned(Shape.mesh(root, ring, Vector3(0, band[0], 0), Color("c69b62")), Vector3(0, 45, 0))
-	for side in [Vector3(1, 0, 0), Vector3(0, 0, 1)]:
-		for y in [0.95, 1.95]:
-			var r: float = lerpf(0.34, 0.1, y / 2.4) * 0.72
-			var seam: MeshInstance3D = Shape.box(root, side * (r + 0.005) + Vector3(0, y, 0), Vector3(0.02, 0.5, 0.02), Color("9fd8ff"))
-			seam.material_override = Shape.material(Color("9fd8ff"), true)
-			seam.material_override.emission_energy_multiplier = 1.4
+	# Same ground origin and 0.96m collision footprint as the map's blockout.
+	var scene: PackedScene = load("res://assets/actors/boss_trial_v1/stake_v1.glb")
+	var stake := scene.instantiate()
+	stake.name = "LureStakeVisual"
+	root.add_child(stake)
 
 static func clutter(parent: Node3D, pos: Vector3, yaw: float, kind: String, rng: RandomNumberGenerator) -> Node3D:
 	# A small heap against a far wall: local x runs along the wall, +z points into the alley, and

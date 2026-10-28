@@ -1,0 +1,400 @@
+{
+  "version": "boss_trial_v1",
+  "passed": true,
+  "user_art_approved": false,
+  "checks": {
+    "boss_art": {
+      "passed": true,
+      "checks": 28673,
+      "result": "reports\\boss_trial_v1\\boss_art\\result.json",
+      "execution": {
+        "phase": "boss_art",
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0
+      }
+    },
+    "boss": {
+      "passed": true,
+      "checks": 21,
+      "result": "reports\\boss_trial_v1\\boss\\result.json",
+      "execution": {
+        "phase": "boss",
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0
+      }
+    },
+    "map_nav": {
+      "passed": true,
+      "checks": 49,
+      "result": "reports\\boss_trial_v1\\map_nav\\result.json",
+      "execution": {
+        "phase": "map_nav",
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0
+      }
+    },
+    "combat_actors": {
+      "passed": true,
+      "checks": 9109,
+      "result": "reports\\boss_trial_v1\\combat_actors\\result.json",
+      "execution": {
+        "phase": "combat_actors",
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0
+      }
+    },
+    "summons_v2": {
+      "passed": true,
+      "checks": 50821,
+      "result": "reports\\boss_trial_v1\\summons_v2\\result.json",
+      "execution": {
+        "phase": "summons_v2",
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0
+      }
+    },
+    "glb": {
+      "passed": true,
+      "result": "reports/boss_trial_v1/glb_validation.json"
+    },
+    "saved_blender": {
+      "passed": true,
+      "result": "reports/boss_trial_v1/saved_file_validation.json"
+    },
+    "gpu_review": {
+      "passed": true,
+      "captures": 325,
+      "execution": {
+        "phase": "review",
+        "stderr_empty": false,
+        "workspace_cache_diagnostic_only": true,
+        "exit_code": 0
+      }
+    }
+  },
+  "runtime": [
+    {
+      "id": "latch",
+      "file": "latch_v1.glb",
+      "triangles": 27923,
+      "bones": 119,
+      "max_weight_sum_error": 0.0,
+      "max_influences": 1,
+      "images": [
+        {
+          "name": "latch_normal",
+          "size": [
+            2048,
+            2048
+          ]
+        },
+        {
+          "name": "latch_basecolor",
+          "size": [
+            2048,
+            2048
+          ]
+        },
+        {
+          "name": "latch_rm",
+          "size": [
+            2048,
+            2048
+          ]
+        }
+      ],
+      "animations": {
+        "death": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "frames": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "hit": {
+          "seconds": 0.5,
+          "channels": 357
+        },
+        "idle": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "move": {
+          "seconds": 1.0,
+          "channels": 357
+        },
+        "shockwave": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "slam": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "sweep": {
+          "seconds": 2.0,
+          "channels": 357
+        }
+      },
+      "bytes": 6403764,
+      "sha256": "134657d5f3c52397bbd41858a4467c9485f2e23a00ef4513f87edc9cfc7c7daa"
+    },
+    {
+      "id": "stake",
+      "file": "stake_v1.glb",
+      "triangles": 6499,
+      "bones": 2,
+      "max_weight_sum_error": 0.0,
+      "max_influences": 1,
+      "images": [
+        {
+          "name": "stake_normal",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "stake_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "stake_rm",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "idle": {
+          "seconds": 2.0,
+          "channels": 6
+        }
+      },
+      "bytes": 3581720,
+      "sha256": "12b79f01405dd1696544961e9d8cf4d24000371ddd1d8e3aeadae2fd0b34ee2a"
+    },
+    {
+      "id": "door",
+      "file": "door_v1.glb",
+      "triangles": 8962,
+      "bones": 62,
+      "max_weight_sum_error": 0.0,
+      "max_influences": 1,
+      "images": [
+        {
+          "name": "door_normal",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "door_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "door_rm",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "close": {
+          "seconds": 1.0,
+          "channels": 186
+        },
+        "idle": {
+          "seconds": 2.0,
+          "channels": 186
+        },
+        "open": {
+          "seconds": 1.0,
+          "channels": 186
+        }
+      },
+      "bytes": 5083324,
+      "sha256": "d525da0413b98dab74ca5c1e66743d11a38e2c54435d9f9ba49f5448bb96bfcd"
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/actors/boss_trial_v1/authoring/door_v1.blend",
+      "bytes": 4911228,
+      "sha256": "85fe838100f52c8cb5444241edee875b45210a5d232e4897fe0f5b1e331be817"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/authoring/latch_v1.blend",
+      "bytes": 6020292,
+      "sha256": "e5686d9d678652ad9667e35d2eb371382159e2673358f3a69cb4988fd7a59ca2"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/authoring/stake_v1.blend",
+      "bytes": 3644237,
+      "sha256": "858b8ccece53252496271e9f6996a6702fd06d7f69b588bf031611e3aa4fef6d"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/exports/door_v1.glb",
+      "bytes": 5083324,
+      "sha256": "d525da0413b98dab74ca5c1e66743d11a38e2c54435d9f9ba49f5448bb96bfcd"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/exports/latch_v1.glb",
+      "bytes": 6403764,
+      "sha256": "134657d5f3c52397bbd41858a4467c9485f2e23a00ef4513f87edc9cfc7c7daa"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/exports/stake_v1.glb",
+      "bytes": 3581720,
+      "sha256": "12b79f01405dd1696544961e9d8cf4d24000371ddd1d8e3aeadae2fd0b34ee2a"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/door_tripo_h31_raw.blend",
+      "bytes": 7504426,
+      "sha256": "653eaba60bdb77ff0baaba7c4a303d7e41ff8568ddacd1df55d9a056217905be"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/door_tripo_h31_raw.glb",
+      "bytes": 6957028,
+      "sha256": "d2f1ed234201f494abe0b0a25a224883877a8fde81925f43e055f52ecae9bbc8"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/door_tripo_segmented.blend",
+      "bytes": 6433433,
+      "sha256": "c811cc8ad8620fa9d4e7f0a3944f5ef2e86726f9ab7e05ce5e708ae3949e56a1"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/door_tripo_segmented.glb",
+      "bytes": 5663268,
+      "sha256": "0a44a49e58820bf787d53c0aa533578abd2344310df609d015852f2fa7c42a17"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/latch_tripo_h31_raw.blend",
+      "bytes": 6853120,
+      "sha256": "84444b7ea022d05ef9cbd383e7f632bd0bf88bd69a3230449eb8fead4021b126"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/latch_tripo_h31_raw.glb",
+      "bytes": 6390588,
+      "sha256": "e459307b92d979c5f2468378c1dc6f99f625c3966f6df1530947703593a21c70"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/latch_tripo_segmented.blend",
+      "bytes": 6770307,
+      "sha256": "402f9ca09eb4b2b5ac6f8f2fa9ec83ab7e573b3bfeb77c28cfa29359511f936a"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/latch_tripo_segmented.glb",
+      "bytes": 6082316,
+      "sha256": "e7617ede790b6e8dd267f328f1d5c79b23be1a5669c53d1c0aed6ae59ac309cc"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/stake_tripo_h31_raw.blend",
+      "bytes": 7106768,
+      "sha256": "f07602cbc36a06a130379b486858b602d3cdf22ba1a9710076969d977db49aca"
+    },
+    {
+      "path": "assets/actors/boss_trial_v1/source/stake_tripo_h31_raw.glb",
+      "bytes": 6447896,
+      "sha256": "e76b3aab2e9e608e3968b156a8e61c61511413d94f4033cc91962062d21b891c"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/door_v1.glb",
+      "bytes": 5083324,
+      "sha256": "d525da0413b98dab74ca5c1e66743d11a38e2c54435d9f9ba49f5448bb96bfcd"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/door_v1_door_basecolor.png",
+      "bytes": 1619228,
+      "sha256": "f2f7a28909c9cd0fa4c0c7c18fc3ed13461be4e5116422798e3b315cbd87508b"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/door_v1_door_normal.png",
+      "bytes": 1647065,
+      "sha256": "d6e9cb664adb35977c6a13cf0cc19785484732ca729bbe9f05ef475973b45ba2"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/door_v1_door_rm.png",
+      "bytes": 1020108,
+      "sha256": "2e76428f32958a212ad86c68ae550816cdffddddace84c3ba1f48858e5fb3054"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/latch_v1.glb",
+      "bytes": 6403764,
+      "sha256": "134657d5f3c52397bbd41858a4467c9485f2e23a00ef4513f87edc9cfc7c7daa"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/latch_v1_latch_basecolor.jpg",
+      "bytes": 1260291,
+      "sha256": "d45541ff61e1f4b92c410e537212ac99bedaf0d2ed7ea8e144cb2806ca2302b6"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/latch_v1_latch_normal.jpg",
+      "bytes": 1282332,
+      "sha256": "e2152568ac5f45221cd0cf8360d26ce4f662817a1951bcec7068a57f158e6fe5"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/latch_v1_latch_rm.jpg",
+      "bytes": 1229956,
+      "sha256": "2078f653b5e29981c712be2787a697af3be444c89a9e6d9829fd12cce31be127"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/stake_v1.glb",
+      "bytes": 3581720,
+      "sha256": "12b79f01405dd1696544961e9d8cf4d24000371ddd1d8e3aeadae2fd0b34ee2a"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/stake_v1_stake_basecolor.png",
+      "bytes": 1266531,
+      "sha256": "a7cfdff8897d22d3b7a208f5327dae2abc7aba7703af8d6b3ca1dee57514422e"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/stake_v1_stake_normal.png",
+      "bytes": 1066017,
+      "sha256": "f49f00b895a6ebb25cb50c718ee1978db5f9a7f6397f3def3489ff5b97fb9f55"
+    },
+    {
+      "path": "game/assets/actors/boss_trial_v1/stake_v1_stake_rm.png",
+      "bytes": 904670,
+      "sha256": "6f1a99980464888a5a115a915283b861a1a95f15e7a5030a914d5170790bc0d0"
+    },
+    {
+      "path": "assets/reference/actors/boss_trial_v1/door_concept_v1.png",
+      "bytes": 2370982,
+      "sha256": "18df9cca48a8ae462464a04ff430eb0f8f748af3e2ec58ccaa14a10ccf19ab4d"
+    },
+    {
+      "path": "assets/reference/actors/boss_trial_v1/latch_concept_v1.png",
+      "bytes": 2561566,
+      "sha256": "3b9592e35989b3d377370e978232b84424fb3d2a0a83e91fc5bff3293c7ec282"
+    },
+    {
+      "path": "assets/reference/actors/boss_trial_v1/stake_concept_v1.png",
+      "bytes": 1952674,
+      "sha256": "10c7727b626607f94b5efa0c561965d68b840e1e165ccd234c18983d72e7b90a"
+    }
+  ],
+  "known_limits": [
+    "Authored prototype animation, not mocap.",
+    "UV-preserving decimation, not manual retopology.",
+    "Baked collapse with local flat-floor support; no live inter-part/wall collision.",
+    "Source gaps and local roughness remain visible in closeup.",
+    "Final performance budget and user art approval remain open."
+  ],
+  "source_credit": "ImageGen concepts, private Tripo H3.1 generations and segmentation; 170 Tripo credits."
+}

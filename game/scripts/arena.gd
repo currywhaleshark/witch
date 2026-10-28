@@ -259,7 +259,8 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 	if rank.has("color"):
 		# Graded enemies wear their grade colour as a ground ring and a head band.
 		Shape.ring(body, Vector3(0, 0.05, 0), 0.75 * size, Color(rank.color), 0.06)
-		Shape.box(model, Vector3(0, 1.45, 0), Vector3(0.62, 0.1, 0.5), Color(rank.color))
+		if kind != "latch":
+			Shape.box(model, Vector3(0, 1.45, 0), Vector3(0.62, 0.1, 0.5), Color(rank.color))
 	var pick = Shape.pick_volume(body, 0.7 * size, 1.65 * size, PICK_LAYER)
 	pick.set_meta("enemy_id", id)
 	var maximum: float = type.hp * rank.hp
@@ -1192,6 +1193,8 @@ func _physics_process(dt: float) -> void:
 			if fx.life <= 0:
 				fx.node.queue_free()
 				effects.erase(fx)
+			elif fx.node.has_method("sync_effect"):
+				fx.node.sync_effect(dt, fx.life)
 			elif fx.grow:
 				fx.node.scale += Vector3.ONE * dt * 2
 			elif fx.has("fill"):
@@ -1364,7 +1367,8 @@ func tick_boss(enemy: Dictionary, plan: Dictionary, power: float, pace: float, d
 		enemy.timers[key] = maxf(0, enemy.timers[key] - dt)
 	if enemy.windup > 0:
 		enemy.windup -= dt
-		enemy.model.rotation.z = sin(enemy.windup * 22) * 0.06
+		if not enemy.model.has_method("sync_enemy"):
+			enemy.model.rotation.z = sin(enemy.windup * 22) * 0.06
 		if enemy.windup <= 0:
 			enemy.model.rotation.z = 0
 			resolve_boss(enemy, plan, power)
@@ -1404,6 +1408,8 @@ func tick_boss(enemy: Dictionary, plan: Dictionary, power: float, pace: float, d
 func begin_boss(enemy: Dictionary, pattern: String, windup: float) -> void:
 	enemy.attack = pattern
 	enemy.windup = windup
+	if enemy.model.has_method("begin_attack"):
+		enemy.model.begin_attack(pattern, windup)
 	pulse(enemy.body.position, RED, 1.2)
 
 func begin_slam(enemy: Dictionary, plan: Dictionary, extra: float = 0.0) -> void:
@@ -1423,6 +1429,8 @@ func begin_frames(enemy: Dictionary, plan: Dictionary, aim: Vector3) -> void:
 		enemy.frames.append(spot)
 		var frame: Node3D = Shape.door_frame(world, spot, Color("8a6a3a"))
 		frame.look_at(Vector3(aim.x, spot.y, aim.z))
+		if frame.has_method("configure"):
+			frame.configure(plan.frames.windup)
 		effects.append({"node": frame, "life": plan.frames.windup + 0.35, "grow": false})
 		# Ground lane from the frame to the target spot, so the side threat reads before the shot.
 		var lane: Vector3 = Vector3(aim.x, 0, aim.z) - Vector3(spot.x, 0, spot.z)
@@ -1439,6 +1447,8 @@ func boss_area_hit(enemy: Dictionary, inside: Callable, damage: float) -> void:
 func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
 	var origin: Vector3 = enemy.body.position
 	var facing: Vector3 = enemy.pattern_dir
+	if enemy.model.has_method("release_attack"):
+		enemy.model.release_attack(enemy.attack)
 	match enemy.attack:
 		"sweep":
 			var sweep: Dictionary = plan.sweep

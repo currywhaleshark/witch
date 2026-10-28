@@ -1,0 +1,8 @@
+{
+  "id": "stake",
+  "prompt": "Use case: stylized-concept. One full-height game prop, a black supernatural lure stake hammered into an old Korean alley. Isolated on uniform warm light grey studio background. A narrow four-sided tapering blackened iron stake, approximately 2.6m tall and 0.6m wide at base, pointed pyramidal top, fractured faceted charcoal body, two worn aged brass square binding collars, small iron bolts, a few thin restrained pale cyan cracks leaking from inside. At bottom ONLY a compact ring of six displaced dark concrete chunks, entire base within a 0.9m square. No large platform, no vegetation, no dangling ropes, no people. Slight three-quarter view shows front and side, level perspective, full object with margin top and bottom. Stylized high quality 3D rendered game modeling reference, physically textured black iron, battered brass, rough broken concrete, fits a gritty fantasy 1990s Korean hillside alley. Small readable silhouette, no text, no diagram, no collage, no other objects.",
+  "source_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-258c9cbf-c85a-407e-9ab7-39e681957df3.png",
+  "destination": "assets/reference/actors/boss_trial_v1/stake_concept_v1.png",
+  "tool": "image_gen.imagegen",
+  "created_at": "2026-10-28T06:18:32.921Z"
+}

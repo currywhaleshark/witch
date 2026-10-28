@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "errors": [],
+  "files": [
+    {
+      "id": "latch",
+      "file": "latch_v1.glb",
+      "triangles": 27923,
+      "bones": 119,
+      "max_weight_sum_error": 0.0,
+      "max_influences": 1,
+      "images": [
+        {
+          "name": "latch_normal",
+          "size": [
+            2048,
+            2048
+          ]
+        },
+        {
+          "name": "latch_basecolor",
+          "size": [
+            2048,
+            2048
+          ]
+        },
+        {
+          "name": "latch_rm",
+          "size": [
+            2048,
+            2048
+          ]
+        }
+      ],
+      "animations": {
+        "death": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "frames": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "hit": {
+          "seconds": 0.5,
+          "channels": 357
+        },
+        "idle": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "move": {
+          "seconds": 1.0,
+          "channels": 357
+        },
+        "shockwave": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "slam": {
+          "seconds": 2.0,
+          "channels": 357
+        },
+        "sweep": {
+          "seconds": 2.0,
+          "channels": 357
+        }
+      },
+      "bytes": 6403764,
+      "sha256": "134657d5f3c52397bbd41858a4467c9485f2e23a00ef4513f87edc9cfc7c7daa"
+    },
+    {
+      "id": "stake",
+      "file": "stake_v1.glb",
+      "triangles": 6499,
+      "bones": 2,
+      "max_weight_sum_error": 0.0,
+      "max_influences": 1,
+      "images": [
+        {
+          "name": "stake_normal",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "stake_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "stake_rm",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "idle": {
+          "seconds": 2.0,
+          "channels": 6
+        }
+      },
+      "bytes": 3581720,
+      "sha256": "12b79f01405dd1696544961e9d8cf4d24000371ddd1d8e3aeadae2fd0b34ee2a"
+    },
+    {
+      "id": "door",
+      "file": "door_v1.glb",
+      "triangles": 8962,
+      "bones": 62,
+      "max_weight_sum_error": 0.0,
+      "max_influences": 1,
+      "images": [
+        {
+          "name": "door_normal",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "door_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "door_rm",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "animations": {
+        "close": {
+          "seconds": 1.0,
+          "channels": 186
+        },
+        "idle": {
+          "seconds": 2.0,
+          "channels": 186
+        },
+        "open": {
+          "seconds": 1.0,
+          "channels": 186
+        }
+      },
+      "bytes": 5083948,
+      "sha256": "17e37589a5146e06eb48599eb66330103f1ed720a5e68461dd2165c0a25bbb30"
+    }
+  ],
+  "total_triangles": 43384
+}

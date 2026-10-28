@@ -6,6 +6,7 @@ const FILES := {
 	"brute": "res://assets/actors/combat_set_v1/brute_v1.glb",
 	"automaton": "res://assets/actors/summons_v2/automaton_v2.glb",
 	"turret": "res://assets/actors/summons_v2/turret_v2.glb",
+	"latch": "res://assets/actors/boss_trial_v1/latch_v1.glb",
 }
 static var _scenes: Dictionary = {}
 var kind := ""
@@ -41,7 +42,8 @@ static func create(parent: Node3D, actor_kind: String) -> Node3D:
 		_scenes[actor_kind] = load(FILES[actor_kind])
 	if not _scenes[actor_kind] is PackedScene:
 		return null
-	var visual = load("res://scripts/actor_visual.gd").new()
+	var script_path := "res://scripts/boss_visual.gd" if actor_kind == "latch" else "res://scripts/actor_visual.gd"
+	var visual = load(script_path).new()
 	visual.name = "ActorVisual"
 	visual.kind = actor_kind
 	parent.add_child(visual)
@@ -54,14 +56,15 @@ static func create(parent: Node3D, actor_kind: String) -> Node3D:
 		return null
 	visual.player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 	for animation in visual.player.get_animation_list():
-		for canonical in ["idle", "move", "attack", "charge", "hit", "death", "explode"]:
+		for canonical in ["idle", "move", "attack", "charge", "hit", "death", "explode", "sweep", "slam", "frames", "shockwave"]:
 			if animation == canonical or animation.ends_with("|" + canonical) or animation.ends_with("/" + canonical):
 				visual.clips[canonical] = animation
-	visual.loaded_ok = visual.clips.has_all(["idle", "attack", "hit", "death"])
+	var required := ["idle", "move", "sweep", "slam", "frames", "shockwave", "hit", "death"] if actor_kind == "latch" else ["idle", "attack", "hit", "death"]
+	visual.loaded_ok = visual.clips.has_all(required)
 	visual._last_position = parent.global_position
-	if actor_kind in ["automaton", "turret"]:
+	if actor_kind in ["automaton", "turret", "latch"]:
 		for mesh in model.find_children("*", "MeshInstance3D", true, false):
-			mesh.custom_aabb = AABB(Vector3(-3.5, -0.2, -3.5), Vector3(7, 3.5, 7))
+			mesh.custom_aabb = AABB(Vector3(-3.5, -0.2, -3.5), Vector3(7, 4.5 if actor_kind == "latch" else 3.5, 7))
 	visual.set_process(false)
 	visual.sample("idle", 0.0)
 	return visual
@@ -209,7 +212,7 @@ func detach_for_death(world: Node3D, pause_source: Node, self_destruct: bool = f
 	_death_clip = "explode" if self_destruct and clips.has("explode") else "death"
 	_death_duration = player.get_animation(clips[_death_clip]).length
 	_death_start_pose.clear()
-	if kind in ["automaton", "turret"]:
+	if kind in ["automaton", "turret", "latch"]:
 		for index in skeleton.get_bone_count():
 			_death_start_pose.append(skeleton.get_bone_pose(index))
 	reparent(world, true)

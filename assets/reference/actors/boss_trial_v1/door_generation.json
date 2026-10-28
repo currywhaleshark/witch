@@ -1,0 +1,8 @@
+{
+  "id": "door",
+  "prompt": "Use case: stylized-concept. Single full-height game model reference of an old haunted wooden entrance door FRAME with one hinged door leaf opened outward 75 degrees, isolated on plain warm light grey studio background. Full object in one view, frontal slight three-quarter, level camera with margin, 2.3m high 1.3m wide. Thick cracked dark brown timber posts and lintel, aged brass hinge straps, soot-black iron latch plate, a small padlock and short chain fixed on lintel. SIMPLE battered wooden planked door with chipped faded blue paint, open enough to clearly see hollow doorway. The central opening is completely empty background, no solid portal plane, no fog, no flame, no window. Floorless standalone frame with a shallow threshold and tiny stabilizer feet, no big base/platform. Rustic Korean hillside alley entrance from 1990s, possessed machinery fantasy, not western cathedral or ornate palace. Stylized physically textured 3D game render. Readable bevels and weathered grain, no tiny illegible etching, no writing, no labels, no sheet, no scene, no person.",
+  "source_path": "C:\\Users\\yurib\\.codex\\generated_images\\01a170e6-03d1-7a10-a8b2-9b5606e15ef0\\exec-fb8a9ad9-b957-4059-b59b-5b76c63f6330.png",
+  "destination": "assets/reference/actors/boss_trial_v1/door_concept_v1.png",
+  "tool": "image_gen.imagegen",
+  "created_at": "2026-10-28T06:18:32.954Z"
+}

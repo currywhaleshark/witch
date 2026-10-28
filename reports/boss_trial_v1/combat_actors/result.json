@@ -1,0 +1,120 @@
+{
+  "assets": [
+    {
+      "bones": 14,
+      "clips": [
+        "attack",
+        "death",
+        "hit",
+        "idle",
+        "move"
+      ],
+      "dead": false,
+      "death_clip": "death",
+      "death_duration": 1.25,
+      "fraction": 0.0,
+      "kind": "rag",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 11,
+      "clips": [
+        "attack",
+        "death",
+        "hit",
+        "idle",
+        "move"
+      ],
+      "dead": false,
+      "death_clip": "death",
+      "death_duration": 1.25,
+      "fraction": 0.0,
+      "kind": "crow",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 14,
+      "clips": [
+        "attack",
+        "charge",
+        "death",
+        "hit",
+        "idle",
+        "move"
+      ],
+      "dead": false,
+      "death_clip": "death",
+      "death_duration": 1.25,
+      "fraction": 0.0,
+      "kind": "brute",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 26,
+      "clips": [
+        "attack",
+        "death",
+        "explode",
+        "hit",
+        "idle",
+        "move"
+      ],
+      "dead": false,
+      "death_clip": "death",
+      "death_duration": 1.25,
+      "fraction": 0.0,
+      "kind": "automaton",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 92,
+      "clips": [
+        "attack",
+        "death",
+        "hit",
+        "idle"
+      ],
+      "dead": false,
+      "death_clip": "death",
+      "death_duration": 1.25,
+      "fraction": 0.0,
+      "kind": "turret",
+      "loaded": true,
+      "release_samples": [],
+      "state": "idle"
+    },
+    {
+      "bones": 119,
+      "clips": [
+        "death",
+        "frames",
+        "hit",
+        "idle",
+        "move",
+        "shockwave",
+        "slam",
+        "sweep"
+      ],
+      "dead": false,
+      "death_clip": "death",
+      "death_duration": 1.25,
+      "fraction": 0.0,
+      "kind": "latch",
+      "loaded": true,
+      "release_events": [],
+      "release_samples": [],
+      "state": "idle"
+    }
+  ],
+  "checks": 9109,
+  "failures": [],
+  "passed": true
+}

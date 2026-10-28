@@ -1,0 +1,20 @@
+16:04:26 | INFO: Data are loaded, start creating Blender stuff
+16:04:26 | INFO: Blender create Mesh node meshes[0]
+16:04:26 | INFO: glTF import finished in 0.24s
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.1\5.1\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+16:04:30 | INFO: Starting glTF 2.0 export
+16:04:30 | INFO: Extracting primitive: meshes[0]
+16:04:30 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+16:04:30 | INFO: Primitives created: 1
+16:04:30 | INFO: Finished glTF 2.0 export in 0.1553325653076172 s
+00:09.437  image.write      | ERROR OpenImageIO write failed: Could not open file "C:\Users\yurib\.thumbnails\large\blender_38532_cfe328bbc1074f96986ac7b63a17593c.png.png"
+00:55.203  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\boss_trial_v1\build\stake\idle_start.png'
+00:55.547  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\boss_trial_v1\build\stake\idle_impact.png'
+00:55.797  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\boss_trial_v1\build\stake\idle_end.png'
+
+Info: No new files have been packed
+Info: Saved as "stake_v1.blend"
+BOSS_BUILD_COMPLETE stake {"id": "stake", "source": "assets\\actors\\boss_trial_v1\\source\\stake_tripo_h31_raw.glb", "source_sha256": "e76b3aab2e9e608e3968b156a8e61c61511413d94f4033cc91962062d21b891c", "raw_unchanged": true, "source_triangles": 76768, "runtime_triangles": 6499, "vertices": 5739, "bones": 2, "rigid_parts": 1, "max_influences": 1, "texture_size": 1024, "materials": 1, "height_m": 2.6, "front": "Godot -Z", "glb_sha256": "12b79f01405dd1696544961e9d8cf4d24000371ddd1d8e3aeadae2fd0b34ee2a", "clips": {"idle": {"frames": 49, "seconds": 2.0}}, "sampled_rigid_edge_error_m": 0.0, "ground_min_z": {"idle": [0.0, 0.0]}}
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

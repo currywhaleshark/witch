@@ -1,0 +1,47 @@
+{
+  "checks": 28673,
+  "failures": [],
+  "metrics": {
+    "door": {
+      "max_basis_error": 0.000000238418579101563,
+      "max_bone_head_error_m": 0.000000178813934326172,
+      "min_vertex_y_m": -0.000188995152711868,
+      "sampled_poses": 9,
+      "vertices_checked": 11250,
+      "worst": {
+        "actual": "(0.074482, 1.116628, -0.756255)",
+        "bone": "part_019",
+        "clip": "close",
+        "expected": "(0.074482, 1.116628, -0.756255)",
+        "phase": 0.5
+      }
+    },
+    "latch": {
+      "max_basis_error": 0.00000155258817358117,
+      "max_bone_head_error_m": 0.000000536441802978516,
+      "min_vertex_y_m": 0.00000369548797607422,
+      "sampled_poses": 24,
+      "vertices_checked": 26789,
+      "worst": {
+        "actual": "(1.090234, 1.467115, -0.753424)",
+        "bone": "part_044",
+        "clip": "frames",
+        "expected": "(1.090233, 1.467114, -0.753424)",
+        "phase": 0.5
+      }
+    },
+    "stake": {
+      "footprint_half_extent_m": 0.465024262666702,
+      "max_basis_error": 0.000000119209289550781,
+      "max_bone_head_error_m": 0.0,
+      "min_vertex_y_m": 0.0,
+      "sampled_poses": 3,
+      "vertices_checked": 5716,
+      "worst": {
+
+      }
+    }
+  },
+  "passed": true,
+  "scope": "Imported skins and sampled bone heads; actual combat release, pause, cleanup. Rendering reviewed separately."
+}

@@ -62,15 +62,12 @@ static func fan(parent: Node3D, pos: Vector3, radius: float, angle: float, color
 	node.material_override.cull_mode = BaseMaterial3D.CULL_DISABLED
 	return node
 
-static func door_frame(parent: Node3D, pos: Vector3, color: Color) -> Node3D:
-	# Hovering wooden door frame for the boss crossfire pattern.
-	var frame = Node3D.new()
+static func door_frame(parent: Node3D, pos: Vector3, _color: Color) -> Node3D:
+	# Presentation only; the arena retains the crossfire positions and projectile rules.
+	var frame = load("res://scripts/boss_door_visual.gd").new()
 	parent.add_child(frame)
 	frame.position = pos
-	for x in [-0.55, 0.55]:
-		box(frame, Vector3(x, 1.2, 0), Vector3(0.14, 2.2, 0.14), color)
-	box(frame, Vector3(0, 2.3, 0), Vector3(1.24, 0.14, 0.14), color)
-	box(frame, Vector3(0, 1.2, 0.02), Vector3(0.96, 2.0, 0.02), Color("1d2a33"))
+	frame.initialize()
 	return frame
 
 static func body(parent: Node3D, pos: Vector3, layer: int) -> CharacterBody3D:
@@ -126,7 +123,7 @@ static func enemy(parent: Node3D, kind: String) -> Node3D:
 	var actor := ActorVisual.create(parent, kind)
 	if actor != null:
 		return actor
-	# The boss and legacy test types retain their existing silhouettes.
+	# Missing assets and legacy test types retain their existing silhouettes.
 	var model = Node3D.new()
 	parent.add_child(model)
 	match kind:

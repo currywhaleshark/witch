@@ -1,0 +1,48 @@
+{
+  "actor": "latch",
+  "bounds": [
+    [
+      -0.5,
+      -0.4014282524585724,
+      0.0
+    ],
+    [
+      0.5,
+      0.4014282524585724,
+      0.8326416015625
+    ]
+  ],
+  "meshes": [
+    {
+      "name": "tripo_node_d9a9d156-deaf-4f08-a7e6-1198a37b1c47",
+      "vertices": 51162,
+      "triangles": 76597,
+      "materials": [
+        "tripo_material_d9a9d156-deaf-4f08-a7e6-1198a37b1c47"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "latch_tripo_h31_raw_basecolor.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "latch_tripo_h31_raw_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "latch_tripo_h31_raw_rm.jpg",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}
