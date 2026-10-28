@@ -9,7 +9,8 @@ const EXPECTED_CLIPS := {
 	"idle": "combat_idle_rh_v20", "run": "combat_run_rh_v21",
 	"attack": "combat_heavy_swing_rh_v20", "cast": "combat_cast_rh_v20", "hit": "combat_hit_rh_v20",
 }
-const EXPECTED_RUN_CYCLE_DISTANCE := 3.242813140153885
+# Authored stride, scaled with the 1.5m witch.
+const EXPECTED_RUN_CYCLE_DISTANCE := 3.242813140153885 * 1.5 / 1.711
 const EXPECTED_RUN_LENGTH := 4.0
 var arena: Node3D
 var failures: Array = []

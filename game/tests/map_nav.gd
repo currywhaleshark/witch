@@ -140,6 +140,8 @@ func run() -> void:
 			var box: AABB = piece.global_transform * piece.get_aabb()
 			cut_ok = cut_ok and box.end.y <= l.ground + map.CUT_H + 0.01
 	check(cut_ok and map.lots.any(func(l): return l.cut and l.kind == "shop"), "camera-side lots are cut down to their frontage")
+	# The 1.5m witch: garden walls reach past her head, doors and storeys are full height.
+	check(map.FENCE_H > 1.7 and map.STOREY >= 3.0 and map.CUT_H > map.FENCE_H, "walls, doors and storeys are sized against the witch")
 	var floor_material: StandardMaterial3D = map.region.get_child(0).get_child(0).material_override
 	var floor_color = Color(map.data.floors[0].color if map.data.floors[0] is Dictionary else map.data.floors[0][4])
 	check(floor_material.albedo_texture != null and floor_material.uv1_world_triplanar and (floor_material.albedo_color * Color(map.SURFACES.asphalt.reference)).is_equal_approx(floor_color), "floors are textured asphalt that keeps its palette colour on average")

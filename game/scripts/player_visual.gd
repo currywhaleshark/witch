@@ -19,8 +19,14 @@ const AUTHORED_RELEASE := {"attack": 0.5, "cast": 0.5}
 const STAFF_GRIP_OFFSET := Vector3(0.0074299751, 0.0480000079, 0.0158048961)
 const STAFF_GRIP_BASIS := Basis(Vector3(0, -1, 0), Vector3(0.9106548, 0, -0.4131677), Vector3(0.4131677, 0, 0.9106548))
 const LOCOMOTION_BLEND_SECONDS := 0.10
-# v21 arm correction retains the selected compact run's measured stride.
-const RUN_CYCLE_DISTANCE := 3.242813140153885
+# The authored model stands 1.711m to the top of the hair; the witch is a middle-schooler of 1.5m,
+# so the whole asset (staff included) is scaled down and the measured stride with it.
+const MODEL_HEIGHT := 1.711
+const CHARACTER_HEIGHT := 1.5
+const MODEL_SCALE := CHARACTER_HEIGHT / MODEL_HEIGHT
+# v21 arm correction retains the selected compact run's measured stride (authored at full size).
+const AUTHORED_RUN_CYCLE_DISTANCE := 3.242813140153885
+const RUN_CYCLE_DISTANCE := AUTHORED_RUN_CYCLE_DISTANCE * MODEL_SCALE
 const BRASS := Color("c69b62")
 const STEEL := Color("a9c1d6")
 const TEAL := Color("8dd8c4")
@@ -72,6 +78,7 @@ func initialize() -> bool:
 	asset_wrapper.name = "AssetFacing"
 	# Exported character faces +Z; arena's existing look_at faces -Z.
 	asset_wrapper.rotation.y = PI
+	asset_wrapper.scale = Vector3.ONE * MODEL_SCALE
 	add_child(asset_wrapper)
 	runtime = Modular.new()
 	runtime.name = "ModularCharacter"

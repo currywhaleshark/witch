@@ -139,7 +139,9 @@ func _build_field() -> void:
 	map.apply_lighting(env, sun)
 	camera = Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	camera.size = 20.0 / 1.75
+	# The user-selected 1.75x framing (about 111px) was set for a 1.711m model; zoom by the same
+	# factor the witch shrank to 1.5m so she keeps that on-screen size.
+	camera.size = 20.0 / 1.75 * PlayerVisual.MODEL_SCALE
 	camera.far = 100
 	add_child(camera)
 	# 45° yaw and 30° pitch draw floor tiles as 2:1 diamonds, like a 2D quarter view.

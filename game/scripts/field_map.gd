@@ -20,9 +20,10 @@ const CAMERA_SIDE = Vector3(0.70710678, 0, 0.70710678)
 # Navmesh points this far above the floor beneath them are prop tops, not walkable ground.
 const PROP_TOP = 0.6
 # Lot kit: garden walls stand this high above the alley; lots that would hide the field are cut to CUT_H.
-const FENCE_H = 1.5
-const CUT_H = 2.2
-const STOREY = 2.8
+# Sized for the 1.7m witch: garden walls a little over head height, 2.2m doors, 3.0m storeys.
+const FENCE_H = 1.8
+const CUT_H = 2.5
+const STOREY = 3.0
 # Utility poles stand this far out from the far walls, inside the margin walkers keep from walls.
 const POLE_V = -0.26
 const LOT_WIDTH = {"house": [6.0, 8.4], "shop": [4.2, 6.0], "plain": [5.0, 7.5]}
@@ -616,46 +617,46 @@ func _storefront(body: Node3D, f: Dictionary, u0: float, u1: float, ground: floa
 		_skin(_piece(body, f, u0 + 0.05, u1 - 0.05, 0.0, 0.5, ground, ground + CUT_H - 0.08, Color(WALLS[rng.randi() % WALLS.size()])), "plaster")
 		_piece(body, f, u0 + 0.05, u1 - 0.05, 0.0, 0.5, ground + CUT_H - 0.08, ground + CUT_H, Color("4a4844"))
 	if shutter:
-		_skin(_piece(body, f, u0 + 0.35, u1 - 0.35, -0.05, 0.0, ground, ground + 2.0, Color("9aa3a6")), "metal")
-		for k in 7:
+		_skin(_piece(body, f, u0 + 0.35, u1 - 0.35, -0.05, 0.0, ground, ground + 2.25, Color("9aa3a6")), "metal")
+		for k in 8:
 			var y: float = ground + 0.2 + 0.26 * k
 			_piece(body, f, u0 + 0.35, u1 - 0.35, -0.065, -0.05, y, y + 0.03, Color("7f878a"))
-		_skin(_piece(body, f, u0 + 0.3, u1 - 0.3, -0.16, 0.0, ground + 2.0, ground + 2.12, Color("8b9295")), "metal")
+		_skin(_piece(body, f, u0 + 0.3, u1 - 0.3, -0.16, 0.0, ground + 2.25, ground + 2.4, Color("8b9295")), "metal")
 	else:
 		var lit: bool = rng.randf() < float(data.get("lighting", {}).get("lit_shops", 0.3))
 		if body.get_meta("alley_state","original") in ["closed","vacant"]: lit=false
 		var door: float = rng.randf_range(u0 + 0.9, u1 - 0.9)
 		body.set_meta("door", door)
-		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.04, 0.0, ground, ground + 2.12, Color("d8d2c4"))
-		var pane: MeshInstance3D = _piece(body, f, u0 + 0.4, u1 - 0.4, -0.07, -0.04, ground + 0.35, ground + 2.02, Color("2a3a44"))
+		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.04, 0.0, ground, ground + 2.4, Color("d8d2c4"))
+		var pane: MeshInstance3D = _piece(body, f, u0 + 0.4, u1 - 0.4, -0.07, -0.04, ground + 0.35, ground + 2.3, Color("2a3a44"))
 		if lit:
 			_glow(pane, Color("f2dca0"), 1.1)
 		var m: float = u0 + 1.4
 		while m < u1 - 0.8:
-			_piece(body, f, m - 0.03, m + 0.03, -0.08, -0.04, ground + 0.35, ground + 2.02, Color("d8d2c4"))
+			_piece(body, f, m - 0.03, m + 0.03, -0.08, -0.04, ground + 0.35, ground + 2.3, Color("d8d2c4"))
 			m += 1.3
-		_piece(body, f, door - 0.45, door + 0.45, -0.09, -0.05, ground + 0.02, ground + 2.02, Color("3a4a52"))
+		_piece(body, f, door - 0.45, door + 0.45, -0.09, -0.05, ground + 0.02, ground + 2.25, Color("3a4a52"))
 		_piece(body, f, door + 0.3, door + 0.34, -0.12, -0.09, ground + 0.9, ground + 1.2, Color("c9c2b0"))
 	if cut:
 		return lot.get("sign", "")
 	if lot.has("tube"):
 		var tube = Color(lot.tube)
-		var fixture := _piece(body,f,u0+0.8,u1-0.8,-0.32,-0.24,ground+2.2,ground+2.26,tube.darkened(0.35))
+		var fixture := _piece(body,f,u0+0.8,u1-0.8,-0.32,-0.24,ground+2.48,ground+2.54,tube.darkened(0.35))
 		if body.get_meta("alley_state","original") in ["original","open"]:
 			_glow(fixture,tube,1.6)
-			_lamp(body,_at(f,(u0+u1)/2.0,-0.6,ground+2.0),tube,0.9,5.0)
+			_lamp(body,_at(f,(u0+u1)/2.0,-0.6,ground+2.3),tube,0.9,5.0)
 	var text: String = lot.get("sign", SIGNS[rng.randi() % SIGNS.size()])
 	var board = Color(lot.get("board", BOARDS[rng.randi() % BOARDS.size()]))
 	var ink = Color("2a2a2a") if board.get_luminance() > 0.55 else Color("f4efe4")
 	if lot.get("faded", false):
 		board = board.lerp(Color("8f8b84"), 0.55)
 		ink = ink.lerp(Color("8f8b84"), 0.45)
-	_piece(body, f, u0 + 0.2, u1 - 0.2, -0.16, 0.0, ground + 2.3, ground + 2.9, board)
+	_piece(body, f, u0 + 0.2, u1 - 0.2, -0.16, 0.0, ground + 2.58, ground + 3.18, board)
 	if not shutter and rng.randf() < 0.5:
 		var cloth = Color(["b8433a", "2f5d8a", "3f7a52"][rng.randi() % 3])
-		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.9, 0.0, ground + 2.16, ground + 2.22, cloth)
-		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.92, -0.88, ground + 1.98, ground + 2.22, cloth.lightened(0.3))
-	if decorations.sign(body, f, text, lot.get("faded",false), (u0+u1)/2.0, ground+2.6, u1-u0-0.4):
+		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.9, 0.0, ground + 2.44, ground + 2.5, cloth)
+		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.92, -0.88, ground + 2.26, ground + 2.5, cloth.lightened(0.3))
+	if decorations.sign(body, f, text, lot.get("faded",false), (u0+u1)/2.0, ground+2.88, u1-u0-0.4):
 		return text
 	if sign_font == null:
 		sign_font = SystemFont.new()
@@ -670,7 +671,7 @@ func _storefront(body: Node3D, f: Dictionary, u0: float, u1: float, ground: floa
 	label.outline_size = 0
 	label.shaded = false
 	body.add_child(label)
-	label.position = _at(f, (u0 + u1) / 2.0, -0.175, ground + 2.6)
+	label.position = _at(f, (u0 + u1) / 2.0, -0.175, ground + 2.88)
 	label.rotation_degrees.y = {"-z": 0.0, "-x": 90.0, "+z": 180.0, "+x": -90.0}[f.out]
 	return text
 
@@ -696,7 +697,7 @@ func _building(parent: Node3D, entry: Dictionary, key: String) -> Node3D:
 	var r: Array = entry.rect
 	var base: float = entry.get("base", 0.0)
 	var storeys: int = int(entry.floors)
-	var storey: float = 2.8
+	var storey: float = STOREY
 	var wall: Color = Color(entry.color)
 	var size = Vector3(r[2] - r[0], storey, r[3] - r[1])
 	var cx: float = (r[0] + r[2]) / 2.0
@@ -725,7 +726,7 @@ func _building(parent: Node3D, entry: Dictionary, key: String) -> Node3D:
 					if i == count / 2:
 						_door(house, face, cx, cz, size, y0, t, rng, front == "any")
 						continue
-				_window(house, face, cx, cz, size, y0 + 1.5, t, rng)
+				_window(house, face, cx, cz, size, y0 + 1.6, t, rng)
 				if level > 0:
 					slots.append([face, t, y0])
 	var roof_y: float = base + storeys * storey
@@ -748,7 +749,7 @@ func _building(parent: Node3D, entry: Dictionary, key: String) -> Node3D:
 	var fitted: String = alley if alley != "" else "z"
 	if front == "store":
 		fitted = "x" if fitted == "z" else "z"
-	house.set_meta("drop", decorations.fixtures(house, r, base, storeys, fitted))
+	house.set_meta("drop", decorations.fixtures(house, r, base, storeys, storey, fitted))
 	return house
 
 func _ac(house: Node3D, at: Vector3, yaw: float, roof: bool) -> void:
@@ -800,13 +801,13 @@ func _glow(piece: MeshInstance3D, color: Color, energy: float) -> void:
 func _door(house: Node3D, face: String, cx: float, cz: float, size: Vector3, y0: float, t: float, rng: RandomNumberGenerator, shutters: bool) -> void:
 	# Either a front door or a rolled-down shop shutter, the usual ground floor of a 2000s alley.
 	var shutter: bool = shutters and rng.randf() < 0.5
-	var piece = Vector3(1.8, 2.0, 0.06) if shutter else Vector3(0.95, 2.0, 0.06)
+	var piece = Vector3(1.8, 2.2, 0.06) if shutter else Vector3(0.95, 2.2, 0.06)
 	var color = Color("9aa3a6") if shutter else Color("5b3e2e")
 	var leaf: MeshInstance3D
 	if face == "z":
-		leaf = Shape.box(house, Vector3(cx + t, y0 + 1.0, cz + size.z / 2.0 + 0.04), piece, color)
+		leaf = Shape.box(house, Vector3(cx + t, y0 + 1.1, cz + size.z / 2.0 + 0.04), piece, color)
 	else:
-		leaf = Shape.box(house, Vector3(cx + size.x / 2.0 + 0.04, y0 + 1.0, cz + t), Vector3(piece.z, piece.y, piece.x), color)
+		leaf = Shape.box(house, Vector3(cx + size.x / 2.0 + 0.04, y0 + 1.1, cz + t), Vector3(piece.z, piece.y, piece.x), color)
 	_skin(leaf, "metal")
 
 func _build_flat() -> void:

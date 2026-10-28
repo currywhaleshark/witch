@@ -118,7 +118,7 @@ func decorate_run(parent: Node3D, f: Dictionary, a: float, b: float, ground: flo
 	var center := (a+b)/2.0
 	var demo: bool = key in layout.demolition_lots
 	wall(parent,f,"grime_base_dirt",center,ground+0.2,0.42,-0.017)
-	wall(parent,f,"grime_streak_coping",center,ground+1.13,0.38)
+	wall(parent,f,"grime_streak_coping",center,ground+1.43,0.38)
 	if demo:
 		wall(parent,f,"spray_demolish",center,ground+0.88,0.8,-0.013)
 		if b-a > 2.0: wall(parent,f,"poster_demolition",b-0.35,ground+0.9,1.0,-0.015)
@@ -168,7 +168,7 @@ func lot(parent: Node3D, f: Dictionary, u0: float, u1: float, ground: float, key
 func projecting(parent: Node3D, f: Dictionary, id: String, u: float, ground: float, facade: float, lit: bool) -> void:
 	if not assets.has(id): return
 	var s: Array = assets[id].world_size
-	var center := _at(f,u,facade-0.36,ground+2.35+float(s[1])/2.0)
+	var center := _at(f,u,facade-0.36,ground+2.6+float(s[1])/2.0)
 	var yaw: float = YAW[f.out] + 90.0
 	var normal := Basis(Vector3.UP,deg_to_rad(yaw))*Vector3.BACK
 	for side in [-1,1]:
@@ -177,7 +177,7 @@ func projecting(parent: Node3D, f: Dictionary, id: String, u: float, ground: flo
 			var mat: StandardMaterial3D = panel.material_override
 			mat.emission_enabled=true;mat.emission_texture=mat.albedo_texture
 			mat.emission=Color("a09990");mat.emission_energy_multiplier=0.25
-	for y in [ground+2.5,ground+2.2+float(s[1])]:
+	for y in [ground+2.75,ground+2.45+float(s[1])]:
 		var size := Vector3(0.04,0.045,0.66) if f.along_x else Vector3(0.66,0.045,0.04)
 		Shape.box(parent,_at(f,u,facade-0.3,y),size,Color("5a5751"))
 
@@ -204,7 +204,7 @@ func window(house: Node3D, face: String, cx: float, cz: float, size: Vector3, y:
 	if index%3 == 0:
 		add_plane(house,"grime_streak_window",Vector2(1.2,1.4),pos-Vector3(0,0.8,0),rot,0.25)
 
-func fixtures(house: Node3D, rect: Array, base: float, storeys: int, face: String) -> Vector3:
+func fixtures(house: Node3D, rect: Array, base: float, storeys: int, storey: float, face: String) -> Vector3:
 	# Modelled fittings on a seen face (+z or +x), in the window-free strips at its two corners: a
 	# yellow gas riser with its meter at the back corner, the electric meter box and the service
 	# cable rising to the drop point at the front corner. Returns the drop point for the pole wire.
@@ -220,15 +220,15 @@ func fixtures(house: Node3D, rect: Array, base: float, storeys: int, face: Strin
 	# Windows sit evenly along the face; skip fittings where the corner strip is too narrow.
 	var span: float = hi - lo
 	var corner: float = span / (2.0 * maxi(1, int(span / 2.3))) - 0.575
-	var top: float = base + storeys * 2.8 - 0.35
-	var drop: float = base + mini(storeys, 2) * 2.8 - 0.55
+	var top: float = base + storeys * storey - 0.35
+	var drop: float = base + mini(storeys, 2) * storey - 0.55
 	if corner < 0.45:
 		return Vector3.INF
 	var g: float = lo + 0.28
 	Shape.cylinder(house, at.call(g, (base + 0.05 + top) / 2.0, 0.07), 0.028, top - base - 0.05, GAS)
 	for level in storeys:
 		# Each floor's branch runs a short way along the wall before entering it.
-		Shape.box(house, at.call(g + 0.27, base + level * 2.8 + 2.3, 0.07), flat.call(0.54, 0.05) + Vector3(0, 0.05, 0), GAS)
+		Shape.box(house, at.call(g + 0.27, base + level * storey + 2.5, 0.07), flat.call(0.54, 0.05) + Vector3(0, 0.05, 0), GAS)
 	var clip: float = base + 0.6
 	while clip < top:
 		Shape.box(house, at.call(g, clip, 0.035), flat.call(0.09, 0.07) + Vector3(0, 0.03, 0), Color("5c5a55"))
