@@ -113,6 +113,25 @@ func run() -> void:
 				trades_ok = trades_ok and allowed.has(trade)
 	check(hung > 0 and trades_ok, "projecting signs and A-frames repeat their own building's trade")
 	check(not map.poles.is_empty() and map.poles.all(func(p): return map._floor_top(p.x, p.z) >= 0.0), "utility poles stand on the alley side of the walls")
+	var ac_ok = true
+	var units = 0
+	var heaps_clear = true
+	var heaps = 0
+	for l in map.lots:
+		for node in l.body.find_children("*", "Node3D", true, false):
+			if node.has_meta("ac_bottom"):
+				units += 1
+				ac_ok = ac_ok and node.get_meta("ac_bottom") > l.ground + map.STOREY
+			if node.has_meta("clutter"):
+				heaps += 1
+				var along: float = node.global_position.x if l.out in ["-z", "+z"] else node.global_position.z
+				if l.has("gate_span"):
+					heaps_clear = heaps_clear and (along + 0.8 < l.gate_span[0] - 0.35 or along - 0.8 > l.gate_span[1] + 0.35)
+				for p in map.poles:
+					heaps_clear = heaps_clear and node.global_position.distance_to(p) > 0.9
+	check(units > 0 and ac_ok, "AC units hang above the ground floor, clear of entrances and signs")
+	check(heaps > 0 and heaps_clear, "wall-side heaps keep clear of gates and poles")
+	check(map.data.walls.all(func(w): return w.has("model")) and map.find_children("*", "Label3D", true, false).any(func(l): return l.text.contains("공중전화")), "roadside props are modelled (the phone booth carries its sign)")
 	var stickers: Array = map.decorations.nodes.filter(func(n): return n.get_meta("decoration_id") in ["wall_gas_pipe", "wall_cables"])
 	check(stickers.is_empty() and map.lots.any(func(l): return l.get("drop", Vector3.INF) != Vector3.INF), "gas risers, meters and service cables are modelled, not flat pictures")
 	var cut_ok = true

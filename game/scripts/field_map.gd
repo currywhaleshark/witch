@@ -6,6 +6,7 @@ extends Node3D
 ## baked at runtime.
 const Shape = preload("res://scripts/shapes.gd")
 const Decoration = preload("res://scripts/alley_decoration.gd")
+const Props = preload("res://scripts/alley_props.gd")
 # Walls and props block bodies and sight; floors only carry feet and the navmesh.
 const WORLD_LAYER = 1
 const FLOOR_LAYER = 16
@@ -221,7 +222,9 @@ func _wall(entry) -> void:
 	var base: float = 0.0 if entry is Array else float(entry.get("base", 0.0))
 	var kind: String = ("wall" if height > SIGHT_HEIGHT else "prop") if entry is Array else entry.get("kind", "wall")
 	var body: StaticBody3D = _solid(region, rect, base, base + height, color, WORLD_LAYER)
-	if kind == "prop": decorations.prop(body,rect,base,base+height)
+	# Props with a model get it; the rest keep the decoration pass's dressing over their block.
+	if kind == "prop" and not (entry is Dictionary and Props.build(body, entry.get("model", ""), rect, height)):
+		decorations.prop(body,rect,base,base+height)
 	if kind == "prop" or height <= SIGHT_HEIGHT:
 		return
 	_fadeable(body, rect)
@@ -358,12 +361,12 @@ func _edge(edge: Dictionary, index: int) -> void:
 		_lot(f, row[i], spans[i][0], spans[i][1], walled_next, rng, "%d:%d" % [index, i])
 	# Concrete utility poles stand on the alley side of the far edges' walls, each with a street lamp
 	# reaching over the alley and wires running pole to pole. Camera-side edges get none.
-	if f.sign > 0 or not edge.get("poles", true):
+	if f.sign > 0:
 		return
 	var gap: float = float(data.get("lighting", {}).get("pole_gap", 11.0))
 	var tops: Array = []
 	var last := -INF
-	for i in row.size():
+	for i in (row.size() if edge.get("poles", true) else 0):
 		if row[i].kind == "shop" or spans[i][1] - spans[i][0] < 1.6:
 			continue
 		# Near a lot end, but never in front of the gate and its posts.
@@ -375,6 +378,7 @@ func _edge(edge: Dictionary, index: int) -> void:
 				last = at
 				tops.append(_pole(f, at, _grounds(f, at - 0.2, at + 0.2).y))
 				break
+	_clutter(f, spans, first, tops)
 	for i in tops.size() - 1:
 		for drop in [0.0, 0.3]:
 			_wire(tops[i] - Vector3(0, drop, 0), tops[i + 1] - Vector3(0, drop, 0))
@@ -389,6 +393,55 @@ func _edge(edge: Dictionary, index: int) -> void:
 				near = top
 		if Vector2(near.x - drop.x, near.z - drop.z).length() < 10.0:
 			_wire(near - Vector3(0, 0.9, 0), drop, 0.35, 2)
+
+func _clutter(f: Dictionary, spans: Array, first: int, tops: Array) -> void:
+	# Small heaps against the far walls, in the strip walkers keep clear of walls: planters and spent
+	# briquettes by houses, crates and boxes by shops, rubble sacks by empty lots. They keep clear of
+	# gates, poles, shop doors and A-frames, and of stairs.
+	for i in spans.size():
+		var info: Dictionary = lots[first + i]
+		var u0: float = spans[i][0]
+		var u1: float = spans[i][1]
+		var rng = RandomNumberGenerator.new()
+		rng.seed = hash("%s:clutter:%s" % [id, info.body.get_meta("lot_key")])
+		var state: String = info.body.get_meta("alley_state", "open")
+		var kinds: Array = {"house": ["tubs", "briquettes"], "plain": ["sacks", "briquettes", "boxes"], "shop": ["crates", "boxes"]}[info.kind]
+		if state == "vacant":
+			kinds = ["sacks", "boxes", "briquettes"]
+		var heaps: int = 1 if info.kind == "shop" else rng.randi_range(0, 2)
+		var blocked: Array = []
+		if info.has("gate_span"):
+			blocked.append([info.gate_span[0] - 0.35, info.gate_span[1] + 0.35])
+		if info.body.has_meta("door"):
+			blocked.append([info.body.get_meta("door") - 0.45, info.body.get_meta("door") + 0.45])
+		if info.kind == "shop" and state == "open":
+			blocked.append([u0, u0 + 0.85])
+		for top in tops:
+			var along: float = top.x if f.along_x else top.z
+			blocked.append([along - 0.2, along + 0.2])
+		var spots: Array = []
+		var u: float = u0 + 1.3
+		while u <= u1 - 1.3:
+			var g: Vector2 = _grounds(f, u - 0.8, u + 0.8)
+			var clear: bool = is_equal_approx(g.x, g.y)
+			for b in blocked:
+				clear = clear and (u + 0.8 < b[0] or u - 0.8 > b[1])
+			if clear:
+				spots.append(u)
+			u += 0.5
+		var placed: Array = []
+		for heap in heaps:
+			if spots.is_empty():
+				break
+			var at: float = spots[rng.randi() % spots.size()]
+			spots = spots.filter(func(other): return absf(other - at) >= 2.2)
+			placed.append(Props.clutter(info.body, _at(f, at, -0.25, _grounds(f, at - 0.8, at + 0.8).y), Decoration.YAW[f.out], kinds[rng.randi() % kinds.size()], rng))
+		if not placed.is_empty():
+			# Heaps join their lot's see-through state.
+			for entry in fadeable:
+				if entry.body == info.body:
+					entry.meshes = info.body.find_children("*", "GeometryInstance3D", true, false)
+					_set_alpha(entry, entry.rest)
 
 func _pole(f: Dictionary, u: float, ground: float) -> Vector3:
 	var foot: Vector3 = _at(f, u, POLE_V, ground)
@@ -572,6 +625,7 @@ func _storefront(body: Node3D, f: Dictionary, u0: float, u1: float, ground: floa
 		var lit: bool = rng.randf() < float(data.get("lighting", {}).get("lit_shops", 0.3))
 		if body.get_meta("alley_state","original") in ["closed","vacant"]: lit=false
 		var door: float = rng.randf_range(u0 + 0.9, u1 - 0.9)
+		body.set_meta("door", door)
 		_piece(body, f, u0 + 0.3, u1 - 0.3, -0.04, 0.0, ground, ground + 2.12, Color("d8d2c4"))
 		var pane: MeshInstance3D = _piece(body, f, u0 + 0.4, u1 - 0.4, -0.07, -0.04, ground + 0.35, ground + 2.02, Color("2a3a44"))
 		if lit:
@@ -653,6 +707,8 @@ func _building(parent: Node3D, entry: Dictionary, key: String) -> Node3D:
 	parent.add_child(house)
 	house.set_meta("lot_key",key)
 	house.set_meta("alley_state",parent.get_meta("alley_state",decorations.state(key)))
+	# Upper-floor windows that can carry an outdoor AC unit underneath.
+	var slots: Array = []
 	for level in storeys:
 		var y0: float = base + level * storey
 		_skin(Shape.box(house, Vector3(cx, y0 + storey / 2.0, cz), size, wall.darkened(0.04 * (level % 2))), "plaster")
@@ -670,14 +726,23 @@ func _building(parent: Node3D, entry: Dictionary, key: String) -> Node3D:
 						_door(house, face, cx, cz, size, y0, t, rng, front == "any")
 						continue
 				_window(house, face, cx, cz, size, y0 + 1.5, t, rng)
+				if level > 0:
+					slots.append([face, t, y0])
 	var roof_y: float = base + storeys * storey
 	for side in [[0, size.z / 2.0, size.x + 0.2, 0.2], [0, -size.z / 2.0, size.x + 0.2, 0.2], [size.x / 2.0, 0, 0.2, size.z], [-size.x / 2.0, 0, 0.2, size.z]]:
 		_skin(Shape.box(house, Vector3(cx + side[0], roof_y + 0.3, cz + side[1]), Vector3(side[2], 0.6, side[3]), wall.darkened(0.25)), "plaster")
 	_skin(Shape.box(house, Vector3(cx, roof_y + 0.02, cz), Vector3(size.x - 0.2, 0.04, size.z - 0.2), Color(entry.get("roof", "4f7a5a"))), "concrete")
 	if rng.randf() < 0.7:
 		Shape.cylinder(house, Vector3(cx + rng.randf_range(-size.x, size.x) * 0.25, roof_y + 0.7, cz - size.z * 0.2), 0.55, 1.2, Color("c9c2b0"))
-	for i in rng.randi_range(1, 3):
-		Shape.box(house, Vector3(cx + rng.randf_range(-0.4, 0.4) * size.x, base + storey * rng.randi_range(0, storeys - 1) + 2.2, r[3] + 0.3), Vector3(0.8, 0.55, 0.5), Color("d9d6cc"))
+	# Outdoor AC units hang on brackets under upper-floor windows, never over entrances or signs;
+	# single-storey buildings keep theirs on the roof.
+	for i in rng.randi_range(1, 2):
+		if slots.is_empty():
+			_ac(house, Vector3(cx + rng.randf_range(-0.25, 0.25) * size.x, roof_y + 0.04, cz - size.z * 0.15), 0.0, true)
+			break
+		var slot: Array = slots.pop_at(rng.randi() % slots.size())
+		var wall_at = Vector3(cx + slot[1], slot[2] + 0.55, cz + size.z / 2.0) if slot[0] == "z" else Vector3(cx + size.x / 2.0, slot[2] + 0.55, cz + slot[1])
+		_ac(house, wall_at, 0.0 if slot[0] == "z" else 90.0, false)
 	# Gas riser and meters on the alley face; "drop" is where the overhead service cable lands.
 	# Shops keep their alley face for the shopfront kit, so their fittings go on the other seen face.
 	var fitted: String = alley if alley != "" else "z"
@@ -685,6 +750,26 @@ func _building(parent: Node3D, entry: Dictionary, key: String) -> Node3D:
 		fitted = "x" if fitted == "z" else "z"
 	house.set_meta("drop", decorations.fixtures(house, r, base, storeys, fitted))
 	return house
+
+func _ac(house: Node3D, at: Vector3, yaw: float, roof: bool) -> void:
+	# An outdoor AC unit: casing, fan grille and refrigerant pipe. On a wall it sits on two brackets
+	# with its back at "at"; on a roof it stands on a low frame with its base at "at".
+	var unit = Node3D.new()
+	house.add_child(unit)
+	unit.position = at
+	unit.rotation_degrees.y = yaw
+	unit.set_meta("ac_bottom", at.y + (0.1 if roof else -0.26))
+	var y: float = 0.36 if roof else 0.0
+	Shape.box(unit, Vector3(0, y, 0.16), Vector3(0.78, 0.52, 0.3), Color("d9d6cc"))
+	var fan: MeshInstance3D = Shape.cylinder(unit, Vector3(0.1, y, 0.315), 0.17, 0.02, Color("54575a"))
+	fan.rotation_degrees.x = 90
+	Shape.box(unit, Vector3(-0.42, y + 0.05, 0.08), Vector3(0.04, 0.04, 0.16), Color("e8e4da"))
+	for x in [-0.3, 0.3]:
+		if roof:
+			Shape.box(unit, Vector3(x, 0.05, 0.16), Vector3(0.05, 0.1, 0.34), Color("4a4c4e"))
+		else:
+			Shape.box(unit, Vector3(x, -0.28, 0.18), Vector3(0.04, 0.04, 0.36), Color("4a4c4e"))
+			Shape.box(unit, Vector3(x, -0.4, 0.02), Vector3(0.04, 0.24, 0.04), Color("4a4c4e"))
 
 func _window(house: Node3D, face: String, cx: float, cz: float, size: Vector3, y: float, t: float, rng: RandomNumberGenerator) -> void:
 	# Some windows are lit from inside; at dusk they glow.
