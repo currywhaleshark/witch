@@ -1,0 +1,173 @@
+{
+  "passed": true,
+  "date": "2026-10-29",
+  "build": {
+    "passed": true,
+    "blender": "5.1.1",
+    "metrics": {
+      "common": {
+        "parts": 9,
+        "triangles": 1028
+      },
+      "bolt_cutter": {
+        "parts": 7,
+        "triangles": 1256
+      },
+      "grinder": {
+        "parts": 6,
+        "triangles": 1708
+      },
+      "chainsaw": {
+        "parts": 28,
+        "triangles": 2540
+      },
+      "ornament_seal": {
+        "parts": 2,
+        "triangles": 132
+      }
+    },
+    "asset_sha256": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1",
+    "source_sha256": "23f2cdc4735da308a5871b818a3753f63790c21d5d8a63ff2142ced50f0fd02a",
+    "materials": 7,
+    "scope": "Original rigid modular meshes. No new character geometry, rig, clips or gameplay changes."
+  },
+  "source_validation": {
+    "passed": true,
+    "failures": [],
+    "metrics": {
+      "common": {
+        "parts": 9,
+        "triangles": 1028
+      },
+      "bolt_cutter": {
+        "parts": 7,
+        "triangles": 1256
+      },
+      "grinder": {
+        "parts": 6,
+        "triangles": 1708
+      },
+      "chainsaw": {
+        "parts": 28,
+        "triangles": 2540
+      },
+      "ornament_seal": {
+        "parts": 2,
+        "triangles": 132
+      }
+    },
+    "blender": "5.1.1",
+    "source_sha256": "23f2cdc4735da308a5871b818a3753f63790c21d5d8a63ff2142ced50f0fd02a",
+    "scope": "Saved blend reopened, expected groups/rigid meshes/material assignments/finite vertices; no save performed."
+  },
+  "glb_validation": {
+    "passed": true,
+    "all_family_triangles": 6664,
+    "meshes": 52,
+    "materials": 7,
+    "skins": 0,
+    "animations": 0,
+    "runtime_source_bytes_equal": true,
+    "sha256": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1"
+  },
+  "tests": {
+    "staff_visual": {
+      "checks": 156,
+      "failures": [],
+      "execution": {
+        "workspace_cache_diagnostic_only": false,
+        "test": "staff_visual",
+        "changed_inputs": [],
+        "exit_code": 0,
+        "phase": "test",
+        "stderr_empty": true
+      }
+    },
+    "tool_switch": {
+      "checks": 21,
+      "failures": [],
+      "execution": {
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test",
+        "test": "tool_switch",
+        "exit_code": 0,
+        "stderr_empty": true
+      }
+    },
+    "player_visual": {
+      "checks": 192,
+      "failures": [],
+      "execution": {
+        "test": "player_visual",
+        "workspace_cache_diagnostic_only": false,
+        "changed_inputs": [],
+        "exit_code": 0,
+        "stderr_empty": true,
+        "phase": "test"
+      }
+    },
+    "player_motion_v18": {
+      "checks": 787,
+      "failures": [],
+      "execution": {
+        "test": "player_motion_v18",
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test",
+        "stderr_empty": true,
+        "exit_code": 0,
+        "changed_inputs": []
+      }
+    },
+    "hit_block": {
+      "checks": 20,
+      "failures": [],
+      "execution": {
+        "stderr_empty": true,
+        "test": "hit_block",
+        "changed_inputs": [],
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0,
+        "phase": "test"
+      }
+    },
+    "hold_input": {
+      "checks": 41,
+      "failures": [],
+      "execution": {
+        "exit_code": 0,
+        "test": "hold_input",
+        "workspace_cache_diagnostic_only": false,
+        "stderr_empty": true,
+        "changed_inputs": [],
+        "phase": "test"
+      }
+    }
+  },
+  "review_captures": 443,
+  "assertions": 1217,
+  "hashes": {
+    "game/scripts/staff_visual.gd": "ad07e0c83ff68ced64b7fe5cc9c04fec35184a2a97983a8d1b947648f59cfd03",
+    "game/scripts/player_visual.gd": "e1889a6cbf694de4ac39ff1f2474ea029b347cb97e9ddde9d6b990605fbbe4f8",
+    "game/scripts/arena.gd": "557f4df978fd96ef83aa9ce2d957ffba9884d4e6ed8b20037f4e9f1c5c663a5d",
+    "game/data/trial.json": "59b064a99ccaf8f5f068bd89113438b1ca2b852e7682f14652fc236dd41cf403",
+    "game/assets/weapons/staff_transform_v1/staff_parts.glb": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1",
+    "game/assets/weapons/staff_transform_v1/parts.json": "abc97fc918f5512dc00b5066d9538cfaa35c35d16c8909c240790f625466fd6f",
+    "assets/weapons/staff_transform_v1/authoring/staff_transform_v1.blend": "23f2cdc4735da308a5871b818a3753f63790c21d5d8a63ff2142ced50f0fd02a",
+    "assets/weapons/staff_transform_v1/exports/staff_parts.glb": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1",
+    "assets/weapons/staff_transform_v1/parts.json": "abc97fc918f5512dc00b5066d9538cfaa35c35d16c8909c240790f625466fd6f",
+    "tools/build_staff_transform_v1.py": "d52bdff5baa2380848aee3638e0b9a8683ad110cc9c5a59b51927bdadc0ebeab",
+    "tools/run_staff_transform_v1.ps1": "b262fb69617c6c1d43c1d25e3cf8d7907f428346f19ed5526d7572da55cded34",
+    "game/tests/staff_visual.gd": "7e63660838581582e8f135de65bc71abc7f3e140e8ae592a5d68ba9714a57f60",
+    "game/tests/review_staff_visual.gd": "e559078a12b869d65cbadd88f141a9ced2cb60588a2067ae44a80406474c8839"
+  },
+  "user_selected_direction": "aged brass / navy shaft / small teal power core",
+  "user_art_approved": false,
+  "scope": "Integrated prototype candidate; independent modular meshes and one optional equipment seal; no equipment UI or new combat rules.",
+  "limits": [
+    "Simple material finish; no texture wear pass or final performance budget.",
+    "Reserved shaft dimensions verified; arbitrary-pose head/body/cloth clearance not certified.",
+    "Immediate tool toggles persist through hit stun. The assembly is cosmetic, not an interruptible new cast.",
+    "The current cosmetic equipment example is an API/asset contract; no item-to-appearance database or inventory UI."
+  ]
+}

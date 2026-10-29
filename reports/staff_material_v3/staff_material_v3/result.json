@@ -1,0 +1,24 @@
+{
+  "bad_tangent_surfaces": 0,
+  "checks": [
+    "all 52 independently moving rigid meshes import",
+    "55 surfaces preserve a separate emission boundary on three mixed parts",
+    "engine generates complete tangent data for the baked normals",
+    "all parts reuse one body material and one core material",
+    "ordinary surfaces have no emission; original cores retain it",
+    "1K albedo imported",
+    "1K normal map enabled",
+    "512 roughness map imported",
+    "512 metallic map imported",
+    "local cavity map enabled",
+    "256 core emission map enabled",
+    "roughness uses ORM green",
+    "metalness uses ORM blue",
+    "occlusion uses ORM red"
+  ],
+  "failures": [],
+  "materials": 2,
+  "passed": true,
+  "surfaces": 55,
+  "vertices": 13956
+}

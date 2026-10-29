@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\yurib\Documents\New project\witch\tools\validate_staff_source_v2.py", line 41, in <module>
+    if failures:raise RuntimeError(str(failures))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: ['protected mesh changed: grinder_disc uv', 'protected mesh changed: grinder_motor uv', 'protected mesh changed: grinder_mount uv', 'protected mesh changed: saw_gear uv', 'protected mesh changed: saw_motor uv', 'protected mesh changed: saw_spine uv', 'protected mesh changed: saw_tooth_00 uv', 'protected mesh changed: saw_tooth_01 uv', 'protected mesh changed: saw_tooth_05 uv', 'protected mesh changed: saw_tooth_07 uv', 'protected mesh changed: saw_tooth_10 uv', 'protected mesh changed: saw_tooth_12 uv', 'protected mesh changed: saw_tooth_14 uv', 'protected mesh changed: saw_tooth_15 uv', 'protected mesh changed: saw_tooth_16 uv', 'protected mesh changed: saw_tooth_17 uv', 'protected mesh changed: saw_tooth_18 uv', 'protected mesh changed: saw_tooth_19 uv', 'protected mesh changed: saw_tooth_20 uv', 'protected mesh changed: saw_tooth_21 uv']

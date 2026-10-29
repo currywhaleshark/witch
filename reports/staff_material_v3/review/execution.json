@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "changed_inputs": [],
+  "stderr_empty": false,
+  "test": "staff_material_v3",
+  "phase": "review",
+  "workspace_cache_diagnostic_only": true
+}

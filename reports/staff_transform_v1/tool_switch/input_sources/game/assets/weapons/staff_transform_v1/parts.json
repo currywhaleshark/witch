@@ -1,0 +1,668 @@
+{
+  "version": 1,
+  "asset": "res://assets/weapons/staff_transform_v1/staff_parts.glb",
+  "axis": "+Y",
+  "grip_radius_m": 0.01,
+  "reserved_grip_y": [
+    -0.43,
+    0.38
+  ],
+  "assembly_seconds": 0.22,
+  "dissolve_seconds": 0.16,
+  "parts": [
+    {
+      "name": "shaft",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.055,
+        0
+      ]
+    },
+    {
+      "name": "grip_sleeve",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        -0.035,
+        0
+      ]
+    },
+    {
+      "name": "pommel",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        -0.455,
+        0
+      ]
+    },
+    {
+      "name": "upper_ferrule",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.41,
+        0
+      ]
+    },
+    {
+      "name": "ornament_mount",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.465,
+        0
+      ]
+    },
+    {
+      "name": "core_receiver",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.565,
+        0
+      ]
+    },
+    {
+      "name": "teal_core",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.713,
+        0
+      ]
+    },
+    {
+      "name": "core_cage",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.72,
+        0
+      ]
+    },
+    {
+      "name": "receiver_ports",
+      "group": "common",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.605,
+        0
+      ]
+    },
+    {
+      "name": "cutter_saddle",
+      "group": "bolt_cutter",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.65,
+        0.034
+      ]
+    },
+    {
+      "name": "cutter_link_l",
+      "group": "bolt_cutter",
+      "delay": 0.1,
+      "driver": "",
+      "pivot": [
+        -0.046,
+        0.7,
+        0
+      ]
+    },
+    {
+      "name": "cutter_jaw_l",
+      "group": "bolt_cutter",
+      "delay": 0.22,
+      "driver": "jaw",
+      "pivot": [
+        -0.053,
+        0.787,
+        0
+      ],
+      "side": -1
+    },
+    {
+      "name": "cutter_link_r",
+      "group": "bolt_cutter",
+      "delay": 0.1,
+      "driver": "",
+      "pivot": [
+        0.046,
+        0.7,
+        0
+      ]
+    },
+    {
+      "name": "cutter_jaw_r",
+      "group": "bolt_cutter",
+      "delay": 0.22,
+      "driver": "jaw",
+      "pivot": [
+        0.053,
+        0.787,
+        0
+      ],
+      "side": 1
+    },
+    {
+      "name": "cutter_drive",
+      "group": "bolt_cutter",
+      "delay": 0.15,
+      "driver": "drive",
+      "pivot": [
+        0,
+        0.7,
+        -0.049
+      ]
+    },
+    {
+      "name": "cutter_lock",
+      "group": "bolt_cutter",
+      "delay": 0.32,
+      "driver": "",
+      "pivot": [
+        0,
+        0.667,
+        -0.05
+      ]
+    },
+    {
+      "name": "grinder_mount",
+      "group": "grinder",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.64,
+        0.02
+      ]
+    },
+    {
+      "name": "grinder_motor",
+      "group": "grinder",
+      "delay": 0.1,
+      "driver": "",
+      "pivot": [
+        0,
+        0.72,
+        0.055
+      ]
+    },
+    {
+      "name": "grinder_axle",
+      "group": "grinder",
+      "delay": 0.17,
+      "driver": "",
+      "pivot": [
+        0,
+        0.8,
+        0
+      ]
+    },
+    {
+      "name": "grinder_disc",
+      "group": "grinder",
+      "delay": 0.23,
+      "driver": "disc",
+      "pivot": [
+        0,
+        0.8,
+        -0.07
+      ]
+    },
+    {
+      "name": "grinder_guard",
+      "group": "grinder",
+      "delay": 0.3,
+      "driver": "",
+      "pivot": [
+        0,
+        0.8,
+        -0.04
+      ]
+    },
+    {
+      "name": "grinder_status",
+      "group": "grinder",
+      "delay": 0.36,
+      "driver": "",
+      "pivot": [
+        0.049,
+        0.67,
+        -0.04
+      ]
+    },
+    {
+      "name": "saw_motor",
+      "group": "chainsaw",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.64,
+        0.035
+      ]
+    },
+    {
+      "name": "saw_gear",
+      "group": "chainsaw",
+      "delay": 0.09,
+      "driver": "drive",
+      "pivot": [
+        0,
+        0.71,
+        -0.05
+      ]
+    },
+    {
+      "name": "saw_guide_front",
+      "group": "chainsaw",
+      "delay": 0.18,
+      "driver": "",
+      "pivot": [
+        0,
+        0.9,
+        -0.023
+      ]
+    },
+    {
+      "name": "saw_guide_back",
+      "group": "chainsaw",
+      "delay": 0.18,
+      "driver": "",
+      "pivot": [
+        0,
+        0.9,
+        0.023
+      ]
+    },
+    {
+      "name": "saw_spine",
+      "group": "chainsaw",
+      "delay": 0.13,
+      "driver": "",
+      "pivot": [
+        0,
+        0.9,
+        0
+      ]
+    },
+    {
+      "name": "saw_tooth_00",
+      "group": "chainsaw",
+      "delay": 0.24,
+      "driver": "chain",
+      "pivot": [
+        0.069,
+        0.77,
+        0
+      ],
+      "phase": 0.0
+    },
+    {
+      "name": "saw_tooth_01",
+      "group": "chainsaw",
+      "delay": 0.265,
+      "driver": "chain",
+      "pivot": [
+        0.069,
+        0.8142518084634269,
+        0
+      ],
+      "phase": 0.045454545454545456
+    },
+    {
+      "name": "saw_tooth_02",
+      "group": "chainsaw",
+      "delay": 0.29,
+      "driver": "chain",
+      "pivot": [
+        0.069,
+        0.8585036169268538,
+        0
+      ],
+      "phase": 0.09090909090909091
+    },
+    {
+      "name": "saw_tooth_03",
+      "group": "chainsaw",
+      "delay": 0.315,
+      "driver": "chain",
+      "pivot": [
+        0.069,
+        0.9027554253902806,
+        0
+      ],
+      "phase": 0.13636363636363635
+    },
+    {
+      "name": "saw_tooth_04",
+      "group": "chainsaw",
+      "delay": 0.24,
+      "driver": "chain",
+      "pivot": [
+        0.069,
+        0.9470072338537076,
+        0
+      ],
+      "phase": 0.18181818181818182
+    },
+    {
+      "name": "saw_tooth_05",
+      "group": "chainsaw",
+      "delay": 0.265,
+      "driver": "chain",
+      "pivot": [
+        0.069,
+        0.9912590423171345,
+        0
+      ],
+      "phase": 0.22727272727272727
+    },
+    {
+      "name": "saw_tooth_06",
+      "group": "chainsaw",
+      "delay": 0.29,
+      "driver": "chain",
+      "pivot": [
+        0.069,
+        1.0355108507805613,
+        0
+      ],
+      "phase": 0.2727272727272727
+    },
+    {
+      "name": "saw_tooth_07",
+      "group": "chainsaw",
+      "delay": 0.315,
+      "driver": "chain",
+      "pivot": [
+        0.057856550005178926,
+        1.0775981332182627,
+        0
+      ],
+      "phase": 0.3181818181818182
+    },
+    {
+      "name": "saw_tooth_08",
+      "group": "chainsaw",
+      "delay": 0.24,
+      "driver": "chain",
+      "pivot": [
+        0.023866939382692853,
+        1.104740784707191,
+        0
+      ],
+      "phase": 0.36363636363636365
+    },
+    {
+      "name": "saw_tooth_09",
+      "group": "chainsaw",
+      "delay": 0.265,
+      "driver": "chain",
+      "pivot": [
+        -0.01960737169590374,
+        1.1061555060080315,
+        0
+      ],
+      "phase": 0.4090909090909091
+    },
+    {
+      "name": "saw_tooth_10",
+      "group": "chainsaw",
+      "delay": 0.29,
+      "driver": "chain",
+      "pivot": [
+        -0.0552897307237852,
+        1.081280088135702,
+        0
+      ],
+      "phase": 0.45454545454545453
+    },
+    {
+      "name": "saw_tooth_11",
+      "group": "chainsaw",
+      "delay": 0.315,
+      "driver": "chain",
+      "pivot": [
+        -0.069,
+        1.04,
+        0
+      ],
+      "phase": 0.5
+    },
+    {
+      "name": "saw_tooth_12",
+      "group": "chainsaw",
+      "delay": 0.24,
+      "driver": "chain",
+      "pivot": [
+        -0.069,
+        0.9957481915365731,
+        0
+      ],
+      "phase": 0.5454545454545454
+    },
+    {
+      "name": "saw_tooth_13",
+      "group": "chainsaw",
+      "delay": 0.265,
+      "driver": "chain",
+      "pivot": [
+        -0.069,
+        0.9514963830731462,
+        0
+      ],
+      "phase": 0.5909090909090909
+    },
+    {
+      "name": "saw_tooth_14",
+      "group": "chainsaw",
+      "delay": 0.29,
+      "driver": "chain",
+      "pivot": [
+        -0.069,
+        0.9072445746097193,
+        0
+      ],
+      "phase": 0.6363636363636364
+    },
+    {
+      "name": "saw_tooth_15",
+      "group": "chainsaw",
+      "delay": 0.315,
+      "driver": "chain",
+      "pivot": [
+        -0.069,
+        0.8629927661462926,
+        0
+      ],
+      "phase": 0.6818181818181818
+    },
+    {
+      "name": "saw_tooth_16",
+      "group": "chainsaw",
+      "delay": 0.24,
+      "driver": "chain",
+      "pivot": [
+        -0.069,
+        0.8187409576828655,
+        0
+      ],
+      "phase": 0.7272727272727273
+    },
+    {
+      "name": "saw_tooth_17",
+      "group": "chainsaw",
+      "delay": 0.265,
+      "driver": "chain",
+      "pivot": [
+        -0.069,
+        0.7744891492194388,
+        0
+      ],
+      "phase": 0.7727272727272727
+    },
+    {
+      "name": "saw_tooth_18",
+      "group": "chainsaw",
+      "delay": 0.29,
+      "driver": "chain",
+      "pivot": [
+        -0.05785655000517893,
+        0.7324018667817374,
+        0
+      ],
+      "phase": 0.8181818181818182
+    },
+    {
+      "name": "saw_tooth_19",
+      "group": "chainsaw",
+      "delay": 0.315,
+      "driver": "chain",
+      "pivot": [
+        -0.02386693938269286,
+        0.705259215292809,
+        0
+      ],
+      "phase": 0.8636363636363636
+    },
+    {
+      "name": "saw_tooth_20",
+      "group": "chainsaw",
+      "delay": 0.24,
+      "driver": "chain",
+      "pivot": [
+        0.01960737169590367,
+        0.7038444939919686,
+        0
+      ],
+      "phase": 0.9090909090909091
+    },
+    {
+      "name": "saw_tooth_21",
+      "group": "chainsaw",
+      "delay": 0.265,
+      "driver": "chain",
+      "pivot": [
+        0.05528973072378527,
+        0.7287199118642981,
+        0
+      ],
+      "phase": 0.9545454545454546
+    },
+    {
+      "name": "saw_nose",
+      "group": "chainsaw",
+      "delay": 0.31,
+      "driver": "",
+      "pivot": [
+        0,
+        1.04,
+        0
+      ]
+    },
+    {
+      "name": "seal_plate",
+      "group": "ornament_seal",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.474,
+        0
+      ]
+    },
+    {
+      "name": "seal_inlay",
+      "group": "ornament_seal",
+      "delay": 0,
+      "driver": "",
+      "pivot": [
+        0,
+        0.475,
+        -0.007
+      ]
+    }
+  ],
+  "metrics": {
+    "common": {
+      "parts": 9,
+      "triangles": 1028
+    },
+    "bolt_cutter": {
+      "parts": 7,
+      "triangles": 1256
+    },
+    "grinder": {
+      "parts": 6,
+      "triangles": 1708
+    },
+    "chainsaw": {
+      "parts": 28,
+      "triangles": 2540
+    },
+    "ornament_seal": {
+      "parts": 2,
+      "triangles": 132
+    }
+  },
+  "sockets": {
+    "mediator_seal": {
+      "position": [
+        0,
+        0.474,
+        -0.036
+      ],
+      "max_half_extent": [
+        0.04,
+        0.045,
+        0.025
+      ],
+      "exclusive_to_tools": false
+    },
+    "future_side_l": {
+      "position": [
+        -0.04,
+        0.525,
+        0
+      ]
+    },
+    "future_side_r": {
+      "position": [
+        0.04,
+        0.525,
+        0
+      ]
+    }
+  },
+  "appearance_profiles": {
+    "basic": [],
+    "seal": [
+      "ornament_seal"
+    ]
+  },
+  "policy": "Common shaft/core and equipment ornaments persist; skill tool modules assemble independently. No equipment UI or stats."
+}

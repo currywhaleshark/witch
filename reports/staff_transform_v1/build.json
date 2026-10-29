@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "blender": "5.1.1",
+  "metrics": {
+    "common": {
+      "parts": 9,
+      "triangles": 1028
+    },
+    "bolt_cutter": {
+      "parts": 7,
+      "triangles": 1256
+    },
+    "grinder": {
+      "parts": 6,
+      "triangles": 1708
+    },
+    "chainsaw": {
+      "parts": 28,
+      "triangles": 2540
+    },
+    "ornament_seal": {
+      "parts": 2,
+      "triangles": 132
+    }
+  },
+  "asset_sha256": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1",
+  "source_sha256": "23f2cdc4735da308a5871b818a3753f63790c21d5d8a63ff2142ced50f0fd02a",
+  "materials": 7,
+  "scope": "Original rigid modular meshes. No new character geometry, rig, clips or gameplay changes."
+}

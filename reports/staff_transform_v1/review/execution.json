@@ -1,0 +1,8 @@
+{
+  "test": "staff_visual",
+  "phase": "review",
+  "stderr_empty": false,
+  "exit_code": 0,
+  "workspace_cache_diagnostic_only": true,
+  "changed_inputs": []
+}

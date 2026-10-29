@@ -1,0 +1,6 @@
+00:02.969  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\weapons\staff_transform_v2\authoring\staff_transform_v2.blend"
+00:03.000  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\weapons\staff_material_v3\authoring\staff_material_v3.blend"
+STAFF_MATERIAL_SOURCE_COMPLETE {"passed": true, "saved_geometry_preserved": 52, "packed_images": {"Staff_color": [1024, 1024], "Staff_emission": [256, 256], "Staff_normal": [1024, 1024], "Staff_orm": [512, 512]}, "editable_procedural_materials": ["Aged_Brass", "Brass_Edge", "Cutting_Steel", "Enamel_Navy", "Navy_Grip", "Oiled_Steel", "Teal_Core"], "blend_sha256": "2a6e7a92229d4568b0da0ed5a643eb1b4cf724204c04316a8b6b22a646a3844e"}
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "javascript_syntax": "node --check passed",
+  "referenced_images": 298,
+  "browser_interaction_tested": false,
+  "manual_images_inspected": [
+    "cutter_detail.jpg",
+    "pair_0.jpg",
+    "lineup.jpg",
+    "core_seal.jpg",
+    "turntable/015.jpg",
+    "native/027.jpg"
+  ],
+  "checks": 448,
+  "geometry_and_mechanisms_preserved": true,
+  "scope": "Current final GPU captures; same-light material comparison and ordinary game lighting.",
+  "inspected_image_hashes": {
+    "cutter_detail.jpg": "b5844492224b5c28a1d551a802f5ce12c3b422dcd3d7fa1a43877ffe3235057a",
+    "pair_0.jpg": "95cbbb63bf083343cab49699df2c4a5bb011da625d610ea480f629336eb57a90",
+    "lineup.jpg": "1fd304a3c323e3081cf218bb65041541ad43311f814ba8da4736b0e46e0d5c88",
+    "core_seal.jpg": "30274b760b06a62acaf9e4c3a7942741ed911c5634534e0fdd38628e3a5e50d6",
+    "turntable/015.jpg": "dbdc0ca306d9c772cb3063edb28e7fbd18dd3e17840d7aa17b74ea31940c76b2",
+    "native/027.jpg": "162bd85b27b7f5f91c2f3b6c0e32aebd2de02bdcb14406c85ceb58df6d8471ba"
+  }
+}

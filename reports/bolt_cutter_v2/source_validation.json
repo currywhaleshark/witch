@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "failures": [],
+  "protected_meshes_unchanged": 45,
+  "metrics": {
+    "common": {
+      "parts": 9,
+      "triangles": 1028
+    },
+    "bolt_cutter": {
+      "parts": 7,
+      "triangles": 1908
+    },
+    "grinder": {
+      "parts": 6,
+      "triangles": 1708
+    },
+    "chainsaw": {
+      "parts": 28,
+      "triangles": 2540
+    },
+    "ornament_seal": {
+      "parts": 2,
+      "triangles": 132
+    }
+  },
+  "blender": "5.1.1",
+  "source_sha256": "c730d121823c3333dadeb181b7811276b437671c13557b0befd4eb83481528cf",
+  "scope": "Both saved sources reopened; all 45 non-cutter meshes compare exactly in coordinates, topology, materials, normals mode and world transforms."
+}

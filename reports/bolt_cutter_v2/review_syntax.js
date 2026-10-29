@@ -1,0 +1,12 @@
+
+const plans=[{"id": "swing", "label": "휘두르기 · 타격 순간 닫힘", "frames": 46, "fps": 30}, {"id": "swing_side", "label": "휘두르기 · 반대 각도", "frames": 46, "fps": 30}, {"id": "thrust", "label": "찌르기 · 같은 타격 시점", "frames": 46, "fps": 30}, {"id": "head", "label": "날 확대 · 실제 타격 60fps", "frames": 91, "fps": 60}, {"id": "fast", "label": "빠른 공격 · IAS 40", "frames": 46, "fps": 30}, {"id": "native", "label": "실제 게임 표시 크기", "frames": 46, "fps": 30}, {"id": "assembly", "label": "부품 생성 · 조립", "frames": 31, "fps": 30}];
+const impacts={"swing": 27, "swing_side": 27, "thrust": 27, "head": 53, "fast": 20, "native": 27};
+const head=plans.find(p=>p.id==='head');let choice=0,position=0,playing=true,last=0;
+const picture=document.getElementById('frame'),slider=document.getElementById('scrub'),stamp=document.getElementById('stamp'),play=document.getElementById('play'),detail=document.getElementById('detail'),detailFrame=document.getElementById('detailFrame'),live=document.getElementById('live'),impact=document.getElementById('impact');
+function src(p,f){return `review/${p.id}/${String(f).padStart(3,'0')}.jpg`}
+function draw(){let p=plans[choice],f=Math.min(p.frames-1,Math.floor(position));picture.src=src(p,f);slider.value=f;stamp.textContent=`${(f/p.fps).toFixed(2)}초 · ${f+1}/${p.frames}`;let paired=['swing','swing_side','native'].includes(p.id);detail.hidden=!paired;live.classList.toggle('solo',!paired);if(paired)detailFrame.src=src(head,Math.min(head.frames-1,Math.round(f/p.fps*head.fps)));impact.disabled=!(p.id in impacts)}
+function select(i){choice=i;position=0;slider.max=plans[i].frames-1;document.querySelectorAll('#tabs button').forEach((b,n)=>b.setAttribute('aria-pressed',n===i));draw()}
+plans.forEach((p,i)=>{let b=document.createElement('button');b.textContent=p.label;b.onclick=()=>select(i);document.getElementById('tabs').appendChild(b)});
+function pause(){playing=false;play.textContent='재생'}
+play.onclick=()=>{playing=!playing;play.textContent=playing?'일시정지':'재생'};slider.oninput=()=>{position=+slider.value;pause();draw()};impact.onclick=()=>{position=impacts[plans[choice].id]||0;pause();draw()};
+function tick(t){if(last&&playing){let p=plans[choice],old=Math.floor(position);position=(position+Math.min((t-last)/1000,.1)*p.fps*+document.getElementById('speed').value)%p.frames;if(Math.floor(position)!==old)draw()}last=t;requestAnimationFrame(tick)}select(0);requestAnimationFrame(tick);

@@ -1,0 +1,8 @@
+{
+  "phase": "import",
+  "exit_code": 0,
+  "changed_inputs": [],
+  "stderr_empty": false,
+  "workspace_cache_diagnostic_only": true,
+  "test": "staff_material_v3"
+}

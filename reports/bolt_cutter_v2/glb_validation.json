@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "protected_meshes_geometry_indices_materials_unchanged": 45,
+  "protected_uv_export_rounding_max": 0.0,
+  "meshes": 52,
+  "triangles": 7316,
+  "materials": 7,
+  "closed_edge_gap_m": 0.002,
+  "edges": {
+    "cutter_jaw_l": {
+      "straight_edge_vertices": 8,
+      "y_span": [
+        0.932,
+        1.226
+      ],
+      "x": -0.001
+    },
+    "cutter_jaw_r": {
+      "straight_edge_vertices": 8,
+      "y_span": [
+        0.932,
+        1.226
+      ],
+      "x": 0.001
+    }
+  },
+  "runtime_identical": true,
+  "asset_sha256": "6727a3d859c9891058e543902140f030859a4e3e4cc64251c015f5b90ce27ec4"
+}

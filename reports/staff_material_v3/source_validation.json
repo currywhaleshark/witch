@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "saved_geometry_preserved": 52,
+  "packed_images": {
+    "Staff_color": [
+      1024,
+      1024
+    ],
+    "Staff_emission": [
+      256,
+      256
+    ],
+    "Staff_normal": [
+      1024,
+      1024
+    ],
+    "Staff_orm": [
+      512,
+      512
+    ]
+  },
+  "editable_procedural_materials": [
+    "Aged_Brass",
+    "Brass_Edge",
+    "Cutting_Steel",
+    "Enamel_Navy",
+    "Navy_Grip",
+    "Oiled_Steel",
+    "Teal_Core"
+  ],
+  "blend_sha256": "2a6e7a92229d4568b0da0ed5a643eb1b4cf724204c04316a8b6b22a646a3844e"
+}

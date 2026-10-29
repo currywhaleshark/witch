@@ -1,0 +1,18 @@
+{
+  "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+  "game/scripts/shotgun_cast.gd": "19782625e8b20ae859fcb7fd9bdc1e18169b4ca240418b2b0a4646ae545265f6",
+  "game/scripts/shotgun_geometry.gd": "dc746314f74dae56e895cc089d9cffd49bfe74f28f3bfd1e26b578c5a265b3af",
+  "game/tests/staff_visual.gd": "7e63660838581582e8f135de65bc71abc7f3e140e8ae592a5d68ba9714a57f60",
+  "game/scripts/arena.gd": "557f4df978fd96ef83aa9ce2d957ffba9884d4e6ed8b20037f4e9f1c5c663a5d",
+  "game/scripts/turret_assembly.gd": "ea1b33b1dfeda6c34b29dbddab5f22f2603512055d20ea498061dace37778052",
+  "game/tests/bolt_cutter_v2.gd": "d6e8f5148f57e510e01190fd97e2b4376129efef85568f9225f64f644d62f330",
+  "game/scripts/automaton_assembly.gd": "a3e35dc2e18180c07da30c24302b460bc3a1057e8ffb8fed62706c5277516541",
+  "game/assets/weapons/staff_transform_v2/parts.json": "a5c2d7c63d10a71a614d268f0553be13fd7f1f1a704a013b5343abe038d96c9c",
+  "game/scripts/staff_visual.gd": "a676ee5a0b9ccda30602377bb375a13ba864c53a8a6af04500a8a991512b6b1f",
+  "game/assets/weapons/staff_transform_v2/staff_parts.glb": "6727a3d859c9891058e543902140f030859a4e3e4cc64251c015f5b90ce27ec4",
+  "game/scripts/player_visual.gd": "3050a6e9cc07000d5b14219f7e5307c37dfc4c4486535a65f391a37e03098812",
+  "game/scripts/actor_visual.gd": "327b351f1e2410dd2dead9679526477b2131a7326b9f7136cf8eccd698c535d6",
+  "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+  "game/data/trial.json": "59b064a99ccaf8f5f068bd89113438b1ca2b852e7682f14652fc236dd41cf403",
+  "game/tests/player_visual.gd": "703d343d146420bb6ca6d757bc6f3562c8e7a6675886e655295da7a3f9f57af8"
+}

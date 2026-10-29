@@ -1,0 +1,770 @@
+{
+  "passed": true,
+  "date": "2026-10-29",
+  "user_art_approved": false,
+  "build": {
+    "passed": true,
+    "blender": "5.1.1",
+    "metrics": {
+      "common": {
+        "parts": 9,
+        "triangles": 1028
+      },
+      "bolt_cutter": {
+        "parts": 7,
+        "triangles": 1908
+      },
+      "grinder": {
+        "parts": 6,
+        "triangles": 1708
+      },
+      "chainsaw": {
+        "parts": 28,
+        "triangles": 2540
+      },
+      "ornament_seal": {
+        "parts": 2,
+        "triangles": 132
+      }
+    },
+    "asset_sha256": "6727a3d859c9891058e543902140f030859a4e3e4cc64251c015f5b90ce27ec4",
+    "source_sha256": "c730d121823c3333dadeb181b7811276b437671c13557b0befd4eb83481528cf",
+    "materials": 7,
+    "scope": "Original rigid modular meshes. No new character geometry, rig, clips or gameplay changes."
+  },
+  "source_validation": {
+    "passed": true,
+    "failures": [],
+    "protected_meshes_unchanged": 45,
+    "metrics": {
+      "common": {
+        "parts": 9,
+        "triangles": 1028
+      },
+      "bolt_cutter": {
+        "parts": 7,
+        "triangles": 1908
+      },
+      "grinder": {
+        "parts": 6,
+        "triangles": 1708
+      },
+      "chainsaw": {
+        "parts": 28,
+        "triangles": 2540
+      },
+      "ornament_seal": {
+        "parts": 2,
+        "triangles": 132
+      }
+    },
+    "blender": "5.1.1",
+    "source_sha256": "c730d121823c3333dadeb181b7811276b437671c13557b0befd4eb83481528cf",
+    "scope": "Both saved sources reopened; all 45 non-cutter meshes compare exactly in coordinates, topology, materials, normals mode and world transforms."
+  },
+  "glb_validation": {
+    "passed": true,
+    "protected_meshes_geometry_indices_materials_unchanged": 45,
+    "protected_uv_export_rounding_max": 0.0,
+    "meshes": 52,
+    "triangles": 7316,
+    "materials": 7,
+    "closed_edge_gap_m": 0.002,
+    "edges": {
+      "cutter_jaw_l": {
+        "straight_edge_vertices": 8,
+        "y_span": [
+          0.932,
+          1.226
+        ],
+        "x": -0.001
+      },
+      "cutter_jaw_r": {
+        "straight_edge_vertices": 8,
+        "y_span": [
+          0.932,
+          1.226
+        ],
+        "x": 0.001
+      }
+    },
+    "runtime_identical": true,
+    "asset_sha256": "6727a3d859c9891058e543902140f030859a4e3e4cc64251c015f5b90ce27ec4"
+  },
+  "tests": {
+    "bolt_cutter_v2": {
+      "checks": 278,
+      "execution": {
+        "test": "bolt_cutter_v2",
+        "changed_inputs": [],
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": false,
+        "stderr_empty": true,
+        "phase": "test"
+      }
+    },
+    "staff_visual": {
+      "checks": 156,
+      "execution": {
+        "test": "staff_visual",
+        "changed_inputs": [],
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": false,
+        "stderr_empty": true,
+        "phase": "test"
+      }
+    },
+    "tool_switch": {
+      "checks": 21,
+      "execution": {
+        "test": "tool_switch",
+        "changed_inputs": [],
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": false,
+        "stderr_empty": true,
+        "phase": "test"
+      }
+    },
+    "player_visual": {
+      "checks": 192,
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "changed_inputs": [],
+        "phase": "test",
+        "test": "player_visual"
+      }
+    },
+    "player_motion_v18": {
+      "checks": 787,
+      "execution": {
+        "exit_code": 0,
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "changed_inputs": [],
+        "phase": "test",
+        "test": "player_motion_v18"
+      }
+    }
+  },
+  "assertions": 1434,
+  "captures": 357,
+  "actual_release_observations": {
+    "swing": {
+      "first_capture_with_damage": 27,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9966.0,
+        "motion": "attack",
+        "phase": 0.517857142857143,
+        "seconds": 0.9,
+        "staff": {
+          "active_tool": "bolt_cutter",
+          "appearance": "basic",
+          "effects": false,
+          "elapsed": 0.833333333333334,
+          "groups": {
+            "bolt_cutter": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.916666666666668,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    },
+    "swing_side": {
+      "first_capture_with_damage": 27,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9966.0,
+        "motion": "attack",
+        "phase": 0.517857142857143,
+        "seconds": 0.9,
+        "staff": {
+          "active_tool": "bolt_cutter",
+          "appearance": "basic",
+          "effects": false,
+          "elapsed": 0.833333333333334,
+          "groups": {
+            "bolt_cutter": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.916666666666668,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    },
+    "thrust": {
+      "first_capture_with_damage": 27,
+      "sample": {
+        "clip": "combat_thrust_rh_v20",
+        "hp": 9966.0,
+        "motion": "attack",
+        "phase": 0.517857142857143,
+        "seconds": 0.9,
+        "staff": {
+          "active_tool": "bolt_cutter",
+          "appearance": "basic",
+          "effects": false,
+          "elapsed": 0.833333333333334,
+          "groups": {
+            "bolt_cutter": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.916666666666668,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    },
+    "head": {
+      "first_capture_with_damage": 53,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9966.0,
+        "motion": "attack",
+        "phase": 0.5,
+        "seconds": 0.883333333333333,
+        "staff": {
+          "active_tool": "bolt_cutter",
+          "appearance": "basic",
+          "effects": false,
+          "elapsed": 0.816666666666668,
+          "groups": {
+            "bolt_cutter": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.900000000000001,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    },
+    "fast": {
+      "first_capture_with_damage": 20,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9966.0,
+        "motion": "attack",
+        "phase": 0.5,
+        "seconds": 0.666666666666667,
+        "staff": {
+          "active_tool": "bolt_cutter",
+          "appearance": "basic",
+          "effects": false,
+          "elapsed": 0.6,
+          "groups": {
+            "bolt_cutter": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.683333333333334,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    },
+    "native": {
+      "first_capture_with_damage": 27,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9966.0,
+        "motion": "attack",
+        "phase": 0.517857142857143,
+        "seconds": 0.9,
+        "staff": {
+          "active_tool": "bolt_cutter",
+          "appearance": "basic",
+          "effects": false,
+          "elapsed": 0.833333333333334,
+          "groups": {
+            "bolt_cutter": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.916666666666668,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    }
+  },
+  "hashes": {
+    "game/scripts/staff_visual.gd": "a676ee5a0b9ccda30602377bb375a13ba864c53a8a6af04500a8a991512b6b1f",
+    "game/scripts/player_visual.gd": "3050a6e9cc07000d5b14219f7e5307c37dfc4c4486535a65f391a37e03098812",
+    "game/scripts/arena.gd": "557f4df978fd96ef83aa9ce2d957ffba9884d4e6ed8b20037f4e9f1c5c663a5d",
+    "game/data/trial.json": "59b064a99ccaf8f5f068bd89113438b1ca2b852e7682f14652fc236dd41cf403",
+    "assets/weapons/staff_transform_v1/authoring/staff_transform_v1.blend": "23f2cdc4735da308a5871b818a3753f63790c21d5d8a63ff2142ced50f0fd02a",
+    "assets/weapons/staff_transform_v1/exports/staff_parts.glb": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1",
+    "assets/weapons/staff_transform_v2/authoring/staff_transform_v2.blend": "c730d121823c3333dadeb181b7811276b437671c13557b0befd4eb83481528cf",
+    "assets/weapons/staff_transform_v2/exports/staff_parts.glb": "6727a3d859c9891058e543902140f030859a4e3e4cc64251c015f5b90ce27ec4",
+    "assets/weapons/staff_transform_v2/parts.json": "a5c2d7c63d10a71a614d268f0553be13fd7f1f1a704a013b5343abe038d96c9c",
+    "game/assets/weapons/staff_transform_v2/staff_parts.glb": "6727a3d859c9891058e543902140f030859a4e3e4cc64251c015f5b90ce27ec4",
+    "game/assets/weapons/staff_transform_v2/parts.json": "a5c2d7c63d10a71a614d268f0553be13fd7f1f1a704a013b5343abe038d96c9c",
+    "tools/build_staff_transform_v2.py": "46b7566db9794e84d1a4b3d096fde7cf9b217d6cf17eebd90d57995a603eda9d",
+    "tools/validate_staff_source_v2.py": "45239328b64dcce4569daa1ce132742d3ad36e0c953f843f5dac41669d5e82ec",
+    "tools/validate_staff_glb_v2.py": "52e0ca143f441fb6a10e1266879e096adc82370c0b051bdb8456fd2f7f3e1337",
+    "tools/run_bolt_cutter_v2.ps1": "36bea0bf5afe2c1b58387572a6c2b5a3f4d12c85360f0f45c8847e0a77c51496",
+    "tools/package_bolt_cutter_v2.py": "4bed79d28d3ef5de0d3c67c2a15757157455ef528c0e356d5dd4652e11bff05a",
+    "game/tests/bolt_cutter_v2.gd": "d6e8f5148f57e510e01190fd97e2b4376129efef85568f9225f64f644d62f330",
+    "game/tests/review_bolt_cutter_v2.gd": "dcc2dd9d5e1ccee5be1535c83ce6d8a1374b1fa8d2efcc0d56a5b556e936d318"
+  },
+  "image_hashes": {
+    "review/swing/000.jpg": "d641e8e9892de67f67d83fd151dec7fbc134a8ba0907842a29e391e3298e8432",
+    "review/swing/001.jpg": "8870b1bf4917d93374f715d82c6ae6b8db6e051a48a31496e695ff55e51432a3",
+    "review/swing/002.jpg": "19ad38c70301cb5c9e446400e6cc8051558d592679d817c9b506cb16ecbee44a",
+    "review/swing/003.jpg": "08813b077d6ce4297f198828d42b4560f27a79bf71a034ab98c0fd36e1feeff0",
+    "review/swing/004.jpg": "c8bbe49a573fe2ddb8ab9e40d3a8eb64730d861efd87b829b75b2a2ab59beecc",
+    "review/swing/005.jpg": "28a185462f0f9c7abb0fa3a26e2dc297cfc8e75d16774da07b5687dd177c71b1",
+    "review/swing/006.jpg": "0242d376223267231434929361a5851cac4dfc38de228fa4afce379383ad0e14",
+    "review/swing/007.jpg": "45f8c924aa84fe5798e3ff6e1df98d673857de68eb6eece4da0f944dcf0c77e3",
+    "review/swing/008.jpg": "11b038da86987b04edb37397067b498b094374270ccd161db818b19c3494a21b",
+    "review/swing/009.jpg": "4a4f46d262ff9bfd0110de5335d8758b8bba7d634beff96a0e6c2ae1b6c45f82",
+    "review/swing/010.jpg": "20278d6042a757d34f7ab7d2d5a60c9eb330702332ed25018b84b00709ec1a24",
+    "review/swing/011.jpg": "e75185b03f8333598a5988716b69530c86a72f324f784402031856b9260f305d",
+    "review/swing/012.jpg": "9b9312633c4dcc346aecb366c2b1a919fca1e475b948c227454e341a0c0a728e",
+    "review/swing/013.jpg": "6cea928f1ee4e172a5d9c87c323d7b13de2d6718e48fbe4871541c3c07ab7c5d",
+    "review/swing/014.jpg": "ba9bbbf95dd1b41329fd2014954cf334ce04f65303832f22fca1a711c2a60022",
+    "review/swing/015.jpg": "807ef945b6529c768c3cd43e3df768cf6c876205bd85b4ce78f3845028cf0d5e",
+    "review/swing/016.jpg": "a6beac0e9240d10f686e639b69d9661bb320114f39b94495103fdfcc9ff61fd0",
+    "review/swing/017.jpg": "7d9598c7acd295d80522a3b6bd967fb06e96c0e73ce6f940e92eaa153fed5ad5",
+    "review/swing/018.jpg": "c3b71c904b56455117984f11bd88fd1dfa75d24617f4734eb2f5c79fd898ecb7",
+    "review/swing/019.jpg": "f0dcbba942b50f614bfa9aeaae5e7c6e15cfe6ecfaa4825001e2156dbb8f647b",
+    "review/swing/020.jpg": "c59574a01d671b660e34515c1effe9c4ffc63ffc984b952e341daa2530157b9d",
+    "review/swing/021.jpg": "22fd6e418bfb13d881132b3dc511840f51071fe472f8eb7600839d3c4e10ea4f",
+    "review/swing/022.jpg": "669b52c460677b2298b8d4dd4ffce7d721a38cb0a6f3598cb376a0fb41a42368",
+    "review/swing/023.jpg": "9679b2db2bf08a63ac9de201dd83b6045b9709558172de53718d46f1f9cc2d09",
+    "review/swing/024.jpg": "70ab07b671d01da5f78171362edac40e5645bdf16ccf37b698cf0367d328080e",
+    "review/swing/025.jpg": "4fa79a38174a8777d0d5572dcd0f3a96ff24dfd68486075ae40fd68e07041c6f",
+    "review/swing/026.jpg": "3952c7f9f341bcc982bc55341e5e6268c8fc0ef21f4e879490b203d3c84e6c69",
+    "review/swing/027.jpg": "714f66c2a78c65e35ce2aff042a12106cc8b1ce8615e319c5f19358fa7769fda",
+    "review/swing/028.jpg": "f221c4119f32c0a2c03d60934e660ba2790f540f22855d74b94422fb09466a42",
+    "review/swing/029.jpg": "3cf55bc38f0b01311df5130d9d9a021793ee1f41d0dde93071e8603d2cebf034",
+    "review/swing/030.jpg": "a1613adfe88099b7192e06df8869ee2f649daabd984cb8ccbd1908573b7c3156",
+    "review/swing/031.jpg": "e6a8efed1536525234c1d6fa74832dc8b7b223581eab616931e8840a43b81e7e",
+    "review/swing/032.jpg": "c483de56880c6704ef8cf50dad6cb2e571d24df86558ffa0cd012ab971383a43",
+    "review/swing/033.jpg": "9696054ab7557d016479085710ebaafa7767e9a3238c72c2e3f474b8d3c2d5ba",
+    "review/swing/034.jpg": "4bf1a916703e7a1798254bc3430bd5d85d446348fa2ce42c5e6123fdd4fb735a",
+    "review/swing/035.jpg": "aaa316f93417afc543098377ef0866903fc9c180ecb59ba028cb6b4d56c35478",
+    "review/swing/036.jpg": "2d0cc3228e15bcf671c133684f6d7fc823731af43d004c9c112fef2ea7546412",
+    "review/swing/037.jpg": "0ad90673ba6948106a16b07bff1360b4904c0c664d9398df0af3e338f8322870",
+    "review/swing/038.jpg": "29df5c8eee8bad500f84f7d398c6300c841aa8b07d9d1da262f5388fe09eebdb",
+    "review/swing/039.jpg": "989601d1c985ef14785f12e89ce7dd8b2f72ac5ea78aee53133b884084aee53c",
+    "review/swing/040.jpg": "1aaf14c19375ae8c4670588b65ae7ea7923d18741b3b0cd7f9e2c160a0938033",
+    "review/swing/041.jpg": "f5f94da8bae5ac11b095db2c8b6f4aebfe238c114dc8d9ed8d26bbf30daac557",
+    "review/swing/042.jpg": "6ed04cce8b565318b9b5ec7ff18419d6ba6787b2fede0512ed8e66905a0f95b0",
+    "review/swing/043.jpg": "e06b6b99d8b10b7ae4b3d181b9f136461463c1ae0e0a2387a6a942d3a5be1be1",
+    "review/swing/044.jpg": "dac92f22cd2e8b36ff32e3fa3cc9f96cf569498adde299f3dc1bd21b2df9c770",
+    "review/swing/045.jpg": "0bdeaeb19ab2214cc2f664074aa2f52edad87ddd98b26491828c300e0ef5a7d6",
+    "review/swing_side/000.jpg": "65105180be57d6d757d92e960c0e835a9da42addbd1e30b26dbdf0a1784ad460",
+    "review/swing_side/001.jpg": "077e3110da16d8f15383efed1cad66ebca922d6150faef2c0d6cfdec17b9685c",
+    "review/swing_side/002.jpg": "ddc2d1906e551ab99b306ba490cd37506d67a6c522b5c38ec69cc1d6a642b6a8",
+    "review/swing_side/003.jpg": "665f1aa7c4941c3e27f2409ca229c10b5e9df0cf438aa61523fd6ef493c7ee8e",
+    "review/swing_side/004.jpg": "467b36679782eee01ca7d071c126a22f334d3f795d118b929726fab73c7d5e72",
+    "review/swing_side/005.jpg": "3664cb236c85f7e5baa150639f65d82f484df62f6537c8cb51bcf13a5e5331e7",
+    "review/swing_side/006.jpg": "8f27f8d930e2931e84315eb90ac8c773c2260b2307a9c90e9419c2a3e38cd669",
+    "review/swing_side/007.jpg": "9d04b3e6dee3174a35296528fd6fe26cd8cc99fd84797c4d0081f50c164cdc4b",
+    "review/swing_side/008.jpg": "fcdbee45cf3ba0678e57957686f9326b05bd57d6bae077ac1819fb6276419664",
+    "review/swing_side/009.jpg": "f72a88e620ff6926d9e8e1fb29fb3f074503a470c5146c3bf3173a3befabaead",
+    "review/swing_side/010.jpg": "1c4a5487de23fb41d4b3f6afbf41ffcf337bf5fa32bf2b1a6b94493002e30bdd",
+    "review/swing_side/011.jpg": "e59eccb6516054649c53845bd587fef53db42e47ba741f4bd21d59b802e7782c",
+    "review/swing_side/012.jpg": "742e6a3c8c2dcb81ed83250e6057f66c12bc666ade9a9796a00ead4a5c969f1c",
+    "review/swing_side/013.jpg": "ac5e9561287ecb72f584058b97a3c8317fcdeb2c89e46612ea76fc52da8ecbf8",
+    "review/swing_side/014.jpg": "159b1a2a448772253fca0c5cec701a9e8bdcb1af01c637893d3d7aaa1b582b90",
+    "review/swing_side/015.jpg": "b570fe3fd8a161af94748d0e5af79911b5252d72f3dfae8c3a00d2d6b0d15c68",
+    "review/swing_side/016.jpg": "745b1f048acab1abad9c233a721b14bb092167bea6b13b6f479aaceda6710fb6",
+    "review/swing_side/017.jpg": "9781f592cca6acbce35ff9c9dd9c6567438ef82fcd20bd85621365321265af90",
+    "review/swing_side/018.jpg": "dbcf1da52413b6c865302453cdeab7a888e6264f97e953699255c4053a53e01c",
+    "review/swing_side/019.jpg": "68424bd2b085dbf8e1509053edefbdc285bffd4f59a1b482bd680c597e745947",
+    "review/swing_side/020.jpg": "9251c9f1d6ca0477caa464d6131765db376b2bad133e8d8b84b258cd13e5462c",
+    "review/swing_side/021.jpg": "7858a1f8d3cc777abe9a8b1bcc3bf00d958bf529cacd0a50c893e61483fdbe1c",
+    "review/swing_side/022.jpg": "97bfed7709b2a69d49ef7cb1eb021a010dec436fde0276c95d8b91b162c613dc",
+    "review/swing_side/023.jpg": "fc28e567fc812b89484a7b4e5a47aa869072e1314b23f925983e7fd37a6aa6c9",
+    "review/swing_side/024.jpg": "c4e29e6a0da59d7a1ffa41aec5dd8ef438ac83299026ae59c19a44746880e348",
+    "review/swing_side/025.jpg": "c2da3d426f71537a00cf9f763435f7d06798ebcd3fd740c39111a43f9c886939",
+    "review/swing_side/026.jpg": "a601a61a5f6d16faa2d2d9cc3ecf7677a64cd81df9eabe1bc4e9d15510770ffe",
+    "review/swing_side/027.jpg": "7a0b03289c116fb7c6aca67d8ed2f85799e0c156b3d27de785b060201dc00ca3",
+    "review/swing_side/028.jpg": "d2a93b53dcab6a5b5adcdba0128c2a71b7a1943b412de8e3c719643662087c61",
+    "review/swing_side/029.jpg": "e53d94566e16475d0722920f60afc329ff14a735f00ca5509e9b9d1989d7c965",
+    "review/swing_side/030.jpg": "4e9a3f936b6c2d6f61c0588836d8736e9d0c6f84d606c31f9cda684a8eeec5c9",
+    "review/swing_side/031.jpg": "d4903bbc0d605ab8089fcd1d24e713f30bb1138ba84fe141f755b547f7ee925a",
+    "review/swing_side/032.jpg": "8c60c41f266c519910a50b9f00c75915f65f9da073f9b90cfd8e666b8a06e5c1",
+    "review/swing_side/033.jpg": "a3399e2d56240fd98c5007d9341f1ed351ef84c3876838fcdf858c6295105f25",
+    "review/swing_side/034.jpg": "428327eee57bf308f2f5ed57ea47b1e3d88cbb971b2f805eb235df449e5d1b02",
+    "review/swing_side/035.jpg": "0bebfd2bfba01a26fe463d1ef20e4f2c7eed6d0b946c851b16a021c2efe204c1",
+    "review/swing_side/036.jpg": "e00f19716aed628fc5727cebb2ea0ccb13b95c0ab8f0a6dea00d31042c1b5871",
+    "review/swing_side/037.jpg": "0a2561128ac04940ae0bb63e0f8d7c0a185cf1baafa7661b382d8aed9f5b10e0",
+    "review/swing_side/038.jpg": "1218342a764dc8f8b51954f38d75d4700cafd9fa5fa76df27ce668b676b0fcc9",
+    "review/swing_side/039.jpg": "f3fee9a4b91e63e59018831bc064b4bd1269de5db919b14915c0d707597d128f",
+    "review/swing_side/040.jpg": "9ce444c2d7216158b5ef8cb9e44e54954dd4cb041747916dddbd9e9ce96e0b3c",
+    "review/swing_side/041.jpg": "822785a6a6ab5d357de3cdb30e942b3b75254f1560547264118ea2646a5310a0",
+    "review/swing_side/042.jpg": "2f4083390abd3c9d6f1beff89940a64586b8b350d4fe1723aa506c525d64d344",
+    "review/swing_side/043.jpg": "a7815c9c46b310ac3633e74fd62a3ad50bcb5fd342a6192c3e50b9a0abec7bf6",
+    "review/swing_side/044.jpg": "6a2929b052049a393d0efaeaa310f9e07cc621f6b38e77853f74ab0b87d31033",
+    "review/swing_side/045.jpg": "b2a8cc661396794fb946f2277985e23719079e6ad6c61885243422f72cc10a23",
+    "review/thrust/000.jpg": "d641e8e9892de67f67d83fd151dec7fbc134a8ba0907842a29e391e3298e8432",
+    "review/thrust/001.jpg": "8870b1bf4917d93374f715d82c6ae6b8db6e051a48a31496e695ff55e51432a3",
+    "review/thrust/002.jpg": "19ad38c70301cb5c9e446400e6cc8051558d592679d817c9b506cb16ecbee44a",
+    "review/thrust/003.jpg": "08813b077d6ce4297f198828d42b4560f27a79bf71a034ab98c0fd36e1feeff0",
+    "review/thrust/004.jpg": "c8bbe49a573fe2ddb8ab9e40d3a8eb64730d861efd87b829b75b2a2ab59beecc",
+    "review/thrust/005.jpg": "28a185462f0f9c7abb0fa3a26e2dc297cfc8e75d16774da07b5687dd177c71b1",
+    "review/thrust/006.jpg": "0242d376223267231434929361a5851cac4dfc38de228fa4afce379383ad0e14",
+    "review/thrust/007.jpg": "45f8c924aa84fe5798e3ff6e1df98d673857de68eb6eece4da0f944dcf0c77e3",
+    "review/thrust/008.jpg": "11b038da86987b04edb37397067b498b094374270ccd161db818b19c3494a21b",
+    "review/thrust/009.jpg": "4a4f46d262ff9bfd0110de5335d8758b8bba7d634beff96a0e6c2ae1b6c45f82",
+    "review/thrust/010.jpg": "20278d6042a757d34f7ab7d2d5a60c9eb330702332ed25018b84b00709ec1a24",
+    "review/thrust/011.jpg": "e75185b03f8333598a5988716b69530c86a72f324f784402031856b9260f305d",
+    "review/thrust/012.jpg": "9b9312633c4dcc346aecb366c2b1a919fca1e475b948c227454e341a0c0a728e",
+    "review/thrust/013.jpg": "14c46d6c235347d3861e6a9c5e3adc26f7e8a5d345305a6ed5d74b816526aa03",
+    "review/thrust/014.jpg": "cbb1b8cc198377cc351743c88f2098acde220e2995ff423b83072701283f5120",
+    "review/thrust/015.jpg": "e712da8972a3e38d3e316597d76385297fb03da98390296db7888d3c086820f0",
+    "review/thrust/016.jpg": "53e6763af4c769d4e804978829492b82efafb2b738b66c07a6dda7b7d24b7fc7",
+    "review/thrust/017.jpg": "ce604ebdd14cb92cfcd5fc0915a602f18f5c44b77d73d4f1d87730542b6ef0c4",
+    "review/thrust/018.jpg": "61b6a75b18fa4588bd07a18508841c305bd54fdc56a95e8c54ce3c3f50ac4479",
+    "review/thrust/019.jpg": "24a2615dc0faf0fc69011263f7a83f50adde841e9b98de8a851ef87a1e56a0cf",
+    "review/thrust/020.jpg": "41a04cee0210c9f5e750ed8453e0034df6276d704336e9c5e8da1940fa5c9583",
+    "review/thrust/021.jpg": "180a3cc9bd4546442bbf66f89fc5c90abfabe257111280f336a73cc2322768e7",
+    "review/thrust/022.jpg": "f635a16ea23f6aa36e8e63a7bb334ab4a9ff572474fdb21109c27ca64492caf9",
+    "review/thrust/023.jpg": "389eff6801faf27c2d35460c58ab0e2d5a35438ed65148db2a41f5e101467781",
+    "review/thrust/024.jpg": "43d76fe68700951141b4ac66db8a9f2fd156682a98bab55a3ae8965db4cb9aa5",
+    "review/thrust/025.jpg": "4915fd290856124462b0f595534fd2985cab00836cf338093b4a0460a66e18ea",
+    "review/thrust/026.jpg": "ea01451a11071d8324ebedf871d9e7f3dd420803701215b2b5ca9d07e8fcca8f",
+    "review/thrust/027.jpg": "468591bf560109d70c12103f42dff739fba3892525076e798bdf2100ed18dfc3",
+    "review/thrust/028.jpg": "88cea23ef3491ec0fbadf85f4d9529f99af4fba356a9699574e485cb2c3f69eb",
+    "review/thrust/029.jpg": "1e69ae107b34ace38e06985ff7af2a8071deece6896178d12fc65974237b57c3",
+    "review/thrust/030.jpg": "b911f5a26e7e6ccd295070ec1a70f4f4e30ba793c2fb2dabb1dc14ec5de1b71c",
+    "review/thrust/031.jpg": "fa0af61793c05ff989d6f9cf1f07a7390c764f53a33a4529ff886aa29d6d92f4",
+    "review/thrust/032.jpg": "43ec824045a6af38e688701991994ab71117013b6efc2be683d6163a560707c3",
+    "review/thrust/033.jpg": "2025e4c3f6dd42a54aca7aaedee67e1c81fe33aa0e4499af0d71ba0c7c7fa745",
+    "review/thrust/034.jpg": "7e5aae306f9083f931730a460fb4e567cf6faa46cf9dc18988f92a683d915dbb",
+    "review/thrust/035.jpg": "44c99a264a4a57d8f5e100fea22e96b7227503aaf1bccfefc0eb9d9c5e3ed51c",
+    "review/thrust/036.jpg": "8857df8ecfa929fc91c10834a7eb6d0b653d09eea8b89f2667597d120a9d9bca",
+    "review/thrust/037.jpg": "4b2ce12d4032321370c78906d4a77f28c6587485891497f9689e880d491df77d",
+    "review/thrust/038.jpg": "1d996cd983836f6f613ef61e2d66a81d636b65963caf11c141112d1f5ad3d740",
+    "review/thrust/039.jpg": "79ed5b0effe599306d0206c9b8b94845deba8c92c0f40b2b680a278c2d770086",
+    "review/thrust/040.jpg": "f0e05608590416b0238220d429f0d70f789854e1229b0c57acb3d9dffed4a7ff",
+    "review/thrust/041.jpg": "e33ca328efd7a0a83a4033ac6af32996048bdfa472450266055ec3877a218b4b",
+    "review/thrust/042.jpg": "f9b2f2faed4380199d22bf6f9d0006fa75766c552315c810d7cf3dac7e277193",
+    "review/thrust/043.jpg": "49b36f74f928fc7bfd806aa58e5b75a82def76f71c4cf403f1fa9c62927f838e",
+    "review/thrust/044.jpg": "df6236876966959fa25cdef623dbbccce2aeb226f5fffcc32d388713704bfbb3",
+    "review/thrust/045.jpg": "0bdeaeb19ab2214cc2f664074aa2f52edad87ddd98b26491828c300e0ef5a7d6",
+    "review/head/000.jpg": "9199a6e853b3369f5132ad50e55b1c28c662cbf66b8e1725986b3b7cf783e845",
+    "review/head/001.jpg": "5ef90fa0d7092a619519e336f3de0c3e5298cf38d5de2f83ff0e36e17da18243",
+    "review/head/002.jpg": "9199a6e853b3369f5132ad50e55b1c28c662cbf66b8e1725986b3b7cf783e845",
+    "review/head/003.jpg": "9199a6e853b3369f5132ad50e55b1c28c662cbf66b8e1725986b3b7cf783e845",
+    "review/head/004.jpg": "bacb8e6f9afad20b5bae0d38cfe44c9cee21a83d97130f5be60c39795d6a174b",
+    "review/head/005.jpg": "1bb9ba34c88cbd43a80f062b7115c4f04c9f0e098df893d0fefa1a5c91d8f785",
+    "review/head/006.jpg": "2bbdd84b87862531021bf7ea7149cd60986f014038b387c724dd4a2a289a6268",
+    "review/head/007.jpg": "2e3d5e92e8fa1684bc1c6cbc3c5d891756b3dbb61b54e77cdb807bcce8c49844",
+    "review/head/008.jpg": "c81d988e307e6dc8daa0e21dcc1b44fb2c0f522d23c751be1677bd0622e2f67b",
+    "review/head/009.jpg": "d18fab1a7c754c36d1c0199b8473733db34c1b77052b982e406601802ca7cda9",
+    "review/head/010.jpg": "71665db0f8b2de14833306aacddce7b4b658d9a91c903dd2c9ff23717100a194",
+    "review/head/011.jpg": "b4c5abefa7b7fb9e09df80f9f86a20b2415ea117ad41c339363faa83d82637f7",
+    "review/head/012.jpg": "1224e12807abe15e8c9414ce7434e2a3187a3ea7e16dc6bf2f4287f5668f3a2c",
+    "review/head/013.jpg": "8dccee1b7ef972b75d7779392796fd2c9267c9522dfc5ee3de9374c2c6599be4",
+    "review/head/014.jpg": "e77b357a7697070b73074312899ddffa5118c281b98c1619d765f89845f52574",
+    "review/head/015.jpg": "7a41c2b1a5dddd0243a2f8627367c9bd7b84d04470760482788855fc80aacff9",
+    "review/head/016.jpg": "6889add3f580f71686e30d79c316e955a7231127be7fde7ee7b0fdb4f1c13aa5",
+    "review/head/017.jpg": "da1a1364ce7c733f28972d91c9bf8a8ae4420e438c898f2cc2135118285a05ab",
+    "review/head/018.jpg": "a8772f25ae390a750a3d94ed9e24ee0481302442993953319c9a541e30b1c8e7",
+    "review/head/019.jpg": "cccef81af651f62be6c478c7ee587ff11ce15abb9ab859a4d5ce57d8b2831109",
+    "review/head/020.jpg": "991b2de6c1ab62537981bf84d42c580c42b6193d3a21958ed15475e2008aa272",
+    "review/head/021.jpg": "194cd35cf9d4111fdd80bd58830ce0759bd58ab593faa8ec08d4bce756d56c80",
+    "review/head/022.jpg": "ff550310f452eca18ff28429e794bacd04d2edef80cd91230d5de93c2ace3590",
+    "review/head/023.jpg": "3ad176746cf3f937d877f7bcfd3187a4e8768f3e8b55f06fb1341e25898f90bd",
+    "review/head/024.jpg": "291c36593962aa4849aa09361fc5c925f42a36e7fcecbafadd32d7fb29bb8d69",
+    "review/head/025.jpg": "0e0d957f2216d4fe64b4a3125c24ebf253e8896e41485ec9c47a6231ef3ea735",
+    "review/head/026.jpg": "710fb768f6b537712d48edc779e95b874c6d6b272b625bc4a85cd99051590b8d",
+    "review/head/027.jpg": "79f7e9e5804479a5a17f28fead961703d02a0728d5b1da962b78b850796ff05f",
+    "review/head/028.jpg": "e28b05379117313a390ca9bda47d5b0f02ce345a97e3d87a68937677a8bb0a09",
+    "review/head/029.jpg": "e106fcc6698b391a3172cfce4db1ec41a8ed019a63ba2af474bd0088b3d52f93",
+    "review/head/030.jpg": "d368643b6cf52af1ea0b94518f794a022bba7c1e407c42caba60af703ea52ef2",
+    "review/head/031.jpg": "1fc05aebdc2c9db469651e959fbec38d3e31c5aea8d65151efa10364fd296adb",
+    "review/head/032.jpg": "7add6371e5f4c4330d7acc69ccd25bf5b2a0a562b2f037bf4cd9284c7ba7ce78",
+    "review/head/033.jpg": "522eb2ebffa1a8791a47be2e9c600a1a6d5cec23cdc053cb5c092c872ce0d234",
+    "review/head/034.jpg": "aa1b5955ab9638fe97af18fd1c1211e71dc851f447f449ef115e234ae5388026",
+    "review/head/035.jpg": "d2f2e936681f1d23a95854844f853296f874ecfd4b94ebbf2a3327ef543deb0d",
+    "review/head/036.jpg": "6af58b25e26ee4499953eae7b85e7cca3012f29f03a7dfd0e2afd859aac5b6c9",
+    "review/head/037.jpg": "745b8729920b1e9c466aa79061d72d9b858045b408fefaf3a0023fccc7cac3df",
+    "review/head/038.jpg": "34e5e3e6c233e1108d8c0f39219266580938b0929cdb5d21dc4c3c977a0d35d6",
+    "review/head/039.jpg": "d8c2d97cbef3d004fdde710ab8e6a9db5d90da0c8cc29287f3852de8b2ce07ac",
+    "review/head/040.jpg": "f17f18c1bd1b0528cb10304a381668f78bafd5e02790ff6e74305e0352a6b437",
+    "review/head/041.jpg": "5ad5499a7db6c20066187db2b269a0075164faaa791350c80f81179ccc2257f6",
+    "review/head/042.jpg": "a3d31af16916e14090a3a7eb081673f86fd0cce1cf11fea54e81c93980fb02e2",
+    "review/head/043.jpg": "0f2060ad4ebfe0f5b592783d4a1391b539658eef9e429a2e6033d3f213eb31a2",
+    "review/head/044.jpg": "4fb88d43047f60ea7aa20fb76326ea1f2207276af2770b05a26155152db3ef10",
+    "review/head/045.jpg": "4c18535c62f9039895cf17df756cfab293cafb125f2574273757697b91b49005",
+    "review/head/046.jpg": "5ad5499a7db6c20066187db2b269a0075164faaa791350c80f81179ccc2257f6",
+    "review/head/047.jpg": "bc8a5b5dcf0a035b9601ba665b0fde58144f7496a8bbba64d867f0201300f2f9",
+    "review/head/048.jpg": "a82da797d176cb0c9d8cfdca50bec17e40204949381940a547b40be86848c886",
+    "review/head/049.jpg": "890de6fd05891baa376880316b3176b4252c56d393a2904fef1965f1d8a46a74",
+    "review/head/050.jpg": "3d769f0902b883fdc4751535fb1e809bbcf48c6a75aa6f05e4b47d2670928cce",
+    "review/head/051.jpg": "d881b9d6cacb42266afcf1abcbeafb25c81d039198a75bfb52960581b3768994",
+    "review/head/052.jpg": "af7f96f2fa1cf35ed49ded0e5504acb2a7bf20b819f08fa509934769ca43cfa8",
+    "review/head/053.jpg": "860aed99036297dc1e33e3fa69ab85d81292745bde8fc4fecccd5e1122368521",
+    "review/head/054.jpg": "8afa8351dabaad752f34a480d29b2e0f2ff85a9b1a5cf9f30c4bd91ec8ee3ef4",
+    "review/head/055.jpg": "35d7162e2d9c4e412aa6201298f0062498365ed2446aa9a146f41c0505967339",
+    "review/head/056.jpg": "70372cbf92a4fe833e8d2f15e136a1196b185949d768d1b9b909bea5dcb22011",
+    "review/head/057.jpg": "50e8ea207058d0f3a0b0d3c9d07837dbba194d68a2547798106c0dc5b9a6cb8f",
+    "review/head/058.jpg": "09b31da551e91ac63cf40af3dec991d04d86cd3f82c2b8187641aff194e3ed3b",
+    "review/head/059.jpg": "f23beefa86837b133037376d999835e6d8ecfa6375fe6890987e55b36c71ba26",
+    "review/head/060.jpg": "dae9f37dd79cdcd4d089b8f7ed45012d31339c24d6572567ca4f136bbc28deb6",
+    "review/head/061.jpg": "1b245c12ac0e6347106140b5a0687fde408854d535636f2fd0cfc9e602d447ff",
+    "review/head/062.jpg": "b2b009c2f28955ed6cc83bab51ccb624ac7658bb97c8bcf84db570d9e3a67d55",
+    "review/head/063.jpg": "b120a5cb251d2aee061bdb706af37a07abcaa8141eea20995f35f316be583d1e",
+    "review/head/064.jpg": "f1559a1a63da057c9829d02934047a01128945ccc2da3c24eaaeb52122acf2ef",
+    "review/head/065.jpg": "5aad3ef4368794e611879baca281c897435ea9759d424740e74f6004b50ee237",
+    "review/head/066.jpg": "f8e47752d9fec1013eee0d9f9c6f8b9275fb4146bf6b7f827f7f34167131ac2e",
+    "review/head/067.jpg": "dab02d26d53071eb0ad37261d1ebfffe6840fa120b9388e67193c72e7385ac19",
+    "review/head/068.jpg": "64d2887b9c5b9d04565c73f2d3336e245fa4caad659e6e48ed3fc4c2cb0fa3b6",
+    "review/head/069.jpg": "90773125f306a82ba123f84d82704b1b0f6c6db41da7dcc0b2245235b082efd0",
+    "review/head/070.jpg": "c105e27c7d6a0a23095defe4f6c8fa48d9d44d481f3aa3c7ffb36cba0a5817fb",
+    "review/head/071.jpg": "82fde61a055483cab9f53197d118b50a07459726ac313b4309c4b9b71e63a77d",
+    "review/head/072.jpg": "722671a076c1559127d82befacc382a11a362fd7c03822cc523bc13b211831e4",
+    "review/head/073.jpg": "7bf5712e416601bdda0453628f0e9fda9daf3e33d611f90754220e76594653ee",
+    "review/head/074.jpg": "d470a8446b245bb4aa96cccd1e82c09c1b91d3da1f076e41a989b47ce9c65c31",
+    "review/head/075.jpg": "7ec793e051e069087a905aa7552a26b6a41f1124e83d3f163da17e8670263476",
+    "review/head/076.jpg": "868b52255dc56db7a71136dc9f82febe2db024495520319af4120c99d29dd3bc",
+    "review/head/077.jpg": "633a60a7ac0cea3909abfa95176456d0258789ca66332d14f9084bae1564c2cf",
+    "review/head/078.jpg": "85a46b78c9e3842161f7bbecaef2420770a81ae23fbae6e7147234d156ff9796",
+    "review/head/079.jpg": "c464f41d4612843677bd47d2226496460fb3365280d2c6f71fcc28fb68b0bfb7",
+    "review/head/080.jpg": "100c60a67f90bd6d021e51a7f974a6203730c34f647d180e2410937a70b9776a",
+    "review/head/081.jpg": "4f03691bf163f884df649e1f9cd90f634ab16e2d445d9d9900b670fc4a9b2644",
+    "review/head/082.jpg": "f4a40e95778ed834d27364097ed1ca5d3ab2caee2abecb4fc6481e0f723bf984",
+    "review/head/083.jpg": "e3cec16e980d299ef7f834190cdd9763678e75eed8a130ab98c2e5e152cdde29",
+    "review/head/084.jpg": "1aef1c354d704085e6108ad3d2d7acdbfd5356095d0515323e608d19ac00eca7",
+    "review/head/085.jpg": "850579ed39e5d9cd3e519f4bfd750a812cf5384ee288af3f948f51914e09ae0a",
+    "review/head/086.jpg": "5e9e51a3916556dbc9edbce15bd789e30c63de698f9c10f75ddbd5b5e8075846",
+    "review/head/087.jpg": "71aef68a30aa42d0c7c47b08dc7f79e98618135a452fcee574f2908ad64e302a",
+    "review/head/088.jpg": "f3ce7ed2d64edd6a6ecf4258f3e341cf2f6ab5b9c29b379b8bfe8c1f8dbbf157",
+    "review/head/089.jpg": "d82263f60ae425d252a9ae4171978e31d75d4521a8f12a44a3a0c4f64d14dd37",
+    "review/head/090.jpg": "aa8dfeb6b0afc9cae5e23c7138bf75c0fecc7a64ffeccfc1c60575267a23f83f",
+    "review/fast/000.jpg": "4bc49b43efe7d13f1a1aeba517664803cf2b9372e168e843847cab30b825675c",
+    "review/fast/001.jpg": "92b9261c9a872cc915e8752d628f7bacf6ede41bba1ca805701f66f20f1b78b4",
+    "review/fast/002.jpg": "19ad38c70301cb5c9e446400e6cc8051558d592679d817c9b506cb16ecbee44a",
+    "review/fast/003.jpg": "3be3c66fd1bf276bc973e26e2d01d6ccce54afa8bd7d018bdc713684789c0138",
+    "review/fast/004.jpg": "c8bbe49a573fe2ddb8ab9e40d3a8eb64730d861efd87b829b75b2a2ab59beecc",
+    "review/fast/005.jpg": "28a185462f0f9c7abb0fa3a26e2dc297cfc8e75d16774da07b5687dd177c71b1",
+    "review/fast/006.jpg": "0242d376223267231434929361a5851cac4dfc38de228fa4afce379383ad0e14",
+    "review/fast/007.jpg": "fa342973519058ff6fcdd79b256be824229884c444a5506db0b8791a1aadfa67",
+    "review/fast/008.jpg": "11b038da86987b04edb37397067b498b094374270ccd161db818b19c3494a21b",
+    "review/fast/009.jpg": "4a4f46d262ff9bfd0110de5335d8758b8bba7d634beff96a0e6c2ae1b6c45f82",
+    "review/fast/010.jpg": "20278d6042a757d34f7ab7d2d5a60c9eb330702332ed25018b84b00709ec1a24",
+    "review/fast/011.jpg": "e75185b03f8333598a5988716b69530c86a72f324f784402031856b9260f305d",
+    "review/fast/012.jpg": "9b9312633c4dcc346aecb366c2b1a919fca1e475b948c227454e341a0c0a728e",
+    "review/fast/013.jpg": "a15200fb71a564e6d8fbea23524659d4800881638cf9cb804681558e0c3cb6fa",
+    "review/fast/014.jpg": "67138e464c7ffec4b22f8c3cca5d745d3e3cf84f8d1bc390b84256ecd09394e4",
+    "review/fast/015.jpg": "e2738076e46fa9a9dd6a460869a1330c21c03b1113b79ffff67f1519330eb431",
+    "review/fast/016.jpg": "af09e5a942d692501d35c4d57c37d82c71cd67d254396d6b7734700db35fe04e",
+    "review/fast/017.jpg": "7dcc539a2ff4a143ca2963b1bcb824de074553e3b7946a7e431e0c7fb7d9afab",
+    "review/fast/018.jpg": "cada7a14f880309b8382fffbd9928afa8d216d49b3de71fdfdbbebcf31414863",
+    "review/fast/019.jpg": "7a14d21ef386e7ab92a1220907550398a6b75eee69c0a3aae015c89efcd0baac",
+    "review/fast/020.jpg": "d5dcf52e88c601b38abd0e69e6e746326b12a2b05e798d89640ba969299b486e",
+    "review/fast/021.jpg": "b086183feafdaf96359b5da7f52137209f9fe0dde50df22832bd4f1fc554a380",
+    "review/fast/022.jpg": "e6e5f92b324f8997bc77c49f30a27272846cade0763cef7ed4cd9a288ffc1959",
+    "review/fast/023.jpg": "cd5929d32cf019b6a12c0b3c277d9544fa6a5c2abba57156fd2c28648340e010",
+    "review/fast/024.jpg": "a9a9c31d2dc9fed9ead8fe0f21c665a5559bd581c0c38f804b824700f63e47ac",
+    "review/fast/025.jpg": "f7f4bcd08dff4c67bf243723ca1651b457e2caf9bc3395cf6083e0e9eb9d1cf6",
+    "review/fast/026.jpg": "3a2c88f08dfa52cb433ea6cf09b086cb1c8f4c589040c52aebe4c9fd3571b566",
+    "review/fast/027.jpg": "7cb9bae257dd64db7cefdd82bc0956413bba69345dd0b8259ba7add762e96dbe",
+    "review/fast/028.jpg": "991a40c23605c0e6243a04d400f7d236ae57b9df2a5a2bea7fb7e72ca7ca0d12",
+    "review/fast/029.jpg": "515f4b3de2b604478e210b7dafd5119700a789790342728e201c550d44cb1cee",
+    "review/fast/030.jpg": "f651eb46a5fd22b05de32a270b517d5b4310b5b27647af480f6b01cec39f0907",
+    "review/fast/031.jpg": "89cbbf546af1d9d616dbc83439eb59f3b071929551f152f10307ad354976aa2b",
+    "review/fast/032.jpg": "be26ffa873cfef9f0dfac822b47dcc66db6f303543d10543323b6f5a81105ee7",
+    "review/fast/033.jpg": "67bb304e67e0f3812dad9dbb99d47ba06d39f8e41d4e6c755a2400554cc5dbf1",
+    "review/fast/034.jpg": "0efe333493c366d31dc73136ac6cffc9815580c16b767bb9ddc42a81629d236a",
+    "review/fast/035.jpg": "a9ea5847fb45724e2894c2c79fa2a00367186cf1ecad84860e3bf3c228e693be",
+    "review/fast/036.jpg": "af58a70810a26b11b568543c021ae500216a56de079aad5ac1d6e3b7aa808960",
+    "review/fast/037.jpg": "4e4115558a7754f7986da90c04b0e59f06541b54079d83d4c6459b1a5a9d3226",
+    "review/fast/038.jpg": "27233cf0300ac8ce390e2983af109640181d1101470f69efac17a1072ce8b966",
+    "review/fast/039.jpg": "7dd13a43d53c9323d855768886241940c15f52f0b14a974d202dafaf8f44de6b",
+    "review/fast/040.jpg": "ae7ff2acab63c4a6bfbfd706aae8e7281afe4fe01ca29a2f208b697e948d537e",
+    "review/fast/041.jpg": "1879984ae9e06a17a73dbae10d76a23455f4d65af65a2946e871a409ea2f3425",
+    "review/fast/042.jpg": "6b3f3496850f46f09de481bd68a6eaa4dd69cb617365d2b069ce9da93f987019",
+    "review/fast/043.jpg": "5d6d72a399ab02275e8afcc023eab156cebd68403f137c6eb5108e5bdbe9992f",
+    "review/fast/044.jpg": "a357b8487ff3fc56ddf9780593fa510f233e0425f9d39a097df0b596138cd879",
+    "review/fast/045.jpg": "eabedc37e4d087f4b8595b4ab1651571ef82545819e6ddfb47d4869441b6a933",
+    "review/native/000.jpg": "81b2093deae3dd80b7007eecd11bc48cabbe3b6899d92cb73c4d8af47f700b4e",
+    "review/native/001.jpg": "5ec9bd79a547c9f24d09b0da0a1771dff8cf99c84346e4f1e31c126ccd193481",
+    "review/native/002.jpg": "aeb4bc39e6c0700bdf305c60e786f045ad606d4672ce47467f9230e1f53fdfe0",
+    "review/native/003.jpg": "2ad2f314d307471120834ff91c0c704c95e641850d464eb01353f0cb4464b8c8",
+    "review/native/004.jpg": "31cf7838264b8c7da3f68efb1bf91375d57ffcf62122f57ad56ec4e4102fded5",
+    "review/native/005.jpg": "25c6b40acc8f9ab61600a30617627f1ab0394b6992af794861ea959b48ec0b94",
+    "review/native/006.jpg": "382a124aaa238d962033202da6671eb18dc82c14a3de841edc8712f595368c3f",
+    "review/native/007.jpg": "ade9f70ee75e36eea67583d4f03d4ab71ec9aad87dafdb1ed13585cb27f8bc35",
+    "review/native/008.jpg": "2bcfd1c5606521810f712e84cb406eca9f4cf196b8627beb3b1c4aa742c37821",
+    "review/native/009.jpg": "3d909c44f0afdb66cd0c7c3f0182fef6aff5f1d68a0518f28baa6a004e7b78aa",
+    "review/native/010.jpg": "48fbd85562cc655ae60c8a8247e19b9ef21bd5568b0aca5f1b2680c9130efa65",
+    "review/native/011.jpg": "50f382ccae20a54a4fc870d684dda2b0188e003a4ea0bba0ac95e48072496b4f",
+    "review/native/012.jpg": "b9edea4b20399735bd0c52d2bbfc7ce0c9e17d2f22090a4fa4380709c269e26d",
+    "review/native/013.jpg": "46997fb17c45abd61c51503f28df11a50c89873df1da63271f95c23d3f8d05dc",
+    "review/native/014.jpg": "f7dc84f6799cec3bdd55cc94a9c5655b6e4a23163481ceb32dae76175dd974ef",
+    "review/native/015.jpg": "3874755b9fe46c49354f60eb2ba55e71062c5b618e220b009d872ad05c55d912",
+    "review/native/016.jpg": "520d01841095735ba5765674cab59cdd4e76d768d524c095f76bcf50e95a6de8",
+    "review/native/017.jpg": "913834632a7f79b0f7180d113b77f15cc0efa574a5189d54ea201b20db153bb5",
+    "review/native/018.jpg": "96d46abb146679317b156e5e01d0f5be683760c3cdda39bd25cba6751d56958e",
+    "review/native/019.jpg": "4ee5ef429c990effb14a80e023e264baf6c04cef0630deb9c17fea1699444133",
+    "review/native/020.jpg": "4ce67810bbf3ae50eb517e7faed420f2533a56a2dd300975e61a633e59b027f0",
+    "review/native/021.jpg": "786c8f1d8d7db657b5a2f7a536927333a1357acc1cf6c20e41bd430ac9c3ff4a",
+    "review/native/022.jpg": "2f399b31faee470d052c4d47b340bb3b9e7ced4bd47a0e39c040f22927a4fbe9",
+    "review/native/023.jpg": "804e9ce2638af0ec0b24d85e12e6636399dd7ff8d85ddd1863e07e0d8b50f240",
+    "review/native/024.jpg": "d01bbdd5820b1b6398491950bf1dc8120cb7da8b18da4d91c6b8279535c94e07",
+    "review/native/025.jpg": "1e6cd1a17d1a4197feb7c11dcca0c395c2c3290a1bc483c075f92a139b996f64",
+    "review/native/026.jpg": "4135c0a6e2e1a7ed0e449673f3440ed8fc5f151344b61bd35fca71a20daa345f",
+    "review/native/027.jpg": "697942c98dafbbc333156d0671bf9fb89d57b5b159aa9e345745aff3879e4ee3",
+    "review/native/028.jpg": "4796b0a01391af48af8aec193d661d6aa87a8fabb52f5c949dcac65e76543520",
+    "review/native/029.jpg": "d29707eaf3f44ba6c71baf40dd9cf88e13d4b22cbe36fd2497f15d3a225255c7",
+    "review/native/030.jpg": "1ab4fdb375b1f37ef4f8dbda2ec2c347774928a8092059bd7cbabaf57b9e2e10",
+    "review/native/031.jpg": "a90e6baba0c305794b61148371965d229003afc91dd5c55a0659e463424210b7",
+    "review/native/032.jpg": "e88bd462bf6f7c1291670bd205e607221f94b0ee079fbf16a9a9d8dca1ef18b1",
+    "review/native/033.jpg": "f063baaf4f282d18d613c128c05ab360906270c77a2d5d5ee085667804bb49c9",
+    "review/native/034.jpg": "75692d703bcb1f587b65ba42275f9fbb48a685f7fb85030610f517373ae7680e",
+    "review/native/035.jpg": "185f698e8a882a47ef3bc1a28d56d3196f24b48088c59bac114a2d3620b512db",
+    "review/native/036.jpg": "9a373d60abf10f1c6d98cb979ab203bf1553c08d2e3050ae52c1c27506c8add4",
+    "review/native/037.jpg": "c4c3a0e3a01f3526798424c45b13a928dfecd01ed70b00fb033e31725b6b78e4",
+    "review/native/038.jpg": "e4222f0f090cee47267ab9b8c834bc157caf3ec6c9be54852aa099cb08d075a4",
+    "review/native/039.jpg": "cdd2504e94586301e5721b0ba8e56573cf416dba2d665814f43fff541c21ba39",
+    "review/native/040.jpg": "4dc742f42764497e707ce5ab9c7abf4539d40e2c7eb751187a0a77a47f0f04e6",
+    "review/native/041.jpg": "9720f7925ad833db19ce7347ca2e167b6372037163fb0336925568fe57490da3",
+    "review/native/042.jpg": "3e218773d4cb7d09890c2650c87767659cea035ef5caf7d584667a050302f955",
+    "review/native/043.jpg": "e19cd4df0f60f577a35587a3e24ab0660456e8b54dfb086d2a88fd7c34df5c19",
+    "review/native/044.jpg": "a8ad6c783e6397d75ab94baa5500be7b027165e52e92af17f857757010ec388b",
+    "review/native/045.jpg": "2f7adf6304fa1c805aac99068979d95e29eee9d76b9fef7741a34069610144d1",
+    "review/assembly/000.jpg": "4bc49b43efe7d13f1a1aeba517664803cf2b9372e168e843847cab30b825675c",
+    "review/assembly/001.jpg": "92b9261c9a872cc915e8752d628f7bacf6ede41bba1ca805701f66f20f1b78b4",
+    "review/assembly/002.jpg": "19ad38c70301cb5c9e446400e6cc8051558d592679d817c9b506cb16ecbee44a",
+    "review/assembly/003.jpg": "3be3c66fd1bf276bc973e26e2d01d6ccce54afa8bd7d018bdc713684789c0138",
+    "review/assembly/004.jpg": "c8bbe49a573fe2ddb8ab9e40d3a8eb64730d861efd87b829b75b2a2ab59beecc",
+    "review/assembly/005.jpg": "28a185462f0f9c7abb0fa3a26e2dc297cfc8e75d16774da07b5687dd177c71b1",
+    "review/assembly/006.jpg": "0242d376223267231434929361a5851cac4dfc38de228fa4afce379383ad0e14",
+    "review/assembly/007.jpg": "fa342973519058ff6fcdd79b256be824229884c444a5506db0b8791a1aadfa67",
+    "review/assembly/008.jpg": "11b038da86987b04edb37397067b498b094374270ccd161db818b19c3494a21b",
+    "review/assembly/009.jpg": "4a4f46d262ff9bfd0110de5335d8758b8bba7d634beff96a0e6c2ae1b6c45f82",
+    "review/assembly/010.jpg": "20278d6042a757d34f7ab7d2d5a60c9eb330702332ed25018b84b00709ec1a24",
+    "review/assembly/011.jpg": "e75185b03f8333598a5988716b69530c86a72f324f784402031856b9260f305d",
+    "review/assembly/012.jpg": "9b9312633c4dcc346aecb366c2b1a919fca1e475b948c227454e341a0c0a728e",
+    "review/assembly/013.jpg": "662b9ee1fe322c89f4cd17ce4d74c683b7b31983fdaf2e2ea25174a832cecffb",
+    "review/assembly/014.jpg": "35b4dbab454dedf81e1d07548a80b5e9f143cb56a1c979ade83ee14a09aa0933",
+    "review/assembly/015.jpg": "84bbc2fba0e3e160c8e4fd8d1a17ba05c37524c74463df0b941ff31917f8e033",
+    "review/assembly/016.jpg": "6762058edc76a4bfafed6358c7bfc983240106964e03dc3ea21444c2228cfb44",
+    "review/assembly/017.jpg": "d9702823163235aedbae149d39dbef1683f19caf9cffa295293fb7f2b84d9061",
+    "review/assembly/018.jpg": "7011a1be338e0212981cf074c823996444e167db93b0570844f538d89c826ec5",
+    "review/assembly/019.jpg": "6a195f43c2544f39dc69ee95d719334739da77c2bf3a789f5618916045a0a2fb",
+    "review/assembly/020.jpg": "427cfd88c7462dd2541ba911c63844ca01006fd6599a6bb030e30574a28279d5",
+    "review/assembly/021.jpg": "18166a52e710a98b469c7e8a3325ee7b7d5f20e0a581ea9bc30eb6b01df64c92",
+    "review/assembly/022.jpg": "d7a29269ef6e7ad2f964b156143c0fe5100e9aff113537eff5725369b1cdd148",
+    "review/assembly/023.jpg": "6e116c0b6577f34fab42724088f07eb17e9ab0a2c1982cff6215c86157b1e4cf",
+    "review/assembly/024.jpg": "df5fefaf3a14bb13863008de6949eb77c6a9486347a53da4d96f5ae671cb80d9",
+    "review/assembly/025.jpg": "7559de4e0bdd6e6ea8b0616cd7c8c35e49350acfed08e5dbfb09b1868263a42e",
+    "review/assembly/026.jpg": "d1270b17538f184c20ef82b6091b16437a541113e7f04834da01885cb8db3ec8",
+    "review/assembly/027.jpg": "8cf62312c6889c1429b0542d4ee158605164442a66bb5492833e4c52c21b6eb0",
+    "review/assembly/028.jpg": "ca6dc30032bd20b1d574c2e1fe35139e50c9c05aea3900c4dedb8152ec290fb1",
+    "review/assembly/029.jpg": "6f5c2a8171d546a8a8dbc0e400a9de63948fa2433b96847ce5b540511d311d14",
+    "review/assembly/030.jpg": "a9f3ba68c6d3e51e810317779b770239df8f99958fb219723fd233ce8a275b34",
+    "review/comparison.jpg": "8db1c185ad5e9efe2f7f7418fd133a3eb01bf8722b8c987ea863d13e203afa5e",
+    "review/closed.jpg": "54b7a6def099982b6a317d3aa8244dd6384a22ba28c7a15b2a3df5871380bff2",
+    "review/open.jpg": "0bbc44c175fea065c5f761f35c00af5587f76500805f9b003768dd40d478740d",
+    "review/bevel.jpg": "feb2ba048982fbf37b51d751b4a20e7a559029baab59588f9de998f2f8feaabb",
+    "review/staff.jpg": "bb32b425db8edb14aed2e02cdb11cd68c87b2020f5ad96e6081694f5d1c65acb"
+  },
+  "limits": [
+    "Original stylized Blender geometry, not a physical bolt-cutter simulation.",
+    "Inspection camera excludes enemies and FX and adds light. Other views use ordinary game rendering.",
+    "No arbitrary-pose body/clothing/world clearance or final material/performance/user approval.",
+    "Very high IAS may skip anticipation samples, but actual release still closes the assembled jaws.",
+    "Older v1 and unrelated broad regressions remain historical."
+  ],
+  "reference_provenance": "Two user-provided bolt-cutter photos copied without changes; not generated game textures."
+}

@@ -1,0 +1,8 @@
+{
+  "workspace_cache_diagnostic_only": false,
+  "test": "staff_visual",
+  "changed_inputs": [],
+  "exit_code": 0,
+  "phase": "test",
+  "stderr_empty": true
+}

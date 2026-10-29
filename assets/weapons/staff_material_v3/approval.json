@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-30",
+  "user_statement": "좋아 커밋하고",
+  "selected_scope": "Staff material v3 appearance for the prototype, including the base shaft, bolt cutter, grinder, chainsaw and optional seal shown in reports/staff_material_v3/review.html.",
+  "remaining_scope": "Idle-to-run staff motion is a separate reported issue. Arbitrary-pose contact, physical cutting and final performance budgets remain outside this appearance selection.",
+  "asset_sha256": "1dbd09823cc337f19fc68429d476e335a9ff0451d27a440aa6248585b18e0e27"
+}

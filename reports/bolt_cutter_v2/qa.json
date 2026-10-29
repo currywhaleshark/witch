@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "html_javascript_syntax": "node --check passed",
+  "all_referenced_assets_exist": true,
+  "actual_gpu_captures": 357,
+  "inspection_layer": "Actual attached staff; enemies/FX excluded, extra light",
+  "browser_interaction_tested": false,
+  "manual_images_inspected": [
+    "comparison.jpg",
+    "swing/023.jpg",
+    "head/046.jpg",
+    "head/053.jpg",
+    "native/027.jpg"
+  ],
+  "old_asset_sha256": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1"
+}

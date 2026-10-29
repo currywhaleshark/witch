@@ -1,0 +1,4 @@
+C:\Users\yurib\Documents\New project\witch\tools\build_staff_material_v3.py:95: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes=True;nodes=mat.node_tree.nodes;links=mat.node_tree.links;nodes.clear()
+C:\Users\yurib\Documents\New project\witch\tools\build_staff_material_v3.py:191: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material=bpy.data.materials.new('Staff_PBR_v3');material.use_nodes=True

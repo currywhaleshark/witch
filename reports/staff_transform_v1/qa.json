@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "html_javascript_syntax": "node --check passed",
+  "all_referenced_frames_and_links_exist": true,
+  "actual_damage_seen_in_review": [
+    "bolt_cutter",
+    "grinder",
+    "chainsaw"
+  ],
+  "visually_inspected": [
+    "lineup",
+    "base_model",
+    "cutter_assembled",
+    "chainsaw_assembling",
+    "rapid_switch",
+    "run_two_angles",
+    "cast_with_equipped_tool",
+    "native_attack",
+    "chainsaw_attack"
+  ],
+  "browser_interaction_tested": false,
+  "assertions": 1217,
+  "captures": 443
+}

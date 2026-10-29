@@ -1,0 +1,166 @@
+{
+  "passed": true,
+  "source": "assets\\weapons\\staff_transform_v2\\authoring\\staff_transform_v2.blend",
+  "source_sha256": "c730d121823c3333dadeb181b7811276b437671c13557b0befd4eb83481528cf",
+  "geometry_preserved_meshes": 52,
+  "triangles": 7316,
+  "metrics": {
+    "common": {
+      "parts": 9,
+      "triangles": 1028
+    },
+    "bolt_cutter": {
+      "parts": 7,
+      "triangles": 1908
+    },
+    "grinder": {
+      "parts": 6,
+      "triangles": 1708
+    },
+    "chainsaw": {
+      "parts": 28,
+      "triangles": 2540
+    },
+    "ornament_seal": {
+      "parts": 2,
+      "triangles": 132
+    }
+  },
+  "materials": 2,
+  "maps": {
+    "color": [
+      1024,
+      1024
+    ],
+    "orm": [
+      512,
+      512
+    ],
+    "normal": [
+      1024,
+      1024
+    ],
+    "emission": [
+      256,
+      256
+    ]
+  },
+  "bake_seconds": {
+    "color": 22.44,
+    "orm": 6.38,
+    "normal": 27.19,
+    "emission": 1.9
+  },
+  "parameters": {
+    "Enamel_Navy": {
+      "base": [
+        0.012,
+        0.029,
+        0.057
+      ],
+      "rough": 0.42,
+      "metal": 0.12,
+      "wear": [
+        0.19,
+        0.23,
+        0.23
+      ],
+      "wear_strength": 0.3
+    },
+    "Aged_Brass": {
+      "base": [
+        0.3,
+        0.165,
+        0.06
+      ],
+      "rough": 0.43,
+      "metal": 0.64,
+      "wear": [
+        0.53,
+        0.34,
+        0.135
+      ],
+      "wear_strength": 0.44
+    },
+    "Brass_Edge": {
+      "base": [
+        0.43,
+        0.265,
+        0.095
+      ],
+      "rough": 0.3,
+      "metal": 0.7,
+      "wear": [
+        0.64,
+        0.44,
+        0.2
+      ],
+      "wear_strength": 0.26
+    },
+    "Cutting_Steel": {
+      "base": [
+        0.39,
+        0.47,
+        0.52
+      ],
+      "rough": 0.26,
+      "metal": 0.68,
+      "wear": [
+        0.64,
+        0.7,
+        0.72
+      ],
+      "wear_strength": 0.18
+    },
+    "Oiled_Steel": {
+      "base": [
+        0.022,
+        0.031,
+        0.04
+      ],
+      "rough": 0.48,
+      "metal": 0.64,
+      "wear": [
+        0.15,
+        0.19,
+        0.205
+      ],
+      "wear_strength": 0.24
+    },
+    "Navy_Grip": {
+      "base": [
+        0.008,
+        0.016,
+        0.026
+      ],
+      "rough": 0.8,
+      "metal": 0.0,
+      "wear": [
+        0.025,
+        0.039,
+        0.049
+      ],
+      "wear_strength": 0.18
+    },
+    "Teal_Core": {
+      "base": [
+        0.025,
+        0.22,
+        0.17
+      ],
+      "rough": 0.23,
+      "metal": 0.12,
+      "wear": [
+        0.04,
+        0.32,
+        0.24
+      ],
+      "wear_strength": 0.0
+    }
+  },
+  "asset_sha256": "1dbd09823cc337f19fc68429d476e335a9ff0451d27a440aa6248585b18e0e27",
+  "blend_sha256": "2a6e7a92229d4568b0da0ed5a643eb1b4cf724204c04316a8b6b22a646a3844e",
+  "blender": "5.1.1",
+  "texture_bytes": 1080991,
+  "uncompressed_rgba8_with_mips_estimate_bytes": 12932437.333333332
+}

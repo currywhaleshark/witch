@@ -1,0 +1,114 @@
+00:04.375  image.write      | ERROR OpenImageIO write failed: Could not open file "C:\Users\yurib\.thumbnails\large\blender_32020_9f01747b864ae732ac540d4dcaaf6e2c.png.png"
+Info: Saved as "staff_transform_v1.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.1\5.1\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+21:35:21 | INFO: Starting glTF 2.0 export
+21:35:21 | INFO: Extracting primitive: core_cage_mesh
+21:35:21 | INFO: Primitives created: 3
+21:35:21 | INFO: Extracting primitive: core_receiver_mesh
+21:35:21 | INFO: Primitives created: 3
+21:35:21 | INFO: Extracting primitive: grip_sleeve_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: ornament_mount_mesh
+21:35:21 | INFO: Primitives created: 3
+21:35:21 | INFO: Extracting primitive: pommel_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: receiver_ports_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: shaft_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: teal_core_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: upper_ferrule_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: cutter_drive_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: cutter_jaw_l_mesh
+21:35:21 | INFO: Primitives created: 3
+21:35:21 | INFO: Extracting primitive: cutter_jaw_r_mesh
+21:35:21 | INFO: Primitives created: 3
+21:35:21 | INFO: Extracting primitive: cutter_link_l_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: cutter_link_r_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: cutter_lock_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: cutter_saddle_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: grinder_axle_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: grinder_disc_mesh
+21:35:21 | INFO: Primitives created: 3
+21:35:21 | INFO: Extracting primitive: grinder_guard_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: grinder_motor_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: grinder_mount_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: grinder_status_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_gear_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: saw_guide_back_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_guide_front_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_motor_mesh
+21:35:21 | INFO: Primitives created: 3
+21:35:21 | INFO: Extracting primitive: saw_nose_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_spine_mesh
+21:35:21 | INFO: Primitives created: 3
+21:35:21 | INFO: Extracting primitive: saw_tooth_00_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_01_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_02_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_03_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_04_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_05_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_06_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_07_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_08_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_09_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_10_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_11_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_12_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_13_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_14_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_15_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_16_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_17_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_18_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_19_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_20_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: saw_tooth_21_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Extracting primitive: seal_inlay_mesh
+21:35:21 | INFO: Primitives created: 2
+21:35:21 | INFO: Extracting primitive: seal_plate_mesh
+21:35:21 | INFO: Primitives created: 1
+21:35:21 | INFO: Finished glTF 2.0 export in 0.2531261444091797 s
+
+STAFF_BUILD_COMPLETE {"passed": true, "blender": "5.1.1", "metrics": {"common": {"parts": 9, "triangles": 1028}, "bolt_cutter": {"parts": 7, "triangles": 1256}, "grinder": {"parts": 6, "triangles": 1708}, "chainsaw": {"parts": 28, "triangles": 2540}, "ornament_seal": {"parts": 2, "triangles": 132}}, "asset_sha256": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1", "source_sha256": "23f2cdc4735da308a5871b818a3753f63790c21d5d8a63ff2142ced50f0fd02a", "materials": 7, "scope": "Original rigid modular meshes. No new character geometry, rig, clips or gameplay changes."}
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

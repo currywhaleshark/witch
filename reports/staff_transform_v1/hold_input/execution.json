@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "test": "hold_input",
+  "workspace_cache_diagnostic_only": false,
+  "stderr_empty": true,
+  "changed_inputs": [],
+  "phase": "test"
+}

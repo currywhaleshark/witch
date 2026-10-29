@@ -2,6 +2,7 @@ extends Node3D
 ## Presentation only. The arena owns movement, resource costs, hit tests and clocks.
 const Modular = preload("res://scripts/modular_character_runtime.gd")
 const Shape = preload("res://scripts/shapes.gd")
+const StaffVisual = preload("res://scripts/staff_visual.gd")
 const ASSET_DIR := "res://assets/characters/player/run_arm_v21/"
 const BODY_PATH := ASSET_DIR + "body_standard_v21.glb"
 const PARTS := {
@@ -43,6 +44,7 @@ var staff_root: Node3D
 var staff_head: Node3D
 var tool_visuals: Dictionary = {}
 var grinder_disk: MeshInstance3D
+var staff_visual: StaffVisual
 var loaded_ok := false
 var last_error := ""
 var motion_duration := 0.0
@@ -119,6 +121,8 @@ func initialize() -> bool:
 		if not slide_track is Array or slide_track.size() < 2:
 			return _fail("missing_staff_slide_track: " + clip)
 	_build_staff()
+	if not staff_visual.loaded_ok:
+		return _fail(staff_visual.last_error)
 	loaded_ok = true
 	_state = "idle"
 	_sample("idle", 0.0)
@@ -148,36 +152,22 @@ func _build_staff() -> void:
 	staff_socket.add_child(staff_root)
 	staff_root.position = STAFF_GRIP_OFFSET
 	staff_root.basis = STAFF_GRIP_BASIS
-	# +Y shaft: grip at zero, 0.42m below and 0.78m above the hand.
-	Shape.cylinder(staff_root, Vector3(0, 0.18, 0), 0.010, 1.20, BRASS)
-	Shape.cylinder(staff_root, Vector3(0, -0.02, 0), 0.013, 0.16, Color("39474f"))
-	staff_head = Node3D.new()
-	staff_head.name = "StaffHead"
-	staff_root.add_child(staff_head)
-	Shape.box(staff_head, Vector3(0, 0.68, 0), Vector3(0.16, 0.09, 0.10), STEEL)
-	var crown := Shape.ring(staff_head, Vector3(0, 0.77, 0), 0.10, TEAL, 0.018)
-	crown.rotation.x = PI / 2.0
-	tool_visuals = {"bolt_cutter": Node3D.new(), "grinder": Node3D.new(), "chainsaw": Node3D.new()}
-	for tool in tool_visuals:
-		tool_visuals[tool].name = tool
-		staff_root.add_child(tool_visuals[tool])
-		tool_visuals[tool].visible = false
-	for x in [-0.08, 0.08]:
-		var jaw := Shape.box(tool_visuals.bolt_cutter, Vector3(x, 0.78, 0), Vector3(0.065, 0.29, 0.10), BRASS)
-		jaw.rotation.z = x * 1.5
-	grinder_disk = Shape.cylinder(tool_visuals.grinder, Vector3(0, 0.78, 0), 0.17, 0.045, STEEL)
-	grinder_disk.rotation.z = PI / 2.0
-	# Chainsaw: a motor housing on the staff head and a long flat bar with a dark chain round it.
-	Shape.box(tool_visuals.chainsaw, Vector3(0, 0.66, 0), Vector3(0.13, 0.12, 0.12), Color("8c3a32"))
-	Shape.box(tool_visuals.chainsaw, Vector3(0, 0.9, 0), Vector3(0.09, 0.38, 0.025), STEEL)
-	Shape.box(tool_visuals.chainsaw, Vector3(0, 0.9, 0), Vector3(0.11, 0.4, 0.015), Color("2b2f33"))
+	staff_visual = StaffVisual.new()
+	staff_visual.name = "StaffAppearance"
+	staff_root.add_child(staff_visual)
+	staff_visual.initialize()
+	staff_head = staff_visual.common_root
+	tool_visuals = staff_visual.tool_roots
+	# Rotation is owned by StaffVisual so each mechanism respects assembly and pause.
+	grinder_disk = null
 
 func set_active_tool(tool) -> void:
 	if not loaded_ok:
 		return
-	for tool_name in tool_visuals:
-		tool_visuals[tool_name].visible = tool == tool_name
-	staff_head.visible = tool == null
+	staff_visual.set_tool(tool)
+
+func set_staff_appearance(profile: String) -> bool:
+	return loaded_ok and staff_visual.set_appearance(profile)
 
 func begin_motion(kind: String, duration: float, release_ratio: float) -> void:
 	if not loaded_ok or is_dead or kind not in ["attack", "cast"]:
@@ -196,6 +186,8 @@ func begin_motion(kind: String, duration: float, release_ratio: float) -> void:
 
 func mark_release() -> void:
 	if loaded_ok and _motion_kind in ["attack", "cast"]:
+		if _motion_kind == "attack":
+			staff_visual.finish_assembly()
 		# The arena signals the real physics frame that crosses its release clock.
 		_release_pending = true
 
@@ -234,6 +226,16 @@ func sync_state(dt: float, moved: bool, action_remaining: float, paused: bool, d
 	is_cleared = cleared
 	if not loaded_ok or paused:
 		return
+	var staff_release := -1.0
+	if _motion_kind == "attack" and _release_elapsed < 0.0:
+		staff_release = maxf(0.0, action_remaining - motion_duration * (1.0-gameplay_release_ratio))
+	_sync_pose(dt, moved, action_remaining, cleared, actual_speed)
+	# Use the pose just sampled, including the real release latch. The former order
+	# drove the jaws with last frame's phase and reopened them on the impact frame.
+	staff_visual.advance(dt, is_dead or cleared,
+		clip_time / maxf(clip_length,.000001) if _motion_kind == "attack" else -1.0, staff_release)
+
+func _sync_pose(dt: float, moved: bool, action_remaining: float, cleared: bool, actual_speed: float) -> void:
 	_settle_turn(dt)
 	if is_dead:
 		_collapse_elapsed = minf(_collapse_elapsed + maxf(dt, 0.0), _length("collapse"))

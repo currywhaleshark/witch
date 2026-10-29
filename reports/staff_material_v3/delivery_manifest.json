@@ -1,0 +1,807 @@
+{
+  "passed": true,
+  "date": "2026-10-30",
+  "user_material_approved": false,
+  "build": {
+    "passed": true,
+    "source": "assets\\weapons\\staff_transform_v2\\authoring\\staff_transform_v2.blend",
+    "source_sha256": "c730d121823c3333dadeb181b7811276b437671c13557b0befd4eb83481528cf",
+    "geometry_preserved_meshes": 52,
+    "triangles": 7316,
+    "metrics": {
+      "common": {
+        "parts": 9,
+        "triangles": 1028
+      },
+      "bolt_cutter": {
+        "parts": 7,
+        "triangles": 1908
+      },
+      "grinder": {
+        "parts": 6,
+        "triangles": 1708
+      },
+      "chainsaw": {
+        "parts": 28,
+        "triangles": 2540
+      },
+      "ornament_seal": {
+        "parts": 2,
+        "triangles": 132
+      }
+    },
+    "materials": 2,
+    "maps": {
+      "color": [
+        1024,
+        1024
+      ],
+      "orm": [
+        512,
+        512
+      ],
+      "normal": [
+        1024,
+        1024
+      ],
+      "emission": [
+        256,
+        256
+      ]
+    },
+    "bake_seconds": {
+      "color": 22.44,
+      "orm": 6.38,
+      "normal": 27.19,
+      "emission": 1.9
+    },
+    "parameters": {
+      "Enamel_Navy": {
+        "base": [
+          0.012,
+          0.029,
+          0.057
+        ],
+        "rough": 0.42,
+        "metal": 0.12,
+        "wear": [
+          0.19,
+          0.23,
+          0.23
+        ],
+        "wear_strength": 0.3
+      },
+      "Aged_Brass": {
+        "base": [
+          0.3,
+          0.165,
+          0.06
+        ],
+        "rough": 0.43,
+        "metal": 0.64,
+        "wear": [
+          0.53,
+          0.34,
+          0.135
+        ],
+        "wear_strength": 0.44
+      },
+      "Brass_Edge": {
+        "base": [
+          0.43,
+          0.265,
+          0.095
+        ],
+        "rough": 0.3,
+        "metal": 0.7,
+        "wear": [
+          0.64,
+          0.44,
+          0.2
+        ],
+        "wear_strength": 0.26
+      },
+      "Cutting_Steel": {
+        "base": [
+          0.39,
+          0.47,
+          0.52
+        ],
+        "rough": 0.26,
+        "metal": 0.68,
+        "wear": [
+          0.64,
+          0.7,
+          0.72
+        ],
+        "wear_strength": 0.18
+      },
+      "Oiled_Steel": {
+        "base": [
+          0.022,
+          0.031,
+          0.04
+        ],
+        "rough": 0.48,
+        "metal": 0.64,
+        "wear": [
+          0.15,
+          0.19,
+          0.205
+        ],
+        "wear_strength": 0.24
+      },
+      "Navy_Grip": {
+        "base": [
+          0.008,
+          0.016,
+          0.026
+        ],
+        "rough": 0.8,
+        "metal": 0.0,
+        "wear": [
+          0.025,
+          0.039,
+          0.049
+        ],
+        "wear_strength": 0.18
+      },
+      "Teal_Core": {
+        "base": [
+          0.025,
+          0.22,
+          0.17
+        ],
+        "rough": 0.23,
+        "metal": 0.12,
+        "wear": [
+          0.04,
+          0.32,
+          0.24
+        ],
+        "wear_strength": 0.0
+      }
+    },
+    "asset_sha256": "1dbd09823cc337f19fc68429d476e335a9ff0451d27a440aa6248585b18e0e27",
+    "blend_sha256": "2a6e7a92229d4568b0da0ed5a643eb1b4cf724204c04316a8b6b22a646a3844e",
+    "blender": "5.1.1",
+    "texture_bytes": 1080991,
+    "uncompressed_rgba8_with_mips_estimate_bytes": 12932437.333333332
+  },
+  "source_validation": {
+    "passed": true,
+    "saved_geometry_preserved": 52,
+    "packed_images": {
+      "Staff_color": [
+        1024,
+        1024
+      ],
+      "Staff_emission": [
+        256,
+        256
+      ],
+      "Staff_normal": [
+        1024,
+        1024
+      ],
+      "Staff_orm": [
+        512,
+        512
+      ]
+    },
+    "editable_procedural_materials": [
+      "Aged_Brass",
+      "Brass_Edge",
+      "Cutting_Steel",
+      "Enamel_Navy",
+      "Navy_Grip",
+      "Oiled_Steel",
+      "Teal_Core"
+    ],
+    "blend_sha256": "2a6e7a92229d4568b0da0ed5a643eb1b4cf724204c04316a8b6b22a646a3844e"
+  },
+  "glb_validation": {
+    "passed": true,
+    "meshes": 52,
+    "triangles": 7316,
+    "geometry_normals_transforms_preserved": true,
+    "mechanism_metadata_preserved": true,
+    "surface_count_before": 86,
+    "surface_count_after": 55,
+    "uv_vertex_count": 13956,
+    "images": {
+      "staff_normal": {
+        "size": [
+          1024,
+          1024
+        ],
+        "mean": [
+          128.010103225708,
+          128.00822353363037,
+          254.79152584075928
+        ],
+        "stddev": [
+          3.7659176238935927,
+          3.2142741500859984,
+          4.486617676887041
+        ],
+        "bytes": 253673
+      },
+      "staff_orm": {
+        "size": [
+          512,
+          512
+        ],
+        "mean": [
+          92.07617568969727,
+          39.33012008666992,
+          49.14826202392578
+        ],
+        "stddev": [
+          113.26923454339995,
+          52.75917366630912,
+          71.89112091120725
+        ],
+        "bytes": 209680
+      },
+      "staff_color": {
+        "size": [
+          1024,
+          1024
+        ],
+        "mean": [
+          39.835975646972656,
+          41.18201541900635,
+          36.73859691619873
+        ],
+        "stddev": [
+          62.59930156954541,
+          59.87165354958022,
+          54.665885029395646
+        ],
+        "bytes": 607461
+      },
+      "staff_emission": {
+        "size": [
+          256,
+          256
+        ],
+        "mean": [
+          4.0260162353515625,
+          8.473480224609375,
+          7.29217529296875
+        ],
+        "stddev": [
+          17.946309289801754,
+          37.30972354518215,
+          32.108802227320446
+        ],
+        "bytes": 10177
+      }
+    },
+    "materials": 2,
+    "runtime_identical": true,
+    "asset_sha256": "1dbd09823cc337f19fc68429d476e335a9ff0451d27a440aa6248585b18e0e27"
+  },
+  "tests": {
+    "staff_material_v3": {
+      "checks": 14,
+      "execution": {
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0,
+        "changed_inputs": [],
+        "test": "staff_material_v3",
+        "phase": "test"
+      }
+    },
+    "staff_visual": {
+      "checks": 156,
+      "execution": {
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0,
+        "changed_inputs": [],
+        "test": "staff_visual",
+        "phase": "test"
+      }
+    },
+    "bolt_cutter_v2": {
+      "checks": 278,
+      "execution": {
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "exit_code": 0,
+        "changed_inputs": [],
+        "test": "bolt_cutter_v2",
+        "phase": "test"
+      }
+    }
+  },
+  "assertions": 448,
+  "captures": 298,
+  "release_observations": {
+    "attack": {
+      "first_damage_capture": 27,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9966.0,
+        "motion": "attack",
+        "seconds": 0.9,
+        "staff": {
+          "active_tool": "bolt_cutter",
+          "appearance": "seal",
+          "effects": false,
+          "elapsed": 0.833333333333334,
+          "groups": {
+            "bolt_cutter": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.916666666666668,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    },
+    "grinder": {
+      "first_damage_capture": 19,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9985.0,
+        "motion": "attack",
+        "seconds": 0.633333333333333,
+        "staff": {
+          "active_tool": "grinder",
+          "appearance": "seal",
+          "effects": false,
+          "elapsed": 0.566666666666667,
+          "groups": {
+            "bolt_cutter": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.65,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    },
+    "chainsaw": {
+      "first_damage_capture": 20,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9986.0,
+        "motion": "attack",
+        "seconds": 0.666666666666667,
+        "staff": {
+          "active_tool": "chainsaw",
+          "appearance": "seal",
+          "effects": false,
+          "elapsed": 0.6,
+          "groups": {
+            "bolt_cutter": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "chainsaw": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.683333333333334,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    },
+    "native": {
+      "first_damage_capture": 27,
+      "sample": {
+        "clip": "combat_heavy_swing_rh_v20",
+        "hp": 9966.0,
+        "motion": "attack",
+        "seconds": 0.9,
+        "staff": {
+          "active_tool": "bolt_cutter",
+          "appearance": "seal",
+          "effects": false,
+          "elapsed": 0.833333333333334,
+          "groups": {
+            "bolt_cutter": {
+              "max": 1.0,
+              "min": 1.0,
+              "visible": true
+            },
+            "chainsaw": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            },
+            "grinder": {
+              "max": 0.0,
+              "min": 0.0,
+              "visible": false
+            }
+          },
+          "jaw_opening_degrees": 0.0,
+          "loaded": true,
+          "mechanism_time": 0.916666666666668,
+          "parts": 41,
+          "serial": 1
+        }
+      }
+    }
+  },
+  "runtime_code_scope": "Staff asset path only; player_visual byte-identical to pre-material baseline.",
+  "hashes": {
+    "game/scripts/staff_visual.gd": "8ebb7b225a6758af32ca01cb40e72f1d06b23477680a6537de3c8bb272539f0e",
+    "game/scripts/player_visual.gd": "3050a6e9cc07000d5b14219f7e5307c37dfc4c4486535a65f391a37e03098812",
+    "game/scripts/arena.gd": "557f4df978fd96ef83aa9ce2d957ffba9884d4e6ed8b20037f4e9f1c5c663a5d",
+    "game/data/trial.json": "59b064a99ccaf8f5f068bd89113438b1ca2b852e7682f14652fc236dd41cf403",
+    "assets/weapons/staff_material_v3/authoring/staff_material_v3.blend": "2a6e7a92229d4568b0da0ed5a643eb1b4cf724204c04316a8b6b22a646a3844e",
+    "assets/weapons/staff_material_v3/authoring/source_material_regions.json": "c8a949d53d731786498a45b82c0261aacdd24e3b0a003d466e3f50235363e636",
+    "assets/weapons/staff_material_v3/parts.json": "3dda68400d7e20f8e020fa1c98c473966b4293ae0fed8ae49df843efc487f8e6",
+    "assets/weapons/staff_material_v3/exports/staff_parts.glb": "1dbd09823cc337f19fc68429d476e335a9ff0451d27a440aa6248585b18e0e27",
+    "game/assets/weapons/staff_material_v3/staff_parts.glb": "1dbd09823cc337f19fc68429d476e335a9ff0451d27a440aa6248585b18e0e27",
+    "tools/build_staff_material_v3.py": "bc483b6bb0b81d9c9ca82c091a5788799c88ef899f314c0bb62dc3168cff74eb",
+    "tools/validate_staff_material_source_v3.py": "ae979169a41c8a77ccaccc13c7b4c105fa4bf0054ab2ae37aa1f5a8e22b8bbdf",
+    "tools/validate_staff_material_v3.py": "a773d24a22009a4e4e3f38d4c987ed13dbb65829dbf599b5a2f869ad2095d593",
+    "tools/run_staff_material_v3.ps1": "593d184bfc183782350541fefada4b7d61f4c8d4e3564880f94c0240437ff195",
+    "tools/package_staff_material_v3.py": "24286c4ca810b62f27002fe686888bdc3013ca69717a986a257f7181109c78ee",
+    "game/tests/staff_material_v3.gd": "767bbc48e4d6e52eafab06329e1f639f397f66ba5463141d2cc8de69c282bd22",
+    "game/tests/review_staff_material_v3.gd": "7e0e4e29d564c8640f9dec4925700ead5c33cecb98e40e193f6687027472a0be",
+    "assets/weapons/staff_material_v3/textures/staff_color.png": "f5c6513a16af049e06df5b1e6bb03250f1554af8bd9a47b0629e74a6c1e8232d",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_color.png": "f5c6513a16af049e06df5b1e6bb03250f1554af8bd9a47b0629e74a6c1e8232d",
+    "assets/weapons/staff_material_v3/textures/staff_emission.png": "e0b81d37958ece9dab57aaa0184619782d6d7a7abeb66bc2a780c19d311777ba",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_emission.png": "e0b81d37958ece9dab57aaa0184619782d6d7a7abeb66bc2a780c19d311777ba",
+    "assets/weapons/staff_material_v3/textures/staff_normal.png": "ddc0f6e414eedc87e62dc7182548d5b63173a3ec5eacd730d71a98b974d6a8f1",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_normal.png": "ddc0f6e414eedc87e62dc7182548d5b63173a3ec5eacd730d71a98b974d6a8f1",
+    "assets/weapons/staff_material_v3/textures/staff_orm.png": "39c8d68c7fc0a42ba39dc82eb8856ab58d9fb956767883da0145c6cceeaa8e6a",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_orm.png": "39c8d68c7fc0a42ba39dc82eb8856ab58d9fb956767883da0145c6cceeaa8e6a"
+  },
+  "image_hashes": {
+    "review/turntable/000.jpg": "1fd304a3c323e3081cf218bb65041541ad43311f814ba8da4736b0e46e0d5c88",
+    "review/turntable/001.jpg": "9c64d4f9c4e5edfed02fd60770cfc3133255ae7937622d4aeab7bb881ee63ad9",
+    "review/turntable/002.jpg": "358ef6aa2c3f070a3eb8850cb292b70e32729e231b702b3d7caef09e65201afe",
+    "review/turntable/003.jpg": "a5caf99b84480b262ad3253c8357a43674b2c1ef4bc3600a319a0c13c7135f69",
+    "review/turntable/004.jpg": "4d3dcb80d937296308a134bff00d591a80d5ee8e43530518dfca3917b90ed207",
+    "review/turntable/005.jpg": "86dd2c55db8d59b935072bd2107cc388f909ef48e17a5aae52c90b0acafdd523",
+    "review/turntable/006.jpg": "1441922b548911b6334aef634abd668d43e6b65fb97ea36c06a2f67a511f5793",
+    "review/turntable/007.jpg": "b6f4f9bb8657a150856615f775cb4c822a38a8c95c1f9d29f32fed2c8368d351",
+    "review/turntable/008.jpg": "e0aa69f0546de99b7bbca3ff52731de5ec8f629330d79040835604ede4ea52d5",
+    "review/turntable/009.jpg": "d2016660ac9d523ad222fd79d4d29d1dbd9124f44e05a0386cf49f1365ddb491",
+    "review/turntable/010.jpg": "4b2e714754821c65495027bd2522cdfbf8c7f2a13d6aac01b3f25b33c2421026",
+    "review/turntable/011.jpg": "5e20ba773e3a10e1aaf9e46a80244c6325cf60a9e88fcbce526685f35883d651",
+    "review/turntable/012.jpg": "dda141618c2dc3cc43de366f66caf852a31be5e66c393f69f114f9d2e4d97a3d",
+    "review/turntable/013.jpg": "d06ce9255bb9c32a8e6c3844635e7ddb82511168dcfa55602e0c6b679e655dbd",
+    "review/turntable/014.jpg": "59868efecf54819e74af3f248f7366c0f5e228f592b6bd5774f59f856e75339b",
+    "review/turntable/015.jpg": "dbdc0ca306d9c772cb3063edb28e7fbd18dd3e17840d7aa17b74ea31940c76b2",
+    "review/turntable/016.jpg": "59868efecf54819e74af3f248f7366c0f5e228f592b6bd5774f59f856e75339b",
+    "review/turntable/017.jpg": "d06ce9255bb9c32a8e6c3844635e7ddb82511168dcfa55602e0c6b679e655dbd",
+    "review/turntable/018.jpg": "dda141618c2dc3cc43de366f66caf852a31be5e66c393f69f114f9d2e4d97a3d",
+    "review/turntable/019.jpg": "5e20ba773e3a10e1aaf9e46a80244c6325cf60a9e88fcbce526685f35883d651",
+    "review/turntable/020.jpg": "4b2e714754821c65495027bd2522cdfbf8c7f2a13d6aac01b3f25b33c2421026",
+    "review/turntable/021.jpg": "d2016660ac9d523ad222fd79d4d29d1dbd9124f44e05a0386cf49f1365ddb491",
+    "review/turntable/022.jpg": "e0aa69f0546de99b7bbca3ff52731de5ec8f629330d79040835604ede4ea52d5",
+    "review/turntable/023.jpg": "b6f4f9bb8657a150856615f775cb4c822a38a8c95c1f9d29f32fed2c8368d351",
+    "review/turntable/024.jpg": "1441922b548911b6334aef634abd668d43e6b65fb97ea36c06a2f67a511f5793",
+    "review/turntable/025.jpg": "86dd2c55db8d59b935072bd2107cc388f909ef48e17a5aae52c90b0acafdd523",
+    "review/turntable/026.jpg": "4d3dcb80d937296308a134bff00d591a80d5ee8e43530518dfca3917b90ed207",
+    "review/turntable/027.jpg": "a5caf99b84480b262ad3253c8357a43674b2c1ef4bc3600a319a0c13c7135f69",
+    "review/turntable/028.jpg": "358ef6aa2c3f070a3eb8850cb292b70e32729e231b702b3d7caef09e65201afe",
+    "review/turntable/029.jpg": "9c64d4f9c4e5edfed02fd60770cfc3133255ae7937622d4aeab7bb881ee63ad9",
+    "review/turntable/030.jpg": "1fd304a3c323e3081cf218bb65041541ad43311f814ba8da4736b0e46e0d5c88",
+    "review/turntable/031.jpg": "47a200c2b456ecbec40c17236dc81aeb13c8fad467fc035887d111d3cda00c74",
+    "review/turntable/032.jpg": "bec84ffb492365119c7e54d2439a6e15dffd0833d05242789765aa98610ffbe9",
+    "review/turntable/033.jpg": "40d18bc6af9f3f2907a116a2bfedeb1c4975e4c8b206a9cefd8a63820576ae92",
+    "review/turntable/034.jpg": "4ae4949e5c1a6e983858a8b10754c094734046b47b833c973e297e100e986d77",
+    "review/turntable/035.jpg": "26e03710db752efe1a3046773ef6948a943a0a2c6ada61e36039219e61faf282",
+    "review/turntable/036.jpg": "9051e9a793bca417965baa417955170b9a17888d2f29b22f431f029bd0bf89f1",
+    "review/turntable/037.jpg": "15ad0c5b1c0860063e2c6cf752fd903058362fc9f3eee878590504826d125d21",
+    "review/turntable/038.jpg": "c638cb32c03efda96529c2e8280d60394826755cff38de0dbe264720f6b07642",
+    "review/turntable/039.jpg": "26250d0b93693607f4d06f3dead53f0a75922624d5908e9c848ed513914fb243",
+    "review/turntable/040.jpg": "4df038bdb9c75debe0bcee6bf71c541fef0951d58c151d6b3f06c1e6ee779ed0",
+    "review/turntable/041.jpg": "c2e9a977be9ed58fc97461eabfaceba908d5d50e1fcdba1710429a0152941879",
+    "review/turntable/042.jpg": "db5f723069dc954a6de1748eb940b375f62509f6b9a6fa4a645205079408fb3d",
+    "review/turntable/043.jpg": "8354c26ec7ace99af442d81c18d6772310521e8027e071c98a1000d0a80a7c12",
+    "review/turntable/044.jpg": "ac2ae07c923ac92085f5ebdc365998bdc715666f62ee8cfca24abb476c2db5f7",
+    "review/turntable/045.jpg": "2b121b452cff2f67eb8db2a9d86957359c6c1a14dd65495886dda1c7a626f933",
+    "review/turntable/046.jpg": "ac2ae07c923ac92085f5ebdc365998bdc715666f62ee8cfca24abb476c2db5f7",
+    "review/turntable/047.jpg": "8354c26ec7ace99af442d81c18d6772310521e8027e071c98a1000d0a80a7c12",
+    "review/turntable/048.jpg": "db5f723069dc954a6de1748eb940b375f62509f6b9a6fa4a645205079408fb3d",
+    "review/turntable/049.jpg": "c2e9a977be9ed58fc97461eabfaceba908d5d50e1fcdba1710429a0152941879",
+    "review/turntable/050.jpg": "4df038bdb9c75debe0bcee6bf71c541fef0951d58c151d6b3f06c1e6ee779ed0",
+    "review/turntable/051.jpg": "26250d0b93693607f4d06f3dead53f0a75922624d5908e9c848ed513914fb243",
+    "review/turntable/052.jpg": "c638cb32c03efda96529c2e8280d60394826755cff38de0dbe264720f6b07642",
+    "review/turntable/053.jpg": "15ad0c5b1c0860063e2c6cf752fd903058362fc9f3eee878590504826d125d21",
+    "review/turntable/054.jpg": "9051e9a793bca417965baa417955170b9a17888d2f29b22f431f029bd0bf89f1",
+    "review/turntable/055.jpg": "26e03710db752efe1a3046773ef6948a943a0a2c6ada61e36039219e61faf282",
+    "review/turntable/056.jpg": "4ae4949e5c1a6e983858a8b10754c094734046b47b833c973e297e100e986d77",
+    "review/turntable/057.jpg": "40d18bc6af9f3f2907a116a2bfedeb1c4975e4c8b206a9cefd8a63820576ae92",
+    "review/turntable/058.jpg": "bec84ffb492365119c7e54d2439a6e15dffd0833d05242789765aa98610ffbe9",
+    "review/turntable/059.jpg": "47a200c2b456ecbec40c17236dc81aeb13c8fad467fc035887d111d3cda00c74",
+    "review/turntable/060.jpg": "1fd304a3c323e3081cf218bb65041541ad43311f814ba8da4736b0e46e0d5c88",
+    "review/attack/000.jpg": "2dc21478ccae10652f3a633922962160b08944a1778ebd7019282599dee8dae8",
+    "review/attack/001.jpg": "23648a94426a09f16aa6fd21656060088fe1008791d271371ab245b1a95242a6",
+    "review/attack/002.jpg": "7e15dce2ecbc42c21453bbf85aaaeb7dd6cafd2c57bb33db1f8299bfaf352bb9",
+    "review/attack/003.jpg": "2d9bdba4f418d5224dadee41b57d900e593f8aba6ef4431ab06aefe28820cb04",
+    "review/attack/004.jpg": "33633aa208dbf2cc48338f71b6d5b0ed4fc179f219d5b281a225ed4e792828b9",
+    "review/attack/005.jpg": "6f3ed82477771e21a4031a40e22946b4701695f36007615f85754c65b7f9818e",
+    "review/attack/006.jpg": "ff09c6fcdb23ee6751b7c16e390a326355962220e2985570b8fb716b2d8e93c1",
+    "review/attack/007.jpg": "c4e743b6b06db78cedbb2c3e6c5fc40071b2b655f44a0867d9c98ee151804635",
+    "review/attack/008.jpg": "d0fcad2048aff8ab87da2156572a4667d4cac373d01dff27610ffa54158227d3",
+    "review/attack/009.jpg": "b597d86990f4f7b8e55eb327986b84ddef477eeb30084c78a32d4c3626054835",
+    "review/attack/010.jpg": "c85c9df86b74095a6906f8e8d628daf9e825d874a7d90271a4ecd13f2b61cff0",
+    "review/attack/011.jpg": "ed05d93cef986b4527b49d22c623cb4149fde9c2eec775d2c66d8ade68e48e47",
+    "review/attack/012.jpg": "a319e4cb3a7f38426e5d17fe9bba8c9743c83bc58ea4772efa9df34319b931b1",
+    "review/attack/013.jpg": "a846c6079222ce5ebdf32820b6a52822735e608a016e36d7c52769db7e38a86d",
+    "review/attack/014.jpg": "d3f978bf2a09c020fd02bec527210f5abf9d6ddfbe01855f5a9fdb5b52dc85d7",
+    "review/attack/015.jpg": "98353d733a1be299c6c667934131f45a7718a418cab8e486e5ffe483ba8badd7",
+    "review/attack/016.jpg": "d5802a022ca490353eed0edf4424a7e6b1b056b68b06cd793bccffe828a25e04",
+    "review/attack/017.jpg": "849c05f89bae9db9f74309a6b79a29fd2800b82788a7f55141a5a1733648c77b",
+    "review/attack/018.jpg": "245b004c8063ac25f056af052d6ffb6a3a7a611fd2820a91200c68298ea2b46c",
+    "review/attack/019.jpg": "b71795f7a6ec25cc2fc016377d5b4147765b81ade425037258a30d3bd5087c6b",
+    "review/attack/020.jpg": "f64a3bcf767464d5ffd6df14ea5175e2e80492059012e81e8ee01180f3713c58",
+    "review/attack/021.jpg": "3a45df78b37a82c9668e77fb8d7b022a11e5e9372a1cc7de349dacb6f67f29c3",
+    "review/attack/022.jpg": "e55d5d392ec3c1abd804d6d1a001ab12f70d08ed0ecaeb50d55a570b7ea33ef0",
+    "review/attack/023.jpg": "4092f3ae7f1ebe59ee9984c49894e5ac63f6ca3bb75385179a2c88c4804f9206",
+    "review/attack/024.jpg": "734d63c0e49c532bc13d1ee34f06487859d0028c5d0cabc175f87e853f7b57a6",
+    "review/attack/025.jpg": "d76b036659c85f1fb8808141c8c7df451b004f37556705153020c7e9e4641da2",
+    "review/attack/026.jpg": "afd89604dbd14efad0baea464636c25b62d363e9d66e4cb1bcfbd972d554abea",
+    "review/attack/027.jpg": "133da10fa0ed69819ce459834e325132026e097914827186a3cfda0fed7cf6f4",
+    "review/attack/028.jpg": "26cd0cdb1e2e95c71491d840a761dac6228227cd5d684453c10822440897e3c0",
+    "review/attack/029.jpg": "dfc56e1ad0317acc6357fcff8f6cf1dbbac0dd56dfea23dc219c431c4c358516",
+    "review/attack/030.jpg": "1db2a9ff4921d04f5872f28d5714527820f6a1125f9ac997521cf9e213acb8af",
+    "review/attack/031.jpg": "8bfe183d67cc88bf15e2ecc2f567666255c0b66ddcb98220ce3a32417f89d6a7",
+    "review/attack/032.jpg": "68798fab6d4e2f858dac3a62d6105eaf6b8a6ce6e513596d26b5825f93015dfe",
+    "review/attack/033.jpg": "ab1fbbe3f16fd924424455d529a9ea080287dc587e5d112fb22b4b612c42c3bb",
+    "review/attack/034.jpg": "2464786b64b945239ba261d321eab53a0c300b459264fcde96d24bf6cf7bcb19",
+    "review/attack/035.jpg": "a8e744af306e6a421aeb41d528f4b61fbf6cf7d9856eee4cbca3b3ee2cff53ec",
+    "review/attack/036.jpg": "6441e157170c2128c482998bf224f1a1d52b9b984bc86de6d847526f142f1f49",
+    "review/attack/037.jpg": "a702c884d64abbb28b6e2b967b9d55ad057422d17f12cd70a7e17bbd239465f7",
+    "review/attack/038.jpg": "124386f0e9cf8422eadac9f7c6b2b8bffa9791c9130335518080b7d632c2d1da",
+    "review/attack/039.jpg": "69b0cf12d08da1b77bc4e361f11a9af9535de8ceb6a20a48628db3f7d71678d4",
+    "review/attack/040.jpg": "f28f85751944864e833493699014e0c6bda894cd32b5b2e321b67f5f186feb5b",
+    "review/attack/041.jpg": "2eba0ba5ef00f67ceeb44a8bef698aa35b2f1378a44d03e61d1db85f7f93eb33",
+    "review/attack/042.jpg": "df765bbd6f813d2b06f1b249fa8f6f45fd2c4607b0d32005e38d9d4123ed7e18",
+    "review/attack/043.jpg": "4d7874e62986d37028b4f27c092c4c611666c0ee5e149871717e0adb39e9f7c6",
+    "review/attack/044.jpg": "638aa8523b2a694bb079bf9980e6d397b0e40e9c500821b8be7024fbce7542ec",
+    "review/attack/045.jpg": "75d2b0f7e23647147f937c48622804e1aed7371a16649d58f9a101bf2b15cee4",
+    "review/grinder/000.jpg": "2dc21478ccae10652f3a633922962160b08944a1778ebd7019282599dee8dae8",
+    "review/grinder/001.jpg": "23648a94426a09f16aa6fd21656060088fe1008791d271371ab245b1a95242a6",
+    "review/grinder/002.jpg": "7e15dce2ecbc42c21453bbf85aaaeb7dd6cafd2c57bb33db1f8299bfaf352bb9",
+    "review/grinder/003.jpg": "2a474e871e0ef2c6104cbe253fff2383cc70df5e726ff866fb11daa028a9d0ac",
+    "review/grinder/004.jpg": "ead9a52e59ef25326cfeca30610a7a9a411422491563fdffb815f1ff85bb49a5",
+    "review/grinder/005.jpg": "e42173ba74aacd4d3cb8bf9658b120ed99e9af6fc409e3aad708ce6effeacc82",
+    "review/grinder/006.jpg": "d9562eae9a0723f775ed08c8370ab569c02c181bbb51494bcaa91f2dc92f362e",
+    "review/grinder/007.jpg": "bbddfe9869008de7bcce523e6bbd30cdca6a8db3f87fe2094923dc4ac5a563ab",
+    "review/grinder/008.jpg": "b26acc7ffc8f05235d654161a627dca88e67521a2f7e5ebdd452fa2dd8c4044d",
+    "review/grinder/009.jpg": "5ed37a28e681f37d57c0cdb64c01c6a0829485e9333ae15790fddc90fae8597d",
+    "review/grinder/010.jpg": "b5f4a09dd7f9110105cf5946e191176b53b380854c03a1081308c0948067d11d",
+    "review/grinder/011.jpg": "0da75fe1412a66d3b8dc00b1c808e02f4ee74f59b6b90db456387dc8e7e548e1",
+    "review/grinder/012.jpg": "37bd2462d890689887f5f5485476eeaca5814c8d4cd500e073449fe26c4b5820",
+    "review/grinder/013.jpg": "12b07453c3e793eede06d2be3fa7471bf3529caa6868514c2f7598f730f22f11",
+    "review/grinder/014.jpg": "4594401f12bd3b4dbb9136b0e021b95a693979e6b23c2d96f0f83e6e2116e638",
+    "review/grinder/015.jpg": "8278ef6ea18d6eb6718f37f1bab735eff50d952d37383acbdebe83fa6aaf37e8",
+    "review/grinder/016.jpg": "f155fcc532a49b14cce2e6f55d237eb414a8a1639ecc70afb99cbabd30d07901",
+    "review/grinder/017.jpg": "2140cc3b278a382b58167d25bfb75a4aaae4c6d381f2a02cc9bb4660c73cbb75",
+    "review/grinder/018.jpg": "4929fc5746b39bc0c90919be2ea95e01359aa45f1e8dd030826dff6c05d115b9",
+    "review/grinder/019.jpg": "dbe25b47cedaa5854712a78389b1fef1e37f7291e0b842751529150b56c5de7d",
+    "review/grinder/020.jpg": "078fd0ea64d3ab4b847a119fad6d64cfa9d073c55229303443cfd6cb96a91e3b",
+    "review/grinder/021.jpg": "61261475ca11ab4778cbea2d9660b0cd029973fca80936bbcb42f3b60efe90d7",
+    "review/grinder/022.jpg": "52cc4cd97335873299e6a86e59b4c90280573c7769b281839a57976503da5ef2",
+    "review/grinder/023.jpg": "0b1073946953d081234affdcaa9af43ae00ea9d10d07b01f9009284d955e343f",
+    "review/grinder/024.jpg": "adaa40ad35dfc63d63c9f2f6181f6db802ce330b81c4a2b98c083e7d94b00c9f",
+    "review/grinder/025.jpg": "8419285fb1ea19c18681f48bc4fff9d80582e3bef3d2a6cf3086a10d7177a368",
+    "review/grinder/026.jpg": "87101ee276896b651de77796131ad88268f43cbb5cef29d69a128c017a3f4108",
+    "review/grinder/027.jpg": "93f42e6bf6da7896a9e08f9a5675536b2f8781b0d91306eacc22d8509417f255",
+    "review/grinder/028.jpg": "7d95ad536d95c183723faf39a3963d38ec6c04931e59c6da43d81735506fbcd1",
+    "review/grinder/029.jpg": "d6ffb18ada9776a4e8c4f420d30b5a66316dea906a7c258046fe19c96db0668e",
+    "review/grinder/030.jpg": "23da0a12d42a521fd8b726396109a0c1dcec3b4c0a4b8edbc215b5bb6b855879",
+    "review/grinder/031.jpg": "395b3082d12a6e181335e95c808d9421c6eebea3ef4facd3274cb06b7a75367b",
+    "review/grinder/032.jpg": "03640c3cdfab65abe26b62c3065dcec8dbf61e25c0b723959e75b733f15f9f6a",
+    "review/grinder/033.jpg": "97c99867da86477fc27adb5a4af3c95fffd21736026b14e7b3591fe0349b394a",
+    "review/grinder/034.jpg": "f3891047bed947fbd76f0cc8691af3462db20fff8fb403e29152cf84db7a3e14",
+    "review/grinder/035.jpg": "a3453f255d60bcc1b63ee6746389abfd39c5d3cd19bd8236205a3deb60e701d8",
+    "review/grinder/036.jpg": "147a0e079d63233388ef5abd3d8e79b61b70c28c4e55bc8207a95f3f1cd471f6",
+    "review/grinder/037.jpg": "53a2f0de6e38420f0e300e7cb1e689f80aff6142551b9671f8b07f2f9c31e50c",
+    "review/grinder/038.jpg": "880d350e348d9215cc9468e36bc29674e92891eac69455117cbfc3b50e2e7675",
+    "review/grinder/039.jpg": "4a8abae375c5ecfa4f0827b3e9c7dd4240a1dc032f773f9df628657dd9e819b2",
+    "review/grinder/040.jpg": "92659235dfc22d181a3929f5ed9157340edd4dba01e02671b684448a8b4df451",
+    "review/grinder/041.jpg": "85bce87b5a85a64e4fc1282598a9e2cfca061ef713225362ddf45071fd4ac05a",
+    "review/grinder/042.jpg": "72a2710ddfbebc86ed254b1ad39a67e933cddbec5e8768bc5d3fd0f9c49538cf",
+    "review/grinder/043.jpg": "3f72545966b3136eea7db7297019132736a8b2f4e5addf7a218c64ba69ab637b",
+    "review/grinder/044.jpg": "c582468b7026e36ea97cb8fcfb07f9ae3b87bcdd6bde1df731af853c9ba22bb2",
+    "review/grinder/045.jpg": "82b262d3c976ec9a0da04b91e33233c71541a39c6ce9701604e50cdf22efe81c",
+    "review/chainsaw/000.jpg": "2dc21478ccae10652f3a633922962160b08944a1778ebd7019282599dee8dae8",
+    "review/chainsaw/001.jpg": "23648a94426a09f16aa6fd21656060088fe1008791d271371ab245b1a95242a6",
+    "review/chainsaw/002.jpg": "7e15dce2ecbc42c21453bbf85aaaeb7dd6cafd2c57bb33db1f8299bfaf352bb9",
+    "review/chainsaw/003.jpg": "17438f5d1750b9a6276cc6b46696f6736cc657aac39bdfc677cb18e1e917a635",
+    "review/chainsaw/004.jpg": "2339c281e2a41dd33a932289fa9ab77ef0c757f9d98f701fbfddd595aa38c642",
+    "review/chainsaw/005.jpg": "8982deb320a5b00ebf510704d68ad7a6dc7da47620bc654ad3b1da65e1285d0e",
+    "review/chainsaw/006.jpg": "db1dfa5235dcef597acd90e76c1de4dd52b08127d4daff71327a86d31a89bf52",
+    "review/chainsaw/007.jpg": "a8b859246f30ebcff02ada8e5029518399e93dde89533a98f635b415beea773b",
+    "review/chainsaw/008.jpg": "db846b40bf217a3c45e5d7bb2725cab0b826e0148a8cf40d8229f81745a496c5",
+    "review/chainsaw/009.jpg": "39d141b483eb1c73211d1760c2dd55ad904ee1dd8ddeb4aac6153456d59e9784",
+    "review/chainsaw/010.jpg": "9e9062a7b1b4977c4411d2198cbd3f72aac521c293a91d5394b47528e3f4839e",
+    "review/chainsaw/011.jpg": "70e8c88b503e68d2a43d0d0ddd31796c27b10391c7b0f8fdf45c18de0a046afa",
+    "review/chainsaw/012.jpg": "a22f1c7208ae74d237bd09f45e1909e35f5c3d5229dc8132ef3a0801acad1ef1",
+    "review/chainsaw/013.jpg": "ccbae3ef687102a483928029cb4184bd1d0783ca111b22c4dbf55f8346ca97ad",
+    "review/chainsaw/014.jpg": "01e897ea4b9a79e00fb53cfca95e1dd6ae508b473269d643e9e6c4528984ddf2",
+    "review/chainsaw/015.jpg": "078931c12a2e5c42ac899c231c23e11da267d7fece92c2b2773bcfc2e05b67e7",
+    "review/chainsaw/016.jpg": "d981bf413311c5017e120abf1bcbcfa1c95f6a6ebff40c3a9d5fcb7fc25908be",
+    "review/chainsaw/017.jpg": "45994588647d7a7097b796c3b1ef54d041deaf6d673214138e2afe48fc98dd05",
+    "review/chainsaw/018.jpg": "35909ff4d3a8f3f025461208be2da5cccfc8a009cb78365fa450061c2e696182",
+    "review/chainsaw/019.jpg": "344d570d5e41063227f96f6917d30f629191c972a60585e9589a21a0450ea6d6",
+    "review/chainsaw/020.jpg": "6396d41fb766ee921da323d1034e8c9a5c7532c8e9d1354e378521c7b0fe5641",
+    "review/chainsaw/021.jpg": "aa4e74e5a5ac937c85348dabc5019a84267e1866f33fafe9191871f03f130ec4",
+    "review/chainsaw/022.jpg": "62b3c4f99ae3f7e4790c46d3bd5288d94f707e0fbe49f7cf38b057ea1be6d332",
+    "review/chainsaw/023.jpg": "813be2b5cde7ed2becfbccea7b6199b3c8e7ec68c6a24ed9a4c77ba14982a2eb",
+    "review/chainsaw/024.jpg": "dd95aa5d8ad1542dd540f65f36e981a75cc7153e1e2df2796437f3013a368ae7",
+    "review/chainsaw/025.jpg": "a0cebb7269a39b2db2cd3a98b1396ebefb7d9b331f6d153c00e40bf1eb771e5f",
+    "review/chainsaw/026.jpg": "1d15cba83f3c8667e7778c40ff88edfa89d932027d96a00b8efe73d618a42671",
+    "review/chainsaw/027.jpg": "77833aaed048e442c4f722df01c6771996877ddeacb61892336a6dbf539502e6",
+    "review/chainsaw/028.jpg": "7a869cefb75ce7cb6dcf412869d6cce0f4369dde682a9d9edfd495d2cbd95678",
+    "review/chainsaw/029.jpg": "f8aa4e6f00742a141212eaacb23f979dd9cf5224e4326d6241a5e09e7ec45f80",
+    "review/chainsaw/030.jpg": "87cf532318b4225c05b0b9e84bf01964d5a9614ee84744f415e076113bc96041",
+    "review/chainsaw/031.jpg": "62773f1b5294860738da27496c8508c579b0cc404abf17c29875d3895fb6ff83",
+    "review/chainsaw/032.jpg": "2eaf2828872106731c20d09d5d99f50588f0190dd6ae2490627f32e5ac7d3451",
+    "review/chainsaw/033.jpg": "27be018a4752151cebcb6e9a7122998c519c821247e51e30e1a20cf2b8ff9804",
+    "review/chainsaw/034.jpg": "f14c7eee0d595e58695eec819c2bfefd0feb8e229ab764d5a411f04d77ecb650",
+    "review/chainsaw/035.jpg": "6ce9a9bcbbe99a510f8c504c25c78850811db07c5a39bcf32405d4101ce40a9f",
+    "review/chainsaw/036.jpg": "6317206e82f1b1423fcf02b3b0974fe50ae3407abf2cecfcbd8f9f3765189b41",
+    "review/chainsaw/037.jpg": "435959fb9d4a3ae56040b048ddc69ca50a001fb10401bff0bc01a8fed1a3ce5d",
+    "review/chainsaw/038.jpg": "30d55f1ba65cb80199c73d085badb31caa4d90345043cdb5d870c704f5c13be9",
+    "review/chainsaw/039.jpg": "db02c1c8794bb76dcf53d1be78f69635bced61ad25a23ee9ab82cbf1d1da0fe7",
+    "review/chainsaw/040.jpg": "ba2d7861aa1c0143a3c400cef0bc807e6ce3dad4140f542d7a03a6eca2daf04e",
+    "review/chainsaw/041.jpg": "7a4318344a9a45b63a2548b2272babb40fb8a11a9fd141747579f21afee5b20c",
+    "review/chainsaw/042.jpg": "996577c41654248333cb5615ddc88ec8ce9b233d8c31b92e74dfd1b157912f4c",
+    "review/chainsaw/043.jpg": "455c4697e9061ceff5eab0c2b7b0a6c567bc1ef820273086856196a082d0df63",
+    "review/chainsaw/044.jpg": "d3a8331a9b93a71be8a295b81bfad10f927ef5066f2e1e2a89408a414c1bcd65",
+    "review/chainsaw/045.jpg": "7d24d2e12080f3eca5c633fe2325a511f20f7268a7df174f488d06f56022a471",
+    "review/run/000.jpg": "2dc21478ccae10652f3a633922962160b08944a1778ebd7019282599dee8dae8",
+    "review/run/001.jpg": "23648a94426a09f16aa6fd21656060088fe1008791d271371ab245b1a95242a6",
+    "review/run/002.jpg": "7e15dce2ecbc42c21453bbf85aaaeb7dd6cafd2c57bb33db1f8299bfaf352bb9",
+    "review/run/003.jpg": "89fe8f94b7fd56cd56a12d3463d53966b78b84bc49ee8af305654931bfb6fb8d",
+    "review/run/004.jpg": "a4126a8d8f91c3c3c45276bd4f6d09bb73304492ca0c3e187f2fd44aeaa0d340",
+    "review/run/005.jpg": "ef73742d41a35bc2df0a7aa614d0f3a3c476d8d37479775c9d497a2455333cd7",
+    "review/run/006.jpg": "1d6058dbabd4705ddae18147aa0048f39befbfdd7c1d1cd8a1f3ef5c703c29aa",
+    "review/run/007.jpg": "f4107b5a4484dcb67f93f5ea5ce0b01cab4a84d8992a0607b513335793dc3528",
+    "review/run/008.jpg": "31812517fb474f28c8c2c799caae17331370907f7870f33fa22976f72c232dff",
+    "review/run/009.jpg": "ace8f4d35f2072b990c219ce3d6587cc77e505bca84678f3b0bc719d0c87f08e",
+    "review/run/010.jpg": "674ac0d6971d5a1f83dcaa89462cd6340beb7fe8cc95872c5040826c19a821d7",
+    "review/run/011.jpg": "868953a86c000e83aad37014c6db7476339c491eb29e68801b0a81df2b32cae8",
+    "review/run/012.jpg": "d39a17d4b14fdcadb5f0e99b127156c81975558d9bf12271127af152fad2b096",
+    "review/run/013.jpg": "af6d8d26f857acd0e36439fce5edc2d5b0c858edee954b287cf517e6fdf41397",
+    "review/run/014.jpg": "7b0425d0f46e39b8e9a40b5d3094186602a8d5ac0aa876c83d664417b355e584",
+    "review/run/015.jpg": "6d264ab8da7ae1abc417cc8ba089a1af58f68bd8a856e432bb2328569fdc7567",
+    "review/run/016.jpg": "386d622854dc4549fefe5e86d4901c5be1dfeab60ffbc22cc36c4fcad86bfe45",
+    "review/run/017.jpg": "3e5c0a7be7ccc3ac051e85fad3860d7e4e7d4eafd241fa5966a58e17d2ad86e8",
+    "review/run/018.jpg": "804734606617b8ee9c8f3e64ce5a707f402c18e3fb84e15a02b7053b989c670f",
+    "review/run/019.jpg": "d4fa309b94df790ecde231b5e92e867944339d350fa0d13e4df166cb522b05b0",
+    "review/run/020.jpg": "25989b13da72f70558e9b8e6132650221cc5618021a2486da5e3c765f27ab7bd",
+    "review/run/021.jpg": "d56f4bcae95a193799b46ee8872813ac76c0c01f3d1cffaba4e517bcc0729283",
+    "review/run/022.jpg": "0af9333c4348470b82b1ff142d4ce888e503bc883922bf9f4d44523518891ac9",
+    "review/run/023.jpg": "f511aac347cdc6d52dd5407ac30455176666c021e29b404c1c249eb4009fd6d1",
+    "review/run/024.jpg": "27789510cae257d5649e895999c3118c7a2706068e6ecf6b89c0027f389be521",
+    "review/run/025.jpg": "cba9018d77b5c0995245d8136e334e473ef379fcfb7fd36838d953203bdf2adc",
+    "review/run/026.jpg": "93f64cb49a8db0b217dbb6dc4f8881ec9b4764c32e7cd576fcaede50198f7229",
+    "review/run/027.jpg": "5732cf1890909fcd13d435b2e2e53338d0180b9e7f99f5a2e7473219283aa01a",
+    "review/run/028.jpg": "5c92fd09f6f652bdaa4d0ad814dd71741bc733187f666c7d30970bc251325a83",
+    "review/run/029.jpg": "e0c2a33940ce5bdb56bde775e062dd02d5a0f73134dfa0a9e07a3b2a9db33c28",
+    "review/run/030.jpg": "71c8bf650fc1b0206d626df72b360ea758813092d6a503aa03043c1f79d14509",
+    "review/run/031.jpg": "e34e2a83a79566183073115b08361702b72a42b5b4b6fef5d3e8f7d28c8919e7",
+    "review/run/032.jpg": "0d93d75f59f6d65d66297b24c1d2162d9292ea87e4f208042bc4505465a00d48",
+    "review/run/033.jpg": "ebe52cca9cfd2adfaa157d3667bf7625980a30db317ce4edab9998f228e8ae00",
+    "review/run/034.jpg": "8cf1b6383036c13126ed4a2b7e683443b499768a44729faec5019fc3c1586060",
+    "review/run/035.jpg": "8461d4bc62d473706b842a602ce3ce75f595d922d0f31dcd18ae6fb37195f99d",
+    "review/run/036.jpg": "451d8ae7c127e6f600044cfd761d80c4554d89647f0216fad5ba6bb24e3668fa",
+    "review/run/037.jpg": "61bedfa3765b48a68aff8cddbaf78f69fc01515ee9da108d05864265a0bbe1c6",
+    "review/run/038.jpg": "26d3cf7f90b5d47267e90d4a7e16e17be90d490c9754bc3c16329b5ae40ecf93",
+    "review/run/039.jpg": "485a35baee6c4a9e4456cd0fcc3656488e6c75a3a0362c067c67098236aef7da",
+    "review/run/040.jpg": "0fa7c6943dde8963b1bf6878c37218ab923f05423551ef34ab3dd9bdf03b2be3",
+    "review/run/041.jpg": "c3ec5a6e8702df340f5cc65e95a76418e79ce173956ab66f0716bf1a4993261c",
+    "review/run/042.jpg": "b918c65a5ff1a8b0880a1b8c4d5d2f271c4cedd4abd4749e598ea5a6bea3be10",
+    "review/run/043.jpg": "cde448c4b7268ce11fae9e2b5337e35fa89870f47a0e06da4acfd6e7c0134fbd",
+    "review/run/044.jpg": "bf151bc945e69f15afac10cb07df1d39e07536a8828bbb08fad6fea55ccaa1bd",
+    "review/run/045.jpg": "464c89d5ad13e9d0898f94699ca697e5cf8d557846a1ad9b76147f35b7d88cfa",
+    "review/native/000.jpg": "964fe30af2d358d776545a304baf8661e181b3ff2135f774602b7a9516d636a5",
+    "review/native/001.jpg": "9dab3fa503ca9ca56646d9ce06b6d221f3cfb2ffe95fb37dffcfef7e9186b4f2",
+    "review/native/002.jpg": "3a683295fa1f62966d14f6469d359f5c3273143f374ef37d8914d80397370c90",
+    "review/native/003.jpg": "bf06168578b48f8afa312b2615225882ba78ef189c3ad083ba6fe2e3e0749dee",
+    "review/native/004.jpg": "6bb8919ee63f8a98b39be2da3e2278f2f9bd353857865529a06da18a088f2852",
+    "review/native/005.jpg": "7961f1988862f2c54c43667befc59bd8eb2568fe4f8233a0ecd82f8f7d0e958d",
+    "review/native/006.jpg": "1814a2cb75eb74665b329a6d20e71d6025032af8ee52559272d2aa53a4e5cc91",
+    "review/native/007.jpg": "e6865f784a4b75c0289d4bf7bdc324cff991558a9fc894584e606f4ae82e0c3e",
+    "review/native/008.jpg": "9d86e4375f1c56e3e9d515d295c26cfcd465f32409efd9d2d2ac2eed0137db6c",
+    "review/native/009.jpg": "250bab13a5a223e7995ace1a53117b5c0cb6a95f74ef9b0f400574f7baf1270e",
+    "review/native/010.jpg": "ab3992a51a1a508d9252a04de057fcf067cd713030e35b6de1d19a0ff4178021",
+    "review/native/011.jpg": "ec414f9887f7f94db93b455686eab7e5b4a17774637c12df4cc9328f4a6c549f",
+    "review/native/012.jpg": "9c34406deccca3fcb1034e937e52e731dfb9b5f01fad695516eccbc01b5d386d",
+    "review/native/013.jpg": "b4fe9acdce18769f1ff19e430eff4c2cc5e30c656af188a4630638de1218edf0",
+    "review/native/014.jpg": "913acb156b9602694fa539b1a26c7d8b5f31d2823b8dc1ba2c7db646779b5e2c",
+    "review/native/015.jpg": "a377d4e9530df6b611367edd0caa0bba60301735b67831105562ea1148bb67af",
+    "review/native/016.jpg": "c6adb28a2a3bcdc015f5ad7e5693795307986a13393ef2f6121df3d486782763",
+    "review/native/017.jpg": "844c919e79ac1eb99f71242e9fadd2672655bba24a8c77d5671ff408b1ee6509",
+    "review/native/018.jpg": "94116eca165525f8da2f3d328e585a53e159c6de13cc30a5c72ce7097fb03b9f",
+    "review/native/019.jpg": "1aa5a46a54a341f7c20b99865edfe2c3eb0fc735955cd0576c3fcfb51959cccb",
+    "review/native/020.jpg": "62cbe6ea927965e03c47508fd175ef2c2463f1fe4d9237688f0b95001ff4f015",
+    "review/native/021.jpg": "7b32e4a15c7d3f9999e030d57bd3a225f03565012e7630bc1b2fba8f57df623f",
+    "review/native/022.jpg": "4d093c8bb3407a07ae0c1d518064a80d8dc8c4c65ee54ade073cc5d2759f8d73",
+    "review/native/023.jpg": "d8af1ab948ca71a775d7a4c156690a7e1827155ef8d57b0fb5b60023d7f39771",
+    "review/native/024.jpg": "1daf4bf0c3018b28aa1cecd1d8ae2a5dc30c8fb23acf6267677d2a4494fd858c",
+    "review/native/025.jpg": "497c3ae47b787ba851f0fc3f7b7bc88e86434fae6f5f2897c4a9e6992815ad49",
+    "review/native/026.jpg": "79fd7a3a8599e4e21de7d18262345af203c889abdc36abada0750307bdb9eb2f",
+    "review/native/027.jpg": "162bd85b27b7f5f91c2f3b6c0e32aebd2de02bdcb14406c85ceb58df6d8471ba",
+    "review/native/028.jpg": "d9f7228ce2a9c9b8b6e87af72d3ae73a38ef9016f15371ea8398d2713e35e55e",
+    "review/native/029.jpg": "d25272361f870a4c3a5f6fa092be431363a7207ef90806a1bf2970049f1833f3",
+    "review/native/030.jpg": "ff3255c454fc7d4f98f95d19f6e1b4c0740b4ee4abc20f29a6ad702ad72cba10",
+    "review/native/031.jpg": "6997f8a43517a939accce2ce05967a252fecca7e0d4ffb261c1e37d5480fd720",
+    "review/native/032.jpg": "06cd01e10b8f4f320d9e5d9df0c455dafa601d5a7d61113746725c43fa3ea4aa",
+    "review/native/033.jpg": "272f6883e5fefd352ba02bd1d40de18e78ec11831caae575cf95f78fcc9e1880",
+    "review/native/034.jpg": "c99985854dba2b6f389fd40df0e3757c7b2b2dde1c11857761974fc9f34cc83a",
+    "review/native/035.jpg": "bedf8ce576e8d9f426ea84505bf63dc19edebd7f375d087ba78aeedddd2d7b2d",
+    "review/native/036.jpg": "2033177528685831b2d84a7a104bec8a4b86d48aefe83a507a978f77ad304f65",
+    "review/native/037.jpg": "0b8211da781ab5ad9fbc79972d60ab36b1a645767654e06bd949c365d59c2a62",
+    "review/native/038.jpg": "7b93d3c38d6a4f29fa6d7edd2ba52eb32812208adc9545290ce52d4c4273af54",
+    "review/native/039.jpg": "cbd8185b64d190184310542b1fac945e63895ffb7b052f3d60effc146e2b41fb",
+    "review/native/040.jpg": "1df7556b328606eb756a3626d6134b3cd712f1170eadbf7dcd90c9981373af1e",
+    "review/native/041.jpg": "51647f7633cd7563bae942786794804352c12ec91da133a409fa52e837a8727a",
+    "review/native/042.jpg": "4f77e22502c9cf99ee1dd7bff5b328e2d1d56833dbe101a6ba0cbc330afa4dc4",
+    "review/native/043.jpg": "88ce2b093d7389d0e35f30bd287277c66d42e4726cd7b06a14ca775722a5ed31",
+    "review/native/044.jpg": "5c327c4b199004c171d0055c2483be02430970573b11c1d27c5c947e5357659d",
+    "review/native/045.jpg": "ff5786e5af7fd952f4f4927a773a1912625e345dc4c0283ea93bb0fbe462f1f7",
+    "review/pair_0.jpg": "95cbbb63bf083343cab49699df2c4a5bb011da625d610ea480f629336eb57a90",
+    "review/pair_1.jpg": "25b0b17afbdee674bac3a2c75eedccff98b7859753ba7552e810b5cebd01b3df",
+    "review/pair_2.jpg": "2d86f47c3ae628054dcf8f174375305d267764254ef9cbaf54a8e881688a6bd9",
+    "review/pair_3.jpg": "df60dd24c7ec0cce59dde1c178e4e2c07532f6811177c133650e9633f45741e0",
+    "review/cutter_detail.jpg": "b5844492224b5c28a1d551a802f5ce12c3b422dcd3d7fa1a43877ffe3235057a",
+    "review/lineup.jpg": "1fd304a3c323e3081cf218bb65041541ad43311f814ba8da4736b0e46e0d5c88",
+    "review/core_seal.jpg": "30274b760b06a62acaf9e4c3a7942741ed911c5634534e0fdd38628e3a5e50d6"
+  },
+  "limits": [
+    "Material review candidate; no final user selection or performance approval.",
+    "Texture memory is an uncompressed RGBA8+mips estimate, not measured peak memory.",
+    "Studio adds identical lighting to both specimens; arena lighting is unchanged.",
+    "UV and material assignments change; rigid geometry, vertex normals and mechanism data are preserved.",
+    "Earlier broad combat checks remain historical; this run covers material import, staff behavior and cutter timing."
+  ]
+}

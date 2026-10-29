@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "all_family_triangles": 6664,
+  "meshes": 52,
+  "materials": 7,
+  "skins": 0,
+  "animations": 0,
+  "runtime_source_bytes_equal": true,
+  "sha256": "611567536be30bd2042cb909c2d8aaa8f73dc1682aa16dac497f1a9faaefaee1"
+}
