@@ -39,7 +39,15 @@
       "label": "B 톱 베기 · 넝마귀",
       "reach": 0.81,
       "sheet": "strike_b_rag_sheet.png"
+    },
+    {
+      "busiest_frame": 16,
+      "every": 2,
+      "frames": 120,
+      "id": "turret_key",
+      "label": "포탑 태엽 · 발사 때 가속",
+      "sheet": "turret_key_sheet.png"
     }
   ],
-  "saved": 8
+  "saved": 10
 }

@@ -214,6 +214,14 @@ func strike_scenes() -> void:
 		var ally: Dictionary = arena.allies[0]
 		records[-1]["center_distance"] = ally.node.position.distance_to(enemy.body.position)
 		records[-1]["reach"] = ally.reach
+	# Turret seen from behind: the key turns steadily, whirs up into each shot and spins down.
+	summon_prepare("base")
+	var away := Vector3(arena.camera.global_basis.z.x, 0, arena.camera.global_basis.z.z).normalized()
+	var mount := Vector3(1.4, 0, 0.6)
+	arena.player.position = mount + away.cross(Vector3.UP) * 1.6
+	target("dummy", mount - away * 3.0, "rag")
+	arena.spawn_ally(mount, false, "")
+	await film("turret_key", "포탑 태엽 · 발사 때 가속", 120, 2, mount + away * 0.9 + Vector3(0, 0.4, 0), 2.6, Callable(), 380)
 
 func summon_scenes() -> void:
 	# Turret: arrival settle, brass slugs and their hits.

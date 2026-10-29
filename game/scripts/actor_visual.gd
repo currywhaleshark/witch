@@ -14,6 +14,10 @@ const FILES := {
 # The wind-up key turns about its own leaning shaft (collar centre towards the bow), model space.
 const KEY_PIVOT := Vector3(-0.062, 0.575, 0.099)
 const KEY_AXIS := Vector3(-0.0565, 0.16, 0.026)
+# The turret's key and its big drive gear share one shaft out of the carriage's back.
+const TURRET_KEY_PIVOT := Vector3(0.0, 0.643, 0.3)
+const TURRET_KEY_AXIS := Vector3(0.0, -0.041, 1.0)
+const TURRET_GEAR_RATIO := 0.4
 static var _scenes: Dictionary = {}
 static var _knobless: Dictionary = {}
 var kind := ""
@@ -45,6 +49,7 @@ var _blast_flash: MeshInstance3D
 var _blast_sparks: Array[MeshInstance3D] = []
 var _strike_side := 1.0
 var _key_angle := 0.0
+var _key_kick := 0.0
 var _bones: Dictionary = {}
 var _skeleton_frame: Variant = null
 
@@ -184,6 +189,10 @@ func sample(clip: String, phase: float) -> void:
 			skeleton.set_bone_pose_rotation(index, yaw.get_rotation_quaternion() * skeleton.get_bone_pose_rotation(index))
 	if kind == "automaton" and clip not in ["death", "explode"]:
 		_apply_clockwork(clip)
+	elif kind == "turret" and clip != "death":
+		# The clips only rock the key and gear; they turn continuously about their shaft instead.
+		_spin_part(_bone("key"), TURRET_KEY_AXIS, TURRET_KEY_PIVOT, _key_angle)
+		_spin_part(_bone("drive_gear"), TURRET_KEY_AXIS, TURRET_KEY_PIVOT, _key_angle * TURRET_GEAR_RATIO)
 	skeleton.force_update_all_bone_transforms()
 	_sample_blast(clip, fraction)
 	if _node_effects!=null: _node_effects.apply_pose()
@@ -257,17 +266,20 @@ func _spin_key(angle: float) -> void:
 	# front-back axis through an off-shaft origin, which swings the key like a wiper; hold that bone
 	# at rest so only this spin remains.
 	var holder := _bone("key")
-	var index := _bone("part_006")
-	if holder < 0 or index < 0:
-		return
-	skeleton.set_bone_pose(holder, skeleton.get_bone_rest(holder))
-	if is_zero_approx(angle):
+	if holder >= 0:
+		skeleton.set_bone_pose(holder, skeleton.get_bone_rest(holder))
+	_spin_part(_bone("part_006"), KEY_AXIS, KEY_PIVOT, angle)
+
+func _spin_part(index: int, model_axis: Vector3, model_pivot: Vector3, angle: float) -> void:
+	# Sets a part to its rest pose turned by angle about a shaft line given in model space. Expressed
+	# in the parent's rest frame, so the part still follows whatever its parent does.
+	if index < 0:
 		return
 	var parent_rest := skeleton.get_bone_global_rest(skeleton.get_bone_parent(index))
-	var axis := (parent_rest.basis.inverse() * KEY_AXIS).normalized()
-	var pivot := parent_rest.affine_inverse() * KEY_PIVOT
+	var axis := (parent_rest.basis.inverse() * model_axis).normalized()
+	var pivot := parent_rest.affine_inverse() * model_pivot
 	var turn := Basis(axis, angle)
-	var pose := Transform3D(turn, pivot - turn * pivot) * skeleton.get_bone_pose(index)
+	var pose := Transform3D(turn, pivot - turn * pivot) * skeleton.get_bone_rest(index)
 	skeleton.set_bone_pose_position(index, pose.origin)
 	skeleton.set_bone_pose_rotation(index, pose.basis.get_rotation_quaternion())
 
@@ -350,12 +362,19 @@ func sync_ally(ally: Dictionary, dt: float, target_distance: float = INF) -> voi
 	if kind == "turret":
 		_turret_yaw = ally.node.rotation.y
 		rotation.y = -_turret_yaw
-	# The key unwinds slowly while it works and is cranked hard during the wind-up.
-	_key_angle = fposmod(_key_angle + dt * (24.0 if visual_state == "attack" and fraction < 0.5 else 1.5), TAU)
+	var fired := float(ally.cooldown) > _last_cooldown + 0.01
+	# The key unwinds slowly while it works. The automaton cranks it hard during its wind-up; the
+	# turret's key whirs up into each shot and spins down through the recoil.
+	_key_kick = 1.0 if fired else maxf(0.0, _key_kick - dt * 2.5)
+	var winding := visual_state == "attack" and fraction < 0.5
+	var rate := 1.5 + (5.0 if winding else 0.0) + 26.0 * _key_kick * _key_kick
+	if kind == "automaton":
+		rate = 24.0 if winding else 1.5
+	# Five turns keep the slower geared parts continuous across the wrap.
+	_key_angle = fposmod(_key_angle + dt * rate, TAU * 5.0)
 	# Automatons wind up longer and may still be shuffling into reach; turrets only aim in place.
 	var window := 0.3 if kind == "automaton" else 0.18
 	var in_reach := distance < 0.0001 or (kind == "automaton" and target_distance <= float(ally.get("reach", 1.6)) + 0.3)
-	var fired := float(ally.cooldown) > _last_cooldown + 0.01
 	_last_cooldown = ally.cooldown
 	if fired:
 		_recovery = 0.0
