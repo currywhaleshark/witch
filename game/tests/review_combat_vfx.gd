@@ -67,7 +67,7 @@ func wait_until(condition: Callable, limit: int) -> void:
 		await physics_frame
 		arena._physics_process(1.0 / 60.0)
 
-func film(id: String, label: String, frames: int, every: int, focus: Vector3, zoom: float, before: Callable = Callable()) -> void:
+func film(id: String, label: String, frames: int, every: int, focus: Vector3, zoom: float, before: Callable = Callable(), crop: int = 700) -> void:
 	# Steps the real arena update; keeps a contact sheet of close-ups, plus one native-scale
 	# frame a few ticks after the first new effect appears.
 	var shots: Array[Image] = []
@@ -94,7 +94,7 @@ func film(id: String, label: String, frames: int, every: int, focus: Vector3, zo
 			arena.camera.size = zoom
 			arena.place_camera(focus)
 			var img := await grab()
-			shots.append(img.get_region(Rect2i(290, 50, 700, 700)))
+			shots.append(img.get_region(Rect2i(640 - crop / 2, 400 - crop / 2, crop, crop)))
 	var cols := 4
 	var cell := 320
 	var rows := int(ceil(shots.size() / float(cols)))
@@ -118,6 +118,7 @@ func run() -> void:
 	DirAccess.make_dir_recursive_absolute(output)
 	if only in ["", "combat"]: await combat_scenes()
 	if only in ["", "summons"]: await summon_scenes()
+	if only in ["", "strike"]: await strike_scenes()
 	var file := FileAccess.open(output.path_join("captures%s.json" % ("" if only == "" else "_" + only)), FileAccess.WRITE)
 	file.store_string(JSON.stringify({"saved": saved, "records": records}, "  ") + "\n")
 	print("REVIEW_COMBAT_VFX_DONE saved=%d" % saved)
@@ -195,17 +196,36 @@ func summon_prepare(node_kind: String) -> void:
 	arena.config.enemy_speed = 0.0
 	arena.config.automaton_node = node_kind
 
+
+func strike_scenes() -> void:
+	# Automaton reach and lunge punch against small, mid and large bodies, plus the B saw cut.
+	for plan in [
+			{"id": "strike_base_rag", "label": "태엽인형 펀치 · 넝마귀", "node": "base", "kind": "rag"},
+			{"id": "strike_base_crow", "label": "태엽인형 펀치 · 까마귀", "node": "base", "kind": "crow"},
+			{"id": "strike_base_brute", "label": "태엽인형 펀치 · 철문 아귀", "node": "base", "kind": "brute"},
+			{"id": "strike_b_rag", "label": "B 톱 베기 · 넝마귀", "node": "B", "kind": "rag"}]:
+		summon_prepare(plan.node)
+		# The arena camera follows the witch between grabs; keep her by the fight so the close
+		# framing still counts the automaton as on screen.
+		arena.player.position = Vector3(2.0, 0, 1.6)
+		var enemy := target("dummy", Vector3(3.0, 0, 0), plan.kind)
+		arena.spawn_ally(Vector3(1.4, 0, 0.5), true, "dummy")
+		await film(plan.id, plan.label, 96, 2, Vector3(2.5, 0.45, 0.15), 4.2, Callable(), 380)
+		var ally: Dictionary = arena.allies[0]
+		records[-1]["center_distance"] = ally.node.position.distance_to(enemy.body.position)
+		records[-1]["reach"] = ally.reach
+
 func summon_scenes() -> void:
 	# Turret: arrival settle, brass slugs and their hits.
 	summon_prepare("base")
 	target("dummy", Vector3(4.0, 0, 0), "brute")
 	arena.spawn_ally(Vector3(1.2, 0, 0.8), false, "")
 	await film("turret_fire", "포탑 착지 → 사격 · 착탄", 96, 4, Vector3(2.4, 0.6, 0.4), 6.5)
-	# Base automaton pulse shots, then its end-of-life self-destruct.
+	# Base automaton punches, then its end-of-life self-destruct.
 	summon_prepare("base")
 	target("dummy", Vector3(3.2, 0, 0), "brute")
 	arena.spawn_ally(Vector3(1.0, 0, 0.8), true, "dummy")
-	await film("automaton_fire", "태엽인형(기본) 사격", 72, 3, Vector3(2.0, 0.6, 0.4), 6.0)
+	await film("automaton_fire", "태엽인형(기본) 펀치", 72, 3, Vector3(2.0, 0.6, 0.4), 6.0)
 	arena.allies[0].life = 0.02
 	await film("automaton_blast", "태엽인형 수명 종료 자폭", 60, 3, Vector3(2.0, 0.6, 0.4), 7.0)
 	# A node runs in and detonates with the bigger blast.

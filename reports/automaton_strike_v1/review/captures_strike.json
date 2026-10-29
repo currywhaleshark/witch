@@ -1,0 +1,45 @@
+{
+  "records": [
+    {
+      "busiest_frame": 16,
+      "center_distance": 0.809638738632202,
+      "every": 2,
+      "frames": 96,
+      "id": "strike_base_rag",
+      "label": "태엽인형 펀치 · 넝마귀",
+      "reach": 0.81,
+      "sheet": "strike_base_rag_sheet.png"
+    },
+    {
+      "busiest_frame": 16,
+      "center_distance": 0.809638738632202,
+      "every": 2,
+      "frames": 96,
+      "id": "strike_base_crow",
+      "label": "태엽인형 펀치 · 까마귀",
+      "reach": 0.875,
+      "sheet": "strike_base_crow_sheet.png"
+    },
+    {
+      "busiest_frame": 16,
+      "center_distance": 1.0763053894043,
+      "every": 2,
+      "frames": 96,
+      "id": "strike_base_brute",
+      "label": "태엽인형 펀치 · 철문 아귀",
+      "reach": 1.1,
+      "sheet": "strike_base_brute_sheet.png"
+    },
+    {
+      "busiest_frame": 16,
+      "center_distance": 0.809638738632202,
+      "every": 2,
+      "frames": 96,
+      "id": "strike_b_rag",
+      "label": "B 톱 베기 · 넝마귀",
+      "reach": 0.81,
+      "sheet": "strike_b_rag_sheet.png"
+    }
+  ],
+  "saved": 8
+}

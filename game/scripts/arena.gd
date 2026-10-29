@@ -1327,10 +1327,16 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 		if kept.size() >= int(config.automaton_nodes.B.max_count):
 			dismantle_ally(kept[0])
 	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "node_kind": kind, "route": {}, "target": target_id if target_id != null else "", "cooldown": 0.2,
-		"life": life, "hp": durability, "max_hp": durability})
+		"life": life, "hp": durability, "max_hp": durability, "reach": 1.6})
 	ally_serial += 1
 	spawn_vfx().summon_arrive(node.position, TEAL, map.ground_y(node.position))
 	play_cue(1.8)
+
+func automaton_reach(id: String) -> float:
+	# Automatons stop at arm's length from the target's body, so small foes get punched rather than
+	# stared at from 1.6m. The boss keeps the old distance: its body is a whole door frame.
+	var enemy: Dictionary = enemies[id]
+	return 1.6 if enemy.kind == "latch" else 0.45 + 0.5 * float(enemy.size)
 
 func dismantle_ally(ally: Dictionary) -> void:
 	# The oldest B automaton makes room for a new one: it breaks apart with no blast.
@@ -1879,20 +1885,24 @@ func _tick_allies(dt: float) -> void:
 		if ally.node_kind == "A" and ally.node.position.distance_to(target) <= 1.8:
 			expire_ally(ally)
 			continue
-		if ally.mobile and ally.node.position.distance_to(target) > 1.6:
+		if ally.mobile:
+			ally.reach = automaton_reach(ally.target)
+		if ally.mobile and ally.node.position.distance_to(target) > ally.reach:
 			var speed: float = 4.0 * (float(config.automaton_nodes.A.speed_factor) if ally.node_kind == "A" else 1.0)
 			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, target, 0.4, dt), dt * speed)
 		ally.cooldown -= dt
-		if ally.cooldown <= 0 and (not ally.mobile or ally.node.position.distance_to(target) <= 1.8):
+		if ally.cooldown <= 0 and (not ally.mobile or ally.node.position.distance_to(target) <= ally.reach + 0.2):
 			var shot_origin: Vector3 = ally.node.position + Vector3.UP * 0.8
 			var art: Node = ally.node.get_node_or_null("ActorVisual")
 			if art != null:
 				art.preview_shot(ally)
-				shot_origin = art.muzzle_position()
+				shot_origin = art.strike_point() if ally.mobile else art.muzzle_position()
+			if not ally.mobile:
+				spawn_vfx().summon_shot(shot_origin, target + Vector3.UP * 0.8, Color(1.0, 0.78, 0.45), map.ground_y(shot_origin))
+			elif ally.node_kind != "B":
+				# The automaton lands a lunging piston punch; the B node's saw makes its own sparks.
+				spawn_vfx().summon_punch(shot_origin, target - ally.node.position, TEAL, map.ground_y(shot_origin))
 			var saw: bool = ally.mobile and ally.node_kind == "B"
-			if not saw:
-				# Turrets fire brass slugs; automatons a teal pulse. The B node cuts instead of shooting.
-				spawn_vfx().summon_shot(shot_origin, target + Vector3.UP * 0.8, TEAL if ally.mobile else Color(1.0, 0.78, 0.45), map.ground_y(shot_origin))
 			var damage: float = config.summon_damage * (float(config.automaton_nodes.B.damage_factor) if ally.node_kind == "B" else 1.0)
 			strike(ally.target, damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret", "saw" if saw else "")
 			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown

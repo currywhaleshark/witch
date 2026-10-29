@@ -225,6 +225,16 @@ func summon_shot(origin: Vector3, to: Vector3, color: Color, floor_y: float) -> 
 	sparks(origin, dir, 4, 5.0, 0.35, color, 0.14, 0.012, floor_y, 2.0)
 	puff(origin, dir * 0.4 + Vector3.UP * 0.2, 0.06, 0.4, Color(STEAM, 0.28), 0.45)
 
+func summon_punch(fist: Vector3, toward: Vector3, color: Color, floor_y: float) -> void:
+	# Automaton piston punch: a short knock flash at the fist, a forward spray, exhaust steam behind.
+	var dir := Vector3(toward.x, 0, toward.z).normalized()
+	flash(fist, 0.34, color.lightened(0.45), 0.07, 1.5)
+	rays(fist, 5, 0.22, 0.03, color.lightened(0.3), 0.08)
+	sparks(fist, dir, 7, 4.5, 0.6, color, 0.2, 0.013, floor_y, 3.0)
+	for side in [-1.0, 1.0]:
+		var out: Vector3 = dir.cross(Vector3.UP) * side
+		puff(fist - dir * 0.25, out * 0.7 + Vector3.UP * 0.35 - dir * 0.3, 0.07, 0.6, Color(STEAM, 0.32), 0.45)
+
 func blast(at: Vector3, radius: float, floor_y: float, big: bool) -> void:
 	# Automaton self-destruct: brass fireball, shock ring at the damage radius, smoke column, debris.
 	var base := Vector3(at.x, floor_y, at.z)
