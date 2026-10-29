@@ -1,0 +1,109 @@
+{
+  "records": [
+    {
+      "busiest_frame": 22,
+      "every": 2,
+      "frames": 48,
+      "id": "staff",
+      "label": "지팡이 기본 공격",
+      "sheet": "staff_sheet.png"
+    },
+    {
+      "busiest_frame": 32,
+      "every": 2,
+      "frames": 48,
+      "id": "bolt_cutter",
+      "label": "볼트 커터",
+      "sheet": "bolt_cutter_sheet.png"
+    },
+    {
+      "busiest_frame": 16,
+      "every": 2,
+      "frames": 48,
+      "id": "grinder",
+      "label": "그라인더",
+      "sheet": "grinder_sheet.png"
+    },
+    {
+      "busiest_frame": 19,
+      "every": 2,
+      "frames": 48,
+      "id": "chainsaw",
+      "label": "전기톱",
+      "sheet": "chainsaw_sheet.png"
+    },
+    {
+      "busiest_frame": 22,
+      "every": 2,
+      "frames": 48,
+      "id": "crit",
+      "label": "치명타 (지팡이)",
+      "sheet": "crit_sheet.png"
+    },
+    {
+      "busiest_frame": 11,
+      "every": 2,
+      "frames": 40,
+      "id": "shotgun",
+      "label": "산탄 · 탄선/총구 연기/벽 착탄",
+      "sheet": "shotgun_sheet.png"
+    },
+    {
+      "busiest_frame": 4,
+      "every": 2,
+      "frames": 48,
+      "id": "rag_claw",
+      "label": "넝마귀 할퀴기 → 피격",
+      "sheet": "rag_claw_sheet.png"
+    },
+    {
+      "busiest_frame": 4,
+      "every": 4,
+      "frames": 96,
+      "id": "crow_bolt",
+      "label": "까마귀 전기탄",
+      "sheet": "crow_bolt_sheet.png"
+    },
+    {
+      "busiest_frame": 4,
+      "every": 6,
+      "frames": 108,
+      "id": "brute_charge",
+      "label": "철문 아귀 돌진 경고 → 먼지",
+      "sheet": "brute_charge_sheet.png"
+    },
+    {
+      "busiest_frame": 4,
+      "every": 7,
+      "frames": 84,
+      "id": "boss_warning",
+      "label": "보스 휩쓸기 경고 채움",
+      "sheet": "boss_warning_sheet.png"
+    },
+    {
+      "busiest_frame": 4,
+      "every": 2,
+      "frames": 32,
+      "id": "boss_sweep",
+      "label": "보스 휩쓸기 발동",
+      "sheet": "boss_sweep_sheet.png"
+    },
+    {
+      "busiest_frame": 11,
+      "every": 4,
+      "frames": 64,
+      "id": "boss_slam",
+      "label": "보스 내려찍기 발동",
+      "sheet": "boss_slam_sheet.png"
+    },
+    {
+      "busiest_frame": 11,
+      "every": 4,
+      "frames": 64,
+      "id": "boss_shockwave",
+      "label": "보스 충격파 발동",
+      "sheet": "boss_shockwave_sheet.png"
+    }
+  ],
+  "saved": 26
+}

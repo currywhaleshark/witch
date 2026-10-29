@@ -10,11 +10,14 @@ const AutomatonAssembly = preload("res://scripts/automaton_assembly.gd")
 const TurretAssembly = preload("res://scripts/turret_assembly.gd")
 const ShotgunCast = preload("res://scripts/shotgun_cast.gd")
 const ShotgunGeometry = preload("res://scripts/shotgun_geometry.gd")
+const CombatVfx = preload("res://scripts/combat_vfx.gd")
+const WARNING_SHADER = preload("res://shaders/warning_zone.gdshader")
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
 const STEEL = Color("a9c1d6")
 const GOLD_FLASH = Color("ffe08a")
+const BOLT_GLOW = Color(0.62, 0.86, 1.0)
 # Ground warnings: dark area plus a bright fill that reaches the edge at impact.
 const WARN = Color("7a3a32")
 const WARN_FILL = Color("e8604c")
@@ -101,6 +104,10 @@ var block_rng = RandomNumberGenerator.new()
 # Hit and crit rolls; tests pin outcomes with force_rolls {"hit": bool, "crit": bool}.
 var combat_rng = RandomNumberGenerator.new()
 var force_rolls: Dictionary = {}
+# Effect jitter only; never read by combat, so rolls match with or without VFX.
+var vfx_rng = RandomNumberGenerator.new()
+var staff_trail: Node3D
+var staff_tip_last = null
 var shake_time = 0.0
 var boss_serial = 0
 # Field layout and routes. Test harnesses start on the flat arena their checks assume.
@@ -228,6 +235,13 @@ func reset_arena() -> void:
 		tool_rings[id] = Shape.ring(player, Vector3(0, 0.08, 0), 0.7, TOOL_COLORS[id])
 	Shape.ring(player, Vector3(0, 0.035, 0), 0.55, TEAL)
 	shield_ring = Shape.ring(player, Vector3(0, 1.0, 0), 0.85, STEEL, 0.06)
+	if not is_instance_valid(staff_trail):
+		staff_trail = CombatVfx.new()
+		world.add_child(staff_trail)
+		staff_trail.setup(0, camera)
+	staff_trail.clear_trails()
+	staff_tip_last = null
+	vfx_rng.seed = 1031
 	destination = player.position
 	hp = config.max_hp
 	kills = 0
@@ -840,12 +854,12 @@ func fire_shotgun(target: Vector3) -> void:
 			struck.append(id)
 			strike(id,config.shot_damage,false,"witch","shotgun")
 	var endpoints: Array[Vector3]=ShotgunGeometry.traces(self,shot)
+	# Unblocked traces end on the 8m circle around the witch; shorter ones hit a wall or floor.
+	var blocked: Array[bool]=[]
 	for end in endpoints:
-		var before_count := effects.size()
-		beam(shot.origin,end,Color(1.0,0.85,0.52),0.018)
-		if effects.size()>before_count:
-			effects[-1].life=0.08
-			effects[-1].node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		var flat: Vector3=end-player.position; flat.y=0.0
+		blocked.append(flat.length()<float(rules.skills.shotgun.range)-0.05)
+	spawn_vfx().muzzle(shot.origin,endpoints,blocked,map.ground_y(shot.origin))
 	last_shotgun={"frame":shot,"origin":shot.origin,"direction":-shot.basis.z,"ends":endpoints,"struck":struck}
 	play_cue(0.65)
 
@@ -986,7 +1000,7 @@ func execute_cast(event: Dictionary) -> void:
 			var best = nearest_enemy(player.position, rules.skills.basic_attack.range, direction, 0.2, false, true)
 			if event.get("target_enemy") != null and enemies.has(event.target_enemy):
 				best = event.target_enemy
-			beam(player.position + Vector3.UP, player.position + direction * 2.3 + Vector3.UP, TOOL_COLORS.get(tool, TEAL), 0.12)
+			# The swing itself is drawn by the staff trail (tick_staff_trail).
 			# A miss swings silently: no hit sound, no flash, no debuff.
 			if tool == "chainsaw":
 				# A small forward fan: every enemy in it is struck on its own roll, and each hit bleeds.
@@ -1035,10 +1049,12 @@ func execute_cast(event: Dictionary) -> void:
 				turret_assembly = null
 			spawn_ally(pos, false, "")
 		"relay":
+			var linked: Array = []
 			for ally in allies:
 				if eligible(ally, event.target_enemy):
 					ally.target = event.target_enemy
-			pulse(target, TEAL, 0.8)
+					linked.append(ally.node.position)
+			spawn_vfx().relay(target, linked, map.ground_y(target))
 
 func point(value: Array) -> Vector3:
 	return Vector3(value[0], value[1], value[2])
@@ -1076,7 +1092,7 @@ func crit_chance(roller: String = "witch") -> float:
 		return minf(config.crit_cap, config.summon_crit_base + config.summon_crit_per_level * (summon_level(roller) - 1))
 	return minf(config.crit_cap, config.crit_base + config.crit_per_dexterity * config.dexterity)
 
-func strike(id: String, amount: float, accuracy_roll: bool, roller: String, source: String) -> String:
+func strike(id: String, amount: float, accuracy_roll: bool, roller: String, source: String, look: String = "") -> String:
 	# roller is "witch" or the summon skill ("automaton", "turret") whose level drives the rolls.
 	# One direct damage event: optional hit roll, then its own crit roll (area attacks call this per enemy).
 	if not enemies.has(id):
@@ -1086,10 +1102,16 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 		return "miss"
 	var crit: bool = force_rolls.get("crit", combat_rng.randf() < crit_chance(roller))
 	var at: Vector3 = enemies[id].body.position
+	var size: float = enemies[id].size
 	var dealt: float = damage_enemy(id, amount * (config.crit_multiplier if crit else 1.0))
 	probe.strike(source, "crit" if crit else "hit", dealt)
+	# Burst on the near surface: toward the witch and the camera, never buried inside the model.
+	var toward: Vector3 = player.position - at
+	toward.y = 0
+	var surface: Vector3 = at + Vector3.UP * 0.85 * size + toward.normalized() * 0.3 * size + camera.global_basis.z * 0.6 * size
+	# look only picks the impact style (the B saw); source stays the logged damage source.
+	spawn_vfx().impact(surface, -toward, look if look != "" else source, crit, map.ground_y(at))
 	if crit:
-		pulse(at + Vector3.UP * 0.9, GOLD_FLASH, 0.9)
 		play_cue(0.55)
 		shake_time = 0.12
 	return "crit" if crit else "hit"
@@ -1251,7 +1273,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		return
 	if shield_time > 0 and block_rng.randf() < block_chance():
 		# A blocked hit deals nothing and never interrupts; sound and flash tell it apart.
-		pulse(player.position + Vector3.UP, STEEL, 0.75)
+		spawn_vfx().block(player.position + Vector3.UP * 0.9, map.ground_y(player.position))
 		play_cue(2.2)
 		probe.witch_hit(by_grade, 0.0, false, true)
 		return
@@ -1260,7 +1282,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 	probe.witch_hit(by_grade, minf(hp, amount), stunned, false)
 	hp = maxf(0, hp - amount)
 	hit_time = 0.25
-	pulse(player.position, RED, 0.55)
+	spawn_vfx().hurt(player.position + Vector3.UP * 0.85, map.ground_y(player.position))
 	play_cue(0.75)
 	if stunned:
 		# Hit recovery cancels the motion, approach, click move and queued input; nothing was spent yet.
@@ -1307,7 +1329,7 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "node_kind": kind, "route": {}, "target": target_id if target_id != null else "", "cooldown": 0.2,
 		"life": life, "hp": durability, "max_hp": durability})
 	ally_serial += 1
-	pulse(pos, TEAL, 0.65)
+	spawn_vfx().summon_arrive(node.position, TEAL, map.ground_y(node.position))
 	play_cue(1.8)
 
 func dismantle_ally(ally: Dictionary) -> void:
@@ -1315,6 +1337,7 @@ func dismantle_ally(ally: Dictionary) -> void:
 	var art: Node = ally.node.get_node_or_null("ActorVisual")
 	if art != null:
 		art.detach_for_death(world, self)
+	spawn_vfx().shutdown(ally.node.position, map.ground_y(ally.node.position))
 	ally.node.queue_free()
 	allies.erase(ally)
 
@@ -1326,7 +1349,10 @@ func expire_ally(ally: Dictionary) -> void:
 		for id in enemies.keys():
 			if enemies.has(id) and ally.node.position.distance_to(enemies[id].body.position) < config.summon_explosion_range:
 				strike(id, damage, false, "automaton", "automaton_blast")
-		pulse(ally.node.position, BRASS, config.summon_explosion_range)
+		spawn_vfx().blast(ally.node.position, float(config.summon_explosion_range), map.ground_y(ally.node.position), ally.node_kind == "A")
+		shake_time = maxf(shake_time, 0.14 if ally.node_kind == "A" else 0.1)
+	else:
+		spawn_vfx().shutdown(ally.node.position, map.ground_y(ally.node.position))
 	var art: Node = ally.node.get_node_or_null("ActorVisual")
 	if art != null:
 		art.detach_for_death(world, self, ally.mobile)
@@ -1413,11 +1439,12 @@ func _physics_process(dt: float) -> void:
 		grinder_disk.rotate_object_local(Vector3.UP, dt * 18)
 	var visual_distance := player.position.distance_to(visual_start_position)
 	player_visual.sync_state(dt, visual_distance > 0.0001, action_time, paused, hp <= 0, field_cleared(), visual_distance / maxf(dt, 0.000001))
+	tick_staff_trail(dt)
 	shield_ring.visible = shield_time > 0
 	place_camera(player.position)
 	map.fade_between(camera.global_position, player.position + Vector3.UP)
 	if shake_time > 0:
-		# Short crit jolt; the camera angle never changes, only a small offset.
+		# Short crit or boss-impact jolt; the camera angle never changes, only a small offset.
 		shake_time = maxf(0, shake_time - dt)
 		camera.position += Vector3(sin(elapsed * 90), 0, cos(elapsed * 77)) * 0.06
 	var hovered = pick_cursor(get_viewport().get_mouse_position())
@@ -1490,10 +1517,11 @@ func hit_foe(target: String, amount: float, grade: String) -> void:
 func damage_ally(ally: Dictionary, amount: float, grade: String) -> void:
 	ally.hp -= amount
 	probe.ally_hit(grade, minf(amount, maxf(ally.hp + amount, 0.0)), ally.hp <= 0)
-	pulse(ally.node.position, RED, 0.45)
+	var floor_y: float = map.ground_y(ally.node.position)
+	spawn_vfx().summon_hit(ally.node.position + Vector3.UP * 0.6 + camera.global_basis.z * 0.4, floor_y)
 	if ally.hp <= 0:
 		# Destroyed summons break apart without the end-of-life self-destruct blast.
-		pulse(ally.node.position, BRASS, 0.7)
+		spawn_vfx().summon_break(ally.node.position + Vector3.UP * 0.5, floor_y)
 		play_cue(1.15)
 		var art: Node = ally.node.get_node_or_null("ActorVisual")
 		if art != null:
@@ -1537,6 +1565,9 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 		enemy.charging = maxf(0, enemy.charging - dt)
 		enemy.body.velocity = enemy.charge_dir * config.enemy_speed * charge.speed_factor * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
 		enemy.body.move_and_slide()
+		var dust = enemy.body.get_meta("charge_vfx", null)
+		if is_instance_valid(dust):
+			dust.dust_trail(enemy.body.position)
 		var struck: String = foe_in_reach(enemy.body.position, charge.reach) if not enemy.charge_hit else "none"
 		if struck != "none":
 			enemy.charge_hit = true
@@ -1556,7 +1587,11 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 					enemy.charge_cooldown = type.charge.cooldown
 					enemy.charging = type.charge.distance / maxf(0.01, config.enemy_speed * type.charge.speed_factor)
 					enemy.charge_hit = false
+					var dust = spawn_vfx()
+					dust.dust_trail(enemy.body.position)
+					enemy.body.set_meta("charge_vfx", dust)
 				_:
+					spawn_vfx().claw(enemy.body.position, aim - enemy.body.position, float(type.reach), Color(1.0, 0.42, 0.3) if enemy.kind != "brute" else Color(1.0, 0.6, 0.35), enemy.kind == "brute", map.ground_y(enemy.body.position))
 					# Reach and stop distances are absolute: capsules keep bodies apart regardless of model size.
 					if delta.length() < type.reach and map.sees(enemy.body.position, aim):
 						hit_foe(enemy.target, type.damage * power, enemy.grade)
@@ -1653,7 +1688,7 @@ func begin_boss(enemy: Dictionary, pattern: String, windup: float) -> void:
 	enemy.windup = windup
 	if enemy.model.has_method("begin_attack"):
 		enemy.model.begin_attack(pattern, windup)
-	pulse(enemy.body.position, RED, 1.2)
+	spawn_vfx().tell(enemy.body.position + Vector3.UP * 2.0, Color(1.0, 0.5, 0.3), 2.0)
 
 func begin_slam(enemy: Dictionary, plan: Dictionary, extra: float = 0.0) -> void:
 	# extra: the slam that follows a sweep waits longer, so a witch stunned by the sweep can still step out.
@@ -1701,6 +1736,7 @@ func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
 				flat.y = 0
 				return flat.length() <= sweep.range and (flat.length() < 0.01 or rad_to_deg(facing.angle_to(flat.normalized())) <= sweep.angle / 2.0)
 			boss_area_hit(enemy, in_fan, sweep.damage * power)
+			spawn_vfx().fan_slash(origin, facing, float(sweep.range), float(sweep.angle), map.ground_y(origin))
 			play_cue(0.5)
 			# The lock comes down right after the sweep along the same facing.
 			if enemy.timers.get("slam", 0.0) <= 0:
@@ -1714,7 +1750,8 @@ func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
 				var along: float = flat.dot(facing)
 				return along >= 0 and along <= slam.length and absf(flat.dot(facing.cross(Vector3.UP))) <= slam.width / 2.0
 			boss_area_hit(enemy, in_line, slam.damage * power)
-			pulse(origin + facing * slam.length / 2.0, RED, 1.0)
+			spawn_vfx().slam(origin, facing, float(slam.length), float(slam.width), map.ground_y(origin))
+			shake_time = maxf(shake_time, 0.16)
 			play_cue(0.4)
 		"frames":
 			var frames: Dictionary = plan.frames
@@ -1728,7 +1765,8 @@ func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
 				flat.y = 0
 				return flat.length() <= wave.radius
 			boss_area_hit(enemy, in_disc, wave.damage * power)
-			pulse(origin, RED, wave.radius)
+			spawn_vfx().shockwave(origin, float(wave.radius), map.ground_y(origin))
+			shake_time = maxf(shake_time, 0.22)
 			play_cue(0.35)
 			# Called adds join from the field edges and never respawn in A5 mode.
 			for kind in wave.adds:
@@ -1741,12 +1779,16 @@ func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
 func fan_warning(from: Vector3, facing: Vector3, radius: float, angle: float, life: float) -> void:
 	for filled in [false, true]:
 		var fan: MeshInstance3D = Shape.fan(world, from + Vector3(0, 0.04 if filled else 0.03, 0), radius, angle, WARN_FILL if filled else WARN)
+		fan.material_override = warning_material(filled, 0, radius, 1.0, deg_to_rad(angle) / 2.0)
+		fan.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		fan.look_at(fan.position + facing)
 		warn_effect(fan, life, filled, "radial")
 
 func disc_warning(at: Vector3, radius: float, life: float) -> void:
 	for filled in [false, true]:
 		var disc: MeshInstance3D = Shape.cylinder(world, at + Vector3(0, 0.04 if filled else 0.03, 0), radius, 0.02, WARN_FILL if filled else WARN)
+		disc.material_override = warning_material(filled, 0, radius)
+		disc.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		warn_effect(disc, life, filled, "radial")
 
 func start_enemy_attack(enemy: Dictionary, attack: String, windup: float, color: Color) -> void:
@@ -1754,7 +1796,7 @@ func start_enemy_attack(enemy: Dictionary, attack: String, windup: float, color:
 	enemy.windup = windup
 	if enemy.model.has_method("begin_attack"):
 		enemy.model.begin_attack(attack, windup)
-	pulse(enemy.body.position, color, 0.55 * enemy.size)
+	spawn_vfx().tell(enemy.body.position + Vector3.UP * 1.25 * enemy.size, color, enemy.size)
 
 func telegraph(from: Vector3, direction: Vector3, length: float, width: float, life: float) -> void:
 	# Flat warning strip on the ground; a brighter strip fills it from the attacker outwards.
@@ -1763,7 +1805,9 @@ func telegraph(from: Vector3, direction: Vector3, length: float, width: float, l
 		world.add_child(pivot)
 		pivot.position = from + Vector3(0, 0.04 if filled else 0.03, 0)
 		pivot.look_at(pivot.position + direction)
-		Shape.box(pivot, Vector3(0, 0, -length / 2), Vector3(width, 0.02, length), WARN_FILL if filled else WARN)
+		var strip: MeshInstance3D = Shape.box(pivot, Vector3(0, 0, -length / 2), Vector3(width, 0.02, length), WARN_FILL if filled else WARN)
+		strip.material_override = warning_material(filled, 1, length, width)
+		strip.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		warn_effect(pivot, life, filled, "length")
 
 func warn_effect(node: Node3D, life: float, filled: bool, axis: String) -> void:
@@ -1782,10 +1826,14 @@ func fire_bolt_from(origin: Vector3, at: Vector3, band: Dictionary, damage: floa
 	origin.y = map.ground_y(origin) + FieldMap.SIGHT_HEIGHT
 	var aim: Vector3 = at - origin
 	aim.y = 0
-	var node = Shape.sphere(world, origin, 0.2, Color("bfe8ff"))
-	node.material_override = Shape.material(Color("bfe8ff"), true)
+	var node = Shape.sphere(world, origin, 0.12, Color("e6f6ff"))
+	node.material_override = Shape.material(Color("e6f6ff"), true)
+	node.material_override.emission_energy_multiplier = 2.2
+	node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	var trail = spawn_vfx()
+	trail.bolt_trail(origin, BOLT_GLOW)
 	bolts.append({"node": node, "dir": aim.normalized(), "speed": float(band.bolt_speed), "left": float(band.bolt_range),
-		"radius": float(band.bolt_radius), "damage": damage, "grade": grade})
+		"radius": float(band.bolt_radius), "damage": damage, "grade": grade, "trail": trail})
 	play_cue(1.9)
 
 func tick_bolts(dt: float) -> void:
@@ -1793,12 +1841,17 @@ func tick_bolts(dt: float) -> void:
 		var travel: float = bolt.speed * dt
 		var before: Vector3 = bolt.node.position
 		bolt.node.position += bolt.dir * travel
+		if is_instance_valid(bolt.trail):
+			bolt.trail.bolt_trail(bolt.node.position, BOLT_GLOW)
 		if not map.clear(before, bolt.node.position):
-			pulse(before, Color("bfe8ff"), 0.4)
+			if is_instance_valid(bolt.trail):
+				bolt.trail.burst(before, BOLT_GLOW, map.ground_y(before))
 			bolt.left = 0
 		bolt.left -= travel
 		var struck: String = foe_in_reach(bolt.node.position, bolt.radius)
 		if struck != "none":
+			if is_instance_valid(bolt.trail):
+				bolt.trail.burst(bolt.node.position, BOLT_GLOW, map.ground_y(bolt.node.position))
 			hit_foe(struck, bolt.damage, bolt.grade)
 			bolt.left = 0
 		if bolt.left <= 0 or not map.bounds.grow(1.0).has_point(Vector2(bolt.node.position.x, bolt.node.position.z)):
@@ -1836,10 +1889,12 @@ func _tick_allies(dt: float) -> void:
 			if art != null:
 				art.preview_shot(ally)
 				shot_origin = art.muzzle_position()
-			if not (ally.mobile and ally.node_kind=="B"):
-				beam(shot_origin, target + Vector3.UP * 0.8, TEAL, 0.065)
+			var saw: bool = ally.mobile and ally.node_kind == "B"
+			if not saw:
+				# Turrets fire brass slugs; automatons a teal pulse. The B node cuts instead of shooting.
+				spawn_vfx().summon_shot(shot_origin, target + Vector3.UP * 0.8, TEAL if ally.mobile else Color(1.0, 0.78, 0.45), map.ground_y(shot_origin))
 			var damage: float = config.summon_damage * (float(config.automaton_nodes.B.damage_factor) if ally.node_kind == "B" else 1.0)
-			strike(ally.target, damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret")
+			strike(ally.target, damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret", "saw" if saw else "")
 			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown
 
 func show_message(value: String) -> void:
@@ -1848,13 +1903,44 @@ func show_message(value: String) -> void:
 	message = value
 	message_time = 1.1
 
-func beam(from: Vector3, to: Vector3, color: Color, width: float = 0.045) -> void:
-	var length = from.distance_to(to)
-	if length < 0.01:
+func spawn_vfx() -> Node3D:
+	# Presentation only: the arena frees it with the other effects once its particles die out.
+	var fx = CombatVfx.new()
+	world.add_child(fx)
+	fx.setup(vfx_rng.randi(), camera)
+	fx.entry = {"node": fx, "life": 0.05, "grow": false}
+	effects.append(fx.entry)
+	return fx
+
+func tick_staff_trail(dt: float) -> void:
+	# The swing trail follows the actual staff (or tool) tip of the playing clip, so swing and
+	# thrust variants both draw their own path. Slow parts of the motion leave no streak.
+	if paused or not is_instance_valid(staff_trail):
 		return
-	var node = Shape.box(world, (from + to) / 2, Vector3(width, width, length), color)
-	node.look_at(to)
-	effects.append({"node": node, "life": 0.13, "grow": false})
+	var visual = player_visual
+	if visual.loaded_ok and visual._motion_kind == "attack" and is_instance_valid(visual.staff_root) and dt > 0:
+		var tool = state.active_tool
+		var reach: float = {"bolt_cutter": 0.95, "grinder": 0.98, "chainsaw": 1.1}.get(tool, 0.82)
+		var tip: Vector3 = visual.staff_root.to_global(Vector3(0, reach + 0.1, 0))
+		var base: Vector3 = visual.staff_root.to_global(Vector3(0, 0.36, 0))
+		if staff_tip_last != null:
+			var color: Color = {"bolt_cutter": Color(1.0, 0.78, 0.45), "grinder": Color(1.0, 0.62, 0.3), "chainsaw": Color(1.0, 0.42, 0.3)}.get(tool, Color(0.62, 1.0, 0.9))
+			color.a = clampf((tip.distance_to(staff_tip_last) / dt - 1.2) / 2.5, 0.0, 1.0)
+			staff_trail.blade_point(base, tip, color)
+		staff_tip_last = tip
+	else:
+		staff_tip_last = null
+	staff_trail.sync_effect(dt, 1.0)
+
+func warning_material(filled: bool, kind: int, extent: float, width: float = 1.0, half_angle: float = PI + 0.1) -> ShaderMaterial:
+	var material = ShaderMaterial.new()
+	material.shader = WARNING_SHADER
+	material.set_shader_parameter("filled", filled)
+	material.set_shader_parameter("kind", kind)
+	material.set_shader_parameter("extent", extent)
+	material.set_shader_parameter("width", width)
+	material.set_shader_parameter("half_angle", half_angle)
+	return material
 
 func pulse(pos: Vector3, color: Color, radius: float) -> void:
 	var node = Shape.ring(world, pos + Vector3(0, 0.06, 0), radius, color)

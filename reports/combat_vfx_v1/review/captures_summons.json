@@ -1,0 +1,69 @@
+{
+  "records": [
+    {
+      "busiest_frame": 16,
+      "every": 4,
+      "frames": 96,
+      "id": "turret_fire",
+      "label": "포탑 착지 → 사격 · 착탄",
+      "sheet": "turret_fire_sheet.png"
+    },
+    {
+      "busiest_frame": 16,
+      "every": 3,
+      "frames": 72,
+      "id": "automaton_fire",
+      "label": "태엽인형(기본) 사격",
+      "sheet": "automaton_fire_sheet.png"
+    },
+    {
+      "busiest_frame": 5,
+      "every": 3,
+      "frames": 60,
+      "id": "automaton_blast",
+      "label": "태엽인형 수명 종료 자폭",
+      "sheet": "automaton_blast_sheet.png"
+    },
+    {
+      "busiest_frame": 23,
+      "every": 5,
+      "frames": 120,
+      "id": "automaton_a_blast",
+      "label": "A 자폭 노드 돌진 → 대형 폭발",
+      "sheet": "automaton_a_blast_sheet.png"
+    },
+    {
+      "busiest_frame": 16,
+      "every": 4,
+      "frames": 96,
+      "id": "automaton_b_saw",
+      "label": "B 절삭 노드 톱 절삭",
+      "sheet": "automaton_b_saw_sheet.png"
+    },
+    {
+      "busiest_frame": 8,
+      "every": 3,
+      "frames": 72,
+      "id": "summon_hit_break",
+      "label": "소환체 피격 → 파괴",
+      "sheet": "summon_hit_break_sheet.png"
+    },
+    {
+      "busiest_frame": 5,
+      "every": 3,
+      "frames": 60,
+      "id": "turret_shutdown",
+      "label": "포탑 수명 종료",
+      "sheet": "turret_shutdown_sheet.png"
+    },
+    {
+      "busiest_frame": 28,
+      "every": 2,
+      "frames": 48,
+      "id": "relay",
+      "label": "표적 중계 연결",
+      "sheet": "relay_sheet.png"
+    }
+  ],
+  "saved": 16
+}
