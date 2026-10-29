@@ -18,7 +18,12 @@ const CLIPS := {
 const AUTHORED_RELEASE := {"attack": 0.5, "cast": 0.5}
 const STAFF_GRIP_OFFSET := Vector3(0.0074299751, 0.0480000079, 0.0158048961)
 const STAFF_GRIP_BASIS := Basis(Vector3(0, -1, 0), Vector3(0.9106548, 0, -0.4131677), Vector3(0.4131677, 0, 0.9106548))
-const LOCOMOTION_BLEND_SECONDS := 0.10
+# Run weight ramps in and out instead of switching clips outright, eased, so a move of only a few
+# frames leans a little rather than flicking the staff into the run pose and back.
+const RUN_BLEND_IN_SECONDS := 0.2
+const RUN_BLEND_OUT_SECONDS := 0.15
+# The shown body follows the gameplay facing at this rate (180 degrees in about 0.16s).
+const TURN_RATE := 20.0
 # The authored model stands 1.711m to the top of the hair; the witch is a middle-schooler of 1.5m,
 # so the whole asset (staff included) is scaled down and the measured stride with it.
 const MODEL_HEIGHT := 1.711
@@ -53,10 +58,13 @@ var is_cleared := false
 var _state := "loading"
 var _motion_kind := ""
 var _clip := ""
-var _loop_time := 0.0
+var _idle_time := 0.0
+var _run_time := 0.0
+var _run_weight := 0.0
+var _turn_lag := 0.0
+var _last_yaw := 0.0
+var _turn_seen := false
 var _clips: Dictionary = {}
-var _blend_from: Array = []
-var _blend_elapsed := 0.0
 var _run_rate := 1.0
 var movement_speed := 0.0
 var _release_pending := false
@@ -177,7 +185,6 @@ func begin_motion(kind: String, duration: float, release_ratio: float) -> void:
 	_motion_kind = kind
 	if kind == "attack":
 		_attack_clip_kind = "attack" if _attack_rng.randf() < 0.5 else "attack_thrust"
-	_blend_from.clear()
 	_state = kind
 	motion_duration = maxf(duration, 0.000001)
 	motion_elapsed = 0.0
@@ -197,7 +204,6 @@ func hit_react(duration: float) -> void:
 		return
 	# Only the arena's actual stun branch invokes this; blocked/minor hits do not.
 	_motion_kind = "hit_react"
-	_blend_from.clear()
 	_state = "hit"
 	motion_duration = maxf(duration, 0.000001)
 	motion_elapsed = 0.0
@@ -216,7 +222,6 @@ func freeze_for_death() -> void:
 	_release_elapsed = -1.0
 	_collapse_elapsed = 0.0
 	_collapse_grip_from = staff_slide
-	_blend_from.clear()
 	if loaded_ok:
 		for index in runtime.skeleton.get_bone_count():
 			_collapse_from.append([runtime.skeleton.get_bone_pose_position(index), runtime.skeleton.get_bone_pose_rotation(index), runtime.skeleton.get_bone_pose_scale(index)])
@@ -229,6 +234,7 @@ func sync_state(dt: float, moved: bool, action_remaining: float, paused: bool, d
 	is_cleared = cleared
 	if not loaded_ok or paused:
 		return
+	_settle_turn(dt)
 	if is_dead:
 		_collapse_elapsed = minf(_collapse_elapsed + maxf(dt, 0.0), _length("collapse"))
 		_sample("collapse", _collapse_elapsed)
@@ -239,7 +245,7 @@ func sync_state(dt: float, moved: bool, action_remaining: float, paused: bool, d
 			_motion_kind = ""
 			_release_pending = false
 			_release_elapsed = -1.0
-			_blend_from.clear()
+			_run_weight = 0.0
 			_sample("idle", 0.0)
 			_state = "cleared"
 		return
@@ -265,25 +271,70 @@ func sync_state(dt: float, moved: bool, action_remaining: float, paused: bool, d
 			return
 		_motion_kind = ""
 		motion_elapsed = motion_duration
-	var desired := "run" if moved else "idle"
-	if _state != desired:
-		if _state in ["idle", "run"]:
-			_capture_locomotion_blend()
-		_loop_time = 0.0
-	_state = desired
+	var step := maxf(dt, 0.0)
+	if _state not in ["idle", "run"]:
+		# Leaving an action (or loading) goes straight to the matching clip, as before.
+		_run_weight = 1.0 if moved else 0.0
+		_run_time = 0.0
+	elif moved and _run_weight <= 0.0:
+		_run_time = 0.0
+	_state = "run" if moved else "idle"
 	movement_speed = maxf(actual_speed, 0.0)
 	_run_rate = actual_speed * _length("run") / RUN_CYCLE_DISTANCE if actual_speed >= 0 else 1.0
-	var rate := _run_rate if desired == "run" else 1.0
-	_loop_time = fposmod(_loop_time + maxf(dt, 0.0) * rate, maxf(_length(desired), 0.000001))
-	_blend_elapsed += maxf(dt, 0.0)
-	_sample(desired, _loop_time)
+	_run_weight = clampf(_run_weight + (step / RUN_BLEND_IN_SECONDS if moved else -step / RUN_BLEND_OUT_SECONDS), 0.0, 1.0)
+	# Idle keeps its own phase so stopping never restarts it; a stopped run holds its last stride.
+	_idle_time = fposmod(_idle_time + step, maxf(_length("idle"), 0.000001))
+	if moved:
+		_run_time = fposmod(_run_time + step * _run_rate, maxf(_length("run"), 0.000001))
+	_sample_locomotion(smoothstep(0.0, 1.0, _run_weight))
 
-func _capture_locomotion_blend() -> void:
-	_blend_from.clear()
-	_blend_elapsed = 0.0
+func _sample_locomotion(weight: float) -> void:
+	# Presentation-only mix of the idle and run poses; no root motion or gameplay clock is used.
+	if weight <= 0.0:
+		_sample("idle", _idle_time)
+		return
+	if weight >= 1.0:
+		_sample("run", _run_time)
+		return
+	# Sample the other clip first so the selected clip, its time and playback rate stay those of the
+	# current state; then mix towards the other pose by its share.
+	var running := _state == "run"
+	var share := 1.0 - weight if running else weight
+	if running:
+		_sample("idle", _idle_time)
+	else:
+		_sample("run", _run_time)
 	var skeleton: Skeleton3D = runtime.skeleton
+	var other_pose: Array = []
 	for index in skeleton.get_bone_count():
-		_blend_from.append([skeleton.get_bone_pose_position(index), skeleton.get_bone_pose_rotation(index), skeleton.get_bone_pose_scale(index)])
+		other_pose.append([skeleton.get_bone_pose_position(index), skeleton.get_bone_pose_rotation(index), skeleton.get_bone_pose_scale(index)])
+	var other_slide := staff_slide
+	if running:
+		_sample("run", _run_time)
+	else:
+		_sample("idle", _idle_time)
+	for index in skeleton.get_bone_count():
+		var other: Array = other_pose[index]
+		skeleton.set_bone_pose_position(index, skeleton.get_bone_pose_position(index).lerp(other[0], share))
+		skeleton.set_bone_pose_rotation(index, skeleton.get_bone_pose_rotation(index).slerp(other[1], share))
+		skeleton.set_bone_pose_scale(index, skeleton.get_bone_pose_scale(index).lerp(other[2], share))
+	staff_socket.on_skeleton_update()
+	staff_slide = lerpf(staff_slide, other_slide, share)
+	staff_root.position = STAFF_GRIP_OFFSET + STAFF_GRIP_BASIS.y * staff_slide
+
+func _settle_turn(dt: float) -> void:
+	# The gameplay facing (this node) turns at once; only the shown body eases after it. Actions
+	# face their target immediately, as before.
+	var yaw := rotation.y
+	if _turn_seen:
+		_turn_lag = wrapf(_turn_lag - wrapf(yaw - _last_yaw, -PI, PI), -PI, PI)
+	_turn_seen = true
+	_last_yaw = yaw
+	if not _motion_kind.is_empty() or is_dead:
+		_turn_lag = 0.0
+	else:
+		_turn_lag = move_toward(_turn_lag, 0.0, maxf(dt, 0.0) * TURN_RATE)
+	asset_wrapper.rotation.y = PI + _turn_lag
 
 static func map_release_progress(progress: float, gameplay_ratio: float, authored_ratio: float) -> float:
 	var p := clampf(progress, 0.0, 1.0)
@@ -325,17 +376,6 @@ func _sample(kind: String, time: float) -> void:
 			bones.set_bone_pose_scale(index, (previous[2] as Vector3).lerp(bones.get_bone_pose_scale(index), weight))
 		if weight >= 1.0:
 			_collapse_from.clear()
-	if kind in ["idle", "run"] and not _blend_from.is_empty():
-		var weight := clampf(_blend_elapsed / LOCOMOTION_BLEND_SECONDS, 0.0, 1.0)
-		# Blend only the presentation pose. No root motion or gameplay clock is used.
-		var skeleton: Skeleton3D = runtime.skeleton
-		for index in skeleton.get_bone_count():
-			var previous: Array = _blend_from[index]
-			skeleton.set_bone_pose_position(index, (previous[0] as Vector3).lerp(skeleton.get_bone_pose_position(index), weight))
-			skeleton.set_bone_pose_rotation(index, (previous[1] as Quaternion).slerp(skeleton.get_bone_pose_rotation(index), weight))
-			skeleton.set_bone_pose_scale(index, (previous[2] as Vector3).lerp(skeleton.get_bone_pose_scale(index), weight))
-		if weight >= 1.0:
-			_blend_from.clear()
 	staff_socket.on_skeleton_update()
 	staff_slide = _sample_staff_slide(_clip.get_file(), clip_time / maxf(clip_length, 0.000001))
 	if kind == "collapse":
@@ -372,7 +412,7 @@ func debug_snapshot() -> Dictionary:
 		"attack_variant": _attack_clip_kind, "staff_slide_m": staff_slide,
 		"collapse_elapsed": _collapse_elapsed,
 		"movement_speed": movement_speed, "run_cycle_distance": RUN_CYCLE_DISTANCE,
-		"locomotion_blending": not _blend_from.is_empty(),
+		"locomotion_blending": _state in ["idle", "run"] and _run_weight > 0.0 and _run_weight < 1.0, "run_weight": _run_weight, "turn_lag": _turn_lag,
 		"bone_count": runtime.skeleton.get_bone_count() if loaded_ok else 0,
 		"staff_attached": is_instance_valid(staff_socket) and staff_socket.bone_name == "DEF-hand.R"}
 

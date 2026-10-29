@@ -18,6 +18,10 @@ const RED = Color("ee987d")
 const STEEL = Color("a9c1d6")
 const GOLD_FLASH = Color("ffe08a")
 const BOLT_GLOW = Color(0.62, 0.86, 1.0)
+# World offsets from the witch where following automatons wait; the first is the original anchor.
+const FOLLOW_SLOTS = [Vector3(1, 0, 0.6), Vector3(-1, 0, 0.6), Vector3(1, 0, -0.9), Vector3(-1, 0, -0.9),
+	Vector3(0, 0, 1.3), Vector3(1.8, 0, -0.1), Vector3(-1.8, 0, -0.1), Vector3(0, 0, -1.6)]
+const ALLY_SPACING := 0.85
 # Ground warnings: dark area plus a bright fill that reaches the edge at impact.
 const WARN = Color("7a3a32")
 const WARN_FILL = Color("e8604c")
@@ -488,6 +492,10 @@ func follow(route: Dictionary, from: Vector3, goal: Vector3, every: float, dt: f
 	while route.index < points.size() - 1 and Vector2(points[route.index].x - from.x, points[route.index].z - from.z).length() < 0.25:
 		route.index += 1
 	var next: Vector3 = points[mini(route.index, points.size() - 1)]
+	if route.index >= points.size() - 1 and Vector2(goal.x - next.x, goal.z - next.z).length() < 0.6:
+		# The plan's last point lags a goal that has since moved a little (a held cursor drags it
+		# along every frame). Walking back to that point shuttles in place, so aim at the goal.
+		next = goal
 	return Vector3(next.x, from.y, next.z)
 
 func tick_boss_trigger() -> void:
@@ -755,7 +763,7 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		automaton_assembly = AutomatonAssembly.new()
 		automaton_assembly.configure(str(config.automaton_node))
 		world.add_child(automaton_assembly)
-		automaton_assembly.position = map.grounded(automaton_spawn_position())
+		automaton_assembly.position = map.grounded(automaton_spawn_position(free_follow_slot()))
 		automaton_assembly.initialize(self)
 	elif cast.skill == "turret":
 		windup.visual_duration = windup.release
@@ -765,7 +773,7 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		turret_assembly.initialize(self)
 	elif cast.skill == "shotgun":
 		windup.visual_duration = windup.release
-		begin_shotgun_visual(cast_target(cast))
+		begin_shotgun_visual(cast_target(cast), aims_at_enemy(cast))
 	player_model.look_at(player.position + cast_direction(cast))
 	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else "cast", seconds, float(skill.get("release_ratio", 1.0)))
 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
@@ -789,7 +797,7 @@ func tick_windup(dt: float) -> void:
 		turret_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(shotgun_assembly):
 		var aim := {"target_enemy":windup.cursor.get("enemy_id"),"position":windup.cursor.get("ground")}
-		shotgun_assembly.global_transform = ShotgunGeometry.frame(self,cast_target(aim))
+		shotgun_assembly.global_transform = ShotgunGeometry.frame(self,cast_target(aim),aims_at_enemy(aim))
 		shotgun_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if windup.release > 0:
 		return
@@ -819,12 +827,49 @@ func tick_windup(dt: float) -> void:
 	# A failed recheck or LMB fallback must collapse its preview too.
 	cancel_summon_assemblies("release_failed")
 
-func automaton_spawn_position() -> Vector3:
-	# Casting and idle following share this anchor to avoid a step on release.
-	var pos := player.position + Vector3(1, 0, 0.6)
+func automaton_spawn_position(slot: int = 0) -> Vector3:
+	# Casting and idle following share these anchors to avoid a step on release. Each automaton
+	# keeps its own place beside the witch (slot 0 is the original anchor); casts ask for a free one.
+	var pos: Vector3 = player.position + FOLLOW_SLOTS[slot % FOLLOW_SLOTS.size()]
 	pos.x = clampf(pos.x, map.bounds.position.x + 0.25, map.bounds.end.x - 0.25)
 	pos.z = clampf(pos.z, map.bounds.position.y + 0.25, map.bounds.end.y - 0.25)
 	return map.snap(pos) if not map.walkable(pos) else pos
+
+func free_follow_slot() -> int:
+	var taken: Array = allies.filter(func(other): return other.mobile).map(func(other): return other.slot)
+	for slot in FOLLOW_SLOTS.size():
+		if slot not in taken:
+			return slot
+	return taken.size() % FOLLOW_SLOTS.size()
+
+func face_travel(ally: Dictionary, before: Vector3, dt: float) -> void:
+	# A following automaton turns towards where it walks; pursuit aims at its target instead.
+	var travel: Vector3 = ally.node.position - before
+	travel.y = 0.0
+	if travel.length() < 0.001:
+		return
+	var yaw := atan2(-travel.x, -travel.z)
+	ally.node.rotation = Vector3(0, lerp_angle(ally.node.rotation.y, yaw, minf(1.0, dt * 12.0)), 0)
+
+func separate_allies(dt: float) -> void:
+	# Automatons ease apart instead of standing inside each other or a turret; turrets stay put.
+	for i in allies.size():
+		for j in range(i + 1, allies.size()):
+			var a: Dictionary = allies[i]
+			var b: Dictionary = allies[j]
+			if not a.mobile and not b.mobile:
+				continue
+			var gap := Vector3(b.node.position.x - a.node.position.x, 0, b.node.position.z - a.node.position.z)
+			var overlap: float = ALLY_SPACING - gap.length()
+			if overlap <= 0.0:
+				continue
+			var away: Vector3 = gap.normalized() if gap.length() > 0.001 else Vector3.RIGHT.rotated(Vector3.UP, j * 2.4)
+			var share := 0.5 if a.mobile and b.mobile else 1.0
+			var push: Vector3 = away * minf(overlap * share, dt * 2.0)
+			if a.mobile and map.walkable(a.node.position - push):
+				a.node.position -= push
+			if b.mobile and map.walkable(b.node.position + push):
+				b.node.position += push
 
 func cancel_summon_assemblies(reason: String) -> void:
 	if is_instance_valid(automaton_assembly):
@@ -837,15 +882,15 @@ func cancel_summon_assemblies(reason: String) -> void:
 		shotgun_assembly.cancel(reason)
 	shotgun_assembly = null
 
-func begin_shotgun_visual(target: Vector3) -> void:
+func begin_shotgun_visual(target: Vector3, at_enemy: bool = false) -> void:
 	shotgun_assembly=ShotgunCast.new()
 	world.add_child(shotgun_assembly)
 	shotgun_assembly.initialize(self)
-	shotgun_assembly.global_transform=ShotgunGeometry.frame(self,target)
+	shotgun_assembly.global_transform=ShotgunGeometry.frame(self,target,at_enemy)
 
-func fire_shotgun(target: Vector3) -> void:
-	var shot: Transform3D=ShotgunGeometry.frame(self,target)
-	if not is_instance_valid(shotgun_assembly): begin_shotgun_visual(target)
+func fire_shotgun(target: Vector3, at_enemy: bool = false) -> void:
+	var shot: Transform3D=ShotgunGeometry.frame(self,target,at_enemy)
+	if not is_instance_valid(shotgun_assembly): begin_shotgun_visual(target,at_enemy)
 	shotgun_assembly.fire(shot)
 	shotgun_assembly=null
 	var struck: Array[String]=[]
@@ -974,8 +1019,11 @@ func apply_transition(result: Dictionary) -> void:
 			"basic_attack_fallback": fallback_time = 0.7
 			"tool_changed": play_cue(1.65)
 
+func aims_at_enemy(event: Dictionary) -> bool:
+	return event.get("target_enemy") != null and enemies.has(event.target_enemy)
+
 func cast_target(event: Dictionary) -> Vector3:
-	if event.get("target_enemy") != null and enemies.has(event.target_enemy):
+	if aims_at_enemy(event):
 		return enemies[event.target_enemy].body.position
 	if event.get("position") != null:
 		# Ground clicks arrive at height 0; lift them onto the floor actually under the cursor.
@@ -1029,13 +1077,13 @@ func execute_cast(event: Dictionary) -> void:
 			elif best != "" and strike(best, damage, true, "witch", "staff") != "miss":
 				play_cue(1.2)
 		"shotgun":
-			fire_shotgun(target)
+			fire_shotgun(target, aims_at_enemy(event))
 		"bolt_cutter", "grinder", "chainsaw": pulse(player.position, TOOL_COLORS[event.skill], 0.8)
 		"shield":
 			shield_time = float(rules.skills.shield.duration_seconds)
 			pulse(player.position + Vector3.UP, STEEL, 0.9)
 		"automaton":
-			var pos := automaton_spawn_position()
+			var pos := automaton_spawn_position(free_follow_slot())
 			if is_instance_valid(automaton_assembly):
 				pos = automaton_assembly.position
 				automaton_assembly.complete()
@@ -1317,6 +1365,8 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	Shape.ring(node, Vector3(0, 0.04, 0), 0.43, TEAL)
 	var durability: float = config.automaton_hp if mobile else config.turret_hp
 	# The automaton keeps the node it was summoned with; B never times out but only so many stay.
+	# Taken before an old B steps aside, so the new one keeps the place it was assembled at.
+	var slot := free_follow_slot() if mobile else -1
 	var kind: String = config.automaton_node if mobile else ""
 	var life: float = config.summon_lifetime if mobile else config.turret_lifetime
 	if kind == "B":
@@ -1327,7 +1377,7 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 		if kept.size() >= int(config.automaton_nodes.B.max_count):
 			dismantle_ally(kept[0])
 	allies.append({"id": "ally_%d" % ally_serial, "node": node, "mobile": mobile, "node_kind": kind, "route": {}, "target": target_id if target_id != null else "", "cooldown": 0.2,
-		"life": life, "hp": durability, "max_hp": durability, "reach": 1.6})
+		"life": life, "hp": durability, "max_hp": durability, "reach": 1.6, "slot": slot})
 	ally_serial += 1
 	spawn_vfx().summon_arrive(node.position, TEAL, map.ground_y(node.position))
 	play_cue(1.8)
@@ -1412,6 +1462,8 @@ func _physics_process(dt: float) -> void:
 		# The witch stands still for the attack motion; held steering resumes afterwards.
 		if moving and action_time <= 0:
 			var delta: Vector3 = destination - player.position
+			# Feet always follow the floor, so arrival is about where she stands, not how high.
+			delta.y = 0.0
 			if delta.length() < (0.01 if not pending_cast.is_empty() else 0.15):
 				moving = false
 				move_marker.visible = false
@@ -1421,9 +1473,16 @@ func _physics_process(dt: float) -> void:
 				step.y = 0
 				if step.length() < 0.001:
 					step = delta
+				var before: Vector3 = player.position
 				player.velocity = step.normalized() * minf(speed, step.length() / dt)
 				player.move_and_slide()
 				player_model.look_at(player.position + step.normalized())
+				var made := Vector2(player.position.x - before.x, player.position.z - before.z).length()
+				if pending_cast.is_empty() and delta.length() < 0.6 and made < 0.1 * minf(speed * dt, delta.length()):
+					# Blocked just short of the spot by a step or prop edge: stop there instead of
+					# pushing against it for as long as the order stands.
+					moving = false
+					move_marker.visible = false
 		# Feet follow the floor: bodies only collide with walls, so steps lift them here.
 		player.position.y = map.ground_y(player.position)
 		for id in enemies.keys():
@@ -1872,13 +1931,17 @@ func _tick_allies(dt: float) -> void:
 			continue
 		if ally.mobile and not on_screen(ally.node.position):
 			ally.target = ""
-			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, automaton_spawn_position(), 0.4, dt), dt * 7)
+			var before: Vector3 = ally.node.position
+			ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, automaton_spawn_position(ally.slot), 0.4, dt), dt * 7)
+			face_travel(ally, before, dt)
 			continue
 		if not eligible(ally, ally.target):
 			ally.target = nearest_enemy(ally.node.position, config.summon_detection_range if ally.mobile else config.turret_detection_range, Vector3.ZERO, -1, true, true)
 		if ally.target == "":
 			if ally.mobile:
-				ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, automaton_spawn_position(), 0.4, dt), dt * 4)
+				var before: Vector3 = ally.node.position
+				ally.node.position = ally.node.position.move_toward(follow(ally.route, ally.node.position, automaton_spawn_position(ally.slot), 0.4, dt), dt * 4)
+				face_travel(ally, before, dt)
 			continue
 		var target: Vector3 = enemies[ally.target].body.position
 		ally.node.look_at(target)
@@ -1906,6 +1969,7 @@ func _tick_allies(dt: float) -> void:
 			var damage: float = config.summon_damage * (float(config.automaton_nodes.B.damage_factor) if ally.node_kind == "B" else 1.0)
 			strike(ally.target, damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret", "saw" if saw else "")
 			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown
+	separate_allies(dt)
 
 func show_message(value: String) -> void:
 	if value == message and message_time > 0.3:

@@ -6,7 +6,7 @@ const FORWARD_OFFSET := 0.62
 const SIDE_OFFSET := 0.52
 const MUZZLE_HEIGHT := 1.12
 
-static func frame(arena: Node3D, target: Vector3) -> Transform3D:
+static func frame(arena: Node3D, target: Vector3, at_enemy: bool = false) -> Transform3D:
 	var direction: Vector3=target-arena.player.position
 	direction.y=0.0
 	if direction.length()<0.05:
@@ -30,6 +30,9 @@ static func frame(arena: Node3D, target: Vector3) -> Transform3D:
 	for side in [1.0,-1.0,0.0]:
 		var origin: Vector3=fallback+direction*FORWARD_OFFSET*room+right*SIDE_OFFSET*room*side
 		if side==0.0: origin=arena.player.position+Vector3.UP*1.85
+		# An enemy is aimed at chest height; a floor click fires level from the muzzle instead
+		# of pitching the barrel down into the ground.
+		if not at_enemy: aim=Vector3(target.x,origin.y,target.z)
 		var axis: Vector3=(aim-origin).normalized()
 		if axis.length()<0.01: axis=direction
 		var basis:=Basis.looking_at(axis,Vector3.UP)
@@ -38,6 +41,7 @@ static func frame(arena: Node3D, target: Vector3) -> Transform3D:
 		for edge in [-0.15,0.15]:
 			clear=clear and arena.map.clear(origin+basis.x*edge,rear+basis.x*edge)
 		if clear: return Transform3D(basis,origin)
+	if not at_enemy: aim=Vector3(target.x,fallback.y,target.z)
 	return Transform3D(Basis.looking_at((aim-fallback).normalized(),Vector3.UP),fallback)
 
 static func contains(arena: Node3D, shot: Transform3D, enemy: Node3D) -> bool:
