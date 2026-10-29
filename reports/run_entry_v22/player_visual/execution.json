@@ -1,0 +1,8 @@
+{
+  "stderr_empty": true,
+  "exit_code": 0,
+  "workspace_cache_diagnostic_only": false,
+  "test": "player_visual",
+  "phase": "test",
+  "changed_inputs": []
+}

@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-30",
+  "passed": true,
+  "prior_staff_commit": "a8b8cfb",
+  "tests": {
+    "run_entry_v22": {
+      "checks": 14,
+      "passed": true
+    },
+    "player_visual": {
+      "checks": 192,
+      "passed": true
+    },
+    "player_motion_v18": {
+      "checks": 787,
+      "passed": true
+    },
+    "bolt_cutter_v2": {
+      "checks": 278,
+      "passed": true
+    }
+  },
+  "checks": 1271,
+  "captures": 455,
+  "transition_metrics": {
+    "max_arm_length_error_m": 4.76837158203125e-07,
+    "max_axis_x": -0.598757326602936,
+    "max_endpoint_error": 2.71559183602221e-05,
+    "max_grip_error_m": 5.17342814418953e-05,
+    "max_timeline_difference": 0.0,
+    "max_unaffected_local_error": 0.0,
+    "min_axis_y": 0.642557382583618,
+    "samples": 1514
+  },
+  "actual_arena_comparison": {
+    "front": {
+      "before_x_range_m": [
+        -0.683952450752258,
+        0.415293157100677
+      ],
+      "after_x_range_m": [
+        -0.613754630088806,
+        -0.474192798137665
+      ]
+    },
+    "quarter": {
+      "before_x_range_m": [
+        -0.683952450752258,
+        0.415293157100677
+      ],
+      "after_x_range_m": [
+        -0.613754630088806,
+        -0.474192798137665
+      ]
+    }
+  },
+  "matching_gameplay_inputs_and_positions": true,
+  "runtime_sha256": {
+    "game/scripts/player_visual.gd": "3a9da35705c1ca71364724fee377c6339e99cbcf1d62d2152ae746c93294c00d",
+    "game/scripts/staff_locomotion_blend.gd": "8ab28a9b1a293abfbeb0978f263975834e9e8851b8d2669a5f411acacec33b52",
+    "game/scripts/staff_visual.gd": "8ebb7b225a6758af32ca01cb40e72f1d06b23477680a6537de3c8bb272539f0e",
+    "game/tests/run_entry_v22.gd": "c255bde2d13c9aa4235aa420439ce1a0b6c2f2a91c8218bcc907ba48e7c72412",
+    "game/tests/probe_run_entry_v22.gd": "e4930a17cb60f6c66638e8588e2ce71298d798b19e2fc651237b788a399c69fb",
+    "game/tests/review_run_entry_v22.gd": "eb5f34fd1e2ff30953dbd07431a62db3b2be27f07e82661cd251edb97b71b215",
+    "tools/run_run_entry_v22.ps1": "e0ba59a47d22f1b1587810f49ccda6f3fdc2c62c2a87a01338ce6c5c1b58c2e1",
+    "reports/run_entry_v22/player_visual_before.gd": "3050a6e9cc07000d5b14219f7e5307c37dfc4c4486535a65f391a37e03098812"
+  },
+  "asset_sha256": {
+    "game/assets/characters/player/run_arm_v21/body_standard_v21.glb": "a73a82b8277312c017adfe85fb171c54b36cc63e0bc9374706bbaf38ef12ecc4",
+    "game/assets/characters/player/run_arm_v21/eyes_neutral_v21.glb": "c7f6931e64338e4f0680f6a59d6aa6f19def22db25ae3d1c6dcb34380a0f02b4",
+    "game/assets/characters/player/run_arm_v21/hair_semilong_v21.glb": "e110830cc91de0a0c596d7568886eae91cfe6d92f31d8b1f2e5eee541bc65832",
+    "game/assets/characters/player/run_arm_v21/outfit_civilian_v21.glb": "c5e18428b027beb03f173e4270bf19fb898587416da99c3f774704dd01ee9caa",
+    "game/assets/weapons/staff_material_v3/parts.json": "3dda68400d7e20f8e020fa1c98c473966b4293ae0fed8ae49df843efc487f8e6",
+    "game/assets/weapons/staff_material_v3/staff_parts.glb": "1dbd09823cc337f19fc68429d476e335a9ff0451d27a440aa6248585b18e0e27",
+    "game/assets/weapons/staff_material_v3/staff_parts.glb.import": "e87defe74dd2a356e5c6d9851b98e9a0e958f3e8db48dc9bce88e136a434badd",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_color.png": "f5c6513a16af049e06df5b1e6bb03250f1554af8bd9a47b0629e74a6c1e8232d",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_color.png.import": "9234d7e9aec043137755f7a254ea6201a79ba8cb6f27b64c4d8856ec01532cf6",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_emission.png": "e0b81d37958ece9dab57aaa0184619782d6d7a7abeb66bc2a780c19d311777ba",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_emission.png.import": "6e9d54b92de1e8c8255c8f82400bbf41b79d6e88b5268507f28fd1ea412b78c3",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_normal.png": "ddc0f6e414eedc87e62dc7182548d5b63173a3ec5eacd730d71a98b974d6a8f1",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_normal.png.import": "8b3a51224fd4711b71757723f97464664e2db44d6d7d3d35ac9d0a8a71ce80f6",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_orm.png": "39c8d68c7fc0a42ba39dc82eb8856ab58d9fb956767883da0145c6cceeaa8e6a",
+    "game/assets/weapons/staff_material_v3/staff_parts_staff_orm.png.import": "0f9ff7a84b84b1f4a2ddb578bbf4e46792012f7ff82b81ecef6a21cd2bf5b8a8"
+  },
+  "method": "One skeleton-space staff frame and both hand targets; two-bone arm reach with blended elbow poles and rigid-length twist segments, only during partial idle/run blending.",
+  "preserved": "All 7 authored clips/GLBs, 93 other local bone channels, steady run, lower-body/cloth, movement/turn/phase clocks, combat rules and material v3.",
+  "limits": "Current civilian game and the sampled phase grid. Not a new transformed-outfit inspection, arbitrary-pose garment clearance or a performance budget. The sole GPU stderr is the known workspace shader-cache diagnostic."
+}

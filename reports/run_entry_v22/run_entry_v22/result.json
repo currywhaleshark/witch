@@ -1,0 +1,32 @@
+{
+  "checks": [
+    "current modular character loads",
+    "all seven authored clips retain identical sampled poses",
+    "pause retains exact pose at 30 fps speed 1.0",
+    "pause retains exact pose at 30 fps speed 4.0",
+    "pause retains exact pose at 30 fps speed 7.5",
+    "pause retains exact pose at 60 fps speed 1.0",
+    "pause retains exact pose at 60 fps speed 4.0",
+    "pause retains exact pose at 60 fps speed 7.5",
+    "staff remains on its authored side and points upward throughout blends/restarts",
+    "both hands retain the 26cm grip spacing within 0.2mm",
+    "upper/lower arms keep their lengths within 0.1mm",
+    "all other local bone tracks, including cloth/fingers, preserve the original mix",
+    "mixed arm poses meet the unchanged pure clips at both ends",
+    "run phase, stride speed, blend duration and turning clocks remain identical"
+  ],
+  "failures": [],
+  "metrics": {
+    "max_arm_length_error_m": 0.000000476837158203125,
+    "max_axis_x": -0.598757326602936,
+    "max_endpoint_error": 0.0000271559183602221,
+    "max_grip_error_m": 0.0000517342814418953,
+    "max_timeline_difference": 0.0,
+    "max_unaffected_local_error": 0.0,
+    "min_axis_y": 0.642557382583618,
+    "samples": 1514
+  },
+  "passed": true,
+  "pure_clip_error": 0.0,
+  "scope": "4 idle phases x 16 run phases x 11 weights, then 30/60fps stop/restart/turn/pause at three speeds; independent held-prop/contact/length and unchanged-channel checks."
+}

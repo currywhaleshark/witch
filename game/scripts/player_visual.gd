@@ -3,6 +3,7 @@ extends Node3D
 const Modular = preload("res://scripts/modular_character_runtime.gd")
 const Shape = preload("res://scripts/shapes.gd")
 const StaffVisual = preload("res://scripts/staff_visual.gd")
+const StaffLocomotionBlend = preload("res://scripts/staff_locomotion_blend.gd")
 const ASSET_DIR := "res://assets/characters/player/run_arm_v21/"
 const BODY_PATH := ASSET_DIR + "body_standard_v21.glb"
 const PARTS := {
@@ -63,6 +64,7 @@ var _clip := ""
 var _idle_time := 0.0
 var _run_time := 0.0
 var _run_weight := 0.0
+var _staff_locomotion_blend := StaffLocomotionBlend.new()
 var _turn_lag := 0.0
 var _last_yaw := 0.0
 var _turn_seen := false
@@ -123,6 +125,7 @@ func initialize() -> bool:
 	_build_staff()
 	if not staff_visual.loaded_ok:
 		return _fail(staff_visual.last_error)
+	_staff_locomotion_blend.initialize(runtime.skeleton, Transform3D(STAFF_GRIP_BASIS, STAFF_GRIP_OFFSET))
 	loaded_ok = true
 	_state = "idle"
 	_sample("idle", 0.0)
@@ -307,6 +310,7 @@ func _sample_locomotion(weight: float) -> void:
 	else:
 		_sample("run", _run_time)
 	var skeleton: Skeleton3D = runtime.skeleton
+	var other_arms := _staff_locomotion_blend.capture(skeleton)
 	var other_pose: Array = []
 	for index in skeleton.get_bone_count():
 		other_pose.append([skeleton.get_bone_pose_position(index), skeleton.get_bone_pose_rotation(index), skeleton.get_bone_pose_scale(index)])
@@ -315,11 +319,13 @@ func _sample_locomotion(weight: float) -> void:
 		_sample("run", _run_time)
 	else:
 		_sample("idle", _idle_time)
+	var selected_arms := _staff_locomotion_blend.capture(skeleton)
 	for index in skeleton.get_bone_count():
 		var other: Array = other_pose[index]
 		skeleton.set_bone_pose_position(index, skeleton.get_bone_pose_position(index).lerp(other[0], share))
 		skeleton.set_bone_pose_rotation(index, skeleton.get_bone_pose_rotation(index).slerp(other[1], share))
 		skeleton.set_bone_pose_scale(index, skeleton.get_bone_pose_scale(index).lerp(other[2], share))
+	_staff_locomotion_blend.apply(skeleton, selected_arms, other_arms, share)
 	staff_socket.on_skeleton_update()
 	staff_slide = lerpf(staff_slide, other_slide, share)
 	staff_root.position = STAFF_GRIP_OFFSET + STAFF_GRIP_BASIS.y * staff_slide

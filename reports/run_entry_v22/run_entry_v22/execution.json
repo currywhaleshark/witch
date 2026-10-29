@@ -1,0 +1,8 @@
+{
+  "stderr_empty": true,
+  "test": "run_entry_v22",
+  "workspace_cache_diagnostic_only": false,
+  "exit_code": 0,
+  "changed_inputs": [],
+  "phase": "test"
+}

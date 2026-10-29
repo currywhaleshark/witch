@@ -1,0 +1,8 @@
+{
+  "phase": "test",
+  "workspace_cache_diagnostic_only": false,
+  "exit_code": 0,
+  "test": "bolt_cutter_v2",
+  "stderr_empty": true,
+  "changed_inputs": []
+}

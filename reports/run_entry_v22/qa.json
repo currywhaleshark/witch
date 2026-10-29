@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "captures": 455,
+  "checks": 1271,
+  "javascript_syntax": "node --check passed",
+  "browser_interaction_tested": false,
+  "manual_images_inspected": {
+    "front_before/017.jpg": "60c5a0ec7fa19a7bfb72a7c80573ac5dc48cca50fc086c44db6da38fd31b9caa",
+    "front_after/017.jpg": "df6b691e6e8703fa3d7e0b02a77b00d6dffffacd1aa44719333dc66ec5af00e4",
+    "quarter_after/018.jpg": "f6e8b53ef2d65f081da1045468e9f2d04f737430b73065bfa62c5f96de5e3204",
+    "quarter_after/037.jpg": "9c7afe77cea4ff4fbf8b0216370807a40f77ed3987231b2b7a4bd8d5d7790392",
+    "quarter_after/048.jpg": "117c3d8ecfefc48ec6b4af3ebc0000050e88b8fb2f117d524f49537588170dea",
+    "native_after/017.jpg": "b33818256fa46eb272c5b3d2587b27f62987cfcbdbf121a2eedd7a5efa29f6b5"
+  }
+}
