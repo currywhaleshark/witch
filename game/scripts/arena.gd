@@ -395,6 +395,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			state = rules.bind(state, "r", options[(options.find(state.bindings.r) + 1) % options.size()])
 			show_message("R 슬롯: " + rules.skills[state.bindings.r].name)
 			return
+		if event.physical_keycode in [KEY_J, KEY_K]:
+			# J: cutting precision, K: ballistics passive level (B7 cross-tree tags).
+			restart_probe("settings_changed")
+			var id: String = "cutting_precision" if event.physical_keycode == KEY_J else "ballistics"
+			var levels: Array = config.passive_level_steps
+			config.passive_levels[id] = levels[(levels.find(config.passive_levels[id]) + 1) % levels.size()]
+			var passive: Dictionary = config.passives[id]
+			show_message("%s Lv %d · %s 공격 피해 +%d%%" % [passive.name, config.passive_levels[id], passive.tag_name, roundi(100 * float(passive.damage_per_level) * config.passive_levels[id])])
+			return
 		if event.physical_keycode == KEY_N:
 			# N: automaton node, no node -> A (blast on reach) -> B (keeps fighting).
 			restart_probe("settings_changed")
@@ -585,7 +594,7 @@ func save_mana_log(reason: String) -> String:
 		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
 			"hit_recovery_score": config.hit_recovery_score, "shield_level": config.shield_level, "dexterity": config.dexterity,
 			"automaton_level": config.automaton_level, "turret_level": config.turret_level, "map": map.id,
-			"automaton_node": config.automaton_node,
+			"automaton_node": config.automaton_node, "passive_levels": config.passive_levels.duplicate(),
 			"chainsaw_level": config.chainsaw_level, "bleed_growth": config.bleed.growth,
 			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
 	var file = FileAccess.open(path, FileAccess.WRITE)
@@ -1145,6 +1154,7 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 	# One direct damage event: optional hit roll, then its own crit roll (area attacks call this per enemy).
 	if not enemies.has(id):
 		return "miss"
+	amount *= passive_factor(source + ("_" + look if look != "" else ""))
 	if accuracy_roll and not force_rolls.get("hit", combat_rng.randf() < hit_chance(id, roller)):
 		probe.strike(source, "miss", 0.0)
 		return "miss"
@@ -1163,6 +1173,17 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 		play_cue(0.55)
 		shake_time = 0.12
 	return "crit" if crit else "hit"
+
+func passive_factor(attack: String) -> float:
+	# Passives follow the machine principle an attack uses (03 §2.1), not the tree it belongs to:
+	# cutting precision also sharpens the B automaton's saw, ballistics also the turret's shots.
+	# Untagged hits (staff, punches, blasts) and bleed ticks never gain from them.
+	var tag: String = config.attack_tags.get(attack, "")
+	var factor := 1.0
+	for id in config.passives:
+		if tag != "" and config.passives[id].tag == tag:
+			factor += float(config.passives[id].damage_per_level) * float(config.passive_levels[id])
+	return factor
 
 func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 	# Returns the HP actually removed, for the A5 log. Bleed ticks pass direct = false.

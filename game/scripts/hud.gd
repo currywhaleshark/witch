@@ -190,7 +190,7 @@ func _draw() -> void:
 			centered(Vector2(w / 2, h / 2 + 53), "Esc  계속하기", 16, TEAL)
 			centered(Vector2(w / 2, h / 2 + 110), "시험 도구   F1 좌클릭 기본/산탄   ·   F2 마나 소진   ·   F3 마나 회복   ·   F4 공속 점수   ·   F8 시전 속도 점수", 13, MUTED)
 			centered(Vector2(w / 2, h / 2 + 158), "F9 R 방패/그라인더/중계   ·   F10 방패 레벨   ·   F11 기교   ·   F12 타격 회복 점수", 13, MUTED)
-			centered(Vector2(w / 2, h / 2 + 182), "Shift+1~4 물약 종류   ·   B 보스 소환   ·   Shift/Ctrl+F10 태엽인형/포탑 레벨   ·   N 태엽인형 노드", 13, MUTED)
+			centered(Vector2(w / 2, h / 2 + 182), "Shift+1~4 물약 종류   ·   B 보스 소환   ·   Shift/Ctrl+F10 태엽인형/포탑 레벨   ·   N 태엽인형 노드   ·   J/K 절삭 정밀화/탄도 계산", 13, MUTED)
 			centered(Vector2(w / 2, h / 2 + 134), "A5 마나 시험   F5 연속 교전 켜기/끄기   ·   F6 기록 저장   ·   F7 마나 회복량", 13, MUTED)
 
 func a5_panel(pos: Vector2) -> void:
