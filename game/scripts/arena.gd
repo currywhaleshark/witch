@@ -10,8 +10,14 @@ const AutomatonAssembly = preload("res://scripts/automaton_assembly.gd")
 const TurretAssembly = preload("res://scripts/turret_assembly.gd")
 const ShotgunCast = preload("res://scripts/shotgun_cast.gd")
 const ShotgunGeometry = preload("res://scripts/shotgun_geometry.gd")
+const ShieldVisual = preload("res://scripts/shield_visual.gd")
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const WARNING_SHADER = preload("res://shaders/warning_zone.gdshader")
+const OUTLINE_SHADER = preload("res://shaders/outline.gdshader")
+const AURA_SHADER = preload("res://shaders/grade_aura.gdshader")
+const MASK_SHADER = preload("res://shaders/silhouette_mask.gdshader")
+# Champion and elite enemies glow (saturated grade hues) instead of wearing a ring and head band.
+const AURA_COLORS = {"champion": Color(0.35, 0.6, 1.0), "elite": Color(1.0, 0.68, 0.18)}
 const TEAL = Color("8dd8c4")
 const BRASS = Color("c69b62")
 const RED = Color("ee987d")
@@ -80,7 +86,8 @@ var hit_time = 0.0
 # Hit recovery: an unblocked hit stuns the witch and cancels what she was doing.
 var stun_time = 0.0
 var shield_time = 0.0
-var shield_ring: MeshInstance3D
+var shield_ring: Node3D
+var shield_visual = null
 # Potion quickslots 1-4: refills over time, cooldowns shared per group, no auto-restock.
 var potion_slots: Array = []
 var potion_cooldowns: Dictionary = {}
@@ -89,7 +96,9 @@ var speed_buff = 0.0
 var elapsed = 0.0
 var last_events: Array = []
 var hover_id = ""
-var hover_ring: MeshInstance3D
+var outlined_id = ""
+var enemy_overlays: Dictionary = {}
+var hover_ring: Node3D
 var move_marker: MeshInstance3D
 var tool_rings: Dictionary = {}
 var tool_visuals: Dictionary = {}
@@ -172,7 +181,10 @@ func _build_field() -> void:
 	camera.rotation_degrees = Vector3(-30, 45, 0)
 	place_camera(Vector3.ZERO)
 	camera.current = true
-	hover_ring = Shape.ring(world, Vector3.ZERO, 0.65, RED)
+	# The hovered enemy is outlined on its own meshes; this empty marker only keeps the old handle
+	# that review scripts hide before capturing.
+	hover_ring = Node3D.new()
+	world.add_child(hover_ring)
 	move_marker = Shape.ring(world, Vector3.ZERO, 0.3, TEAL)
 	hover_ring.visible = false
 	move_marker.visible = false
@@ -235,10 +247,10 @@ func reset_arena() -> void:
 	player_model = player_visual
 	tool_visuals = player_visual.tool_visuals
 	grinder_disk = player_visual.grinder_disk
-	for id in TOOL_COLORS:
-		tool_rings[id] = Shape.ring(player, Vector3(0, 0.08, 0), 0.7, TOOL_COLORS[id])
-	Shape.ring(player, Vector3(0, 0.035, 0), 0.55, TEAL)
-	shield_ring = Shape.ring(player, Vector3(0, 1.0, 0), 0.85, STEEL, 0.06)
+	# No ground rings under the witch: the staff itself shows the active tool.
+	# The folding shield prop replaced the old ring; the empty marker keeps the handle review scripts hide.
+	shield_ring = Node3D.new()
+	player.add_child(shield_ring)
 	if not is_instance_valid(staff_trail):
 		staff_trail = CombatVfx.new()
 		world.add_child(staff_trail)
@@ -262,6 +274,8 @@ func reset_arena() -> void:
 	hit_time = 0
 	stun_time = 0
 	shield_time = 0
+	if is_instance_valid(shield_visual):
+		shield_visual.queue_free()
 	potion_slots = []
 	for entry in config.potion_loadout:
 		potion_slots.append({"id": entry.id, "count": int(entry.count)})
@@ -294,11 +308,6 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 	body.set_meta("enemy_id", id)
 	var model = Shape.enemy(body, kind)
 	var size: float = type.scale * rank.scale
-	if rank.has("color"):
-		# Graded enemies wear their grade colour as a ground ring and a head band.
-		Shape.ring(body, Vector3(0, 0.05, 0), 0.75 * size, Color(rank.color), 0.06)
-		if kind != "latch":
-			Shape.box(model, Vector3(0, 1.45, 0), Vector3(0.62, 0.1, 0.5), Color(rank.color))
 	var pick = Shape.pick_volume(body, 0.7 * size, 1.65 * size, PICK_LAYER)
 	pick.set_meta("enemy_id", id)
 	var maximum: float = type.hp * rank.hp
@@ -306,6 +315,38 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 		"grade": grade, "size": size, "cooldown": 1.0, "windup": 0.0, "attack": "", "charge_cooldown": 1.0, "charging": 0.0,
 		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "bleeds": [], "flash": 0.0,
 		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": [], "route": {}}
+	dress_enemy(enemies[id], id == outlined_id)
+
+func dress_enemy(enemy: Dictionary, outlined: bool, alive: bool = true) -> void:
+	# One overlay chain per enemy mesh: a stencil mask of the body, then the grade aura
+	# (champion/elite) and, while hovered, the selection outline, both drawn only outside that
+	# mask. Render priority keeps every mask ahead of the passes that read it. Shared per combination.
+	var graded: bool = AURA_COLORS.has(enemy.grade) and alive
+	var key := "%s|%s" % [enemy.grade if graded else "", outlined and alive]
+	if not enemy_overlays.has(key):
+		var passes: Array[ShaderMaterial] = []
+		if graded:
+			var aura := ShaderMaterial.new()
+			aura.shader = AURA_SHADER
+			aura.render_priority = 1
+			aura.set_shader_parameter("color", AURA_COLORS[enemy.grade])
+			passes.append(aura)
+		if outlined and alive:
+			var outline := ShaderMaterial.new()
+			outline.shader = OUTLINE_SHADER
+			outline.render_priority = 2
+			passes.append(outline)
+		var overlay: ShaderMaterial = null
+		if not passes.is_empty():
+			overlay = ShaderMaterial.new()
+			overlay.shader = MASK_SHADER
+			var last := overlay
+			for next in passes:
+				last.next_pass = next
+				last = next
+		enemy_overlays[key] = overlay
+	for mesh in enemy.model.find_children("*", "MeshInstance3D", true, false):
+		mesh.material_overlay = enemy_overlays[key]
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -1087,10 +1128,14 @@ func execute_cast(event: Dictionary) -> void:
 				play_cue(1.2)
 		"shotgun":
 			fire_shotgun(target, aims_at_enemy(event))
-		"bolt_cutter", "grinder", "chainsaw": pulse(player.position, TOOL_COLORS[event.skill], 0.8)
+		"bolt_cutter", "grinder", "chainsaw": pass  # the staff itself transforms; no ground ring
 		"shield":
 			shield_time = float(rules.skills.shield.duration_seconds)
-			pulse(player.position + Vector3.UP, STEEL, 0.9)
+			# Recasting while the fan is up only refreshes the clock; otherwise a new one assembles.
+			if not is_instance_valid(shield_visual) or shield_visual.mode not in ["assembling", "open"]:
+				shield_visual = ShieldVisual.new()
+				world.add_child(shield_visual)
+				shield_visual.initialize(self, player.position, player_model.global_rotation.y)
 		"automaton":
 			var pos := automaton_spawn_position(free_follow_slot())
 			if is_instance_valid(automaton_assembly):
@@ -1198,7 +1243,9 @@ func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 	if direct:
 		enemy.flash = 0.16
 	if enemy.hp <= 0:
-		pulse(enemy.body.position, RED, 0.6)
+		# No ground ring on death: the collapse itself shows it. The falling corpse keeps neither
+		# the selection outline nor the grade aura.
+		dress_enemy(enemy, false, false)
 		if enemy.model.has_method("detach_for_death"):
 			enemy.model.detach_for_death(world, self)
 		enemy.body.queue_free()
@@ -1297,7 +1344,8 @@ func drink(index: int) -> void:
 			"hp_rate": (config.max_hp if full else potion.get("hp", 0.0)) / seconds if potion.kind != "mp" else 0.0,
 			"mp_rate": (state.max_mana if full else potion.get("mp", 0.0)) / seconds if potion.kind != "hp" else 0.0})
 	probe.potions[slot.id] = probe.potions.get(slot.id, 0) + 1
-	pulse(player.position + Vector3.UP * 0.5, {"hp": RED, "mp": TEAL, "both": Color("c9a0dc"), "speed": Color("a8d672")}[potion.kind], 0.5)
+	# A light in the potion colour around the witch tells which potion was drunk.
+	spawn_vfx().potion_glow(player.position, {"hp": Color(1.0, 0.32, 0.28), "mp": Color(0.35, 0.85, 1.0), "both": Color(0.82, 0.55, 1.0), "speed": Color(0.62, 1.0, 0.38)}[potion.kind], map.ground_y(player.position))
 	play_cue(1.4)
 
 func cycle_potion(index: int) -> void:
@@ -1342,7 +1390,11 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		return
 	if shield_time > 0 and block_rng.randf() < block_chance():
 		# A blocked hit deals nothing and never interrupts; sound and flash tell it apart.
-		spawn_vfx().block(player.position + Vector3.UP * 0.9, map.ground_y(player.position))
+		# The blow came from somewhere; the nearest enemy picks which side panel takes it.
+		var near_id: String = nearest_enemy(player.position, 30.0)
+		var threat: Vector3 = enemies[near_id].body.position if enemies.has(near_id) else player.position - player_model.global_basis.z
+		var guard: Vector3 = shield_visual.block(threat) if is_instance_valid(shield_visual) else player.position + Vector3.UP * 0.9
+		spawn_vfx().block(guard, map.ground_y(player.position))
 		play_cue(2.2)
 		probe.witch_hit(by_grade, 0.0, false, true)
 		return
@@ -1383,7 +1435,6 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	world.add_child(node)
 	node.position = map.grounded(pos)
 	ActorVisual.create(node, "automaton" if mobile else "turret", str(config.automaton_node) if mobile else "base", float(config.summon_lifetime))
-	Shape.ring(node, Vector3(0, 0.04, 0), 0.43, TEAL)
 	var durability: float = config.automaton_hp if mobile else config.turret_hp
 	# The automaton keeps the node it was summoned with; B never times out but only so many stay.
 	# Taken before an old B steps aside, so the new one keeps the place it was assembled at.
@@ -1519,14 +1570,12 @@ func _physics_process(dt: float) -> void:
 			if art != null:
 				art.sync_ally(ally, dt, ally.node.position.distance_to(enemies[ally.target].body.position) if enemies.has(ally.target) else INF)
 	player_visual.set_active_tool(state.active_tool)
-	for id in tool_rings:
-		tool_rings[id].visible = state.active_tool == id
 	if is_instance_valid(grinder_disk) and state.active_tool == "grinder" and not paused and hp > 0 and not field_cleared():
 		grinder_disk.rotate_object_local(Vector3.UP, dt * 18)
 	var visual_distance := player.position.distance_to(visual_start_position)
 	player_visual.sync_state(dt, visual_distance > 0.0001, action_time, paused, hp <= 0, field_cleared(), visual_distance / maxf(dt, 0.000001))
 	tick_staff_trail(dt)
-	shield_ring.visible = shield_time > 0
+	shield_ring.visible = false
 	place_camera(player.position)
 	map.fade_between(camera.global_position, player.position + Vector3.UP)
 	if shake_time > 0:
@@ -1536,14 +1585,20 @@ func _physics_process(dt: float) -> void:
 	var hovered = pick_cursor(get_viewport().get_mouse_position())
 	hover_id = hovered.get("enemy_id", "")
 	hover_ring.visible = enemies.has(hover_id)
-	if hover_ring.visible:
-		hover_ring.position = enemies[hover_id].body.position + Vector3(0, 0.04, 0)
+	if hover_id != outlined_id:
+		if enemies.has(outlined_id):
+			dress_enemy(enemies[outlined_id], false)
+		if enemies.has(hover_id):
+			dress_enemy(enemies[hover_id], true)
+		outlined_id = hover_id
 	if not paused:
 		message_time = maxf(0, message_time - dt)
 		fallback_time = maxf(0, fallback_time - dt)
 		hit_time = maxf(0, hit_time - dt)
 		stun_time = maxf(0, stun_time - dt)
 		shield_time = maxf(0, shield_time - dt)
+		if is_instance_valid(shield_visual):
+			shield_visual.sync(dt, player.position, player_model.global_rotation.y, shield_time > 0 and hp > 0)
 		for fx in effects.duplicate():
 			fx.life -= dt
 			if fx.life <= 0:

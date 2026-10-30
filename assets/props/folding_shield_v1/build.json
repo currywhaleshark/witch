@@ -1,0 +1,15 @@
+{
+  "parts": [
+    "centre",
+    "flap_L",
+    "flap_R"
+  ],
+  "triangles": 900,
+  "centre_half_width_m": 0.17,
+  "flap_width_m": 0.16,
+  "height_m": 0.64,
+  "blend": "assets/props/folding_shield_v1/folding_shield_v1.blend",
+  "blend_sha256": "08832d7fe37438b509e32252156ee3afbc112ac3067ead82dec262d442e2bdfe",
+  "glb": "game/assets/props/folding_shield_v1/folding_shield.glb",
+  "glb_sha256": "4d046d5a2b7ee9563fa1490c67ec6868ac3ce5b43999bc3453962d9c57d9bf36"
+}

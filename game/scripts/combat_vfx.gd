@@ -27,6 +27,7 @@ var _line: Array = []
 var _line_style: Dictionary = {}
 var _blade: Array = []
 var _blade_life := 0.14
+var _lights: Array = []
 var _last_dust := -1.0
 var _glow := ArrayMesh.new()
 var _smoke := ArrayMesh.new()
@@ -253,6 +254,35 @@ func blast(at: Vector3, radius: float, floor_y: float, big: bool) -> void:
 		var dir := Vector3(cos(a), 0, sin(a))
 		puff(base + dir * 0.3 + Vector3(0, 0.12, 0), dir * radius * 2.0, 0.2, 0.9, Color(DUST, 0.45), rng.randf_range(0.7, 0.95), 0.1)
 
+func glow_light(at: Vector3, color: Color, energy: float, reach: float, life: float) -> void:
+	# A short real light that lights the surroundings in the effect colour, then fades out.
+	var light := OmniLight3D.new()
+	light.light_color = color
+	light.light_energy = energy
+	light.omni_range = reach
+	light.shadow_enabled = false
+	add_child(light)
+	light.global_position = at
+	_lights.append({"node": light, "energy": energy, "age": 0.0, "life": life})
+	_need(life)
+
+func potion_glow(at: Vector3, color: Color, floor_y: float) -> void:
+	# Potion drunk: a soft light in the potion colour, a glow at the chest and motes that spiral
+	# up around the body. The colour tells which potion it was.
+	var chest := Vector3(at.x, floor_y + 0.85, at.z)
+	glow_light(chest, color, 2.6, 2.4, 0.7)
+	flash(chest, 0.42, color.lightened(0.35), 0.28, 0.8)
+	for i in 16:
+		var angle := TAU * i / 16.0 + rng.randf_range(-0.2, 0.2)
+		var radius := rng.randf_range(0.28, 0.42)
+		var p := Vector3(at.x + cos(angle) * radius, floor_y + rng.randf_range(0.05, 0.7), at.z + sin(angle) * radius)
+		var swirl := Vector3(-sin(angle), 0, cos(angle)) * rng.randf_range(0.4, 0.8)
+		_part(p, swirl + Vector3.UP * rng.randf_range(0.7, 1.3), rng.randf_range(0.55, 0.85), rng.randf_range(0.035, 0.06),
+			color.lightened(0.25), {"round": true, "drag": 1.2})
+	for i in 5:
+		var p := Vector3(at.x + rng.randf_range(-0.2, 0.2), floor_y + 0.15, at.z + rng.randf_range(-0.2, 0.2))
+		_part(p, Vector3.UP * rng.randf_range(1.6, 2.4), 0.45, 0.02, color, {"len": 0.35, "drag": 0.5})
+
 func summon_arrive(at: Vector3, color: Color, floor_y: float) -> void:
 	# The assembled summon settles: a vent of steam at its feet and a brief ring.
 	var base := Vector3(at.x, floor_y, at.z)
@@ -381,6 +411,12 @@ func sync_effect(dt: float, _life: float) -> void:
 	_rings = _rings.filter(func(item): return item.age < item.life)
 	_line = _line.filter(func(item): return item.age < _line_style.get("life", 0.0))
 	_blade = _blade.filter(func(item): return item.age < _blade_life)
+	for light in _lights:
+		light.age += dt
+		light.node.light_energy = light.energy * pow(maxf(0.0, 1.0 - light.age / light.life), 2.0)
+		if light.age >= light.life:
+			light.node.queue_free()
+	_lights = _lights.filter(func(light): return light.age < light.life)
 	redraw()
 
 func redraw() -> void:
