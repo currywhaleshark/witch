@@ -28,6 +28,7 @@ var _line_style: Dictionary = {}
 var _blade: Array = []
 var _blade_life := 0.14
 var _lights: Array = []
+var _later: Array = []
 var _last_dust := -1.0
 var _glow := ArrayMesh.new()
 var _smoke := ArrayMesh.new()
@@ -266,6 +267,26 @@ func glow_light(at: Vector3, color: Color, energy: float, reach: float, life: fl
 	_lights.append({"node": light, "energy": energy, "age": 0.0, "life": life})
 	_need(life)
 
+func later(seconds: float, call: Callable) -> void:
+	# Emit more of this effect after a delay, on the same pausable effect clock.
+	_later.append({"time": elapsed + seconds, "call": call})
+	_need(seconds + 0.05)
+
+func tool_shift(at: Vector3, color: Color, floor_y: float, equipping: bool) -> void:
+	# The staff changing tools: a glint, a light and a burst of sparks at the head in the tool
+	# colour, steam vented to both sides, then a second clack as the parts lock into place.
+	var strength := 1.0 if equipping else 0.7
+	glow_light(at, color, 2.4 * strength, 2.2, 0.45)
+	flash(at, 0.5 * strength, color.lightened(0.3), 0.12, 1.2)
+	rays(at, 6, 0.42 * strength, 0.026, color.lightened(0.45), 0.14)
+	sparks(at, Vector3.UP, int(16 * strength), 4.2, 1.0, color, 0.4, 0.014, floor_y, 6.0)
+	for side in [-1.0, 1.0]:
+		puff(at, Vector3(side * 0.7, 0.45, 0), 0.08, 0.7, Color(STEAM, 0.4), 0.5)
+	later(0.22, func():
+		flash(at, 0.32 * strength, HOT, 0.08, 0.8)
+		rays(at, 4, 0.3 * strength, 0.02, GOLD, 0.1)
+		sparks(at, Vector3.UP, int(10 * strength), 3.0, 0.9, SPARK, 0.3, 0.012, floor_y, 7.0))
+
 func potion_glow(at: Vector3, color: Color, floor_y: float) -> void:
 	# Potion drunk: a soft light in the potion colour, a glow at the chest and motes that spiral
 	# up around the body. The colour tells which potion it was.
@@ -417,6 +438,10 @@ func sync_effect(dt: float, _life: float) -> void:
 		if light.age >= light.life:
 			light.node.queue_free()
 	_lights = _lights.filter(func(light): return light.age < light.life)
+	for pending in _later.duplicate():
+		if elapsed >= pending.time:
+			_later.erase(pending)
+			pending.call.call()
 	redraw()
 
 func redraw() -> void:

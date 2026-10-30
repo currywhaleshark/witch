@@ -11,6 +11,10 @@ const TurretAssembly = preload("res://scripts/turret_assembly.gd")
 const ShotgunCast = preload("res://scripts/shotgun_cast.gd")
 const ShotgunGeometry = preload("res://scripts/shotgun_geometry.gd")
 const ShieldVisual = preload("res://scripts/shield_visual.gd")
+const CastCircle = preload("res://scripts/cast_circle.gd")
+# Which skill tree draws the casting circle; the basic attack draws none.
+const SKILL_TREES = {"shotgun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive",
+	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const WARNING_SHADER = preload("res://shaders/warning_zone.gdshader")
 const OUTLINE_SHADER = preload("res://shaders/outline.gdshader")
@@ -88,6 +92,8 @@ var stun_time = 0.0
 var shield_time = 0.0
 var shield_ring: Node3D
 var shield_visual = null
+var cast_circles: Array = []
+var charging_circle = null
 # Potion quickslots 1-4: refills over time, cooldowns shared per group, no auto-restock.
 var potion_slots: Array = []
 var potion_cooldowns: Dictionary = {}
@@ -230,6 +236,10 @@ func reset_arena() -> void:
 	for fx in effects:
 		fx.node.free()
 	effects.clear()
+	for circle in cast_circles:
+		circle.free()
+	cast_circles.clear()
+	charging_circle = null
 	for bolt in bolts:
 		bolt.node.free()
 	bolts.clear()
@@ -808,6 +818,9 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	action_time = seconds
 	windup = {"slot": slot, "binding": state.bindings[slot], "cursor": snapshot, "shift": shift, "stationary": stationary,
 		"skill": cast.skill, "release": seconds * float(skill.get("release_ratio", 1.0))}
+	if SKILL_TREES.has(cast.skill):
+		windup.circle_total = windup.release
+		charging_circle = spawn_cast_circle(SKILL_TREES[cast.skill], false)
 	if cast.skill == "automaton":
 		windup.visual_duration = windup.release
 		automaton_assembly = AutomatonAssembly.new()
@@ -1067,7 +1080,37 @@ func apply_transition(result: Dictionary) -> void:
 			"cast_failed", "input_failed":
 				show_message({"invalid_target": "대상이 없습니다", "out_of_range": "너무 멉니다", "invalid_ground": "설치할 수 없습니다", "cooldown": "아직 준비 중입니다", "insufficient_mana": "마나가 부족합니다", "empty_slot": "빈 슬롯입니다"}.get(event.reason, "사용할 수 없습니다"))
 			"basic_attack_fallback": fallback_time = 0.7
-			"tool_changed": play_cue(1.65)
+			"tool_changed":
+				play_cue(1.65)
+				flash_tool_change(event.tool)
+			"tool_released": flash_tool_change(null)
+
+func flash_tool_change(tool) -> void:
+	# The staff head marks a tool change in that tool's colour (teal back to the bare staff).
+	var head: Vector3 = player.position + Vector3.UP * 1.1
+	if player_visual.loaded_ok and is_instance_valid(player_visual.staff_root):
+		head = player_visual.staff_root.to_global(Vector3(0, 0.9, 0))
+	var color: Color = TOOL_COLORS.get(tool, Color(0.45, 1.0, 0.85)) if tool != null else Color(0.45, 1.0, 0.85)
+	spawn_vfx().tool_shift(head, color.lightened(0.15), map.ground_y(player.position), tool != null)
+
+func spawn_cast_circle(tree: String, instant: bool) -> Node3D:
+	var circle = CastCircle.new()
+	world.add_child(circle)
+	circle.setup(tree, instant)
+	circle.global_position = map.grounded(player.position) + Vector3.UP * 0.03
+	cast_circles.append(circle)
+	return circle
+
+func tick_cast_circles(dt: float) -> void:
+	var feet: Vector3 = map.grounded(player.position)
+	for circle in cast_circles.duplicate():
+		var charge := 1.0
+		var still: bool = circle == charging_circle and not windup.is_empty()
+		if still:
+			charge = 1.0 - float(windup.release) / maxf(0.0001, float(windup.get("circle_total", 1.0)))
+		if not circle.sync(dt, feet, still, charge):
+			cast_circles.erase(circle)
+			circle.queue_free()
 
 func aims_at_enemy(event: Dictionary) -> bool:
 	return event.get("target_enemy") != null and enemies.has(event.target_enemy)
@@ -1088,6 +1131,12 @@ func cast_direction(event: Dictionary) -> Vector3:
 	return direction.normalized() if direction.length() >= 0.01 else Vector3.FORWARD
 
 func execute_cast(event: Dictionary) -> void:
+	if SKILL_TREES.has(event.skill):
+		if is_instance_valid(charging_circle) and charging_circle.charging:
+			charging_circle.flare()
+		else:
+			spawn_cast_circle(SKILL_TREES[event.skill], true)
+	charging_circle = null
 	var target = cast_target(event)
 	var direction = cast_direction(event)
 	player_model.look_at(player.position + direction)
@@ -1514,6 +1563,7 @@ func _physics_process(dt: float) -> void:
 		for event in advanced.events:
 			if event.type == "tool_released":
 				show_message("마나 소진 · 공구 해제")
+				flash_tool_change(null)
 		state = rules.restore_mana(state, config.mana_regen * dt).state
 		if a5_mode:
 			probe.tick(dt, skill_gap(), unaffordable_skills())
@@ -1597,6 +1647,7 @@ func _physics_process(dt: float) -> void:
 		hit_time = maxf(0, hit_time - dt)
 		stun_time = maxf(0, stun_time - dt)
 		shield_time = maxf(0, shield_time - dt)
+		tick_cast_circles(dt)
 		if is_instance_valid(shield_visual):
 			shield_visual.sync(dt, player.position, player_model.global_rotation.y, shield_time > 0 and hp > 0)
 		for fx in effects.duplicate():
