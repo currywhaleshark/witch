@@ -1,0 +1,16 @@
+00:02.672  blend            | Read blend: "C:\Users\USER\Documents\Projects\witch\assets\characters\player\3d\source\middle_school_v1\run_arm_v21\run_arm_v21.blend"
+V23_THRUST 1 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": -0.26, "secondary_error_m": 0.0}
+V23_THRUST 7 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": -0.2901, "secondary_error_m": 0.0}
+V23_THRUST 13 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": -0.3341, "secondary_error_m": 0.0}
+V23_THRUST 19 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": -0.34, "secondary_error_m": 0.0}
+V23_THRUST 25 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": 0.16, "secondary_error_m": 0.0}
+V23_THRUST 31 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": 0.1445, "secondary_error_m": 0.0}
+V23_THRUST 37 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": -0.1438, "secondary_error_m": 0.0}
+V23_THRUST 43 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": -0.219, "secondary_error_m": 0.0}
+V23_THRUST 49 {"leg_ik_clamp_m": 0.0, "arm_ik_clamp_m": 0.0, "staff_reach_correction_m": 0.0, "slide_m": -0.26, "secondary_error_m": 0.0}
+Info: Saved as "thrust_v23.blend"
+THRUST_V23_COMPLETE e115ee034083f06be3b97ebe79ce6d7d18b49b1df54ef060f4ebe52d42249ab9
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+scripts disabled for "C:\Users\USER\Documents\Projects\witch\assets\characters\player\3d\source\middle_school_v1\run_arm_v21\run_arm_v21.blend", skipping 'rig_common_body_v5_ui.py'
+
+Blender quit

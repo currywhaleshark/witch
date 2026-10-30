@@ -1,13 +1,13 @@
 {
-  "source_blend": "assets/characters/player/3d/source/middle_school_v1/run_arm_v21/run_arm_v21.blend",
-  "source_blend_sha256": "80e04f5ec89e992ed351364095115b87fb3f8b98b2cd7a5833f2a7fda2d32ad7",
+  "source_blend": "assets/characters/player/3d/source/middle_school_v1/thrust_v23/thrust_v23.blend",
+  "source_blend_sha256": "e115ee034083f06be3b97ebe79ce6d7d18b49b1df54ef060f4ebe52d42249ab9",
   "rig_id": "player_humanoid_v11",
   "fps": 24,
   "runtime_default_clips": {
     "idle": "combat_idle_rh_v20",
     "run": "combat_run_rh_v21",
     "attack": "combat_heavy_swing_rh_v20",
-    "attack_thrust": "combat_thrust_rh_v20",
+    "attack_thrust": "combat_thrust_rh_v23",
     "hit_react": "combat_hit_rh_v20",
     "cast": "combat_cast_rh_v20",
     "collapse": "combat_collapse_rh_v20"
@@ -20,7 +20,8 @@
     "combat_hit_rh_v20",
     "combat_cast_rh_v20",
     "combat_collapse_rh_v20",
-    "combat_run_rh_v20"
+    "combat_run_rh_v20",
+    "combat_thrust_rh_v23"
   ],
   "selected_on": "2026-10-27",
   "run_cycle_distance_m": 3.242813140153885,
@@ -173,6 +174,11 @@
       "frames": 97,
       "loop": true,
       "action_sha256": "e3214e27f89e3c8caa78acb4b82c0ec4380436ad322f095369e808430b405b2c"
+    },
+    "combat_thrust_rh_v23": {
+      "frames": 49,
+      "loop": false,
+      "action_sha256": "f5c08b976f90dee365f0dfb7f63ebb0928c2a384fe4554923ee60c37222e6c55"
     }
   },
   "motion_provenance": "reports/combat_motion_v17/author/provenance.json",
@@ -415,7 +421,7 @@
     }
   },
   "candidate_clip": "combat_heavy_swing_rh_v20",
-  "candidate_status": "User selected and promoted to the main combat game on 2026-10-27",
+  "candidate_status": "Run arm correction candidate; six other motions preserve v20; main game remains v18",
   "candidate_provenance": {
     "source": "User-adjusted Mixamo Heavy Weapon Swing FBX",
     "local_fbx": "assets/characters/player/3d/source/motion_library/mixamo_local/Heavy_Weapon_Swing_user_2026-10-27.fbx",
@@ -1198,13 +1204,62 @@
       -0.26,
       -0.26,
       -0.26
+    ],
+    "combat_thrust_rh_v23": [
+      -0.26,
+      -0.26110382373113855,
+      -0.26420096021947875,
+      -0.26896990740740745,
+      -0.2750891632373114,
+      -0.28223722565157755,
+      -0.2900925925925926,
+      -0.29833376200274353,
+      -0.306639231824417,
+      -0.3146875,
+      -0.3221570644718793,
+      -0.3287264231824418,
+      -0.33407407407407413,
+      -0.3378785150891633,
+      -0.33981824417009604,
+      -0.34,
+      -0.34,
+      -0.34,
+      -0.34,
+      -0.30475719847076166,
+      -0.1840395264949447,
+      -0.03772076474622765,
+      0.07019636234313881,
+      0.10561256858710574,
+      0.16,
+      0.16,
+      0.16,
+      0.16,
+      0.16,
+      0.15953776041666667,
+      0.14453125,
+      0.11194661458333324,
+      0.06666666666666674,
+      0.013574218750000033,
+      -0.04244791666666671,
+      -0.09651692708333323,
+      -0.14375000000000002,
+      -0.17926432291666672,
+      -0.19817708333333334,
+      -0.200673828125,
+      -0.20444444444444446,
+      -0.21081922743055553,
+      -0.218984375,
+      -0.22812608506944446,
+      -0.23743055555555556,
+      -0.246083984375,
+      -0.25327256944444443,
+      -0.25818250868055553,
+      -0.26
     ]
   },
   "dominant_hand": "R",
   "secondary_grip_signed_spacing_m": [
     -0.26,
     -0.18
-  ],
-  "source_contract_sha256": "de9ecf427cdb2013826cfa29398f48fd355b34a57c7cb720efaa92dba17927ea",
-  "game_integration_report": "reports/run_arm_v21/integration/delivery_manifest.json"
+  ]
 }

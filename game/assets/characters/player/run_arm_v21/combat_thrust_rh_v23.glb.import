@@ -1,0 +1,49 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bqd2d5si1t8vh"
+path="res://.godot/imported/combat_thrust_rh_v23.glb-3cd010b3f65fdbb762c75e64550c8b36.scn"
+
+[deps]
+
+source_file="res://assets/characters/player/run_arm_v21/combat_thrust_rh_v23.glb"
+dest_files=["res://.godot/imported/combat_thrust_rh_v23.glb-3cd010b3f65fdbb762c75e64550c8b36.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=24
+animation/trimming=false
+animation/remove_immutable_tracks=false
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"nodes": {
+"PATH:AnimationPlayer": {
+"compression/enabled": false,
+"optimizer/enabled": false
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

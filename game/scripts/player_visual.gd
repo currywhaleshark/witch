@@ -13,10 +13,12 @@ const PARTS := {
 }
 const CLIPS := {
 	"idle": "combat_idle_rh_v20", "run": "combat_run_rh_v21",
-	"attack": "combat_heavy_swing_rh_v20", "attack_thrust": "combat_thrust_rh_v20",
+	"attack": "combat_heavy_swing_rh_v20", "attack_thrust": "combat_thrust_rh_v23",
 	"cast": "combat_cast_rh_v20", "hit_react": "combat_hit_rh_v20", "collapse": "combat_collapse_rh_v20",
 }
-# Authored release: swing 25/49, thrust 13/25, cast 17/33; normalized 0.5.
+# Clips authored after the v21 family, exported alone onto the same rig and added to its library.
+const EXTRA_CLIP_FILES := [ASSET_DIR + "combat_thrust_rh_v23.glb"]
+# Authored release: swing 25/49, thrust 25/49, cast 17/33; normalized 0.5.
 const AUTHORED_RELEASE := {"attack": 0.5, "cast": 0.5}
 const STAFF_GRIP_OFFSET := Vector3(0.0074299751, 0.0480000079, 0.0158048961)
 const STAFF_GRIP_BASIS := Basis(Vector3(0, -1, 0), Vector3(0.9106548, 0, -0.4131677), Vector3(0.4131677, 0, 0.9106548))
@@ -82,6 +84,24 @@ var staff_slide := 0.0
 var _staff_slide_tracks: Dictionary = {}
 const COLLAPSE_BLEND_SECONDS := 0.18
 
+func _add_clips(path: String) -> bool:
+	# The extra GLB holds only the rig (with one skinned carrier mesh) and one action, named after
+	# the file; its bone tracks use the same PlayerRig_v7/Skeleton3D paths as the body.
+	var scene = load(path)
+	if not scene is PackedScene:
+		return false
+	var holder: Node = scene.instantiate()
+	var players := holder.find_children("*", "AnimationPlayer", true, false)
+	var found := players.size() == 1 and (players[0] as AnimationPlayer).get_animation_list().size() == 1
+	if found:
+		var source: AnimationPlayer = players[0]
+		var library: AnimationLibrary = runtime.animation_player.get_animation_library("")
+		var clip := path.get_file().get_basename()
+		if not library.has_animation(clip):
+			library.add_animation(clip, source.get_animation(source.get_animation_list()[0]))
+	holder.free()
+	return found
+
 func initialize() -> bool:
 	name = "PlayerVisual"
 	# This private generator never consumes combat/global random numbers.
@@ -101,6 +121,9 @@ func initialize() -> bool:
 		return _fail("expected_v11_family_107_bones")
 	if not runtime.replace_parts(PARTS):
 		return _fail(runtime.last_error)
+	for path in EXTRA_CLIP_FILES:
+		if not _add_clips(path):
+			return _fail("missing_extra_clip_file: " + path)
 	for kind in CLIPS:
 		for animation_name in runtime.animation_player.get_animation_list():
 			if String(animation_name).get_file() == CLIPS[kind]:

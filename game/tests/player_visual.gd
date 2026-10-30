@@ -73,7 +73,7 @@ func check_state(expected: String, label: String) -> void:
 	check(snap.get("loaded_ok", false) and snap.get("state", "") == expected, label)
 	var clip: String = snap.get("clip", "")
 	check(not clip.is_empty() and animation_player().has_animation(clip), label + ": actual clip exists")
-	check(clip.get_file() in ["combat_heavy_swing_rh_v20", "combat_thrust_rh_v20"] if expected == "attack" else clip.get_file() == EXPECTED_CLIPS[expected], label + ": selected authored clip matches the gameplay contract")
+	check(clip.get_file() in ["combat_heavy_swing_rh_v20", "combat_thrust_rh_v23"] if expected == "attack" else clip.get_file() == EXPECTED_CLIPS[expected], label + ": selected authored clip matches the gameplay contract")
 	if not clip.is_empty() and animation_player().has_animation(clip):
 		check(animation_player().current_animation == clip, label + ": AnimationPlayer selected the clip")
 	if expected == "run":

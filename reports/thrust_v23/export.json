@@ -1,0 +1,14 @@
+{
+  "source_blend": "assets/characters/player/3d/source/middle_school_v1/thrust_v23/thrust_v23.blend",
+  "source_sha256": "e115ee034083f06be3b97ebe79ce6d7d18b49b1df54ef060f4ebe52d42249ab9",
+  "action": "combat_thrust_rh_v23",
+  "frames": [
+    1,
+    49
+  ],
+  "carrier_mesh": "Outfit_Buttons_v7",
+  "export": "assets/characters/player/3d/exports/thrust_v23/combat_thrust_rh_v23.glb",
+  "game_copy": "game/assets/characters/player/run_arm_v21/combat_thrust_rh_v23.glb",
+  "bytes": 313612,
+  "sha256": "a0767ed857012606a368b3aaa61eb37c3f1d71609bdfe0e37fc864dd9549edfb"
+}
