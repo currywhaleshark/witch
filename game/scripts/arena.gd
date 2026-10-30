@@ -1344,13 +1344,16 @@ func add_bleed(id: String) -> void:
 		stacks.pop_front()
 	var plan: Dictionary = bleed_plan(stacks.size())
 	var total: float = enemy.max_hp * float(config.bleed.ratio[enemy.grade]) * plan.ratio * plan.weight
-	var ticks: int = maxi(1, roundi(plan.seconds / float(config.bleed.tick_seconds)))
-	stacks.append({"left": ticks, "per_tick": total / ticks, "clock": 0.0})
+	var step: float = float(config.bleed.tick_seconds)
+	var ticks: int = maxi(1, ceili(plan.seconds / step - 0.00000001))
+	# Keep the selected duration and rate: a 4.2s bleed has eight 0.5s ticks and a 0.2s tail.
+	# All timing and damage are captured here, so later level changes do not rewrite old stacks.
+	stacks.append({"left": ticks, "per_tick": total * step / plan.seconds, "clock": 0.0,
+		"tick_seconds": step, "last_seconds": plan.seconds - (ticks - 1) * step})
 	probe.counts.bleeds_applied += 1
 
 func tick_bleeds(dt: float) -> void:
 	# Bleed is its own non-critical damage event: no hit roll, no crit, no defence, no stun.
-	var step: float = float(config.bleed.tick_seconds)
 	for id in enemies.keys():
 		if not enemies.has(id):
 			continue
@@ -1358,10 +1361,13 @@ func tick_bleeds(dt: float) -> void:
 		var amount := 0.0
 		for stack in stacks:
 			stack.clock += dt
-			while stack.clock >= step and stack.left > 0:
-				stack.clock -= step
+			while stack.left > 0:
+				var interval: float = stack.last_seconds if stack.left == 1 else stack.tick_seconds
+				if stack.clock + 0.00000001 < interval:
+					break
+				stack.clock = maxf(0.0, stack.clock - interval)
 				stack.left -= 1
-				amount += stack.per_tick
+				amount += stack.per_tick * interval / stack.tick_seconds
 		enemies[id].bleeds = stacks.filter(func(stack): return stack.left > 0)
 		if amount > 0:
 			probe.bleed(damage_enemy(id, amount, false))

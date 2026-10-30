@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "both passives start unlearned",
+    "cutting precision raises every cutting hit, the B automaton's saw included",
+    "cutting precision leaves the staff, punches, blasts and projectiles alone",
+    "ballistics raises the shotgun and the turret's shots",
+    "ballistics leaves cutting, punches and blasts alone",
+    "a real chainsaw cut gains cutting precision",
+    "its bleed does not: bleed follows only max HP and grade",
+    "a real shotgun blast gains ballistics",
+    "the turret's real shots gain ballistics",
+    "the plain automaton's punch gains neither passive",
+    "the B automaton's saw cuts with the bonus",
+    "J cycles cutting precision and K ballistics, each on its own",
+    "the A5 log records both passive levels"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

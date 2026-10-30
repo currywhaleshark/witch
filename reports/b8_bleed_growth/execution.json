@@ -1,0 +1,36 @@
+{
+  "base_commit": "ccaf175a8ea84b98a8451e34c710a4aa386b4f21",
+  "engine": "4.6.2-stable (official)",
+  "mode": "headless",
+  "source_sha256": {
+    "arena": "3e4aa930e1fd8315065ea25137a6f6f81b528b4d775579d84ba9000a2da21f59",
+    "trial": "10ff9e4c051bdab208b5bff12c3ee07e144f513691b392c5b08a180facb6374c",
+    "test": "c1ee4f505669f49b3306e38d9f2b26161d7d4e880c6a849a2dfec77358e07406"
+  },
+  "trial_values_unchanged": true,
+  "before_fix": {
+    "checks": 263,
+    "failures": 139
+  },
+  "results": {
+    "bleed_growth": {
+      "checks": 263,
+      "failures": 0
+    },
+    "bleed": {
+      "checks": 26,
+      "failures": 0
+    },
+    "passives": {
+      "checks": 13,
+      "failures": 0
+    },
+    "smoke_arena": {
+      "checks": 31,
+      "failures": 0
+    }
+  },
+  "total_checks": 333,
+  "manual_playtest": "pending",
+  "previous_reports_preserved": true
+}

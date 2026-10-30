@@ -132,7 +132,7 @@ func run() -> void:
 
 	await fresh()
 	arena.enemies.t0.hp = 1.0
-	arena.enemies.t0.bleeds.append({"left": 1, "per_tick": 5.0, "clock": 0.0})
+	arena.enemies.t0.bleeds.append({"left": 1, "per_tick": 5.0, "clock": 0.0, "tick_seconds": 0.5, "last_seconds": 0.5})
 	var kills: int = arena.kills
 	await seconds(0.6)
 	check(not arena.enemies.has("t0") and arena.kills == kills + 1, "bleed can finish an enemy")
