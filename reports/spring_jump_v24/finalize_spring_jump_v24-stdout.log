@@ -1,0 +1,12 @@
+00:03.734  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\spring_jump_v24\spring_jump_v24.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.1\5.1\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+00:12:31 | INFO: Starting glTF 2.0 export
+00:12:31 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+00:12:31 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+00:12:33 | INFO: Finished glTF 2.0 export in 1.6050910949707031 s
+
+SPRING_JUMP_EXPORT_COMPLETE {'passed': True, 'glb_sha256': '46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0', 'bytes': 313612, 'carrier': 'Outfit_Buttons_v7', 'frames': 49, 'clip': 'combat_spring_jump_v24', 'source_sha256': '5e63b1000425287f5ac50f9889c0ef45e2b3bf8f6f6c574b820016a8b2e5c95a'}
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+scripts disabled for "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\spring_jump_v24\spring_jump_v24.blend", skipping 'rig_common_body_v5_ui.py'
+
+Blender quit

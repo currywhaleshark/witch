@@ -124,14 +124,11 @@ func run() -> void:
 	check(not arena.allies.has(veteran), "an automaton keeps the node it was summoned with")
 
 	await fresh("base")
-	var key = InputEventKey.new()
-	key.physical_keycode = KEY_N
-	key.pressed = true
 	var order: Array = []
-	for i in 3:
-		root.push_input(key, true)
-		order.append(arena.config.automaton_node)
-	check(order == ["A", "B", "base"] and arena.config.shield_level == 1.0 and arena.config.automaton_level == 1.0, "N cycles the automaton node and nothing else")
+	for choice in ["A", "B", "base"]:
+		arena.build.set_node(choice)
+		order.append([arena.config.automaton_node, arena.rules.skills.automaton.mana_cost])
+	check(order == [["A", 15.0], ["B", 15.0], ["base", float(arena.config.automaton_nodes.base.mana_cost)]] and arena.config.shield_level == 1.0 and arena.config.automaton_level == 1.0, "the skill tree picks the automaton node and its cost, nothing else")
 
 	arena.log_dir = OS.get_user_data_dir().path_join("automaton_node_log_test")
 	for arg in OS.get_cmdline_user_args():

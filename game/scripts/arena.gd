@@ -3,6 +3,8 @@ const Rules = preload("res://scripts/combat_rules.gd")
 const Shape = preload("res://scripts/shapes.gd")
 const Hud = preload("res://scripts/hud.gd")
 const ManaProbe = preload("res://scripts/mana_probe.gd")
+const Build = preload("res://scripts/build.gd")
+const BuildWindow = preload("res://scripts/build_window.gd")
 const FieldMap = preload("res://scripts/field_map.gd")
 const PlayerVisual = preload("res://scripts/player_visual.gd")
 const ActorVisual = preload("res://scripts/actor_visual.gd")
@@ -12,8 +14,9 @@ const ShotgunCast = preload("res://scripts/shotgun_cast.gd")
 const ShotgunGeometry = preload("res://scripts/shotgun_geometry.gd")
 const ShieldVisual = preload("res://scripts/shield_visual.gd")
 const CastCircle = preload("res://scripts/cast_circle.gd")
+const SpringPlate = preload("res://scripts/spring_plate.gd")
 # Which skill tree draws the casting circle; the basic attack draws none.
-const SKILL_TREES = {"shotgun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive",
+const SKILL_TREES = {"shotgun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
 	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const WARNING_SHADER = preload("res://shaders/warning_zone.gdshader")
@@ -45,6 +48,12 @@ var config: Dictionary
 var rules: RefCounted
 # The automaton skill's own cost, which nodes A and B keep; no node swaps in a cheaper, quicker one.
 var automaton_cost: Dictionary
+# C1/C2 trial build and its two windows (character C, skill tree S).
+var build: RefCounted
+var character_window: PanelContainer
+var skill_window: PanelContainer
+# Spring dash in flight: {direction, left, speed}; empty when not dashing.
+var dash: Dictionary = {}
 var state: Dictionary
 var player: CharacterBody3D
 var player_model: Node3D
@@ -64,6 +73,7 @@ var windup: Dictionary = {}
 var automaton_assembly: Node3D
 var turret_assembly: Node3D
 var shotgun_assembly: Node3D
+var spring_plate: Node3D
 var last_shotgun: Dictionary = {}
 var hold: Dictionary = {}
 # A held ground click keeps steering on its own, so skill presses never replace it.
@@ -150,6 +160,15 @@ func _ready() -> void:
 	canvas.add_child(hud)
 	hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	reset_arena()
+	build = Build.new(self)
+	character_window = BuildWindow.new()
+	skill_window = BuildWindow.new()
+	for window in [character_window, skill_window]:
+		canvas.add_child(window)
+	character_window.setup(self, "character")
+	skill_window.setup(self, "skills")
+	character_window.position = Vector2(24, 84)
+	skill_window.position = Vector2(get_viewport().get_visible_rect().size.x - 560, 84)
 	if "--start-paused" in OS.get_cmdline_user_args():
 		paused = true
 
@@ -227,6 +246,7 @@ func reset_arena() -> void:
 	turret_assembly = null
 	shotgun_assembly = null
 	last_shotgun.clear()
+	spring_plate = null
 	for id in enemies:
 		enemies[id].body.free()
 	enemies.clear()
@@ -276,6 +296,7 @@ func reset_arena() -> void:
 	moving = false
 	pending_cast.clear()
 	windup.clear()
+	dash.clear()
 	hold.clear()
 	move_hold.clear()
 	queued_input.clear()
@@ -427,57 +448,24 @@ func _unhandled_input(event: InputEvent) -> void:
 			restart_probe("settings_changed")
 			state = rules.bind(state, "lmb", "shotgun" if state.bindings.lmb == "basic_attack" else "basic_attack")
 			return
-		if event.physical_keycode == KEY_F9 and (event.shift_pressed or event.ctrl_pressed):
-			# Shift+F9: chainsaw skill level; Ctrl+F9: which bleed growth (A rate / B upkeep) the level drives.
+		if event.physical_keycode == KEY_C or event.physical_keycode == KEY_S:
+			# Trial character / skill tree windows; combat keeps running while they are open.
+			(character_window if event.physical_keycode == KEY_C else skill_window).toggle()
+			return
+		if event.physical_keycode == KEY_F9 and event.ctrl_pressed:
+			# Ctrl+F9: which bleed growth (A rate / B upkeep) the chainsaw level drives.
 			restart_probe("settings_changed")
-			if event.shift_pressed:
-				var levels: Array = config.chainsaw_level_steps
-				config.chainsaw_level = levels[(levels.find(config.chainsaw_level) + 1) % levels.size()]
-			else:
-				var growths: Array = config.bleed.growth_steps
-				config.bleed.growth = growths[(growths.find(config.bleed.growth) + 1) % growths.size()]
+			var growths: Array = config.bleed.growth_steps
+			config.bleed.growth = growths[(growths.find(config.bleed.growth) + 1) % growths.size()]
 			var plan: Dictionary = bleed_plan(0)
 			show_message("전기톱 Lv %d · 출혈 성장 %s안 · %.1f초 · 일반 %d%%" % [config.chainsaw_level, config.bleed.growth, plan.seconds, roundi(100 * plan.ratio * float(config.bleed.ratio.normal))])
 			return
-		if event.physical_keycode == KEY_F9:
-			cancel_pending_cast()
+		if event.physical_keycode == KEY_F12:
+			# Skill and stat levels moved to the C/S windows; F12 still steps the hit recovery score.
 			restart_probe("settings_changed")
-			var options: Array = config.r_slot_options
-			state = rules.bind(state, "r", options[(options.find(state.bindings.r) + 1) % options.size()])
-			show_message("R 슬롯: " + rules.skills[state.bindings.r].name)
-			return
-		if event.physical_keycode in [KEY_J, KEY_K]:
-			# J: cutting precision, K: ballistics passive level (B7 cross-tree tags).
-			restart_probe("settings_changed")
-			var id: String = "cutting_precision" if event.physical_keycode == KEY_J else "ballistics"
-			var levels: Array = config.passive_level_steps
-			config.passive_levels[id] = levels[(levels.find(config.passive_levels[id]) + 1) % levels.size()]
-			var passive: Dictionary = config.passives[id]
-			show_message("%s Lv %d · %s 공격 피해 +%d%%" % [passive.name, config.passive_levels[id], passive.tag_name, roundi(100 * float(passive.damage_per_level) * config.passive_levels[id])])
-			return
-		if event.physical_keycode == KEY_N:
-			# N: automaton node, no node -> A (blast on reach) -> B (keeps fighting).
-			restart_probe("settings_changed")
-			var nodes: Array = config.automaton_node_steps
-			config.automaton_node = nodes[(nodes.find(config.automaton_node) + 1) % nodes.size()]
-			sync_automaton_cost()
-			show_message("태엽인형 " + {"base": "기본형 · 싸게 많이 · 싸우다 자폭", "A": "A 자폭 특화 · 닿으면 자폭", "B": "B 지속공격 특화 · 자폭 없음 · 최대 %d기" % config.automaton_nodes.B.max_count}[config.automaton_node])
-			return
-		if event.physical_keycode in [KEY_F10, KEY_F11, KEY_F12]:
-			var key: String = {KEY_F10: "shield_level", KEY_F11: "dexterity", KEY_F12: "hit_recovery_score"}[event.physical_keycode]
-			if event.physical_keycode == KEY_F10 and (event.shift_pressed or event.ctrl_pressed):
-				# Shift/Ctrl+F10: automaton/turret skill level for summon accuracy and crit.
-				key = "automaton_level" if event.shift_pressed else "turret_level"
-				restart_probe("settings_changed")
-				var levels: Array = config.summon_level_steps
-				config[key] = levels[(levels.find(config[key]) + 1) % levels.size()]
-				var roller: String = key.trim_suffix("_level")
-				show_message("%s Lv %d · 명중 %d%% · 치명 %d%%" % [rules.skills[roller].name, config[key], roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[key] - 1), config.hit_min, config.hit_cap)), roundi(100 * crit_chance(roller))])
-				return
-			restart_probe("settings_changed")
-			var options: Array = config[key + "_steps"]
-			config[key] = options[(options.find(config[key]) + 1) % options.size()]
-			show_message("방패 Lv %d · 기교 %d · 막기 %d%% · 경직 %.2f초" % [config.shield_level, config.dexterity, roundi(100 * block_chance()), hit_recovery_seconds()])
+			var options: Array = config.hit_recovery_steps
+			config.hit_recovery_score = options[(options.find(config.hit_recovery_score) + 1) % options.size()]
+			show_message("타격 회복 점수 %d · 경직 %.2f초 · 방패 막기 %d%%" % [config.hit_recovery_score, hit_recovery_seconds(), roundi(100 * block_chance())])
 			return
 		if event.physical_keycode == KEY_B:
 			# Test tool: a boss walks in from a field edge.
@@ -574,6 +562,31 @@ func set_a5_mode(enabled: bool) -> void:
 	reset_arena()
 	show_message("A5 마나 시험 시작 · 연속 교전" if enabled else "A5 마나 시험 종료")
 
+func bind_slot(slot: String, skill_id: String) -> void:
+	# The skill tree window's loadout: any skill on RMB/Q/W/E/R, kept across restarts.
+	cancel_pending_cast()
+	split_build_log()
+	config.bindings[slot] = skill_id
+	state = rules.bind(state, slot, skill_id)
+	# A running tool that no slot holds any more could never be switched off; release it.
+	if state.active_tool != null and not state.bindings.values().has(state.active_tool):
+		state.active_tool = null
+
+func split_build_log() -> void:
+	# Called before a C/S window change: the running A5 segment is saved with the build it was
+	# actually played with. A few seconds of clicking through the windows is not a measurement,
+	# so such short segments are dropped instead of saved.
+	if probe.combat_seconds >= float(config.build.log_min_seconds):
+		restart_probe("build_changed")
+	else:
+		probe = ManaProbe.new()
+		logged_seconds = -1.0
+
+func refresh_build_windows() -> void:
+	for window in [character_window, skill_window]:
+		if is_instance_valid(window):
+			window.refresh()
+
 func restart_probe(reason: String) -> void:
 	# Settings changes split the measurement so one log never mixes two configurations.
 	if a5_mode:
@@ -645,7 +658,7 @@ func save_mana_log(reason: String) -> String:
 		"settings": {"max_mana": state.max_mana, "mana_regen": config.mana_regen, "attack_speed_score": config.attack_speed_score, "cast_speed_score": config.cast_speed_score,
 			"hit_recovery_score": config.hit_recovery_score, "shield_level": config.shield_level, "dexterity": config.dexterity,
 			"automaton_level": config.automaton_level, "turret_level": config.turret_level, "map": map.id,
-			"automaton_node": config.automaton_node, "passive_levels": config.passive_levels.duplicate(),
+			"automaton_node": config.automaton_node, "passive_levels": config.passive_levels.duplicate(), "build": build.snapshot(),
 			"chainsaw_level": config.chainsaw_level, "bleed_growth": config.bleed.growth,
 			"respawn_seconds": config.a5_respawn_seconds, "bindings": state.bindings, "skills": skills}}
 	var file = FileAccess.open(path, FileAccess.WRITE)
@@ -751,10 +764,11 @@ func cast_event(result: Dictionary) -> Dictionary:
 	return {}
 
 func sync_automaton_cost() -> void:
-	# No node is the cheap one to summon in numbers; A and B pay the skill's full cost and cooldown.
-	var cost: Dictionary = config.automaton_nodes.base if config.automaton_node == "base" else automaton_cost
-	rules.skills.automaton.mana_cost = float(cost.mana_cost)
-	rules.skills.automaton.cooldown_seconds = float(cost.cooldown_seconds)
+	# A node may override the skill's own cost: no node is the cheap one to summon in numbers,
+	# A comes back quickly enough to throw as the main bomb, B pays the full price.
+	var node: Dictionary = config.automaton_nodes[config.automaton_node]
+	rules.skills.automaton.mana_cost = float(node.get("mana_cost", automaton_cost.mana_cost))
+	rules.skills.automaton.cooldown_seconds = float(node.get("cooldown_seconds", automaton_cost.cooldown_seconds))
 
 func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void:
 	sync_automaton_cost()
@@ -837,8 +851,11 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	elif cast.skill == "shotgun":
 		windup.visual_duration = windup.release
 		begin_shotgun_visual(cast_target(cast), aims_at_enemy(cast))
+	elif cast.skill == "spring_dash":
+		windup.visual_duration = windup.release
+		begin_spring_plate(cast_direction(cast))
 	player_model.look_at(player.position + cast_direction(cast))
-	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else "cast", seconds, float(skill.get("release_ratio", 1.0)))
+	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else ("spring_jump" if cast.skill == "spring_dash" else "cast"), seconds, float(skill.get("release_ratio", 1.0)))
 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
 
 func tick_windup(dt: float) -> void:
@@ -862,6 +879,8 @@ func tick_windup(dt: float) -> void:
 		var aim := {"target_enemy":windup.cursor.get("enemy_id"),"position":windup.cursor.get("ground")}
 		shotgun_assembly.global_transform = ShotgunGeometry.frame(self,cast_target(aim),aims_at_enemy(aim))
 		shotgun_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if is_instance_valid(spring_plate):
+		spring_plate.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if windup.release > 0:
 		return
 	var started: Dictionary = windup
@@ -935,6 +954,7 @@ func separate_allies(dt: float) -> void:
 				b.node.position += push
 
 func cancel_summon_assemblies(reason: String) -> void:
+	if is_instance_valid(player_visual):player_visual.cancel_spring_preparation()
 	if is_instance_valid(automaton_assembly):
 		automaton_assembly.cancel(reason)
 	automaton_assembly = null
@@ -944,6 +964,16 @@ func cancel_summon_assemblies(reason: String) -> void:
 	if is_instance_valid(shotgun_assembly):
 		shotgun_assembly.cancel(reason)
 	shotgun_assembly = null
+	if is_instance_valid(spring_plate):
+		spring_plate.cancel(reason)
+	spring_plate = null
+
+func begin_spring_plate(direction: Vector3) -> void:
+	spring_plate = SpringPlate.new()
+	world.add_child(spring_plate)
+	spring_plate.position = map.grounded(player.position - direction * 0.16)
+	spring_plate.look_at(spring_plate.global_position + direction, Vector3.UP)
+	spring_plate.initialize(self)
 
 func begin_shotgun_visual(target: Vector3, at_enemy: bool = false) -> void:
 	shotgun_assembly=ShotgunCast.new()
@@ -1130,6 +1160,38 @@ func cast_direction(event: Dictionary) -> Vector3:
 	direction.y = 0.0
 	return direction.normalized() if direction.length() >= 0.01 else Vector3.FORWARD
 
+func start_dash(target: Vector3, direction: Vector3, at_enemy: bool) -> void:
+	# Spring dash (03 drive II): a short burst toward the cursor that hits cannot stagger.
+	# It stops short of an enemy it was aimed at and never runs off walkable floor.
+	var skill: Dictionary = rules.skills.spring_dash
+	var flat: Vector3 = target - player.position
+	flat.y = 0.0
+	var reach: float = clampf(flat.length() - (float(skill.stop_short) if at_enemy else 0.0), float(skill.min_distance), float(skill.range))
+	var length := 0.0
+	while length + 0.2 <= reach and map.walkable(player.position + direction * (length + 0.2)):
+		length += 0.2
+	moving = false
+	move_marker.visible = false
+	dash = {"direction": direction, "left": length, "speed": length / float(skill.dash_seconds), "visual_distance":length}
+	player_visual.launch_spring_jump(float(skill.dash_seconds))
+	if not is_instance_valid(spring_plate):begin_spring_plate(direction)
+	spring_plate.launch(direction)
+	spring_plate = null
+
+func tick_dash(dt: float) -> void:
+	var travel: float = minf(dash.speed * dt, dash.left)
+	var before: Vector3 = player.position
+	player.velocity = dash.direction * travel / dt
+	player.move_and_slide()
+	var made := Vector2(player.position.x - before.x, player.position.z - before.z).length()
+	dash.left -= travel
+	player_visual.update_spring_jump(1.0 - float(dash.left) / maxf(float(dash.visual_distance), 0.0001))
+	# Done, or pinned against a wall the floor check could not see.
+	if dash.left <= 0.001 or made < travel * 0.3:
+		player_visual.land_spring_jump()
+		dash.clear()
+		player.velocity = Vector3.ZERO
+
 func execute_cast(event: Dictionary) -> void:
 	if SKILL_TREES.has(event.skill):
 		if is_instance_valid(charging_circle) and charging_circle.charging:
@@ -1177,9 +1239,11 @@ func execute_cast(event: Dictionary) -> void:
 				play_cue(1.2)
 		"shotgun":
 			fire_shotgun(target, aims_at_enemy(event))
+		"spring_dash":
+			start_dash(target, direction, aims_at_enemy(event))
 		"bolt_cutter", "grinder", "chainsaw": pass  # the staff itself transforms; no ground ring
 		"shield":
-			shield_time = float(rules.skills.shield.duration_seconds)
+			shield_time = shield_duration()
 			# Recasting while the fan is up only refreshes the clock; otherwise a new one assembles.
 			if not is_instance_valid(shield_visual) or shield_visual.mode not in ["assembling", "open"]:
 				shield_visual = ShieldVisual.new()
@@ -1249,6 +1313,8 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 	if not enemies.has(id):
 		return "miss"
 	amount *= passive_factor(source + ("_" + look if look != "" else ""))
+	if roller == "witch":
+		amount *= build.power_factor()
 	if accuracy_roll and not force_rolls.get("hit", combat_rng.randf() < hit_chance(id, roller)):
 		probe.strike(source, "miss", 0.0)
 		return "miss"
@@ -1430,6 +1496,12 @@ func pending_fill(key: String) -> float:
 		total += effect[key] * effect.time
 	return total
 
+func shield_duration() -> float:
+	# Each shield level holds it up longer; at Lv10 it outlasts its own cooldown, so a fully
+	# invested shield can be kept up for good by recasting.
+	var shield: Dictionary = rules.skills.shield
+	return float(shield.duration_seconds) + float(shield.duration_per_level) * (config.shield_level - 1)
+
 func block_chance() -> float:
 	# Trial formula from shield level and dexterity; it only applies while the shield is up.
 	var shield: Dictionary = rules.skills.shield
@@ -1454,7 +1526,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		probe.witch_hit(by_grade, 0.0, false, true)
 		return
 	# Only a heavy enough hit that leaves her standing stuns.
-	var stunned: bool = hp - amount > 0 and amount >= config.max_hp * config.hit_stun_min_ratio
+	var stunned: bool = hp - amount > 0 and amount >= config.max_hp * config.hit_stun_min_ratio and dash.is_empty()
 	probe.witch_hit(by_grade, minf(hp, amount), stunned, false)
 	hp = maxf(0, hp - amount)
 	hit_time = 0.25
@@ -1588,7 +1660,9 @@ func _physics_process(dt: float) -> void:
 		tick_hold()
 		tick_pending_cast(dt)
 		# The witch stands still for the attack motion; held steering resumes afterwards.
-		if moving and action_time <= 0:
+		if not dash.is_empty():
+			tick_dash(dt)
+		elif moving and action_time <= 0:
 			var delta: Vector3 = destination - player.position
 			# Feet always follow the floor, so arrival is about where she stands, not how high.
 			delta.y = 0.0

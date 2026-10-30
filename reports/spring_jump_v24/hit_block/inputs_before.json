@@ -1,0 +1,19 @@
+{
+  "game/tests/hit_block.gd": "f06c854936d25354eabd8179ced5a6c84785cbf81590ce4891f6b5d43ba84bb9",
+  "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+  "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+  "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+  "reports/spring_jump_v24/pose_fixture.json": "6827915f55e80653e98b49cf866917de5e2e2fccd996e6ec77882a00093be845",
+  "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+  "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+  "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+  "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+  "game/data/trial.json": "28c8d6df9f7db0a4d78b5608dbb56a315dfedd35bca2e927f6fa87807c0a3936",
+  "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+  "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+  "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c",
+  "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+  "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+  "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+  "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704"
+}

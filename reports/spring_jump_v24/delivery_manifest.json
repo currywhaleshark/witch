@@ -1,0 +1,947 @@
+{
+  "id": "spring_jump_v24",
+  "generated_utc": "2026-10-30T15:37:13.659533+00:00",
+  "passed": true,
+  "status": "Selected for the current prototype; recorded validation limits remain",
+  "source": {
+    "source": "User-supplied Unarmed Jump.fbx",
+    "provider_metadata": "Armature|mixamo.com|Layer0",
+    "raw_path": "assets/characters/player/3d/source/motion_library/mixamo_local/Unarmed_Jump_user_2026-10-30.fbx",
+    "raw_sha256": "c3a76978f47439d4c929ebad881f277ade45d60b3543bf4e92821a979949bc68",
+    "source_action_sha256": "222def9971bee60b239f46e67b851c5522454af028469a296af96452ddd9b787",
+    "source_fps": 30,
+    "source_frames": [
+      1.0,
+      71.0
+    ],
+    "time_map": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.12,
+        19.0
+      ],
+      [
+        0.25,
+        25.0
+      ],
+      [
+        0.5,
+        35.0
+      ],
+      [
+        0.75,
+        45.0
+      ],
+      [
+        0.84,
+        52.0
+      ],
+      [
+        1.0,
+        71.0
+      ]
+    ],
+    "license": "Mixamo source; not CC0; raw source remains local/gitignored"
+  },
+  "source_validation": {
+    "passed": true,
+    "failures": [],
+    "samples": 97,
+    "preserved_meshes": 29,
+    "preserved_actions": 60,
+    "rest_bones": 107,
+    "maximum_grip_error_m": 1.5960945311305606e-06,
+    "minimum_shoe_floor_m": -8.088195810983341e-05,
+    "endpoint_matrix_error": 0.0,
+    "source_sha256": "5e63b1000425287f5ac50f9889c0ef45e2b3bf8f6f6c574b820016a8b2e5c95a",
+    "rows": [
+      {
+        "frame": 1.0,
+        "grip_error_m": 6.581967046381681e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": -8.088195810983341e-05
+      },
+      {
+        "frame": 1.5,
+        "grip_error_m": 8.491374113433043e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.003904665421317851
+      },
+      {
+        "frame": 2.0,
+        "grip_error_m": 8.805880260084398e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890139541505442
+      },
+      {
+        "frame": 2.5,
+        "grip_error_m": 1.102106846041323e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007889930524633057
+      },
+      {
+        "frame": 3.0,
+        "grip_error_m": 1.189161445831839e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890275075883631
+      },
+      {
+        "frame": 3.5,
+        "grip_error_m": 1.1210833934310635e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007686810214170442
+      },
+      {
+        "frame": 4.0,
+        "grip_error_m": 1.1818978845836775e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890232619331427
+      },
+      {
+        "frame": 4.5,
+        "grip_error_m": 1.0181498494231172e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.006114011320156496
+      },
+      {
+        "frame": 5.0,
+        "grip_error_m": 9.397261683994212e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890179548641173
+      },
+      {
+        "frame": 5.5,
+        "grip_error_m": 9.710081892872552e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.006532383900873846
+      },
+      {
+        "frame": 6.0,
+        "grip_error_m": 9.341495048199582e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890059527233982
+      },
+      {
+        "frame": 6.5,
+        "grip_error_m": 9.920469747844454e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007824465787024055
+      },
+      {
+        "frame": 7.0,
+        "grip_error_m": 1.1203899601444281e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.00789022445460985
+      },
+      {
+        "frame": 7.5,
+        "grip_error_m": 1.2714323556546211e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007888256756709655
+      },
+      {
+        "frame": 8.0,
+        "grip_error_m": 7.895154952094317e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890111781452078
+      },
+      {
+        "frame": 8.5,
+        "grip_error_m": 1.1116106451486505e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.00787089774216357
+      },
+      {
+        "frame": 9.0,
+        "grip_error_m": 1.1651764783340216e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890075856677137
+      },
+      {
+        "frame": 9.5,
+        "grip_error_m": 1.1581819097792547e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007815829144539295
+      },
+      {
+        "frame": 10.0,
+        "grip_error_m": 1.0995603093131343e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890220372249061
+      },
+      {
+        "frame": 10.5,
+        "grip_error_m": 1.0716670228310158e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.0076753191850221615
+      },
+      {
+        "frame": 11.0,
+        "grip_error_m": 1.2485503700948513e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890213023999641
+      },
+      {
+        "frame": 11.5,
+        "grip_error_m": 8.803358349741254e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007349644770735819
+      },
+      {
+        "frame": 12.0,
+        "grip_error_m": 4.922460514056363e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890139541505442
+      },
+      {
+        "frame": 12.5,
+        "grip_error_m": 7.414731564894157e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007113338132948989
+      },
+      {
+        "frame": 13.0,
+        "grip_error_m": 8.271507772904555e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.00789006769195556
+      },
+      {
+        "frame": 13.5,
+        "grip_error_m": 8.147257577214049e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.031157130718243824
+      },
+      {
+        "frame": 14.0,
+        "grip_error_m": 1.045267600340422e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.05439433671193921
+      },
+      {
+        "frame": 14.5,
+        "grip_error_m": 1.0614462789879744e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.07410705889700919
+      },
+      {
+        "frame": 15.0,
+        "grip_error_m": 1.2527226840348452e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.0933459415948328
+      },
+      {
+        "frame": 15.5,
+        "grip_error_m": 1.036735640328537e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.11125308791213824
+      },
+      {
+        "frame": 16.0,
+        "grip_error_m": 8.714651624946291e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.12845284328970696
+      },
+      {
+        "frame": 16.5,
+        "grip_error_m": 9.242793578352782e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.14592228404108806
+      },
+      {
+        "frame": 17.0,
+        "grip_error_m": 9.011199255431207e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.16299010349228454
+      },
+      {
+        "frame": 17.5,
+        "grip_error_m": 9.510002910869482e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.18218431825825238
+      },
+      {
+        "frame": 18.0,
+        "grip_error_m": 1.1997574876675382e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.20185612160239536
+      },
+      {
+        "frame": 18.5,
+        "grip_error_m": 1.0620932652881244e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.22547211244451465
+      },
+      {
+        "frame": 19.0,
+        "grip_error_m": 1.4260029775226406e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.24988916384545004
+      },
+      {
+        "frame": 19.5,
+        "grip_error_m": 1.1247169040509276e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.27570430453700046
+      },
+      {
+        "frame": 20.0,
+        "grip_error_m": 9.226168602230914e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.3017607916702395
+      },
+      {
+        "frame": 20.5,
+        "grip_error_m": 1.0633273278093004e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.3297440499415668
+      },
+      {
+        "frame": 21.0,
+        "grip_error_m": 1.1827488697164351e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.35767864619356393
+      },
+      {
+        "frame": 21.5,
+        "grip_error_m": 9.033425711695967e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.3851338031840205
+      },
+      {
+        "frame": 22.0,
+        "grip_error_m": 6.558627225959842e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.41242254654055516
+      },
+      {
+        "frame": 22.5,
+        "grip_error_m": 7.889528114888076e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.43397924683482486
+      },
+      {
+        "frame": 23.0,
+        "grip_error_m": 8.139908482878007e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.45465459781495365
+      },
+      {
+        "frame": 23.5,
+        "grip_error_m": 8.868381986836499e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.4653582597475593
+      },
+      {
+        "frame": 24.0,
+        "grip_error_m": 1.1098364450090742e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.4750222420851916
+      },
+      {
+        "frame": 24.5,
+        "grip_error_m": 1.0979436051719574e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.47396527520556964
+      },
+      {
+        "frame": 25.0,
+        "grip_error_m": 1.4262365251662192e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.47188609470337334
+      },
+      {
+        "frame": 25.5,
+        "grip_error_m": 1.0046134781773031e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.46039929637445076
+      },
+      {
+        "frame": 26.0,
+        "grip_error_m": 8.775332288112037e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.44810691734762714
+      },
+      {
+        "frame": 26.5,
+        "grip_error_m": 7.053402123247621e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.43175777855426645
+      },
+      {
+        "frame": 27.0,
+        "grip_error_m": 8.578527448652158e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.4146029284274596
+      },
+      {
+        "frame": 27.5,
+        "grip_error_m": 6.951136152491016e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.3958071812675931
+      },
+      {
+        "frame": 28.0,
+        "grip_error_m": 9.65820576137233e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.3764839111678716
+      },
+      {
+        "frame": 28.5,
+        "grip_error_m": 7.497464872578761e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.3567619247759029
+      },
+      {
+        "frame": 29.0,
+        "grip_error_m": 8.081390315012314e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.3362375255980053
+      },
+      {
+        "frame": 29.5,
+        "grip_error_m": 9.480772323626038e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.3159902465893887
+      },
+      {
+        "frame": 30.0,
+        "grip_error_m": 7.642204015230578e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.29524241761512066
+      },
+      {
+        "frame": 30.5,
+        "grip_error_m": 8.866582213710541e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.27553234896879936
+      },
+      {
+        "frame": 31.0,
+        "grip_error_m": 1.130157545955435e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.25528882652886914
+      },
+      {
+        "frame": 31.5,
+        "grip_error_m": 1.0778971532841313e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.23600326079524211
+      },
+      {
+        "frame": 32.0,
+        "grip_error_m": 1.0030443572958898e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.2161509096086377
+      },
+      {
+        "frame": 32.5,
+        "grip_error_m": 8.405958862751357e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.19766948388807784
+      },
+      {
+        "frame": 33.0,
+        "grip_error_m": 7.392237636335172e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.1786287691536572
+      },
+      {
+        "frame": 33.5,
+        "grip_error_m": 9.108315734268044e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.1610311320401569
+      },
+      {
+        "frame": 34.0,
+        "grip_error_m": 9.351294912181973e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.13969531616635844
+      },
+      {
+        "frame": 34.5,
+        "grip_error_m": 8.900949545752518e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.11935084805658094
+      },
+      {
+        "frame": 35.0,
+        "grip_error_m": 1.0935424535021785e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.09825982885914093
+      },
+      {
+        "frame": 35.5,
+        "grip_error_m": 1.018095326370696e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.07715391111345161
+      },
+      {
+        "frame": 36.0,
+        "grip_error_m": 1.125999420125041e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.055211081571397605
+      },
+      {
+        "frame": 36.5,
+        "grip_error_m": 1.1415933152643459e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.031809124151584926
+      },
+      {
+        "frame": 37.0,
+        "grip_error_m": 1.1329783144754386e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890150155643493
+      },
+      {
+        "frame": 37.5,
+        "grip_error_m": 9.932562899220532e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.0009102641927619414
+      },
+      {
+        "frame": 38.0,
+        "grip_error_m": 8.060498692999394e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890188529834908
+      },
+      {
+        "frame": 38.5,
+        "grip_error_m": 8.367983863625061e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007303601456343395
+      },
+      {
+        "frame": 39.0,
+        "grip_error_m": 7.415105885593332e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890211391055325
+      },
+      {
+        "frame": 39.5,
+        "grip_error_m": 9.053298558699596e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007784981193474897
+      },
+      {
+        "frame": 40.0,
+        "grip_error_m": 1.1241244800414024e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890172200391753
+      },
+      {
+        "frame": 40.5,
+        "grip_error_m": 9.245026746893038e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007863671147095257
+      },
+      {
+        "frame": 41.0,
+        "grip_error_m": 9.408109833449044e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890279974716577
+      },
+      {
+        "frame": 41.5,
+        "grip_error_m": 9.011199255431207e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.00788642296024333
+      },
+      {
+        "frame": 42.0,
+        "grip_error_m": 1.0244209652417943e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890175466280383
+      },
+      {
+        "frame": 42.5,
+        "grip_error_m": 1.0869934930611695e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007793660292511861
+      },
+      {
+        "frame": 43.0,
+        "grip_error_m": 1.202201452942488e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890153421532124
+      },
+      {
+        "frame": 43.5,
+        "grip_error_m": 9.066471901641045e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007227980621564046
+      },
+      {
+        "frame": 44.0,
+        "grip_error_m": 6.589026588045214e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890230986387112
+      },
+      {
+        "frame": 44.5,
+        "grip_error_m": 7.711260934433705e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.006163707122746648
+      },
+      {
+        "frame": 45.0,
+        "grip_error_m": 6.901345358436949e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890234252275743
+      },
+      {
+        "frame": 45.5,
+        "grip_error_m": 9.323725146470725e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.006728502554347611
+      },
+      {
+        "frame": 46.0,
+        "grip_error_m": 1.1547438519975086e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890079939037927
+      },
+      {
+        "frame": 46.5,
+        "grip_error_m": 1.0302364239966753e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007647878372272088
+      },
+      {
+        "frame": 47.0,
+        "grip_error_m": 1.0948107851008443e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890121579117972
+      },
+      {
+        "frame": 47.5,
+        "grip_error_m": 1.2553509757451014e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007879216776978962
+      },
+      {
+        "frame": 48.0,
+        "grip_error_m": 1.5960945311305606e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.007890186896890593
+      },
+      {
+        "frame": 48.5,
+        "grip_error_m": 1.0718741983242917e-06,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": 0.0039044417079466256
+      },
+      {
+        "frame": 49.0,
+        "grip_error_m": 6.581967046381681e-07,
+        "wrong_curls": 0,
+        "shoe_floor_with_runtime_arc_m": -8.088195810983341e-05
+      }
+    ]
+  },
+  "runtime_checks": 404,
+  "gpu_captures": 488,
+  "runs": {
+    "spring_jump_v24": {
+      "execution": {
+        "phase": "test",
+        "workspace_cache_diagnostic_only": false,
+        "test": "spring_jump_v24",
+        "stderr_empty": true,
+        "changed_inputs": [],
+        "exit_code": 0
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/data/trial.json": "28c8d6df9f7db0a4d78b5608dbb56a315dfedd35bca2e927f6fa87807c0a3936",
+        "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+        "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+        "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+        "game/tests/spring_jump_v24.gd": "70abfa582b5c32b285fb45ecd9c5f7b3f98d9d75f81dd34dd72960ae47db21db",
+        "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+        "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+        "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+        "reports/spring_jump_v24/pose_fixture.json": "6827915f55e80653e98b49cf866917de5e2e2fccd996e6ec77882a00093be845",
+        "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704",
+        "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+        "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+        "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+        "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+        "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b"
+      },
+      "checks": 67
+    },
+    "spring_plate_v1": {
+      "execution": {
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": false,
+        "changed_inputs": [],
+        "phase": "test",
+        "test": "spring_plate_v1",
+        "stderr_empty": true
+      },
+      "inputs_current": true,
+      "inputs": {
+        "reports/spring_jump_v24/pose_fixture.json": "6827915f55e80653e98b49cf866917de5e2e2fccd996e6ec77882a00093be845",
+        "game/data/trial.json": "28c8d6df9f7db0a4d78b5608dbb56a315dfedd35bca2e927f6fa87807c0a3936",
+        "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+        "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+        "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+        "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+        "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+        "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+        "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+        "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+        "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+        "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+        "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704",
+        "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c"
+      },
+      "checks": 82
+    },
+    "loadout_dash": {
+      "execution": {
+        "workspace_cache_diagnostic_only": false,
+        "changed_inputs": [],
+        "phase": "test",
+        "stderr_empty": true,
+        "exit_code": 0,
+        "test": "loadout_dash"
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+        "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+        "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+        "reports/spring_jump_v24/pose_fixture.json": "6827915f55e80653e98b49cf866917de5e2e2fccd996e6ec77882a00093be845",
+        "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+        "game/data/trial.json": "28c8d6df9f7db0a4d78b5608dbb56a315dfedd35bca2e927f6fa87807c0a3936",
+        "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+        "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704",
+        "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+        "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c",
+        "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+        "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+        "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+        "game/tests/loadout_dash.gd": "3b213499a960c5939cf0ac946c0cd2fe76b2e756d173630fff3b36b838e6e8a1",
+        "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d"
+      },
+      "checks": 11
+    },
+    "hit_block": {
+      "execution": {
+        "phase": "test",
+        "changed_inputs": [],
+        "exit_code": 0,
+        "test": "hit_block",
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/tests/hit_block.gd": "f06c854936d25354eabd8179ced5a6c84785cbf81590ce4891f6b5d43ba84bb9",
+        "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+        "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+        "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+        "reports/spring_jump_v24/pose_fixture.json": "6827915f55e80653e98b49cf866917de5e2e2fccd996e6ec77882a00093be845",
+        "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+        "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+        "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+        "game/data/trial.json": "28c8d6df9f7db0a4d78b5608dbb56a315dfedd35bca2e927f6fa87807c0a3936",
+        "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+        "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+        "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c",
+        "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+        "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+        "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704"
+      },
+      "checks": 21
+    },
+    "player_visual": {
+      "execution": {
+        "changed_inputs": [],
+        "stderr_empty": true,
+        "exit_code": 0,
+        "test": "player_visual",
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test"
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+        "game/data/trial.json": "28c8d6df9f7db0a4d78b5608dbb56a315dfedd35bca2e927f6fa87807c0a3936",
+        "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+        "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+        "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+        "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+        "reports/spring_jump_v24/pose_fixture.json": "6827915f55e80653e98b49cf866917de5e2e2fccd996e6ec77882a00093be845",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+        "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c",
+        "game/tests/player_visual.gd": "af421f62686565aa1283409cd12ec17ae77b92b18398804a4126b026209681d5",
+        "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+        "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+        "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+        "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+        "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704",
+        "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d"
+      },
+      "checks": 192
+    },
+    "build_windows": {
+      "execution": {
+        "test": "build_windows",
+        "stderr_empty": true,
+        "workspace_cache_diagnostic_only": false,
+        "phase": "test",
+        "exit_code": 0,
+        "changed_inputs": []
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+        "game/tests/build_windows.gd": "727e102fde29052c0bbd9e7330703e9c6929063fc96757200e3e6a042f8a6584",
+        "game/scripts/hud.gd": "dbcd3a39b201bf3ff664fe36529390d729a64974c2b490a9768603dcc8848483",
+        "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+        "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+        "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+        "game/scripts/build_window.gd": "f51b0311196beccf452039f3f27a0b890563d359962586a5698d74786d030570",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704",
+        "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+        "game/scripts/build.gd": "d95347115d1c5f0927a22d94e66f3ac1deacd3037524a3ea27ae19f37c228bcf",
+        "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+        "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+        "game/data/trial.json": "28c8d6df9f7db0a4d78b5608dbb56a315dfedd35bca2e927f6fa87807c0a3936",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+        "reports/spring_jump_v24/pose_fixture.json": "6827915f55e80653e98b49cf866917de5e2e2fccd996e6ec77882a00093be845",
+        "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+        "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+        "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c",
+        "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+        "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a"
+      },
+      "checks": 31
+    },
+    "review": {
+      "execution": {
+        "exit_code": 0,
+        "workspace_cache_diagnostic_only": true,
+        "test": "spring_jump_v24",
+        "phase": "review",
+        "changed_inputs": [],
+        "stderr_empty": false
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704",
+        "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c",
+        "game/tests/review_spring_jump_v24.gd": "24be7f962af86b70338cf9edde7b291874d07a66578d7338136976eb1c125227",
+        "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+        "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+        "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+        "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+        "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+        "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+        "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+        "reports/spring_jump_v24/pose_fixture.json": "6827915f55e80653e98b49cf866917de5e2e2fccd996e6ec77882a00093be845",
+        "game/data/trial.json": "28c8d6df9f7db0a4d78b5608dbb56a315dfedd35bca2e927f6fa87807c0a3936",
+        "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+        "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+        "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+        "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+        "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+        "game/tests/review_staff_visual.gd": "e559078a12b869d65cbadd88f141a9ced2cb60588a2067ae44a80406474c8839"
+      }
+    }
+  },
+  "capture_scope": "Eight actual arena sequences at 60Hz, current game lighting. Manual advancement avoids render-clock variation; release, motion and ground dash run through arena.",
+  "hashes": {
+    "game/scripts/arena.gd": "d7efba3c530bcb12bf528caebe18e9105e028974825552ae7d5ce67a48d2710c",
+    "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+    "game/scripts/spring_jump_motion.gd": "338e1deaeaacb3985a107a4f82d7c50080aae1e13cbbce89d2fb6b7987cb30d3",
+    "game/tests/spring_jump_v24.gd": "70abfa582b5c32b285fb45ecd9c5f7b3f98d9d75f81dd34dd72960ae47db21db",
+    "game/tests/review_spring_jump_v24.gd": "24be7f962af86b70338cf9edde7b291874d07a66578d7338136976eb1c125227",
+    "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+    "game/assets/characters/player/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+    "game/assets/characters/player/spring_jump_v24/combat_spring_jump_v24.glb.import": "09bedb22a2dd540cc84470b95335990222710e7b7b9dffc3469999790cd52704",
+    "assets/characters/player/3d/source/middle_school_v1/spring_jump_v24/spring_jump_v24.blend": "5e63b1000425287f5ac50f9889c0ef45e2b3bf8f6f6c574b820016a8b2e5c95a",
+    "assets/characters/player/3d/source/middle_school_v1/spring_jump_v24/runtime_contract.json": "98ae9f908ab55d4beaf445e540302bc6fde60b53ad724a4ce5ede9ee9fc16eb6",
+    "assets/characters/player/3d/source/middle_school_v1/spring_jump_v24/README.md": "9b6fb7ebfbb961b5e5a1391c5335cbbab9b25f0284af5b3d7b6f9b542df0a321",
+    "tools/build_spring_jump_v24.py": "3ebcbff3eb7f433da913dfed7b6985d28738b621fe8839f68330cb68fa62ab35",
+    "tools/finalize_spring_jump_v24.py": "8829c2b47d8d174b2998edd658b1d233c98e6234e9848e9a8dd963fe3efb28be",
+    "tools/run_spring_jump_v24.ps1": "b8d54beabcbe5043427c62d8f325ea5364fe731d77999326d48fbdc0e4894a5d",
+    "tools/package_spring_jump_v24.py": "680d62cef7fd0d08454808a2ddce36ef3a2a697668920aadd411bef3d2e6355a",
+    "reports/spring_jump_v24/review.html": "87a2801dacc8cd3b547dc587f7c9f287654d07aeb05b8d8dd6b858c140b38003",
+    "reports/spring_jump_v24/capture_hashes.json": "d43466d3824730ac3f6b61f05116d209109c99763400b62c9eabe749080fcf27",
+    "reports/spring_jump_v24/approval.json": "e4e6870650f0a2a85b29f81619fc9a9d9d181c3c3586a3a890c87915dd410be0"
+  },
+  "integration_scope": {
+    "arena.gd": {
+      "modified": [
+        "begin_cast",
+        "cancel_summon_assemblies",
+        "start_dash",
+        "tick_dash"
+      ],
+      "added": [],
+      "removed": []
+    },
+    "player_visual.gd": {
+      "modified": [
+        "initialize",
+        "begin_motion",
+        "mark_release",
+        "sync_state",
+        "_sync_pose",
+        "_sample",
+        "debug_snapshot"
+      ],
+      "added": [
+        "cancel_spring_preparation",
+        "land_spring_jump",
+        "launch_spring_jump",
+        "update_spring_jump"
+      ],
+      "removed": []
+    },
+    "unchanged": {
+      "spring_plate.gd": true,
+      "trial.json": true
+    }
+  },
+  "visually_inspected_frames": [
+    "side/010.jpg",
+    "side/016.jpg",
+    "side/025.jpg",
+    "front/016.jpg",
+    "front/026.jpg",
+    "native/016.jpg",
+    "raised/016.jpg"
+  ],
+  "limits": [
+    "The parabola is visual. The combat body remains grounded with existing wall/damage rules.",
+    "Height is a 0.32m visual origin arc; foot clearance also includes the authored knee tuck.",
+    "The 0.12s landing is presentation only and does not lock later combat input.",
+    "Raw FBX stays local/gitignored; no Mixamo source redistribution.",
+    "No live cloth, arbitrary outfit clearance or final performance approval.",
+    "Browser interaction was not automated; generated page script syntax and image integrity were checked."
+  ],
+  "approval": {
+    "date": "2026-10-31",
+    "user_statement": "커밋",
+    "selected_scope": "The spring plate assembly, actuation and disappearance with the low-arc jump shown in reports/spring_jump_v24/review.html are selected for the current prototype and authorized for commit.",
+    "validation_manifest": "delivery_manifest.json",
+    "limits": "Recorded validation scope and remaining outfit/contact/terrain/performance limits remain unchanged."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "arena.gd": {
+    "modified": [
+      "begin_cast",
+      "cancel_summon_assemblies",
+      "start_dash",
+      "tick_dash"
+    ],
+    "added": [],
+    "removed": []
+  },
+  "player_visual.gd": {
+    "modified": [
+      "initialize",
+      "begin_motion",
+      "mark_release",
+      "sync_state",
+      "_sync_pose",
+      "_sample",
+      "debug_snapshot"
+    ],
+    "added": [
+      "cancel_spring_preparation",
+      "land_spring_jump",
+      "launch_spring_jump",
+      "update_spring_jump"
+    ],
+    "removed": []
+  },
+  "unchanged": {
+    "spring_plate.gd": true,
+    "trial.json": true
+  }
+}

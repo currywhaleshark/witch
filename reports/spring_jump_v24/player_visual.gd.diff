@@ -1,0 +1,128 @@
+--- pre_task/player_visual.gd
++++ current/player_visual.gd
+@@ -4,6 +4,8 @@
+ const Shape = preload("res://scripts/shapes.gd")
+ const StaffVisual = preload("res://scripts/staff_visual.gd")
+ const StaffLocomotionBlend = preload("res://scripts/staff_locomotion_blend.gd")
++const SpringJumpMotion = preload("res://scripts/spring_jump_motion.gd")
++const SPRING_JUMP_DIR := "res://assets/characters/player/spring_jump_v24/"
+ const ASSET_DIR := "res://assets/characters/player/run_arm_v21/"
+ const BODY_PATH := ASSET_DIR + "body_standard_v21.glb"
+ const PARTS := {
+@@ -15,11 +17,12 @@
+ 	"idle": "combat_idle_rh_v20", "run": "combat_run_rh_v21",
+ 	"attack": "combat_heavy_swing_rh_v20", "attack_thrust": "combat_thrust_rh_v23",
+ 	"cast": "combat_cast_rh_v20", "hit_react": "combat_hit_rh_v20", "collapse": "combat_collapse_rh_v20",
++	"spring_jump": "combat_spring_jump_v24",
+ }
+ # Clips authored after the v21 family, exported alone onto the same rig and added to its library.
+-const EXTRA_CLIP_FILES := [ASSET_DIR + "combat_thrust_rh_v23.glb"]
++const EXTRA_CLIP_FILES := [ASSET_DIR + "combat_thrust_rh_v23.glb", SPRING_JUMP_DIR + "combat_spring_jump_v24.glb"]
+ # Authored release: swing 25/49, thrust 25/49, cast 17/33; normalized 0.5.
+-const AUTHORED_RELEASE := {"attack": 0.5, "cast": 0.5}
++const AUTHORED_RELEASE := {"attack": 0.5, "cast": 0.5, "spring_jump": 0.25}
+ const STAFF_GRIP_OFFSET := Vector3(0.0074299751, 0.0480000079, 0.0158048961)
+ const STAFF_GRIP_BASIS := Basis(Vector3(0, -1, 0), Vector3(0.9106548, 0, -0.4131677), Vector3(0.4131677, 0, 0.9106548))
+ # Run weight ramps in and out instead of switching clips outright, eased, so a move of only a few
+@@ -67,6 +70,7 @@
+ var _run_time := 0.0
+ var _run_weight := 0.0
+ var _staff_locomotion_blend := StaffLocomotionBlend.new()
++var _spring_jump := SpringJumpMotion.new()
+ var _turn_lag := 0.0
+ var _last_yaw := 0.0
+ var _turn_seen := false
+@@ -141,6 +145,10 @@
+ 	if not motion_contract is Dictionary or not motion_contract.get("staff_slide_tracks") is Dictionary:
+ 		return _fail("missing_staff_slide_contract")
+ 	_staff_slide_tracks = motion_contract["staff_slide_tracks"]
++	var jump_contract = JSON.parse_string(FileAccess.get_file_as_string(SPRING_JUMP_DIR + "runtime_contract.json"))
++	if not jump_contract is Dictionary or not jump_contract.get("staff_slide_tracks") is Dictionary:
++		return _fail("missing_spring_jump_contract")
++	_staff_slide_tracks.merge(jump_contract.staff_slide_tracks)
+ 	for clip in CLIPS.values():
+ 		var slide_track = _staff_slide_tracks.get(clip)
+ 		if not slide_track is Array or slide_track.size() < 2:
+@@ -196,7 +204,7 @@
+ 	return loaded_ok and staff_visual.set_appearance(profile)
+ 
+ func begin_motion(kind: String, duration: float, release_ratio: float) -> void:
+-	if not loaded_ok or is_dead or kind not in ["attack", "cast"]:
++	if not loaded_ok or is_dead or kind not in ["attack", "cast", "spring_jump"]:
+ 		return
+ 	_motion_kind = kind
+ 	if kind == "attack":
+@@ -211,11 +219,30 @@
+ 	_sample(kind, 0.0)
+ 
+ func mark_release() -> void:
+-	if loaded_ok and _motion_kind in ["attack", "cast"]:
++	if loaded_ok and _motion_kind in ["attack", "cast", "spring_jump"]:
+ 		if _motion_kind == "attack":
+ 			staff_visual.finish_assembly()
+ 		# The arena signals the real physics frame that crosses its release clock.
+ 		_release_pending = true
++
++func launch_spring_jump(duration: float) -> void:
++	if not loaded_ok or is_dead: return
++	_motion_kind = ""
++	_release_pending = false
++	_release_elapsed = -1.0
++	_spring_jump.launch(self, duration)
++
++func update_spring_jump(progress: float) -> void:
++	_spring_jump.set_progress(progress)
++
++func land_spring_jump() -> void:
++	if loaded_ok: _spring_jump.finish(self)
++
++func cancel_spring_preparation() -> void:
++	if _motion_kind != "spring_jump": return
++	_motion_kind = ""
++	_release_pending = false
++	_release_elapsed = -1.0
+ 
+ func hit_react(duration: float) -> void:
+ 	if not loaded_ok or is_dead:
+@@ -252,6 +279,7 @@
+ 	is_cleared = cleared
+ 	if not loaded_ok or paused:
+ 		return
++	_spring_jump.advance(self, dt, is_dead, cleared)
+ 	var staff_release := -1.0
+ 	if _motion_kind == "attack" and _release_elapsed < 0.0:
+ 		staff_release = maxf(0.0, action_remaining - motion_duration * (1.0-gameplay_release_ratio))
+@@ -277,13 +305,15 @@
+ 			_sample("idle", 0.0)
+ 			_state = "cleared"
+ 		return
++	if _spring_jump.sample_pose(self):
++		return
+ 	if not _motion_kind.is_empty():
+ 		if action_remaining > 0 or _release_pending:
+ 			# Use the combat clock, including FCR/IAS/FHR and same-frame interrupts.
+ 			motion_elapsed = clampf(motion_duration - action_remaining, 0.0, motion_duration)
+ 			var progress := motion_elapsed / motion_duration
+ 			var normalized := progress
+-			if _motion_kind in ["attack", "cast"]:
++			if _motion_kind in ["attack", "cast", "spring_jump"]:
+ 				if _release_pending:
+ 					_release_pending = false
+ 					_release_elapsed = motion_elapsed
+@@ -413,7 +443,7 @@
+ 		staff_slide = lerpf(_collapse_grip_from, staff_slide, clampf(_collapse_elapsed / COLLAPSE_BLEND_SECONDS, 0.0, 1.0))
+ 	staff_root.position = STAFF_GRIP_OFFSET + STAFF_GRIP_BASIS.y * staff_slide
+ 	playback_speed = _run_rate if kind == "run" else 1.0
+-	if kind in ["attack", "cast", "hit_react"]:
++	if kind in ["attack", "cast", "hit_react"] or (kind == "spring_jump" and _motion_kind == "spring_jump"):
+ 		playback_speed = clip_length / motion_duration
+ 		if kind != "hit_react":
+ 			if _release_elapsed >= 0.0:
+@@ -442,6 +472,7 @@
+ 		"frozen": is_paused or _state == "dead" or is_cleared,
+ 		"attack_variant": _attack_clip_kind, "staff_slide_m": staff_slide,
+ 		"collapse_elapsed": _collapse_elapsed,
++		"spring_jump": _spring_jump.debug_state(),
+ 		"movement_speed": movement_speed, "run_cycle_distance": RUN_CYCLE_DISTANCE,
+ 		"locomotion_blending": _state in ["idle", "run"] and _run_weight > 0.0 and _run_weight < 1.0, "run_weight": _run_weight, "turn_lag": _turn_lag,
+ 		"bone_count": runtime.skeleton.get_bone_count() if loaded_ok else 0,

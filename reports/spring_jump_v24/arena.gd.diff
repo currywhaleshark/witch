@@ -1,0 +1,40 @@
+--- pre_task/arena.gd
++++ current/arena.gd
+@@ -855,7 +855,7 @@
+ 		windup.visual_duration = windup.release
+ 		begin_spring_plate(cast_direction(cast))
+ 	player_model.look_at(player.position + cast_direction(cast))
+-	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else "cast", seconds, float(skill.get("release_ratio", 1.0)))
++	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else ("spring_jump" if cast.skill == "spring_dash" else "cast"), seconds, float(skill.get("release_ratio", 1.0)))
+ 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
+ 
+ func tick_windup(dt: float) -> void:
+@@ -954,6 +954,7 @@
+ 				b.node.position += push
+ 
+ func cancel_summon_assemblies(reason: String) -> void:
++	if is_instance_valid(player_visual):player_visual.cancel_spring_preparation()
+ 	if is_instance_valid(automaton_assembly):
+ 		automaton_assembly.cancel(reason)
+ 	automaton_assembly = null
+@@ -1171,7 +1172,8 @@
+ 		length += 0.2
+ 	moving = false
+ 	move_marker.visible = false
+-	dash = {"direction": direction, "left": length, "speed": length / float(skill.dash_seconds)}
++	dash = {"direction": direction, "left": length, "speed": length / float(skill.dash_seconds), "visual_distance":length}
++	player_visual.launch_spring_jump(float(skill.dash_seconds))
+ 	if not is_instance_valid(spring_plate):begin_spring_plate(direction)
+ 	spring_plate.launch(direction)
+ 	spring_plate = null
+@@ -1183,8 +1185,10 @@
+ 	player.move_and_slide()
+ 	var made := Vector2(player.position.x - before.x, player.position.z - before.z).length()
+ 	dash.left -= travel
++	player_visual.update_spring_jump(1.0 - float(dash.left) / maxf(float(dash.visual_distance), 0.0001))
+ 	# Done, or pinned against a wall the floor check could not see.
+ 	if dash.left <= 0.001 or made < travel * 0.3:
++		player_visual.land_spring_jump()
+ 		dash.clear()
+ 		player.velocity = Vector3.ZERO
+ 

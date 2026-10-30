@@ -1,0 +1,233 @@
+{
+  "id": "spring_dash_v1",
+  "generated_utc": "2026-10-30T14:41:25.115009+00:00",
+  "passed": true,
+  "status": "Integrated review candidate; no user art selection recorded yet",
+  "asset": {
+    "parts": 29,
+    "materials": 6,
+    "source_glb_triangles": 5964,
+    "runtime_part_triangles": 5972,
+    "origin": "Original Blender modeling",
+    "runtime_triangle_difference": "Two procedural coil end caps add eight triangles."
+  },
+  "timing_seconds": {
+    "existing_release_fcr_0": 0.06,
+    "existing_release_fcr_40": 0.0378461538461538,
+    "extension_after_release": 0.085,
+    "extended_hold": 0.055,
+    "dissolve": 0.24,
+    "total_after_release": 0.38
+  },
+  "validation": {
+    "runtime_assertions": 113,
+    "gpu_captures": 487,
+    "runs": {
+      "spring_plate_v1": {
+        "execution": {
+          "stderr_empty": true,
+          "phase": "test",
+          "exit_code": 0,
+          "changed_inputs": [],
+          "test": "spring_plate_v1",
+          "workspace_cache_diagnostic_only": false
+        },
+        "inputs_current": true,
+        "inputs": {
+          "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+          "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+          "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+          "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+          "game/data/trial.json": "fa36a077671f60beca7b0100429d2de7aa510fecf9eee7b690edd77593c4bf2d",
+          "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+          "game/scripts/player_visual.gd": "33781ecd8f1435fcc10dfb8888b70f7963beae3d8e273dac2e40ba4bb52182ac",
+          "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+          "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+          "game/scripts/arena.gd": "f56f29507aa85bddab72eb2781a7ee7e1d3d34ae9856f13199320627b96d8108",
+          "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d"
+        },
+        "checks": 82
+      },
+      "loadout_dash": {
+        "execution": {
+          "phase": "test",
+          "workspace_cache_diagnostic_only": false,
+          "exit_code": 0,
+          "stderr_empty": true,
+          "test": "loadout_dash",
+          "changed_inputs": []
+        },
+        "inputs_current": true,
+        "inputs": {
+          "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+          "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+          "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+          "game/scripts/player_visual.gd": "33781ecd8f1435fcc10dfb8888b70f7963beae3d8e273dac2e40ba4bb52182ac",
+          "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+          "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+          "game/tests/loadout_dash.gd": "3b213499a960c5939cf0ac946c0cd2fe76b2e756d173630fff3b36b838e6e8a1",
+          "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+          "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+          "game/data/trial.json": "fa36a077671f60beca7b0100429d2de7aa510fecf9eee7b690edd77593c4bf2d",
+          "game/scripts/arena.gd": "f56f29507aa85bddab72eb2781a7ee7e1d3d34ae9856f13199320627b96d8108"
+        },
+        "checks": 11
+      },
+      "hit_block": {
+        "execution": {
+          "exit_code": 0,
+          "stderr_empty": true,
+          "changed_inputs": [],
+          "workspace_cache_diagnostic_only": false,
+          "phase": "test",
+          "test": "hit_block"
+        },
+        "inputs_current": true,
+        "inputs": {
+          "game/scripts/player_visual.gd": "33781ecd8f1435fcc10dfb8888b70f7963beae3d8e273dac2e40ba4bb52182ac",
+          "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+          "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+          "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+          "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+          "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+          "game/tests/hit_block.gd": "03dc0694e5abe8b67aba9fbda10a7534a8482673565c5632dbed8aecf519fb9f",
+          "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+          "game/data/trial.json": "fa36a077671f60beca7b0100429d2de7aa510fecf9eee7b690edd77593c4bf2d",
+          "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+          "game/scripts/arena.gd": "f56f29507aa85bddab72eb2781a7ee7e1d3d34ae9856f13199320627b96d8108"
+        },
+        "checks": 20
+      },
+      "review": {
+        "execution": {
+          "exit_code": 0,
+          "changed_inputs": [],
+          "stderr_empty": false,
+          "test": "spring_plate_v1",
+          "phase": "review",
+          "workspace_cache_diagnostic_only": true
+        },
+        "inputs_current": true,
+        "inputs": {
+          "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+          "game/tests/review_spring_plate_v1.gd": "f285d1d9947844142e0ffcf50b933a991be890fb9205887d5c1204040bdcdd7c",
+          "game/scripts/player_visual.gd": "33781ecd8f1435fcc10dfb8888b70f7963beae3d8e273dac2e40ba4bb52182ac",
+          "game/data/trial.json": "fa36a077671f60beca7b0100429d2de7aa510fecf9eee7b690edd77593c4bf2d",
+          "game/scripts/arena.gd": "f56f29507aa85bddab72eb2781a7ee7e1d3d34ae9856f13199320627b96d8108",
+          "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+          "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+          "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+          "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+          "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+          "game/tests/review_staff_visual.gd": "e559078a12b869d65cbadd88f141a9ced2cb60588a2067ae44a80406474c8839",
+          "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d"
+        }
+      }
+    },
+    "wire_radius_max_error_m": 2.01016664511805e-08,
+    "anchor_max_error_m": 0.0,
+    "minimum_guide_overlap_m": 0.012499988079071,
+    "blender_reopen_passed": true,
+    "review_js_syntax_passed": true,
+    "image_size_integrity_passed": true,
+    "browser_interaction_tested": false
+  },
+  "integration_scope": {
+    "passed": true,
+    "changed_arena_functions": [
+      "reset_arena",
+      "begin_cast",
+      "tick_windup",
+      "cancel_summon_assemblies",
+      "start_dash"
+    ],
+    "added_arena_functions": [
+      "begin_spring_plate"
+    ],
+    "removed_arena_functions": [],
+    "byte_identical_to_pre_task": {
+      "player_visual.gd": true,
+      "summon_assembly.gd": true,
+      "hud.gd": true
+    },
+    "spring_dash_config_unchanged": true,
+    "concurrent_non_art_config_changes_preserved": {
+      "bolt_cutter": {
+        "upkeep_per_second": [
+          5,
+          2
+        ]
+      },
+      "grinder": {
+        "upkeep_per_second": [
+          5,
+          2
+        ]
+      },
+      "chainsaw": {
+        "upkeep_per_second": [
+          5,
+          2
+        ]
+      }
+    },
+    "current_test_input_mismatches": {
+      "spring_plate_v1": [],
+      "loadout_dash": [],
+      "review": []
+    },
+    "note": "Tool upkeep changed concurrently after the task snapshot. Spring art does not edit trial.json; current validation inputs include and preserve that change."
+  },
+  "audio": {
+    "reused_existing": true,
+    "new_generation": false,
+    "path": "game/audio/mechanical_impact.wav",
+    "sha256": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+    "channels": 2,
+    "sample_width_bytes": 2,
+    "sample_rate": 44100,
+    "duration_seconds": 0.4549886621315193,
+    "peak": 0.79998779296875,
+    "playback_pitch": 1.65,
+    "playback_volume_db": -19,
+    "trigger": "Exactly once on successful launch; existing mute and cue pool",
+    "listening_review_performed": false
+  },
+  "capture_scope": "One separately lit mechanism inspection at 240Hz; six actual 60Hz arena cases in normal game lighting. Captures use manual visual advancement to avoid render-time variation; arena movement/release/cost logic runs normally.",
+  "visually_inspected_frames": [
+    "mechanism/035.jpg",
+    "mechanism/062.jpg",
+    "dash/014.jpg",
+    "native/014.jpg",
+    "cancel/012.jpg",
+    "raised/014.jpg"
+  ],
+  "limits": [
+    "Cosmetic springs and fragments; no physics or collision changes.",
+    "Existing player cast/dash animation is retained; feet are not constrained to the moving deck.",
+    "Flat and raised floor anchors checked; whole-footprint clearance at arbitrary edges is not validated.",
+    "Simple PBR materials; no new worn texture bake or final performance budget.",
+    "The 240Hz mechanism sequence adds inspection lighting. Six arena sequences retain game lighting.",
+    "Review captures are silent; the existing mechanical cue trigger and mute were tested without listening review."
+  ],
+  "hashes": {
+    "game/scripts/arena.gd": "f56f29507aa85bddab72eb2781a7ee7e1d3d34ae9856f13199320627b96d8108",
+    "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49",
+    "game/scripts/spring_plate.gd.uid": "af2d76493681eaf65a54e9881763cf539efff8a37330170440001a071c0e7f46",
+    "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+    "game/assets/props/spring_dash_v1/spring_plate.glb.import": "ee8e0095c10816da0bedc4e64869523c63d4399c2b7a89888f757aad2de2ea02",
+    "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+    "game/tests/spring_plate_v1.gd": "c9b3ba37ae62b9d8480514fc85964082e5f8eba9e885c657d02d04468091b82a",
+    "game/tests/review_spring_plate_v1.gd": "f285d1d9947844142e0ffcf50b933a991be890fb9205887d5c1204040bdcdd7c",
+    "assets/props/spring_dash_v1/authoring/spring_plate.blend": "423f4df5fa8bfd58fcde675989d00dbabcf27951b4e50417b031f2d4e18bc441",
+    "assets/props/spring_dash_v1/exports/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+    "assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+    "assets/props/spring_dash_v1/README.md": "9f88b60400f6bfe970153218da474971ba9bb43c5a0c847565dd0c87e1e9fc6b",
+    "tools/build_spring_dash_v1.py": "1d29e3036ae9a19f6162a3b66acee9e9875d1a688a6ae7530fe9230c1d29d60b",
+    "tools/validate_spring_dash_source_v1.py": "b738613831787942874ab6479952f1c16f1ca042f0c43fe800ebf6115b4dae21",
+    "tools/run_spring_dash_v1.ps1": "c4451c67b013c042d8673c7fccf17ca632726807e089ea441d5ae3c6ce1f1a5f",
+    "tools/package_spring_dash_v1.py": "63e1d0ace9c65ae74384e2ac4e3fb0f034321057abcb859148fc98d473ec1028",
+    "reports/spring_dash_v1/review.html": "30cd47b9a45125e5eda2ec33c2a658e63558b1b5283a9364e855b50413892c4d",
+    "reports/spring_dash_v1/capture_hashes.json": "788320771b333e071c6dbf942def4203f5ea38b3ef98d587de7215a31f8c495c"
+  }
+}

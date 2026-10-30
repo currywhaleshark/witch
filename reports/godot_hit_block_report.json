@@ -18,6 +18,7 @@
     "a blocked hit deals nothing and keeps the windup",
     "the attack lands through a blocked hit",
     "a failed block still stuns while the shield is up",
+    "the shield runs for its level's duration",
     "the shield drops after its duration",
     "an enemy swing triggers hit recovery in play"
   ],

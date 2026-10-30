@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "saved_meshes": 29,
+  "materials": 6,
+  "source_and_glb_triangles": 5964,
+  "no_rig_or_animation": true,
+  "runtime_copy_identical": true,
+  "blend_sha256": "423f4df5fa8bfd58fcde675989d00dbabcf27951b4e50417b031f2d4e18bc441",
+  "glb_sha256": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+  "runtime_coils": "Runtime uses a new helix pitch with circular wire section; end caps add 8 triangles across the two coils."
+}

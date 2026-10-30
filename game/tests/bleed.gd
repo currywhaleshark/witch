@@ -68,7 +68,7 @@ func run() -> void:
 	var bleed: Dictionary = arena.config.bleed
 	check(bleed.growth == "B", "the chosen growth B is the default")
 
-	check(arena.config.r_slot_options.has("chainsaw") and arena.rules.skills.chainsaw.kind == "tool", "the chainsaw is a tool the R slot can carry")
+	check(arena.rules.skills.chainsaw.kind == "tool", "the chainsaw is a tool any slot can carry")
 	await fresh()
 	check(arena.state.active_tool == "chainsaw", "pressing R runs the chainsaw")
 	var max_hp: float = arena.enemies.t0.max_hp
@@ -155,14 +155,15 @@ func run() -> void:
 	check(plan_b5.seconds > plan_b4.seconds and plan_b9.seconds > plan_b5.seconds, "growth B: every level lengthens the bleed")
 
 	await fresh()
+	var r_binding: String = arena.state.bindings.r
+	arena.build.set_level(5)
+	arena.build.change_skill("chainsaw", 1)
+	check(arena.config.chainsaw_level == 2 and arena.state.bindings.r == r_binding, "the skill tree raises the chainsaw level and keeps the R slot")
+	arena.build.reset_skills()
+	arena.build.set_level(1)
 	var key = InputEventKey.new()
 	key.physical_keycode = KEY_F9
 	key.pressed = true
-	key.shift_pressed = true
-	var r_binding: String = arena.state.bindings.r
-	root.push_input(key, true)
-	check(arena.config.chainsaw_level == arena.config.chainsaw_level_steps[1] and arena.state.bindings.r == r_binding, "Shift+F9 cycles the chainsaw level and keeps the R slot")
-	key.shift_pressed = false
 	key.ctrl_pressed = true
 	root.push_input(key, true)
 	check(arena.config.bleed.growth == "B", "Ctrl+F9 switches the bleed growth between A and B")

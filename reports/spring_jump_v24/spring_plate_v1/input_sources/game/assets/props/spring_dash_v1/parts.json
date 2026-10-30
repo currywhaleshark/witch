@@ -1,0 +1,319 @@
+{
+  "id": "spring_dash_v1",
+  "origin": "ground below launch position",
+  "forward": "-Z",
+  "deck_pivot": [
+    0,
+    0.115,
+    0
+  ],
+  "coil": {
+    "radius": 0.066,
+    "wire_radius": 0.009,
+    "turns": 3.5,
+    "steps": 84,
+    "sides": 7,
+    "bottom_y": 0.034,
+    "closed_height": 0.07,
+    "open_height": 0.255
+  },
+  "parts": [
+    {
+      "name": "foundation",
+      "role": "base",
+      "delay": 0.0,
+      "pivot": [
+        0,
+        0.02,
+        0
+      ]
+    },
+    {
+      "name": "side_rail_L",
+      "role": "base",
+      "delay": 0.04,
+      "pivot": [
+        -0.28,
+        0.05,
+        0
+      ]
+    },
+    {
+      "name": "guide_sleeve_L",
+      "role": "base",
+      "delay": 0.1,
+      "pivot": [
+        -0.28,
+        0.025,
+        0
+      ]
+    },
+    {
+      "name": "guide_middle_L",
+      "role": "guide_mid",
+      "delay": 0.16,
+      "pivot": [
+        -0.28,
+        0.07,
+        0
+      ]
+    },
+    {
+      "name": "guide_rod_L",
+      "role": "guide_top",
+      "delay": 0.2,
+      "pivot": [
+        -0.28,
+        0.105,
+        0
+      ]
+    },
+    {
+      "name": "side_rail_R",
+      "role": "base",
+      "delay": 0.04,
+      "pivot": [
+        0.28,
+        0.05,
+        0
+      ]
+    },
+    {
+      "name": "guide_sleeve_R",
+      "role": "base",
+      "delay": 0.1,
+      "pivot": [
+        0.28,
+        0.025,
+        0
+      ]
+    },
+    {
+      "name": "guide_middle_R",
+      "role": "guide_mid",
+      "delay": 0.16,
+      "pivot": [
+        0.28,
+        0.07,
+        0
+      ]
+    },
+    {
+      "name": "guide_rod_R",
+      "role": "guide_top",
+      "delay": 0.2,
+      "pivot": [
+        0.28,
+        0.105,
+        0
+      ]
+    },
+    {
+      "name": "foot_0",
+      "role": "base",
+      "delay": 0.025,
+      "pivot": [
+        -0.24,
+        0.01,
+        -0.3
+      ]
+    },
+    {
+      "name": "foot_1",
+      "role": "base",
+      "delay": 0.025,
+      "pivot": [
+        0.24,
+        0.01,
+        -0.3
+      ]
+    },
+    {
+      "name": "foot_2",
+      "role": "base",
+      "delay": 0.025,
+      "pivot": [
+        -0.24,
+        0.01,
+        0.3
+      ]
+    },
+    {
+      "name": "foot_3",
+      "role": "base",
+      "delay": 0.025,
+      "pivot": [
+        0.24,
+        0.01,
+        0.3
+      ]
+    },
+    {
+      "name": "spring_seat_L",
+      "role": "base",
+      "delay": 0.08,
+      "pivot": [
+        -0.16,
+        0.034,
+        0
+      ]
+    },
+    {
+      "name": "spring_L",
+      "role": "coil",
+      "delay": 0.13,
+      "pivot": [
+        -0.16,
+        0.034,
+        0
+      ]
+    },
+    {
+      "name": "spring_cap_L",
+      "role": "deck",
+      "delay": 0.23,
+      "pivot": [
+        -0.16,
+        0.107,
+        0
+      ]
+    },
+    {
+      "name": "spring_seat_R",
+      "role": "base",
+      "delay": 0.08,
+      "pivot": [
+        0.16,
+        0.034,
+        0
+      ]
+    },
+    {
+      "name": "spring_R",
+      "role": "coil",
+      "delay": 0.13,
+      "pivot": [
+        0.16,
+        0.034,
+        0
+      ]
+    },
+    {
+      "name": "spring_cap_R",
+      "role": "deck",
+      "delay": 0.23,
+      "pivot": [
+        0.16,
+        0.107,
+        0
+      ]
+    },
+    {
+      "name": "deck_carriage",
+      "role": "deck",
+      "delay": 0.24,
+      "pivot": [
+        0,
+        0.115,
+        0
+      ]
+    },
+    {
+      "name": "tread_0",
+      "role": "deck",
+      "delay": 0.28,
+      "pivot": [
+        -0.174,
+        0.13,
+        0
+      ]
+    },
+    {
+      "name": "tread_1",
+      "role": "deck",
+      "delay": 0.30500000000000005,
+      "pivot": [
+        0,
+        0.13,
+        0
+      ]
+    },
+    {
+      "name": "tread_2",
+      "role": "deck",
+      "delay": 0.33,
+      "pivot": [
+        0.174,
+        0.13,
+        0
+      ]
+    },
+    {
+      "name": "latch_L",
+      "role": "latch",
+      "delay": 0.19,
+      "pivot": [
+        -0.306,
+        0.054,
+        0.16
+      ]
+    },
+    {
+      "name": "latch_R",
+      "role": "latch",
+      "delay": 0.19,
+      "pivot": [
+        0.306,
+        0.054,
+        0.16
+      ]
+    },
+    {
+      "name": "power_core",
+      "role": "base",
+      "delay": 0.08,
+      "pivot": [
+        0,
+        0.05,
+        0.338
+      ]
+    },
+    {
+      "name": "launch_mark_0",
+      "role": "deck",
+      "delay": 0.32,
+      "pivot": [
+        -0.11,
+        0.147,
+        -0.235
+      ]
+    },
+    {
+      "name": "launch_mark_1",
+      "role": "deck",
+      "delay": 0.32,
+      "pivot": [
+        0,
+        0.147,
+        -0.235
+      ]
+    },
+    {
+      "name": "launch_mark_2",
+      "role": "deck",
+      "delay": 0.32,
+      "pivot": [
+        0.11,
+        0.147,
+        -0.235
+      ]
+    }
+  ],
+  "triangles": 5964,
+  "part_count": 29,
+  "materials": 6,
+  "launch_seconds": 0.085,
+  "hold_seconds": 0.055,
+  "dissolve_seconds": 0.24,
+  "source": "original Blender authoring; no Tripo regeneration"
+}

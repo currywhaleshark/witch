@@ -128,17 +128,19 @@ func run() -> void:
 	var mana: float = arena.state.mana
 	arena.request_slot("w", {"ground": [2, 0, 0]})
 	arena.tick_windup(5.0)
-	check(is_equal_approx(mana - arena.state.mana, 15.0) and arena.state.cooldowns.automaton == 4.0, "A and B pay the full cost and cooldown")
+	check(is_equal_approx(mana - arena.state.mana, 15.0) and arena.state.cooldowns.automaton == float(arena.config.automaton_nodes.A.cooldown_seconds), "A pays the full mana but comes back sooner")
+	await fresh("B")
+	mana = arena.state.mana
+	arena.request_slot("w", {"ground": [2, 0, 0]})
+	arena.tick_windup(5.0)
+	check(is_equal_approx(mana - arena.state.mana, 15.0) and arena.state.cooldowns.automaton == 4.0, "B pays the skill's full cost and cooldown")
 
 	await fresh("base")
-	var key = InputEventKey.new()
-	key.physical_keycode = KEY_N
-	key.pressed = true
 	var order: Array = []
-	for i in 3:
-		root.push_input(key, true)
-		order.append(arena.config.automaton_node)
-	check(order == ["A", "B", "base"] and arena.config.shield_level == 1.0 and arena.config.automaton_level == 1.0, "N cycles the automaton node and nothing else")
+	for choice in ["A", "B", "base"]:
+		arena.build.set_node(choice)
+		order.append([arena.config.automaton_node, arena.rules.skills.automaton.mana_cost])
+	check(order == [["A", 15.0], ["B", 15.0], ["base", float(arena.config.automaton_nodes.base.mana_cost)]] and arena.config.shield_level == 1.0 and arena.config.automaton_level == 1.0, "the skill tree picks the automaton node and its cost, nothing else")
 
 	arena.log_dir = OS.get_user_data_dir().path_join("automaton_node_log_test")
 	for arg in OS.get_cmdline_user_args():

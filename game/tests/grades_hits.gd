@@ -76,16 +76,13 @@ func run() -> void:
 	arena.config.automaton_level = 1.0
 
 	await fresh()
-	var lv_key = InputEventKey.new()
-	lv_key.physical_keycode = KEY_F10
-	lv_key.pressed = true
-	lv_key.shift_pressed = true
-	root.push_input(lv_key, true)
-	check(arena.config.automaton_level == arena.config.summon_level_steps[1] and arena.config.shield_level == 1, "Shift+F10 cycles the automaton level, not the shield")
-	lv_key.shift_pressed = false
-	lv_key.ctrl_pressed = true
-	root.push_input(lv_key, true)
-	check(arena.config.turret_level == arena.config.summon_level_steps[1], "Ctrl+F10 cycles the turret level")
+	arena.build.set_level(10)
+	arena.build.change_skill("automaton", 4)
+	check(arena.config.automaton_level == 5 and arena.config.shield_level == 1, "the skill tree raises the automaton level, not the shield")
+	arena.build.change_skill("turret", 4)
+	check(arena.config.turret_level == 5, "the skill tree raises the turret level")
+	arena.build.reset_skills()
+	arena.build.set_level(1)
 	arena.config.automaton_level = 1.0
 	arena.config.turret_level = 1.0
 

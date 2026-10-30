@@ -14,8 +14,9 @@
     "B: a fourth replaces the oldest, so three stay",
     "B: the replaced one breaks apart quietly, not as a loss or a blast",
     "an automaton keeps the node it was summoned with",
-    "A and B pay the full cost and cooldown",
-    "N cycles the automaton node and nothing else",
+    "A pays the full mana but comes back sooner",
+    "B pays the skill's full cost and cooldown",
+    "the skill tree picks the automaton node and its cost, nothing else",
     "the A5 log records the automaton node"
   ],
   "engine": "4.6.2-stable (official)",

@@ -52,7 +52,7 @@ func run() -> void:
 
 	arena.request_slot("q", {})
 	arena.state.mana = 1.0
-	await step(20)
+	await step(int(1.0 / arena.rules.skills.bolt_cutter.upkeep_per_second * 60) + 5)
 	check(arena.state.active_tool == null and arena.probe.counts.tool_auto_releases == 1, "tool auto release at zero mana is counted")
 	check(arena.skill_gap() and arena.probe.gap_count == 1, "zero mana without a tool starts a skill gap")
 	arena.request_slot("rmb", {"ground": [3, 0, 3]})

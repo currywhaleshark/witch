@@ -1,7 +1,7 @@
 {
   "checks": [
     "the chosen growth B is the default",
-    "the chainsaw is a tool the R slot can carry",
+    "the chainsaw is a tool any slot can carry",
     "pressing R runs the chainsaw",
     "a chainsaw hit deals its direct damage and starts one bleed",
     "one bleed takes the normal grade's share of max HP over its run, then ends",
@@ -22,7 +22,7 @@
     "growth B: level lengthens the bleed at the same rate and lets later stacks keep more",
     "growth B: later stacks gain weight only at every fifth level",
     "growth B: every level lengthens the bleed",
-    "Shift+F9 cycles the chainsaw level and keeps the R slot",
+    "the skill tree raises the chainsaw level and keeps the R slot",
     "Ctrl+F9 switches the bleed growth between A and B",
     "the log keeps bleed damage as its own source, apart from the cut",
     "the log records bleeds applied, the chainsaw level and the growth"

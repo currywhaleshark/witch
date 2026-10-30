@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "glb_sha256": "46acf4f33d687a8cdd21ee826b7ecd0ff233f45d648086e46b07ba4f8081e1c0",
+  "bytes": 313612,
+  "carrier": "Outfit_Buttons_v7",
+  "frames": 49,
+  "clip": "combat_spring_jump_v24",
+  "source_sha256": "5e63b1000425287f5ac50f9889c0ef45e2b3bf8f6f6c574b820016a8b2e5c95a"
+}

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\yurib\Documents\New project\witch\tools\finalize_spring_jump_v24.py", line 50, in <module>
+    assert not failures,failures[:4]
+           ^^^^^^^^^^^^
+AssertionError: [[1.5, 'pose', 0, 0.4974003126854362], [37.5, 'shoe_floor', -0.005226523638825399], [48.5, 'pose', 0, 0.49727195334359486]]
+
+Error: script failed, file: 'tools/finalize_spring_jump_v24.py', exiting.

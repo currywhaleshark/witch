@@ -11,7 +11,7 @@
     "the turret's real shots gain ballistics",
     "the plain automaton's punch gains neither passive",
     "the B automaton's saw cuts with the bonus",
-    "J cycles cutting precision and K ballistics, each on its own",
+    "the skill tree raises each passive on its own",
     "the A5 log records both passive levels"
   ],
   "engine": "4.6.2-stable (official)",

@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "R deploys the shield as a move-cast skill",
+    "a hit below the stun threshold hurts without interrupting",
+    "attack windup starts",
+    "an unblocked heavy hit cancels the windup with hit recovery",
+    "the cancelled attack never lands",
+    "a cancelled cast spends no mana or cooldown",
+    "hit recovery cancels click movement",
+    "the witch stands still during hit recovery",
+    "a held move resumes after hit recovery",
+    "attack and cast speed leave hit recovery alone",
+    "hit recovery speed shortens the stun above its floor",
+    "block chance grows with shield level and dexterity",
+    "block chance stops at its cap",
+    "nothing is blocked before the shield is raised",
+    "raising the shield is instant and spends its cost",
+    "a blocked hit deals nothing and keeps the windup",
+    "the attack lands through a blocked hit",
+    "a failed block still stuns while the shield is up",
+    "the shield drops after its duration",
+    "an enemy swing triggers hit recovery in play"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

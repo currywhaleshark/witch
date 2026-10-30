@@ -133,7 +133,8 @@ func run() -> void:
 	arena.damage_player(HEAVY)
 	check(arena.hp < hp and arena.stun_time > 0, "a failed block still stuns while the shield is up")
 	force_block(true)
-	await step(int(arena.rules.skills.shield.duration_seconds * 60) + 2)
+	check(is_equal_approx(arena.shield_time, arena.shield_duration()) or arena.shield_time < arena.shield_duration(), "the shield runs for its level's duration")
+	await step(int(arena.shield_duration() * 60) + 2)
 	hp = arena.hp
 	arena.damage_player(HEAVY)
 	check(arena.shield_time == 0 and arena.hp < hp, "the shield drops after its duration")

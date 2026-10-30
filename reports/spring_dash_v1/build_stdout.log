@@ -1,0 +1,68 @@
+00:06.219  image.write      | ERROR OpenImageIO write failed: Could not open file "C:\Users\yurib\.thumbnails\large\blender_1620_213d741f7104edda29420cd3415790bb.png.png"
+Info: Saved as "spring_plate.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.1\5.1\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+23:25:00 | INFO: Starting glTF 2.0 export
+23:25:00 | INFO: Extracting primitive: foundation_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: side_rail_L_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: guide_sleeve_L_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: guide_middle_L_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: guide_rod_L_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: side_rail_R_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: guide_sleeve_R_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: guide_middle_R_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: guide_rod_R_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: foot_0_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: foot_1_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: foot_2_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: foot_3_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: spring_seat_L_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: spring_L_mesh
+23:25:00 | INFO: Primitives created: 1
+23:25:00 | INFO: Extracting primitive: spring_cap_L_mesh
+23:25:00 | INFO: Primitives created: 1
+23:25:00 | INFO: Extracting primitive: spring_seat_R_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: spring_R_mesh
+23:25:00 | INFO: Primitives created: 1
+23:25:00 | INFO: Extracting primitive: spring_cap_R_mesh
+23:25:00 | INFO: Primitives created: 1
+23:25:00 | INFO: Extracting primitive: deck_carriage_mesh
+23:25:00 | INFO: Primitives created: 2
+23:25:00 | INFO: Extracting primitive: tread_0_mesh
+23:25:00 | INFO: Primitives created: 3
+23:25:00 | INFO: Extracting primitive: tread_1_mesh
+23:25:00 | INFO: Primitives created: 3
+23:25:00 | INFO: Extracting primitive: tread_2_mesh
+23:25:01 | INFO: Primitives created: 3
+23:25:01 | INFO: Extracting primitive: latch_L_mesh
+23:25:01 | INFO: Primitives created: 2
+23:25:01 | INFO: Extracting primitive: latch_R_mesh
+23:25:01 | INFO: Primitives created: 2
+23:25:01 | INFO: Extracting primitive: power_core_mesh
+23:25:01 | INFO: Primitives created: 2
+23:25:01 | INFO: Extracting primitive: launch_mark_0_mesh
+23:25:01 | INFO: Primitives created: 1
+23:25:01 | INFO: Extracting primitive: launch_mark_1_mesh
+23:25:01 | INFO: Primitives created: 1
+23:25:01 | INFO: Extracting primitive: launch_mark_2_mesh
+23:25:01 | INFO: Primitives created: 1
+23:25:01 | INFO: Finished glTF 2.0 export in 0.23399853706359863 s
+
+SPRING_PLATE_BUILD_COMPLETE 29 5964
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

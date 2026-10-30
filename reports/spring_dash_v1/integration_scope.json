@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "changed_arena_functions": [
+    "reset_arena",
+    "begin_cast",
+    "tick_windup",
+    "cancel_summon_assemblies",
+    "start_dash"
+  ],
+  "added_arena_functions": [
+    "begin_spring_plate"
+  ],
+  "removed_arena_functions": [],
+  "byte_identical_to_pre_task": {
+    "player_visual.gd": true,
+    "summon_assembly.gd": true,
+    "hud.gd": true
+  },
+  "spring_dash_config_unchanged": true,
+  "concurrent_non_art_config_changes_preserved": {
+    "bolt_cutter": {
+      "upkeep_per_second": [
+        5,
+        2
+      ]
+    },
+    "grinder": {
+      "upkeep_per_second": [
+        5,
+        2
+      ]
+    },
+    "chainsaw": {
+      "upkeep_per_second": [
+        5,
+        2
+      ]
+    }
+  },
+  "current_test_input_mismatches": {
+    "spring_plate_v1": [],
+    "loadout_dash": [],
+    "review": []
+  },
+  "note": "Tool upkeep changed concurrently after the task snapshot. Spring art does not edit trial.json; current validation inputs include and preserve that change."
+}

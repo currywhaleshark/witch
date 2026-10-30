@@ -1,0 +1,12 @@
+{
+  "game/data/trial.json": "fa36a077671f60beca7b0100429d2de7aa510fecf9eee7b690edd77593c4bf2d",
+  "game/assets/props/spring_dash_v1/parts.json": "d4bcef3e0d77de3f8fb6eb6e47aa06b9c05c8c7c2b8e951ab161b545e6fb5a54",
+  "game/scripts/player_visual.gd": "33781ecd8f1435fcc10dfb8888b70f7963beae3d8e273dac2e40ba4bb52182ac",
+  "game/scripts/combat_rules.gd": "f303d5e55880733d9d181277fa5f0c50e4211ddf5a5ee281c04eb375bdb0cf91",
+  "game/assets/props/spring_dash_v1/spring_plate.glb": "8726592475314d22d07561a0c45dd04dd8093ba9e2e154c6818c3dee85170a9b",
+  "game/scripts/field_map.gd": "c4ccaca835cb4cac6cf1f6e0453236c27a59f6ee9716132ad1c505a5ef40429d",
+  "game/scripts/arena.gd": "f56f29507aa85bddab72eb2781a7ee7e1d3d34ae9856f13199320627b96d8108",
+  "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+  "game/scripts/summon_assembly.gd": "df84d4f7f10fc7e9a850043265b238f80138041104d8b4e4b8ef82b580706a7d",
+  "game/scripts/spring_plate.gd": "964617e4957cb374e2b11e5f9bc095dae936b24a03ad20dbed3a418452645e49"
+}

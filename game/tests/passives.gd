@@ -126,14 +126,14 @@ func run() -> void:
 	arena.config.automaton_node = "base"
 
 	await fresh(0.0, 0.0)
-	var key = InputEventKey.new()
-	key.pressed = true
+	arena.build.set_level(10)
 	var order: Array = []
-	for code in [KEY_J, KEY_J, KEY_K, KEY_J]:
-		key.physical_keycode = code
-		root.push_input(key, true)
+	for change in [["cutting_precision", 5], ["ballistics", 3], ["cutting_precision", -2]]:
+		arena.build.change_skill(change[0], change[1])
 		order.append([arena.config.passive_levels.cutting_precision, arena.config.passive_levels.ballistics])
-	check(order == [[5.0, 0.0], [10.0, 0.0], [10.0, 5.0], [0.0, 5.0]], "J cycles cutting precision and K ballistics, each on its own")
+	check(order == [[5.0, 0.0], [5.0, 3.0], [3.0, 3.0]], "the skill tree raises each passive on its own")
+	arena.build.reset_skills()
+	arena.build.set_level(1)
 
 	arena.log_dir = OS.get_user_data_dir().path_join("passives_log_test")
 	for arg in OS.get_cmdline_user_args():

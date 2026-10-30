@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "workspace_cache_diagnostic_only": true,
+  "test": "spring_jump_v24",
+  "phase": "review",
+  "changed_inputs": [],
+  "stderr_empty": false
+}

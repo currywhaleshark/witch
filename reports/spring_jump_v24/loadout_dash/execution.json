@@ -1,0 +1,8 @@
+{
+  "workspace_cache_diagnostic_only": false,
+  "changed_inputs": [],
+  "phase": "test",
+  "stderr_empty": true,
+  "exit_code": 0,
+  "test": "loadout_dash"
+}

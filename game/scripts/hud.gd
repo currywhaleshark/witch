@@ -13,7 +13,7 @@ const RED = Color("ee987d")
 const KEYS = ["LMB", "RMB", "Q", "W", "E", "R"]
 const POTION_COLORS = {"hp": Color("ee987d"), "mp": Color("8dd8c4"), "both": Color("c9a0dc"), "speed": Color("a8d672")}
 # Slot icons follow the bound skill, not the slot position.
-const ICONS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8}
+const ICONS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8, "spring_dash": 9}
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -281,6 +281,15 @@ func icon(p: Vector2, kind: int, color: Color) -> void:
 			var plate = PackedVector2Array([p + Vector2(-14, -15), p + Vector2(14, -15), p + Vector2(14, 2), p + Vector2(0, 17), p + Vector2(-14, 2), p + Vector2(-14, -15)])
 			draw_polyline(plate, color, 2)
 			draw_line(p + Vector2(0, -15), p + Vector2(0, 17), color, 2)
+		9:
+			# Spring dash: a coiled spring behind a forward arrow.
+			var coil := PackedVector2Array()
+			for k in 9:
+				coil.append(p + Vector2(-16 + k * 2.5, 6 if k % 2 == 0 else -6))
+			draw_polyline(coil, color, 2)
+			draw_line(p + Vector2(4, 0), p + Vector2(16, 0), color, 3)
+			draw_line(p + Vector2(16, 0), p + Vector2(10, -6), color, 3)
+			draw_line(p + Vector2(16, 0), p + Vector2(10, 6), color, 3)
 		8:
 			# Chainsaw bar with teeth along its edge.
 			draw_line(p + Vector2(-16, 14), p + Vector2(-7, 5), color, 4)
