@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "each shotgun level adds 3% damage",
+    "below Lv5 the shotgun does not knock back",
+    "from Lv5 a hit shoves the enemy straight away from her",
+    "heavy enemies go half as far",
+    "bosses do not budge",
+    "blueprint levels count toward the Lv5 knockback"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

@@ -1078,6 +1078,24 @@ func begin_shotgun_visual(target: Vector3, at_enemy: bool = false) -> void:
 	shotgun_assembly.initialize(self)
 	shotgun_assembly.global_transform=ShotgunGeometry.frame(self,target,at_enemy)
 
+func knock_back(id: String) -> void:
+	# Shotgun Lv5+ (the firearm tree is safest at range): a hit shoves the enemy straight away
+	# from her. Heavy enemies go half as far, bosses and charging brutes not at all.
+	var skill: Dictionary = rules.skills.shotgun
+	if not enemies.has(id) or config.shotgun_level < float(skill.knockback_level):
+		return
+	var enemy: Dictionary = enemies[id]
+	if config.enemy_types[enemy.kind].has("boss") or enemy.get("charging", 0.0) > 0:
+		return
+	var away: Vector3 = enemy.body.position - player.position
+	away.y = 0.0
+	if away.length() < 0.01:
+		away = -player_model.global_basis.z
+	var distance: float = float(skill.knockback_distance) * (0.5 if enemy.heavy else 1.0)
+	enemy.knockback_dir = away.normalized()
+	enemy.knockback_left = distance
+	enemy.knockback_speed = distance / float(skill.knockback_seconds)
+
 func fire_shotgun(target: Vector3, at_enemy: bool = false) -> void:
 	var shot: Transform3D=ShotgunGeometry.frame(self,target,at_enemy)
 	if not is_instance_valid(shotgun_assembly): begin_shotgun_visual(target,at_enemy)
@@ -1087,7 +1105,8 @@ func fire_shotgun(target: Vector3, at_enemy: bool = false) -> void:
 	for id in enemies.keys():
 		if ShotgunGeometry.contains(self,shot,enemies[id].body):
 			struck.append(id)
-			strike(id,config.shot_damage,false,"witch","shotgun")
+			if strike(id,config.shot_damage,false,"witch","shotgun") != "miss":
+				knock_back(id)
 	var endpoints: Array[Vector3]=ShotgunGeometry.traces(self,shot)
 	# Unblocked traces end on the 8m circle around the witch; shorter ones hit a wall or floor.
 	var blocked: Array[bool]=[]
@@ -1956,6 +1975,13 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	enemy.shred = maxf(0, enemy.shred - dt)
 	enemy.flash = maxf(0, enemy.flash - dt)
 	enemy.model.scale = Vector3.ONE * enemy.size * (1.08 if enemy.flash > 0 else 1.0)
+	if enemy.get("knockback_left", 0.0) > 0.0:
+		# Knocked back: it slides away and neither steers nor advances its attack meanwhile.
+		var travel: float = minf(enemy.knockback_speed * dt, enemy.knockback_left)
+		enemy.body.velocity = enemy.knockback_dir * travel / dt
+		enemy.body.move_and_slide()
+		enemy.knockback_left -= travel
+		return
 	var type: Dictionary = config.enemy_types[enemy.kind]
 	var power: float = config.grades[enemy.grade].damage
 	var pace: float = config.enemy_speed * type.speed * config.grades[enemy.grade].speed * (slow_factor() if enemy.slow > 0 else 1.0)

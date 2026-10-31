@@ -183,7 +183,8 @@ func effect_note(id: String) -> String:
 		"chainsaw":
 			return "출혈 %.1f초" % arena.bleed_plan(0).seconds
 		"shotgun":
-			return "피해 +%d%%" % roundi(100 * (arena.skill_level_factor("shotgun") - 1.0))
+			var knock: float = float(arena.rules.skills.shotgun.knockback_level)
+			return "피해 +%d%% · %s" % [roundi(100 * (arena.skill_level_factor("shotgun") - 1.0)), "넉백" if arena.config.shotgun_level >= knock else "Lv%d 넉백" % knock]
 		"automaton", "turret":
 			return "명중 %d%% · 치명 %d%%" % [roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[id + "_level"] - 1), config.hit_min, config.hit_cap)), roundi(100 * arena.crit_chance(id))]
 		"production_efficiency":

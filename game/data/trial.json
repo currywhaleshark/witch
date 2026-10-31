@@ -131,7 +131,8 @@
   "bindings": {"lmb": "basic_attack", "rmb": "shotgun", "q": "bolt_cutter", "w": "automaton", "e": "turret", "r": "shield"},
   "skills": [
     {"id": "basic_attack", "name": "기본 타격", "kind": "aim", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 0, "range": 2.6, "release_ratio": 0.5},
-    {"id": "shotgun", "name": "산탄", "kind": "aim", "mana_cost": 10, "cooldown_seconds": 1.2, "upkeep_per_second": 0, "range": 8, "targeting": "direction", "cast_seconds": 0.25, "release_ratio": 0.5},
+    {"id": "shotgun", "name": "산탄", "kind": "aim", "mana_cost": 10, "cooldown_seconds": 1.2, "upkeep_per_second": 0, "range": 8, "targeting": "direction", "cast_seconds": 0.25, "release_ratio": 0.5,
+     "knockback_level": 5, "knockback_distance": 1.5, "knockback_seconds": 0.15},
     {"id": "bolt_cutter", "name": "볼트 커터", "kind": "tool", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 2, "range": 0, "while_moving": true,
      "attack_seconds": 0.95, "attack_damage": 34, "debuff": "slow", "debuff_seconds": 2},
     {"id": "grinder", "name": "그라인더", "kind": "tool", "mana_cost": 0, "cooldown_seconds": 0, "upkeep_per_second": 2, "range": 0, "while_moving": true,
