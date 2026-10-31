@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "failures": [],
+  "preserved_meshes": 29,
+  "preserved_actions": 63,
+  "body_rest_bones": 107,
+  "hair_bones": 8,
+  "samples": 73,
+  "max_weight_error": 4.876346793025732e-08,
+  "max_influences": 4,
+  "max_rotation_error_rad": 0.0,
+  "max_anchor_error_m": 0.0,
+  "source_sha256": "933b584f316c10169c58168b26c3f46efe7f561ac21661cb14e76a39c0d594fd",
+  "source_saved": false
+}

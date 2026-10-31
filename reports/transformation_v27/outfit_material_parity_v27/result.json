@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "form": "civilian",
+      "large_error_fraction": 0.00342261904761905,
+      "max_rgb_error": 0.556862767785788,
+      "mean_max_rgb_error": 0.00148897057097028,
+      "passed": true,
+      "pixels": 134400
+    },
+    {
+      "form": "transformed",
+      "large_error_fraction": 0.000870535714285714,
+      "max_rgb_error": 0.533333331346512,
+      "mean_max_rgb_error": 0.000227736929276337,
+      "passed": true,
+      "pixels": 134400
+    }
+  ],
+  "scope": "Actual game PBR outfit versus reveal preview at fully outgoing/incoming endpoints; identical fixed pose and camera. Includes imported metallic/roughness channel maps."
+}

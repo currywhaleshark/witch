@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": 7,
+  "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.068s\n\nOK\n",
+  "inputs": {
+    "tests/test_character_appearance.py": "ebcb0923e6933561836459530a296506771acd956acec8ea8976f3ed72da927b",
+    "tools/character_appearance.py": "b88ad768d7185d73f27cb4de07dd0f04573c8bfc867967d35e38e70cb176b44e",
+    "assets/characters/player/3d/config/modular_character.spec.json": "6acc25a8a62a56b259ba0f334b5662c563bbab98bec66acafa4766f25166d8ed"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1-modular-draft",
   "character_id": "player",
-  "status": "combat_prototype_v25_field_entry_transformation",
+  "status": "combat_prototype_v27_outfit_reveal_auxiliary_hair",
   "rig": {
     "id": "player_humanoid_v11",
     "asset": "exports/run_arm_v21/body_standard_v21.glb",
@@ -36,11 +36,18 @@
       "id": "semilong_v1",
       "body_preset": "standard_v1",
       "rig_id": "player_humanoid_v11",
-      "asset": "exports/run_arm_v21/hair_semilong_v21.glb",
+      "asset": "exports/transformation_v27/hair_semilong_v27.glb",
       "status": "validated",
-      "sha256": "e110830cc91de0a0c596d7568886eae91cfe6d92f31d8b1f2e5eee541bc65832",
+      "sha256": "11c5c3376569e01066e9015bda3f0eb9ab8627f9958f24272a2aa09ddfda16dc",
       "max_influences": 4,
-      "runtime_asset": "res://assets/characters/player/run_arm_v21/hair_semilong_v21.glb"
+      "runtime_asset": "res://assets/characters/player/transformation_v27/hair_semilong_v27.glb",
+      "auxiliary_hair": true,
+      "auxiliary_rig": "hair_semilong_v27",
+      "auxiliary_bones": 8,
+      "anchors": ["DEF-head", "DEF-chest"],
+      "motion_contract": "exports/transformation_v27/hair_contract.json",
+      "previous_asset": "exports/run_arm_v21/hair_semilong_v21.glb",
+      "validation_report": "reports/transformation_v27/delivery_manifest.json"
     },
     "twintails_v1": {
       "id": "twintails_v1",
@@ -252,16 +259,19 @@
     "runtime_contract": "game/assets/characters/player/run_arm_v21/runtime_contract.json",
     "delivery_manifest": "reports/run_arm_v21/integration/delivery_manifest.json",
     "field_entry": {
-      "report": "reports/transformation_v26/delivery_manifest.json",
+      "report": "reports/transformation_v27/delivery_manifest.json",
       "clip": "combat_transform_entry_v26",
       "runtime_contract": "game/assets/characters/player/transformation_v26/runtime_contract.json",
-      "previous_report": "reports/transformation_v25/delivery_manifest.json",
+      "previous_report": "reports/transformation_v26/delivery_manifest.json",
       "starting_form": "civilian",
       "ending_form": "transformed",
-      "preserves_body_hair_eyes": true,
-      "user_selection": "integrated_review_candidate",
+      "preserves_body_eyes_and_entry_clip": true,
+      "hair": "semilong_v27_auxiliary_rig",
+      "outfit_reveal_seconds": [2.12, 2.85],
+      "user_selection": "selected_for_current_prototype_2026-11-01",
+      "approval": "reports/transformation_v27/approval.json",
       "outfit_geometry": "unchanged_transformed_fit_v4",
-      "scope": "Entry and current runtime actions; no live cloth or arbitrary outfit contact guarantee."
+      "scope": "Progressive clothed reveal and six hair deform segments on two body anchors; v26 grasp/body clip unchanged. No live cloth or hair collision guarantee."
     }
   }
 }

@@ -1,0 +1,106 @@
+{
+  "ok": true,
+  "pass": false,
+  "errors": [
+    "Hair_Semilong_v7: 1 zero-area UV faces",
+    "z-fighting: Hair_Semilong_v7 (8 overlapping coplanar tri pairs)",
+    "floating/detached part in Hair_Semilong_v7 (13 verts at [-0.129, 0.04, 1.155])",
+    "floating/detached part in Hair_Semilong_v7 (15 verts at [0.009, 0.053, 1.391])",
+    "floating/detached part in Hair_Semilong_v7 (9 verts at [0.091, -0.081, 1.306])",
+    "floating/detached part in Hair_Semilong_v7 (10 verts at [0.129, 0.04, 1.156])"
+  ],
+  "warnings": [
+    "Hair_Semilong_v7: non-manifold edges=0 wire=1",
+    "Hair_Semilong_v7: duplicate verts=466 loose verts=0",
+    "1 parts fully enclosed, not touching (eyes/internals?): ['Hair_Semilong_v7']",
+    "asset lowest point z=1.1391 (not resting on ground plane z=0)"
+  ],
+  "ground_z": 1.1391,
+  "zfighting": [
+    {
+      "where": "Hair_Semilong_v7",
+      "tri_pairs": 8
+    }
+  ],
+  "floating": [
+    {
+      "object": "Hair_Semilong_v7",
+      "island_verts": 13,
+      "center": [
+        -0.129,
+        0.04,
+        1.155
+      ]
+    },
+    {
+      "object": "Hair_Semilong_v7",
+      "island_verts": 15,
+      "center": [
+        0.009,
+        0.053,
+        1.391
+      ]
+    },
+    {
+      "object": "Hair_Semilong_v7",
+      "island_verts": 9,
+      "center": [
+        0.091,
+        -0.081,
+        1.306
+      ]
+    },
+    {
+      "object": "Hair_Semilong_v7",
+      "island_verts": 10,
+      "center": [
+        0.129,
+        0.04,
+        1.156
+      ]
+    }
+  ],
+  "back_to_back": [],
+  "enclosed": [
+    {
+      "object": "Hair_Semilong_v7",
+      "island_verts": 17,
+      "center": [
+        -0.091,
+        -0.037,
+        1.355
+      ]
+    }
+  ],
+  "objects": {
+    "Hair_Semilong_v7": {
+      "verts": 19993,
+      "faces": 25209,
+      "tris": 25209,
+      "ngons": 0,
+      "boundary_edges": 15645,
+      "nonmanifold_edges": 0,
+      "wire_edges": 1,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 466,
+      "islands": 61,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "unweighted_verts": 0,
+      "verts_over_4_influences": 0,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 1,
+      "uv_overlap_pct": 0.25,
+      "uv_coverage_pct": 17.0
+    }
+  }
+}

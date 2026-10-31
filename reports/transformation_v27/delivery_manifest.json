@@ -1,0 +1,204 @@
+{
+  "id": "transformation_v27",
+  "generated_utc": "2026-10-31T16:07:54.126871+00:00",
+  "passed": true,
+  "status": "User-selected prototype presentation; integrated game default",
+  "approval": {
+    "date": "2026-11-01",
+    "user_statement": "좋아 변신 연출이랑 헤어 본 작업까지 커밋하자",
+    "selected_scope": "The current v27 progressive outfit transformation and auxiliary hair rig/motion, integrated with the preserved v26 grasp/body clip, are selected for the combat prototype and authorized for commit.",
+    "validation_manifest": "delivery_manifest.json",
+    "limits": "Recorded validation scope remains. This selection does not approve arbitrary cloth/hair collision, a new skirt simulation, a final performance budget, or unrelated combat/audio changes."
+  },
+  "default_game": "v26 body/grasp clip with v27 clothed reveal and independent hair rig",
+  "body_bones": 107,
+  "hair_bones": 8,
+  "hair_deform_segments": 6,
+  "hair_triangles": 25161,
+  "source_validation": {
+    "passed": true,
+    "failures": [],
+    "preserved_meshes": 29,
+    "preserved_actions": 63,
+    "body_rest_bones": 107,
+    "hair_bones": 8,
+    "samples": 73,
+    "max_weight_error": 4.876346793025732e-08,
+    "max_influences": 4,
+    "max_rotation_error_rad": 0.0,
+    "max_anchor_error_m": 0.0,
+    "source_sha256": "933b584f316c10169c58168b26c3f46efe7f561ac21661cb14e76a39c0d594fd",
+    "source_saved": false
+  },
+  "asset_qa": {
+    "passed": true,
+    "report": "qa_exported_hair.json",
+    "warnings": [
+      "Hair_Semilong_v27: duplicate verts=1408 loose verts=0",
+      "asset lowest point z=1.1868 (not resting on ground plane z=0)"
+    ]
+  },
+  "runtime_checks": 3167,
+  "appearance_checks": 7,
+  "gpu_material_comparisons": 2,
+  "gpu_captures": 663,
+  "capture_scope": "Actual arena 60Hz ticks captured at 30fps. Four entry views and five post-entry actions. Native entry uses the alley; detail views use the flat arena with its game lighting. No added studio lights. The attack target model alone is hidden for outfit visibility; targeting and hit logic remain live. Audio is muted for captures.",
+  "runs": {
+    "transformation_v27": {
+      "execution": {
+        "stderr": null,
+        "exit_code": 0,
+        "changed_inputs": []
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/data/trial.json": "699710B2ECB105834AC36AADDB46502D71DC1332704EA89246A1ECFEA84CD316",
+        "game/scripts/field_entry_transformation.gd": "3F376383B65753DE2B13B9C4E83247C675EE9EF10C9C06DF79907DEE4F1633FC",
+        "game/shaders/outfit_reveal.gdshader": "7C6B34A074B9509656C8E7B7D0D0199E165A7C5334CF3D499FAAA87EABFB4931",
+        "game/scripts/player_visual.gd": "C38359DB2E1BB69C9144199364B554D6F8892BC41C96290E1B2EFA58E30FE7C5",
+        "game/assets/characters/player/transformation_v27/hair_semilong_v27.glb": "11C5C3376569E01066E9015BDA3F0EB9AB8627F9958F24272A2AA09DDFDA16DC",
+        "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234AC744F024D7D3D714F64EE3D81BD777337D204A98AAF4C855A6B14F1D13",
+        "game/scripts/modular_character_runtime.gd": "6AEA0335540B74F2795E96BECFF0EC518BACBFEF088BD5A7FEFCE43AF4816060",
+        "game/assets/characters/player/transformation_v27/hair_contract.json": "18787DB93CC72DCF80E74D974E14180FCC9099542DCB214928DEF401F56D88E4",
+        "game/scripts/hair_motion.gd": "E334F0D285D2A324DDADE5F4C9660E000EE637C9401E15DC6545821F05C9FAD6",
+        "game/assets/characters/player/transformation_v26/combat_transform_entry_v26.glb": "9ABAEB5CCF3DA2EB853536FE0100C67B5ADD6A07486999B334FF0316EF0571E8",
+        "game/scripts/arena.gd": "D328672BA7535D65F2FDB03159851A132B71FE2FDE1C9B9287E360F8777F7B7E",
+        "game/scripts/outfit_reveal.gd": "11289457A87DAF5EAE3BC0FD83991369A17077275D57DA906DD5B81072234865"
+      },
+      "result": "reports/transformation_v27/transformation_v27/result.json"
+    },
+    "transformation_v27_regression": {
+      "execution": {
+        "exit_code": 0,
+        "changed_inputs": [],
+        "stderr": null
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/shaders/outfit_reveal.gdshader": "7C6B34A074B9509656C8E7B7D0D0199E165A7C5334CF3D499FAAA87EABFB4931",
+        "game/scripts/arena.gd": "D328672BA7535D65F2FDB03159851A132B71FE2FDE1C9B9287E360F8777F7B7E",
+        "game/assets/characters/player/transformation_v26/combat_transform_entry_v26.glb": "9ABAEB5CCF3DA2EB853536FE0100C67B5ADD6A07486999B334FF0316EF0571E8",
+        "game/scripts/modular_character_runtime.gd": "6AEA0335540B74F2795E96BECFF0EC518BACBFEF088BD5A7FEFCE43AF4816060",
+        "game/data/trial.json": "699710B2ECB105834AC36AADDB46502D71DC1332704EA89246A1ECFEA84CD316",
+        "game/scripts/hair_motion.gd": "E334F0D285D2A324DDADE5F4C9660E000EE637C9401E15DC6545821F05C9FAD6",
+        "game/assets/characters/player/transformation_v27/hair_contract.json": "18787DB93CC72DCF80E74D974E14180FCC9099542DCB214928DEF401F56D88E4",
+        "game/assets/characters/player/transformation_v27/hair_semilong_v27.glb": "11C5C3376569E01066E9015BDA3F0EB9AB8627F9958F24272A2AA09DDFDA16DC",
+        "game/scripts/field_entry_transformation.gd": "3F376383B65753DE2B13B9C4E83247C675EE9EF10C9C06DF79907DEE4F1633FC",
+        "game/scripts/outfit_reveal.gd": "11289457A87DAF5EAE3BC0FD83991369A17077275D57DA906DD5B81072234865",
+        "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234AC744F024D7D3D714F64EE3D81BD777337D204A98AAF4C855A6B14F1D13",
+        "game/scripts/player_visual.gd": "C38359DB2E1BB69C9144199364B554D6F8892BC41C96290E1B2EFA58E30FE7C5"
+      },
+      "result": "reports/transformation_v27/transformation_v27_regression/result.json"
+    },
+    "outfit_material_parity_v27": {
+      "execution": {
+        "exit_code": 0,
+        "stderr": null,
+        "changed_inputs": []
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/scripts/outfit_reveal.gd": "11289457A87DAF5EAE3BC0FD83991369A17077275D57DA906DD5B81072234865",
+        "game/scripts/modular_character_runtime.gd": "6AEA0335540B74F2795E96BECFF0EC518BACBFEF088BD5A7FEFCE43AF4816060",
+        "game/shaders/outfit_reveal.gdshader": "7C6B34A074B9509656C8E7B7D0D0199E165A7C5334CF3D499FAAA87EABFB4931",
+        "game/assets/characters/player/transformation_v27/hair_contract.json": "18787DB93CC72DCF80E74D974E14180FCC9099542DCB214928DEF401F56D88E4",
+        "game/data/trial.json": "699710B2ECB105834AC36AADDB46502D71DC1332704EA89246A1ECFEA84CD316",
+        "game/assets/characters/player/transformation_v27/hair_semilong_v27.glb": "11C5C3376569E01066E9015BDA3F0EB9AB8627F9958F24272A2AA09DDFDA16DC",
+        "game/scripts/field_entry_transformation.gd": "3F376383B65753DE2B13B9C4E83247C675EE9EF10C9C06DF79907DEE4F1633FC",
+        "game/scripts/hair_motion.gd": "E334F0D285D2A324DDADE5F4C9660E000EE637C9401E15DC6545821F05C9FAD6",
+        "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234AC744F024D7D3D714F64EE3D81BD777337D204A98AAF4C855A6B14F1D13",
+        "game/scripts/arena.gd": "D328672BA7535D65F2FDB03159851A132B71FE2FDE1C9B9287E360F8777F7B7E",
+        "game/scripts/player_visual.gd": "C38359DB2E1BB69C9144199364B554D6F8892BC41C96290E1B2EFA58E30FE7C5",
+        "game/assets/characters/player/transformation_v26/combat_transform_entry_v26.glb": "9ABAEB5CCF3DA2EB853536FE0100C67B5ADD6A07486999B334FF0316EF0571E8"
+      },
+      "result": "reports/transformation_v27/outfit_material_parity_v27/result.json"
+    },
+    "review": {
+      "execution": {
+        "stderr": null,
+        "exit_code": 0,
+        "changed_inputs": []
+      },
+      "inputs_current": true,
+      "inputs": {
+        "game/scripts/field_entry_transformation.gd": "3F376383B65753DE2B13B9C4E83247C675EE9EF10C9C06DF79907DEE4F1633FC",
+        "game/scripts/arena.gd": "D328672BA7535D65F2FDB03159851A132B71FE2FDE1C9B9287E360F8777F7B7E",
+        "game/scripts/outfit_reveal.gd": "11289457A87DAF5EAE3BC0FD83991369A17077275D57DA906DD5B81072234865",
+        "game/assets/characters/player/transformation_v26/combat_transform_entry_v26.glb": "9ABAEB5CCF3DA2EB853536FE0100C67B5ADD6A07486999B334FF0316EF0571E8",
+        "game/scripts/modular_character_runtime.gd": "6AEA0335540B74F2795E96BECFF0EC518BACBFEF088BD5A7FEFCE43AF4816060",
+        "game/assets/characters/player/transformation_v27/hair_semilong_v27.glb": "11C5C3376569E01066E9015BDA3F0EB9AB8627F9958F24272A2AA09DDFDA16DC",
+        "game/scripts/player_visual.gd": "C38359DB2E1BB69C9144199364B554D6F8892BC41C96290E1B2EFA58E30FE7C5",
+        "game/scripts/hair_motion.gd": "E334F0D285D2A324DDADE5F4C9660E000EE637C9401E15DC6545821F05C9FAD6",
+        "game/assets/characters/player/transformation_v27/hair_contract.json": "18787DB93CC72DCF80E74D974E14180FCC9099542DCB214928DEF401F56D88E4",
+        "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234AC744F024D7D3D714F64EE3D81BD777337D204A98AAF4C855A6B14F1D13",
+        "game/shaders/outfit_reveal.gdshader": "7C6B34A074B9509656C8E7B7D0D0199E165A7C5334CF3D499FAAA87EABFB4931",
+        "game/data/trial.json": "699710B2ECB105834AC36AADDB46502D71DC1332704EA89246A1ECFEA84CD316"
+      },
+      "result": "reports/transformation_v27/review/capture.json"
+    }
+  },
+  "hashes": {
+    "assets/characters/player/3d/source/middle_school_v1/transformation_v27/transformation_v27.blend": "933b584f316c10169c58168b26c3f46efe7f561ac21661cb14e76a39c0d594fd",
+    "assets/characters/player/3d/source/middle_school_v1/transformation_v27/README.md": "9ca7bdd35dca09887cf440ad5455ee2a8a172fcdc591ba7f3003f2d9712e18cc",
+    "game/scripts/player_visual.gd": "c38359db2e1bb69c9144199364b554d6f8892bc41c96290e1b2efa58e30fe7c5",
+    "game/scripts/modular_character_runtime.gd": "6aea0335540b74f2795e96becff0ec518bacbfef088bd5a7fefce43af4816060",
+    "game/scripts/field_entry_transformation.gd": "3f376383b65753de2b13b9c4e83247c675ee9ef10c9c06df79907dee4f1633fc",
+    "game/scripts/outfit_reveal.gd": "11289457a87daf5eae3bc0fd83991369a17077275d57da906dd5b81072234865",
+    "game/scripts/hair_motion.gd": "e334f0d285d2a324ddade5f4c9660e000ee637c9401e15dc6545821f05c9fad6",
+    "game/shaders/outfit_reveal.gdshader": "7c6b34a074b9509656c8e7b7d0d0199e165a7c5334cf3d499faaa87eabfb4931",
+    "tools/character_appearance.py": "b88ad768d7185d73f27cb4de07dd0f04573c8bfc867967d35e38e70cb176b44e",
+    "tests/test_character_appearance.py": "ebcb0923e6933561836459530a296506771acd956acec8ea8976f3ed72da927b",
+    "assets/characters/player/3d/config/modular_character.spec.json": "6acc25a8a62a56b259ba0f334b5662c563bbab98bec66acafa4766f25166d8ed",
+    "reports/transformation_v27/review.html": "6716285813530f5526d6b9acd865052b4e454dabd05d298c54a8cc126a2f175e",
+    "reports/transformation_v27/source_validation.json": "10ca8770d1785cc3e5458c67d92ea5627f9f01835ef91e97a3ac25f2b077e882",
+    "reports/transformation_v27/qa_exported_hair.json": "fefd4b7786b75c822bbd2bbddf4cafee4570f8130f3c2fc00ebc32ec5f321da1",
+    "reports/transformation_v27/build_validation.json": "0e19bf2f3479e354c077625e71d14f45b4fd1ca12e4d73984d6b070f2f36a713",
+    "AGENTS.md": "75ca4e36030bf3a2ac9fe652bba3b3975f6d20379d7a46ed0ac31b18335a5725",
+    "docs/09_character_art_pipeline.md": "5428555735d50f75bfaa89f956405f631df61d49139df213c9c165706441afcb",
+    "game/assets/characters/player/transformation_v26/combat_transform_entry_v26.glb": "9abaeb5ccf3da2eb853536fe0100c67b5add6a07486999b334ff0316ef0571e8",
+    "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13",
+    "game/assets/characters/player/transformation_v27/hair_contract.json": "18787db93cc72dcf80e74d974e14180fcc9099542dcb214928def401f56d88e4",
+    "game/assets/characters/player/transformation_v27/hair_semilong_v27.glb": "11c5c3376569e01066e9015bda3f0eb9ab8627f9958f24272a2aa09ddfda16dc",
+    "game/assets/characters/player/transformation_v27/hair_semilong_v27.glb.import": "3e967bb8847bdf342c01035f1891be00191b5e8ace2dac8a7af441497b479e15",
+    "game/assets/characters/player/transformation_v27/hair_semilong_v27_civilian_shared_atlas_2k.png": "de008c2a6bceeebc2eff0d63ea6bb741a2c356dd58cbcaa7a406fa56fc3091ea",
+    "game/assets/characters/player/transformation_v27/hair_semilong_v27_civilian_shared_atlas_2k.png.import": "18c9d7e68ae537694516191dca676d0dc5fb3db6db6e297a678f8ecd12e665d3",
+    "tools/build_transformation_v27.py": "91817eaa43803b7ad0d9489225c04d3e27358d90ef8144113daa76d2edf7ac8d",
+    "tools/finalize_transformation_v27.py": "6a6a6ae6917621806ffec424e47bd063e5b44c876ec652ee76c329da0081bde3",
+    "tools/package_transformation_v27.py": "d4e316604afd39add86eab66096e472b47b58ca77d850406d9bfcb95917134e6",
+    "tools/run_transformation_v27.ps1": "f1f727d6473a2be487dc27fd6db6b652542b77df0fd3535546c8f04f5e7032ba",
+    "tools/validate_transformation_v27_source.py": "eaac7bacb9f5c6d3af9dd972fbfb56562365ef1bf0486aac88774be7559baec5",
+    "tools/check_hair_v27.py": "db70a5ee575093f849925e8aa727428d980e1da14577c6ad8fe971fe21806b26",
+    "game/tests/transformation_v27.gd": "62433b6976cbf1223d6a65a94efd2b5e41c10cd88a4a112beb3308d8c985e1df",
+    "game/tests/transformation_v27_regression.gd": "0aa804faa2827293a553bc6d985324d6791c29e7a59f54c1304eeb13233ac5e3",
+    "game/tests/review_transformation_v27.gd": "2b5d2cd8f84edb43fb3adadb77fe8239c486cf0d422ebc776e17c1db816598d5",
+    "game/tests/outfit_material_parity_v27.gd": "b532b90c01da1a233c86755261d01d20131ce3207321cbec19dbe77507448e1f",
+    "reports/transformation_v27/approval.json": "f8532ee14040f0e7f04b2740da5427072078c3b42be17c6ea930f325af061aab"
+  },
+  "preserved_runtime_assets": {
+    "game/assets/characters/player/transformation_v26/combat_transform_entry_v26.glb": "9abaeb5ccf3da2eb853536fe0100c67b5add6a07486999b334ff0316ef0571e8",
+    "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13"
+  },
+  "visually_inspected_frames": [
+    "front/066.jpg",
+    "front/071.jpg",
+    "front/075.jpg",
+    "front/078.jpg",
+    "front/087.jpg",
+    "back/078.jpg",
+    "back/084.jpg",
+    "native/078.jpg",
+    "run/014.jpg",
+    "attack/015.jpg",
+    "cast/012.jpg",
+    "hit/006.jpg",
+    "jump/004.jpg"
+  ],
+  "limits": [
+    "Hair uses bounded authored/inertial rotation, not live cloth or hair/cape collision.",
+    "Existing outfit geometry, weights and contact limits remain; no new skirt flare or arbitrary-pose clearance.",
+    "Temporary outgoing/incoming outfit previews add draw cost during 0.73 seconds; final performance budget not measured.",
+    "Previous v26 side-by-side frames are historical captures; current v27 includes concurrent unrelated arena work.",
+    "HTML syntax and all image paths checked; automatic file:// browser navigation was denied by browser policy, so browser interaction is unverified.",
+    "Earlier memory-failed and intermediate QA attempts are not final validation evidence."
+  ]
+}

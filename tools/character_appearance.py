@@ -128,6 +128,10 @@ def resolve_3d_plan(spec, appearance, asset_root):
             if not resolved.is_file():
                 blockers.append(f"{slot}:file_missing")
         parts[slot] = {"id": part["id"], "asset": path}
+        if part.get("auxiliary_hair"):
+            if slot != "hair":
+                raise AppearanceError("Auxiliary hair rig is only valid in the hair slot")
+            parts[slot]["auxiliary_hair"] = True
     return {
         "status": "blocked_missing_production_assets" if blockers else "ready_for_runtime_validation",
         "appearance": state,

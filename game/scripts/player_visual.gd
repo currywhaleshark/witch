@@ -6,6 +6,7 @@ const StaffVisual = preload("res://scripts/staff_visual.gd")
 const StaffLocomotionBlend = preload("res://scripts/staff_locomotion_blend.gd")
 const SpringJumpMotion = preload("res://scripts/spring_jump_motion.gd")
 const FieldEntry = preload("res://scripts/field_entry_transformation.gd")
+const HairMotion = preload("res://scripts/hair_motion.gd")
 const ENTRY_DIR := "res://assets/characters/player/transformation_v26/"
 const SPRING_JUMP_DIR := "res://assets/characters/player/spring_jump_v24/"
 const ASSET_DIR := "res://assets/characters/player/run_arm_v21/"
@@ -15,6 +16,9 @@ const PARTS := {
 	"eyes": {"asset": ASSET_DIR + "eyes_neutral_v21.glb", "hide_body_regions": []},
 	"outfit": {"asset": ASSET_DIR + "outfit_civilian_v21.glb", "hide_body_regions": ["torso", "arms", "lowerlegs", "feet"]},
 }
+const HAIR_V27 := {"asset": "res://assets/characters/player/transformation_v27/hair_semilong_v27.glb", "hide_body_regions": [], "auxiliary_hair": true}
+# The previous presentation remains available through an explicit debug override.
+var use_entry_polish_v27 := bool(ProjectSettings.get_setting("debug/entry_polish_v27", true))
 const CLIPS := {
 	"idle": "combat_idle_rh_v20", "run": "combat_run_rh_v21",
 	"attack": "combat_heavy_swing_rh_v20", "attack_thrust": "combat_thrust_rh_v23",
@@ -91,6 +95,7 @@ var staff_slide := 0.0
 var _staff_slide_tracks: Dictionary = {}
 var form := "civilian"
 var _entry: FieldEntry
+var _hair_motion := HairMotion.new()
 var _entry_contract: Dictionary
 var _transformed_scene: PackedScene
 const COLLAPSE_BLEND_SECONDS := 0.18
@@ -130,8 +135,11 @@ func initialize() -> bool:
 		return _fail(runtime.last_error)
 	if runtime.skeleton.get_bone_count() != 107:
 		return _fail("expected_v11_family_107_bones")
-	if not runtime.replace_parts(PARTS):
+	var initial_parts: Dictionary = PARTS.duplicate(true)
+	if use_entry_polish_v27: initial_parts.hair = HAIR_V27
+	if not runtime.replace_parts(initial_parts):
 		return _fail(runtime.last_error)
+	_hair_motion.initialize(runtime)
 	for path in EXTRA_CLIP_FILES:
 		if not _add_clips(path):
 			return _fail("missing_extra_clip_file: " + path)
@@ -238,6 +246,7 @@ func begin_field_entry() -> void:
 	asset_wrapper.add_child(_entry)
 	_entry.initialize(self,_entry_contract)
 	_entry.begin()
+	_hair_motion.reset()
 
 func field_entry_active() -> bool:
 	return is_instance_valid(_entry) and _entry.active
@@ -327,12 +336,14 @@ func sync_state(dt: float, moved: bool, action_remaining: float, paused: bool, d
 		return
 	if field_entry_active():
 		_entry.advance(dt)
+		_hair_motion.advance(dt, _entry.elapsed)
 		return
 	_spring_jump.advance(self, dt, is_dead, cleared)
 	var staff_release := -1.0
 	if _motion_kind == "attack" and _release_elapsed < 0.0:
 		staff_release = maxf(0.0, action_remaining - motion_duration * (1.0-gameplay_release_ratio))
 	_sync_pose(dt, moved, action_remaining, cleared, actual_speed)
+	_hair_motion.advance(dt, -1.0, _state == "dead" or cleared)
 	# Use the pose just sampled, including the real release latch. The former order
 	# drove the jaws with last frame's phase and reopened them on the impact frame.
 	staff_visual.advance(dt, is_dead or cleared,
@@ -431,6 +442,7 @@ func _sample_locomotion(weight: float) -> void:
 	staff_socket.on_skeleton_update()
 	staff_slide = lerpf(staff_slide, other_slide, share)
 	staff_root.position = STAFF_GRIP_OFFSET + STAFF_GRIP_BASIS.y * staff_slide
+	_hair_motion.sync_anchors()
 
 func _settle_turn(dt: float) -> void:
 	# The gameplay facing (this node) turns at once; only the shown body eases after it. Actions
@@ -491,6 +503,7 @@ func _sample(kind: String, time: float) -> void:
 	if kind == "collapse":
 		staff_slide = lerpf(_collapse_grip_from, staff_slide, clampf(_collapse_elapsed / COLLAPSE_BLEND_SECONDS, 0.0, 1.0))
 	staff_root.position = STAFF_GRIP_OFFSET + STAFF_GRIP_BASIS.y * staff_slide
+	_hair_motion.sync_anchors()
 	playback_speed = _run_rate if kind == "run" else 1.0
 	if kind in ["attack", "cast", "hit_react"] or (kind == "spring_jump" and _motion_kind == "spring_jump"):
 		playback_speed = clip_length / motion_duration
@@ -506,6 +519,7 @@ func replace_parts(request: Dictionary) -> bool:
 	if not loaded_ok:
 		return false
 	var ok: bool = runtime.replace_parts(request)
+	if ok: _hair_motion.sync_anchors()
 	last_error = runtime.last_error
 	return ok
 
@@ -523,6 +537,7 @@ func debug_snapshot() -> Dictionary:
 		"collapse_elapsed": _collapse_elapsed,
 		"spring_jump": _spring_jump.debug_state(),
 		"form": form, "field_entry": _entry.debug_state() if is_instance_valid(_entry) else {},
+		"hair": _hair_motion.debug_state(),
 		"movement_speed": movement_speed, "run_cycle_distance": RUN_CYCLE_DISTANCE,
 		"locomotion_blending": _state in ["idle", "run"] and _run_weight > 0.0 and _run_weight < 1.0, "run_weight": _run_weight, "turn_lag": _turn_lag,
 		"bone_count": runtime.skeleton.get_bone_count() if loaded_ok else 0,

@@ -1,0 +1,39 @@
+{
+  "blender": "5.2.3 LTS",
+  "source_sha256": "382540eeaa95f61698ba4dc423adf74702334a417deed146f48b41a113ab7822",
+  "body_bones": 107,
+  "hair_bones": 8,
+  "new_deform_chains": 6,
+  "preserved_actions": 63,
+  "preserved_original_meshes": 29,
+  "hair_triangles": 25161,
+  "maximum_influences": 4,
+  "original_hair_unchanged": true,
+  "derivative_cleanup": {
+    "vertices_before": 19993,
+    "vertices_after": 19961,
+    "triangles_before": 25209,
+    "triangles_after": 25183,
+    "tiny_disconnected_vertices_removed": 32,
+    "uv_faces_repaired": 1,
+    "position_weld_tolerance_m": 1e-07,
+    "qa_contact_tolerance_m": 0.002,
+    "qa_zfight_tolerance_m": 0.0002
+  },
+  "blend_sha256": "933b584f316c10169c58168b26c3f46efe7f561ac21661cb14e76a39c0d594fd",
+  "glb_sha256": "11c5c3376569e01066e9015bda3f0eb9ab8627f9958f24272a2aa09ddfda16dc",
+  "glb_bytes": 5878208,
+  "hair_vertices": 19931,
+  "extra_fragment_vertices_removed": 30,
+  "local_overlap_repairs": [
+    {
+      "pairs": 8,
+      "vertices_offset": 24
+    }
+  ],
+  "max_overlap_vertex_offset_m": 0.0007,
+  "finalized_via_live_mcp": true,
+  "qa_passed": true,
+  "additional_export_uv_faces_repaired": 1,
+  "additional_crown_vertices_offset": 2
+}

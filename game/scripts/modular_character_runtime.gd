@@ -82,7 +82,7 @@ func _compatible(other: Skeleton3D) -> bool:
 			return false
 	return true
 
-func _stage_part(path: String, slot: String) -> Node3D:
+func _stage_part(path: String, slot: String, auxiliary_hair: bool = false) -> Node3D:
 	var donor := _load_gltf(path)
 	if donor == null:
 		return null
@@ -95,6 +95,41 @@ func _stage_part(path: String, slot: String) -> Node3D:
 		donor.free()
 		return null
 	var other: Skeleton3D = rigs[0]
+	if auxiliary_hair:
+		# Optional per-hairstyle bones live in their own skeleton. Only the two
+		# explicit anchor rests must match; ordinary body/eye/outfit checks stay strict.
+		var valid := slot == "hair" and other.get_bone_count() == 8
+		for anchor in ["DEF-head", "DEF-chest"]:
+			var index := other.find_bone(anchor)
+			var shared := skeleton.find_bone(anchor)
+			valid = valid and index >= 0 and shared >= 0
+			if index >= 0 and shared >= 0:
+				valid = valid and other.get_bone_global_rest(index).is_equal_approx(skeleton.get_bone_global_rest(shared))
+		var expected := ["DEF-head","DEF-chest","DEF-hair.01.L","DEF-hair.02.L","DEF-hair.01.R","DEF-hair.02.R","DEF-hair.01.Back","DEF-hair.02.Back"]
+		var parents := {"DEF-head":"","DEF-chest":"","DEF-hair.01.L":"DEF-head","DEF-hair.02.L":"DEF-hair.01.L","DEF-hair.01.R":"DEF-head","DEF-hair.02.R":"DEF-hair.01.R","DEF-hair.01.Back":"DEF-head","DEF-hair.02.Back":"DEF-hair.01.Back"}
+		for index in other.get_bone_count():
+			var name := String(other.get_bone_name(index))
+			valid = valid and name in expected
+			var parent := other.get_bone_parent(index)
+			var parent_name := String(other.get_bone_name(parent)) if parent >= 0 else ""
+			valid = valid and parents.get(name,"invalid") == parent_name
+		for mesh: MeshInstance3D in meshes:
+			valid = valid and mesh.skin != null
+			if mesh.skin == null: continue
+			for bind in mesh.skin.get_bind_count():
+				var name := mesh.skin.get_bind_name(bind)
+				var index := other.find_bone(name) if not name.is_empty() else mesh.skin.get_bind_bone(bind)
+				valid = valid and index >= 0 and index < other.get_bone_count()
+				if index >= 0 and index < other.get_bone_count():
+					valid = valid and mesh.skin.get_bind_pose(bind).is_equal_approx(other.get_bone_global_rest(index).affine_inverse())
+		if not valid:
+			last_error = "invalid_auxiliary_hair_rig"
+			donor.free()
+			return null
+		donor.name = "Slot_hair"
+		donor.set_meta("auxiliary_hair", true)
+		_share_textures(donor)
+		return donor
 	if not _compatible(other):
 		donor.free()
 		return null
@@ -150,7 +185,7 @@ func replace_parts(request: Dictionary) -> bool:
 			last_error = "invalid_slot"
 			break
 		var regions = request[slot].get("hide_body_regions", [])
-		if not request[slot].get("asset", "") is String or not regions is Array:
+		if not request[slot].get("asset", "") is String or not regions is Array or not request[slot].get("auxiliary_hair",false) is bool:
 			last_error = "invalid_part_contract"
 			break
 		for region in regions:
@@ -162,7 +197,7 @@ func replace_parts(request: Dictionary) -> bool:
 		if path.is_empty():
 			staged[slot] = null
 		else:
-			staged[slot] = _stage_part(path, slot)
+			staged[slot] = _stage_part(path, slot, request[slot].get("auxiliary_hair", false))
 			if staged[slot] == null:
 				break
 	if not last_error.is_empty():

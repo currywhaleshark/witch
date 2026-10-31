@@ -1,0 +1,4 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 610.62 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2060
+
+OUTFIT_MATERIAL_PARITY true [{ "form": "civilian", "passed": true, "mean_max_rgb_error": 0.00148897057097, "large_error_fraction": 0.00342261904762, "max_rgb_error": 0.55686276778579, "pixels": 134400 }, { "form": "transformed", "passed": true, "mean_max_rgb_error": 0.00022773692928, "large_error_fraction": 0.00087053571429, "max_rgb_error": 0.53333333134651, "pixels": 134400 }]

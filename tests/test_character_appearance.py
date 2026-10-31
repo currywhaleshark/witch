@@ -53,6 +53,7 @@ class ModularAppearanceTests(unittest.TestCase):
         civilian = resolve_3d_plan(self.spec, self.state, PLAYER / "3d")
         self.assertEqual(civilian["status"], "ready_for_runtime_validation")
         self.assertEqual(civilian["blockers"], [])
+        self.assertTrue(civilian["parts"]["hair"]["auxiliary_hair"])
         # File availability does not replace the separate Godot/visual report.
         self.assertFalse(civilian["production_ready"])
         transformed = resolve_3d_plan(self.spec, choose_form(self.state, "transformed"), PLAYER / "3d")

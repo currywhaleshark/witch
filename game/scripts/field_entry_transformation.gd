@@ -1,6 +1,7 @@
 extends Node3D
 ## Field entry presentation. Arena gates combat while this timeline is active.
 const Shape = preload("res://scripts/shapes.gd")
+const OutfitReveal = preload("res://scripts/outfit_reveal.gd")
 const OUTFIT := "res://assets/characters/player/transformation_v25/outfit_transformed_v4.glb"
 var visual: Node3D
 var contract: Dictionary
@@ -20,10 +21,12 @@ var _glow: ShaderMaterial
 var _overlays: Array = []
 var _started_assembly := false
 var _fx_material: StandardMaterial3D
+var _reveal := OutfitReveal.new()
 
 func initialize(player_visual: Node3D, data: Dictionary) -> void:
 	visual = player_visual
 	contract = data
+	_reveal.initialize(visual)
 	var frame: Dictionary = data.floating_staff_frame
 	var columns: Array = frame.basis_columns
 	_floating = Transform3D(Basis(vec(columns[0]),vec(columns[1]),vec(columns[2])),vec(frame.origin))
@@ -96,7 +99,12 @@ func advance(dt: float) -> void:
 	phase = "civilian" if progress <= 0.0 else ("assembly" if not grasped else "grasp")
 	if elapsed >= float(contract.outfit_begin):
 		phase = "outfit"
-		if _overlays.is_empty(): _apply_glow()
+		if not visual.use_entry_polish_v27 and _overlays.is_empty(): _apply_glow()
+		if visual.use_entry_polish_v27 and elapsed < float(contract.outfit_end) and not _reveal.active:
+			if not _reveal.begin():
+				error = _reveal.error
+				cancel()
+				return
 		if elapsed+0.000001 >= float(contract.outfit_swap) and not changed_outfit:
 			_clear_glow()
 			changed_outfit = visual.set_form("transformed")
@@ -104,13 +112,17 @@ func advance(dt: float) -> void:
 				error = visual.last_error
 				cancel()
 				return
-			_apply_glow()
+			if not visual.use_entry_polish_v27: _apply_glow()
 			cues.append({"event":"outfit","pitch":1.65,"gain_db":-4.5})
+		if _reveal.active:
+			_reveal.sample((elapsed-float(contract.outfit_begin))/float(contract.outfit_end-contract.outfit_begin))
+			if elapsed >= float(contract.outfit_end): _reveal.clear()
 	_update_fx(progress)
 	if elapsed+0.000001 >= float(contract.duration_seconds):
 		active = false
 		phase = "ready"
 		_clear_glow()
+		_reveal.clear()
 		visible = false
 		_light.light_energy = 0.0
 		visual.staff_root.transform = held_frame()
@@ -145,9 +157,13 @@ func _update_fx(progress: float) -> void:
 	for i in _rings.size():
 		var ring: MeshInstance3D = _rings[i]
 		ring.visible = flash>.001
-		ring.position = Vector3(0,.22+1.20*change + .09*i,0)
-		ring.scale = Vector3.ONE*(.65+.5*flash)
-		ring.rotation = Vector3(.12*sin(change*TAU+i),change*TAU,.10*cos(change*TAU+i))
+		ring.position = Vector3(0,lerpf(-.07,1.72,smoothstep(0.0,1.0,change)) + .035*(i-1),0)
+		ring.scale = Vector3.ONE*(.78+.22*flash)
+		ring.rotation = Vector3(.04*sin(change*TAU+i),change*TAU,.035*cos(change*TAU+i))
+		if not visual.use_entry_polish_v27:
+			ring.position = Vector3(0,.22+1.20*change+.09*i,0)
+			ring.scale = Vector3.ONE*(.65+.5*flash)
+			ring.rotation = Vector3(.12*sin(change*TAU+i),change*TAU,.10*cos(change*TAU+i))
 	for i in _motes.size():
 		var mote: MeshInstance3D = _motes[i]
 		mote.visible = assembly>.001 or flash>.001
@@ -165,6 +181,7 @@ func cancel() -> void:
 	active = false
 	phase = "cancelled"
 	_clear_glow()
+	_reveal.clear()
 	visible = false
 	_light.light_energy = 0.0
 	cues.clear()
@@ -173,4 +190,7 @@ func cancel() -> void:
 	visual.staff_root.visible = grasped
 
 func debug_state() -> Dictionary:
-	return {"active":active,"elapsed":elapsed,"phase":phase,"grasped":grasped,"changed_outfit":changed_outfit,"error":error,"fx_visible":visible,"light_energy":_light.light_energy,"floating_origin":_floating.origin}
+	return {"active":active,"elapsed":elapsed,"phase":phase,"grasped":grasped,"changed_outfit":changed_outfit,"error":error,"fx_visible":visible,"light_energy":_light.light_energy,"floating_origin":_floating.origin,"reveal":_reveal.debug_state()}
+
+func _exit_tree() -> void:
+	_reveal.clear()
