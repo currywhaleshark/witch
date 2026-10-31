@@ -1,0 +1,15 @@
+00:06.109  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v25\transformation_v25.blend"
+[Tripo3D] Log file: C:\Users\yurib\AppData\Local\Packages\sandbox.{4cf13d24-88ac-4052-84d9-242f68f29889}\AC\Temp\tripo3d_blender_bridge.log
+BlenderMCP addon registered
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.1\5.1\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+20:52:51 | INFO: Starting glTF 2.0 export
+20:52:51 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+20:52:51 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+20:52:52 | INFO: Finished glTF 2.0 export in 1.4785239696502686 s
+
+TRANSFORMATION_EXPORT_COMPLETE {'passed': True, 'glb_sha256': 'caa5393aecb62aeddd6f301d95e4d1d7a524da65bdcaceff1b5628b2964d05c9', 'outfit_sha256': '69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13', 'carrier': 'Outfit_Buttons_v7', 'source_sha256': '4eadb3dafefd4e845988ec0e07403b8f3d9538fff3b33e32902e14922aea339c'}
+BlenderMCP addon unregistered
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+scripts disabled for "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v25\transformation_v25.blend", skipping 'rig_common_body_v5_ui.py'
+
+Blender quit

@@ -5,6 +5,8 @@ const Shape = preload("res://scripts/shapes.gd")
 const StaffVisual = preload("res://scripts/staff_visual.gd")
 const StaffLocomotionBlend = preload("res://scripts/staff_locomotion_blend.gd")
 const SpringJumpMotion = preload("res://scripts/spring_jump_motion.gd")
+const FieldEntry = preload("res://scripts/field_entry_transformation.gd")
+const ENTRY_DIR := "res://assets/characters/player/transformation_v26/"
 const SPRING_JUMP_DIR := "res://assets/characters/player/spring_jump_v24/"
 const ASSET_DIR := "res://assets/characters/player/run_arm_v21/"
 const BODY_PATH := ASSET_DIR + "body_standard_v21.glb"
@@ -18,9 +20,10 @@ const CLIPS := {
 	"attack": "combat_heavy_swing_rh_v20", "attack_thrust": "combat_thrust_rh_v23",
 	"cast": "combat_cast_rh_v20", "hit_react": "combat_hit_rh_v20", "collapse": "combat_collapse_rh_v20",
 	"spring_jump": "combat_spring_jump_v24",
+	"entry": "combat_transform_entry_v26",
 }
 # Clips authored after the v21 family, exported alone onto the same rig and added to its library.
-const EXTRA_CLIP_FILES := [ASSET_DIR + "combat_thrust_rh_v23.glb", SPRING_JUMP_DIR + "combat_spring_jump_v24.glb"]
+const EXTRA_CLIP_FILES := [ASSET_DIR + "combat_thrust_rh_v23.glb", SPRING_JUMP_DIR + "combat_spring_jump_v24.glb", ENTRY_DIR + "combat_transform_entry_v26.glb"]
 # Authored release: swing 25/49, thrust 25/49, cast 17/33; normalized 0.5.
 const AUTHORED_RELEASE := {"attack": 0.5, "cast": 0.5, "spring_jump": 0.25}
 const STAFF_GRIP_OFFSET := Vector3(0.0074299751, 0.0480000079, 0.0158048961)
@@ -86,6 +89,10 @@ var _collapse_from: Array = []
 var _collapse_grip_from := 0.0
 var staff_slide := 0.0
 var _staff_slide_tracks: Dictionary = {}
+var form := "civilian"
+var _entry: FieldEntry
+var _entry_contract: Dictionary
+var _transformed_scene: PackedScene
 const COLLAPSE_BLEND_SECONDS := 0.18
 
 func _add_clips(path: String) -> bool:
@@ -149,6 +156,11 @@ func initialize() -> bool:
 	if not jump_contract is Dictionary or not jump_contract.get("staff_slide_tracks") is Dictionary:
 		return _fail("missing_spring_jump_contract")
 	_staff_slide_tracks.merge(jump_contract.staff_slide_tracks)
+	var entry_data = JSON.parse_string(FileAccess.get_file_as_string(ENTRY_DIR + "runtime_contract.json"))
+	if not entry_data is Dictionary or not entry_data.get("staff_slide_tracks") is Dictionary:
+		return _fail("missing_field_entry_contract")
+	_entry_contract = entry_data
+	_staff_slide_tracks.merge(entry_data.staff_slide_tracks)
 	for clip in CLIPS.values():
 		var slide_track = _staff_slide_tracks.get(clip)
 		if not slide_track is Array or slide_track.size() < 2:
@@ -202,6 +214,39 @@ func set_active_tool(tool) -> void:
 
 func set_staff_appearance(profile: String) -> bool:
 	return loaded_ok and staff_visual.set_appearance(profile)
+
+func set_form(next_form: String) -> bool:
+	if not loaded_ok or next_form not in ["civilian","transformed"]: return false
+	if next_form == form: return true
+	var part: Dictionary = PARTS.outfit.duplicate(true)
+	if next_form == "transformed": part.asset = FieldEntry.OUTFIT
+	if not replace_parts({"outfit":part}): return false
+	form = next_form
+	return true
+
+func begin_field_entry() -> void:
+	if not loaded_ok: return
+	if is_instance_valid(_entry):
+		_entry.cancel()
+		_entry.free()
+	if not set_form("civilian"): return
+	# Warm the selected outfit before the timed swap, retaining the currently
+	# visible civilian garment until replace_parts commits the whole replacement.
+	_transformed_scene = ResourceLoader.load(FieldEntry.OUTFIT) as PackedScene
+	_entry = FieldEntry.new()
+	_entry.name = "FieldEntryTransformation"
+	asset_wrapper.add_child(_entry)
+	_entry.initialize(self,_entry_contract)
+	_entry.begin()
+
+func field_entry_active() -> bool:
+	return is_instance_valid(_entry) and _entry.active
+
+func consume_entry_cues() -> Array:
+	if not is_instance_valid(_entry): return []
+	var pending: Array = _entry.cues.duplicate()
+	_entry.cues.clear()
+	return pending
 
 func begin_motion(kind: String, duration: float, release_ratio: float) -> void:
 	if not loaded_ok or is_dead or kind not in ["attack", "cast", "spring_jump"]:
@@ -260,6 +305,7 @@ func freeze_for_death() -> void:
 	# Kept as the arena's compatibility hook; incapacitation now plays a fall.
 	if is_dead:
 		return
+	if field_entry_active(): _entry.cancel()
 	is_dead = true
 	_state = "collapse"
 	_motion_kind = ""
@@ -278,6 +324,9 @@ func sync_state(dt: float, moved: bool, action_remaining: float, paused: bool, d
 		freeze_for_death()
 	is_cleared = cleared
 	if not loaded_ok or paused:
+		return
+	if field_entry_active():
+		_entry.advance(dt)
 		return
 	_spring_jump.advance(self, dt, is_dead, cleared)
 	var staff_release := -1.0
@@ -473,6 +522,7 @@ func debug_snapshot() -> Dictionary:
 		"attack_variant": _attack_clip_kind, "staff_slide_m": staff_slide,
 		"collapse_elapsed": _collapse_elapsed,
 		"spring_jump": _spring_jump.debug_state(),
+		"form": form, "field_entry": _entry.debug_state() if is_instance_valid(_entry) else {},
 		"movement_speed": movement_speed, "run_cycle_distance": RUN_CYCLE_DISTANCE,
 		"locomotion_blending": _state in ["idle", "run"] and _run_weight > 0.0 and _run_weight < 1.0, "run_weight": _run_weight, "turn_lag": _turn_lag,
 		"bone_count": runtime.skeleton.get_bone_count() if loaded_ok else 0,

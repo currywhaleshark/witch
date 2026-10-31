@@ -1,0 +1,8 @@
+{
+  "changed_inputs": [],
+  "exit_code": 0,
+  "phase": "test",
+  "test": "transformation_v25",
+  "workspace_cache_diagnostic_only": false,
+  "stderr_empty": true
+}

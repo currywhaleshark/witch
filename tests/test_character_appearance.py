@@ -49,16 +49,22 @@ class ModularAppearanceTests(unittest.TestCase):
             self.assertIn("outfit:not_created", plan["blockers"])
             self.assertIsNone(plan["parts"]["body"]["asset"])
 
-    def test_civilian_export_resolves_but_transformed_design_stays_missing(self):
+    def test_both_outfits_resolve_on_the_shared_rig_without_claiming_final_production(self):
         civilian = resolve_3d_plan(self.spec, self.state, PLAYER / "3d")
         self.assertEqual(civilian["status"], "ready_for_runtime_validation")
         self.assertEqual(civilian["blockers"], [])
         # File availability does not replace the separate Godot/visual report.
         self.assertFalse(civilian["production_ready"])
         transformed = resolve_3d_plan(self.spec, choose_form(self.state, "transformed"), PLAYER / "3d")
-        self.assertIn("outfit:not_created", transformed["blockers"])
+        self.assertEqual(transformed["status"], "ready_for_runtime_validation")
+        self.assertEqual(transformed["blockers"], [])
+        self.assertFalse(transformed["production_ready"])
         self.assertIsNone(self.spec["hair"]["twintails_v1"]["asset"])
-        self.assertIsNone(self.spec["outfits"]["transformed_v1"]["asset"])
+        outfit = self.spec["outfits"]["transformed_v1"]
+        self.assertEqual(outfit["rig_id"], self.spec["bodies"]["standard_v1"]["rig_id"])
+        self.assertEqual(outfit["max_influences"], 8)
+        self.assertEqual((PLAYER / "3d" / outfit["asset"]).read_bytes(),
+                         (ROOT / "game" / outfit["runtime_asset"].removeprefix("res://")).read_bytes())
 
     def test_wrong_form_body_or_rig_rejected_without_mutation(self):
         original = copy.deepcopy(self.state)

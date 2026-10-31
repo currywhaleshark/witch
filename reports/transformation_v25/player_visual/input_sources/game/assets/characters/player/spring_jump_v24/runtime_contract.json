@@ -1,0 +1,108 @@
+{
+  "rig_id": "player_humanoid_v11",
+  "clip": "combat_spring_jump_v24",
+  "fps": 24,
+  "frames": 49,
+  "takeoff_phase": 0.25,
+  "landing_phase": 0.75,
+  "height_m": 0.32,
+  "landing_seconds": 0.12,
+  "staff_slide_tracks": {
+    "combat_spring_jump_v24": [
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26
+    ]
+  },
+  "source": {
+    "source": "User-supplied Unarmed Jump.fbx",
+    "provider_metadata": "Armature|mixamo.com|Layer0",
+    "raw_path": "assets/characters/player/3d/source/motion_library/mixamo_local/Unarmed_Jump_user_2026-10-30.fbx",
+    "raw_sha256": "c3a76978f47439d4c929ebad881f277ade45d60b3543bf4e92821a979949bc68",
+    "source_action_sha256": "222def9971bee60b239f46e67b851c5522454af028469a296af96452ddd9b787",
+    "source_fps": 30,
+    "source_frames": [
+      1.0,
+      71.0
+    ],
+    "time_map": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.12,
+        19.0
+      ],
+      [
+        0.25,
+        25.0
+      ],
+      [
+        0.5,
+        35.0
+      ],
+      [
+        0.75,
+        45.0
+      ],
+      [
+        0.84,
+        52.0
+      ],
+      [
+        1.0,
+        71.0
+      ]
+    ],
+    "license": "Mixamo source; not CC0; raw source remains local/gitignored"
+  },
+  "source_blend": "assets/characters/player/3d/source/middle_school_v1/spring_jump_v24/spring_jump_v24.blend",
+  "source_blend_sha256": "5e63b1000425287f5ac50f9889c0ef45e2b3bf8f6f6c574b820016a8b2e5c95a"
+}

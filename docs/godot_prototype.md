@@ -1,6 +1,6 @@
 # Godot 전투 필드 실행 안내
 
-2026-10-27 갱신 · **Godot 4.6 + GDScript** 전투 필드다. 사용자가 승인한 **v21 달리기 + v20 오른손잡이 동작 6종**을 본 게임 기본값으로 연결했다. 일상복 기본 외형과 1.75× 카메라를 사용하며, 휘두르기/찌르기 50:50 선택과 기존 전투 규칙을 유지한다. 검사는 **4.6.2 stable / Compatibility / Windows**의 실제 `game/`에서 수행했다. 이 선택은 현재 시험판 동작에 대한 승인이다.
+2026-10-31 갱신 · **Godot 4.6 + GDScript** 전투 필드다. 일반 실행은 빈손 평상복으로 들어와 지팡이를 조립하고 잡은 뒤 변신복을 입는 3초 연출을 거쳐 시작한다([입장 변신 v26](../reports/transformation_v26/review.html), 전신 연기 개선; 이전 [v25](../reports/transformation_v25/review.html)). 기존 오른손잡이 모션·추가 찌르기/점프와 1.75× 카메라를 사용한다. 검사는 **4.6.2 stable / Compatibility / Windows**의 실제 `game/`에서 수행했다. 기존 동작 선택과 이번 입장 연출의 사용자 검토 상태는 각 전달 기록을 따른다.
 
 [선택한 달리기 비교](../reports/run_arm_v21/review.html), [현재 원본·게임 연결 안내](../assets/characters/player/3d/source/middle_school_v1/run_arm_v21/GAME_INTEGRATION.md), [본 게임 적용 기록](../reports/run_arm_v21/integration/delivery_manifest.json)을 참고한다.
 
@@ -17,6 +17,8 @@ powershell -ExecutionPolicy Bypass -File tools/run_godot.ps1 -GodotPath 'C:\path
 실행기는 PATH 또는 사용자 Downloads의 Godot 4 실행 파일을 찾고 자산 임포트 후 실행한다. 엔진이나 추가 패키지를 다운로드하지 않는다. 플레이 가능한 소스 프로젝트이며 독립 실행 파일 배포본은 아직 만들지 않았다.
 
 ## 첫 플레이
+
+입장 연출의 입력/전투 정지는 [02 · 전투](02_combat.md), 자산·교체 순서·시간은 [09 §3.35](09_character_art_pipeline.md#335-전투-필드-입장-변신-v25-2026-10-31)를 따른다. 재시작과 맵 전환 시 다시 재생한다. 테스트용 `field_entry_mode`의 Auto는 일반 실행에서 켜지고 기존 scripted SceneTree 전투 검사에서는 생략하며, 입장 검사는 Always로 실행한다.
 
 | 입력 | 시안에서 확인할 동작 |
 |---|---|

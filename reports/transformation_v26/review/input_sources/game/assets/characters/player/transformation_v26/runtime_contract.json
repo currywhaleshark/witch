@@ -1,0 +1,159 @@
+{
+  "rig_id": "player_humanoid_v11",
+  "clip": "combat_transform_entry_v26",
+  "fps": 24,
+  "frames": 73,
+  "duration_seconds": 3.0,
+  "assembly_start": 0.3,
+  "assembly_end": 1.15,
+  "grasp_seconds": 1.4,
+  "two_hand_seconds": 2.1,
+  "outfit_begin": 2.12,
+  "outfit_swap": 2.4,
+  "outfit_end": 2.85,
+  "staff_slide_tracks": {
+    "combat_transform_entry_v26": [
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26,
+      -0.26
+    ]
+  },
+  "staff_attachment": {
+    "bone": "DEF-hand.R",
+    "asset_axis": "+Y",
+    "offset_bone_local": [
+      0.007429975084960461,
+      0.04800000786781311,
+      0.015804896131157875
+    ],
+    "basis_columns_bone_local": [
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0.9106548,
+        0,
+        -0.4131677
+      ],
+      [
+        0.4131677,
+        0,
+        0.9106548
+      ]
+    ],
+    "below_grip_m": 0.42,
+    "above_grip_m": 0.78,
+    "shaft_radius_m": 0.01,
+    "preview_object": "PROP_StaffPreview_v18",
+    "runtime_prop_separate": true,
+    "grip_fixture_frame": 49,
+    "right_finger_curl_fraction": 1.0,
+    "anatomical_curl": "palmar; legacy dorsal curl corrected"
+  },
+  "floating_staff_frame": {
+    "origin": [
+      -0.31559982895851135,
+      0.8713032007217407,
+      0.2492002695798874
+    ],
+    "basis_columns": [
+      [
+        0.005940553266555071,
+        0.07978624105453491,
+        -0.9967940449714661
+      ],
+      [
+        0.059998899698257446,
+        0.9949872493743896,
+        0.079999178647995
+      ],
+      [
+        0.9981805086135864,
+        -0.06028154492378235,
+        0.0011237002909183502
+      ]
+    ]
+  },
+  "source_blend": "assets/characters/player/3d/source/middle_school_v1/transformation_v26/transformation_v26.blend",
+  "source_blend_sha256": "382540eeaa95f61698ba4dc423adf74702334a417deed146f48b41a113ab7822",
+  "outfit_source": "assets/characters/player/3d/exports/transformed_fit_v4/outfit_transformed_v4.glb",
+  "hide_body_regions": [
+    "torso",
+    "arms",
+    "lowerlegs",
+    "feet"
+  ],
+  "authoring": "Whole-body entry: gaze, breath, weight shift, planted half step, catch dip, anticipation/overshoot; same v25 events and floating staff frame."
+}

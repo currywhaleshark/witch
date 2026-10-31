@@ -1,0 +1,18 @@
+00:05.812  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v25\transformation_v25.blend"
+V26_POSE 73
+V26_POSE 65
+V26_POSE 57
+V26_POSE 49
+V26_POSE 41
+V26_POSE 33
+V26_POSE 25
+V26_POSE 17
+V26_POSE 9
+V26_POSE 1
+V26_CHECKS {"arm_clamp_max_m": 6.188917057900187e-08, "leg_clamp_max_m": 8.972170467768863e-08, "grasp_center_error_m": 7.21437837893379e-07, "grasp_axis_error_deg": 0.0, "two_hand_error_after_2_10_max_m": 6.958835297589713e-06, "planted_left_foot_max_m": 5.3717973204598094e-05, "right_foot_ik_max_m": 0.00043581810886088405, "end_basis_max_abs_diff": 2.3469328880310059e-07, "wrong_finger_curls": 0}
+Info: Saved as "transformation_v26.blend"
+TRANSFORMATION_V26_BUILD_COMPLETE {"arm_clamp_max_m": 6.188917057900187e-08, "leg_clamp_max_m": 8.972170467768863e-08, "grasp_center_error_m": 7.21437837893379e-07, "grasp_axis_error_deg": 0.0, "two_hand_error_after_2_10_max_m": 6.958835297589713e-06, "planted_left_foot_max_m": 5.3717973204598094e-05, "right_foot_ik_max_m": 0.00043581810886088405, "end_basis_max_abs_diff": 2.3469328880310059e-07, "wrong_finger_curls": 0}
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+scripts disabled for "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v25\transformation_v25.blend", skipping 'rig_common_body_v5_ui.py'
+
+Blender quit

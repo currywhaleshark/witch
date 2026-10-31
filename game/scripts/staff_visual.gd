@@ -20,6 +20,7 @@ var _effect_age := 99.0
 var _transition_serial := 0
 var _departing_root: Node3D
 var _jaw_opening := deg_to_rad(8.0)
+var _entry_parts: Array = []
 
 func initialize() -> bool:
 	var data = JSON.parse_string(FileAccess.get_file_as_string(ASSET + "parts.json"))
@@ -55,6 +56,8 @@ func initialize() -> bool:
 		if spec.group in TOOLS:
 			_parts.append({"node":node,"rest":node.transform,"weight":0.0,"spec":spec})
 			node.visible = false
+		else:
+			_entry_parts.append({"node":node,"rest":node.transform})
 	_make_light()
 	loaded_ok = true
 	set_appearance("basic")
@@ -73,6 +76,20 @@ func set_tool(tool) -> void:
 	_effect_age = 0.0
 	_transition_serial += 1
 	# Pose is deliberately untouched here: rapid switching reverses from current parts.
+
+func sample_entry_assembly(progress: float) -> void:
+	# Entry includes the common shaft/core and selected equipment ornaments. Tool
+	# modules retain their normal cosmetic transition and unchanged gameplay clocks.
+	for i in _entry_parts.size():
+		var part: Dictionary = _entry_parts[i]
+		var delay := minf(float(i)*.065,.60)
+		var amount := clampf((progress-delay)/(1.0-delay),0.0,1.0)
+		var eased := smoothstep(0.0,1.0,amount)
+		part.node.visible = amount>0.000001
+		var rest: Transform3D = part.rest
+		var angle := float(i)*2.399963
+		var offset := Vector3(cos(angle)*.28,.10+.04*(i%3),sin(angle)*.28)*(1.0-eased)
+		part.node.transform = rest if amount>=1.0 else Transform3D(Basis(Vector3.UP,(1.0-eased)*.6)*rest.basis*maxf(.03,eased),rest.origin+offset)
 
 func set_appearance(profile: String) -> bool:
 	if not loaded_ok or not _config.appearance_profiles.has(profile):

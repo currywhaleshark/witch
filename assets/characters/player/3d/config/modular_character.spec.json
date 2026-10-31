@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1-modular-draft",
   "character_id": "player",
-  "status": "combat_prototype_v21_user_selected_right_hand_motion_family",
+  "status": "combat_prototype_v25_field_entry_transformation",
   "rig": {
     "id": "player_humanoid_v11",
     "asset": "exports/run_arm_v21/body_standard_v21.glb",
@@ -89,18 +89,28 @@
       "form": "transformed",
       "body_preset": "standard_v1",
       "rig_id": "player_humanoid_v11",
-      "asset": null,
-      "status": "source_parts_separated_not_runtime_ready",
-      "hide_body_regions": [],
+      "asset": "exports/transformed_fit_v4/outfit_transformed_v4.glb",
+      "status": "validated",
+      "hide_body_regions": [
+        "torso",
+        "arms",
+        "lowerlegs",
+        "feet"
+      ],
       "concept_reference": "assets/reference/character/outfits/transformed_v1/concept_2026-10-27.jpg",
       "concept_manifest": "assets/reference/character/outfits/transformed_v1/manifest.json",
       "design_status": "user_supplied_draft",
-      "staff_design_status": "undecided",
+      "staff_design_status": "selected_staff_material_v3_separate_prop",
       "raw_source": "assets/characters/player/3d/source/transformed_v1/witch_transformed_v1_raw.glb",
       "raw_source_sha256": "1ebf2e3826fcb44895ff5fb543c54bbe7aa207eee4a5647e894d423960e14e74",
       "source_readme": "assets/characters/player/3d/source/transformed_v1/README.md",
       "source_parts": "assets/characters/player/3d/source/transformed_v1/parts_v2/transformed_parts_source_v2.blend",
-      "source_parts_readme": "assets/characters/player/3d/source/transformed_v1/parts_v2/README.md"
+      "source_parts_readme": "assets/characters/player/3d/source/transformed_v1/parts_v2/README.md",
+      "max_influences": 8,
+      "sha256": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13",
+      "runtime_asset": "res://assets/characters/player/transformation_v25/outfit_transformed_v4.glb",
+      "fitting_source_readme": "assets/characters/player/3d/source/transformed_v1/fit_v4/README.md",
+      "integration_report": "reports/transformation_v25/delivery_manifest.json"
     }
   },
   "production_requirements": [
@@ -125,8 +135,7 @@
       "lod0"
     ],
     "not_created": [
-      "hair/twintails_v1",
-      "outfits/transformed_v1"
+      "hair/twintails_v1"
     ],
     "default_color_semantics": "absolute swatches normalized to #282630 hair and #72707A iris; use apply_appearance_colors",
     "pose_report": "reports/run_arm_v21/integration/godot_pose_parity.json",
@@ -241,6 +250,18 @@
       "reports/run_arm_v21/independent_validation.json"
     ],
     "runtime_contract": "game/assets/characters/player/run_arm_v21/runtime_contract.json",
-    "delivery_manifest": "reports/run_arm_v21/integration/delivery_manifest.json"
+    "delivery_manifest": "reports/run_arm_v21/integration/delivery_manifest.json",
+    "field_entry": {
+      "report": "reports/transformation_v26/delivery_manifest.json",
+      "clip": "combat_transform_entry_v26",
+      "runtime_contract": "game/assets/characters/player/transformation_v26/runtime_contract.json",
+      "previous_report": "reports/transformation_v25/delivery_manifest.json",
+      "starting_form": "civilian",
+      "ending_form": "transformed",
+      "preserves_body_hair_eyes": true,
+      "user_selection": "integrated_review_candidate",
+      "outfit_geometry": "unchanged_transformed_fit_v4",
+      "scope": "Entry and current runtime actions; no live cloth or arbitrary outfit contact guarantee."
+    }
   }
 }

@@ -1,0 +1,11 @@
+00:06.218  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\spring_jump_v24\spring_jump_v24.blend"
+02:49.468  image.write      | ERROR OpenImageIO write failed: Could not open file "C:\Users\yurib\.thumbnails\large\blender_31980_a073d9921d7b5c1a229cd3916b26b631.png.png"
+[Tripo3D] Log file: C:\Users\yurib\AppData\Local\Packages\sandbox.{5bc19e83-b28c-49bf-ada2-b49b97f14e0d}\AC\Temp\tripo3d_blender_bridge.log
+BlenderMCP addon registered
+정보: 저장함: "transformation_v25.blend"임
+TRANSFORMATION_BUILD_COMPLETE {"frame": 1, "seconds": 0.0, "arm_clamp_m": 0.0, "right_float_error_m": 0.4089796213340125, "two_hand_error_m": 0.5410330572487282} {"origin": [-0.31559982895851135, 0.8713032007217407, 0.2492002695798874], "basis_columns": [[0.005940553266555071, 0.07978624105453491, -0.9967940449714661], [0.059998899698257446, 0.9949872493743896, 0.079999178647995], [0.9981805086135864, -0.06028154492378235, 0.0011237002909183502]]}
+BlenderMCP addon unregistered
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+scripts disabled for "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\spring_jump_v24\spring_jump_v24.blend", skipping 'rig_common_body_v5_ui.py'
+
+Blender quit

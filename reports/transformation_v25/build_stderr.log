@@ -1,0 +1,3 @@
+20:48:35 - tripo_addon - [task.py:21] - INFO - WebSocket server started on port 60600
+20:51:22 - tripo_addon - [task.py:27] - INFO - WebSocket server stop requested
+20:51:24 - tripo_addon - [task.py:35] - WARNING - WebSocket thread did not exit cleanly (timeout)

@@ -1,0 +1,12 @@
+20:47:13 - tripo_addon - [task.py:21] - INFO - WebSocket server started on port 60600
+00:11.938  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v25\transformation_v25.blend"
+[Tripo3D] Log file: C:\Users\yurib\AppData\Local\Packages\sandbox.{30de8df4-7188-47a9-8439-f851995a94e5}\AC\Temp\tripo3d_blender_bridge.log
+BlenderMCP addon registered
+ENTRY_ARM_AUDIT {"label": "before", "samples": 145, "first": {"R": {"shoulder": [-0.17000001668930054, 9.729120620249887e-08, 1.2720000743865967], "elbow": [-0.2066955864429474, -0.13546337187290192, 1.0670287609100342], "wrist": [-0.2500000596046448, -0.0349997878074646, 0.8799992203712463], "flexion_degrees": 60.73127587313952, "wrist_deflection_degrees": 31.62268644198642, "upper_arm_from_down_degrees": 34.39979013209483, "upper_arm_from_world_down_degrees": 34.399796962284, "humerus_hinge_roll_error_degrees": -139.077773540282, "ulna_hinge_roll_error_degrees": 47.16775986082856, "palm_inward_dot": 0.6279083490371704, "max_half_frame_turn_degrees": 0}, "L": {"shoulder": [0.17000001668930054, 9.729120620249887e-08, 1.2720000743865967], "elbow": [0.25724726915359497, -0.12600888311862946, 1.0765018463134766], "wrist": [0.24999991059303284, -0.03499984368681908, 0.8799999952316284], "flexion_degrees": 60.73133734484205, "wrist_deflection_degrees": 29.60662291976834, "upper_arm_from_down_degrees": 38.095537190097026, "upper_arm_from_world_down_degrees": 38.095537190097026, "humerus_hinge_roll_error_degrees": 152.15197138535868, "ulna_hinge_roll_error_degrees": -90.3457261896967, "palm_inward_dot": -0.15776407718658447, "max_half_frame_turn_degrees": 0}}, "max_half_frame_turn_degrees": 8.940909252833245, "max_wrist_deflection_degrees": 95.82950065919235}
+20:47:18 - tripo_addon - [task.py:27] - INFO - WebSocket server stop requested
+20:47:20 - tripo_addon - [task.py:35] - WARNING - WebSocket thread did not exit cleanly (timeout)
+BlenderMCP addon unregistered
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+scripts disabled for "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v25\transformation_v25.blend", skipping 'rig_common_body_v5_ui.py'
+
+Blender quit

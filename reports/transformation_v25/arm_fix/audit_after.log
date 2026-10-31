@@ -1,0 +1,12 @@
+20:51:51 - tripo_addon - [task.py:21] - INFO - WebSocket server started on port 60600
+00:06.078  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v25\transformation_v25.blend"
+[Tripo3D] Log file: C:\Users\yurib\AppData\Local\Packages\sandbox.{05309cb8-871d-4fd5-891e-f1da79f2eb78}\AC\Temp\tripo3d_blender_bridge.log
+BlenderMCP addon registered
+ENTRY_ARM_AUDIT {"label": "after", "samples": 145, "first": {"R": {"shoulder": [-0.17000001668930054, 9.729120620249887e-08, 1.2720000743865967], "elbow": [-0.2244073897600174, 0.039523862302303314, 1.0328603982925415], "wrist": [-0.2499999850988388, -0.045000020414590836, 0.8349996209144592], "flexion_degrees": 32.555037999544425, "wrist_deflection_degrees": 10.023109654149659, "upper_arm_from_down_degrees": 15.706402487037842, "upper_arm_from_world_down_degrees": 15.706402487037842, "humerus_hinge_roll_error_degrees": -1.5367927260972687e-05, "ulna_hinge_roll_error_degrees": -2.0490567510038253e-05, "palm_inward_dot": 0.9949818849563599, "max_half_frame_turn_degrees": 0}, "L": {"shoulder": [0.17000001668930054, 9.729120620249887e-08, 1.2720000743865967], "elbow": [0.2244073897600174, 0.039523862302303314, 1.0328603982925415], "wrist": [0.25, -0.0450001135468483, 0.834999680519104], "flexion_degrees": 32.55506190520652, "wrist_deflection_degrees": 10.023129290943523, "upper_arm_from_down_degrees": 15.706402487037842, "upper_arm_from_world_down_degrees": 15.706402487037842, "humerus_hinge_roll_error_degrees": 4.2688682312579695e-05, "ulna_hinge_roll_error_degrees": 3.756604043507013e-05, "palm_inward_dot": 0.9949818849563599, "max_half_frame_turn_degrees": 0}}, "max_half_frame_turn_degrees": 9.874264346954279, "max_wrist_deflection_degrees": 95.82950065919235, "passed": true, "failures": []}
+20:51:56 - tripo_addon - [task.py:27] - INFO - WebSocket server stop requested
+20:51:58 - tripo_addon - [task.py:35] - WARNING - WebSocket thread did not exit cleanly (timeout)
+BlenderMCP addon unregistered
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+scripts disabled for "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v25\transformation_v25.blend", skipping 'rig_common_body_v5_ui.py'
+
+Blender quit

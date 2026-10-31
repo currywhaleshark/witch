@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": 7,
+  "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.139s\n\nOK\n",
+  "inputs": {
+    "tests/test_character_appearance.py": "3815a7af78681aff6c7f0eb5f224ebd8c24f3a9ba35daf3fa62d34453b330ed9",
+    "tools/character_appearance.py": "d9759ee48a6fc91e3ab37cbc76f347ca23e18b09bb0acddab00440a481036a8b",
+    "assets/characters/player/3d/config/modular_character.spec.json": "308040754e5ddbc6fc6c8c5eb93fbf98a108b9f213c99ceb6c6c960734fb1518"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "phase": "review",
+  "exit_code": 0,
+  "test": "transformation_v26",
+  "stderr_empty": true,
+  "changed_inputs": [],
+  "workspace_cache_diagnostic_only": false
+}

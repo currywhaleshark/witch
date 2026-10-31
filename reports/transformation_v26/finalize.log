@@ -1,0 +1,12 @@
+00:04.000  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v26\transformation_v26.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.1\5.1\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+22:55:46 | INFO: Starting glTF 2.0 export
+22:55:46 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+22:55:46 | WARNING: Armature must be the parent of skinned meshArmature is selected by its name, but may be false in case of instances
+22:55:48 | INFO: Finished glTF 2.0 export in 2.2212560176849365 s
+
+TRANSFORMATION_EXPORT_COMPLETE {'passed': True, 'glb_sha256': '9abaeb5ccf3da2eb853536fe0100c67b5add6a07486999b334ff0316ef0571e8', 'outfit_sha256': '69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13', 'carrier': 'Outfit_Buttons_v7', 'source_sha256': '382540eeaa95f61698ba4dc423adf74702334a417deed146f48b41a113ab7822'}
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+scripts disabled for "C:\Users\yurib\Documents\New project\witch\assets\characters\player\3d\source\middle_school_v1\transformation_v26\transformation_v26.blend", skipping 'rig_common_body_v5_ui.py'
+
+Blender quit

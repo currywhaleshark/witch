@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "the spring dash carries the witch to a nearby cursor",
+    "it costs its mana and starts its cooldown",
+    "the dash takes a moment rather than teleporting",
+    "a far cursor caps the dash at its range",
+    "a cursor at her feet still springs the minimum distance",
+    "aimed at an enemy it stops short beside it",
+    "it never runs off the walkable field",
+    "the dash is under way",
+    "a heavy hit during the dash does not stagger her",
+    "the dash ends on its own",
+    "the skill tree window's slot picker binds a skill"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

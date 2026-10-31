@@ -155,6 +155,10 @@ var boss_serial = 0
 var map: Node3D
 var player_route: Dictionary = {}
 var boss_spawned = false
+# Auto follows the existing standalone-game versus scripted-harness convention.
+# Integration tests and reviews explicitly select Always; ordinary combat harnesses
+# retain their immediate flat-arena setup. Disabled is useful for repeated playtests.
+@export_enum("Auto", "Always", "Disabled") var field_entry_mode: int = 0
 
 func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
@@ -354,6 +358,10 @@ func reset_arena() -> void:
 	spawn_serial = field.size()
 	if not player_visual.loaded_ok:
 		show_message("캐릭터 자산을 불러오지 못했습니다")
+	elif field_entry_mode == 1 or (field_entry_mode == 0 and get_tree().get_script() == null):
+		var entry_facing := Vector3(camera.basis.z.x,0,camera.basis.z.z).normalized()
+		player_visual.look_at(player.position+entry_facing)
+		player_visual.begin_field_entry()
 
 func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = "normal", kind: String = "") -> void:
 	# kind picks an enemy type; without one, heavy keeps the original light/heavy test dummies.
@@ -434,7 +442,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			move_hold.clear()
 	if event is InputEventKey and not event.pressed and hold.get("key") == event.physical_keycode:
 		hold.clear()
-	if paused or hp <= 0:
+	if paused or hp <= 0 or player_visual.field_entry_active():
 		return
 	if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode in [KEY_1, KEY_2, KEY_3, KEY_4]:
 		var index: int = [KEY_1, KEY_2, KEY_3, KEY_4].find(event.physical_keycode)
@@ -869,7 +877,7 @@ func sync_automaton_cost() -> void:
 
 func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void:
 	sync_automaton_cost()
-	if paused or hp <= 0 or field_cleared():
+	if paused or hp <= 0 or field_cleared() or player_visual.field_entry_active():
 		return
 	if slot not in rules.SLOTS:
 		return
@@ -1778,6 +1786,16 @@ func eligible(ally: Dictionary, id: String) -> bool:
 
 func _physics_process(dt: float) -> void:
 	if not is_instance_valid(player):
+		return
+	if player_visual.field_entry_active():
+		# Entry is outside the combat clock: enemies, resources and pending actions
+		# wait until the staff is held and the covered outfit swap has completed.
+		player_visual.sync_state(dt,false,0.0,paused,hp<=0,false,0.0)
+		for cue in player_visual.consume_entry_cues():
+			play_cue(float(cue.pitch),float(cue.gain_db))
+		place_camera(player.position)
+		map.fade_between(camera.global_position,player.position+Vector3.UP)
+		hud.queue_redraw()
 		return
 	sync_automaton_cost()
 	if not paused and field_cleared():

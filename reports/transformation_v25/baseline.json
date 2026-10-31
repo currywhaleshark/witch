@@ -1,0 +1,22 @@
+{
+  "head": "2d1d3eb927093612dc8d534d9696169ab7981cb0",
+  "hashes": {
+    "AGENTS.md": "c41f5eacb6c7ae689889a3c466854565741d56ea7d2a9d23ec9b393656df9533",
+    "docs/09_character_art_pipeline.md": "18f6f1ec95d94c6c5ced3fee3d9ebe6b89b91679ab9145f92b8a7c7bdf6e8e8f",
+    "docs/godot_prototype.md": "d39559d7620c553b9b2e51c303afa83492283eefc875a83dd1a949efe5bd0fe5",
+    "game/scripts/arena.gd": "4ef89c4c75d1bc6827ed3f4ec45be856a9615da108dc961ea8eb4adc21472d88",
+    "game/scripts/player_visual.gd": "3b675354eac7603d5b8a078c381a82526652e641ccdc4652d0a5743d03df7445",
+    "game/scripts/staff_visual.gd": "8ebb7b225a6758af32ca01cb40e72f1d06b23477680a6537de3c8bb272539f0e",
+    "game/scripts/modular_character_runtime.gd": "c01c9d3030fadb1c310a6240618a6a758fd51e916bbc519b7a20c37da70786dd",
+    "game/scripts/hud.gd": "bed538243519925179d2cae4ef84b28e7363816d62c4546e5f651fad55ec9e72",
+    "game/data/trial.json": "8c7ee61cf1b3e87f86ef0a3749f101fb965cedcabd9a57c4ab3bab4cfad15430",
+    "game/scripts/build.gd": "e37fe5041f41772e20b7d4335de37013d4caaac80a24aa103ed9c4fde092f40b",
+    "game/scripts/build_window.gd": "d39a435412e12ceff04f8485cc1f5a275f8ca74a899559154935b49b38b27ffc",
+    "game/scripts/inventory_window.gd": "8a25a0b7ab8382485e2903d3690aed6a739f8a85c8167c8e71963fff60bf6d55",
+    "game/scripts/items.gd": "65edfb46417aecd1cdb2dc9b16db0b8a8e4847e132172de64c05f862f49d62a2",
+    "game/main.tscn": "fab32f8930ef27ad38e57b6962808b1eb710689d1f9db3a34df531842157710d",
+    "game/audio/mechanical_impact.wav": "084482527edee1f7878942e890d5b5544d284b24ffbe245bfbcd2f919aba1179",
+    "assets/characters/player/3d/source/middle_school_v1/spring_jump_v24/spring_jump_v24.blend": "5e63b1000425287f5ac50f9889c0ef45e2b3bf8f6f6c574b820016a8b2e5c95a",
+    "assets/characters/player/3d/exports/transformed_fit_v4/outfit_transformed_v4.glb": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13"
+  }
+}

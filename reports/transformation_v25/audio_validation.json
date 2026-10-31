@@ -1,0 +1,16 @@
+{
+  "source": "game/audio/mechanical_impact.wav",
+  "reused": true,
+  "seconds": 0.4549886621315193,
+  "sample_rate": 44100,
+  "channels": 2,
+  "sample_width": 2,
+  "peak": 0.79998779296875,
+  "entry_events": [
+    "assembly",
+    "grasp",
+    "outfit"
+  ],
+  "mute_check": "passed in transformation_v25/result.json",
+  "listening_claim": false
+}
