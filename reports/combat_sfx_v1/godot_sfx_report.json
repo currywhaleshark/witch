@@ -6,8 +6,11 @@
     "hit variants never repeat back to back",
     "same-cue overlap is capped",
     "long hit tail fades out after its cap",
+    "gear assembly starts its slow fade after 1.1s",
+    "gear assembly is gone before the outfit change",
     "mute silences named effects",
-    "missing effect falls back to the old impact cue"
+    "missing effect falls back to the old impact cue",
+    "field entry plays gear assembly then outfit change: [\"staff_assemble\", \"outfit_change\"]"
   ],
   "engine": "4.6.2-stable (official)",
   "failures": []

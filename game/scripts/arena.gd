@@ -1809,7 +1809,12 @@ func _physics_process(dt: float) -> void:
 		# wait until the staff is held and the covered outfit swap has completed.
 		player_visual.sync_state(dt,false,0.0,paused,hp<=0,false,0.0)
 		for cue in player_visual.consume_entry_cues():
-			play_cue(float(cue.pitch),float(cue.gain_db))
+			# Assembly and outfit change have their own sounds; the grasp keeps the pitched impact.
+			var named: String = {"assembly": "staff_assemble", "outfit": "outfit_change"}.get(cue.get("event", ""), "")
+			if named != "" and sfx != null and sfx.has_cue(named):
+				play_sfx(named, float(cue.pitch))
+			else:
+				play_cue(float(cue.pitch),float(cue.gain_db))
 		place_camera(player.position)
 		map.fade_between(camera.global_position,player.position+Vector3.UP)
 		hud.queue_redraw()

@@ -12,7 +12,7 @@
       "sha256": "eedf55855a2f1143f87d97f2302c192ed6fa6568c55c858e82584e7e0ed58089",
       "generated_at": "2026-10-31T14:59:07+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -33,7 +33,7 @@
       "sha256": "fb33026d431f640723e2c5ea674ecfd29a54be97622b263f1b652217a9b98f43",
       "generated_at": "2026-10-31T14:59:10+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -54,7 +54,7 @@
       "sha256": "424ddf8fa098370e86fea7aba09223c58f7385781ea59e84cf7f2ac4716487b0",
       "generated_at": "2026-10-31T14:59:12+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -75,7 +75,7 @@
       "sha256": "b6169e83ee3a710538c0cd9d20b41f1b859372db8cc0da82b11094baa78cd60d",
       "generated_at": "2026-10-31T14:59:13+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -96,7 +96,7 @@
       "sha256": "ddc8a666b948a3c3390f2d9c3d7bcb12707bbcfccb294f2132ca9787a92e862b",
       "generated_at": "2026-10-31T14:59:15+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": -5.1,
@@ -117,7 +117,7 @@
       "sha256": "ca2b0bbfc0b3a580e4b9c5946495d6ab4d8d617c8de2b29deb79c59fc3b8597d",
       "generated_at": "2026-10-31T14:59:19+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -138,7 +138,7 @@
       "sha256": "c9a749ae0d932b9ca397206154bb27b02dc4e03a34abb146e6c5a649c041b728",
       "generated_at": "2026-10-31T14:59:20+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": -7.3,
@@ -159,7 +159,7 @@
       "sha256": "d4dd8b0d2649f95bf11e7da9541e057de8d383d9f983589d4a4595541a03dd47",
       "generated_at": "2026-10-31T14:59:22+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -180,7 +180,7 @@
       "sha256": "eff0da434fe5c2224fb1814be23b2ab2f3c6873636f7201cc76719ff4d894585",
       "generated_at": "2026-10-31T14:59:24+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": -8.3,
@@ -201,7 +201,7 @@
       "sha256": "94b71a66551c6b8ac7eaea32c7872284603196a33e1215cde5ac72f4d83f233a",
       "generated_at": "2026-10-31T14:59:25+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": -0.8,
@@ -222,7 +222,7 @@
       "sha256": "6680af0722b0acb1c1bb6a121493e7a90d7cb86cf5df2497d223348cf8821d37",
       "generated_at": "2026-10-31T14:59:29+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -243,7 +243,7 @@
       "sha256": "ec1afedea714555b54b8eb986b7278938bbe0470635c85d1136aadffc8c22089",
       "generated_at": "2026-10-31T14:59:31+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": -0.0,
@@ -264,7 +264,7 @@
       "sha256": "496f1df4775550298f8205709a04c9aa162d2f18b5251efbe661ee38fa623723",
       "generated_at": "2026-10-31T14:59:33+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -285,7 +285,7 @@
       "sha256": "9cba39c583a406c6df9a496722b1c6146a419ecd79c3745146e4c1f377059ad1",
       "generated_at": "2026-10-31T14:59:34+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": -9.2,
@@ -306,7 +306,7 @@
       "sha256": "70fc26f25f8a261c3376bd9da468ee9daa801df5ad935fb24b94ece73b22aa86",
       "generated_at": "2026-10-31T14:59:36+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -327,7 +327,7 @@
       "sha256": "37d05e184efa1e7225abc82104b5d223623cfccfc2d1f1e1399cfe17b3ba6a33",
       "generated_at": "2026-10-31T14:59:38+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -348,7 +348,7 @@
       "sha256": "43ee2125376bdf1693ffb0bd78359120749813366660603ba318d13debc319df",
       "generated_at": "2026-10-31T14:59:39+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": -1.6,
@@ -369,7 +369,7 @@
       "sha256": "8c2cd6f8282729a1fe39454bcda61d21dab7243f136ea5b6a90b21dd36bc03ca",
       "generated_at": "2026-10-31T14:59:42+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": -0.6,
@@ -390,7 +390,7 @@
       "sha256": "3d748be9d7a0caa1ceba7e728729ec856dbdeafacf813e23e5fe948596c96d1b",
       "generated_at": "2026-10-31T15:07:56+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -411,7 +411,7 @@
       "sha256": "d4a88e6b9d8fa4daf099b91d057750357065e74f14c3b6a83d03328fc3f1ef0d",
       "generated_at": "2026-10-31T15:07:59+00:00",
       "listened": false,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -432,7 +432,7 @@
       "sha256": "a2cdeb65bf4e6a40b5137bad3ee348b35071018d47950896b576d75572c0870c",
       "imported_at": "2026-10-31T15:20:33+00:00",
       "listened": true,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -453,7 +453,7 @@
       "sha256": "b59bae612c85395060f8d2292bbd6675be92b06bac32e46ab0d083ad9b40a3c3",
       "imported_at": "2026-10-31T15:20:33+00:00",
       "listened": true,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
@@ -474,13 +474,55 @@
       "sha256": "c8614c1e20b067636a3655b8f6c0e0df086fcdb526a8e391d00bcb8f1c51c7c5",
       "imported_at": "2026-10-31T15:20:33+00:00",
       "listened": true,
-      "wired_into_game": false,
+      "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
         "rms_dbfs": -12.9,
         "clipped": 944,
         "onset_ms": 0
+      }
+    },
+    "staff_assemble": {
+      "file": "game/audio/sfx_v1/staff_assemble.wav",
+      "source": "user_supplied",
+      "original_file": "MACHMech-mechanical_gear_tran-Elevenlabs.wav",
+      "text": "(사용자가 ElevenLabs에서 직접 받아 온 파일)",
+      "cue": "field entry transformation assembly event (0.30s)",
+      "seconds": 4.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "sha256": "cadd47fff03466fe7e1d6eb68da879762f92acc067958be4e796a75c79f923a9",
+      "imported_at": "2026-10-31T16:08:51+00:00",
+      "listened": true,
+      "wired_into_game": true,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -14.0,
+        "clipped": 571,
+        "onset_ms": 0
+      }
+    },
+    "outfit_change": {
+      "file": "game/audio/sfx_v1/outfit_change.wav",
+      "source": "user_supplied",
+      "original_file": "MAGShim-magical_whoosh,_gent-Elevenlabs.wav",
+      "text": "(사용자가 ElevenLabs에서 직접 받아 온 파일)",
+      "cue": "field entry transformation outfit swap event (2.40s)",
+      "seconds": 3.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "sha256": "959c7875f7c27c23bdff4080dd3f34775863ff0a8888c8bc5f171f8fd5d34881",
+      "imported_at": "2026-10-31T16:08:51+00:00",
+      "listened": true,
+      "wired_into_game": true,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -5.6,
+        "rms_dbfs": -24.5,
+        "clipped": 0,
+        "onset_ms": 154
       }
     }
   },

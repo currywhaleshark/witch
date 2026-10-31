@@ -50,6 +50,10 @@
     {"id": "boss_slam", "cue": "arena.gd resolve_boss slam (play_cue 0.4)", "seconds": 1.5,
      "text": "Massive iron hammer slamming onto a stone alley floor, deep boom with falling debris"},
     {"id": "boss_shockwave", "cue": "arena.gd resolve_boss shockwave (play_cue 0.35)", "seconds": 2.0,
-     "text": "Ground shockwave, deep rumbling boom spreading outward through stone"}
+     "text": "Ground shockwave, deep rumbling boom spreading outward through stone"},
+    {"id": "staff_assemble", "supplied": ["staff_assemble.wav"], "cue": "field entry transformation assembly", "seconds": 4.0,
+     "text": "(user-supplied ElevenLabs file: mechanical gear transformation)"},
+    {"id": "outfit_change", "supplied": ["outfit_change.wav"], "cue": "field entry transformation outfit swap", "seconds": 3.0,
+     "text": "(user-supplied ElevenLabs file: gentle magical whoosh)"}
   ]
 }

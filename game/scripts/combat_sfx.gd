@@ -4,7 +4,7 @@ extends Node
 ## Gains level each file's measured RMS toward a per-role target; all values are trial values.
 const DIR = "res://audio/sfx_v1/"
 const FADE = 0.08
-# files, gain_db, max_seconds (0 = play out), voices (same-cue overlap before stealing), skip (start offset)
+# files, gain_db, max_seconds (0 = play out), voices (same-cue overlap before stealing), skip (start offset), fade
 const CUES = {
 	"staff_swing": {"files": ["staff_swing"], "gain_db": -24.0, "max_seconds": 0.45, "voices": 2},
 	"staff_hit": {"files": ["staff_hit_1", "staff_hit_2", "staff_hit_3"], "gain_db": -19.0, "max_seconds": 0.55, "voices": 2},
@@ -27,12 +27,17 @@ const CUES = {
 	"boss_sweep": {"files": ["boss_sweep"], "gain_db": -18.0, "max_seconds": 0.0, "voices": 1},
 	"boss_slam": {"files": ["boss_slam"], "gain_db": -9.0, "max_seconds": 0.0, "voices": 1},
 	"boss_shockwave": {"files": ["boss_shockwave"], "gain_db": -13.0, "max_seconds": 0.0, "voices": 1},
+	# Field-entry transformation. The 3.4s gear sound is cut near the grasp so it never covers the outfit change.
+	"staff_assemble": {"files": ["staff_assemble"], "gain_db": -16.0, "max_seconds": 1.1, "voices": 1, "fade": 0.3},
+	"outfit_change": {"files": ["outfit_change"], "gain_db": -6.0, "max_seconds": 0.0, "voices": 1},
 }
 var streams: Dictionary = {}
 var voices: Array = []
 var pool: Array[AudioStreamPlayer] = []
 var rng = RandomNumberGenerator.new()
 var last_variant: Dictionary = {}
+# Recent cue names for tests and reviews.
+var history: Array = []
 
 func _ready() -> void:
 	rng.seed = 7301
@@ -66,11 +71,15 @@ func play(cue: String, gain_db: float = 0.0) -> bool:
 	if choices.size() > 1 and index == last_variant.get(cue, -1):
 		index = (index + 1) % choices.size()
 	last_variant[cue] = index
+	history.append(cue)
+	if history.size() > 64:
+		history.pop_front()
 	player.stream = choices[index]
 	player.pitch_scale = rng.randf_range(0.96, 1.04)
 	player.volume_db = float(spec.gain_db) + gain_db
 	player.play(float(spec.get("skip", 0.0)))
-	voices.append({"cue": cue, "player": player, "age": 0.0, "max": float(spec.max_seconds), "base_db": player.volume_db, "fade": -1.0})
+	voices.append({"cue": cue, "player": player, "age": 0.0, "max": float(spec.max_seconds), "base_db": player.volume_db,
+		"fade": -1.0, "fade_length": float(spec.get("fade", FADE))})
 	return true
 
 func stop_all() -> void:
@@ -101,7 +110,7 @@ func _process(dt: float) -> void:
 			voice.fade = 0.0
 		if voice.fade >= 0:
 			voice.fade += dt
-			var amount = clampf(voice.fade / FADE, 0.0, 1.0)
+			var amount = clampf(voice.fade / voice.fade_length, 0.0, 1.0)
 			voice.player.volume_db = voice.base_db + linear_to_db(maxf(0.001, 1.0 - amount))
 			if amount >= 1.0:
 				_release(voice)
