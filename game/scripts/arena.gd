@@ -437,12 +437,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			config.attack_speed_score = steps[(steps.find(config.attack_speed_score) + 1) % steps.size()]
 			show_message("공속 점수 %d · 기본 공격 %.2f초" % [config.attack_speed_score, attack_seconds()])
 			return
-		if event.physical_keycode == KEY_F8:
-			restart_probe("settings_changed")
-			var cast_steps: Array = config.cast_speed_steps
-			config.cast_speed_score = cast_steps[(cast_steps.find(config.cast_speed_score) + 1) % cast_steps.size()]
-			show_message("시전 속도 점수 %d · 산탄 %.2f초 · 태엽인형 %.2f초" % [config.cast_speed_score, cast_seconds(rules.skills.shotgun), cast_seconds(rules.skills.automaton)])
-			return
 		if event.physical_keycode == KEY_F1:
 			cancel_pending_cast()
 			restart_probe("settings_changed")
@@ -1341,7 +1335,7 @@ func passive_factor(attack: String) -> float:
 	var tag: String = config.attack_tags.get(attack, "")
 	var factor := 1.0
 	for id in config.passives:
-		if tag != "" and config.passives[id].tag == tag:
+		if tag != "" and config.passives[id].get("tag", "") == tag:
 			factor += float(config.passives[id].damage_per_level) * float(config.passive_levels[id])
 	return factor
 

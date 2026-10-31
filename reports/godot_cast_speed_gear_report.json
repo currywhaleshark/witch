@@ -1,0 +1,20 @@
+{
+  "checks": [
+    "no gear and no passive leave casts at their base time",
+    "production efficiency levels raise the cast speed score",
+    "it speeds every cast, other trees' included",
+    "it leaves attack motions alone",
+    "a gear cast speed option needs no skill points",
+    "gear and passive cast speed add up into one score",
+    "each further 20 cast speed saves less time under the soft cap",
+    "a slot spent on power or vitality gives that instead",
+    "gear stats sit outside the point budget, and those slots carry no cast speed",
+    "a free stat reset keeps the gear",
+    "a will option raises max mana",
+    "F8 no longer steps cast speed; gear and the passive do",
+    "the character window's gear picker sets an option slot",
+    "the build snapshot for the A5 log carries the gear"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

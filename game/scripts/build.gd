@@ -5,6 +5,7 @@ extends RefCounted
 const STATS = ["power", "dexterity", "vitality", "will"]
 const STAT_NAMES = {"power": "위력", "dexterity": "기교", "vitality": "활력", "will": "의지"}
 const NODE_NAMES = {"base": "노드 없음", "A": "A 자폭 특화", "B": "B 지속공격 특화"}
+const GEAR_OPTIONS = ["none", "cast_speed", "power", "vitality", "will"]
 
 var arena: Node
 var rules: Dictionary
@@ -13,6 +14,9 @@ var stats: Dictionary = {}
 var skills: Dictionary = {}
 var passives: Dictionary = {}
 var node: String
+# C3 stand-in for item option slots: each holds one option, so cast speed (FCR) on gear
+# is paid for with the power, vitality or will that slot could have carried instead.
+var gear: Array = []
 var base_hp: float
 var base_mana: float
 
@@ -28,6 +32,8 @@ func _init(owner: Node) -> void:
 	for id in config.passives:
 		passives[id] = int(config.passive_levels[id])
 	node = config.automaton_node
+	for i in int(rules.gear_slots):
+		gear.append("none")
 	base_hp = float(config.max_hp)
 	base_mana = float(config.max_mana)
 
@@ -103,6 +109,26 @@ func set_node(value: String) -> bool:
 	apply()
 	return true
 
+func set_gear(slot: int, option: String) -> void:
+	arena.split_build_log()
+	gear[slot] = option
+	apply()
+
+func gear_bonus(key: String) -> float:
+	var total := 0.0
+	for option in gear:
+		total += float(rules.gear_options[option].get(key, 0))
+	return total
+
+func stat(id: String) -> float:
+	# Allocated points plus whatever the trial gear adds; gear is not part of the point budget.
+	return float(stats[id]) + gear_bonus(id)
+
+func cast_speed_parts() -> Dictionary:
+	# Gear FCR and the production efficiency passive add up before the soft cap (04 §4.1).
+	var passive: float = float(arena.config.passives.production_efficiency.cast_speed_per_level) * passives.production_efficiency
+	return {"gear": gear_bonus("cast_speed"), "passive": passive}
+
 func reset_stats() -> void:
 	arena.split_build_log()
 	for id in STATS:
@@ -121,7 +147,9 @@ func reset_skills() -> void:
 func apply() -> void:
 	var config: Dictionary = arena.config
 	var effects: Dictionary = rules.stat_effects
-	config.dexterity = float(stats.dexterity)
+	config.dexterity = stat("dexterity")
+	var cast_speed: Dictionary = cast_speed_parts()
+	config.cast_speed_score = cast_speed.gear + cast_speed.passive
 	for id in skills:
 		config[id + "_level"] = float(skills[id])
 	for id in passives:
@@ -129,10 +157,10 @@ func apply() -> void:
 	config.automaton_node = node
 	arena.sync_automaton_cost()
 	# Vitality and will move the maximums; current HP and mana follow a rise and are clipped by a fall.
-	var hp_max: float = base_hp + float(effects.vitality) * stats.vitality
+	var hp_max: float = base_hp + float(effects.vitality) * stat("vitality")
 	arena.hp = clampf(arena.hp + hp_max - float(config.max_hp), 0.0, hp_max) if arena.hp > 0 else arena.hp
 	config.max_hp = hp_max
-	var mana_max: float = base_mana + float(effects.will) * stats.will
+	var mana_max: float = base_mana + float(effects.will) * stat("will")
 	arena.state.mana = clampf(arena.state.mana + mana_max - float(arena.state.max_mana), 0.0, mana_max)
 	arena.state.max_mana = mana_max
 	config.max_mana = mana_max
@@ -140,8 +168,8 @@ func apply() -> void:
 func power_factor() -> float:
 	# Power raises the witch's own direct hits only: never bleed (07 §2.3) and never summons,
 	# whose strength comes from their skill level (07 §2.1).
-	return 1.0 + float(rules.stat_effects.power) * stats.power
+	return 1.0 + float(rules.stat_effects.power) * stat("power")
 
 func snapshot() -> Dictionary:
-	return {"level": level, "stats": stats.duplicate(), "skills": skills.duplicate(), "passives": passives.duplicate(), "node": node,
+	return {"level": level, "stats": stats.duplicate(), "skills": skills.duplicate(), "passives": passives.duplicate(), "node": node, "gear": gear.duplicate(),
 		"stat_points_left": stat_points(), "skill_points_left": skill_points()}
