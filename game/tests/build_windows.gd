@@ -140,14 +140,14 @@ func run() -> void:
 	hold_key(KEY_SHIFT, false)
 	var shifted_power: int = build.stats.power
 	hold_key(KEY_CTRL, true)
-	# Skill tree + buttons run ballistics, chainsaw, shield, ...; the second is the chainsaw's.
-	buttons(arena.skill_window, "+")[1].pressed.emit()
+	# Skill tree + buttons run shotgun, ballistics, chainsaw, ...; the third is the chainsaw's.
+	buttons(arena.skill_window, "+")[2].pressed.emit()
 	var ctrl_once: int = build.skills.chainsaw
-	buttons(arena.skill_window, "+")[1].pressed.emit()
+	buttons(arena.skill_window, "+")[2].pressed.emit()
 	hold_key(KEY_CTRL, false)
 	check(shifted_power == 11 and ctrl_once == 6, "Shift+click spends 10 points at once and Ctrl+click 5")
 	check(build.skills.chainsaw == 10, "a multi-step click stops at the level cap")
-	buttons(arena.skill_window, "−")[1].pressed.emit()
+	buttons(arena.skill_window, "−")[2].pressed.emit()
 	check(build.skills.chainsaw == 9, "a plain click still moves one step")
 	key(KEY_C)
 	key(KEY_S)
@@ -165,7 +165,7 @@ func run() -> void:
 	check(levels == [arena.config.shield_level, arena.config.dexterity, arena.config.automaton_level, arena.config.turret_level, arena.config.chainsaw_level, arena.config.automaton_node, arena.config.passive_levels], "the old level keys no longer change the build")
 	var score: float = arena.config.hit_recovery_score
 	key(KEY_F12)
-	check(arena.config.hit_recovery_score != score, "F12 still steps the hit recovery score")
+	check(arena.config.hit_recovery_score == score, "F12 no longer steps the hit recovery score; items carry it")
 
 	arena.log_dir = OS.get_user_data_dir().path_join("build_log_test")
 	for arg in OS.get_cmdline_user_args():

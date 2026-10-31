@@ -121,14 +121,8 @@ func _character() -> void:
 		body.add_child(stepper(Build.STAT_NAMES[id], str(build.stats[id]), func(): return build.change_stat(id, -1), func(): return build.change_stat(id, 1),
 			build.stats[id] > 0, build.stat_points() > 0, notes[id]))
 	body.add_child(text("명중은 회피 없는 일반 적 기준. 위력은 소환체·출혈에 적용되지 않음", MUTED, 12))
-	body.add_child(text("시험 장비 옵션 (칸마다 하나, 포인트와 별개)", MUTED, 14))
-	var gear_row := HBoxContainer.new()
-	gear_row.add_theme_constant_override("separation", 10)
-	for slot in build.gear.size():
-		gear_row.add_child(gear_picker(slot))
-	body.add_child(gear_row)
 	var cast_speed: Dictionary = build.cast_speed_parts()
-	body.add_child(text("시전 속도 %d (장비 %d + 생산 효율 %d) · 태엽인형 %.2f초 · 산탄 %.2f초" % [arena.config.cast_speed_score, cast_speed.gear, cast_speed.passive,
+	body.add_child(text("시전 속도 %d (장비 %d + 생산 효율 %d) · 태엽인형 %.2f초 · 산탄 %.2f초 · 장비는 I 창" % [arena.config.cast_speed_score, cast_speed.gear, cast_speed.passive,
 		arena.cast_seconds(arena.rules.skills.automaton), arena.cast_seconds(arena.rules.skills.shotgun)], GOLD, 13))
 	body.add_child(text("Ctrl+클릭 ×5 · Shift+클릭 ×10", MUTED, 12))
 	body.add_child(row([button("스탯 초기화 (무료)", func(): build.reset_stats(), build.stat_points() < build.level * int(build.rules.stat_points_per_level))]))
@@ -164,18 +158,6 @@ func _skills() -> void:
 		slots.add_child(slot_picker(slot))
 	body.add_child(slots)
 
-func gear_picker(slot: int) -> OptionButton:
-	var picker := OptionButton.new()
-	picker.name = "Gear_%d" % slot
-	picker.focus_mode = Control.FOCUS_NONE
-	for option in Build.GEAR_OPTIONS:
-		picker.add_item(arena.build.rules.gear_options[option].name)
-	picker.select(Build.GEAR_OPTIONS.find(arena.build.gear[slot]))
-	picker.item_selected.connect(func(index: int):
-		arena.build.set_gear(slot, Build.GEAR_OPTIONS[index])
-		arena.refresh_build_windows())
-	return picker
-
 func slot_picker(slot: String) -> VBoxContainer:
 	# Any skill on any of RMB/Q/W/E/R, so a build can carry e.g. the chainsaw and the shield together.
 	var column := VBoxContainer.new()
@@ -200,6 +182,8 @@ func effect_note(id: String) -> String:
 			return "막기 %d%% · %.1f초" % [roundi(100 * arena.block_chance()), arena.shield_duration()]
 		"chainsaw":
 			return "출혈 %.1f초" % arena.bleed_plan(0).seconds
+		"shotgun":
+			return "피해 +%d%%" % roundi(100 * (arena.skill_level_factor("shotgun") - 1.0))
 		"automaton", "turret":
 			return "명중 %d%% · 치명 %d%%" % [roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[id + "_level"] - 1), config.hit_min, config.hit_cap)), roundi(100 * arena.crit_chance(id))]
 		"production_efficiency":

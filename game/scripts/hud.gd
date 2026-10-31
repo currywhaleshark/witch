@@ -93,6 +93,12 @@ func _draw() -> void:
 			centered(p + Vector2(0, -8), " · ".join(debuffs), 11, TEAL)
 		elif enemy.windup > 0:
 			centered(p + Vector2(0, -8), "!", 17, RED)
+	# Loot on the field shows its name in its rarity colour.
+	for loot in arena.ground_items:
+		if not is_instance_valid(loot.node) or arena.camera.is_position_behind(loot.node.position):
+			continue
+		var at: Vector2 = arena.camera.unproject_position(loot.node.position + Vector3.UP * 0.3)
+		centered(at, loot.item.name, 13, Color(arena.items.data.rarity_colors[loot.item.rarity]))
 	for ally in arena.allies:
 		# Summon durability: a thin teal bar only once it has been hit.
 		if ally.hp >= ally.max_hp or arena.camera.is_position_behind(ally.node.position):

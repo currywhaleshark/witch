@@ -4,6 +4,8 @@ const Shape = preload("res://scripts/shapes.gd")
 const Hud = preload("res://scripts/hud.gd")
 const ManaProbe = preload("res://scripts/mana_probe.gd")
 const Build = preload("res://scripts/build.gd")
+const Items = preload("res://scripts/items.gd")
+const InventoryWindow = preload("res://scripts/inventory_window.gd")
 const BuildWindow = preload("res://scripts/build_window.gd")
 const FieldMap = preload("res://scripts/field_map.gd")
 const PlayerVisual = preload("res://scripts/player_visual.gd")
@@ -54,6 +56,16 @@ var character_window: PanelContainer
 var skill_window: PanelContainer
 # Spring dash in flight: {direction, left, speed}; empty when not dashing.
 var dash: Dictionary = {}
+# C4-C6 trial items: what lies on the field, the bag, the worn slots (slot -> item or null)
+# and the totals of what is worn. Drops roll on their own stream, never the combat one.
+var items: RefCounted
+var loot_rng = RandomNumberGenerator.new()
+var ground_items: Array = []
+var bag: Array = []
+var equipment: Dictionary = {}
+var gear: Dictionary = {}
+var inventory_window: PanelContainer
+var tool_upkeep: Dictionary = {}
 var state: Dictionary
 var player: CharacterBody3D
 var player_model: Node3D
@@ -148,6 +160,13 @@ func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
 	rules = Rules.new(config)
 	automaton_cost = {"mana_cost": rules.skills.automaton.mana_cost, "cooldown_seconds": rules.skills.automaton.cooldown_seconds}
+	items = Items.new()
+	loot_rng.randomize()
+	for slot in items.data.slots:
+		equipment[slot] = null
+	for id in rules.skills:
+		if rules.skills[id].kind == "tool":
+			tool_upkeep[id] = rules.skills[id].upkeep_per_second
 	sync_automaton_cost()
 	block_rng.randomize()
 	combat_rng.randomize()
@@ -168,6 +187,9 @@ func _ready() -> void:
 	character_window.setup(self, "character")
 	skill_window.setup(self, "skills")
 	character_window.position = Vector2(24, 84)
+	inventory_window = InventoryWindow.new()
+	canvas.add_child(inventory_window)
+	inventory_window.setup(self)
 	skill_window.position = Vector2(get_viewport().get_visible_rect().size.x - 560, 84)
 	if "--start-paused" in OS.get_cmdline_user_args():
 		paused = true
@@ -242,6 +264,11 @@ func reset_arena() -> void:
 	for child in world.get_children():
 		if child.is_in_group("actor_corpses") or child.is_in_group("cast_assemblies"):
 			child.free()
+	# Loot left on the field goes with the run; the bag and worn items stay, like the build.
+	for loot in ground_items:
+		if is_instance_valid(loot.node):
+			loot.node.free()
+	ground_items.clear()
 	automaton_assembly = null
 	turret_assembly = null
 	shotgun_assembly = null
@@ -430,17 +457,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		shift = event.shift_pressed
 		slot = {KEY_Q: "q", KEY_W: "w", KEY_E: "e", KEY_R: "r"}.get(event.physical_keycode, "")
 		source = {"key": event.physical_keycode}
-		if event.physical_keycode == KEY_F4:
-			# Close the running log before the change so it keeps the settings it measured.
-			restart_probe("settings_changed")
-			var steps: Array = config.attack_speed_steps
-			config.attack_speed_score = steps[(steps.find(config.attack_speed_score) + 1) % steps.size()]
-			show_message("공속 점수 %d · 기본 공격 %.2f초" % [config.attack_speed_score, attack_seconds()])
-			return
 		if event.physical_keycode == KEY_F1:
 			cancel_pending_cast()
 			restart_probe("settings_changed")
 			state = rules.bind(state, "lmb", "shotgun" if state.bindings.lmb == "basic_attack" else "basic_attack")
+			return
+		if event.physical_keycode == KEY_I:
+			inventory_window.toggle()
+			return
+		if event.physical_keycode == KEY_G:
+			# Test tool: drop an item at her feet (Shift: a unique) at the trial level.
+			var rarity: String = "unique" if event.shift_pressed else items.weighted(loot_rng, {"normal": 1, "magic": 2, "rare": 2})
+			drop_item(items.generate(loot_rng, build.level, rarity), player.position + Vector3(0.7, 0, 0.4))
 			return
 		if event.physical_keycode == KEY_C or event.physical_keycode == KEY_S:
 			# Trial character / skill tree windows; combat keeps running while they are open.
@@ -453,13 +481,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			config.bleed.growth = growths[(growths.find(config.bleed.growth) + 1) % growths.size()]
 			var plan: Dictionary = bleed_plan(0)
 			show_message("전기톱 Lv %d · 출혈 성장 %s안 · %.1f초 · 일반 %d%%" % [config.chainsaw_level, config.bleed.growth, plan.seconds, roundi(100 * plan.ratio * float(config.bleed.ratio.normal))])
-			return
-		if event.physical_keycode == KEY_F12:
-			# Skill and stat levels moved to the C/S windows; F12 still steps the hit recovery score.
-			restart_probe("settings_changed")
-			var options: Array = config.hit_recovery_steps
-			config.hit_recovery_score = options[(options.find(config.hit_recovery_score) + 1) % options.size()]
-			show_message("타격 회복 점수 %d · 경직 %.2f초 · 방패 막기 %d%%" % [config.hit_recovery_score, hit_recovery_seconds(), roundi(100 * block_chance())])
 			return
 		if event.physical_keycode == KEY_B:
 			# Test tool: a boss walks in from a field edge.
@@ -576,7 +597,89 @@ func split_build_log() -> void:
 		probe = ManaProbe.new()
 		logged_seconds = -1.0
 
+func gear_total(key: String) -> float:
+	return float(gear.get(key, 0.0))
+
+func refresh_gear() -> void:
+	# Worn items feed the build, which writes the scores and maximums combat reads.
+	var worn: Array = equipment.values().filter(func(item): return item != null)
+	gear = items.totals(worn)
+	build.apply()
+	refresh_build_windows()
+
+func equip(index: int) -> void:
+	var item: Dictionary = bag[index]
+	split_build_log()
+	bag.remove_at(index)
+	if equipment[item.slot] != null:
+		bag.append(equipment[item.slot])
+	equipment[item.slot] = item
+	refresh_gear()
+
+func unequip(slot: String) -> void:
+	if equipment[slot] == null or bag.size() >= int(items.data.bag_size):
+		return
+	split_build_log()
+	bag.append(equipment[slot])
+	equipment[slot] = null
+	refresh_gear()
+
+func discard(index: int) -> void:
+	bag.remove_at(index)
+	refresh_build_windows()
+
+func equipment_summary() -> Dictionary:
+	var summary := {}
+	for slot in equipment:
+		if equipment[slot] != null:
+			summary[slot] = {"name": equipment[slot].name, "rarity": equipment[slot].rarity, "options": equipment[slot].options}
+	return summary
+
+func drop_loot(grade: String, at: Vector3) -> void:
+	# Item level is the trial character level, +1 for elites and +2 for bosses (04 §4.3).
+	var level: int = build.level + int(items.data.grade_level_bonus.get(grade, 0))
+	for item in items.roll_drops(loot_rng, grade, level):
+		drop_item(item, at + Vector3(loot_rng.randf_range(-0.5, 0.5), 0, loot_rng.randf_range(-0.5, 0.5)))
+
+func drop_item(item: Dictionary, at: Vector3) -> void:
+	var color := Color(items.data.rarity_colors[item.rarity])
+	var node: MeshInstance3D = Shape.cylinder(world, map.grounded(at) + Vector3(0, 0.05, 0), 0.17, 0.08, color)
+	ground_items.append({"item": item, "node": node})
+
+func tick_pickup() -> void:
+	# Walking over loot picks it up while the bag has room.
+	for loot in ground_items.duplicate():
+		var flat: Vector3 = loot.node.position - player.position
+		flat.y = 0.0
+		if flat.length() > float(items.data.pickup_radius):
+			continue
+		if bag.size() >= int(items.data.bag_size):
+			show_message("가방이 가득 찼습니다")
+			return
+		bag.append(loot.item)
+		loot.node.queue_free()
+		ground_items.erase(loot)
+		show_message(loot.item.name)
+		refresh_build_windows()
+
+func sync_tool_upkeep() -> void:
+	# Upkeep options and the power part trim every tool's drain, never below a tenth.
+	var cut: float = minf(0.9, gear_total("upkeep_pct") / 100.0)
+	for id in tool_upkeep:
+		rules.skills[id].upkeep_per_second = float(tool_upkeep[id]) * (1.0 - cut)
+
+func skill_level_factor(source: String) -> float:
+	# Skills whose level raises their damage (the shotgun, for its blueprint) scale here.
+	var per_level: float = float(items.data.skill_level_damage.get(source, 0.0))
+	return 1.0 + per_level * (float(config.get(source + "_level", 1)) - 1.0) if per_level > 0 else 1.0
+
+func slow_factor() -> float:
+	# Slow strength options deepen the cut to an enemy's speed (0.45 of normal at base).
+	return clampf(1.0 - (1.0 - config.slow_speed_factor) * (1.0 + gear_total("slow_pct") / 100.0), 0.1, 1.0)
+
 func refresh_build_windows() -> void:
+	if is_instance_valid(inventory_window):
+		inventory_window.refresh()
 	for window in [character_window, skill_window]:
 		if is_instance_valid(window):
 			window.refresh()
@@ -1229,6 +1332,8 @@ func execute_cast(event: Dictionary) -> void:
 					enemies[best][debuff] = before
 				else:
 					play_cue({"bolt_cutter": 0.8, "grinder": 1.55}[tool])
+					if tool == "bolt_cutter" and gear_total("rule:chain_cut") > 0:
+						chain_cut(best, damage)
 			elif best != "" and strike(best, damage, true, "witch", "staff") != "miss":
 				play_cue(1.2)
 		"shotgun":
@@ -1291,7 +1396,7 @@ func summon_level(roller: String) -> int:
 func hit_chance(id: String, roller: String = "witch") -> float:
 	# Trial accuracy against the target's grade evasion. The witch's comes from dexterity;
 	# a summon's comes from the level of the skill that built it, never from her stats (07 §2.1).
-	var chance: float = config.hit_base + config.hit_per_dexterity * config.dexterity
+	var chance: float = (config.hit_base + config.hit_per_dexterity * config.dexterity) * (1.0 + gear_total("hit_pct") / 100.0)
 	if roller != "witch":
 		chance = config.summon_hit_base + config.summon_hit_per_level * (summon_level(roller) - 1)
 	return clampf(chance - config.grades[enemies[id].grade].evasion, config.hit_min, config.hit_cap)
@@ -1299,7 +1404,7 @@ func hit_chance(id: String, roller: String = "witch") -> float:
 func crit_chance(roller: String = "witch") -> float:
 	if roller != "witch":
 		return minf(config.crit_cap, config.summon_crit_base + config.summon_crit_per_level * (summon_level(roller) - 1))
-	return minf(config.crit_cap, config.crit_base + config.crit_per_dexterity * config.dexterity)
+	return minf(config.crit_cap, config.crit_base + config.crit_per_dexterity * config.dexterity + gear_total("crit_pct") / 100.0)
 
 func strike(id: String, amount: float, accuracy_roll: bool, roller: String, source: String, look: String = "") -> String:
 	# roller is "witch" or the summon skill ("automaton", "turret") whose level drives the rolls.
@@ -1308,7 +1413,7 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 		return "miss"
 	amount *= passive_factor(source + ("_" + look if look != "" else ""))
 	if roller == "witch":
-		amount *= build.power_factor()
+		amount *= build.power_factor() * (1.0 + gear_total("damage_pct") / 100.0) * skill_level_factor(source)
 	if accuracy_roll and not force_rolls.get("hit", combat_rng.randf() < hit_chance(id, roller)):
 		probe.strike(source, "miss", 0.0)
 		return "miss"
@@ -1337,6 +1442,9 @@ func passive_factor(attack: String) -> float:
 	for id in config.passives:
 		if tag != "" and config.passives[id].get("tag", "") == tag:
 			factor += float(config.passives[id].damage_per_level) * float(config.passive_levels[id])
+	# Parts add to their principle the same way (04 §3.3).
+	if tag != "":
+		factor += gear_total("tag:" + tag) / 100.0
 	return factor
 
 func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
@@ -1360,6 +1468,7 @@ func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 		enemy.body.queue_free()
 		enemies.erase(id)
 		kills += 1
+		drop_loot(enemy.grade, enemy.body.position)
 		probe.counts.kills += 1
 		probe.grade(enemy.grade).kills += 1
 		# A test boss is a one-off; everything else keeps the A5 field topped up.
@@ -1392,6 +1501,8 @@ func bleed_plan(stacks: int) -> Dictionary:
 		seconds += float(bleed.b_seconds_per_level) * level
 		var milestones: int = floori(float(config.chainsaw_level) / float(bleed.b_weight_every))
 		weight += (1.0 - weight) * minf(1.0, float(bleed.b_weight_per_milestone) * milestones)
+	# Bleed duration options stretch it at the same rate per second (04 §4.3: duration, never share).
+	seconds *= 1.0 + gear_total("bleed_pct") / 100.0
 	return {"ratio": ratio * seconds / float(bleed.seconds), "seconds": seconds, "weight": weight}
 
 func add_bleed(id: String) -> void:
@@ -1519,6 +1630,8 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		play_cue(2.2)
 		probe.witch_hit(by_grade, 0.0, false, true)
 		return
+	# Damage reduction options shave every unblocked hit, at most by half.
+	amount *= 1.0 - minf(0.5, gear_total("damage_reduction") / 100.0)
 	# Only a heavy enough hit that leaves her standing stuns.
 	var stunned: bool = hp - amount > 0 and amount >= config.max_hp * config.hit_stun_min_ratio and dash.is_empty()
 	probe.witch_hit(by_grade, minf(hp, amount), stunned, false)
@@ -1590,6 +1703,22 @@ func dismantle_ally(ally: Dictionary) -> void:
 	ally.node.queue_free()
 	allies.erase(ally)
 
+func chain_cut(first: String, damage: float) -> void:
+	# Unique 집행자의 도르래: a landed bolt cutter hit drags the nearest other enemy in.
+	if not enemies.has(first):
+		return
+	var rule: Dictionary = items.data.rule_values
+	var origin: Vector3 = enemies[first].body.position
+	var second := ""
+	var best := float(rule.chain_cut_range)
+	for id in enemies:
+		var gap: float = enemies[id].body.position.distance_to(origin)
+		if id != first and gap <= best:
+			best = gap
+			second = id
+	if second != "":
+		strike(second, damage * float(rule.chain_cut_factor), true, "witch", "bolt_cutter")
+
 func expire_ally(ally: Dictionary) -> void:
 	# End of life: automatons self-destruct, turrets just shut down. An A automaton also lands
 	# here the moment it reaches its target, trading its repeated attacks for a bigger blast.
@@ -1606,8 +1735,16 @@ func expire_ally(ally: Dictionary) -> void:
 	if art != null:
 		art.detach_for_death(world, self, ally.mobile)
 	play_cue(0.65 if ally.mobile else 1.15)
+	var spot: Vector3 = ally.node.position
 	ally.node.queue_free()
 	allies.erase(ally)
+	# Unique 자기복제 태엽: a self-destructing automaton leaves one replica with half the life;
+	# replicas never copy themselves again.
+	if ally.mobile and gear_total("rule:self_replicate") > 0 and not ally.get("replica", false):
+		spawn_ally(spot, true, "")
+		var replica: Dictionary = allies[-1]
+		replica.replica = true
+		replica.life *= float(items.data.rule_values.replica_life_factor)
 
 func on_screen(pos: Vector3) -> bool:
 	if camera.is_position_behind(pos):
@@ -1636,13 +1773,14 @@ func _physics_process(dt: float) -> void:
 			if event.type == "tool_released":
 				show_message("마나 소진 · 공구 해제")
 				flash_tool_change(null)
-		state = rules.restore_mana(state, config.mana_regen * dt).state
+		state = rules.restore_mana(state, config.mana_regen * (1.0 + gear_total("mana_regen_pct") / 100.0) * dt).state
 		if a5_mode:
 			probe.tick(dt, skill_gap(), unaffordable_skills())
 			tick_respawns(dt)
 		tick_potions(dt)
 		tick_bolts(dt)
 		tick_bleeds(dt)
+		tick_pickup()
 		tick_boss_trigger()
 		tick_windup(dt)
 		if action_time > 0:
@@ -1664,7 +1802,7 @@ func _physics_process(dt: float) -> void:
 				moving = false
 				move_marker.visible = false
 			else:
-				var speed: float = config.player_speed * (1.0 + (config.potions.speed.speed_bonus if speed_buff > 0 else 0.0))
+				var speed: float = config.player_speed * (1.0 + (config.potions.speed.speed_bonus if speed_buff > 0 else 0.0)) * (1.0 + gear_total("move_speed") / 100.0)
 				var step: Vector3 = follow(player_route, player.position, destination, 0.5, dt) - player.position
 				step.y = 0
 				if step.length() < 0.001:
@@ -1820,7 +1958,7 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	enemy.model.scale = Vector3.ONE * enemy.size * (1.08 if enemy.flash > 0 else 1.0)
 	var type: Dictionary = config.enemy_types[enemy.kind]
 	var power: float = config.grades[enemy.grade].damage
-	var pace: float = config.enemy_speed * type.speed * config.grades[enemy.grade].speed * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
+	var pace: float = config.enemy_speed * type.speed * config.grades[enemy.grade].speed * (slow_factor() if enemy.slow > 0 else 1.0)
 	if type.has("boss"):
 		tick_boss(enemy, type.boss, power, pace, dt)
 		return
@@ -1829,7 +1967,7 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 		# Brute charge: a straight dash along the telegraphed line that hits the witch at most once.
 		var charge: Dictionary = type.charge
 		enemy.charging = maxf(0, enemy.charging - dt)
-		enemy.body.velocity = enemy.charge_dir * config.enemy_speed * charge.speed_factor * (config.slow_speed_factor if enemy.slow > 0 else 1.0)
+		enemy.body.velocity = enemy.charge_dir * config.enemy_speed * charge.speed_factor * (slow_factor() if enemy.slow > 0 else 1.0)
 		enemy.body.move_and_slide()
 		var dust = enemy.body.get_meta("charge_vfx", null)
 		if is_instance_valid(dust):

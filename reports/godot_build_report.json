@@ -27,7 +27,7 @@
     "a plain click still moves one step",
     "the same keys close them",
     "the old level keys no longer change the build",
-    "F12 still steps the hit recovery score",
+    "F12 no longer steps the hit recovery score; items carry it",
     "the A5 log records the trial build",
     "a build change first saves the segment with the build it was played with",
     "a few seconds of clicking in the windows leaves no fragment log"

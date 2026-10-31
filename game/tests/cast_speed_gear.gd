@@ -1,6 +1,7 @@
 extends SceneTree
-## C3: cast speed from trial gear option slots versus the production efficiency passive.
-## Both add into one cast speed score under the existing soft cap (04 §4.1).
+## C3: cast speed from worn items versus the production efficiency passive. Both add into
+## one cast speed score under the existing soft cap (04 §4.1). An item slot holding cast speed
+## cannot hold life or mana instead; that is the price on the gear side.
 var arena: Node3D
 var failures: Array = []
 var checks: Array = []
@@ -21,12 +22,18 @@ func step(count: int = 1) -> void:
 
 func fresh() -> void:
 	arena.reset_arena()
-	for slot in arena.build.gear.size():
-		arena.build.set_gear(slot, "none")
+	for slot in arena.equipment:
+		arena.equipment[slot] = null
+	arena.bag.clear()
+	arena.refresh_gear()
 	arena.build.reset_stats()
 	arena.build.reset_skills()
 	arena.build.set_level(30)
 	await step(2)
+
+func wear(slot: String, options: Dictionary) -> void:
+	arena.bag.append({"base": "copper_ring" if slot == "ring" else "brass_brooch", "slot": slot, "rarity": "magic", "level": 30, "options": options, "affixes": [], "name": "시험 " + slot})
+	arena.equip(arena.bag.size() - 1)
 
 func key(code: int) -> void:
 	var event = InputEventKey.new()
@@ -53,9 +60,9 @@ func run() -> void:
 
 	await fresh()
 	var spent: int = build.skill_points()
-	build.set_gear(0, "cast_speed")
+	wear("ring", {"cast_speed": 20})
 	check(arena.config.cast_speed_score == 20 and build.skill_points() == spent, "a gear cast speed option needs no skill points")
-	build.set_gear(1, "cast_speed")
+	wear("brooch", {"cast_speed": 20})
 	build.change_skill("production_efficiency", 10)
 	check(arena.config.cast_speed_score == 40 + 10 * per_level, "gear and passive cast speed add up into one score")
 	var times: Array = []
@@ -71,27 +78,21 @@ func run() -> void:
 	await fresh()
 	var stat_budget: int = build.stat_points()
 	var hp_before: float = arena.config.max_hp
-	build.set_gear(0, "power")
-	build.set_gear(1, "vitality")
-	check(is_equal_approx(build.power_factor(), 1.0 + 10 * float(arena.config.build.stat_effects.power)) and is_equal_approx(arena.config.max_hp, hp_before + 15 * float(arena.config.build.stat_effects.vitality)), "a slot spent on power or vitality gives that instead")
-	check(build.stat_points() == stat_budget and arena.config.cast_speed_score == 0, "gear stats sit outside the point budget, and those slots carry no cast speed")
+	wear("ring", {"life": 30})
+	wear("brooch", {"mana": 20})
+	check(is_equal_approx(arena.config.max_hp, hp_before + 30) and is_equal_approx(arena.state.max_mana, 80.0) and arena.config.cast_speed_score == 0, "slots spent on life or mana give that instead of cast speed")
 	build.reset_stats()
-	check(build.gear == ["power", "vitality"], "a free stat reset keeps the gear")
-	build.set_gear(1, "will")
-	check(is_equal_approx(arena.state.max_mana, 60.0 + 20 * float(arena.config.build.stat_effects.will)), "a will option raises max mana")
+	check(build.stat_points() == stat_budget and arena.equipment.ring != null, "worn items sit outside the point budget and survive a free stat reset")
 
 	await fresh()
 	key(KEY_F8)
-	check(arena.config.cast_speed_score == 0, "F8 no longer steps cast speed; gear and the passive do")
+	check(arena.config.cast_speed_score == 0, "F8 no longer steps cast speed; items and the passive do")
+	wear("ring", {"cast_speed": 25})
 	arena.character_window.visible = true
 	arena.character_window.refresh()
-	var picker: OptionButton = arena.character_window.find_child("Gear_1", true, false)
-	var index: int = build.GEAR_OPTIONS.find("cast_speed")
-	picker.select(index)
-	picker.item_selected.emit(index)
-	check(build.gear[1] == "cast_speed" and arena.config.cast_speed_score == 20, "the character window's gear picker sets an option slot")
+	var shown: bool = arena.character_window.find_children("*", "Label", true, false).any(func(label): return label.text.begins_with("시전 속도 25 (장비 25"))
 	arena.character_window.visible = false
-	check(build.snapshot().gear == ["none", "cast_speed"], "the build snapshot for the A5 log carries the gear")
+	check(shown, "the character window shows the cast speed split into gear and passive")
 
 	var report = {"engine": Engine.get_version_info().string, "checks": checks, "failures": failures}
 	var out = ProjectSettings.globalize_path("res://").path_join("../reports/godot_cast_speed_gear_report.json").simplify_path()
