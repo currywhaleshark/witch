@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="마녀도시 · 기계장치 전투 시험"
-run/main_scene="res://main.tscn"
+run/main_scene="res://boot.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=120
 

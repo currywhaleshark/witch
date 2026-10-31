@@ -10,6 +10,9 @@ var slots: Dictionary = {}
 var hidden_regions_by_slot: Dictionary = {}
 var last_error := ""
 var _texture_cache: Dictionary = {}
+# Content keys per texture object. Reading pixels back and hashing a 2K texture took about
+# 0.1s each, so the transformed outfit stalled ~1.4s at both reveal and swap; compute once.
+static var _content_keys: Dictionary = {}
 
 func _load_gltf(path: String) -> Node3D:
 	if not ResourceLoader.exists(path, "PackedScene"):
@@ -49,15 +52,20 @@ func _share_textures(root_node: Node) -> void:
 			var material = mesh.get_active_material(index)
 			if material is StandardMaterial3D and material.albedo_texture != null:
 				var texture: Texture2D = material.albedo_texture
-				var pixels := texture.get_image()
-				var hasher := HashingContext.new()
-				hasher.start(HashingContext.HASH_SHA256)
-				hasher.update(pixels.get_data())
-				var key := str(pixels.get_size()) + ":" + str(pixels.get_format()) + ":" + hasher.finish().hex_encode()
+				var key := content_key(texture)
 				if _texture_cache.has(key):
 					material.albedo_texture = _texture_cache[key]
 				else:
 					_texture_cache[key] = texture
+
+static func content_key(texture: Texture2D) -> String:
+	if not _content_keys.has(texture):
+		var pixels := texture.get_image()
+		var hasher := HashingContext.new()
+		hasher.start(HashingContext.HASH_SHA256)
+		hasher.update(pixels.get_data())
+		_content_keys[texture] = str(pixels.get_size()) + ":" + str(pixels.get_format()) + ":" + hasher.finish().hex_encode()
+	return _content_keys[texture]
 
 func _compatible(other: Skeleton3D) -> bool:
 	if other.get_bone_count() != skeleton.get_bone_count():

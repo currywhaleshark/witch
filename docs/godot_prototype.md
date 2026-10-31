@@ -16,6 +16,26 @@ powershell -ExecutionPolicy Bypass -File tools/run_godot.ps1 -GodotPath 'C:\path
 
 실행기는 PATH 또는 사용자 Downloads의 Godot 4 실행 파일을 찾고 자산 임포트 후 실행한다. 엔진이나 추가 패키지를 다운로드하지 않는다. 플레이 가능한 소스 프로젝트이며 독립 실행 파일 배포본은 아직 만들지 않았다.
 
+### 시작 로딩 화면과 미리 불러오기 (2026-11-01)
+
+사용자가 변신·소환 때의 멈칫함을 보고 시작 시 미리 불러오기와 임시 로딩 화면을 요청했다. 게임 시작 장면은 [boot.tscn](../game/boot.tscn)이다. [boot.gd](../game/scripts/boot.gd)가 첫 프레임부터 [임시 로딩 화면](../game/scripts/loading_screen.gd)을 띄우고, 전투 필드와 캐릭터 파일을 스레드로 불러온 뒤 arena로 넘긴다. arena는 같은 화면 뒤에서 [asset_warmup.gd](../game/scripts/asset_warmup.gd)를 실행한다.
+
+1. 처음 쓸 때 불러오던 변신 의상·소환체·적·보스·지팡이 모델과 효과 셰이더를 스레드로 불러와 참조를 유지한다.
+2. 변신 의상의 텍스처 내용 키를 미리 계산한다. 원인은 [modular_character_runtime.gd](../game/scripts/modular_character_runtime.gd)가 파츠를 붙일 때마다 모든 텍스처 픽셀을 GPU에서 읽어 SHA-256으로 비교하던 것이다. 변신 의상에서는 공개 시작과 교체 때 각 약 1.4초가 걸렸다. 이제 텍스처 객체별로 한 번만 계산해 둔다.
+3. 소환체·조립 파츠·산탄·스프링·방패·지팡이·변신 의상(공개 셰이더 포함)과 효과 셰이더를 화면 뒤에 몇 프레임 그려, Compatibility 렌더러가 셰이더를 지금 컴파일하게 한다.
+
+로딩 중에는 전투 시계·입력·필드 진입 변신이 멈춰 있고, 끝나면 변신이 시작된다. `preload_mode`는 필드 진입과 같은 Auto/Always/Disabled 규칙이다. Auto는 일반 실행에서만 켜지고, main.tscn을 직접 불러오는 검사·리뷰 스크립트에서는 꺼진다. 프레임 시간은 [hitch_probe.gd](../game/tests/hitch_probe.gd)로 실제 GPU 창에서 쟀다([측정 결과](../reports/asset_warmup_v1/)). 셰이더 캐시를 비운 첫 실행 / 캐시가 있는 실행 기준으로 가장 긴 프레임은 다음과 같다.
+
+| 구간 | 이전 | 이후 |
+|---|---|---|
+| 필드 진입 변신 | 2232 / 1501ms | 39 / 26ms |
+| 첫 태엽인형 | 251 / 143ms | 78 / 29ms |
+| 첫 포탑 | 147 / 168ms | 78 / 59ms |
+| 첫 공구 변형 | 586 / 17ms | 66 / 15ms |
+| 첫 산탄 | 35 / 40ms | 45 / 46ms |
+
+포탑(약 60~80ms)과 산탄(약 45ms)은 아직 한 프레임 정도 끊긴다. 로딩 자체는 약 3~4초 걸린다. 수치는 이 PC(RTX 2060) 한 대의 측정이며 성능 승인이 아니다. 로딩 화면은 디자인이 정해지지 않은 임시 화면이다.
+
 ## 첫 플레이
 
 입장 연출의 입력/전투 정지는 [02 · 전투](02_combat.md), 자산·교체 순서·시간은 [09 §3.35](09_character_art_pipeline.md#335-전투-필드-입장-변신-v25-2026-10-31)를 따른다. 재시작과 맵 전환 시 다시 재생한다. 테스트용 `field_entry_mode`의 Auto는 일반 실행에서 켜지고 기존 scripted SceneTree 전투 검사에서는 생략하며, 입장 검사는 Always로 실행한다.

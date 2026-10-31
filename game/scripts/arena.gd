@@ -21,6 +21,8 @@ const SpringPlate = preload("res://scripts/spring_plate.gd")
 const SKILL_TREES = {"shotgun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
 	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
+const AssetWarmup = preload("res://scripts/asset_warmup.gd")
+const LoadingScreen = preload("res://scripts/loading_screen.gd")
 const WARNING_SHADER = preload("res://shaders/warning_zone.gdshader")
 const OUTLINE_SHADER = preload("res://shaders/outline.gdshader")
 const AURA_SHADER = preload("res://shaders/grade_aura.gdshader")
@@ -161,6 +163,10 @@ var boss_spawned = false
 # Integration tests and reviews explicitly select Always; ordinary combat harnesses
 # retain their immediate flat-arena setup. Disabled is useful for repeated playtests.
 @export_enum("Auto", "Always", "Disabled") var field_entry_mode: int = 0
+# Start-of-game asset/shader warmup behind a temporary loading screen; same Auto convention.
+@export_enum("Auto", "Always", "Disabled") var preload_mode: int = 0
+var loading := false
+var loading_layer: CanvasLayer
 
 func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
@@ -184,7 +190,10 @@ func _ready() -> void:
 	hud.arena = self
 	canvas.add_child(hud)
 	hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	loading = preload_mode == 1 or (preload_mode == 0 and get_tree().get_script() == null)
 	reset_arena()
+	if loading:
+		_begin_loading()
 	build = Build.new(self)
 	character_window = BuildWindow.new()
 	skill_window = BuildWindow.new()
@@ -369,10 +378,32 @@ func reset_arena() -> void:
 	spawn_serial = field.size()
 	if not player_visual.loaded_ok:
 		show_message("캐릭터 자산을 불러오지 못했습니다")
-	elif field_entry_mode == 1 or (field_entry_mode == 0 and get_tree().get_script() == null):
+	elif not loading:
+		start_field_entry()
+
+func start_field_entry() -> void:
+	if field_entry_mode == 1 or (field_entry_mode == 0 and get_tree().get_script() == null):
 		var entry_facing := Vector3(camera.basis.z.x,0,camera.basis.z.z).normalized()
 		player_visual.look_at(player.position+entry_facing)
 		player_visual.begin_field_entry()
+
+func _begin_loading() -> void:
+	# Combat, input and the field entry wait until the warmup has finished behind the overlay.
+	loading_layer = CanvasLayer.new()
+	loading_layer.layer = 100
+	add_child(loading_layer)
+	var warmup := AssetWarmup.new()
+	world.add_child(warmup)
+	var screen := LoadingScreen.new()
+	screen.warmup = warmup
+	loading_layer.add_child(screen)
+	await get_tree().process_frame
+	await warmup.run(camera)
+	warmup.queue_free()
+	loading_layer.queue_free()
+	loading = false
+	if player_visual.loaded_ok:
+		start_field_entry()
 
 func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = "normal", kind: String = "") -> void:
 	# kind picks an enemy type; without one, heavy keeps the original light/heavy test dummies.
@@ -426,6 +457,8 @@ func dress_enemy(enemy: Dictionary, outlined: bool, alive: bool = true) -> void:
 		mesh.material_overlay = enemy_overlays[key]
 
 func _unhandled_input(event: InputEvent) -> void:
+	if loading:
+		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		match event.physical_keycode:
 			KEY_ESCAPE:
@@ -1802,7 +1835,7 @@ func eligible(ally: Dictionary, id: String) -> bool:
 	return enemies.has(id) and on_screen(enemies[id].body.position) and ally.node.position.distance_to(enemies[id].body.position) <= (config.summon_detection_range if ally.mobile else config.turret_detection_range) and map.sees(ally.node.position, enemies[id].body.position)
 
 func _physics_process(dt: float) -> void:
-	if not is_instance_valid(player):
+	if not is_instance_valid(player) or loading:
 		return
 	if player_visual.field_entry_active():
 		# Entry is outside the combat clock: enemies, resources and pending actions

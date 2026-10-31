@@ -1,0 +1,48 @@
+{
+  "frames": 783,
+  "ready_ms": 4017.994,
+  "spikes_over_33ms": [
+    {
+      "label": "loading",
+      "ms": 4055.943
+    },
+    {
+      "label": "entry",
+      "ms": 73.337
+    },
+    {
+      "label": "entry",
+      "ms": 1387.533
+    },
+    {
+      "label": "entry",
+      "ms": 1500.601
+    },
+    {
+      "label": "automaton",
+      "ms": 142.602
+    },
+    {
+      "label": "turret",
+      "ms": 45.869
+    },
+    {
+      "label": "turret",
+      "ms": 168.411
+    },
+    {
+      "label": "shotgun",
+      "ms": 40.46
+    }
+  ],
+  "worst_ms_by_phase": {
+    "attack": 15.019,
+    "automaton": 142.602,
+    "entry": 1500.601,
+    "loading": 4055.943,
+    "settle": 11.679,
+    "shotgun": 40.46,
+    "tool": 17.111,
+    "turret": 168.411
+  }
+}

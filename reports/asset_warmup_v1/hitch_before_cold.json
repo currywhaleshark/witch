@@ -1,0 +1,88 @@
+{
+  "frames": 741,
+  "ready_ms": 4476.243,
+  "spikes_over_33ms": [
+    {
+      "label": "loading",
+      "ms": 4541.298
+    },
+    {
+      "label": "entry",
+      "ms": 2231.755
+    },
+    {
+      "label": "entry",
+      "ms": 310.225
+    },
+    {
+      "label": "entry",
+      "ms": 188.906
+    },
+    {
+      "label": "entry",
+      "ms": 1458.506
+    },
+    {
+      "label": "entry",
+      "ms": 51.023
+    },
+    {
+      "label": "entry",
+      "ms": 1289.507
+    },
+    {
+      "label": "entry",
+      "ms": 156.574
+    },
+    {
+      "label": "settle",
+      "ms": 218.996
+    },
+    {
+      "label": "automaton",
+      "ms": 229.372
+    },
+    {
+      "label": "automaton",
+      "ms": 251.209
+    },
+    {
+      "label": "automaton",
+      "ms": 134.999
+    },
+    {
+      "label": "automaton",
+      "ms": 157.396
+    },
+    {
+      "label": "turret",
+      "ms": 45.071
+    },
+    {
+      "label": "turret",
+      "ms": 146.514
+    },
+    {
+      "label": "shotgun",
+      "ms": 35.173
+    },
+    {
+      "label": "tool",
+      "ms": 586.286
+    },
+    {
+      "label": "tool",
+      "ms": 86.771
+    }
+  ],
+  "worst_ms_by_phase": {
+    "attack": 12.506,
+    "automaton": 251.209,
+    "entry": 2231.755,
+    "loading": 4541.298,
+    "settle": 218.996,
+    "shotgun": 35.173,
+    "tool": 586.286,
+    "turret": 146.514
+  }
+}

@@ -127,11 +127,12 @@ func run() -> void:
 	arena.hp=0.0;await advance(2)
 	check(not v.field_entry_active() and v.is_dead and not v._entry.visible,"forced death cancels entry and clears its effects")
 	fresh();arena.muted=false
-	var sound_start:int=arena.sound_index
+	# Assembly and outfit now play named effects (combat_sfx.gd); the grasp keeps the pitched impact.
+	var sound_start:int=arena.sound_index;var sfx_start:int=arena.sfx.history.size()
 	await advance(180)
-	check(arena.sound_index-sound_start==3,"assembly grasp and outfit each trigger one existing audio cue")
-	fresh();arena.muted=true;sound_start=arena.sound_index;await advance(180)
-	check(arena.sound_index==sound_start,"mute suppresses all entry cues")
+	check(arena.sound_index-sound_start+arena.sfx.history.size()-sfx_start==3,"assembly grasp and outfit each trigger one existing audio cue")
+	fresh();arena.muted=true;sound_start=arena.sound_index;sfx_start=arena.sfx.history.size();await advance(180)
+	check(arena.sound_index==sound_start and arena.sfx.history.size()==sfx_start,"mute suppresses all entry cues")
 	v=arena.player_visual
 	var slot=v.runtime.slots.outfit
 	check(not v.set_form("invalid") and v.runtime.slots.outfit==slot and v.form=="transformed","invalid form preserves the selected outfit")
