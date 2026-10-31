@@ -111,7 +111,7 @@ func sample_progress(value: float) -> void:
 	_light(progress, 1.0)
 	if progress >= 0.50 and not _clink_played:
 		_clink_played = true
-		_arena.play_cue(2.1, -10.0)
+		_arena.play_sfx("summon_assemble", 2.1)
 
 func _light(phase: float, strength: float) -> void:
 	var ring_material: StandardMaterial3D = _ring.material_override

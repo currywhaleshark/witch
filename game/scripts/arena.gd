@@ -100,6 +100,8 @@ var effects: Array = []
 # Wire-crow orbs in flight; each hits the witch at most once.
 var bolts: Array = []
 var sounds: Array[AudioStreamPlayer] = []
+# Named combat effects; play_cue stays for cues without one.
+var sfx: Node
 var sound_index = 0
 var kills = 0
 var paused = false
@@ -246,6 +248,8 @@ func place_camera(focus: Vector3) -> void:
 	camera.position = focus + screen_up + camera.basis.z * 30
 
 func _build_audio() -> void:
+	sfx = preload("res://scripts/combat_sfx.gd").new()
+	add_child(sfx)
 	if not ResourceLoader.exists("res://audio/mechanical_impact.wav"):
 		return
 	for i in 6:
@@ -263,6 +267,13 @@ func play_cue(pitch: float = 1.0, gain_db: float = 0.0) -> void:
 	sound.pitch_scale = pitch
 	sound.volume_db = -15.0 + gain_db
 	sound.play()
+
+func play_sfx(cue: String, fallback_pitch: float = 1.0, gain_db: float = 0.0) -> void:
+	# Falls back to the old pitched impact when the named file is missing.
+	if muted:
+		return
+	if sfx == null or not sfx.play(cue, gain_db):
+		play_cue(fallback_pitch, gain_db)
 
 func reset_arena() -> void:
 	for child in world.get_children():
@@ -429,6 +440,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				muted = not muted
 				for sound in sounds:
 					sound.stop()
+				if sfx != null:
+					sfx.stop_all()
 				return
 			KEY_H:
 				help_visible = not help_visible
@@ -1123,7 +1136,7 @@ func fire_shotgun(target: Vector3, at_enemy: bool = false) -> void:
 		blocked.append(flat.length()<float(rules.skills.shotgun.range)-0.05)
 	spawn_vfx().muzzle(shot.origin,endpoints,blocked,map.ground_y(shot.origin))
 	last_shotgun={"frame":shot,"origin":shot.origin,"direction":-shot.basis.z,"ends":endpoints,"struck":struck}
-	play_cue(0.65)
+	play_sfx("shotgun_fire", 0.65)
 
 func tick_move_hold() -> void:
 	# A held ground click steers movement; sweeping over enemies never starts an attack.
@@ -1235,7 +1248,7 @@ func apply_transition(result: Dictionary) -> void:
 				show_message({"invalid_target": "대상이 없습니다", "out_of_range": "너무 멉니다", "invalid_ground": "설치할 수 없습니다", "cooldown": "아직 준비 중입니다", "insufficient_mana": "마나가 부족합니다", "empty_slot": "빈 슬롯입니다"}.get(event.reason, "사용할 수 없습니다"))
 			"basic_attack_fallback": fallback_time = 0.7
 			"tool_changed":
-				play_cue(1.65)
+				play_sfx("tool_change", 1.65)
 				flash_tool_change(event.tool)
 			"tool_released": flash_tool_change(null)
 
@@ -1334,7 +1347,8 @@ func execute_cast(event: Dictionary) -> void:
 			if event.get("target_enemy") != null and enemies.has(event.target_enemy):
 				best = event.target_enemy
 			# The swing itself is drawn by the staff trail (tick_staff_trail).
-			# A miss swings silently: no hit sound, no flash, no debuff.
+			# Every swing whooshes; a miss adds no hit sound, no flash, no debuff.
+			play_sfx("staff_swing", 1.0)
 			if tool == "chainsaw":
 				# A small forward fan: every enemy in it is struck on its own roll, and each hit bleeds.
 				var struck: Array = []
@@ -1349,7 +1363,7 @@ func execute_cast(event: Dictionary) -> void:
 						if enemies.has(id):
 							add_bleed(id)
 				if cut:
-					play_cue(1.05)
+					play_sfx("chainsaw_cut", 1.05)
 			elif best != "" and tool != null:
 				var debuff: String = rules.skills[tool].debuff
 				var before: float = enemies[best][debuff]
@@ -1358,11 +1372,11 @@ func execute_cast(event: Dictionary) -> void:
 				if strike(best, damage, true, "witch", tool) == "miss":
 					enemies[best][debuff] = before
 				else:
-					play_cue({"bolt_cutter": 0.8, "grinder": 1.55}[tool])
+					play_sfx({"bolt_cutter": "bolt_cutter_cut", "grinder": "grinder_hit"}[tool], {"bolt_cutter": 0.8, "grinder": 1.55}[tool])
 					if tool == "bolt_cutter" and gear_total("rule:chain_cut") > 0:
 						chain_cut(best, damage)
 			elif best != "" and strike(best, damage, true, "witch", "staff") != "miss":
-				play_cue(1.2)
+				play_sfx("staff_hit", 1.2)
 		"shotgun":
 			fire_shotgun(target, aims_at_enemy(event))
 		"spring_dash":
@@ -1456,7 +1470,7 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 	# look only picks the impact style (the B saw); source stays the logged damage source.
 	spawn_vfx().impact(surface, -toward, look if look != "" else source, crit, map.ground_y(at))
 	if crit:
-		play_cue(0.55)
+		play_sfx("crit_hit", 0.55)
 		shake_time = 0.12
 	return "crit" if crit else "hit"
 
@@ -1599,7 +1613,7 @@ func drink(index: int) -> void:
 	probe.potions[slot.id] = probe.potions.get(slot.id, 0) + 1
 	# A light in the potion colour around the witch tells which potion was drunk.
 	spawn_vfx().potion_glow(player.position, {"hp": Color(1.0, 0.32, 0.28), "mp": Color(0.35, 0.85, 1.0), "both": Color(0.82, 0.55, 1.0), "speed": Color(0.62, 1.0, 0.38)}[potion.kind], map.ground_y(player.position))
-	play_cue(1.4)
+	play_sfx("potion_drink", 1.4)
 
 func cycle_potion(index: int) -> void:
 	# Test tool: Shift+1-4 swaps that slot's potion type and restocks it.
@@ -1654,7 +1668,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		var threat: Vector3 = enemies[near_id].body.position if enemies.has(near_id) else player.position - player_model.global_basis.z
 		var guard: Vector3 = shield_visual.block(threat) if is_instance_valid(shield_visual) else player.position + Vector3.UP * 0.9
 		spawn_vfx().block(guard, map.ground_y(player.position))
-		play_cue(2.2)
+		play_sfx("block", 2.2)
 		probe.witch_hit(by_grade, 0.0, false, true)
 		return
 	# Damage reduction options shave every unblocked hit, at most by half.
@@ -1665,7 +1679,7 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 	hp = maxf(0, hp - amount)
 	hit_time = 0.25
 	spawn_vfx().hurt(player.position + Vector3.UP * 0.85, map.ground_y(player.position))
-	play_cue(0.75)
+	play_sfx("player_hurt", 0.75)
 	if stunned:
 		# Hit recovery cancels the motion, approach, click move and queued input; nothing was spent yet.
 		cancel_summon_assemblies("hit_stun")
@@ -1713,7 +1727,7 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 		"life": life, "hp": durability, "max_hp": durability, "reach": 1.6, "slot": slot})
 	ally_serial += 1
 	spawn_vfx().summon_arrive(node.position, TEAL, map.ground_y(node.position))
-	play_cue(1.8)
+	play_sfx("summon_arrive", 1.8)
 
 func automaton_reach(id: String) -> float:
 	# Automatons stop at arm's length from the target's body, so small foes get punched rather than
@@ -1761,7 +1775,10 @@ func expire_ally(ally: Dictionary) -> void:
 	var art: Node = ally.node.get_node_or_null("ActorVisual")
 	if art != null:
 		art.detach_for_death(world, self, ally.mobile)
-	play_cue(0.65 if ally.mobile else 1.15)
+	if ally.mobile:
+		play_sfx("automaton_explode", 0.65)
+	else:
+		play_cue(1.15)
 	var spot: Vector3 = ally.node.position
 	ally.node.queue_free()
 	allies.erase(ally)
@@ -1963,7 +1980,7 @@ func damage_ally(ally: Dictionary, amount: float, grade: String) -> void:
 	if ally.hp <= 0:
 		# Destroyed summons break apart without the end-of-life self-destruct blast.
 		spawn_vfx().summon_break(ally.node.position + Vector3.UP * 0.5, floor_y)
-		play_cue(1.15)
+		play_sfx("summon_break", 1.15)
 		var art: Node = ally.node.get_node_or_null("ActorVisual")
 		if art != null:
 			art.detach_for_death(world, self)
@@ -2185,7 +2202,7 @@ func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
 				return flat.length() <= sweep.range and (flat.length() < 0.01 or rad_to_deg(facing.angle_to(flat.normalized())) <= sweep.angle / 2.0)
 			boss_area_hit(enemy, in_fan, sweep.damage * power)
 			spawn_vfx().fan_slash(origin, facing, float(sweep.range), float(sweep.angle), map.ground_y(origin))
-			play_cue(0.5)
+			play_sfx("boss_sweep", 0.5)
 			# The lock comes down right after the sweep along the same facing.
 			if enemy.timers.get("slam", 0.0) <= 0:
 				begin_slam(enemy, plan, plan.slam.chain_extra)
@@ -2200,7 +2217,7 @@ func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
 			boss_area_hit(enemy, in_line, slam.damage * power)
 			spawn_vfx().slam(origin, facing, float(slam.length), float(slam.width), map.ground_y(origin))
 			shake_time = maxf(shake_time, 0.16)
-			play_cue(0.4)
+			play_sfx("boss_slam", 0.4)
 		"frames":
 			var frames: Dictionary = plan.frames
 			enemy.timers.frames = frames.cooldown
@@ -2215,7 +2232,7 @@ func resolve_boss(enemy: Dictionary, plan: Dictionary, power: float) -> void:
 			boss_area_hit(enemy, in_disc, wave.damage * power)
 			spawn_vfx().shockwave(origin, float(wave.radius), map.ground_y(origin))
 			shake_time = maxf(shake_time, 0.22)
-			play_cue(0.35)
+			play_sfx("boss_shockwave", 0.35)
 			# Called adds join from the field edges and never respawn in A5 mode.
 			for kind in wave.adds:
 				for i in int(wave.adds[kind]):
@@ -2282,7 +2299,7 @@ func fire_bolt_from(origin: Vector3, at: Vector3, band: Dictionary, damage: floa
 	trail.bolt_trail(origin, BOLT_GLOW)
 	bolts.append({"node": node, "dir": aim.normalized(), "speed": float(band.bolt_speed), "left": float(band.bolt_range),
 		"radius": float(band.bolt_radius), "damage": damage, "grade": grade, "trail": trail})
-	play_cue(1.9)
+	play_sfx("enemy_bolt", 1.9)
 
 func tick_bolts(dt: float) -> void:
 	for bolt in bolts.duplicate():

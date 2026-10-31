@@ -121,7 +121,7 @@ func _place(at: Vector3) -> void:
 func _lock_flourish() -> void:
 	if not is_instance_valid(_arena):
 		return
-	_arena.play_cue(2.1, -6.0)
+	_arena.play_sfx("shield_raise", 2.1)
 	for panel in panels:
 		panel.light.light_energy = 2.2
 		var fx = _arena.spawn_vfx()

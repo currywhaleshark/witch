@@ -58,6 +58,7 @@ if ($Verify) {
     Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/boss.gd')
     Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/map_nav.gd')
     Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/player_visual.gd')
+    Invoke-Godot -EngineArguments @('--headless', '--path', $gamePath, '--script', 'res://tests/combat_sfx.gd')
 }
 if ($RenderCheck) {
     Invoke-Godot -EngineArguments @('--path', $gamePath, '--audio-driver', 'Dummy', '--script', 'res://tests/smoke_arena.gd')

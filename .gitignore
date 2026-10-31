@@ -17,3 +17,7 @@ reports/combat_motion_v18/portable_godot/
 assets/actors/combat_set_v1/authoring/*.blend1
 assets/actors/summons_v2/authoring/*.blend1
 assets/actors/boss_trial_v1/authoring/*.blend1
+
+# Local secrets such as the ElevenLabs API key written by its CLI.
+.env.local
+.env*.local

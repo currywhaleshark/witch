@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "every named cue has its file: missing []",
+    "staff hit keeps three variants",
+    "every cue starts playing",
+    "hit variants never repeat back to back",
+    "same-cue overlap is capped",
+    "long hit tail fades out after its cap",
+    "mute silences named effects",
+    "missing effect falls back to the old impact cue"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

@@ -46,7 +46,7 @@ func launch(direction: Vector3) -> void:
 	if direction.length_squared()>.000001:look_at(global_position+direction,Vector3.UP)
 	sample_progress(1.)
 	mode="launched";_end_time=0.;launch_count=1;launch_origin=global_position
-	_arena.play_cue(1.65,-4.)
+	_arena.play_sfx("spring_dash",1.65)
 	_sample_launch(0.)
 
 func _sample_launch(seconds: float) -> void:

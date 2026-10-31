@@ -1,0 +1,581 @@
+{
+  "effects": {
+    "staff_swing": {
+      "file": "game/audio/sfx_v1/staff_swing.wav",
+      "text": "Short whoosh of a heavy brass and steel staff swung through the air, no impact, close mic",
+      "cue": "basic attack swing/thrust",
+      "requested_seconds": 0.6,
+      "prompt_influence": 0.6,
+      "seconds": 0.6,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "eedf55855a2f1143f87d97f2302c192ed6fa6568c55c858e82584e7e0ed58089",
+      "generated_at": "2026-10-31T14:59:07+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -14.4,
+        "clipped": 365,
+        "onset_ms": 46
+      }
+    },
+    "bolt_cutter_cut": {
+      "file": "game/audio/sfx_v1/bolt_cutter_cut.wav",
+      "text": "Large bolt cutter jaws snapping shut on a steel chain, sharp metallic crunch and snap",
+      "cue": "arena.gd execute_cast bolt cutter (play_cue 0.8)",
+      "requested_seconds": 0.6,
+      "prompt_influence": 0.6,
+      "seconds": 0.6,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "fb33026d431f640723e2c5ea674ecfd29a54be97622b263f1b652217a9b98f43",
+      "generated_at": "2026-10-31T14:59:10+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -21.6,
+        "clipped": 3,
+        "onset_ms": 136
+      }
+    },
+    "grinder_hit": {
+      "file": "game/audio/sfx_v1/grinder_hit.wav",
+      "text": "Angle grinder disc biting into metal for a moment, harsh grinding screech with sparks",
+      "cue": "arena.gd execute_cast grinder (play_cue 1.55)",
+      "requested_seconds": 0.8,
+      "prompt_influence": 0.6,
+      "seconds": 0.8,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "424ddf8fa098370e86fea7aba09223c58f7385781ea59e84cf7f2ac4716487b0",
+      "generated_at": "2026-10-31T14:59:12+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -12.3,
+        "clipped": 60,
+        "onset_ms": 0
+      }
+    },
+    "chainsaw_cut": {
+      "file": "game/audio/sfx_v1/chainsaw_cut.wav",
+      "text": "Small mechanical chainsaw cutting briefly, raspy engine rev and chain bite",
+      "cue": "arena.gd execute_cast chainsaw cut (play_cue 1.05)",
+      "requested_seconds": 1.0,
+      "prompt_influence": 0.6,
+      "seconds": 1.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "b6169e83ee3a710538c0cd9d20b41f1b859372db8cc0da82b11094baa78cd60d",
+      "generated_at": "2026-10-31T14:59:13+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -14.8,
+        "clipped": 4,
+        "onset_ms": 0
+      }
+    },
+    "tool_change": {
+      "file": "game/audio/sfx_v1/tool_change.wav",
+      "text": "Mechanical staff transforming, small gears clicking and a heavy latch locking into place",
+      "cue": "arena.gd apply_transition tool_changed (play_cue 1.65)",
+      "requested_seconds": 0.8,
+      "prompt_influence": 0.6,
+      "seconds": 0.8,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "ddc8a666b948a3c3390f2d9c3d7bcb12707bbcfccb294f2132ca9787a92e862b",
+      "generated_at": "2026-10-31T14:59:15+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -5.1,
+        "rms_dbfs": -29.9,
+        "clipped": 0,
+        "onset_ms": 9
+      }
+    },
+    "crit_hit": {
+      "file": "game/audio/sfx_v1/crit_hit.wav",
+      "text": "Heavy critical hit, metallic crunch layered with a deep low thud",
+      "cue": "arena.gd strike crit (play_cue 0.55)",
+      "requested_seconds": 0.7,
+      "prompt_influence": 0.6,
+      "seconds": 0.68,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "ca2b0bbfc0b3a580e4b9c5946495d6ab4d8d617c8de2b29deb79c59fc3b8597d",
+      "generated_at": "2026-10-31T14:59:19+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -12.4,
+        "clipped": 68,
+        "onset_ms": 0
+      }
+    },
+    "player_hurt": {
+      "file": "game/audio/sfx_v1/player_hurt.wav",
+      "text": "Blunt body hit through thick cloth, dull thump, no voice",
+      "cue": "arena.gd damage_player hit (play_cue 0.75)",
+      "requested_seconds": 0.5,
+      "prompt_influence": 0.6,
+      "seconds": 0.48,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "c9a749ae0d932b9ca397206154bb27b02dc4e03a34abb146e6c5a649c041b728",
+      "generated_at": "2026-10-31T14:59:20+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -7.3,
+        "rms_dbfs": -28.0,
+        "clipped": 0,
+        "onset_ms": 0
+      }
+    },
+    "block": {
+      "file": "game/audio/sfx_v1/block.wav",
+      "text": "Bright metal parry, staff deflecting a blow, quick clang",
+      "cue": "arena.gd damage_player block (play_cue 2.2)",
+      "requested_seconds": 0.5,
+      "prompt_influence": 0.6,
+      "seconds": 0.48,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "d4dd8b0d2649f95bf11e7da9541e057de8d383d9f983589d4a4595541a03dd47",
+      "generated_at": "2026-10-31T14:59:22+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -20.2,
+        "clipped": 1,
+        "onset_ms": 0
+      }
+    },
+    "summon_assemble": {
+      "file": "game/audio/sfx_v1/summon_assemble.wav",
+      "text": "Clockwork automaton assembling itself, small brass gears whirring and parts clicking together",
+      "cue": "summon_assembly.gd part placement (play_cue 2.1/1.25)",
+      "requested_seconds": 1.5,
+      "prompt_influence": 0.6,
+      "seconds": 1.48,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "eff0da434fe5c2224fb1814be23b2ab2f3c6873636f7201cc76719ff4d894585",
+      "generated_at": "2026-10-31T14:59:24+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -8.3,
+        "rms_dbfs": -35.7,
+        "clipped": 0,
+        "onset_ms": 45
+      }
+    },
+    "summon_arrive": {
+      "file": "game/audio/sfx_v1/summon_arrive.wav",
+      "text": "Clockwork device starting up, ratcheting wind-up key then steady ticking",
+      "cue": "arena.gd spawn_ally (play_cue 1.8)",
+      "requested_seconds": 0.8,
+      "prompt_influence": 0.6,
+      "seconds": 0.8,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "94b71a66551c6b8ac7eaea32c7872284603196a33e1215cde5ac72f4d83f233a",
+      "generated_at": "2026-10-31T14:59:25+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -0.8,
+        "rms_dbfs": -25.6,
+        "clipped": 0,
+        "onset_ms": 32
+      }
+    },
+    "summon_break": {
+      "file": "game/audio/sfx_v1/summon_break.wav",
+      "text": "Small brass machine breaking apart, metal parts clattering onto stone",
+      "cue": "arena.gd damage_ally destroyed / turret expiry (play_cue 1.15)",
+      "requested_seconds": 1.0,
+      "prompt_influence": 0.6,
+      "seconds": 1.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "6680af0722b0acb1c1bb6a121493e7a90d7cb86cf5df2497d223348cf8821d37",
+      "generated_at": "2026-10-31T14:59:29+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -21.2,
+        "clipped": 8,
+        "onset_ms": 0
+      }
+    },
+    "potion_drink": {
+      "file": "game/audio/sfx_v1/potion_drink.wav",
+      "text": "Glass potion bottle uncorked and quickly gulped, followed by a soft magical shimmer",
+      "cue": "arena.gd drink (play_cue 1.4)",
+      "requested_seconds": 1.0,
+      "prompt_influence": 0.6,
+      "seconds": 1.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "ec1afedea714555b54b8eb986b7278938bbe0470635c85d1136aadffc8c22089",
+      "generated_at": "2026-10-31T14:59:31+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -0.0,
+        "rms_dbfs": -18.8,
+        "clipped": 42,
+        "onset_ms": 9
+      }
+    },
+    "spring_dash": {
+      "file": "game/audio/sfx_v1/spring_dash.wav",
+      "text": "Compressed metal spring plate releasing, springy launch with a quick whoosh",
+      "cue": "spring_plate.gd actuation (play_cue 1.65)",
+      "requested_seconds": 0.7,
+      "prompt_influence": 0.6,
+      "seconds": 0.68,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "496f1df4775550298f8205709a04c9aa162d2f18b5251efbe661ee38fa623723",
+      "generated_at": "2026-10-31T14:59:33+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -25.4,
+        "clipped": 2,
+        "onset_ms": 0
+      }
+    },
+    "shield_raise": {
+      "file": "game/audio/sfx_v1/shield_raise.wav",
+      "text": "Small mechanical shield unfolding with a metallic snap",
+      "cue": "shield_visual.gd (play_cue 2.1)",
+      "requested_seconds": 0.6,
+      "prompt_influence": 0.6,
+      "seconds": 0.6,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "9cba39c583a406c6df9a496722b1c6146a419ecd79c3745146e4c1f377059ad1",
+      "generated_at": "2026-10-31T14:59:34+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -9.2,
+        "rms_dbfs": -33.2,
+        "clipped": 0,
+        "onset_ms": 0
+      }
+    },
+    "enemy_bolt": {
+      "file": "game/audio/sfx_v1/enemy_bolt.wav",
+      "text": "Dark magic bolt launched, short crackling zap with a whoosh",
+      "cue": "arena.gd fire_bolt_from (play_cue 1.9)",
+      "requested_seconds": 0.6,
+      "prompt_influence": 0.6,
+      "seconds": 0.6,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "70fc26f25f8a261c3376bd9da468ee9daa801df5ad935fb24b94ece73b22aa86",
+      "generated_at": "2026-10-31T14:59:36+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -16.5,
+        "clipped": 1,
+        "onset_ms": 0
+      }
+    },
+    "boss_sweep": {
+      "file": "game/audio/sfx_v1/boss_sweep.wav",
+      "text": "Huge heavy iron arm sweeping through the air, deep powerful whoosh",
+      "cue": "arena.gd resolve_boss sweep (play_cue 0.5)",
+      "requested_seconds": 1.0,
+      "prompt_influence": 0.6,
+      "seconds": 1.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "37d05e184efa1e7225abc82104b5d223623cfccfc2d1f1e1399cfe17b3ba6a33",
+      "generated_at": "2026-10-31T14:59:38+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -11.9,
+        "clipped": 281,
+        "onset_ms": 30
+      }
+    },
+    "boss_slam": {
+      "file": "game/audio/sfx_v1/boss_slam.wav",
+      "text": "Massive iron hammer slamming onto a stone alley floor, deep boom with falling debris",
+      "cue": "arena.gd resolve_boss slam (play_cue 0.4)",
+      "requested_seconds": 1.5,
+      "prompt_influence": 0.6,
+      "seconds": 1.48,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "43ee2125376bdf1693ffb0bd78359120749813366660603ba318d13debc319df",
+      "generated_at": "2026-10-31T14:59:39+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -1.6,
+        "rms_dbfs": -19.1,
+        "clipped": 0,
+        "onset_ms": 0
+      }
+    },
+    "boss_shockwave": {
+      "file": "game/audio/sfx_v1/boss_shockwave.wav",
+      "text": "Ground shockwave, deep rumbling boom spreading outward through stone",
+      "cue": "arena.gd resolve_boss shockwave (play_cue 0.35)",
+      "requested_seconds": 2.0,
+      "prompt_influence": 0.6,
+      "seconds": 2.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "8c2cd6f8282729a1fe39454bcda61d21dab7243f136ea5b6a90b21dd36bc03ca",
+      "generated_at": "2026-10-31T14:59:42+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -0.6,
+        "rms_dbfs": -15.4,
+        "clipped": 0,
+        "onset_ms": 0
+      }
+    },
+    "shotgun_fire": {
+      "file": "game/audio/sfx_v1/shotgun_fire.wav",
+      "text": "Loud shotgun gunshot, one powerful punchy blast with a short outdoor echo tail",
+      "cue": "arena.gd fire_shotgun (play_cue 0.65)",
+      "requested_seconds": 0.9,
+      "prompt_influence": 0.85,
+      "seconds": 0.88,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "3d748be9d7a0caa1ceba7e728729ec856dbdeafacf813e23e5fe948596c96d1b",
+      "generated_at": "2026-10-31T15:07:56+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -8.2,
+        "clipped": 2268,
+        "onset_ms": 0
+      }
+    },
+    "automaton_explode": {
+      "file": "game/audio/sfx_v1/automaton_explode.wav",
+      "text": "Small bomb explosion, loud sharp blast with a deep boom and metal debris scattering",
+      "cue": "arena.gd expire_ally mobile (play_cue 0.65)",
+      "requested_seconds": 1.2,
+      "prompt_influence": 0.85,
+      "seconds": 1.2,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "d4a88e6b9d8fa4daf099b91d057750357065e74f14c3b6a83d03328fc3f1ef0d",
+      "generated_at": "2026-10-31T15:07:59+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -11.0,
+        "clipped": 576,
+        "onset_ms": 0
+      }
+    },
+    "staff_hit_1": {
+      "file": "game/audio/sfx_v1/staff_hit_1.wav",
+      "source": "user_supplied",
+      "original_file": "WEAPBlnt-heavy_mace_hit_metal-Elevenlabs.wav",
+      "text": "(사용자가 ElevenLabs에서 직접 받아 온 파일: heavy mace hit metal)",
+      "cue": "arena.gd execute_cast basic attack hit (play_cue 1.2); 3개 변형",
+      "seconds": 1.48,
+      "sample_rate": 48000,
+      "channels": 2,
+      "sha256": "a2cdeb65bf4e6a40b5137bad3ee348b35071018d47950896b576d75572c0870c",
+      "imported_at": "2026-10-31T15:20:33+00:00",
+      "listened": true,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -13.3,
+        "clipped": 690,
+        "onset_ms": 0
+      }
+    },
+    "staff_hit_2": {
+      "file": "game/audio/sfx_v1/staff_hit_2.wav",
+      "source": "user_supplied",
+      "original_file": "WEAPBlnt-heavy_mace_hit_metal-Elevenlabs (1).wav",
+      "text": "(사용자가 ElevenLabs에서 직접 받아 온 파일: heavy mace hit metal)",
+      "cue": "arena.gd execute_cast basic attack hit (play_cue 1.2); 3개 변형",
+      "seconds": 1.48,
+      "sample_rate": 48000,
+      "channels": 2,
+      "sha256": "b59bae612c85395060f8d2292bbd6675be92b06bac32e46ab0d083ad9b40a3c3",
+      "imported_at": "2026-10-31T15:20:33+00:00",
+      "listened": true,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -13.0,
+        "clipped": 370,
+        "onset_ms": 0
+      }
+    },
+    "staff_hit_3": {
+      "file": "game/audio/sfx_v1/staff_hit_3.wav",
+      "source": "user_supplied",
+      "original_file": "WEAPBlnt-heavy_mace_hit_metal-Elevenlabs (2).wav",
+      "text": "(사용자가 ElevenLabs에서 직접 받아 온 파일: heavy mace hit metal)",
+      "cue": "arena.gd execute_cast basic attack hit (play_cue 1.2); 3개 변형",
+      "seconds": 1.48,
+      "sample_rate": 48000,
+      "channels": 2,
+      "sha256": "c8614c1e20b067636a3655b8f6c0e0df086fcdb526a8e391d00bcb8f1c51c7c5",
+      "imported_at": "2026-10-31T15:20:33+00:00",
+      "listened": true,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -12.9,
+        "clipped": 944,
+        "onset_ms": 0
+      }
+    }
+  },
+  "generator": "ElevenLabs text-to-sound-effects",
+  "model_id": "eleven_text_to_sound_v2",
+  "output_format": "wav_44100",
+  "status": "generation_candidates_not_listened_or_wired",
+  "rejected": {
+    "staff_hit_take1": {
+      "file": "reports/combat_sfx_v1/rejected/staff_hit_take1.wav",
+      "text": "Brass-capped metal staff striking a hard armored body, solid clank with a short metallic ring",
+      "cue": "arena.gd execute_cast basic attack hit (play_cue 1.2)",
+      "requested_seconds": 0.6,
+      "prompt_influence": 0.6,
+      "seconds": 0.6,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "b601820ab79b74ff9aaba8305f07454abce802dad34376abc2afb149f29a06da",
+      "generated_at": "2026-10-31T14:59:08+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -39.8,
+        "rms_dbfs": -54.3,
+        "clipped": 0,
+        "onset_ms": null
+      },
+      "rejected_reason": "거의 무음(피크 -39.8 dBFS)"
+    },
+    "shotgun_fire_take1": {
+      "file": "reports/combat_sfx_v1/rejected/shotgun_fire_take1.wav",
+      "text": "Single punchy shotgun blast from a brass gun, short tail, no reload, no voices",
+      "cue": "arena.gd fire_shotgun (play_cue 0.65)",
+      "requested_seconds": 0.9,
+      "prompt_influence": 0.6,
+      "seconds": 0.88,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "eb5374758e1c065ac603d4f829ac06a9d8b4fecd0c05a9a787ca2890fea1fa12",
+      "generated_at": "2026-10-31T14:59:17+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -22.0,
+        "rms_dbfs": -45.9,
+        "clipped": 0,
+        "onset_ms": 1
+      },
+      "rejected_reason": "너무 작음(피크 -22 dBFS)"
+    },
+    "automaton_explode_take1": {
+      "file": "reports/combat_sfx_v1/rejected/automaton_explode_take1.wav",
+      "text": "Small clockwork bomb exploding, sharp pop with scattering metal parts",
+      "cue": "arena.gd expire_ally mobile (play_cue 0.65)",
+      "requested_seconds": 1.2,
+      "prompt_influence": 0.6,
+      "seconds": 1.2,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "9d9ef36db8cb9cdf55f5e5d37ce5661690a63b331d5d404d0044856aba3bc7d1",
+      "generated_at": "2026-10-31T14:59:27+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -29.4,
+        "clipped": 2,
+        "onset_ms": 32
+      },
+      "rejected_reason": "사용자 청취: 폭발이 아니라 태엽·톱니바퀴 소리만 들림"
+    },
+    "staff_hit_take2": {
+      "file": "reports/combat_sfx_v1/rejected/staff_hit_take2.wav",
+      "text": "Loud metal staff hitting a steel plate, one sharp punchy clang impact with a short ring, close and dry",
+      "cue": "arena.gd execute_cast basic attack hit (play_cue 1.2)",
+      "requested_seconds": 0.6,
+      "prompt_influence": 0.85,
+      "seconds": 0.6,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "5ab294933170c6c4d29bedb751dbbcf8e85636b59c5320f484ee349d94eed38a",
+      "generated_at": "2026-10-31T15:07:55+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -16.3,
+        "rms_dbfs": -37.7,
+        "clipped": 0,
+        "onset_ms": 0
+      },
+      "rejected_reason": "사용자 청취: 타격음으로 부족"
+    }
+  }
+}
