@@ -1,0 +1,221 @@
+{
+  "Body_Hands_v7": {
+    "ok": true,
+    "pass": false,
+    "errors": [
+      "floating/detached part in Body_Hands_v7 (2036 verts at [0.356, -0.023, 0.814])"
+    ],
+    "warnings": [
+      "asset lowest point z=0.7479 (not resting on ground plane z=0)"
+    ],
+    "ground_z": 0.7479,
+    "zfighting": [],
+    "floating": [
+      {
+        "object": "Body_Hands_v7",
+        "island_verts": 2036,
+        "center": [
+          0.356,
+          -0.023,
+          0.814
+        ]
+      }
+    ],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "Body_Hands_v7": {
+        "verts": 4103,
+        "faces": 7189,
+        "tris": 7978,
+        "ngons": 0,
+        "boundary_edges": 224,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 2,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.79,
+        "uv_coverage_pct": 42.7
+      }
+    }
+  },
+  "Face_Core_v8": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=1.325 (not resting on ground plane z=0)"
+    ],
+    "ground_z": 1.325,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "Face_Core_v8": {
+        "verts": 5209,
+        "faces": 5208,
+        "tris": 10332,
+        "ngons": 0,
+        "boundary_edges": 84,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.0,
+        "uv_coverage_pct": 98.7
+      }
+    }
+  },
+  "Outfit_Shoes_v7": {
+    "ok": true,
+    "pass": false,
+    "errors": [
+      "z-fighting: Outfit_Shoes_v7 (2 overlapping coplanar tri pairs)",
+      "floating/detached part in Outfit_Shoes_v7 (1046 verts at [-0.106, -0.05, 0.059])"
+    ],
+    "warnings": [
+      "Outfit_Shoes_v7: duplicate verts=34 loose verts=0"
+    ],
+    "ground_z": -0.0001,
+    "zfighting": [
+      {
+        "where": "Outfit_Shoes_v7",
+        "tri_pairs": 2
+      }
+    ],
+    "floating": [
+      {
+        "object": "Outfit_Shoes_v7",
+        "island_verts": 1046,
+        "center": [
+          -0.106,
+          -0.05,
+          0.059
+        ]
+      }
+    ],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "Outfit_Shoes_v7": {
+        "verts": 2332,
+        "faces": 3339,
+        "tris": 3339,
+        "ngons": 0,
+        "boundary_edges": 1373,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 34,
+        "islands": 4,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.0,
+        "uv_coverage_pct": 3.4
+      }
+    }
+  },
+  "Outfit_Socks_v7": {
+    "ok": true,
+    "pass": false,
+    "errors": [
+      "floating/detached part in Outfit_Socks_v7 (576 verts at [0.099, -0.003, 0.263])"
+    ],
+    "warnings": [
+      "Outfit_Socks_v7: ~98.48% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=0.078 (not resting on ground plane z=0)"
+    ],
+    "ground_z": 0.078,
+    "zfighting": [],
+    "floating": [
+      {
+        "object": "Outfit_Socks_v7",
+        "island_verts": 576,
+        "center": [
+          0.099,
+          -0.003,
+          0.263
+        ]
+      }
+    ],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "Outfit_Socks_v7": {
+        "verts": 1152,
+        "faces": 1056,
+        "tris": 2112,
+        "ngons": 0,
+        "boundary_edges": 192,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 2,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0,
+        "uv_maps": 1,
+        "uv_oob_pct": 41.76,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 98.48,
+        "uv_coverage_pct": 34.5
+      }
+    }
+  }
+}

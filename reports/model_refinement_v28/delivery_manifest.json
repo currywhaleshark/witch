@@ -1,0 +1,63 @@
+{
+  "version": "model_refinement_v28",
+  "status": "integrated_review_candidate_not_user_art_approval",
+  "created_utc": "2026-10-31T17:20:07.779775+00:00",
+  "changes": {
+    "hands": "Original high-poly Tripo hand extraction, shape-preserving reduction, fitted onto unchanged finger rest chains; sleeve cuff removed; normalized skin weights; 14mm wrist coverage extension; one 512px color atlas.",
+    "civilian_shoes": "21mm outward alignment per shoe; rigid same-side foot weights; 286 ankle-rim vertices smoothed (maximum additional local change 17.373mm). Sock bottom extends from z=0.105m to 0.078m with foot/shin blend.",
+    "face": "Existing young v8 identity/paint retained; local cheek/jaw/nose/lip form correction up to 1.3742mm and softer skin specular response."
+  },
+  "preserved": {
+    "body_bones": 107,
+    "body_actions": 63,
+    "auxiliary_hair_bones": 8,
+    "auxiliary_hair_action": 1,
+    "protected_mesh_signatures": 26,
+    "bind_signature": "d8dea7879dbe65fbd01d01d59b2f9a1783f1376f65534d7dc3f46ce647798414"
+  },
+  "metrics": {
+    "hand_triangles_before": 8588,
+    "hand_triangles_after": 7978,
+    "hand_color_size": [
+      512,
+      512
+    ],
+    "visible_civilian_triangles": 92107
+  },
+  "validation": {
+    "blender_reimport_poses": 40,
+    "runtime_entry_checks": 3104,
+    "runtime_combat_checks": 192,
+    "gpu_captures": 334,
+    "qa": "qa_adjudication.json",
+    "appearance_checks": 7
+  },
+  "inputs": {
+    "assets/characters/player/3d/source/middle_school_v1/model_refinement_v28/model_refinement_v28.blend": "514aeb1a17f8da4dda284ed799f51491b2bf0258bba7064d99d28d45ccdc480e",
+    "assets/characters/player/3d/source/middle_school_v1/model_refinement_v28/textures/hands_basecolor_v28.png": "77c49519aef03465308e107fd80c46e03784c99e985bc96dfb714927ab9ea676",
+    "game/assets/characters/player/model_refinement_v28/body_standard_v28.glb": "59a6ba3321928a27e229818404ff7628b6cb871f4a5b6453879c78ab202ae5f3",
+    "game/assets/characters/player/model_refinement_v28/eyes_neutral_v28.glb": "43f6358c7027870e125de69cacb15583dd1506bf214428beda0ee6d366830ff6",
+    "game/assets/characters/player/model_refinement_v28/outfit_civilian_v28.glb": "eae8d60852a03f7133b03c9ef40bc68dc372109cba9020d118128f07fa5ecbc4",
+    "game/scripts/player_visual.gd": "256ab704d8e3e9ce5726be2b4af5a8df38e65e46e3ef5aa6b3c3f479fa6f5a84",
+    "game/scripts/modular_character_runtime.gd": "375d592ad082eca2abda1cd5d4b33de91c18ca653ac69f148e57e1b6751b32c8",
+    "game/scripts/arena.gd": "ba5404b0139e35e23d083a741bfe41fdaef1bfacbcdece4d17123710ab5f3aaf",
+    "game/scripts/hair_motion.gd": "e334f0d285d2a324ddade5f4c9660e000ee637c9401e15dc6545821f05c9fad6",
+    "game/scripts/field_entry_transformation.gd": "3f376383b65753de2b13b9c4e83247c675ee9ef10c9c06df79907dee4f1633fc",
+    "game/data/trial.json": "699710b2ecb105834ac36aaddb46502d71dc1332704ea89246a1ecfea84cd316",
+    "game/assets/characters/player/transformation_v26/combat_transform_entry_v26.glb": "9abaeb5ccf3da2eb853536fe0100c67b5add6a07486999b334ff0316ef0571e8",
+    "game/assets/characters/player/transformation_v27/hair_semilong_v27.glb": "11c5c3376569e01066e9015bda3f0eb9ab8627f9958f24272a2aa09ddfda16dc",
+    "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13",
+    "assets/characters/player/3d/config/modular_character.spec.json": "2f43036df728352c6c5d41455bb2d5b49d569ffc2915cb0ee0e1562fa8625fa2"
+  },
+  "preserved_runtime_assets": {
+    "game/assets/characters/player/transformation_v26/combat_transform_entry_v26.glb": "9abaeb5ccf3da2eb853536fe0100c67b5add6a07486999b334ff0316ef0571e8",
+    "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13",
+    "game/assets/characters/player/transformation_v27/hair_semilong_v27.glb": "11c5c3376569e01066e9015bda3f0eb9ab8627f9958f24272a2aa09ddfda16dc"
+  },
+  "limits": [
+    "Face paint and painted gaze are unchanged; this is a subtle form pass, not a redesigned portrait or facial-expression rig.",
+    "Original garment folds, large-pose clothing intersections and imperfect source hair edges remain outside this local repair.",
+    "Review motion sequences sample imported clips; gameplay timing and cleanup are checked separately by existing arena tests.",
+    "No final physical hand/staff contact, arbitrary-pose clothing clearance or performance budget approval is implied."
+  ]
+}

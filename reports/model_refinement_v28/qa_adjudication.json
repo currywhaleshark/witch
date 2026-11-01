@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "raw_report": "asset_qa.json",
+  "separate_part_report": "asset_qa_separate_parts.json",
+  "accepted_findings": [
+    "The combined left/right hand, sock and shoe objects intentionally contain two disconnected anatomical parts; each side passes separately.",
+    "The raw shoe report flags two nearly coplanar pairs at duplicated UV-seam coordinates at 0.15mm tolerance. Calculation-only seam welding at 0.015mm produces no z-fighting errors on either side; exported topology and UV seams stay intact.",
+    "A calculation-only welded left shoe has one wire edge; the unchanged source surface has no loose vertices, degenerate faces or inverted components. The helper is discarded.",
+    "Hands, face and socks intentionally sit above the origin of a complete standing character."
+  ],
+  "visual_review": "Material and wireframe front/side/three-quarter Blender inspection plus actual Godot comparisons. This does not prove arbitrary pose/cloth clearance."
+}

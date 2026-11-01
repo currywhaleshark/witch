@@ -1,0 +1,187 @@
+{
+  "files": {
+    "body_standard_v28.glb": {
+      "parts": {
+        "Body_Arms_v7": {
+          "vertices": 1358,
+          "triangles": 2572,
+          "maximum_influences": 4,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 1.1920928955078125e-07,
+          "unweighted_vertices": 0,
+          "boundary_edges": 144,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Body_Feet_v7": {
+          "vertices": 770,
+          "triangles": 1472,
+          "maximum_influences": 3,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 7.636845111846924e-08,
+          "unweighted_vertices": 0,
+          "boundary_edges": 64,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Body_Hands_v7": {
+          "vertices": 5660,
+          "triangles": 7978,
+          "maximum_influences": 3,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 1.1920928955078125e-07,
+          "unweighted_vertices": 0,
+          "boundary_edges": 2938,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Body_LowerLegs_v7": {
+          "vertices": 896,
+          "triangles": 1664,
+          "maximum_influences": 3,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 7.636845111846924e-08,
+          "unweighted_vertices": 0,
+          "boundary_edges": 128,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Body_Pelvis_v7": {
+          "vertices": 551,
+          "triangles": 992,
+          "maximum_influences": 3,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 8.940696716308594e-08,
+          "unweighted_vertices": 0,
+          "boundary_edges": 112,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Body_Torso_v7": {
+          "vertices": 816,
+          "triangles": 1464,
+          "maximum_influences": 4,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 1.2665987014770508e-07,
+          "unweighted_vertices": 0,
+          "boundary_edges": 172,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Body_UpperLegs_v7": {
+          "vertices": 1024,
+          "triangles": 1920,
+          "maximum_influences": 4,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 8.940696716308594e-08,
+          "unweighted_vertices": 0,
+          "boundary_edges": 128,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Face_Core_v8": {
+          "vertices": 5271,
+          "triangles": 10332,
+          "maximum_influences": 2,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 2.9802322387695312e-08,
+          "unweighted_vertices": 0,
+          "boundary_edges": 208,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Face_Ears_v7": {
+          "vertices": 524,
+          "triangles": 1040,
+          "maximum_influences": 1,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 0.0,
+          "unweighted_vertices": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges_excluding_boundary": 0
+        }
+      },
+      "bones": 107,
+      "actions": 8,
+      "all_imported_pose_vertices_finite": true
+    },
+    "eyes_neutral_v28.glb": {
+      "parts": {
+        "Eyes_Iris_v8": {
+          "vertices": 482,
+          "triangles": 864,
+          "maximum_influences": 1,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 0.0,
+          "unweighted_vertices": 0,
+          "boundary_edges": 96,
+          "nonmanifold_edges_excluding_boundary": 0
+        }
+      },
+      "bones": 107,
+      "actions": 0,
+      "all_imported_pose_vertices_finite": true
+    },
+    "outfit_civilian_v28.glb": {
+      "parts": {
+        "Outfit_Shoes_v7": {
+          "vertices": 2384,
+          "triangles": 3339,
+          "maximum_influences": 1,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 0.0,
+          "unweighted_vertices": 0,
+          "boundary_edges": 1399,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "Outfit_Socks_v7": {
+          "vertices": 1181,
+          "triangles": 2112,
+          "maximum_influences": 3,
+          "influence_limit": 4,
+          "maximum_weight_sum_error": 6.705522537231445e-08,
+          "unweighted_vertices": 0,
+          "boundary_edges": 246,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "SourceOutfit_Cardigan_v11": {
+          "vertices": 14858,
+          "triangles": 17965,
+          "maximum_influences": 8,
+          "influence_limit": 8,
+          "maximum_weight_sum_error": 1.5296973288059235e-07,
+          "unweighted_vertices": 0,
+          "boundary_edges": 11429,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "SourceOutfit_Inner_v11": {
+          "vertices": 4691,
+          "triangles": 5533,
+          "maximum_influences": 8,
+          "influence_limit": 8,
+          "maximum_weight_sum_error": 1.1920928955078125e-07,
+          "unweighted_vertices": 0,
+          "boundary_edges": 3645,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "SourceOutfit_Skirt_v11": {
+          "vertices": 11410,
+          "triangles": 12393,
+          "maximum_influences": 8,
+          "influence_limit": 8,
+          "maximum_weight_sum_error": 1.3969838619232178e-07,
+          "unweighted_vertices": 0,
+          "boundary_edges": 9937,
+          "nonmanifold_edges_excluding_boundary": 0
+        },
+        "SourceOutfit_SkirtLining_v11": {
+          "vertices": 2833,
+          "triangles": 2478,
+          "maximum_influences": 8,
+          "influence_limit": 8,
+          "maximum_weight_sum_error": 1.2898817658424377e-07,
+          "unweighted_vertices": 0,
+          "boundary_edges": 2812,
+          "nonmanifold_edges_excluding_boundary": 0
+        }
+      },
+      "bones": 107,
+      "actions": 0,
+      "all_imported_pose_vertices_finite": true
+    }
+  },
+  "sampled_poses": 40,
+  "passed": true
+}

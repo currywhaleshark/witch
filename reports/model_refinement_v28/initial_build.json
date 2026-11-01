@@ -1,0 +1,65 @@
+{
+  "base_sha256": "2613c1c346542e9a376f63a4d59b972e374a9a204500e829fb68af183db5cdcc",
+  "raw_sha256": "1785428db0a979dde64f432aa13cfdeec3ddfaba0f7b932cd2a264cbc0e35bdb",
+  "hands": {
+    "L": {
+      "raw_selected_triangles": 40231,
+      "triangles": 4400,
+      "nearest_transfer_max_m": 0.0344509594142437,
+      "nearest_transfer_mean_m": 0.015147105991401778,
+      "source_wrist": [
+        0.3319999873638153,
+        -0.012000000104308128,
+        0.8679999709129333
+      ],
+      "source_direction": [
+        0.559684157371521,
+        0.059966158121824265,
+        -0.8265335559844971
+      ],
+      "source_width": [
+        -0.0336226150393486,
+        0.9982003569602966,
+        0.049653396010398865
+      ],
+      "target_wrist": [
+        0.32575762271881104,
+        -0.030673149973154068,
+        0.8523446321487427
+      ]
+    },
+    "R": {
+      "raw_selected_triangles": 40597,
+      "triangles": 4400,
+      "nearest_transfer_max_m": 0.03457767143845558,
+      "nearest_transfer_mean_m": 0.015101631670753237,
+      "source_wrist": [
+        -0.3319999873638153,
+        -0.012000000104308128,
+        0.8679999709129333
+      ],
+      "source_direction": [
+        -0.559684157371521,
+        0.059966158121824265,
+        -0.8265335559844971
+      ],
+      "source_width": [
+        0.0336226150393486,
+        0.9982003569602966,
+        0.049653396010398865
+      ],
+      "target_wrist": [
+        -0.32575762271881104,
+        -0.030673149973154068,
+        0.8523446321487427
+      ]
+    }
+  },
+  "shoes": {
+    "lateral_alignment_m": 0.021,
+    "weights": "rigid ipsilateral foot",
+    "socks_bottom_z_before": 0.105,
+    "socks_bottom_z_after": 0.078
+  },
+  "source_sha256": "f15ffa7af21dbcf2067c4786aa2cb1f230f0595f8b86234ed4aeeb000c2d604c"
+}

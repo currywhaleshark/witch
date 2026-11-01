@@ -10,11 +10,13 @@ const HairMotion = preload("res://scripts/hair_motion.gd")
 const ENTRY_DIR := "res://assets/characters/player/transformation_v26/"
 const SPRING_JUMP_DIR := "res://assets/characters/player/spring_jump_v24/"
 const ASSET_DIR := "res://assets/characters/player/run_arm_v21/"
-const BODY_PATH := ASSET_DIR + "body_standard_v21.glb"
+const MODEL_DIR := "res://assets/characters/player/model_refinement_v28/"
+# v29 replaces only the hand mesh of the v28 body (same rig, binds and clips); eyes/outfit stay v28.
+const BODY_PATH := "res://assets/characters/player/hand_rebuild_v29/body_standard_v29.glb"
 const PARTS := {
 	"hair": {"asset": ASSET_DIR + "hair_semilong_v21.glb", "hide_body_regions": []},
-	"eyes": {"asset": ASSET_DIR + "eyes_neutral_v21.glb", "hide_body_regions": []},
-	"outfit": {"asset": ASSET_DIR + "outfit_civilian_v21.glb", "hide_body_regions": ["torso", "arms", "lowerlegs", "feet"]},
+	"eyes": {"asset": MODEL_DIR + "eyes_neutral_v28.glb", "hide_body_regions": []},
+	"outfit": {"asset": MODEL_DIR + "outfit_civilian_v28.glb", "hide_body_regions": ["torso", "arms", "lowerlegs", "feet"]},
 }
 const HAIR_V27 := {"asset": "res://assets/characters/player/transformation_v27/hair_semilong_v27.glb", "hide_body_regions": [], "auxiliary_hair": true}
 # The previous presentation remains available through an explicit debug override.

@@ -1,0 +1,6 @@
+# Local recovery sources; final packed authoring file lives under assets/.
+*.blend
+*.blend1
+*_stdout.log
+*_stderr.log
+review_script.js

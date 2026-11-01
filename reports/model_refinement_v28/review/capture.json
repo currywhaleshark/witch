@@ -1,0 +1,91 @@
+{
+  "captures": 334,
+  "passed": true,
+  "scope": "Actual imported meshes and PlayerVisual animation sampling in the arena lighting. Before/after replaces only five mesh+skin resources on the identical skeleton, pose and camera. Motion clips are sampled evenly including endpoints, not gameplay timing. Native shots use selected 1.75x camera.",
+  "sequences": [
+    {
+      "action": "idle",
+      "form": "civilian",
+      "fps": 12.5,
+      "frames": 25,
+      "id": "civilian_idle"
+    },
+    {
+      "action": "run",
+      "form": "civilian",
+      "fps": 6.25,
+      "frames": 25,
+      "id": "civilian_run"
+    },
+    {
+      "action": "attack",
+      "form": "civilian",
+      "fps": 12.5,
+      "frames": 25,
+      "id": "civilian_attack"
+    },
+    {
+      "action": "cast",
+      "form": "civilian",
+      "fps": 18.7499994412065,
+      "frames": 25,
+      "id": "civilian_cast"
+    },
+    {
+      "action": "hit_react",
+      "form": "civilian",
+      "fps": 50.0,
+      "frames": 25,
+      "id": "civilian_hit_react"
+    },
+    {
+      "action": "spring_jump",
+      "form": "civilian",
+      "fps": 12.5,
+      "frames": 25,
+      "id": "civilian_spring_jump"
+    },
+    {
+      "action": "idle",
+      "form": "transformed",
+      "fps": 12.5,
+      "frames": 25,
+      "id": "transformed_idle"
+    },
+    {
+      "action": "run",
+      "form": "transformed",
+      "fps": 6.25,
+      "frames": 25,
+      "id": "transformed_run"
+    },
+    {
+      "action": "attack",
+      "form": "transformed",
+      "fps": 12.5,
+      "frames": 25,
+      "id": "transformed_attack"
+    },
+    {
+      "action": "cast",
+      "form": "transformed",
+      "fps": 18.7499994412065,
+      "frames": 25,
+      "id": "transformed_cast"
+    },
+    {
+      "action": "hit_react",
+      "form": "transformed",
+      "fps": 50.0,
+      "frames": 25,
+      "id": "transformed_hit_react"
+    },
+    {
+      "action": "spring_jump",
+      "form": "transformed",
+      "fps": 12.5,
+      "frames": 25,
+      "id": "transformed_spring_jump"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "schema_version": "0.1-modular-draft",
   "character_id": "player",
-  "status": "combat_prototype_v27_outfit_reveal_auxiliary_hair",
+  "status": "combat_prototype_model_refinement_v28_review",
   "rig": {
     "id": "player_humanoid_v11",
-    "asset": "exports/run_arm_v21/body_standard_v21.glb",
+    "asset": "exports/hand_rebuild_v29/body_standard_v29.glb",
     "status": "validated",
     "deform_bones": 107,
     "max_influences": 8,
@@ -15,9 +15,9 @@
       "id": "standard_v1",
       "body_preset": "standard_v1",
       "rig_id": "player_humanoid_v11",
-      "asset": "exports/run_arm_v21/body_standard_v21.glb",
+      "asset": "exports/hand_rebuild_v29/body_standard_v29.glb",
       "status": "validated",
-      "sha256": "a73a82b8277312c017adfe85fb171c54b36cc63e0bc9374706bbaf38ef12ecc4",
+      "sha256": "b97927fcac15d76263a1971e4d6e8299558aa1e19611761fe55feb41f29b0857",
       "regions": [
         "torso",
         "arms",
@@ -28,7 +28,10 @@
         "feet"
       ],
       "max_influences": 4,
-      "runtime_asset": "res://assets/characters/player/run_arm_v21/body_standard_v21.glb"
+      "runtime_asset": "res://assets/characters/player/hand_rebuild_v29/body_standard_v29.glb",
+      "previous_asset": "exports/model_refinement_v28/body_standard_v28.glb",
+      "validation_report": "reports/hand_rebuild_v29/glb_comparison.json",
+      "art_status": "review_candidate"
     }
   },
   "hair": {
@@ -44,7 +47,10 @@
       "auxiliary_hair": true,
       "auxiliary_rig": "hair_semilong_v27",
       "auxiliary_bones": 8,
-      "anchors": ["DEF-head", "DEF-chest"],
+      "anchors": [
+        "DEF-head",
+        "DEF-chest"
+      ],
       "motion_contract": "exports/transformation_v27/hair_contract.json",
       "previous_asset": "exports/run_arm_v21/hair_semilong_v21.glb",
       "validation_report": "reports/transformation_v27/delivery_manifest.json"
@@ -66,11 +72,14 @@
       "id": "neutral_v1",
       "body_preset": "standard_v1",
       "rig_id": "player_humanoid_v11",
-      "asset": "exports/run_arm_v21/eyes_neutral_v21.glb",
+      "asset": "exports/model_refinement_v28/eyes_neutral_v28.glb",
       "status": "validated",
-      "sha256": "c7f6931e64338e4f0680f6a59d6aa6f19def22db25ae3d1c6dcb34380a0f02b4",
+      "sha256": "43f6358c7027870e125de69cacb15583dd1506bf214428beda0ee6d366830ff6",
       "max_influences": 4,
-      "runtime_asset": "res://assets/characters/player/run_arm_v21/eyes_neutral_v21.glb"
+      "runtime_asset": "res://assets/characters/player/model_refinement_v28/eyes_neutral_v28.glb",
+      "previous_asset": "exports/run_arm_v21/eyes_neutral_v21.glb",
+      "validation_report": "reports/model_refinement_v28/glb_validation.json",
+      "art_status": "review_candidate"
     }
   },
   "outfits": {
@@ -79,7 +88,7 @@
       "form": "civilian",
       "body_preset": "standard_v1",
       "rig_id": "player_humanoid_v11",
-      "asset": "exports/run_arm_v21/outfit_civilian_v21.glb",
+      "asset": "exports/model_refinement_v28/outfit_civilian_v28.glb",
       "status": "validated",
       "hide_body_regions": [
         "torso",
@@ -87,9 +96,12 @@
         "lowerlegs",
         "feet"
       ],
-      "sha256": "c5e18428b027beb03f173e4270bf19fb898587416da99c3f774704dd01ee9caa",
+      "sha256": "eae8d60852a03f7133b03c9ef40bc68dc372109cba9020d118128f07fa5ecbc4",
       "max_influences": 8,
-      "runtime_asset": "res://assets/characters/player/run_arm_v21/outfit_civilian_v21.glb"
+      "runtime_asset": "res://assets/characters/player/model_refinement_v28/outfit_civilian_v28.glb",
+      "previous_asset": "exports/run_arm_v21/outfit_civilian_v21.glb",
+      "validation_report": "reports/model_refinement_v28/glb_validation.json",
+      "art_status": "review_candidate"
     },
     "transformed_v1": {
       "id": "transformed_v1",
@@ -130,12 +142,12 @@
     "texture_rebake_and_joint_deformation_review_before_production_export"
   ],
   "validation": {
-    "scope": "v21_user_selected_main_game_7_current_motions_8_exported_clips_215_GPU_poses_actual_gameplay_and_variant_equivalence",
+    "scope": "v28_local_model_repair_with_unchanged_motion_and_auxiliary_hair",
     "art_review_zoom": 1.75,
-    "visible_civilian_triangles": 92765,
+    "visible_civilian_triangles": 92107,
     "engine": "4.6.2-stable (official)",
-    "report": "reports/run_arm_v21/integration/gameplay/player_visual_validation.json",
-    "visual_approval": "User accepted the v21 run correction and requested this motion family as the game default; final cloth contacts and balance remain separate.",
+    "report": "reports/model_refinement_v28/delivery_manifest.json",
+    "visual_approval": "The previously selected motion family and v27 transformation/hair remain. The new v28 shoe/hand/face appearance is an integrated review candidate awaiting user selection.",
     "live_cloth_simulation": false,
     "new_animations_require_bake": true,
     "lods": [
@@ -267,11 +279,16 @@
       "ending_form": "transformed",
       "preserves_body_eyes_and_entry_clip": true,
       "hair": "semilong_v27_auxiliary_rig",
-      "outfit_reveal_seconds": [2.12, 2.85],
+      "outfit_reveal_seconds": [
+        2.12,
+        2.85
+      ],
       "user_selection": "selected_for_current_prototype_2026-11-01",
       "approval": "reports/transformation_v27/approval.json",
       "outfit_geometry": "unchanged_transformed_fit_v4",
       "scope": "Progressive clothed reveal and six hair deform segments on two body anchors; v26 grasp/body clip unchanged. No live cloth or hair collision guarantee."
-    }
+    },
+    "model_refinement_v28": "reports/model_refinement_v28/delivery_manifest.json",
+    "previous_motion_validation_report": "reports/run_arm_v21/integration/gameplay/player_visual_validation.json"
   }
 }
