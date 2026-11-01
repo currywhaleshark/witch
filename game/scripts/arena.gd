@@ -64,6 +64,11 @@ var items: RefCounted
 var loot_rng = RandomNumberGenerator.new()
 var ground_items: Array = []
 var bag: Array = []
+# What the inventory window's cursor carries: an item taken out of the bag or a slot, or a name
+# piece to click into a socket. Both stay on the arena so a restart or closing the window can
+# put them back.
+var held_item = null
+var held_piece := ""
 var equipment: Dictionary = {}
 var gear: Dictionary = {}
 var inventory_window: PanelContainer
@@ -310,6 +315,8 @@ func reset_arena() -> void:
 		if is_instance_valid(loot.node):
 			loot.node.free()
 	ground_items.clear()
+	if held_item != null and stow(held_item):
+		held_item = null
 	automaton_assembly = null
 	turret_assembly = null
 	shotgun_assembly = null
@@ -498,6 +505,15 @@ func _unhandled_input(event: InputEvent) -> void:
 				return
 	if event is InputEventMouse:
 		pointer = event.position
+	if event is InputEventMouseButton and event.pressed and (held_item != null or held_piece != ""):
+		# A click past the windows with something in the hand: the item drops at her feet, a
+		# piece goes back to the pouch, and no attack comes out of it.
+		held_piece = ""
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			drop_held()
+		refresh_build_windows()
+		get_viewport().set_input_as_handled()
+		return
 	if event is InputEventMouseButton and not event.pressed:
 		if hold.get("button") == event.button_index:
 			hold.clear()
@@ -687,26 +703,153 @@ func refresh_gear() -> void:
 	build.apply()
 	refresh_build_windows()
 
+func bag_grid() -> Vector2i:
+	return Vector2i(int(items.data.bag_grid[0]), int(items.data.bag_grid[1]))
+
+func bag_index(item: Dictionary) -> int:
+	for i in bag.size():
+		if is_same(bag[i], item):
+			return i
+	return -1
+
+func bag_under(cells: Rect2i, ignore = null) -> Array:
+	# Bag items covering any of these cells.
+	return bag.filter(func(other): return not is_same(other, ignore) and other.has("at") and Rect2i(other.at, items.size_of(other)).intersects(cells))
+
+func bag_spot(item: Dictionary):
+	# The first free top-left cell, column by column, or null when the item does not fit.
+	var size: Vector2i = items.size_of(item)
+	var grid := bag_grid()
+	for x in grid.x - size.x + 1:
+		for y in grid.y - size.y + 1:
+			if bag_under(Rect2i(Vector2i(x, y), size), item).is_empty():
+				return Vector2i(x, y)
+	return null
+
+func arrange_bag() -> void:
+	# Items appended without a cell take the first free one; those that cannot fit keep none.
+	for item in bag:
+		if not item.has("at"):
+			var spot = bag_spot(item)
+			if spot != null:
+				item.at = spot
+
+func stow(item: Dictionary) -> bool:
+	arrange_bag()
+	var spot = bag_spot(item)
+	if spot == null:
+		return false
+	item.at = spot
+	bag.append(item)
+	return true
+
 func equip(index: int) -> void:
+	# Wears a bag item; what was worn takes its cells (same slot, same size).
 	var item: Dictionary = bag[index]
 	split_build_log()
 	bag.remove_at(index)
-	if equipment[item.slot] != null:
-		bag.append(equipment[item.slot])
+	var old = equipment[item.slot]
 	equipment[item.slot] = item
+	if old != null:
+		if item.has("at"):
+			old.at = item.at
+			bag.append(old)
+		elif not stow(old):
+			drop_item(old, player.position)
+	item.erase("at")
 	refresh_gear()
 
-func unequip(slot: String) -> void:
-	if equipment[slot] == null or bag.size() >= int(items.data.bag_size):
-		return
+func unequip(slot: String) -> bool:
+	if equipment[slot] == null:
+		return false
+	var item: Dictionary = equipment[slot]
+	if bag_spot(item) == null:
+		show_message("가방에 자리가 없습니다")
+		return false
 	split_build_log()
-	bag.append(equipment[slot])
 	equipment[slot] = null
+	stow(item)
 	refresh_gear()
+	return true
 
 func discard(index: int) -> void:
 	bag.remove_at(index)
 	refresh_build_windows()
+
+# The inventory window's hand: one item or one kind of name piece rides the cursor at a time.
+func take_from_bag(item: Dictionary) -> void:
+	if held_item != null:
+		return
+	bag.remove_at(bag_index(item))
+	item.erase("at")
+	held_item = item
+	refresh_build_windows()
+
+func put_in_bag(at: Vector2i) -> bool:
+	# The held item goes down at a cell; a single item under it swaps onto the cursor.
+	if held_item == null:
+		return false
+	var cells := Rect2i(at, items.size_of(held_item))
+	if not Rect2i(Vector2i.ZERO, bag_grid()).encloses(cells):
+		return false
+	var under: Array = bag_under(cells)
+	if under.size() > 1:
+		return false
+	var item: Dictionary = held_item
+	held_item = null
+	if under.size() == 1:
+		take_from_bag(under[0])
+	item.at = at
+	bag.append(item)
+	refresh_build_windows()
+	return true
+
+func wear_held() -> bool:
+	# The held item goes on; whatever was worn there comes onto the cursor.
+	if held_item == null:
+		return false
+	split_build_log()
+	var item: Dictionary = held_item
+	held_item = equipment[item.slot]
+	equipment[item.slot] = item
+	refresh_gear()
+	return true
+
+func take_worn(slot: String) -> bool:
+	if equipment[slot] == null or held_item != null:
+		return false
+	split_build_log()
+	held_item = equipment[slot]
+	equipment[slot] = null
+	refresh_gear()
+	return true
+
+func drop_held() -> void:
+	# Out of the hand onto the ground at her feet, where it can be picked up again.
+	if held_item == null:
+		return
+	var item: Dictionary = held_item
+	held_item = null
+	drop_item(item, player.position + Vector3(0.9, 0, 0.5))
+	refresh_build_windows()
+
+func salvage_held() -> void:
+	if held_item == null:
+		return
+	salvage_item(held_item)
+	held_item = null
+	refresh_build_windows()
+
+func return_held() -> void:
+	# Closing the window puts the hand back in the bag, or on the ground when it is full.
+	held_piece = ""
+	if held_item == null:
+		return
+	if stow(held_item):
+		held_item = null
+		refresh_build_windows()
+	else:
+		drop_held()
 
 func equipment_summary() -> Dictionary:
 	var summary := {}
@@ -718,16 +861,28 @@ func equipment_summary() -> Dictionary:
 				"pieces": worn.get("pieces", []), "true_name": word.id if word != null else ""}
 	return summary
 
-func socket_piece(slot: String, piece: String) -> bool:
-	# Into the next free socket of a worn item; a full matching row wakes its true name.
-	var item = equipment[slot]
-	if item == null or pieces.get(piece, 0) <= 0 or item.pieces.size() >= int(item.get("sockets", 0)):
+func is_worn(item: Dictionary) -> bool:
+	return equipment.values().any(func(worn): return is_same(worn, item))
+
+func socket_into(item: Dictionary, piece: String) -> bool:
+	# Into the next free socket of a worn or bag item; a full matching row wakes its true name.
+	if pieces.get(piece, 0) <= 0 or item.get("pieces", []).size() >= int(item.get("sockets", 0)):
 		return false
-	split_build_log()
+	var worn := is_worn(item)
+	if worn:
+		split_build_log()
 	pieces[piece] -= 1
 	item.pieces.append(piece)
-	refresh_gear()
+	# One piece per click, like a rune: the hand is empty again afterwards.
+	held_piece = ""
+	if worn:
+		refresh_gear()
+	else:
+		refresh_build_windows()
 	return true
+
+func socket_piece(slot: String, piece: String) -> bool:
+	return equipment[slot] != null and socket_into(equipment[slot], piece)
 
 func unsocket(slot: String) -> bool:
 	# Paid removal (04 §6): the last piece comes back intact for 각인전.
@@ -741,12 +896,14 @@ func unsocket(slot: String) -> bool:
 	refresh_gear()
 	return true
 
-func salvage(index: int) -> void:
-	# Breaking a bag item down yields salvage material by rarity (04 §7); its pieces come back.
-	var item: Dictionary = bag[index]
+func salvage_item(item: Dictionary) -> void:
+	# Breaking an item down yields salvage material by rarity (04 §7); its pieces come back.
 	scrap += int(items.data.crafting.salvage[item.rarity])
 	for piece in item.get("pieces", []):
 		pieces[piece] += 1
+
+func salvage(index: int) -> void:
+	salvage_item(bag[index])
 	bag.remove_at(index)
 	refresh_build_windows()
 
@@ -796,13 +953,12 @@ func tick_pickup() -> void:
 		flat.y = 0.0
 		if flat.length() > float(items.data.pickup_radius):
 			continue
-		if bag.size() >= int(items.data.bag_size):
-			show_message("가방이 가득 찼습니다")
-			return
-		bag.append(loot.item)
+		if not stow(loot.item):
+			show_message("가방에 자리가 없습니다")
+			continue
 		loot.node.queue_free()
 		ground_items.erase(loot)
-		show_message(loot.item.name)
+		show_message(items.display_name(loot.item))
 		refresh_build_windows()
 
 func sync_tool_upkeep() -> void:

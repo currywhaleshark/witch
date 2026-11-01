@@ -91,11 +91,16 @@ func run() -> void:
 	await fresh()
 	arena.character_window.visible = false
 	arena.skill_window.toggle()
-	var picker: OptionButton = arena.skill_window.find_child("Slot_r", true, false)
-	var index: int = arena.skill_window.LOADOUT.find("chainsaw")
-	picker.select(index)
-	picker.item_selected.emit(index)
-	check(arena.state.bindings.r == "chainsaw" and arena.config.bindings.r == "chainsaw", "the skill tree window's slot picker binds a skill")
+	var window = arena.skill_window
+	var slot: Control = window.find_child("Slot_r", true, false)
+	var data = window.drag_data("chainsaw", "")
+	check(slot != null and window.can_take(data), "a key box takes a dragged skill icon")
+	window.drop_skill("r", data)
+	check(arena.state.bindings.r == "chainsaw" and arena.config.bindings.r == "chainsaw", "dropping a skill icon on a key binds it")
+	var q_skill: String = arena.state.bindings.q
+	window.drop_skill("q", window.drag_data("chainsaw", "r"))
+	check(arena.state.bindings.q == "chainsaw" and arena.state.bindings.r == q_skill, "dragging a key's icon onto another key swaps them")
+	check(window.drag_data("", "") == null and window.drag_data("ballistics", "") == null, "unbuilt skills and passives cannot be dragged onto a key")
 	arena.skill_window.toggle()
 	arena.bind_slot("r", "shield")
 	arena.bind_slot("q", "bolt_cutter")

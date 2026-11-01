@@ -106,9 +106,24 @@ func option_text(key: String, value: int) -> String:
 		return data.implicit_labels[key] % value
 	return affixes[key].label % value
 
+func display_name(item: Dictionary) -> String:
+	# A woken true name leads the item's name, the way the pieces spell it out on the item.
+	var word = true_name(item)
+	return "%s %s" % [word.name, item.name] if word != null else item.name
+
+func size_of(item: Dictionary) -> Vector2i:
+	# Bag cells an item takes, by the slot it is worn in.
+	var span: Array = data.slot_sizes[item.slot]
+	return Vector2i(int(span[0]), int(span[1]))
+
+func glyph(piece: String) -> String:
+	# The syllable a name piece carries, for its icon: 「록」 조각 -> 록.
+	var name: String = data.pieces[piece].name
+	return name.substr(name.find("「") + 1, name.find("」") - name.find("「") - 1)
+
 func describe(item: Dictionary) -> PackedStringArray:
 	var base: Dictionary = bases[item.base]
-	var lines := PackedStringArray([item.name])
+	var lines := PackedStringArray([display_name(item)])
 	var kind: Array = [data.rarity_names[item.rarity]]
 	if item.name != base.name:
 		kind.append(base.name)
@@ -128,7 +143,7 @@ func describe(item: Dictionary) -> PackedStringArray:
 		var filled: Array = []
 		for piece in item.pieces:
 			filled.append(data.pieces[piece].name)
-		lines.append("소켓 %d/%d %s" % [item.pieces.size(), item.sockets, " ".join(filled)])
+		lines.append(("소켓 %d/%d %s" % [item.pieces.size(), item.sockets, " ".join(filled)]).strip_edges())
 		for piece in item.pieces:
 			for key in data.pieces[piece][group]:
 				lines.append("  %s: %s" % [data.pieces[piece].name, option_text(key, data.pieces[piece][group][key])])

@@ -178,13 +178,28 @@ func run() -> void:
 
 	# Window and log.
 	wear("outfit", 2)
-	arena.inventory_window.visible = true
-	arena.inventory_window.mode = "bench"
-	arena.inventory_window.refresh()
-	var buttons: Array = arena.inventory_window.find_children("*", "Button", true, false).filter(func(b): return b.text == "「록」 조각" and not b.disabled)
-	buttons[0].pressed.emit()
-	check(arena.equipment.outfit.pieces == ["rok"], "the workbench sockets a piece into a worn item")
-	arena.inventory_window.visible = false
+	var window = arena.inventory_window
+	window.toggle()
+	window.click_piece("rok")
+	check(arena.held_piece == "rok", "clicking a piece in the pouch lifts it")
+	window.click_slot("outfit")
+	check(arena.equipment.outfit.pieces == ["rok"] and arena.held_piece == "", "clicking a worn item with a free socket puts the held piece in and empties the hand")
+	var spare: Dictionary = {"base": "ribbon_tie", "slot": "head", "rarity": "rare", "level": 30, "options": {}, "affixes": [], "name": "새 머리끈", "sockets": 2, "pieces": []}
+	arena.bag.clear()
+	arena.stow(spare)
+	arena.pieces.rok = 2
+	arena.pieces.sha = 2
+	window.click_piece("rok")
+	window.click_bag(spare.at)
+	check(spare.pieces == ["rok"] and arena.pieces.rok == 1, "a bag item takes a piece the same way")
+	window.click_piece("sha")
+	window.click_bag(spare.at)
+	check(arena.items.display_name(spare) == "「록샤」 새 머리끈" and window.tooltip_lines(spare, false)[0] == "「록샤」 새 머리끈", "a woken true name leads the item's name")
+	arena.pieces.bel = 1
+	window.click_piece("bel")
+	window.click_slot("outfit", true)
+	check(arena.held_piece == "" and arena.equipment.outfit != null and arena.pieces.bel == 1, "right-click puts the held piece back without touching the item")
+	window.toggle()
 	check(arena.build.snapshot().equipment.outfit.pieces == ["rok"], "the A5 build snapshot lists socketed pieces")
 
 	var report = {"engine": Engine.get_version_info().string, "checks": checks, "failures": failures}

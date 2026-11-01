@@ -54,6 +54,14 @@ func hold_key(code: int, down: bool) -> void:
 	Input.parse_input_event(event)
 	Input.flush_buffered_events()
 
+func tap(box: Control, button: int) -> void:
+	# Tree points go in on release, so a click is a press and a release.
+	for down in [true, false]:
+		var click := InputEventMouseButton.new()
+		click.button_index = button
+		click.pressed = down
+		box.gui_input.emit(click)
+
 func buttons(window: Node, caption: String) -> Array:
 	return window.find_children("*", "Button", true, false).filter(func(b): return b.text == caption)
 
@@ -129,26 +137,39 @@ func run() -> void:
 	var plus: Array = buttons(arena.character_window, "+")
 	plus[2].pressed.emit()
 	check(build.stats.power == 1, "the character window's + spends a stat point")
+	# The tree shows one tab at a time; the automaton's node row sits under the automation tree.
+	arena.skill_window.tree_tab = "automation"
+	arena.skill_window.refresh()
 	var a_button: Array = buttons(arena.skill_window, "A 자폭 특화")
 	a_button[0].pressed.emit()
 	check(build.node == "A" and buttons(arena.skill_window, "● A 자폭 특화").size() == 1, "the skill tree window picks a node and marks it")
-	buttons(arena.skill_window, "스킬 초기화 (무료)")[0].pressed.emit()
+	buttons(arena.skill_window, "초기화")[0].pressed.emit()
 	check(build.node == "base" and build.skill_points() == 3, "the skill tree window's reset refunds everything")
 	build.set_level(30)
 	hold_key(KEY_SHIFT, true)
 	buttons(arena.character_window, "+")[2].pressed.emit()
 	hold_key(KEY_SHIFT, false)
 	var shifted_power: int = build.stats.power
+	arena.skill_window.tree_tab = "drive"
+	arena.skill_window.refresh()
+	var tree: Node = arena.skill_window.find_child("Tree", true, false)
+	var chainsaw: Control = tree.find_child("Node_chainsaw", false, false)
+	var states: Array = tree.get_children().map(func(box): return arena.skill_window.node_state(arena.skill_window.find_node(box.name.trim_prefix("Node_"))))
+	check(states.count("levels") == 3 and states.count("fixed") == 3 and states.count("missing") == 10,
+		"the drive tree lights its 3 levelled and 3 fixed implemented skills and greys the 10 unbuilt ones")
 	hold_key(KEY_CTRL, true)
-	# Skill tree + buttons run shotgun, ballistics, chainsaw, ...; the third is the chainsaw's.
-	buttons(arena.skill_window, "+")[2].pressed.emit()
+	tap(chainsaw, MOUSE_BUTTON_LEFT)
 	var ctrl_once: int = build.skills.chainsaw
-	buttons(arena.skill_window, "+")[2].pressed.emit()
+	arena.skill_window.click_node("chainsaw", 1)
 	hold_key(KEY_CTRL, false)
 	check(shifted_power == 11 and ctrl_once == 6, "Shift+click spends 10 points at once and Ctrl+click 5")
 	check(build.skills.chainsaw == 10, "a multi-step click stops at the level cap")
-	buttons(arena.skill_window, "−")[2].pressed.emit()
-	check(build.skills.chainsaw == 9, "a plain click still moves one step")
+	tap(arena.skill_window.find_child("Node_chainsaw", true, false), MOUSE_BUTTON_RIGHT)
+	check(build.skills.chainsaw == 9, "a plain right-click lowers one step")
+	var guillotine: Control = arena.skill_window.find_child("Node_낙하 단두대", true, false)
+	var spent: int = build.skill_points()
+	tap(guillotine, MOUSE_BUTTON_LEFT)
+	check(build.skill_points() == spent, "an unbuilt skill takes no points")
 	key(KEY_C)
 	key(KEY_S)
 	check(not arena.character_window.visible and not arena.skill_window.visible, "the same keys close them")

@@ -8,7 +8,7 @@
     "the A blast grows with the level, blueprint levels past 10 included (139.20)",
     "the B node's sturdiness multiplies on top of the level",
     "the B node's damage factor multiplies on top of the level (31.20)",
-    "the skill tree shows the summon's HP and damage growth"
+    "hovering the skill shows the summon's HP and damage growth"
   ],
   "engine": "4.6.2-stable (official)",
   "failures": []

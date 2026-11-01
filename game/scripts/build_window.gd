@@ -2,19 +2,32 @@ extends PanelContainer
 ## Temporary character (C) and skill tree (S) windows for the C1/C2 trial (10_ui §4).
 ## They only call the build; combat keeps running while they are open.
 const Build = preload("res://scripts/build.gd")
+const SkillIcon = preload("res://scripts/skill_icon.gd")
 const PANEL = Color("172b34")
 const EDGE = Color("526166")
 const PAPER = Color("e3e9df")
 const MUTED = Color("9aadaf")
 const GOLD = Color("d8b77b")
 const TREE_NAMES = {"firearm": "화기", "drive": "구동", "automation": "자동화"}
-const SLOT_NAMES = {"rmb": "우클릭", "q": "Q", "w": "W", "e": "E", "r": "R"}
+const SLOT_NAMES = {"rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r": "R"}
 # Every skill a slot can carry, grouped by tree; the basic attack stays on the left button.
 const LOADOUT = ["shotgun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash", "automaton", "turret", "relay"]
+
+# Skill tree layout: candidates from 03 in tier rows, links of related study (not prerequisites).
+# Each skill is an icon; its name and effect are in the hover tip. Skills are put on keys by
+# dragging an icon from the tree (or another key) onto a key box.
+const NODE = Vector2(46, 46)
+const PITCH = Vector2(58, 62)
+const TIER_LABEL = 24
+var TREE_UI: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/skill_tree_ui.json"))
 
 var arena: Node
 var mode: String
 var body: VBoxContainer
+var tree_tab := "firearm"
+var tip: PanelContainer
+var dragged := false
+var tip_label: Label
 
 func setup(owner: Node, which: String) -> void:
 	arena = owner
@@ -34,10 +47,32 @@ func setup(owner: Node, which: String) -> void:
 	body = VBoxContainer.new()
 	body.add_theme_constant_override("separation", 6)
 	add_child(body)
+	# A node's name and effect show only while the mouse is on it.
+	tip = PanelContainer.new()
+	tip.top_level = true
+	tip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	tip.visible = false
+	var tip_frame: StyleBoxFlat = frame.duplicate()
+	tip_frame.set_content_margin_all(8)
+	tip.add_theme_stylebox_override("panel", tip_frame)
+	tip_label = text("", PAPER, 13)
+	tip.add_child(tip_label)
+	add_child(tip)
 	refresh()
+
+func _process(_delta: float) -> void:
+	if not visible or not tip.visible:
+		return
+	var mouse := get_viewport().get_mouse_position()
+	tip.reset_size()
+	var spot := mouse + Vector2(18, 12)
+	if spot.x + tip.size.x > get_viewport_rect().size.x:
+		spot.x = mouse.x - tip.size.x - 12
+	tip.position = spot
 
 func toggle() -> void:
 	visible = not visible
+	tip.visible = false
 	refresh()
 
 func refresh() -> void:
@@ -107,7 +142,6 @@ func stepper(label: String, value: String, minus: Callable, plus: Callable, can_
 
 func _character() -> void:
 	var build = arena.build
-	body.add_child(text("캐릭터  (C)", PAPER, 18))
 	body.add_child(stepper("시험 레벨", "Lv %d" % build.level, func(): return build.step_level(-1), func(): return build.step_level(1),
 		build.level > 1, build.level < int(build.rules.max_level), "레벨당 스탯 %d · 스킬 %d" % [build.rules.stat_points_per_level, build.rules.skill_points_per_level]))
 	var rules: Dictionary = build.rules
@@ -126,60 +160,229 @@ func _character() -> void:
 	for id in Build.STATS:
 		body.add_child(stepper(Build.STAT_NAMES[id], str(build.stats[id]), func(): return build.change_stat(id, -1), func(): return build.change_stat(id, 1),
 			build.stats[id] > 0, build.stat_points() > 0, notes[id]))
-	body.add_child(text("명중은 회피 없는 일반 적 기준. 위력은 소환체·출혈에 적용되지 않음", MUTED, 12))
 	var cast_speed: Dictionary = build.cast_speed_parts()
 	body.add_child(text("시전 속도 %d (장비 %d + 생산 효율 %d) · 태엽인형 %.2f초 · 산탄 %.2f초 · 장비는 I 창" % [arena.config.cast_speed_score, cast_speed.gear, cast_speed.passive,
 		arena.cast_seconds(arena.rules.skills.automaton), arena.cast_seconds(arena.rules.skills.shotgun)], GOLD, 13))
-	body.add_child(text("Ctrl+클릭 ×5 · Shift+클릭 ×10", MUTED, 12))
-	body.add_child(row([button("스탯 초기화 (무료)", func(): build.reset_stats(), build.stat_points() < build.level * int(build.rules.stat_points_per_level))]))
+	body.add_child(row([button("초기화", func(): build.reset_stats(), build.stat_points() < build.level * int(build.rules.stat_points_per_level))]))
 
 func _skills() -> void:
+	# One tree at a time in tiers I-IV as 03 lays out its candidates; the lines show related study,
+	# not prerequisites. Implemented skills are lit, and only those with level effects take points.
 	var build = arena.build
-	body.add_child(text("스킬트리  (S)", PAPER, 18))
-	body.add_child(text("남은 스킬 포인트  %d   ·   시험 레벨 Lv %d" % [build.skill_points(), build.level], GOLD))
-	var max_level: int = int(build.rules.skill_max_level)
-	for tree in build.rules.skill_tree:
-		body.add_child(text(TREE_NAMES[tree.tree], MUTED, 14))
-		for entry in tree.entries:
-			var id: String = entry.id
-			var is_skill: bool = entry.kind == "skill"
-			var value: int = build.skills[id] if is_skill else build.passives[id]
-			var label: String = arena.rules.skills[id].name if is_skill else arena.config.passives[id].name
-			body.add_child(stepper(label, "Lv %d/%d" % [value, max_level], func(): return build.change_skill(id, -1), func(): return build.change_skill(id, 1),
-				value > (1 if is_skill else 0), value < max_level and build.skill_points() > 0, effect_note(id)))
-			if entry.get("nodes", false):
-				var choices: Array = []
-				for choice in ["base", "A", "B"]:
-					var pick := button(("● " if build.node == choice else "") + Build.NODE_NAMES[choice], func(): build.set_node(choice),
-						build.node != choice and (choice == "base" or build.node != "base" or build.skill_points() >= int(build.rules.node_cost)))
-					choices.append(pick)
-				var line := row([text("  특화 (%d점)" % build.rules.node_cost, MUTED, 13)] + choices)
-				body.add_child(line)
-	body.add_child(text("다른 스킬은 시험판에서 레벨 효과가 없어 목록에서 뺐음 · Ctrl+클릭 ×5 · Shift+클릭 ×10", MUTED, 12))
-	body.add_child(row([button("스킬 초기화 (무료)", func(): build.reset_skills(), build.skill_points() < build.level * int(build.rules.skill_points_per_level))]))
-	body.add_child(text("슬롯 등록", MUTED, 14))
+	var tabs: Array = []
+	for tree in TREE_NAMES:
+		tabs.append(button(TREE_NAMES[tree], func(): tree_tab = tree, tree_tab != tree))
+	var gap := Control.new()
+	gap.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	tabs.append(gap)
+	var points := text(str(build.skill_points()), GOLD, 17)
+	points.tooltip_text = "남은 스킬 포인트"
+	points.mouse_filter = Control.MOUSE_FILTER_STOP
+	tabs.append(points)
+	tabs.append(button("초기화", func(): build.reset_skills(), build.skill_points() < build.level * int(build.rules.skill_points_per_level)))
+	body.add_child(row(tabs))
+	var layout: Dictionary = tree_layout()
+	var canvas := Control.new()
+	canvas.name = "Tree"
+	canvas.custom_minimum_size = Vector2(TIER_LABEL + int(TREE_UI.columns) * PITCH.x, 5 * PITCH.y)
+	canvas.draw.connect(func(): draw_tree(canvas, layout))
+	for node in layout.nodes + layout.passives:
+		var box := node_box(node)
+		box.position = node_spot(node)
+		canvas.add_child(box)
+	body.add_child(canvas)
+	if tree_tab == "automation":
+		var choices: Array = []
+		for choice in ["base", "A", "B"]:
+			var pick := button(("● " if build.node == choice else "") + Build.NODE_NAMES[choice], func(): build.set_node(choice),
+				build.node != choice and (choice == "base" or build.node != "base" or build.skill_points() >= int(build.rules.node_cost)))
+			pick.tooltip_text = "태엽인형 특화 · %d점" % build.rules.node_cost
+			choices.append(pick)
+		body.add_child(row(choices))
 	var slots := HBoxContainer.new()
-	slots.add_theme_constant_override("separation", 10)
+	slots.add_theme_constant_override("separation", 8)
 	for slot in SLOT_NAMES:
-		slots.add_child(slot_picker(slot))
+		slots.add_child(slot_box(slot))
 	body.add_child(slots)
 
-func slot_picker(slot: String) -> VBoxContainer:
-	# Any skill on any of RMB/Q/W/E/R, so a build can carry e.g. the chainsaw and the shield together.
-	var column := VBoxContainer.new()
-	column.add_child(text(SLOT_NAMES[slot], GOLD, 13))
-	var picker := OptionButton.new()
-	picker.name = "Slot_" + slot
-	picker.focus_mode = Control.FOCUS_NONE
-	picker.fit_to_longest_item = false
-	for id in LOADOUT:
-		picker.add_item(arena.rules.skills[id].name)
-	picker.select(LOADOUT.find(arena.state.bindings[slot]))
-	picker.item_selected.connect(func(index: int):
-		arena.bind_slot(slot, LOADOUT[index])
-		arena.refresh_build_windows())
-	column.add_child(picker)
-	return column
+func tree_layout() -> Dictionary:
+	for tree in TREE_UI.trees:
+		if tree.tree == tree_tab:
+			return tree
+	return TREE_UI.trees[0]
+
+func node_spot(node: Dictionary) -> Vector2:
+	# Passives take a fifth row under tier IV, left to right.
+	if node.has("tier"):
+		return Vector2(TIER_LABEL + int(node.col) * PITCH.x, (int(node.tier) - 1) * PITCH.y)
+	return Vector2(TIER_LABEL + tree_layout().passives.find(node) * PITCH.x, 4 * PITCH.y + 6)
+
+func node_state(node: Dictionary) -> String:
+	# "levels" takes points, "fixed" works but has no level effect yet, "missing" is not built.
+	var id: String = node.get("id", "")
+	if id == "":
+		return "missing"
+	return "levels" if arena.build.skills.has(id) or arena.build.passives.has(id) else "fixed"
+
+func node_level(id: String) -> int:
+	return arena.build.skills[id] if arena.build.skills.has(id) else arena.build.passives[id]
+
+func draw_tree(canvas: Control, layout: Dictionary) -> void:
+	var font: Font = get_theme_default_font()
+	for tier in 4:
+		canvas.draw_string(font, Vector2(0, tier * PITCH.y + NODE.y / 2 + 5), ["I", "II", "III", "IV"][tier], HORIZONTAL_ALIGNMENT_LEFT, -1, 14, MUTED)
+	canvas.draw_line(Vector2(TIER_LABEL, 4 * PITCH.y - 6), Vector2(canvas.size.x, 4 * PITCH.y - 6), Color(EDGE, 0.6))
+	var by_name := {}
+	for node in layout.nodes:
+		by_name[node.name] = node
+	for link in layout.links:
+		var a: Dictionary = by_name[link[0]]
+		var b: Dictionary = by_name[link[1]]
+		var start: Vector2 = node_spot(a) + Vector2(NODE.x / 2, NODE.y)
+		var finish: Vector2 = node_spot(b) + Vector2(NODE.x / 2, 0)
+		if int(a.tier) == int(b.tier):
+			start = node_spot(a) + Vector2(NODE.x, NODE.y / 2)
+			finish = node_spot(b) + Vector2(0, NODE.y / 2)
+		var lit: bool = node_state(a) != "missing" and node_state(b) != "missing"
+		canvas.draw_line(start, finish, Color(GOLD, 0.75) if lit else Color(EDGE, 0.8), 2.0 if lit else 1.0)
+
+func node_box(node: Dictionary) -> Control:
+	var state := node_state(node)
+	var id: String = node.get("id", "")
+	var box := Control.new()
+	box.name = "Node_" + (id if id != "" else str(node.name))
+	box.size = NODE
+	box.mouse_filter = Control.MOUSE_FILTER_STOP
+	box.draw.connect(func(): draw_node(box, node, state))
+	box.mouse_entered.connect(func(): show_detail(id if id != "" else str(node.name)))
+	box.mouse_exited.connect(func(): tip.visible = false)
+	# Points go in on release, so pressing to drag the icon onto a key does not spend one.
+	box.gui_input.connect(func(event):
+		if not event is InputEventMouseButton or not event.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT]:
+			return
+		if event.pressed:
+			dragged = false
+		elif state == "levels" and not dragged:
+			click_node(id, 1 if event.button_index == MOUSE_BUTTON_LEFT else -1)
+		box.accept_event())
+	box.set_drag_forwarding(func(_at): return start_drag(id, ""), func(_at, _data): return false, func(_at, _data): pass)
+	return box
+
+func draw_node(box: Control, node: Dictionary, state: String) -> void:
+	var rect := Rect2(Vector2.ZERO, NODE)
+	var missing := state == "missing"
+	box.draw_rect(rect, Color("0d181d") if missing else Color("213a45"))
+	box.draw_rect(rect, Color(EDGE, 0.5) if missing else (GOLD if state == "levels" else PAPER), false, 1.0 if missing else 1.5)
+	# The skill's picture, its level in the corner where points go; grey boxes are not built yet.
+	var font: Font = get_theme_default_font()
+	var id: String = node.get("id", "")
+	SkillIcon.draw(box, NODE / 2, id, Color(MUTED, 0.35) if missing else PAPER, 0.78)
+	if state == "levels":
+		var level := str(node_level(id))
+		var badge := Rect2(NODE - Vector2(8 + 7 * level.length(), 16), Vector2(8 + 7 * level.length(), 16))
+		box.draw_rect(badge, Color("0d181d"))
+		box.draw_string(font, badge.position + Vector2(0, 13), level, HORIZONTAL_ALIGNMENT_CENTER, badge.size.x, 12, GOLD)
+	var key := bound_key(id)
+	if key != "":
+		box.draw_string(font, Vector2(NODE.x - 24, 12), key, HORIZONTAL_ALIGNMENT_RIGHT, 21, 10, GOLD)
+
+func click_node(id: String, direction: int) -> void:
+	# Left raises and right lowers, by 1/5/10 like the steppers.
+	repeated(func(): return arena.build.change_skill(id, direction)).call()
+	arena.refresh_build_windows()
+	show_detail(id)
+
+func bound_key(id: String) -> String:
+	if id == "":
+		return ""
+	for slot in SLOT_NAMES:
+		if arena.state.bindings[slot] == id:
+			return SLOT_NAMES[slot]
+	return ""
+
+func find_node(key: String):
+	if key == "":
+		return null
+	for tree in TREE_UI.trees:
+		for node in tree.nodes + tree.passives:
+			if node.get("id", "") == key or node.name == key:
+				return node
+	return null
+
+func node_info(node: Dictionary) -> PackedStringArray:
+	var state := node_state(node)
+	var lines := PackedStringArray([node.name])
+	if state == "missing":
+		lines.append("미구현")
+		return lines
+	var id: String = node.id
+	if state == "levels":
+		lines.append("Lv %d/%d" % [node_level(id), int(arena.build.rules.skill_max_level)])
+		lines.append(effect_note(id))
+	else:
+		lines.append("레벨 효과 없음")
+	var key := bound_key(id)
+	if key != "":
+		lines.append("슬롯 " + key)
+	return lines
+
+func show_detail(key: String) -> void:
+	var node = find_node(key)
+	if node == null:
+		tip.visible = false
+		return
+	tip_label.text = "\n".join(node_info(node))
+	tip.visible = true
+
+func slot_box(slot: String) -> Control:
+	# A key with the icon of the skill on it; a skill icon dropped here takes the key.
+	var box := Control.new()
+	box.name = "Slot_" + slot
+	box.custom_minimum_size = Vector2(NODE.x + 8, NODE.y + 8)
+	box.mouse_filter = Control.MOUSE_FILTER_STOP
+	box.draw.connect(func(): draw_slot(box, slot))
+	box.mouse_entered.connect(func(): show_detail(arena.state.bindings[slot]))
+	box.mouse_exited.connect(func(): tip.visible = false)
+	box.set_drag_forwarding(func(_at): return start_drag(arena.state.bindings[slot], slot),
+		func(_at, data): return can_take(data), func(_at, data): drop_skill(slot, data))
+	return box
+
+func draw_slot(box: Control, slot: String) -> void:
+	var rect := Rect2(Vector2.ZERO, box.custom_minimum_size)
+	box.draw_rect(rect, Color("213a45"))
+	box.draw_rect(rect, GOLD, false, 1.5)
+	SkillIcon.draw(box, rect.get_center() + Vector2(0, 3), arena.state.bindings[slot], PAPER, 0.8)
+	box.draw_string(get_theme_default_font(), Vector2(4, 12), SLOT_NAMES[slot], HORIZONTAL_ALIGNMENT_LEFT, -1, 10, GOLD)
+
+func start_drag(id: String, from: String):
+	# Only skills a key can carry lift off the tree; the icon follows the cursor.
+	var data = drag_data(id, from)
+	if data == null:
+		return null
+	dragged = true
+	tip.visible = false
+	var preview := Control.new()
+	preview.draw.connect(func(): SkillIcon.draw(preview, Vector2.ZERO, id, GOLD, 0.8))
+	set_drag_preview(preview)
+	return data
+
+func drag_data(id: String, from: String):
+	return {"skill": id, "from": from} if id in LOADOUT else null
+
+func can_take(data) -> bool:
+	return data is Dictionary and data.has("skill")
+
+func drop_skill(slot: String, data: Dictionary) -> void:
+	# A skill already on another key swaps places with the one it lands on.
+	var id: String = data.skill
+	var old: String = arena.state.bindings[slot]
+	if id == old:
+		return
+	for other in SLOT_NAMES:
+		if other != slot and arena.state.bindings[other] == id:
+			arena.bind_slot(other, old)
+	arena.bind_slot(slot, id)
+	arena.refresh_build_windows()
 
 func effect_note(id: String) -> String:
 	var config: Dictionary = arena.config

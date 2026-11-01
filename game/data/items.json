@@ -6,7 +6,8 @@
   "rarity_colors": {"normal": "e3e9df", "magic": "7fa8e8", "rare": "e8d27a", "unique": "c9925a"},
   "tier_levels": [1, 12, 24],
   "affix_counts": {"normal": [0, 0, 0], "magic": [1, 2, 1], "rare": [3, 5, 3]},
-  "bag_size": 30,
+  "bag_grid": [10, 6],
+  "slot_sizes": {"medium": [2, 3], "head": [2, 2], "outfit": [2, 3], "gloves": [2, 2], "shoes": [2, 2], "brooch": [1, 1], "ring": [1, 1]},
   "pickup_radius": 1.1,
   "bases": [
     {"id": "glass_orb", "name": "유리구슬 매개체", "slot": "medium", "family": "common", "min_level": 1, "socket_max": 1},

@@ -10,7 +10,10 @@
     "the dash is under way",
     "a heavy hit during the dash does not stagger her",
     "the dash ends on its own",
-    "the skill tree window's slot picker binds a skill"
+    "a key box takes a dragged skill icon",
+    "dropping a skill icon on a key binds it",
+    "dragging a key's icon onto another key swaps them",
+    "unbuilt skills and passives cannot be dragged onto a key"
   ],
   "engine": "4.6.2-stable (official)",
   "failures": []

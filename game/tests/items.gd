@@ -129,13 +129,39 @@ func run() -> void:
 	arena.player.position = arena.ground_items[0].node.position
 	await step(2)
 	check(arena.ground_items.is_empty() and arena.bag.size() == 1, "walking over loot picks it up")
-	for i in int(data.bag_size):
-		arena.bag.append(items.generate(rng, 1, "normal"))
-	arena.drop_item(items.generate(rng, 1, "normal"), arena.player.position)
+	while arena.stow(items.generate(rng, 1, "normal", "ring")):
+		pass
+	var stowed: int = arena.bag.size()
+	var cells := 0
+	for item in arena.bag:
+		var size: Vector2i = items.size_of(item)
+		cells += size.x * size.y
+	check(cells == arena.bag_grid().x * arena.bag_grid().y, "rings fill every cell the first item left free")
+	arena.drop_item(items.generate(rng, 1, "normal", "ring"), arena.player.position)
 	await step(2)
 	check(arena.ground_items.size() == 1, "a full bag leaves loot on the ground")
 	arena.reset_arena()
-	check(arena.ground_items.is_empty() and arena.bag.size() == int(data.bag_size) + 1, "a restart clears the field but keeps the bag")
+	check(arena.ground_items.is_empty() and arena.bag.size() == stowed, "a restart clears the field but keeps the bag")
+
+	# Grid bag: sizes by slot, placing, swapping and wearing from the hand.
+	arena.bag.clear()
+	var coat: Dictionary = items.generate(rng, 30, "magic", "outfit")
+	var ring: Dictionary = items.generate(rng, 30, "magic", "ring")
+	var other_ring: Dictionary = items.generate(rng, 30, "rare", "ring")
+	check(items.size_of(coat) == Vector2i(2, 3) and items.size_of(ring) == Vector2i(1, 1), "items take cells by slot")
+	arena.stow(coat)
+	arena.stow(ring)
+	check(coat.at == Vector2i(0, 0) and ring.at == Vector2i(0, 3), "stowing fills the first free cell column by column")
+	arena.take_from_bag(ring)
+	check(arena.held_item == ring and arena.bag.size() == 1, "clicking an item lifts it onto the cursor")
+	check(not arena.put_in_bag(Vector2i(9, 6)) and not arena.put_in_bag(Vector2i(-1, 0)), "it cannot go down outside the grid")
+	check(arena.put_in_bag(Vector2i(1, 1)) and arena.held_item == coat and ring.at == Vector2i(1, 1), "putting it down on one item swaps that item onto the cursor")
+	arena.stow(other_ring)
+	check(other_ring.at == Vector2i(0, 0) and not arena.put_in_bag(Vector2i(0, 0)) and arena.held_item == coat, "two items under it block the drop")
+	check(arena.wear_held() and arena.equipment.outfit == coat and arena.held_item == null, "a held item clicked on its slot is worn")
+	check(arena.take_worn("outfit") and arena.held_item == coat and arena.equipment.outfit == null, "a worn item lifts back onto the cursor")
+	arena.return_held()
+	check(arena.held_item == null and arena.bag.any(func(item): return is_same(item, coat)), "closing the window puts the hand back in the bag")
 
 	# Worn options.
 	await fresh()
@@ -223,10 +249,40 @@ func run() -> void:
 	arena.bag.append({"base": "copper_ring", "slot": "ring", "rarity": "magic", "level": 30, "options": {"life": 10}, "affixes": [{"id": "life", "kind": "suffix", "tier": 0, "value": 10}], "name": "튼튼함의 구리 반지"})
 	wear("ring", {"life": 20})
 	arena.inventory_window.refresh()
-	var bag_button: Button = arena.inventory_window.find_children("*", "Button", true, false).filter(func(b): return b.text == "튼튼함의 구리 반지")[0]
-	check(bag_button.tooltip_text.contains("지금 착용"), "a bag item's tooltip compares with what is worn")
-	bag_button.pressed.emit()
-	check(arena.equipment.ring.name == "튼튼함의 구리 반지" and arena.bag.any(func(item): return item.name == "시험 ring"), "clicking a bag item wears it and returns the old one")
+	var window = arena.inventory_window
+	var bag_ring: Dictionary = arena.bag.filter(func(item): return item.name == "튼튼함의 구리 반지")[0]
+	check(window.tooltip_lines(bag_ring, true).has("— 지금 착용 —"), "a bag item's tooltip compares with what is worn")
+	check(window.tooltip_bbcode(bag_ring, true).begins_with("[color=#%s]" % Color(data.rarity_colors.magic).to_html(false)), "the tooltip names the item in its rarity colour")
+	window.click_bag(bag_ring.at, true)
+	check(arena.equipment.ring.name == "튼튼함의 구리 반지" and arena.bag.any(func(item): return item.name == "시험 ring"), "right-clicking a bag item wears it and returns the old one")
+	window.click_slot("ring", true)
+	check(arena.equipment.ring == null and arena.bag.size() == 2, "right-clicking a worn item takes it off into the bag")
+	var gloves: Dictionary = items.generate(rng, 30, "rare", "gloves")
+	arena.stow(gloves)
+	window.click_bag(gloves.at)
+	window.click_slot("ring")
+	check(arena.held_item == gloves and arena.equipment.ring == null, "a held item does not go on a slot it does not fit")
+	window.click_slot("gloves")
+	check(arena.equipment.gloves == gloves and arena.held_item == null, "clicking a held item on its slot wears it")
+	window.click_slot("gloves")
+	var salvaged: int = arena.scrap
+	arena.salvage_held()
+	check(arena.held_item == null and arena.scrap == salvaged + int(data.crafting.salvage.rare), "the salvage box breaks the held item down")
+	var lost: Dictionary = arena.bag[0]
+	window.click_bag(lost.at)
+	var ground: int = arena.ground_items.size()
+	var outside := InputEventMouseButton.new()
+	outside.button_index = MOUSE_BUTTON_LEFT
+	outside.pressed = true
+	outside.position = Vector2(60, 420)
+	root.push_input(outside, true)
+	check(arena.ground_items.size() == ground + 1 and arena.held_item == null and arena.hold.is_empty(), "a click outside the window drops the held item on the ground without attacking")
+	window.click_bag(arena.bag[0].at)
+	outside.button_index = MOUSE_BUTTON_RIGHT
+	root.push_input(outside, true)
+	check(arena.held_item != null, "a right-click outside the window keeps the held item")
+	arena.return_held()
+	check(window.find_child("Drop", true, false) == null and window.find_child("Salvage", true, false) != null, "there is no drop box, only the salvage anvil")
 	root.push_input(key, true)
 	key.physical_keycode = KEY_G
 	var before: int = arena.ground_items.size()
@@ -240,7 +296,8 @@ func run() -> void:
 		key.physical_keycode = code
 		root.push_input(key, true)
 	check(arena.config.attack_speed_score == score, "F4 and F12 no longer step speed scores; items do")
-	check(arena.build.snapshot().equipment.ring.name == "튼튼함의 구리 반지", "the build snapshot for the A5 log lists the worn items")
+	wear("head", {"life": 5})
+	check(arena.build.snapshot().equipment.head.name == "시험 head", "the build snapshot for the A5 log lists the worn items")
 
 	var report = {"engine": Engine.get_version_info().string, "checks": checks, "failures": failures}
 	var out = ProjectSettings.globalize_path("res://").path_join("../reports/godot_items_report.json").simplify_path()

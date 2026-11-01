@@ -13,7 +13,7 @@ const RED = Color("ee987d")
 const KEYS = ["LMB", "RMB", "Q", "W", "E", "R"]
 const POTION_COLORS = {"hp": Color("ee987d"), "mp": Color("8dd8c4"), "both": Color("c9a0dc"), "speed": Color("a8d672")}
 # Slot icons follow the bound skill, not the slot position.
-const ICONS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8, "spring_dash": 9}
+const SkillIcon = preload("res://scripts/skill_icon.gd")
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -152,7 +152,7 @@ func _draw() -> void:
 		var rect = Rect2(sx + i * 100, h - 131, 91, 107)
 		panel(rect, PANEL, color if running else EDGE)
 		label_at(rect.position + Vector2(8, 17), KEYS[i], 11, color, true)
-		icon(rect.position + Vector2(45, 45), ICONS[skill.id], color)
+		icon(rect.position + Vector2(45, 45), skill.id, color)
 		var title: String = skill.name
 		if arena.config.has(skill.id + "_level"):
 			# Trial skill levels exist only for the shield and the summons so far.
@@ -244,63 +244,5 @@ func gauge(pos: Vector2, value: float, maximum: float, color: Color, title: Stri
 	draw_line(pos + Vector2(-4, 100), pos + Vector2(56, 100), GOLD, 4)
 	centered(pos + Vector2(26, 119), "%s %d" % [title, ceili(value)], 14, color)
 
-func icon(p: Vector2, kind: int, color: Color) -> void:
-	match kind:
-		0:
-			draw_line(p + Vector2(-12, 14), p + Vector2(12, -13), color, 3)
-			draw_arc(p + Vector2(8, -8), 10, -2.6, 0.7, 16, color, 2)
-		1:
-			for a in [-0.5, 0, 0.5]:
-				draw_line(p + Vector2(-16, 0), p + Vector2(16, 0).rotated(a), color, 2)
-		2:
-			for sign_x in [-1, 1]:
-				draw_line(p + Vector2(sign_x * 12, 16), p + Vector2(-sign_x * 8, -9), color, 3)
-				draw_line(p + Vector2(-sign_x * 8, -9), p + Vector2(-sign_x * 8, -16), color, 3)
-			draw_circle(p, 3, GOLD)
-		3:
-			draw_rect(Rect2(p - Vector2(13, 11), Vector2(26, 22)), color, false, 2)
-			draw_circle(p + Vector2(-5, -3), 2, color)
-			draw_circle(p + Vector2(5, -3), 2, color)
-			draw_line(p + Vector2(0, -11), p + Vector2(0, -18), color, 2)
-			for x in [-9, 9]:
-				draw_line(p + Vector2(x, 11), p + Vector2(x, 16), color, 3)
-		4:
-			draw_line(p + Vector2(-17, 15), p + Vector2(17, 15), color, 3)
-			draw_line(p + Vector2(0, 15), p + Vector2(0, -5), color, 4)
-			draw_rect(Rect2(p + Vector2(-10, -12), Vector2(23, 12)), color, false, 2)
-			draw_line(p + Vector2(12, -6), p + Vector2(21, -6), color, 3)
-		5:
-			draw_arc(p, 13, 0, TAU, 32, color, 2)
-			draw_circle(p, 3, color)
-			for angle in [0, PI / 2, PI, 3 * PI / 2]:
-				draw_line(p + Vector2(9, 0).rotated(angle), p + Vector2(20, 0).rotated(angle), color, 2)
-		6:
-			# Toothed cutting disc on a short handle.
-			draw_line(p + Vector2(-14, 15), p + Vector2(-3, 3), color, 3)
-			draw_arc(p + Vector2(4, -4), 11, 0, TAU, 24, color, 2)
-			for k in 8:
-				var angle = k * TAU / 8
-				draw_line(p + Vector2(4, -4) + Vector2(11, 0).rotated(angle), p + Vector2(4, -4) + Vector2(15, 0).rotated(angle + 0.25), color, 2)
-			draw_circle(p + Vector2(4, -4), 3, GOLD)
-		7:
-			# Folding shield plate.
-			var plate = PackedVector2Array([p + Vector2(-14, -15), p + Vector2(14, -15), p + Vector2(14, 2), p + Vector2(0, 17), p + Vector2(-14, 2), p + Vector2(-14, -15)])
-			draw_polyline(plate, color, 2)
-			draw_line(p + Vector2(0, -15), p + Vector2(0, 17), color, 2)
-		9:
-			# Spring dash: a coiled spring behind a forward arrow.
-			var coil := PackedVector2Array()
-			for k in 9:
-				coil.append(p + Vector2(-16 + k * 2.5, 6 if k % 2 == 0 else -6))
-			draw_polyline(coil, color, 2)
-			draw_line(p + Vector2(4, 0), p + Vector2(16, 0), color, 3)
-			draw_line(p + Vector2(16, 0), p + Vector2(10, -6), color, 3)
-			draw_line(p + Vector2(16, 0), p + Vector2(10, 6), color, 3)
-		8:
-			# Chainsaw bar with teeth along its edge.
-			draw_line(p + Vector2(-16, 14), p + Vector2(-7, 5), color, 4)
-			var bar = PackedVector2Array([p + Vector2(-9, 3), p + Vector2(9, -15), p + Vector2(15, -9), p + Vector2(-3, 9), p + Vector2(-9, 3)])
-			draw_polyline(bar, color, 2)
-			for k in 4:
-				var at: Vector2 = p + Vector2(-5, 1) + Vector2(4.5, -4.5) * k
-				draw_line(at, at + Vector2(-3, -3), color, 2)
+func icon(p: Vector2, id: String, color: Color) -> void:
+	SkillIcon.draw(self, p, id, color)

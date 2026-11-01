@@ -91,9 +91,11 @@ func run() -> void:
 	arena.build.skills.automaton = 10
 	arena.build.apply()
 	arena.skill_window.visible = true
+	arena.skill_window.tree_tab = "automation"
 	arena.refresh_build_windows()
-	var notes: Array = arena.skill_window.find_children("*", "Label", true, false).filter(func(l): return l.text.begins_with("체력 ×%.2f · 피해 ×%.2f" % [growth("hp", 10), growth("damage", 10)]))
-	check(notes.size() >= 1, "the skill tree shows the summon's HP and damage growth")
+	arena.skill_window.show_detail("automaton")
+	var note: String = arena.skill_window.tip_label.text
+	check(arena.skill_window.tip.visible and note.contains("체력 ×%.2f · 피해 ×%.2f" % [growth("hp", 10), growth("damage", 10)]), "hovering the skill shows the summon's HP and damage growth")
 	arena.skill_window.visible = false
 
 	var report = {"engine": Engine.get_version_info().string, "checks": checks, "failures": failures}

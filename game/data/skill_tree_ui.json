@@ -1,0 +1,60 @@
+{
+  "status": "temporary skill tree layout: the candidate lists and understanding links of docs/03 §3-§5, tiers I-IV in rows; links are related study, not prerequisites",
+  "columns": 7,
+  "trees": [
+    {"tree": "firearm", "nodes": [
+      {"name": "화승총", "tier": 1, "col": 2},
+      {"name": "화약통", "tier": 1, "col": 5},
+      {"name": "산탄포", "tier": 2, "col": 1, "id": "shotgun"},
+      {"name": "강선 장총", "tier": 2, "col": 3},
+      {"name": "반동 도약", "tier": 2, "col": 6},
+      {"name": "회전 기관포", "tier": 3, "col": 2},
+      {"name": "연막 발사기", "tier": 3, "col": 6},
+      {"name": "다연장 포격", "tier": 4, "col": 1},
+      {"name": "중장 함포", "tier": 4, "col": 3}],
+     "passives": [
+      {"name": "탄도 계산", "id": "ballistics"},
+      {"name": "재장전 기구 개선"},
+      {"name": "반동 제어"}],
+     "links": [["화승총", "산탄포"], ["화승총", "강선 장총"], ["화승총", "회전 기관포"], ["회전 기관포", "다연장 포격"], ["회전 기관포", "중장 함포"]]},
+    {"tree": "drive", "nodes": [
+      {"name": "낙하 단두대", "tier": 1, "col": 0},
+      {"name": "볼트 커터", "tier": 1, "col": 2, "id": "bolt_cutter"},
+      {"name": "방패 전개", "tier": 1, "col": 5, "id": "shield"},
+      {"name": "집중 공격", "tier": 2, "col": 1},
+      {"name": "광역 공격", "tier": 2, "col": 3},
+      {"name": "구속 윈치", "tier": 2, "col": 4},
+      {"name": "스프링 돌진", "tier": 2, "col": 6, "id": "spring_dash"},
+      {"name": "유압 압착기", "tier": 3, "col": 0},
+      {"name": "그라인더", "tier": 3, "col": 2, "id": "grinder"},
+      {"name": "충격 흡수 프레임", "tier": 3, "col": 5},
+      {"name": "복합 집행기", "tier": 4, "col": 0},
+      {"name": "전기톱", "tier": 4, "col": 2, "id": "chainsaw"},
+      {"name": "외골격 전개", "tier": 4, "col": 5}],
+     "passives": [
+      {"name": "구조 보강"},
+      {"name": "충격 회수"},
+      {"name": "절삭 정밀화", "id": "cutting_precision"}],
+     "links": [["낙하 단두대", "유압 압착기"], ["유압 압착기", "복합 집행기"], ["볼트 커터", "집중 공격"], ["볼트 커터", "광역 공격"], ["볼트 커터", "그라인더"],
+       ["그라인더", "전기톱"], ["방패 전개", "충격 흡수 프레임"], ["충격 흡수 프레임", "외골격 전개"], ["방패 전개", "구속 윈치"], ["방패 전개", "스프링 돌진"]]},
+    {"tree": "automation", "nodes": [
+      {"name": "태엽인형", "tier": 1, "col": 1, "id": "automaton"},
+      {"name": "반복 타격기", "tier": 1, "col": 4},
+      {"name": "기계 수렵견", "tier": 2, "col": 0},
+      {"name": "수리인형", "tier": 2, "col": 2},
+      {"name": "유인 신호기", "tier": 2, "col": 6},
+      {"name": "호위 인형", "tier": 3, "col": 0},
+      {"name": "자동포탑", "tier": 3, "col": 4, "id": "turret"},
+      {"name": "표적 중계기", "tier": 3, "col": 5, "id": "relay"},
+      {"name": "거대 자동인형", "tier": 4, "col": 1},
+      {"name": "조립 인형대", "tier": 4, "col": 2},
+      {"name": "자율공방", "tier": 4, "col": 3}],
+     "passives": [
+      {"name": "생산 효율", "id": "production_efficiency"},
+      {"name": "동력 관리"},
+      {"name": "표적 판단"},
+      {"name": "예비 부품"}],
+     "links": [["태엽인형", "기계 수렵견"], ["태엽인형", "수리인형"], ["태엽인형", "거대 자동인형"], ["기계 수렵견", "호위 인형"], ["수리인형", "호위 인형"],
+       ["반복 타격기", "자동포탑"], ["자동포탑", "표적 중계기"], ["수리인형", "조립 인형대"], ["수리인형", "자율공방"]]}
+  ]
+}

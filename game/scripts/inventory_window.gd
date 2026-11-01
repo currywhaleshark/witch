@@ -1,18 +1,36 @@
 extends PanelContainer
-## Temporary inventory (I) for the C4-C6 item trial: the seven worn slots and the bag.
-## Click a bag item to wear it (the worn one goes back to the bag), a worn item to take it off.
-## Hovering shows its options and, for a bag item, what is worn in that slot now.
-## The workbench view (C7/C8) socket name pieces into worn items, removes them for 각인전,
-## re-rolls one option, and the bag view salvages items into material.
+## Temporary grid inventory (I), in the old action-RPG way: the seven worn slots on a paper doll
+## over a 10x6 bag in which every item takes cells by its slot (items.json slot_sizes).
+## Click lifts an item onto the cursor and click puts it down (a single item under it swaps), on
+## its own slot wears it; right-click wears or takes off at once. A name piece lifts from the
+## pouch and clicks into a free socket of a worn or bag item; a click outside the window drops
+## the held item at her feet. Hovering shows the item and, for a bag item, what is worn in that
+## slot now. Words stay off the window: pictures, numbers and hover tips carry it. The workbench view re-rolls one option and removes
+## pieces for 각인전; the potion view keeps the stash, shop and quickslots.
+const ItemIcon = preload("res://scripts/item_icon.gd")
 const PANEL = Color("172b34")
 const EDGE = Color("526166")
 const PAPER = Color("e3e9df")
 const MUTED = Color("9aadaf")
 const GOLD = Color("d8b77b")
+const GOOD = Color("6fae7a")
+const BAD = Color("c25b5b")
+const CELL = 36
+# Where each worn slot sits on the paper doll, in pixels over the bag's width.
+const DOLL = {
+	"head": Rect2(144, 0, 72, 72), "brooch": Rect2(234, 18, 36, 36),
+	"medium": Rect2(54, 54, 72, 108), "outfit": Rect2(144, 84, 72, 108), "ring": Rect2(234, 120, 36, 36),
+	"gloves": Rect2(54, 174, 72, 72), "shoes": Rect2(234, 174, 72, 72)}
 
 var arena: Node
 var body: VBoxContainer
 var mode := "bag"
+var hover = null
+var hover_compare := false
+var tip: PanelContainer
+var tip_text: RichTextLabel
+var hand: Control
+var views: Array = []
 
 func setup(owner: Node) -> void:
 	arena = owner
@@ -22,20 +40,62 @@ func setup(owner: Node) -> void:
 	theme = Theme.new()
 	theme.default_font = font
 	theme.default_font_size = 14
-	var frame := StyleBoxFlat.new()
-	frame.bg_color = Color(PANEL, 0.96)
-	frame.border_color = EDGE
-	frame.set_border_width_all(1)
-	frame.set_content_margin_all(14)
-	add_theme_stylebox_override("panel", frame)
+	add_theme_stylebox_override("panel", frame_style(0.96, 14))
 	body = VBoxContainer.new()
 	body.add_theme_constant_override("separation", 6)
 	add_child(body)
+	# The hand and the tooltip float above everything and never take the mouse.
+	hand = Control.new()
+	hand.top_level = true
+	hand.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	hand.draw.connect(draw_hand)
+	add_child(hand)
+	tip = PanelContainer.new()
+	tip.top_level = true
+	tip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	tip.visible = false
+	tip.add_theme_stylebox_override("panel", frame_style(0.97, 8))
+	tip_text = RichTextLabel.new()
+	tip_text.bbcode_enabled = true
+	tip_text.fit_content = true
+	tip_text.autowrap_mode = TextServer.AUTOWRAP_OFF
+	tip_text.scroll_active = false
+	tip_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	tip_text.add_theme_font_size_override("normal_font_size", 13)
+	tip.add_child(tip_text)
+	add_child(tip)
 	refresh()
+
+func frame_style(alpha: float, margin: int) -> StyleBoxFlat:
+	var frame := StyleBoxFlat.new()
+	frame.bg_color = Color(PANEL, alpha)
+	frame.border_color = EDGE
+	frame.set_border_width_all(1)
+	frame.set_content_margin_all(margin)
+	return frame
 
 func toggle() -> void:
 	visible = not visible
+	if not visible:
+		arena.return_held()
+		set_hover(null)
 	refresh()
+
+func _process(_delta: float) -> void:
+	if not visible:
+		return
+	hand.size = get_viewport_rect().size
+	hand.position = Vector2.ZERO
+	hand.queue_redraw()
+	if tip.visible:
+		var mouse := get_viewport().get_mouse_position()
+		var spot := mouse + Vector2(18, 12)
+		var screen := get_viewport_rect().size
+		tip.reset_size()
+		if spot.x + tip.size.x > screen.x:
+			spot.x = mouse.x - tip.size.x - 12
+		spot.y = clampf(spot.y, 0, maxf(0, screen.y - tip.size.y))
+		tip.position = spot
 
 func text(value: String, color: Color = PAPER, size_px: int = 14) -> Label:
 	var label := Label.new()
@@ -44,31 +104,12 @@ func text(value: String, color: Color = PAPER, size_px: int = 14) -> Label:
 	label.add_theme_font_size_override("font_size", size_px)
 	return label
 
-func small_button(caption: String, action: Callable, enabled: bool = true, tip: String = "") -> Button:
+func small_button(caption: String, action: Callable, enabled: bool = true, tip_line: String = "") -> Button:
 	var b := Button.new()
 	b.text = caption
 	b.focus_mode = Control.FOCUS_NONE
 	b.disabled = not enabled
-	b.tooltip_text = tip
-	b.pressed.connect(func():
-		action.call()
-		arena.refresh_build_windows())
-	return b
-
-func item_button(item: Dictionary, action: Callable, compare: bool) -> Button:
-	var b := Button.new()
-	b.text = item.name
-	b.focus_mode = Control.FOCUS_NONE
-	b.alignment = HORIZONTAL_ALIGNMENT_LEFT
-	b.custom_minimum_size.x = 230
-	b.add_theme_color_override("font_color", Color(arena.items.data.rarity_colors[item.rarity]))
-	var tip: PackedStringArray = arena.items.describe(item)
-	var worn = arena.equipment[item.slot]
-	if compare and worn != null:
-		tip.append("")
-		tip.append("— 지금 착용 —")
-		tip.append_array(arena.items.describe(worn))
-	b.tooltip_text = "\n".join(tip)
+	b.tooltip_text = tip_line
 	b.pressed.connect(func():
 		action.call()
 		arena.refresh_build_windows())
@@ -80,85 +121,300 @@ func refresh() -> void:
 	for child in body.get_children():
 		body.remove_child(child)
 		child.queue_free()
+	views.clear()
 	var data: Dictionary = arena.items.data
-	body.add_child(text("인벤토리  (I)   ·   G 아이템 · Shift+G 고유 · Ctrl+G 조각·각인전 (시험용)", PAPER, 17))
-	body.add_child(HBoxContainer.new())
-	body.get_child(-1).add_child(small_button("가방", func(): mode = "bag", mode != "bag"))
-	body.get_child(-1).add_child(small_button("작업대", func(): mode = "bench", mode != "bench"))
-	body.get_child(-1).add_child(small_button("물약", func(): mode = "potions", mode != "potions"))
-	body.get_child(-1).add_child(text("   %s %d · %s %d" % [data.currency.name, arena.coins, data.crafting.material_name, arena.scrap], GOLD))
-	var columns := HBoxContainer.new()
-	columns.add_theme_constant_override("separation", 18)
-	body.add_child(columns)
-
-	var worn_list := VBoxContainer.new()
-	worn_list.add_child(text("장비 (누르면 벗기)", MUTED))
-	for slot in data.slots:
-		var line := HBoxContainer.new()
-		var name_label := text(data.slot_names[slot], MUTED, 13)
-		name_label.custom_minimum_size.x = 84
-		line.add_child(name_label)
-		var item = arena.equipment[slot]
-		if item == null:
-			line.add_child(text("—", MUTED))
-		else:
-			line.add_child(item_button(item, func(): arena.unequip(slot), false))
-		worn_list.add_child(line)
-	columns.add_child(worn_list)
-
-	if mode == "bench" or mode == "potions":
-		columns.add_child(bench() if mode == "bench" else potion_view())
-		reset_size()
-		position = Vector2(get_viewport_rect().size.x - size.x - 24, 84)
-		return
-	var bag_column := VBoxContainer.new()
-	bag_column.add_child(text("가방 %d/%d (누르면 착용)" % [arena.bag.size(), int(data.bag_size)], MUTED))
-	var scroll := ScrollContainer.new()
-	scroll.custom_minimum_size = Vector2(320, 300)
-	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	var bag_list := VBoxContainer.new()
-	for index in arena.bag.size():
-		var line := HBoxContainer.new()
-		line.add_child(item_button(arena.bag[index], func(): arena.equip(index), true))
-		var drop := Button.new()
-		drop.text = "버림"
-		drop.focus_mode = Control.FOCUS_NONE
-		drop.pressed.connect(func():
-			arena.discard(index)
-			arena.refresh_build_windows())
-		line.add_child(drop)
-		var gain: int = int(data.crafting.salvage[arena.bag[index].rarity])
-		line.add_child(small_button("분해", func(): arena.salvage(index), true, "%s +%d" % [data.crafting.material_name, gain]))
-		bag_list.add_child(line)
-	scroll.add_child(bag_list)
-	bag_column.add_child(scroll)
-	columns.add_child(bag_column)
+	var tabs := HBoxContainer.new()
+	tabs.add_child(small_button("가방", func(): mode = "bag", mode != "bag"))
+	tabs.add_child(small_button("작업대", func(): mode = "bench", mode != "bench"))
+	tabs.add_child(small_button("물약", func(): mode = "potions", mode != "potions"))
+	var gap := Control.new()
+	gap.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	tabs.add_child(gap)
+	var wallet := canvas_view("Wallet", Vector2(150, 28), draw_wallet, func(_view, _event): pass)
+	wallet.tooltip_text = "%s %d\n%s %d" % [data.currency.name, arena.coins, data.crafting.material_name, arena.scrap]
+	tabs.add_child(wallet)
+	body.add_child(tabs)
+	if mode == "bench":
+		body.add_child(bench())
+	elif mode == "potions":
+		body.add_child(potion_view())
+	else:
+		arena.arrange_bag()
+		body.add_child(doll_view())
+		body.add_child(pouch_row())
+		body.add_child(bag_view())
 	reset_size()
 	# On the right edge, so it sits beside the character window (C) on the left.
 	position = Vector2(get_viewport_rect().size.x - size.x - 24, 84)
+
+func canvas_view(view_name: String, size_px: Vector2, painter: Callable, handler: Callable) -> Control:
+	var view := Control.new()
+	view.name = view_name
+	view.custom_minimum_size = size_px
+	view.mouse_filter = Control.MOUSE_FILTER_STOP
+	view.draw.connect(func(): painter.call(view))
+	view.gui_input.connect(func(event): handler.call(view, event))
+	view.mouse_exited.connect(func():
+		set_hover(null)
+		view.queue_redraw())
+	views.append(view)
+	return view
+
+# Paper doll.
+func doll_view() -> Control:
+	return canvas_view("Doll", Vector2(arena.bag_grid().x * CELL, 246), draw_doll, doll_input)
+
+func slot_at(point: Vector2) -> String:
+	for slot in DOLL:
+		if DOLL[slot].has_point(point):
+			return slot
+	return ""
+
+func draw_doll(view: Control) -> void:
+	var mouse := view.get_local_mouse_position()
+	for slot in DOLL:
+		var rect: Rect2 = DOLL[slot]
+		view.draw_rect(rect, Color("0d181d"))
+		var edge := EDGE
+		if arena.held_item != null and rect.has_point(mouse):
+			edge = GOOD if arena.held_item.slot == slot else BAD
+		elif arena.held_item != null and arena.held_item.slot == slot:
+			edge = GOLD
+		view.draw_rect(rect, edge, false, 1.0)
+		var worn = arena.equipment[slot]
+		if worn != null:
+			ItemIcon.draw(view, rect, worn, arena.items)
+		else:
+			ItemIcon.silhouette(view, rect, slot)
+
+func doll_input(view: Control, event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		var slot := slot_at(event.position)
+		set_hover(arena.equipment[slot] if slot != "" else null, false)
+		view.queue_redraw()
+	elif event is InputEventMouseButton and event.pressed:
+		var slot := slot_at(event.position)
+		if slot != "":
+			click_slot(slot, event.button_index == MOUSE_BUTTON_RIGHT)
+		view.accept_event()
+
+func click_slot(slot: String, right: bool = false) -> void:
+	# Left: put a held piece in, wear the held item, or lift the worn one. Right: take it off.
+	var worn = arena.equipment[slot]
+	if right:
+		if arena.held_piece != "":
+			arena.held_piece = ""
+		elif arena.held_item == null and worn != null:
+			arena.unequip(slot)
+	elif arena.held_piece != "":
+		if worn != null:
+			arena.socket_into(worn, arena.held_piece)
+	elif arena.held_item != null:
+		if arena.held_item.slot == slot:
+			arena.wear_held()
+	elif worn != null:
+		arena.take_worn(slot)
+	set_hover(null)
+	arena.refresh_build_windows()
+
+# Bag grid.
+func bag_view() -> Control:
+	return canvas_view("Bag", Vector2(arena.bag_grid()) * CELL, draw_bag, bag_input)
+
+func cell_at(point: Vector2) -> Vector2i:
+	return Vector2i(floori(point.x / CELL), floori(point.y / CELL))
+
+func item_at(cell: Vector2i):
+	var under: Array = arena.bag_under(Rect2i(cell, Vector2i.ONE))
+	return under[0] if not under.is_empty() else null
+
+func held_origin(point: Vector2) -> Vector2i:
+	# The held item is centred on the cursor, so it lands on the cells it is drawn over.
+	var size: Vector2i = arena.items.size_of(arena.held_item)
+	return Vector2i(roundi(point.x / CELL - size.x / 2.0), roundi(point.y / CELL - size.y / 2.0))
+
+func draw_bag(view: Control) -> void:
+	var grid: Vector2i = arena.bag_grid()
+	view.draw_rect(Rect2(Vector2.ZERO, Vector2(grid) * CELL), Color("0d181d"))
+	for x in grid.x + 1:
+		view.draw_line(Vector2(x * CELL, 0), Vector2(x * CELL, grid.y * CELL), Color(EDGE, 0.45))
+	for y in grid.y + 1:
+		view.draw_line(Vector2(0, y * CELL), Vector2(grid.x * CELL, y * CELL), Color(EDGE, 0.45))
+	var mouse := view.get_local_mouse_position()
+	if arena.held_item != null and Rect2(Vector2.ZERO, view.size).has_point(mouse):
+		# Where it would land: green when it fits or swaps one item, red otherwise.
+		var cells := Rect2i(held_origin(mouse), arena.items.size_of(arena.held_item))
+		var fits: bool = Rect2i(Vector2i.ZERO, grid).encloses(cells) and arena.bag_under(cells).size() <= 1
+		view.draw_rect(Rect2(Vector2(cells.position) * CELL, Vector2(cells.size) * CELL), Color(GOOD if fits else BAD, 0.3))
+	for item in arena.bag:
+		if item.has("at"):
+			ItemIcon.draw(view, Rect2(Vector2(item.at) * CELL, Vector2(arena.items.size_of(item)) * CELL), item, arena.items)
+
+func bag_input(view: Control, event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		set_hover(item_at(cell_at(event.position)), true)
+		view.queue_redraw()
+	elif event is InputEventMouseButton and event.pressed:
+		var right: bool = event.button_index == MOUSE_BUTTON_RIGHT
+		var cell: Vector2i = held_origin(event.position) if arena.held_item != null and not right else cell_at(event.position)
+		click_bag(cell, right)
+		view.accept_event()
+
+func click_bag(cell: Vector2i, right: bool = false) -> void:
+	# With an item held, cell is where its top-left corner goes; otherwise the cell clicked.
+	var item = item_at(cell)
+	if right:
+		if arena.held_piece != "":
+			arena.held_piece = ""
+		elif arena.held_item == null and item != null:
+			arena.equip(arena.bag_index(item))
+	elif arena.held_piece != "":
+		if item != null:
+			arena.socket_into(item, arena.held_piece)
+	elif arena.held_item != null:
+		arena.put_in_bag(cell)
+	elif item != null:
+		arena.take_from_bag(item)
+	set_hover(null)
+	arena.refresh_build_windows()
+
+# Name pieces and the salvage anvil.
+func pouch_row() -> HBoxContainer:
+	var data: Dictionary = arena.items.data
+	var line := HBoxContainer.new()
+	line.add_theme_constant_override("separation", 6)
+	for id in data.pieces:
+		var chip := canvas_view("Piece_" + id, Vector2(CELL + 22, CELL), func(view): draw_piece(view, id),
+			func(view, event): piece_input(view, event, id))
+		chip.tooltip_text = "\n".join(arena.items.describe_piece(id))
+		line.add_child(chip)
+	var gap := Control.new()
+	gap.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	line.add_child(gap)
+	var gain: Dictionary = data.crafting.salvage
+	var salvage := canvas_view("Salvage", Vector2(CELL * 1.5, CELL), draw_salvage, salvage_input)
+	salvage.tooltip_text = "분해 → %s %d·%d·%d·%d" % [data.crafting.material_name,
+		int(gain.normal), int(gain.magic), int(gain.rare), int(gain.unique)]
+	line.add_child(salvage)
+	return line
+
+func draw_piece(view: Control, id: String) -> void:
+	var count: int = arena.pieces[id]
+	var rect := Rect2(Vector2.ZERO, Vector2(CELL, CELL))
+	view.draw_rect(rect, Color("0d181d"))
+	view.draw_rect(rect, GOLD if arena.held_piece == id else EDGE, false, 1.0)
+	ItemIcon.piece(view, rect, arena.items.glyph(id), count > 0)
+	view.draw_string(get_theme_default_font(), Vector2(CELL + 3, CELL * 0.65), str(count), HORIZONTAL_ALIGNMENT_LEFT, -1, 13, PAPER if count > 0 else MUTED)
+
+func piece_input(view: Control, event: InputEvent, id: String) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		click_piece(id)
+		view.accept_event()
+
+func click_piece(id: String) -> void:
+	# Lifts one kind of piece (clicking it again puts it back); an item in the hand blocks it.
+	if arena.held_item != null:
+		return
+	arena.held_piece = "" if arena.held_piece == id or arena.pieces[id] <= 0 else id
+	arena.refresh_build_windows()
+
+func draw_salvage(view: Control) -> void:
+	var rect := Rect2(Vector2.ZERO, view.size)
+	var active: bool = arena.held_item != null
+	view.draw_rect(rect, Color("0d181d"))
+	view.draw_rect(rect, GOLD if active and rect.has_point(view.get_local_mouse_position()) else EDGE, false, 1.0)
+	ItemIcon.anvil(view, rect.grow(-6), PAPER if active else MUTED)
+
+func salvage_input(view: Control, event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		view.queue_redraw()
+	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		arena.salvage_held()
+		view.accept_event()
+
+func draw_wallet(view: Control) -> void:
+	# 각인전 as a coin and material as a gear, numbers only; the names are in the hover tip.
+	var font := get_theme_default_font()
+	var y := view.size.y / 2
+	view.draw_circle(Vector2(10, y), 7, GOLD)
+	view.draw_arc(Vector2(10, y), 4, 0, TAU, 12, Color(PANEL, 0.8), 1.5)
+	view.draw_string(font, Vector2(22, y + 5), str(arena.coins), HORIZONTAL_ALIGNMENT_LEFT, -1, 14, GOLD)
+	ItemIcon.gear(view, Rect2(Vector2(78, y - 8), Vector2(16, 16)), MUTED)
+	view.draw_string(font, Vector2(98, y + 5), str(arena.scrap), HORIZONTAL_ALIGNMENT_LEFT, -1, 14, PAPER)
+
+# Hand and tooltip.
+func draw_hand() -> void:
+	var mouse := get_viewport().get_mouse_position()
+	if arena.held_item != null:
+		var size := Vector2(arena.items.size_of(arena.held_item)) * CELL
+		ItemIcon.draw(hand, Rect2(mouse - size / 2, size), arena.held_item, arena.items)
+	elif arena.held_piece != "":
+		ItemIcon.piece(hand, Rect2(mouse - Vector2(CELL, CELL) / 2, Vector2(CELL, CELL)), arena.items.glyph(arena.held_piece))
+
+func set_hover(item, compare: bool = false) -> void:
+	if item == null or arena.held_item != null:
+		hover = null
+		tip.visible = false
+		return
+	if is_same(item, hover) and compare == hover_compare:
+		return
+	hover = item
+	hover_compare = compare
+	tip_text.text = tooltip_bbcode(item, compare)
+	tip.visible = true
+
+func tooltip_lines(item: Dictionary, compare: bool) -> PackedStringArray:
+	var lines: PackedStringArray = arena.items.describe(item)
+	var worn = arena.equipment[item.slot]
+	if compare and worn != null:
+		lines.append("")
+		lines.append("— 지금 착용 —")
+		lines.append_array(arena.items.describe(worn))
+	return lines
+
+func tooltip_bbcode(item: Dictionary, compare: bool) -> String:
+	# Item names in their rarity colour, the true name block in violet.
+	var lines := tooltip_lines(item, compare)
+	var worn = arena.equipment[item.slot]
+	var out: PackedStringArray = []
+	var names := [arena.items.display_name(item)]
+	var colors := [Color(arena.items.data.rarity_colors[item.rarity])]
+	if worn != null:
+		names.append(arena.items.display_name(worn))
+		colors.append(Color(arena.items.data.rarity_colors[worn.rarity]))
+	var name_index := 0
+	for line in lines:
+		var safe: String = line.replace("[", "[lb]")
+		if name_index < names.size() and line == names[name_index] and (name_index == 0 or compare):
+			out.append("[color=#%s][b]%s[/b][/color]" % [colors[name_index].to_html(false), safe])
+			name_index += 1
+		elif line.begins_with("진명") or line.begins_with("— "):
+			out.append("[color=#c9b2ea]%s[/color]" % safe)
+		else:
+			out.append(safe)
+	return "\n".join(out)
 
 func potion_view() -> VBoxContainer:
 	# C10: the stash with a trial shop, and the four quickslots refilled by hand.
 	var potions: Dictionary = arena.config.potions
 	var prices: Dictionary = arena.items.data.potion_prices
 	var view := VBoxContainer.new()
-	view.add_child(text("퀵슬롯 (고르면 그 묶음이 통째로 들어가고 원래 것은 보관함으로)", MUTED, 13))
 	var ids: Array = potions.keys()
 	for index in arena.potion_slots.size():
 		var line := HBoxContainer.new()
 		var slot: Dictionary = arena.potion_slots[index]
-		line.add_child(text("%d번 ×%d" % [index + 1, slot.count], GOLD))
+		line.add_child(text("%d  ×%d" % [index + 1, slot.count], GOLD))
 		var picker := OptionButton.new()
 		picker.name = "Quickslot_%d" % index
 		picker.focus_mode = Control.FOCUS_NONE
 		for id in ids:
-			picker.add_item("%s (보관 %d)" % [potions[id].name, arena.potion_stash[id]])
+			picker.add_item("%s  %d" % [potions[id].name, arena.potion_stash[id]])
 		picker.select(ids.find(slot.id))
 		picker.item_selected.connect(func(pick: int): arena.assign_quickslot(index, ids[pick]))
 		line.add_child(picker)
 		line.add_child(small_button("채우기", func(): arena.fill_quickslot(index), arena.potion_stash[slot.id] > 0, "보관함의 같은 물약을 이 칸으로"))
 		view.add_child(line)
-	view.add_child(text("보관함 · 상점 (완전 회복 3종은 드롭 전용)", MUTED, 13))
+	view.add_child(HSeparator.new())
 	var grid := GridContainer.new()
 	grid.columns = 3
 	for id in ids:
@@ -170,43 +426,30 @@ func potion_view() -> VBoxContainer:
 	return view
 
 func bench() -> ScrollContainer:
+	# Worn items only: re-roll one option, or pay to take the last piece back out.
 	var data: Dictionary = arena.items.data
 	var craft: Dictionary = data.crafting
 	var scroll := ScrollContainer.new()
-	scroll.custom_minimum_size = Vector2(420, 330)
+	scroll.custom_minimum_size = Vector2(arena.bag_grid().x * CELL, 420)
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	var list := VBoxContainer.new()
-	var held := HBoxContainer.new()
-	held.add_child(text("이름 조각", MUTED))
-	for id in data.pieces:
-		var label := text("%s ×%d" % [data.pieces[id].name, arena.pieces[id]])
-		label.tooltip_text = "\n".join(arena.items.describe_piece(id))
-		label.mouse_filter = Control.MOUSE_FILTER_STOP
-		held.add_child(label)
-	list.add_child(held)
-	list.add_child(text("재굴림 %d전 + %s %d · 조각 빼기 %d전" % [int(craft.reroll_coins), craft.material_name, int(craft.reroll_material), int(craft.unsocket_coins)], MUTED, 12))
+	var reroll_cost := "%d전 + %s %d" % [int(craft.reroll_coins), craft.material_name, int(craft.reroll_material)]
 	for slot in data.slots:
 		var item = arena.equipment[slot]
 		if item == null:
 			continue
 		var head := HBoxContainer.new()
-		var name := text("%s: %s" % [data.slot_names[slot], item.name], Color(data.rarity_colors[item.rarity]))
+		var name := text(arena.items.display_name(item), Color(data.rarity_colors[item.rarity]))
 		name.tooltip_text = "\n".join(arena.items.describe(item))
 		name.mouse_filter = Control.MOUSE_FILTER_STOP
 		head.add_child(name)
-		list.add_child(head)
 		if int(item.get("sockets", 0)) > 0:
-			var sockets := HBoxContainer.new()
-			sockets.add_child(text("  소켓 %d/%d" % [item.pieces.size(), int(item.sockets)], MUTED, 13))
-			var free: bool = item.pieces.size() < int(item.sockets)
-			for id in data.pieces:
-				sockets.add_child(small_button(data.pieces[id].name, func(): arena.socket_piece(slot, id), free and arena.pieces[id] > 0))
-			sockets.add_child(small_button("빼기", func(): arena.unsocket(slot), not item.pieces.is_empty() and arena.coins >= int(craft.unsocket_coins)))
-			list.add_child(sockets)
+			head.add_child(small_button("빼기", func(): arena.unsocket(slot), not item.pieces.is_empty() and arena.coins >= int(craft.unsocket_coins), "마지막 조각 빼기 · %d전" % int(craft.unsocket_coins)))
+		list.add_child(head)
 		var can_pay: bool = arena.coins >= int(craft.reroll_coins) and arena.scrap >= int(craft.reroll_material)
 		for index in item.affixes.size():
 			var affix: Dictionary = item.affixes[index]
 			var caption: String = "  ↻ %s %s" % [["I", "II", "III"][affix.tier], arena.items.option_text(affix.id, affix.value)]
-			list.add_child(small_button(caption, func(): arena.reroll(slot, index), can_pay, "같은 접두/접미·같은 자리 풀에서 다시 굴림"))
+			list.add_child(small_button(caption, func(): arena.reroll(slot, index), can_pay, "다시 굴림 · " + reroll_cost))
 	scroll.add_child(list)
 	return scroll
