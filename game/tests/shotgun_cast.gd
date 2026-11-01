@@ -58,7 +58,7 @@ func run() -> void:
 		var mana: float=arena.state.mana
 		var fx:=start({"enemy_id":"target"})
 		var time: float=arena.windup.release
-		check(is_equal_approx(time,arena.cast_seconds(arena.rules.skills.shotgun)*0.5),"original release fraction retained")
+		check(is_equal_approx(time,arena.cast_seconds(arena.rules.skills.shotgun)*float(arena.rules.skills.shotgun.release_ratio)),"assembly lasts until the skill's release fraction")
 		check(fx.parts.size()==40,"40 actual independent cannon parts")
 		var triangles:=0
 		for part in fx.parts:

@@ -83,7 +83,8 @@ func run() -> void:
 		stashed += arena.potion_stash[id]
 	check(stashed == 1, "enemies sometimes drop a potion into the stash")
 	arena.coins = 30
-	check(arena.buy_potion("health_m") and arena.coins == 30 - int(data.potion_prices.health_m) and arena.potion_stash.health_m == 1, "the trial shop sells a potion for 각인전")
+	var owned: int = arena.potion_stash.health_m
+	check(arena.buy_potion("health_m") and arena.coins == 30 - int(data.potion_prices.health_m) and arena.potion_stash.health_m == owned + 1, "the trial shop sells a potion for 각인전")
 	check(not arena.buy_potion("full_health") and not arena.buy_potion("health_m"), "full restores are drop-only and a purchase needs the 각인전")
 
 	await fresh()

@@ -239,7 +239,7 @@ func run() -> void:
 	var mp: float = arena.state.mana
 	motion(screen(Vector3(4, 0, 2)))
 	mouse(MOUSE_BUTTON_RIGHT, true, screen(Vector3(4, 0, 2)))
-	await step(100)
+	await step(int((float(shot.cooldown_seconds) + 2.0 * arena.cast_seconds(shot) * float(shot.release_ratio)) * 60) + 10)
 	check(arena.state.mana == mp - 20, "held right click repeats an attack skill at its cooldown")
 	mouse(MOUSE_BUTTON_RIGHT, false, screen(Vector3(4, 0, 2)))
 
