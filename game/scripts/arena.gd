@@ -73,6 +73,9 @@ var coins := 0
 var scrap := 0
 var pieces: Dictionary = {}
 var base_mana_costs: Dictionary = {}
+# C10: potions bought or dropped wait in the stash; the four quickslots are refilled by hand
+# from it (04 §8.2: no automatic refill). The stash persists; a restart still restocks the loadout.
+var potion_stash: Dictionary = {}
 var state: Dictionary
 var player: CharacterBody3D
 var player_model: Node3D
@@ -187,6 +190,8 @@ func _ready() -> void:
 		base_mana_costs[id] = rules.skills[id].mana_cost
 	for id in items.data.pieces:
 		pieces[id] = 0
+	for id in config.potions:
+		potion_stash[id] = 0
 	sync_automaton_cost()
 	block_rng.randomize()
 	combat_rng.randomize()
@@ -759,6 +764,11 @@ func earn_spoils(grade: String) -> void:
 	var drop: Dictionary = items.data.currency.drops.get(grade, items.data.currency.drops.normal)
 	if loot_rng.randf() < float(drop.chance):
 		coins += loot_rng.randi_range(int(drop.range[0]), int(drop.range[1]))
+	var potions: Dictionary = items.data.potion_drops
+	if loot_rng.randf() < float(potions.chance.get(grade, 0.0)):
+		var potion: String = items.weighted(loot_rng, potions.weights)
+		potion_stash[potion] += 1
+		show_message("%s 획득" % config.potions[potion].name)
 	if loot_rng.randf() < float(items.data.piece_drops.get(grade, 0.0)):
 		var id: String = items.data.pieces.keys()[loot_rng.randi_range(0, items.data.pieces.size() - 1)]
 		pieces[id] += 1
@@ -1731,6 +1741,31 @@ func drink(index: int) -> void:
 	spawn_vfx().potion_glow(player.position, {"hp": Color(1.0, 0.32, 0.28), "mp": Color(0.35, 0.85, 1.0), "both": Color(0.82, 0.55, 1.0), "speed": Color(0.62, 1.0, 0.38)}[potion.kind], map.ground_y(player.position))
 	play_sfx("potion_drink", 1.4)
 
+func buy_potion(id: String) -> bool:
+	# Trial shop in the inventory: full-restore potions are drop-only (04 §8.2).
+	var price: int = int(items.data.potion_prices.get(id, 0))
+	if price <= 0 or coins < price:
+		return false
+	coins -= price
+	potion_stash[id] += 1
+	refresh_build_windows()
+	return true
+
+func assign_quickslot(index: int, id: String) -> void:
+	# The slot's potions go back to the stash and the chosen kind's whole stack moves in.
+	var slot: Dictionary = potion_slots[index]
+	potion_stash[slot.id] += slot.count
+	slot.id = id
+	slot.count = potion_stash[id]
+	potion_stash[id] = 0
+	refresh_build_windows()
+
+func fill_quickslot(index: int) -> void:
+	var slot: Dictionary = potion_slots[index]
+	slot.count += potion_stash[slot.id]
+	potion_stash[slot.id] = 0
+	refresh_build_windows()
+
 func potion_factor() -> float:
 	# 「록」 on accessories and 「록샤」 raise how much an ordinary potion restores.
 	return 1.0 + gear_total("potion_pct") / 100.0
@@ -1750,7 +1785,9 @@ func tick_potions(dt: float) -> void:
 	for effect in potion_effects.duplicate():
 		var spent: float = minf(dt, effect.time)
 		hp = minf(config.max_hp, hp + effect.hp_rate * spent)
-		state = rules.restore_mana(state, effect.mp_rate * spent).state
+		var drunk: Dictionary = rules.restore_mana(state, effect.mp_rate * spent)
+		state = drunk.state
+		probe.mana_gain("potions", drunk.events[0].amount)
 		effect.time -= spent
 		if effect.time <= 0:
 			potion_effects.erase(effect)
@@ -1954,7 +1991,9 @@ func _physics_process(dt: float) -> void:
 			if event.type == "tool_released":
 				show_message("마나 소진 · 공구 해제")
 				flash_tool_change(null)
-		state = rules.restore_mana(state, config.mana_regen * (1.0 + gear_total("mana_regen_pct") / 100.0) * dt).state
+		var regen: Dictionary = rules.restore_mana(state, config.mana_regen * (1.0 + gear_total("mana_regen_pct") / 100.0) * dt)
+		state = regen.state
+		probe.mana_gain("regen", regen.events[0].amount)
 		if a5_mode:
 			probe.tick(dt, skill_gap(), unaffordable_skills())
 			tick_respawns(dt)

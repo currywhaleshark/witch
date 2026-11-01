@@ -85,6 +85,7 @@ func refresh() -> void:
 	body.add_child(HBoxContainer.new())
 	body.get_child(-1).add_child(small_button("가방", func(): mode = "bag", mode != "bag"))
 	body.get_child(-1).add_child(small_button("작업대", func(): mode = "bench", mode != "bench"))
+	body.get_child(-1).add_child(small_button("물약", func(): mode = "potions", mode != "potions"))
 	body.get_child(-1).add_child(text("   %s %d · %s %d" % [data.currency.name, arena.coins, data.crafting.material_name, arena.scrap], GOLD))
 	var columns := HBoxContainer.new()
 	columns.add_theme_constant_override("separation", 18)
@@ -105,8 +106,8 @@ func refresh() -> void:
 		worn_list.add_child(line)
 	columns.add_child(worn_list)
 
-	if mode == "bench":
-		columns.add_child(bench())
+	if mode == "bench" or mode == "potions":
+		columns.add_child(bench() if mode == "bench" else potion_view())
 		reset_size()
 		position = Vector2(get_viewport_rect().size.x - size.x - 24, 84)
 		return
@@ -135,6 +136,38 @@ func refresh() -> void:
 	reset_size()
 	# On the right edge, so it sits beside the character window (C) on the left.
 	position = Vector2(get_viewport_rect().size.x - size.x - 24, 84)
+
+func potion_view() -> VBoxContainer:
+	# C10: the stash with a trial shop, and the four quickslots refilled by hand.
+	var potions: Dictionary = arena.config.potions
+	var prices: Dictionary = arena.items.data.potion_prices
+	var view := VBoxContainer.new()
+	view.add_child(text("퀵슬롯 (고르면 그 묶음이 통째로 들어가고 원래 것은 보관함으로)", MUTED, 13))
+	var ids: Array = potions.keys()
+	for index in arena.potion_slots.size():
+		var line := HBoxContainer.new()
+		var slot: Dictionary = arena.potion_slots[index]
+		line.add_child(text("%d번 ×%d" % [index + 1, slot.count], GOLD))
+		var picker := OptionButton.new()
+		picker.name = "Quickslot_%d" % index
+		picker.focus_mode = Control.FOCUS_NONE
+		for id in ids:
+			picker.add_item("%s (보관 %d)" % [potions[id].name, arena.potion_stash[id]])
+		picker.select(ids.find(slot.id))
+		picker.item_selected.connect(func(pick: int): arena.assign_quickslot(index, ids[pick]))
+		line.add_child(picker)
+		line.add_child(small_button("채우기", func(): arena.fill_quickslot(index), arena.potion_stash[slot.id] > 0, "보관함의 같은 물약을 이 칸으로"))
+		view.add_child(line)
+	view.add_child(text("보관함 · 상점 (완전 회복 3종은 드롭 전용)", MUTED, 13))
+	var grid := GridContainer.new()
+	grid.columns = 3
+	for id in ids:
+		grid.add_child(text("%s ×%d" % [potions[id].name, arena.potion_stash[id]]))
+		var price: int = int(prices.get(id, 0))
+		grid.add_child(text("%d전" % price if price > 0 else "—", MUTED, 13))
+		grid.add_child(small_button("구매", func(): arena.buy_potion(id), price > 0 and arena.coins >= price))
+	view.add_child(grid)
+	return view
 
 func bench() -> ScrollContainer:
 	var data: Dictionary = arena.items.data

@@ -1,0 +1,20 @@
+{
+  "checks": [
+    "a cast's mana shows up as cast spending",
+    "a running tool's upkeep shows up as upkeep spending",
+    "natural regen shows up as regen income",
+    "a mana potion shows up as potion income",
+    "the A5 log carries the mana flow",
+    "enemies sometimes drop a potion into the stash",
+    "the trial shop sells a potion for 각인전",
+    "full restores are drop-only and a purchase needs the 각인전",
+    "picking a quickslot kind moves the whole stack in and the old one out",
+    "an empty quickslot never refills itself from the stash",
+    "filling a quickslot by hand takes its kind from the stash",
+    "the stash survives a restart and the loadout still restocks",
+    "the potion view's buy button spends 각인전",
+    "the potion view's quickslot picker assigns a stack"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

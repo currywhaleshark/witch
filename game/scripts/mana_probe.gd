@@ -12,6 +12,8 @@ var casts: Dictionary = {}
 var potions: Dictionary = {}
 # Stage B breakdowns: direct damage dealt per source, and what each enemy grade did and suffered.
 var sources: Dictionary = {}
+# C9: mana spent on casts and tool upkeep against mana gained from regen and potions.
+var mana_flow = {"casts": 0.0, "upkeep": 0.0, "regen": 0.0, "potions": 0.0}
 var grades: Dictionary = {}
 
 func strike(source: String, result: String, dealt: float) -> void:
@@ -81,8 +83,19 @@ func record(events: Array) -> void:
 				if event.reason == "insufficient_mana":
 					counts.mana_failures += 1
 			"basic_attack_fallback": counts.fallback_attacks += 1
+			"mana_spent": mana_flow.casts += float(event.amount)
+			"tool_upkeep": mana_flow.upkeep += float(event.amount)
 			"tool_released":
 				counts["tool_auto_releases" if event.reason == "mana_empty" else "tool_manual_releases"] += 1
+
+func rounded_flow() -> Dictionary:
+	var result := {}
+	for key in mana_flow:
+		result[key] = snappedf(mana_flow[key], 0.1)
+	return result
+
+func mana_gain(kind: String, amount: float) -> void:
+	mana_flow[kind] += amount
 
 func gap_share() -> float:
 	return gap_seconds / combat_seconds if combat_seconds > 0 else 0.0
@@ -101,4 +114,4 @@ func to_dict() -> Dictionary:
 	return {"combat_seconds": snappedf(combat_seconds, 0.01), "skill_gap": {"seconds": snappedf(gap_seconds, 0.01),
 		"share": snappedf(gap_share(), 0.001), "count": gap_count, "longest_seconds": snappedf(longest_gap, 0.01)},
 		"unaffordable_seconds": rounded, "counts": counts, "casts": casts, "potions": potions,
-		"by_source": by_source, "by_grade": by_grade}
+		"by_source": by_source, "by_grade": by_grade, "mana_flow": rounded_flow()}

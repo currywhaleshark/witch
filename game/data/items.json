@@ -80,6 +80,10 @@
   "piece_drops": {"normal": 0.03, "champion": 0.06, "elite": 0.15, "boss": 0.6},
   "currency": {"name": "각인전", "drops": {"normal": {"chance": 0.4, "range": [2, 6]}, "champion": {"chance": 0.7, "range": [6, 14]},
     "elite": {"chance": 1.0, "range": [15, 30]}, "boss": {"chance": 1.0, "range": [60, 100]}}},
+  "potion_drops": {"chance": {"normal": 0.08, "champion": 0.15, "elite": 0.35, "boss": 1.0},
+    "weights": {"health_s": 20, "health_m": 14, "health_l": 5, "mana_s": 20, "mana_m": 14, "mana_l": 5, "rejuv_s": 6, "rejuv_m": 3, "rejuv_l": 1,
+      "full_health": 1, "full_mana": 1, "full_rejuv": 1, "speed": 3}},
+  "potion_prices": {"health_s": 10, "health_m": 25, "health_l": 50, "mana_s": 10, "mana_m": 25, "mana_l": 50, "rejuv_s": 20, "rejuv_m": 40, "rejuv_l": 70, "speed": 30},
   "crafting": {"material_name": "고철 부속", "salvage": {"normal": 1, "magic": 2, "rare": 4, "unique": 6},
     "reroll_coins": 40, "reroll_material": 2, "unsocket_coins": 30}
 }
