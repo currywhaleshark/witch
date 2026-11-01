@@ -524,6 +524,36 @@
         "clipped": 0,
         "onset_ms": 154
       }
+    },
+    "grinder_idle": {
+      "file": "game/audio/sfx_v1/grinder_idle.wav",
+      "text": "Small handheld angle grinder running steadily with no load, constant high electric motor whine and disc hum, seamless loop, close mic",
+      "cue": "combat_sfx.gd DRONES: loops while the grinder is the active tool; arena.gd sets it each frame",
+      "requested_seconds": 4.0,
+      "prompt_influence": 0.6,
+      "loop": true,
+      "seconds": 4.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "065a5c769efb355425a4a8ca994fc838673989bd54dfaf2e2479a58c08037811",
+      "generated_at": "2026-11-01T06:20:47+00:00",
+      "listened": false,
+      "wired_into_game": true
+    },
+    "chainsaw_idle": {
+      "file": "game/audio/sfx_v1/chainsaw_idle.wav",
+      "text": "Small mechanical chainsaw idling steadily, constant two-stroke engine putter and rattling chain, no cutting, seamless loop, close mic",
+      "cue": "combat_sfx.gd DRONES: loops while the chainsaw is the active tool; arena.gd sets it each frame",
+      "requested_seconds": 4.0,
+      "prompt_influence": 0.6,
+      "loop": true,
+      "seconds": 4.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "ac397df76fe6651bc5cd0435e5c217a61728f088b2c819304a684530f4aeb62a",
+      "generated_at": "2026-11-01T06:20:51+00:00",
+      "listened": false,
+      "wired_into_game": true
     }
   },
   "generator": "ElevenLabs text-to-sound-effects",

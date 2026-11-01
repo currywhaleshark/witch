@@ -1841,6 +1841,8 @@ func _physics_process(dt: float) -> void:
 		# Entry is outside the combat clock: enemies, resources and pending actions
 		# wait until the staff is held and the covered outfit swap has completed.
 		player_visual.sync_state(dt,false,0.0,paused,hp<=0,false,0.0)
+		if sfx != null:
+			sfx.set_drone(null)
 		for cue in player_visual.consume_entry_cues():
 			# Assembly and outfit change have their own sounds; the grasp keeps the pitched impact.
 			var named: String = {"assembly": "staff_assemble", "outfit": "outfit_change"}.get(cue.get("event", ""), "")
@@ -1924,6 +1926,10 @@ func _physics_process(dt: float) -> void:
 			if art != null:
 				art.sync_ally(ally, dt, ally.node.position.distance_to(enemies[ally.target].body.position) if enemies.has(ally.target) else INF)
 	player_visual.set_active_tool(state.active_tool)
+	if sfx != null:
+		# The grinder and chainsaw keep running while they are out; any action revs them up.
+		var running: bool = not muted and not paused and hp > 0 and not field_cleared()
+		sfx.set_drone(state.active_tool if running else null, 1.0 if action_time > 0 else 0.0)
 	if is_instance_valid(grinder_disk) and state.active_tool == "grinder" and not paused and hp > 0 and not field_cleared():
 		grinder_disk.rotate_object_local(Vector3.UP, dt * 18)
 	var visual_distance := player.position.distance_to(visual_start_position)

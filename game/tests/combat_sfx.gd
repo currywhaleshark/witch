@@ -49,6 +49,40 @@ func run() -> void:
 	for i in 30:
 		sfx._process(1.0 / 60.0)
 	check(sfx.voices.is_empty(), "gear assembly is gone before the outfit change")
+	# Running tools (fades take 0.25s, so waits are timed): the grinder motor loops while it is out, pauses with the game and stops when put away.
+	sfx.stop_all()
+	check(sfx.drones.has("grinder") and sfx.drones.has("chainsaw"), "grinder and chainsaw have running loops")
+	check(sfx.drones.values().all(func(d): return d.player.stream.loop_mode == AudioStreamWAV.LOOP_FORWARD), "running loops are imported as forward loops")
+	# R defaults to the shield; bind the grinder there like the tool-switch suite.
+	arena.state = arena.rules.bind(arena.state, "r", "grinder")
+	arena.state.mana = arena.state.max_mana
+	arena.request_slot("r", {})
+	await create_timer(0.4).timeout
+	check(arena.state.active_tool == "grinder" and sfx.drone_playing("grinder") and sfx.drones.grinder.level == 1.0 and not sfx.drone_playing("chainsaw"), "the deployed grinder hums at full level")
+	arena.paused = true
+	await create_timer(0.4).timeout
+	check(not sfx.drone_playing("grinder"), "pause silences the running motor")
+	arena.paused = false
+	await create_timer(0.4).timeout
+	check(sfx.drone_playing("grinder"), "the motor resumes after pause")
+	arena.muted = true
+	await create_timer(0.4).timeout
+	check(not sfx.drone_playing("grinder"), "mute stops the running motor")
+	arena.muted = false
+	arena.request_slot("r", {})
+	await create_timer(0.4).timeout
+	check(arena.state.active_tool == null and not sfx.drone_playing("grinder"), "putting the grinder away fades its motor out")
+	# Without frames in between the arena does not reset the drone, so the module is driven by hand here.
+	sfx.set_drone("grinder", 1.0)
+	sfx._tick_drones(0.5)
+	check(sfx.drones.grinder.player.pitch_scale > 1.05 and sfx.drones.grinder.player.volume_db > sfx.DRONES.grinder.gain_db + 3.0, "an attack revs the motor up")
+	sfx.set_drone("chainsaw")
+	sfx._tick_drones(0.1)
+	var both: bool = sfx.drone_playing("grinder") and sfx.drone_playing("chainsaw")
+	sfx._tick_drones(0.5)
+	check(both and sfx.drone_playing("chainsaw") and not sfx.drone_playing("grinder"), "swapping tools crossfades the motors")
+	sfx.stop_all()
+	check(not sfx.drone_playing("chainsaw"), "stop_all silences the running motor")
 	arena.muted = true
 	var before = sfx.voices.size()
 	arena.play_sfx("shotgun_fire")

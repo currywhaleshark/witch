@@ -31,7 +31,22 @@ const CUES = {
 	"staff_assemble": {"files": ["staff_assemble"], "gain_db": -16.0, "max_seconds": 1.1, "voices": 1, "fade": 0.3},
 	"outfit_change": {"files": ["outfit_change"], "gain_db": -6.0, "max_seconds": 0.0, "voices": 1},
 }
+# Running tools hum under the other cues while they are out; the files are generated as seamless loops
+# and imported with forward looping. An attack revs the motor up a little.
+const DRONES = {
+	"grinder": {"file": "grinder_idle", "gain_db": -26.0},
+	"chainsaw": {"file": "chainsaw_idle", "gain_db": -27.0},
+}
+const DRONE_FADE = 0.25
+const REV_SECONDS = 0.12
+const REV_DB = 4.0
+const REV_PITCH = 0.08
 var streams: Dictionary = {}
+# tool -> {"player", "level" (0..1 fade), "gain_db"}
+var drones: Dictionary = {}
+var drone_tool = null
+var drone_rev_target := 0.0
+var drone_rev := 0.0
 var voices: Array = []
 var pool: Array[AudioStreamPlayer] = []
 var rng = RandomNumberGenerator.new()
@@ -53,6 +68,22 @@ func _ready() -> void:
 		var player = AudioStreamPlayer.new()
 		add_child(player)
 		pool.append(player)
+	for tool in DRONES:
+		var path: String = DIR + DRONES[tool].file + ".wav"
+		if ResourceLoader.exists(path):
+			var drone = AudioStreamPlayer.new()
+			drone.stream = load(path)
+			add_child(drone)
+			drones[tool] = {"player": drone, "level": 0.0, "gain_db": float(DRONES[tool].gain_db)}
+
+## The tool whose motor should run (null for none) and how hard it is working (0 idle, 1 attacking).
+## Changes fade in and out, so a grinder/chainsaw swap crossfades.
+func set_drone(tool, rev: float = 0.0) -> void:
+	drone_tool = tool if drones.has(tool) else null
+	drone_rev_target = clampf(rev, 0.0, 1.0)
+
+func drone_playing(tool: String) -> bool:
+	return drones.has(tool) and drones[tool].player.playing and drones[tool].level > 0.0
 
 func has_cue(cue: String) -> bool:
 	return streams.has(cue)
@@ -86,6 +117,10 @@ func stop_all() -> void:
 	for voice in voices:
 		voice.player.stop()
 	voices.clear()
+	drone_tool = null
+	for tool in drones:
+		drones[tool].level = 0.0
+		drones[tool].player.stop()
 
 func _free_player() -> AudioStreamPlayer:
 	for player in pool:
@@ -100,6 +135,7 @@ func _release(voice: Dictionary) -> void:
 	voices.erase(voice)
 
 func _process(dt: float) -> void:
+	_tick_drones(dt)
 	for voice in voices.duplicate():
 		voice.age += dt
 		if not voice.player.playing:
@@ -114,3 +150,18 @@ func _process(dt: float) -> void:
 			voice.player.volume_db = voice.base_db + linear_to_db(maxf(0.001, 1.0 - amount))
 			if amount >= 1.0:
 				_release(voice)
+
+func _tick_drones(dt: float) -> void:
+	drone_rev = move_toward(drone_rev, drone_rev_target, dt / REV_SECONDS)
+	for tool in drones:
+		var drone: Dictionary = drones[tool]
+		drone.level = move_toward(drone.level, 1.0 if tool == drone_tool else 0.0, dt / DRONE_FADE)
+		if drone.level <= 0.0:
+			if drone.player.playing:
+				drone.player.stop()
+			continue
+		var rev := drone_rev if tool == drone_tool else 0.0
+		drone.player.volume_db = drone.gain_db + REV_DB * rev + linear_to_db(drone.level)
+		drone.player.pitch_scale = 1.0 + REV_PITCH * rev
+		if not drone.player.playing:
+			drone.player.play()

@@ -49,7 +49,7 @@ print(f"{len(todo)} to generate, {len(effects) - len(todo)} already present, "
       f"{sum(effect['seconds'] for effect in todo):.1f}s requested in total")
 if args.dry_run:
     for effect in todo:
-        print(f"  {effect['id']:<18} {effect['seconds']:>4}s  {effect['text']}")
+        print(f"  {effect['id']:<18} {effect['seconds']:>4}s{' loop' if effect.get('loop') else ''}  {effect['text']}")
     sys.exit(0)
 if not todo:
     sys.exit(0)
@@ -69,7 +69,7 @@ for effect in todo:
     try:
         audio = b"".join(client.text_to_sound_effects.convert(
             text=effect["text"], model_id=manifest["model_id"], output_format=manifest["output_format"],
-            duration_seconds=effect["seconds"], prompt_influence=influence))
+            duration_seconds=effect["seconds"], prompt_influence=influence, loop=bool(effect.get("loop", False))))
     except Exception as error:  # Keep going; report every failure at the end.
         print(f"  FAILED {effect['id']}: {error}")
         failed.append(effect["id"])
@@ -81,7 +81,7 @@ for effect in todo:
         rate, channels = clip.getframerate(), clip.getnchannels()
     report["effects"][effect["id"]] = {
         "file": path.relative_to(root).as_posix(), "text": effect["text"], "cue": effect["cue"],
-        "requested_seconds": effect["seconds"], "prompt_influence": influence,
+        "requested_seconds": effect["seconds"], "prompt_influence": influence, "loop": bool(effect.get("loop", False)),
         "seconds": round(seconds, 3), "sample_rate": rate, "channels": channels,
         "sha256": hashlib.sha256(audio).hexdigest(),
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),

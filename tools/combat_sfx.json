@@ -54,6 +54,10 @@
     {"id": "staff_assemble", "supplied": ["staff_assemble.wav"], "cue": "field entry transformation assembly", "seconds": 4.0,
      "text": "(user-supplied ElevenLabs file: mechanical gear transformation)"},
     {"id": "outfit_change", "supplied": ["outfit_change.wav"], "cue": "field entry transformation outfit swap", "seconds": 3.0,
-     "text": "(user-supplied ElevenLabs file: gentle magical whoosh)"}
+     "text": "(user-supplied ElevenLabs file: gentle magical whoosh)"},
+    {"id": "grinder_idle", "cue": "combat_sfx.gd drone while the grinder tool is active", "seconds": 4.0, "loop": true,
+     "text": "Small handheld angle grinder running steadily with no load, constant high electric motor whine and disc hum, seamless loop, close mic"},
+    {"id": "chainsaw_idle", "cue": "combat_sfx.gd drone while the chainsaw tool is active", "seconds": 4.0, "loop": true,
+     "text": "Small mechanical chainsaw idling steadily, constant two-stroke engine putter and rattling chain, no cutting, seamless loop, close mic"}
   ]
 }
