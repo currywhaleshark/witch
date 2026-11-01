@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Lv1 summons keep their trial HP",
+    "an automaton's HP grows with its skill level",
+    "an automaton's hits grow with its skill level (24.96)",
+    "a turret's HP grows with its skill level",
+    "a turret's shots grow with its skill level (18.72)",
+    "the A blast grows with the level, blueprint levels past 10 included (139.20)",
+    "the B node's sturdiness multiplies on top of the level",
+    "the B node's damage factor multiplies on top of the level (31.20)",
+    "the skill tree shows the summon's HP and damage growth"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

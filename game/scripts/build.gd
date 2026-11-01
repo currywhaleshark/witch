@@ -64,6 +64,8 @@ func set_level(value: int) -> void:
 		reset_stats()
 	if skill_points() < 0:
 		reset_skills()
+	if arena.enemy_level_linked:
+		arena.set_enemy_level(level)
 	apply()
 
 func step_level(delta: int) -> bool:
@@ -159,4 +161,4 @@ func power_factor() -> float:
 
 func snapshot() -> Dictionary:
 	return {"level": level, "stats": stats.duplicate(), "skills": skills.duplicate(), "passives": passives.duplicate(), "node": node, "equipment": arena.equipment_summary(),
-		"stat_points_left": stat_points(), "skill_points_left": skill_points()}
+		"stat_points_left": stat_points(), "skill_points_left": skill_points(), "enemy_level": arena.enemy_level}

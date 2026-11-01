@@ -94,7 +94,8 @@
   "crit_multiplier": 1.5,
   "automaton_level": 1,
   "automaton_node": "base",
-  "build": {"level": 1, "max_level": 30, "stat_points_per_level": 5, "skill_points_per_level": 1, "skill_max_level": 10, "node_cost": 1, "log_min_seconds": 10,
+  "build": {"level": 1, "max_level": 30, "stat_points_per_level": 5, "skill_points_per_level": 1, "skill_max_level": 10, "node_cost": 1,
+    "enemy_hp_per_level": 0.09, "enemy_damage_per_level": 0.05, "log_min_seconds": 10,
     "stat_effects": {"power": 0.01, "vitality": 2, "will": 1},
     "skill_tree": [{"tree": "firearm", "entries": [{"id": "shotgun", "kind": "skill"}, {"id": "ballistics", "kind": "passive"}]},
       {"tree": "drive", "entries": [{"id": "chainsaw", "kind": "skill"}, {"id": "shield", "kind": "skill"}, {"id": "cutting_precision", "kind": "passive"}]},
@@ -109,6 +110,8 @@
   "turret_level": 1,
   "summon_hit_base": 0.75,
   "summon_hit_per_level": 0.02,
+  "summon_hp_per_level": 0.15,
+  "summon_damage_per_level": 0.12,
   "summon_crit_base": 0.05,
   "summon_crit_per_level": 0.01,
   "potions": {

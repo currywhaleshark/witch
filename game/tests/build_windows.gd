@@ -125,9 +125,9 @@ func run() -> void:
 	await step(30)
 	check(arena.elapsed > start + 0.4, "combat keeps running while the windows are open")
 	build.set_level(3)
-	# The first + is the trial level's; the second is power's.
+	# The first + is the trial level's, the second the enemy level's; the third is power's.
 	var plus: Array = buttons(arena.character_window, "+")
-	plus[1].pressed.emit()
+	plus[2].pressed.emit()
 	check(build.stats.power == 1, "the character window's + spends a stat point")
 	var a_button: Array = buttons(arena.skill_window, "A 자폭 특화")
 	a_button[0].pressed.emit()
@@ -136,7 +136,7 @@ func run() -> void:
 	check(build.node == "base" and build.skill_points() == 3, "the skill tree window's reset refunds everything")
 	build.set_level(30)
 	hold_key(KEY_SHIFT, true)
-	buttons(arena.character_window, "+")[1].pressed.emit()
+	buttons(arena.character_window, "+")[2].pressed.emit()
 	hold_key(KEY_SHIFT, false)
 	var shifted_power: int = build.stats.power
 	hold_key(KEY_CTRL, true)

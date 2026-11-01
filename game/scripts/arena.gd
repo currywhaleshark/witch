@@ -70,6 +70,10 @@ var inventory_window: PanelContainer
 var tool_upkeep: Dictionary = {}
 # C7/C8: 각인전 (currency), salvage material and stacked name pieces; they persist like the bag.
 var coins := 0
+# Trial enemy level: enemies grow in HP and damage per level so a level 30 build is not measured
+# against first-area enemies. It follows the trial level until it is set apart in the C window.
+var enemy_level := 1
+var enemy_level_linked := true
 var scrap := 0
 var pieces: Dictionary = {}
 var base_mana_costs: Dictionary = {}
@@ -431,8 +435,8 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 	var size: float = type.scale * rank.scale
 	var pick = Shape.pick_volume(body, 0.7 * size, 1.65 * size, PICK_LAYER)
 	pick.set_meta("enemy_id", id)
-	var maximum: float = type.hp * rank.hp
-	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": type.get("heavy", false), "kind": kind,
+	var maximum: float = type.hp * rank.hp * enemy_level_factor("hp", enemy_level)
+	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": type.get("heavy", false), "kind": kind, "level": enemy_level,
 		"grade": grade, "size": size, "cooldown": 1.0, "windup": 0.0, "attack": "", "charge_cooldown": 1.0, "charging": 0.0,
 		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "bleeds": [], "flash": 0.0,
 		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": [], "route": {}}
@@ -1551,7 +1555,38 @@ func nearest_enemy(pos: Vector3, distance: float, direction: Vector3 = Vector3.Z
 
 func enemy_name(id: String) -> String:
 	var enemy: Dictionary = enemies[id]
-	return config.grades[enemy.grade].name + " " + config.enemy_types[enemy.kind].name
+	return "%s %s Lv %d" % [config.grades[enemy.grade].name, config.enemy_types[enemy.kind].name, enemy.level]
+
+func enemy_level_factor(kind: String, level: int) -> float:
+	return 1.0 + float(config.build["enemy_%s_per_level" % kind]) * (level - 1)
+
+func set_enemy_level(value: int) -> void:
+	# Living enemies keep their HP fraction; bleed, phases and stun read max HP, so they follow.
+	enemy_level = clampi(value, 1, int(config.build.max_level))
+	for id in enemies:
+		var enemy: Dictionary = enemies[id]
+		var ratio: float = enemy_level_factor("hp", enemy_level) / enemy_level_factor("hp", enemy.level)
+		enemy.hp *= ratio
+		enemy.max_hp *= ratio
+		enemy.level = enemy_level
+
+func step_enemy_level(delta: int) -> bool:
+	if enemy_level + delta < 1 or enemy_level + delta > int(config.build.max_level):
+		return false
+	split_build_log()
+	set_enemy_level(enemy_level + delta)
+	enemy_level_linked = enemy_level == build.level
+	return true
+
+func link_enemy_level() -> void:
+	split_build_log()
+	enemy_level_linked = true
+	set_enemy_level(build.level)
+
+func summon_growth(kind: String, roller: String) -> float:
+	# Summons grow with their own skill level (blueprints included), not with the witch's power
+	# or damage gear (07 §2.1), so a level 30 build's summons can stand against level 30 enemies.
+	return 1.0 + float(config["summon_%s_per_level" % kind]) * (float(config[roller + "_level"]) - 1.0)
 
 func summon_level(roller: String) -> int:
 	return int(config[roller + "_level"])
@@ -1867,7 +1902,7 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	world.add_child(node)
 	node.position = map.grounded(pos)
 	ActorVisual.create(node, "automaton" if mobile else "turret", str(config.automaton_node) if mobile else "base", float(config.summon_lifetime))
-	var durability: float = config.automaton_hp if mobile else config.turret_hp
+	var durability: float = (config.automaton_hp if mobile else config.turret_hp) * summon_growth("hp", "automaton" if mobile else "turret")
 	# The automaton keeps the node it was summoned with; B never times out but only so many stay.
 	# Taken before an old B steps aside, so the new one keeps the place it was assembled at.
 	var slot := free_follow_slot() if mobile else -1
@@ -1921,7 +1956,7 @@ func expire_ally(ally: Dictionary) -> void:
 	# End of life: automatons self-destruct, turrets just shut down. An A automaton also lands
 	# here the moment it reaches its target, trading its repeated attacks for a bigger blast.
 	if ally.mobile:
-		var damage: float = config.shot_damage * (float(config.automaton_nodes.A.blast_factor) if ally.node_kind == "A" else 1.0)
+		var damage: float = config.shot_damage * (float(config.automaton_nodes.A.blast_factor) if ally.node_kind == "A" else 1.0) * summon_growth("damage", "automaton")
 		for id in enemies.keys():
 			if enemies.has(id) and ally.node.position.distance_to(enemies[id].body.position) < config.summon_explosion_range:
 				strike(id, damage, false, "automaton", "automaton_blast")
@@ -2188,7 +2223,7 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 		enemy.knockback_left -= travel
 		return
 	var type: Dictionary = config.enemy_types[enemy.kind]
-	var power: float = config.grades[enemy.grade].damage
+	var power: float = config.grades[enemy.grade].damage * enemy_level_factor("damage", enemy.level)
 	var pace: float = config.enemy_speed * type.speed * config.grades[enemy.grade].speed * (slow_factor() if enemy.slow > 0 else 1.0)
 	if type.has("boss"):
 		tick_boss(enemy, type.boss, power, pace, dt)
@@ -2537,7 +2572,8 @@ func _tick_allies(dt: float) -> void:
 				spawn_vfx().summon_punch(shot_origin, target - ally.node.position, TEAL, map.ground_y(shot_origin))
 			var saw: bool = ally.mobile and ally.node_kind == "B"
 			var damage: float = config.summon_damage * (float(config.automaton_nodes.B.damage_factor) if ally.node_kind == "B" else 1.0)
-			strike(ally.target, damage if ally.mobile else config.turret_damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret", "saw" if saw else "")
+			damage = (damage if ally.mobile else config.turret_damage) * summon_growth("damage", "automaton" if ally.mobile else "turret")
+			strike(ally.target, damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret", "saw" if saw else "")
 			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown
 	separate_allies(dt)
 

@@ -110,6 +110,12 @@ func _character() -> void:
 	body.add_child(text("캐릭터  (C)", PAPER, 18))
 	body.add_child(stepper("시험 레벨", "Lv %d" % build.level, func(): return build.step_level(-1), func(): return build.step_level(1),
 		build.level > 1, build.level < int(build.rules.max_level), "레벨당 스탯 %d · 스킬 %d" % [build.rules.stat_points_per_level, build.rules.skill_points_per_level]))
+	var rules: Dictionary = build.rules
+	body.add_child(stepper("적 레벨", "Lv %d" % arena.enemy_level, func(): return arena.step_enemy_level(-1), func(): return arena.step_enemy_level(1),
+		arena.enemy_level > 1, arena.enemy_level < int(rules.max_level), "HP ×%.2f · 피해 ×%.2f%s" % [arena.enemy_level_factor("hp", arena.enemy_level),
+		arena.enemy_level_factor("damage", arena.enemy_level), " · 시험 레벨 따라감" if arena.enemy_level_linked else ""]))
+	if not arena.enemy_level_linked:
+		body.add_child(row([button("적 레벨을 시험 레벨에 맞춤", func(): arena.link_enemy_level())]))
 	body.add_child(text("남은 스탯 포인트  %d" % build.stat_points(), GOLD))
 	var effects: Dictionary = build.rules.stat_effects
 	var notes := {
@@ -186,7 +192,8 @@ func effect_note(id: String) -> String:
 			var knock: float = float(arena.rules.skills.shotgun.knockback_level)
 			return "피해 +%d%% · %s" % [roundi(100 * (arena.skill_level_factor("shotgun") - 1.0)), "넉백" if arena.config.shotgun_level >= knock else "Lv%d 넉백" % knock]
 		"automaton", "turret":
-			return "명중 %d%% · 치명 %d%%" % [roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[id + "_level"] - 1), config.hit_min, config.hit_cap)), roundi(100 * arena.crit_chance(id))]
+			return "체력 ×%.2f · 피해 ×%.2f · 명중 %d%% · 치명 %d%%" % [arena.summon_growth("hp", id), arena.summon_growth("damage", id),
+				roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[id + "_level"] - 1), config.hit_min, config.hit_cap)), roundi(100 * arena.crit_chance(id))]
 		"production_efficiency":
 			return "시전 속도 +%d" % roundi(arena.build.cast_speed_parts().passive)
 		_:
