@@ -160,10 +160,13 @@ func run() -> void:
 	check(plates().is_empty(),"raised-floor cast completes cleanup")
 	arena.load_map("flat");await fresh();arena.muted=false
 	var sound_before:int=arena.sound_index
+	var sfx_before:int=arena.sfx.history.count("spring_dash") if arena.sfx else 0
 	arena.start_dash(Vector3(3,0,0),Vector3.RIGHT,false)
 	p=plates()[0];p.set_process(false)
 	check(p.mode=="launched" and p.launch_count==1 and p.progress==1. and not arena.dash.is_empty(),"immediate release path needs no extra visual windup")
-	check(arena.sound_index==sound_before+1,"one existing mechanical cue plays on launch")
+	# The named spring cue replaces the old pitched impact when its file is present.
+	var sfx_heard:int=(arena.sfx.history.count("spring_dash") if arena.sfx else 0)-sfx_before
+	check(sfx_heard+arena.sound_index-sound_before==1,"one existing mechanical cue plays on launch")
 	var first_origin:Vector3=p.global_position
 	arena.player.position=Vector3(2,0,0);arena.start_dash(Vector3(4,0,0),Vector3.RIGHT,false)
 	check(plates().size()==2 and p.global_position==first_origin,"multiple launched plates retain independent origins")

@@ -21,8 +21,9 @@ const CUES = {
 	"automaton_explode": {"files": ["automaton_explode"], "gain_db": -19.0, "max_seconds": 0.0, "voices": 3},
 	"summon_break": {"files": ["summon_break"], "gain_db": -13.0, "max_seconds": 0.0, "voices": 2},
 	"potion_drink": {"files": ["potion_drink"], "gain_db": -17.0, "max_seconds": 0.0, "voices": 1},
-	"spring_dash": {"files": ["spring_dash"], "gain_db": -11.0, "max_seconds": 0.0, "voices": 1},
-	"shield_raise": {"files": ["shield_raise"], "gain_db": -5.0, "max_seconds": 0.0, "voices": 1},
+	# User-supplied replacements; the spring file opens with 0.22s of silence, skipped so the thump lands on actuation.
+	"spring_dash": {"files": ["spring_dash"], "gain_db": -19.0, "max_seconds": 0.0, "voices": 1, "skip": 0.22},
+	"shield_raise": {"files": ["shield_raise"], "gain_db": -25.0, "max_seconds": 0.0, "voices": 1},
 	"enemy_bolt": {"files": ["enemy_bolt"], "gain_db": -18.0, "max_seconds": 0.0, "voices": 3},
 	"boss_sweep": {"files": ["boss_sweep"], "gain_db": -18.0, "max_seconds": 0.0, "voices": 1},
 	"boss_slam": {"files": ["boss_slam"], "gain_db": -9.0, "max_seconds": 0.0, "voices": 1},

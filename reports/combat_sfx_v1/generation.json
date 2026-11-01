@@ -254,44 +254,44 @@
     },
     "spring_dash": {
       "file": "game/audio/sfx_v1/spring_dash.wav",
-      "text": "Compressed metal spring plate releasing, springy launch with a quick whoosh",
-      "cue": "spring_plate.gd actuation (play_cue 1.65)",
-      "requested_seconds": 0.7,
-      "prompt_influence": 0.6,
-      "seconds": 0.68,
-      "sample_rate": 44100,
+      "source": "user_supplied",
+      "original_file": "MACHInd-Heavy_industrial_bre-Elevenlabs.wav",
+      "text": "(사용자가 ElevenLabs에서 직접 받아 온 파일)",
+      "cue": "spring_plate.gd actuation; first 0.22s of silence skipped",
+      "seconds": 1.11,
+      "sample_rate": 48000,
       "channels": 2,
-      "sha256": "496f1df4775550298f8205709a04c9aa162d2f18b5251efbe661ee38fa623723",
-      "generated_at": "2026-10-31T14:59:33+00:00",
-      "listened": false,
+      "sha256": "c879486d4db52f6616e158634d0c9d84e9400992b44a037624d25225d6b43588",
+      "imported_at": "2026-11-01T06:39:33+00:00",
+      "listened": true,
       "wired_into_game": true,
       "analysis": {
         "bits": 16,
         "peak_dbfs": 0.0,
-        "rms_dbfs": -25.4,
-        "clipped": 2,
-        "onset_ms": 0
+        "rms_dbfs": -16.8,
+        "clipped": 62,
+        "onset_ms": 257
       }
     },
     "shield_raise": {
       "file": "game/audio/sfx_v1/shield_raise.wav",
-      "text": "Small mechanical shield unfolding with a metallic snap",
-      "cue": "shield_visual.gd (play_cue 2.1)",
-      "requested_seconds": 0.6,
-      "prompt_influence": 0.6,
-      "seconds": 0.6,
-      "sample_rate": 44100,
+      "source": "user_supplied",
+      "original_file": "WEAPArmr-Short_fantasy_mediev-Elevenlabs.wav",
+      "text": "(사용자가 ElevenLabs에서 직접 받아 온 파일)",
+      "cue": "shield_visual.gd shield deploy",
+      "seconds": 1.0,
+      "sample_rate": 48000,
       "channels": 2,
-      "sha256": "9cba39c583a406c6df9a496722b1c6146a419ecd79c3745146e4c1f377059ad1",
-      "generated_at": "2026-10-31T14:59:34+00:00",
-      "listened": false,
+      "sha256": "d030f2da43c1c7231b0dce399b9a7355f32aebc35e8a97735b45b434d5f293fc",
+      "imported_at": "2026-11-01T06:39:33+00:00",
+      "listened": true,
       "wired_into_game": true,
       "analysis": {
         "bits": 16,
-        "peak_dbfs": -9.2,
-        "rms_dbfs": -33.2,
-        "clipped": 0,
-        "onset_ms": 0
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -12.2,
+        "clipped": 139,
+        "onset_ms": 23
       }
     },
     "enemy_bolt": {
@@ -648,6 +648,50 @@
         "onset_ms": 0
       },
       "rejected_reason": "사용자 청취: 타격음으로 부족"
+    },
+    "spring_dash_take1": {
+      "file": "reports/combat_sfx_v1/rejected/spring_dash_take1.wav",
+      "text": "Compressed metal spring plate releasing, springy launch with a quick whoosh",
+      "cue": "spring_plate.gd actuation (play_cue 1.65)",
+      "requested_seconds": 0.7,
+      "prompt_influence": 0.6,
+      "seconds": 0.68,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "496f1df4775550298f8205709a04c9aa162d2f18b5251efbe661ee38fa623723",
+      "generated_at": "2026-10-31T14:59:33+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": 0.0,
+        "rms_dbfs": -25.4,
+        "clipped": 2,
+        "onset_ms": 0
+      },
+      "rejected_reason": "사용자가 ElevenLabs에서 받은 파일(heavy industrial)로 교체"
+    },
+    "shield_raise_take1": {
+      "file": "reports/combat_sfx_v1/rejected/shield_raise_take1.wav",
+      "text": "Small mechanical shield unfolding with a metallic snap",
+      "cue": "shield_visual.gd (play_cue 2.1)",
+      "requested_seconds": 0.6,
+      "prompt_influence": 0.6,
+      "seconds": 0.6,
+      "sample_rate": 44100,
+      "channels": 2,
+      "sha256": "9cba39c583a406c6df9a496722b1c6146a419ecd79c3745146e4c1f377059ad1",
+      "generated_at": "2026-10-31T14:59:34+00:00",
+      "listened": false,
+      "wired_into_game": false,
+      "analysis": {
+        "bits": 16,
+        "peak_dbfs": -9.2,
+        "rms_dbfs": -33.2,
+        "clipped": 0,
+        "onset_ms": 0
+      },
+      "rejected_reason": "사용자가 ElevenLabs에서 받은 파일(short fantasy medieval armor)로 교체"
     }
   }
 }
