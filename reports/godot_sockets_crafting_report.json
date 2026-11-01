@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "sockets roll 0 up to the base's maximum",
+    "uniques carry no sockets",
+    "「벨」 gives attack speed in the medium, move speed on armour, mana regen on an accessory",
+    "「샤」 gives cast speed in the medium, damage reduction on armour",
+    "「샤」 on an accessory trims skill mana costs",
+    "「록」 gives life on armour and potion strength on an accessory",
+    "「록」 in the medium mends a little on each kill",
+    "록 then 샤 in a two-socket outfit wakes 「록샤」 on top of the pieces",
+    "a full item takes no more pieces",
+    "paid removal returns the last piece and the true name fades",
+    "removal needs 각인전",
+    "the true name needs its slot and its order",
+    "salvage gives material by rarity and returns socketed pieces",
+    "a re-roll needs 각인전 and material",
+    "re-rolls stay on the suffix side of the ring's pool and leave the other option alone",
+    "each re-roll costs its 각인전 and material",
+    "kills pay 각인전 and sometimes a name piece",
+    "Ctrl+G hands out test pieces, 각인전 and material",
+    "the workbench sockets a piece into a worn item",
+    "the A5 build snapshot lists socketed pieces"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": []
+}

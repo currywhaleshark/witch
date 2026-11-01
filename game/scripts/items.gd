@@ -52,7 +52,9 @@ func generate(rng: RandomNumberGenerator, level: int, rarity: String, slot: Stri
 	var pool: Array = data.bases.filter(func(b): return b.slot == slot and level >= int(b.min_level))
 	var base: Dictionary = pool[rng.randi_range(0, pool.size() - 1)]
 	var top: int = tier_for(level)
-	var item := {"base": base.id, "slot": slot, "rarity": rarity, "level": level, "options": {}, "affixes": [], "name": ""}
+	# Sockets roll 0 up to the base's maximum when the item drops (04 §6).
+	var item := {"base": base.id, "slot": slot, "rarity": rarity, "level": level, "options": {}, "affixes": [], "name": "",
+		"sockets": rng.randi_range(0, int(base.get("socket_max", 0))), "pieces": []}
 	# A blueprint or part always carries its base option, sized by the item level.
 	for key in base.get("implicit", {}):
 		item.options[key] = int(base.implicit[key][top])
@@ -81,7 +83,7 @@ func make_unique(rng: RandomNumberGenerator, level: int, id: String = "") -> Dic
 	var unique: Dictionary = uniques[id]
 	var base: Dictionary = bases[unique.base]
 	return {"base": base.id, "slot": base.slot, "rarity": "unique", "level": level, "options": unique.options.duplicate(),
-		"affixes": [], "name": unique.name, "unique": id, "rule": unique.rule}
+		"affixes": [], "name": unique.name, "unique": id, "rule": unique.rule, "sockets": 0, "pieces": []}
 
 func name_for(rng: RandomNumberGenerator, item: Dictionary, base: Dictionary) -> String:
 	match item.rarity:
@@ -121,7 +123,54 @@ func describe(item: Dictionary) -> PackedStringArray:
 		for key in item.options:
 			lines.append(option_text(key, item.options[key]))
 		lines.append("고유: " + uniques[item.unique].rule_text)
+	if int(item.get("sockets", 0)) > 0:
+		var group: String = data.slot_groups[item.slot]
+		var filled: Array = []
+		for piece in item.pieces:
+			filled.append(data.pieces[piece].name)
+		lines.append("소켓 %d/%d %s" % [item.pieces.size(), item.sockets, " ".join(filled)])
+		for piece in item.pieces:
+			for key in data.pieces[piece][group]:
+				lines.append("  %s: %s" % [data.pieces[piece].name, option_text(key, data.pieces[piece][group][key])])
+		var word = true_name(item)
+		if word != null:
+			lines.append("진명 복원 %s (%s):" % [word.name, word.meaning])
+			for key in word.bonus:
+				lines.append("  " + option_text(key, word.bonus[key]))
 	return lines
+
+func true_name(item: Dictionary):
+	# A true name wakes when its pieces fill every socket in order, on a slot it allows (08 §5.3 trial).
+	for word in data.true_names:
+		if item.slot in word.slots and int(item.get("sockets", 0)) == word.pieces.size() and item.get("pieces", []) == word.pieces:
+			return word
+	return null
+
+func describe_piece(id: String) -> PackedStringArray:
+	var piece: Dictionary = data.pieces[id]
+	var lines := PackedStringArray(["%s (%s)" % [piece.name, piece.meaning]])
+	for group in ["medium", "armor", "accessory"]:
+		for key in piece[group]:
+			lines.append("%s: %s" % [data.slot_group_names[group], option_text(key, piece[group][key])])
+	return lines
+
+func reroll_affix(rng: RandomNumberGenerator, item: Dictionary, index: int) -> void:
+	# 04 §4.2: one option re-rolls inside the same side (prefix/suffix) and the same slot pool,
+	# at a tier the item level allows, never into an option the item already has.
+	var old: Dictionary = item.affixes[index]
+	var taken: Array = item.affixes.map(func(a): return a.id)
+	var pool: Array = data.affixes.filter(func(a): return a.kind == old.kind and item.slot in a.slots and (a.id == old.id or not a.id in taken))
+	var affix: Dictionary = pool[rng.randi_range(0, pool.size() - 1)]
+	var tier: int = rng.randi_range(0, tier_for(item.level))
+	var span: Array = affix.tiers[tier]
+	var value: int = rng.randi_range(int(span[0]), int(span[1]))
+	item.options[old.id] = int(item.options.get(old.id, 0)) - int(old.value)
+	if item.options[old.id] == 0:
+		item.options.erase(old.id)
+	item.affixes[index] = {"id": affix.id, "kind": affix.kind, "tier": tier, "value": value}
+	item.options[affix.id] = int(item.options.get(affix.id, 0)) + value
+	if item.rarity == "magic":
+		item.name = name_for(rng, item, bases[item.base])
 
 func totals(equipped: Array) -> Dictionary:
 	# Everything the worn items add, keyed as the options are; a unique adds "rule:<id>" too.
@@ -131,6 +180,15 @@ func totals(equipped: Array) -> Dictionary:
 			sum[key] = float(sum.get(key, 0.0)) + float(item.options[key])
 		if item.has("rule"):
 			sum["rule:" + item.rule] = 1.0
+		# Name pieces work by where they sit: the medium, worn armour or an accessory.
+		var group: String = data.slot_groups[item.slot]
+		for piece in item.get("pieces", []):
+			for key in data.pieces[piece][group]:
+				sum[key] = float(sum.get(key, 0.0)) + float(data.pieces[piece][group][key])
+		var word = true_name(item)
+		if word != null:
+			for key in word.bonus:
+				sum[key] = float(sum.get(key, 0.0)) + float(word.bonus[key])
 	return sum
 
 func roll_drops(rng: RandomNumberGenerator, grade: String, level: int) -> Array:

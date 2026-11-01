@@ -68,6 +68,11 @@ var equipment: Dictionary = {}
 var gear: Dictionary = {}
 var inventory_window: PanelContainer
 var tool_upkeep: Dictionary = {}
+# C7/C8: 각인전 (currency), salvage material and stacked name pieces; they persist like the bag.
+var coins := 0
+var scrap := 0
+var pieces: Dictionary = {}
+var base_mana_costs: Dictionary = {}
 var state: Dictionary
 var player: CharacterBody3D
 var player_model: Node3D
@@ -179,6 +184,9 @@ func _ready() -> void:
 	for id in rules.skills:
 		if rules.skills[id].kind == "tool":
 			tool_upkeep[id] = rules.skills[id].upkeep_per_second
+		base_mana_costs[id] = rules.skills[id].mana_cost
+	for id in items.data.pieces:
+		pieces[id] = 0
 	sync_automaton_cost()
 	block_rng.randomize()
 	combat_rng.randomize()
@@ -519,6 +527,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.physical_keycode == KEY_I:
 			inventory_window.toggle()
 			return
+		if event.physical_keycode == KEY_G and event.ctrl_pressed:
+			# Test tool: one of each name piece, 200 각인전 and 10 salvage material.
+			for id in pieces:
+				pieces[id] += 1
+			coins += 200
+			scrap += 10
+			refresh_build_windows()
+			show_message("시험용: 이름 조각 3종 · 각인전 200 · %s 10" % items.data.crafting.material_name)
+			return
 		if event.physical_keycode == KEY_G:
 			# Test tool: drop an item at her feet (Shift: a unique) at the trial level.
 			var rarity: String = "unique" if event.shift_pressed else items.weighted(loot_rng, {"normal": 1, "magic": 2, "rare": 2})
@@ -686,8 +703,66 @@ func equipment_summary() -> Dictionary:
 	var summary := {}
 	for slot in equipment:
 		if equipment[slot] != null:
-			summary[slot] = {"name": equipment[slot].name, "rarity": equipment[slot].rarity, "options": equipment[slot].options}
+			var worn: Dictionary = equipment[slot]
+			var word = items.true_name(worn)
+			summary[slot] = {"name": worn.name, "rarity": worn.rarity, "options": worn.options, "sockets": worn.get("sockets", 0),
+				"pieces": worn.get("pieces", []), "true_name": word.id if word != null else ""}
 	return summary
+
+func socket_piece(slot: String, piece: String) -> bool:
+	# Into the next free socket of a worn item; a full matching row wakes its true name.
+	var item = equipment[slot]
+	if item == null or pieces.get(piece, 0) <= 0 or item.pieces.size() >= int(item.get("sockets", 0)):
+		return false
+	split_build_log()
+	pieces[piece] -= 1
+	item.pieces.append(piece)
+	refresh_gear()
+	return true
+
+func unsocket(slot: String) -> bool:
+	# Paid removal (04 §6): the last piece comes back intact for 각인전.
+	var item = equipment[slot]
+	var cost: int = int(items.data.crafting.unsocket_coins)
+	if item == null or item.pieces.is_empty() or coins < cost:
+		return false
+	split_build_log()
+	coins -= cost
+	pieces[item.pieces.pop_back()] += 1
+	refresh_gear()
+	return true
+
+func salvage(index: int) -> void:
+	# Breaking a bag item down yields salvage material by rarity (04 §7); its pieces come back.
+	var item: Dictionary = bag[index]
+	scrap += int(items.data.crafting.salvage[item.rarity])
+	for piece in item.get("pieces", []):
+		pieces[piece] += 1
+	bag.remove_at(index)
+	refresh_build_windows()
+
+func reroll(slot: String, affix: int) -> bool:
+	# One option of a worn item re-rolls for 각인전 and material (04 §7 trial costs).
+	var item = equipment[slot]
+	var craft: Dictionary = items.data.crafting
+	if item == null or affix >= item.affixes.size() or coins < int(craft.reroll_coins) or scrap < int(craft.reroll_material):
+		return false
+	split_build_log()
+	coins -= int(craft.reroll_coins)
+	scrap -= int(craft.reroll_material)
+	items.reroll_affix(loot_rng, item, affix)
+	refresh_gear()
+	return true
+
+func earn_spoils(grade: String) -> void:
+	# 각인전 and name pieces go straight into the purse; items still drop on the ground.
+	var drop: Dictionary = items.data.currency.drops.get(grade, items.data.currency.drops.normal)
+	if loot_rng.randf() < float(drop.chance):
+		coins += loot_rng.randi_range(int(drop.range[0]), int(drop.range[1]))
+	if loot_rng.randf() < float(items.data.piece_drops.get(grade, 0.0)):
+		var id: String = items.data.pieces.keys()[loot_rng.randi_range(0, items.data.pieces.size() - 1)]
+		pieces[id] += 1
+		show_message("%s 획득" % items.data.pieces[id].name)
 
 func drop_loot(grade: String, at: Vector3) -> void:
 	# Item level is the trial character level, +1 for elites and +2 for bosses (04 §4.3).
@@ -918,8 +993,12 @@ func sync_automaton_cost() -> void:
 	# A node may override the skill's own cost: no node is the cheap one to summon in numbers,
 	# A comes back quickly enough to throw as the main bomb, B pays the full price.
 	var node: Dictionary = config.automaton_nodes[config.automaton_node]
-	rules.skills.automaton.mana_cost = float(node.get("mana_cost", automaton_cost.mana_cost))
 	rules.skills.automaton.cooldown_seconds = float(node.get("cooldown_seconds", automaton_cost.cooldown_seconds))
+	# Mana cost cuts (the 「샤」 piece on accessories, 「록샤」) trim every skill, at most by half.
+	var cut: float = clampf(gear_total("mana_cost_pct") / 100.0, 0.0, 0.5)
+	for id in base_mana_costs:
+		var cost: float = float(node.get("mana_cost", automaton_cost.mana_cost)) if id == "automaton" else float(base_mana_costs[id])
+		rules.skills[id].mana_cost = cost * (1.0 - cut)
 
 func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void:
 	sync_automaton_cost()
@@ -1543,6 +1622,10 @@ func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 		enemies.erase(id)
 		kills += 1
 		drop_loot(enemy.grade, enemy.body.position)
+		earn_spoils(enemy.grade)
+		# 「록」 in the medium: each kill mends a little.
+		if hp > 0 and gear_total("life_on_kill") > 0:
+			hp = minf(config.max_hp, hp + gear_total("life_on_kill"))
 		probe.counts.kills += 1
 		probe.grade(enemy.grade).kills += 1
 		# A test boss is a one-off; everything else keeps the A5 field topped up.
@@ -1641,12 +1724,16 @@ func drink(index: int) -> void:
 	else:
 		var full: bool = potion.get("full", false)
 		potion_effects.append({"time": seconds,
-			"hp_rate": (config.max_hp if full else potion.get("hp", 0.0)) / seconds if potion.kind != "mp" else 0.0,
-			"mp_rate": (state.max_mana if full else potion.get("mp", 0.0)) / seconds if potion.kind != "hp" else 0.0})
+			"hp_rate": (config.max_hp if full else potion.get("hp", 0.0) * potion_factor()) / seconds if potion.kind != "mp" else 0.0,
+			"mp_rate": (state.max_mana if full else potion.get("mp", 0.0) * potion_factor()) / seconds if potion.kind != "hp" else 0.0})
 	probe.potions[slot.id] = probe.potions.get(slot.id, 0) + 1
 	# A light in the potion colour around the witch tells which potion was drunk.
 	spawn_vfx().potion_glow(player.position, {"hp": Color(1.0, 0.32, 0.28), "mp": Color(0.35, 0.85, 1.0), "both": Color(0.82, 0.55, 1.0), "speed": Color(0.62, 1.0, 0.38)}[potion.kind], map.ground_y(player.position))
 	play_sfx("potion_drink", 1.4)
+
+func potion_factor() -> float:
+	# 「록」 on accessories and 「록샤」 raise how much an ordinary potion restores.
+	return 1.0 + gear_total("potion_pct") / 100.0
 
 func cycle_potion(index: int) -> void:
 	# Test tool: Shift+1-4 swaps that slot's potion type and restocks it.

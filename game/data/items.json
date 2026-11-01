@@ -46,7 +46,8 @@
     {"id": "hit_recovery", "kind": "suffix", "label": "타격 회복 +%d", "slots": ["outfit", "head", "shoes"], "tiers": [[5, 10], [11, 20], [21, 30]], "words": ["오뚝이의", "버팀의", "꿋꿋함의"]},
     {"id": "move_speed", "kind": "suffix", "label": "이동 속도 +%d%%", "slots": ["shoes"], "tiers": [[5, 8], [9, 12], [13, 16]], "words": ["산들바람의", "질풍의", "폭풍의"]}
   ],
-  "implicit_labels": {"skill:shotgun": "산탄 레벨 +%d", "skill:chainsaw": "전기톱 레벨 +%d", "skill:automaton": "태엽인형 레벨 +%d",
+  "implicit_labels": {"life_on_kill": "처치 시 생명력 +%d", "potion_pct": "물약 회복 효율 +%d%%", "mana_cost_pct": "스킬 마나 소모 −%d%%",
+    "skill:shotgun": "산탄 레벨 +%d", "skill:chainsaw": "전기톱 레벨 +%d", "skill:automaton": "태엽인형 레벨 +%d",
     "tag:cutting": "절삭 공격 피해 +%d%%", "tag:projectile": "발사체 공격 피해 +%d%%", "upkeep_pct": "토글 유지비 −%d%%"},
   "uniques": [
     {"id": "executioner_pulley", "name": "집행자의 도르래", "base": "part_cutting", "options": {"tag:cutting": 10, "attack_speed": 10},
@@ -64,5 +65,21 @@
     "boss": {"chance": 1.0, "guaranteed_unique": true, "weights": {"normal": 0, "magic": 40, "rare": 60}}
   },
   "grade_level_bonus": {"normal": 0, "champion": 0, "elite": 1, "boss": 2},
-  "skill_level_damage": {"shotgun": 0.03}
+  "skill_level_damage": {"shotgun": 0.03},
+  "slot_groups": {"medium": "medium", "head": "armor", "outfit": "armor", "gloves": "armor", "shoes": "armor", "brooch": "accessory", "ring": "accessory"},
+  "slot_group_names": {"medium": "매개체", "armor": "착용구", "accessory": "장신구"},
+  "pieces": {
+    "bel": {"name": "「벨」 조각", "meaning": "물결·항해", "medium": {"attack_speed": 10}, "armor": {"move_speed": 5}, "accessory": {"mana_regen_pct": 15}},
+    "rok": {"name": "「록」 조각", "meaning": "잎사귀·숨결", "medium": {"life_on_kill": 3}, "armor": {"life": 15}, "accessory": {"potion_pct": 15}},
+    "sha": {"name": "「샤」 조각", "meaning": "안개·속삭임", "medium": {"cast_speed": 10}, "armor": {"damage_reduction": 2}, "accessory": {"mana_cost_pct": 8}}
+  },
+  "true_names": [
+    {"id": "roksha", "name": "「록샤」", "meaning": "평온한 찻잎", "pieces": ["rok", "sha"], "slots": ["head", "outfit"],
+      "bonus": {"life": 20, "potion_pct": 20, "mana_cost_pct": 10, "cast_speed": 15}}
+  ],
+  "piece_drops": {"normal": 0.03, "champion": 0.06, "elite": 0.15, "boss": 0.6},
+  "currency": {"name": "각인전", "drops": {"normal": {"chance": 0.4, "range": [2, 6]}, "champion": {"chance": 0.7, "range": [6, 14]},
+    "elite": {"chance": 1.0, "range": [15, 30]}, "boss": {"chance": 1.0, "range": [60, 100]}}},
+  "crafting": {"material_name": "고철 부속", "salvage": {"normal": 1, "magic": 2, "rare": 4, "unique": 6},
+    "reroll_coins": 40, "reroll_material": 2, "unsocket_coins": 30}
 }
