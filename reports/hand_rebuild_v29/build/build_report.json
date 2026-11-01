@@ -1,0 +1,66 @@
+{
+  "tris_old": 7978,
+  "tris_new": 7198,
+  "max_influences": 4,
+  "skin_rgb": [
+    0.8748,
+    0.6341,
+    0.6041
+  ],
+  "wrist_section_mm": [
+    47.1,
+    41.8
+  ],
+  "forearm_minus30mm_section_mm": [
+    43.5,
+    47.5
+  ],
+  "middle_prox_mid_section_mm": [
+    20.1,
+    16.0
+  ],
+  "middle_tip_mid_section_mm": [
+    9.8,
+    10.6
+  ],
+  "palm_mid_section_mm": [
+    59.5,
+    42.2
+  ],
+  "groups": [
+    "DEF-forearm.L.002",
+    "DEF-forearm.R.002",
+    "DEF-hand.L",
+    "DEF-hand.R",
+    "DEF-index.01.L",
+    "DEF-index.01.R",
+    "DEF-index.02.L",
+    "DEF-index.02.R",
+    "DEF-index.03.L",
+    "DEF-index.03.R",
+    "DEF-middle.01.L",
+    "DEF-middle.01.R",
+    "DEF-middle.02.L",
+    "DEF-middle.02.R",
+    "DEF-middle.03.L",
+    "DEF-middle.03.R",
+    "DEF-pinky.01.L",
+    "DEF-pinky.01.R",
+    "DEF-pinky.02.L",
+    "DEF-pinky.02.R",
+    "DEF-pinky.03.L",
+    "DEF-pinky.03.R",
+    "DEF-ring.01.L",
+    "DEF-ring.01.R",
+    "DEF-ring.02.L",
+    "DEF-ring.02.R",
+    "DEF-ring.03.L",
+    "DEF-ring.03.R",
+    "DEF-thumb.01.L",
+    "DEF-thumb.01.R",
+    "DEF-thumb.02.L",
+    "DEF-thumb.02.R",
+    "DEF-thumb.03.L",
+    "DEF-thumb.03.R"
+  ]
+}

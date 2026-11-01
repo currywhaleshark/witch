@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-01",
+  "body": "res://assets/characters/player/hand_rebuild_v29/body_standard_v29.glb",
+  "engine": "Godot 4.6.2 headless, run one at a time",
+  "results": {
+    "smoke_arena": "pass",
+    "combat_sfx": "pass",
+    "hold_input": "pass",
+    "tool_switch": "pass",
+    "hit_block": "pass",
+    "player_visual": {
+      "passed": true,
+      "checks": 192
+    },
+    "transformation_v27": "pass",
+    "transformation_v27_regression": "pass",
+    "tests.test_character_appearance": {
+      "tests": 7,
+      "passed": true
+    }
+  },
+  "not_run": "full tools/run_godot.ps1 -Verify (its import step hit engine memory-allocation errors on this machine earlier); GPU review captures are in review/"
+}

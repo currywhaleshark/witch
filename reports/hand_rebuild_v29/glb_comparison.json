@@ -1,0 +1,25 @@
+{
+  "v28_glb": "game/assets/characters/player/model_refinement_v28/body_standard_v28.glb",
+  "v29_glb": "game/assets/characters/player/hand_rebuild_v29/body_standard_v29.glb",
+  "v29_sha256": "b97927fcac15d76263a1971e4d6e8299558aa1e19611761fe55feb41f29b0857",
+  "joints": 107,
+  "inverse_bind_max_abs_diff": 0.0,
+  "animation_channels": 2568,
+  "animation_channel_sets_equal": true,
+  "animation_max_abs_diff": 0.0,
+  "meshes": {
+    "Body_Arms_v7": "identical",
+    "Body_Feet_v7": "identical",
+    "Body_Hands_v7": "changed",
+    "Body_LowerLegs_v7": "identical",
+    "Body_Pelvis_v7": "identical",
+    "Body_Torso_v7": "identical",
+    "Body_UpperLegs_v7": "identical",
+    "Face_Core_v8": "identical",
+    "Face_Ears_v7": "identical"
+  },
+  "hand_vertices": {
+    "v28": 5660,
+    "v29": 3603
+  }
+}
