@@ -1,0 +1,8 @@
+{
+  "changed_inputs": [],
+  "test": "spring_plate_v1",
+  "phase": "test",
+  "exit_code": 0,
+  "stderr_empty": true,
+  "workspace_cache_diagnostic_only": false
+}

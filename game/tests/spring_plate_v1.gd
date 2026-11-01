@@ -109,7 +109,7 @@ func run() -> void:
 			check(is_equal_approx(mana-arena.state.mana,arena.rules.skills.spring_dash.mana_cost),"dash mana cost stays owned by the arena")
 			check(arena.state.cooldowns.get("spring_dash",0.)>0.,"dash cooldown still starts on release")
 			var max_lift:=0.
-			for i in int(.6*rate):
+			for i in int(1.1*rate):
 				await step()
 				if is_instance_valid(p):
 					max_lift=maxf(max_lift,p.lift);measure_wire(p)
@@ -128,7 +128,7 @@ func run() -> void:
 	before=transforms(p);var elapsed:float=p._end_time
 	arena.paused=true;await step(8)
 	check(transforms(p)==before and p._end_time==elapsed,"pause freezes spring recoil and dissolve")
-	arena.paused=false;await step(35)
+	arena.paused=false;await step(70)
 	check(plates().is_empty(),"resume finishes cleanup")
 	for reason in ["hit","cost","binding","death"]:
 		await fresh();var mana:float=arena.state.mana
@@ -156,7 +156,7 @@ func run() -> void:
 	check(not is_instance_valid(p) and plates().is_empty(),"map changes clear released mechanisms")
 	await fresh(60,0.,Vector3(33,0,0));p=request()
 	check(absf(p.global_position.y-1.2)<.0001,"plate anchors to the raised floor height")
-	await step(40)
+	await step(80)
 	check(plates().is_empty(),"raised-floor cast completes cleanup")
 	arena.load_map("flat");await fresh();arena.muted=false
 	var sound_before:int=arena.sound_index

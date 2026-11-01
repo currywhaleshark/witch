@@ -1,0 +1,3501 @@
+{
+  "captures": 180,
+  "passed": true,
+  "scope": "Actual arena dash and visual landing; plate manually advanced at 60Hz to avoid render-time variation. Close and selected native camera, current game lighting.",
+  "sequences": [
+    {
+      "fps": 60,
+      "frames": 90,
+      "id": "close",
+      "samples": [
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0166666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0333333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.05
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0666666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0833333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.1
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.116666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.115,
+            "elapsed_after_end": 0.0,
+            "launch_count": 0,
+            "launch_origin": "(0.0, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.045,
+            "mode": "assembling",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 0.277777777777778,
+            "visible_parts": 23,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.133333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.100841565331923,
+            "elapsed_after_end": 0.0,
+            "launch_count": 0,
+            "launch_origin": "(0.0, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.0308415653319235,
+            "mode": "assembling",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 0.555555555555556,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.15
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.0718231905835212,
+            "elapsed_after_end": 0.0,
+            "launch_count": 0,
+            "launch_origin": "(0.0, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.00182319058352116,
+            "mode": "assembling",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 0.833333333333333,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.166666666666667
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.07,
+            "elapsed_after_end": 0.0,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.0,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.183333333333333
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.088548672833224,
+            "elapsed_after_end": 0.0166666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.018548672833224,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.2
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.133037594891859,
+            "elapsed_after_end": 0.0333333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.0630375948918591,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.216666666666667
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.18673112151435,
+            "elapsed_after_end": 0.05,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.11673112151435,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.233333333333333
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.23289360803914,
+            "elapsed_after_end": 0.0666666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.16289360803914,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.25
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.254789409804675,
+            "elapsed_after_end": 0.0833333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.184789409804675,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.266666666666667
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.1,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.283333333333333
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.116666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.3
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.133333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.316666666666667
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.15,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.333333333333333
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.166666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.35
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.183333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.366666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.2,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.383333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.216666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.4
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.233333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.416666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.25,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.433333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.266666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.45
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.283333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.466666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.3,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.483333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.316666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.5
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.333333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.516666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.35,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.533333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.366666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.55
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.383333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.566666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.4,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.583333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.416666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.6
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.433333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.616666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.45,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.633333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.466666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.65
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.483333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.666666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.5,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.683333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.516666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.7
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.533333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.716666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.55,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.733333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.566666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.75
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.583333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.766666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.6,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.783333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.616666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.8
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.633333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.816666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.98876953125,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.65,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.833333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.95236611366272,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.666666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.85
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.894663214683533,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.683333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.866666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.81967955827713,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.700000000000001,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.883333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.731433928012848,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.716666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.9
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.633945107460022,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.733333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.916666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.531231939792633,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.750000000000001,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.933333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.427313059568405,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.766666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.95
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.326207369565964,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.783333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.966666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.23193359375,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.800000000000001,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.983333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.148510500788689,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.816666666666668,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 1.0
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0799568891525269,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.833333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 1.01666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0302915219217539,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.850000000000001,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 1.03333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.00353317358531058,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.866666666666668,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 1.05
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.06666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.08333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.1
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.11666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.13333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.15
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.16666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.18333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.2
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.21666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.23333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.25
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.26666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.28333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.3
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.31666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.33333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.35
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.36666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.38333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.4
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.41666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.43333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.45
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.46666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.48333333333333
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "frames": 90,
+      "id": "native",
+      "samples": [
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0166666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0333333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.05
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0666666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.0833333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.1
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 0.116666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.115,
+            "elapsed_after_end": 0.0,
+            "launch_count": 0,
+            "launch_origin": "(0.0, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.045,
+            "mode": "assembling",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 0.277777777777778,
+            "visible_parts": 23,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.133333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.100841565331923,
+            "elapsed_after_end": 0.0,
+            "launch_count": 0,
+            "launch_origin": "(0.0, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.0308415653319235,
+            "mode": "assembling",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 0.555555555555556,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.15
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.0718231905835212,
+            "elapsed_after_end": 0.0,
+            "launch_count": 0,
+            "launch_origin": "(0.0, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.00182319058352116,
+            "mode": "assembling",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 0.833333333333333,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.166666666666667
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.07,
+            "elapsed_after_end": 0.0,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.0,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.183333333333333
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.088548672833224,
+            "elapsed_after_end": 0.0166666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.018548672833224,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.2
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.133037594891859,
+            "elapsed_after_end": 0.0333333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.0630375948918591,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.216666666666667
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.18673112151435,
+            "elapsed_after_end": 0.05,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.11673112151435,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.233333333333333
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.23289360803914,
+            "elapsed_after_end": 0.0666666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.16289360803914,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.25
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.254789409804675,
+            "elapsed_after_end": 0.0833333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.184789409804675,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.266666666666667
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.1,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.283333333333333
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.116666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.3
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.133333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.316666666666667
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.15,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.333333333333333
+        },
+        {
+          "dash_active": true,
+          "jump_mode": "flight",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.166666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.35
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.183333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.366666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.2,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.383333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.216666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.4
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.233333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.416666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.25,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.433333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.266666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.45
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "landing",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.283333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.466666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.3,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.483333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.316666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.5
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.333333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.516666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.35,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.533333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.366666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.55
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.383333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.566666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.4,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.583333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.416666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.6
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.433333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.616666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.45,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.633333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.466666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.65
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.483333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.666666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.5,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.683333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.516666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.7
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.533333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.716666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.55,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.733333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.566666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.75
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.583333333333333,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.766666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.6,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.783333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.616666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.8
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 1.0,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.633333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.816666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.98876953125,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.65,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.833333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.95236611366272,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.666666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.85
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.894663214683533,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.683333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.866666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.81967955827713,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.700000000000001,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.883333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.731433928012848,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.716666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.9
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.633945107460022,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.733333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.916666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.531231939792633,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.750000000000001,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.933333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.427313059568405,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.766666666666667,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.95
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.326207369565964,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.783333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.966666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.23193359375,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.800000000000001,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 0.983333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.148510500788689,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.816666666666668,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 1.0
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0799568891525269,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.833333333333334,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 1.01666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0302915219217539,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.850000000000001,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 1.03333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.00353317358531058,
+          "plate": {
+            "cancel_reason": "",
+            "coil_height": 0.255,
+            "elapsed_after_end": 0.866666666666668,
+            "launch_count": 1,
+            "launch_origin": "(-0.16, 0.0, 0.0)",
+            "lifetime": 0.875,
+            "lift": 0.185,
+            "mode": "launched",
+            "origin": [
+              -0.159999996423721,
+              0.0,
+              0.0
+            ],
+            "part_count": 29,
+            "progress": 1.0,
+            "visible_parts": 29,
+            "wire_radius": 0.009
+          },
+          "seconds": 1.05
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.06666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.08333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.1
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.11666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.13333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.15
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.16666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.18333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.2
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.21666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.23333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.25
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.26666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.28333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.3
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.31666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.33333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.35
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.36666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.38333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.4
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.41666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.43333333333333
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.45
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.46666666666667
+        },
+        {
+          "dash_active": false,
+          "jump_mode": "idle",
+          "max_opacity": 0.0,
+          "plate": {
+            "mode": "gone",
+            "visible_parts": 0
+          },
+          "seconds": 1.48333333333333
+        }
+      ]
+    }
+  ]
+}

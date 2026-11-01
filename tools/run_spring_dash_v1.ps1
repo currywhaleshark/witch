@@ -1,19 +1,19 @@
-param([ValidateSet('import','test','review')][string]$Phase='test',[string]$Test='spring_plate_v1')
+param([ValidateSet('import','test','review')][string]$Phase='test',[string]$Test='spring_plate_v1',[string]$ReportDir='reports/spring_dash_v1',[string]$ReviewScript='review_spring_plate_v1')
 $ErrorActionPreference='Stop'
 $springRoot=Split-Path -Parent $PSScriptRoot
 $springLabel=if($Phase -eq 'test'){$Test}else{$Phase}
-$springDir=Join-Path $springRoot ('reports/spring_dash_v1/'+$springLabel)
+$springDir=Join-Path $springRoot ($ReportDir+'/'+$springLabel)
 New-Item -ItemType Directory -Force -Path $springDir | Out-Null
 $springEngine=Join-Path $springRoot 'reports/combat_motion_v18/portable_godot/Godot_v4.6.2-stable_win64_console.exe'
 $springArgs=@('--path',('"{0}"' -f (Join-Path $springRoot 'game')),'--audio-driver','Dummy','--log-file',('"{0}"' -f (Join-Path $springDir 'engine.log')))
 if($Phase -eq 'import'){$springArgs+=@('--headless','--editor','--import','--quit')}
-elseif($Phase -eq 'review'){$springArgs+=@('--resolution','1280x800','--position','-2000,-2000','--script','res://tests/review_spring_plate_v1.gd','--',('"--output={0}"' -f $springDir))}
+elseif($Phase -eq 'review'){$springArgs+=@('--resolution','1280x800','--position','-2000,-2000','--script',('res://tests/'+$ReviewScript+'.gd'),'--',('"--output={0}"' -f $springDir))}
 else{
  $springOutput=if($Test -in @('player_visual','player_motion_v18')){$springDir}else{Join-Path $springDir 'result.json'}
  $springArgs+=@('--headless','--script',('res://tests/'+$Test+'.gd'),'--',('"--output={0}"' -f $springOutput))
 }
 $springFiles=@('game/scripts/arena.gd','game/scripts/spring_plate.gd','game/scripts/summon_assembly.gd','game/scripts/player_visual.gd','game/scripts/combat_rules.gd','game/scripts/field_map.gd','game/data/trial.json','game/audio/mechanical_impact.wav','game/assets/props/spring_dash_v1/spring_plate.glb','game/assets/props/spring_dash_v1/parts.json')
-$springFiles+=if($Phase -eq 'review'){@('game/tests/review_spring_plate_v1.gd','game/tests/review_staff_visual.gd')}elseif($Phase -eq 'test'){@('game/tests/'+$Test+'.gd')}else{@()}
+$springFiles+=if($Phase -eq 'review'){@('game/tests/'+$ReviewScript+'.gd','game/tests/review_spring_plate_v1.gd','game/tests/review_staff_visual.gd')}elseif($Phase -eq 'test'){@('game/tests/'+$Test+'.gd')}else{@()}
 $springFiles=@($springFiles|Where-Object {Test-Path -LiteralPath (Join-Path $springRoot $_)}|Select-Object -Unique)
 $springBefore=@{}
 foreach($springFile in $springFiles){

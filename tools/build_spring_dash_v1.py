@@ -108,7 +108,7 @@ source=ASSET/'authoring/spring_plate.blend';export=ASSET/'exports/spring_plate.g
 bpy.ops.wm.save_as_mainfile(filepath=str(source))
 bpy.ops.export_scene.gltf(filepath=str(export),export_format='GLB',export_animations=False,export_yup=True,export_tangents=False)
 shutil.copy2(export,GAME/export.name)
-data={'id':'spring_dash_v1','origin':'ground below launch position','forward':'-Z','deck_pivot':[0,.115,0],'coil':coil,'parts':records,'triangles':triangles,'part_count':len(records),'materials':len(M),'launch_seconds':.085,'hold_seconds':.055,'dissolve_seconds':.24,'source':'original Blender authoring; no Tripo regeneration'}
+data={'id':'spring_dash_v1','origin':'ground below launch position','forward':'-Z','deck_pivot':[0,.115,0],'coil':coil,'parts':records,'triangles':triangles,'part_count':len(records),'materials':len(M),'launch_seconds':.085,'hold_seconds':.55,'dissolve_seconds':.24,'source':'original Blender authoring; no Tripo regeneration'}
 for path in [ASSET/'parts.json',GAME/'parts.json']:path.write_text(json.dumps(data,indent=2)+'\n',encoding='utf-8')
 report={**data,'passed':True,'blend_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'glb_sha256':hashlib.sha256(export.read_bytes()).hexdigest(),'bytes':export.stat().st_size}
 (REPORT/'build.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')

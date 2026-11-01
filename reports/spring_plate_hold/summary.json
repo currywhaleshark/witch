@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "checks": 149,
+  "captures": 180,
+  "timing": [
+    {
+      "view": "close",
+      "launch_frame": 11,
+      "arrival_frame": 22,
+      "fade_frame": 50,
+      "gone_frame": 64,
+      "seconds_after_arrival": 0.4666666666666667
+    },
+    {
+      "view": "native",
+      "launch_frame": 11,
+      "arrival_frame": 22,
+      "fade_frame": 50,
+      "gone_frame": 64,
+      "seconds_after_arrival": 0.4666666666666667
+    }
+  ],
+  "hold_seconds": 0.55,
+  "fade_after_launch_seconds": 0.635,
+  "cleanup_after_launch_seconds": 0.875,
+  "scope": "Cosmetic launch-relative hold only; existing plate and jump checks passed. Actual GPU samples at 60Hz. No gameplay or model changes.",
+  "verification_date": "2026-11-02",
+  "verified_against_head": "2c2f44a631c1a0ef39607ac48ef180ee874c1509",
+  "approval": "approval.json"
+}

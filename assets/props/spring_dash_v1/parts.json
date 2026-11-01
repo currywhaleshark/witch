@@ -313,7 +313,7 @@
   "part_count": 29,
   "materials": 6,
   "launch_seconds": 0.085,
-  "hold_seconds": 0.055,
+  "hold_seconds": 0.55,
   "dissolve_seconds": 0.24,
   "source": "original Blender authoring; no Tripo regeneration"
 }
