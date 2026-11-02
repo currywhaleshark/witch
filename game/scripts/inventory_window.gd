@@ -25,6 +25,7 @@ const DOLL = {
 var arena: Node
 var body: VBoxContainer
 var mode := "bag"
+var salvage_mode := false
 var hover = null
 var hover_compare := false
 var tip: PanelContainer
@@ -77,6 +78,7 @@ func frame_style(alpha: float, margin: int) -> StyleBoxFlat:
 func toggle() -> void:
 	visible = not visible
 	if not visible:
+		salvage_mode = false
 		arena.return_held()
 		set_hover(null)
 	refresh()
@@ -118,6 +120,9 @@ func small_button(caption: String, action: Callable, enabled: bool = true, tip_l
 func refresh() -> void:
 	if body == null:
 		return
+	if mode != "bag":
+		salvage_mode = false
+	set_hover(null)
 	for child in body.get_children():
 		body.remove_child(child)
 		child.queue_free()
@@ -159,6 +164,9 @@ func canvas_view(view_name: String, size_px: Vector2, painter: Callable, handler
 	view.gui_input.connect(func(event):
 		if event is InputEventMouseButton:
 			view.accept_event()
+			if salvage_mode and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+				set_salvage_mode(false)
+				return
 		handler.call(view, event))
 	view.mouse_exited.connect(func():
 		set_hover(null)
@@ -204,6 +212,8 @@ func doll_input(view: Control, event: InputEvent) -> void:
 			click_slot(slot, event.button_index == MOUSE_BUTTON_RIGHT)
 
 func click_slot(slot: String, right: bool = false) -> void:
+	if salvage_mode:
+		return
 	# Left: put a held piece in, wear the held item, or lift the worn one. Right: take it off.
 	var worn = arena.equipment[slot]
 	if right:
@@ -253,20 +263,33 @@ func draw_bag(view: Control) -> void:
 		view.draw_rect(Rect2(Vector2(cells.position) * CELL, Vector2(cells.size) * CELL), Color(GOOD if fits else BAD, 0.3))
 	for item in arena.bag:
 		if item.has("at"):
-			ItemIcon.draw(view, Rect2(Vector2(item.at) * CELL, Vector2(arena.items.size_of(item)) * CELL), item, arena.items)
+			var rect := Rect2(Vector2(item.at) * CELL, Vector2(arena.items.size_of(item)) * CELL)
+			ItemIcon.draw(view, rect, item, arena.items)
+			if salvage_mode and is_same(item, hover):
+				view.draw_rect(rect.grow(-1), Color(BAD, 0.2))
+				view.draw_rect(rect.grow(-1), BAD, false, 2.0)
 
 func bag_input(view: Control, event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		set_hover(item_at(cell_at(event.position)), true)
 		view.queue_redraw()
-	elif event is InputEventMouseButton and event.pressed:
+	elif event is InputEventMouseButton and event.pressed and event.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT]:
 		var right: bool = event.button_index == MOUSE_BUTTON_RIGHT
 		var cell: Vector2i = held_origin(event.position) if arena.held_item != null and not right else cell_at(event.position)
-		click_bag(cell, right)
+		click_bag(cell, right, event.shift_pressed)
 
-func click_bag(cell: Vector2i, right: bool = false) -> void:
+func click_bag(cell: Vector2i, right: bool = false, bulk: bool = false) -> void:
 	# With an item held, cell is where its top-left corner goes; otherwise the cell clicked.
 	var item = item_at(cell)
+	if salvage_mode:
+		if right:
+			set_salvage_mode(false)
+		elif item != null:
+			if bulk:
+				arena.salvage_below_rare()
+			else:
+				arena.salvage(arena.bag_index(item))
+		return
 	if right:
 		if arena.held_piece != "":
 			arena.held_piece = ""
@@ -299,6 +322,7 @@ func pouch_row() -> HBoxContainer:
 	var salvage := canvas_view("Salvage", Vector2(CELL * 1.5, CELL), draw_salvage, salvage_input)
 	salvage.tooltip_text = "분해 → %s %d·%d·%d·%d" % [data.crafting.material_name,
 		int(gain.normal), int(gain.magic), int(gain.rare), int(gain.unique)]
+	salvage.tooltip_text += "\n클릭: 분해 모드 %s\n든 아이템을 놓으면 분해\n분해 모드에서 아이템 Shift+클릭: 일반·마법 일괄 분해" % ("종료" if salvage_mode else "시작")
 	line.add_child(salvage)
 	return line
 
@@ -318,21 +342,32 @@ func click_piece(id: String) -> void:
 	# Lifts one kind of piece (clicking it again puts it back); an item in the hand blocks it.
 	if arena.held_item != null:
 		return
+	salvage_mode = false
 	arena.held_piece = "" if arena.held_piece == id or arena.pieces[id] <= 0 else id
 	arena.refresh_build_windows()
 
 func draw_salvage(view: Control) -> void:
 	var rect := Rect2(Vector2.ZERO, view.size)
 	var active: bool = arena.held_item != null
-	view.draw_rect(rect, Color("0d181d"))
-	view.draw_rect(rect, GOLD if active and rect.has_point(view.get_local_mouse_position()) else EDGE, false, 1.0)
-	ItemIcon.anvil(view, rect.grow(-6), PAPER if active else MUTED)
+	view.draw_rect(rect, Color(BAD, 0.2) if salvage_mode else Color("0d181d"))
+	var edge := BAD if salvage_mode else (GOLD if active and rect.has_point(view.get_local_mouse_position()) else EDGE)
+	view.draw_rect(rect, edge, false, 2.0 if salvage_mode else 1.0)
+	ItemIcon.anvil(view, rect.grow(-6), BAD if salvage_mode else (PAPER if active else MUTED))
+
+func set_salvage_mode(enabled: bool) -> void:
+	salvage_mode = enabled
+	if enabled:
+		arena.held_piece = ""
+	refresh()
 
 func salvage_input(view: Control, event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		view.queue_redraw()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		arena.salvage_held()
+		if arena.held_item != null:
+			arena.salvage_held()
+		else:
+			set_salvage_mode(not salvage_mode)
 
 func draw_wallet(view: Control) -> void:
 	# 각인전 as a coin and material as a gear, numbers only; the names are in the hover tip.
@@ -352,6 +387,8 @@ func draw_hand() -> void:
 		ItemIcon.draw(hand, Rect2(mouse - size / 2, size), arena.held_item, arena.items)
 	elif arena.held_piece != "":
 		ItemIcon.piece(hand, Rect2(mouse - Vector2(CELL, CELL) / 2, Vector2(CELL, CELL)), arena.items.glyph(arena.held_piece))
+	elif salvage_mode and get_global_rect().has_point(mouse):
+		ItemIcon.anvil(hand, Rect2(mouse + Vector2(10, 10), Vector2(20, 20)), BAD)
 
 func set_hover(item, compare: bool = false) -> void:
 	if item == null or arena.held_item != null:
@@ -394,6 +431,8 @@ func tooltip_bbcode(item: Dictionary, compare: bool) -> String:
 			out.append("[color=#c9b2ea]%s[/color]" % safe)
 		else:
 			out.append(safe)
+	if salvage_mode and compare:
+		out.append("[color=#%s]클릭: 분해\nShift+클릭: 일반·마법 일괄 분해\n우클릭: 분해 모드 종료[/color]" % BAD.to_html(false))
 	return "\n".join(out)
 
 func potion_view() -> VBoxContainer:

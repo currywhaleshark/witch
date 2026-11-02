@@ -315,6 +315,8 @@ func play_sfx(cue: String, fallback_pitch: float = 1.0, gain_db: float = 0.0) ->
 		play_cue(fallback_pitch, gain_db)
 
 func reset_arena() -> void:
+	if is_instance_valid(inventory_window):
+		inventory_window.set_salvage_mode(false)
 	for child in world.get_children():
 		if child.is_in_group("actor_corpses") or child.is_in_group("cast_assemblies"):
 			child.free()
@@ -946,6 +948,18 @@ func salvage(index: int) -> void:
 	salvage_item(bag[index])
 	bag.remove_at(index)
 	refresh_build_windows()
+
+func salvage_below_rare() -> int:
+	# Only bag equipment is eligible; worn/held items and resource stores are untouched.
+	var count := 0
+	for index in range(bag.size() - 1, -1, -1):
+		if bag[index].rarity in ["normal", "magic"]:
+			salvage_item(bag[index])
+			bag.remove_at(index)
+			count += 1
+	show_message("일반·마법 장비 %d개 분해" % count if count > 0 else "분해할 일반·마법 장비가 없습니다")
+	refresh_build_windows()
+	return count
 
 func reroll(slot: String, affix: int) -> bool:
 	# One option of a worn item re-rolls for 각인전 and material (04 §7 trial costs).
