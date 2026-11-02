@@ -41,6 +41,8 @@ const BOLT_GLOW = Color(0.62, 0.86, 1.0)
 const FOLLOW_SLOTS = [Vector3(1, 0, 0.6), Vector3(-1, 0, 0.6), Vector3(1, 0, -0.9), Vector3(-1, 0, -0.9),
 	Vector3(0, 0, 1.3), Vector3(1.8, 0, -0.1), Vector3(-1.8, 0, -0.1), Vector3(0, 0, -1.6)]
 const ALLY_SPACING := 0.85
+# Centre gap per unit of summed model size between two enemies' spawn points.
+const ENEMY_SPACING := 0.45
 # Ground warnings: dark area plus a bright fill that reaches the edge at impact.
 const WARN = Color("7a3a32")
 const WARN_FILL = Color("e8604c")
@@ -453,11 +455,11 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 		kind = "heavy" if heavy else "light"
 	var type: Dictionary = config.enemy_types[kind]
 	var rank: Dictionary = config.grades[grade]
-	pos = map.grounded(pos)
+	var size: float = type.scale * rank.scale
+	pos = free_enemy_spot(map.grounded(pos), size)
 	var body = Shape.body(world, pos, 2)
 	body.set_meta("enemy_id", id)
 	var model = Shape.enemy(body, kind)
-	var size: float = type.scale * rank.scale
 	var pick = Shape.pick_volume(body, 0.7 * size, 1.65 * size, PICK_LAYER)
 	pick.set_meta("enemy_id", id)
 	var maximum: float = type.hp * rank.hp * enemy_level_factor("hp", enemy_level)
@@ -466,6 +468,27 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "bleeds": [], "flash": 0.0,
 		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": [], "route": {}}
 	dress_enemy(enemies[id], id == outlined_id)
+
+func free_enemy_spot(pos: Vector3, size: float) -> Vector3:
+	# Respawns reuse a few listed spots; a newcomer steps out to the nearest free ring point
+	# instead of standing inside an enemy already there, whose capsule could never push it out.
+	if enemy_spot_free(pos, size):
+		return pos
+	for ring in range(1, 9):
+		var radius: float = 0.5 * ring
+		var count: int = 6 * ring
+		for i in count:
+			var spot: Vector3 = map.grounded(pos + Vector3(radius, 0, 0).rotated(Vector3.UP, TAU * i / count))
+			if map.walkable(spot) and map.sees(pos, spot) and enemy_spot_free(spot, size):
+				return spot
+	return pos
+
+func enemy_spot_free(pos: Vector3, size: float) -> bool:
+	for other in enemies.values():
+		var gap := Vector2(other.body.position.x - pos.x, other.body.position.z - pos.z)
+		if gap.length() < maxf(0.8, ENEMY_SPACING * (other.size + size)):
+			return false
+	return true
 
 func dress_enemy(enemy: Dictionary, outlined: bool, alive: bool = true) -> void:
 	# One overlay chain per enemy mesh: a stencil mask of the body, then the grade aura
