@@ -1,0 +1,65 @@
+{
+  "inputs": [
+    {
+      "sha256": "6a3d236bf8fe0803f1f2403e7b320188f0623bf7434d96c285158dc48fa89ab4",
+      "path": "game/scripts/item_icon.gd"
+    },
+    {
+      "sha256": "f29a73604976609ec1c80049be23337908b76d3ccf5888cef406077878f5c54f",
+      "path": "game/scripts/inventory_window.gd"
+    },
+    {
+      "sha256": "0552fe67c8637c9f2dc8086eb6f680c7da1d1711270d749f59b7e64587c25140",
+      "path": "game/scripts/hud.gd"
+    },
+    {
+      "sha256": "c77bfac850feb22d2bdec362fb75524f4d42fa95f408a8fb98b9726b0d53ac36",
+      "path": "game/tests/inventory_art.gd"
+    },
+    {
+      "sha256": "d83c96f73a925228b3e3a2b8c97c2bac276bd07cb9ba5b18a9c3d40445196457",
+      "path": "game/tests/prepare_inventory_art.gd"
+    },
+    {
+      "sha256": "b417631518db7d0d0158824a36365e6f86685c2eb870038e0d2f4772551a034b",
+      "path": "assets/ui/inventory_v1/generation_manifest.json"
+    }
+  ],
+  "method": "builtin image_gen",
+  "gpu_captures": [
+    "contact_sheet.png",
+    "equipment_mediums.png",
+    "equipment_clothing.png",
+    "potions.png"
+  ],
+  "user_art_selection": true,
+  "texture_report": "report.json",
+  "potion_bag_commit": "522e293",
+  "date": "2026-11-02",
+  "source_asset_report": "source_assets.json",
+  "validations": [
+    {
+      "path": "report.json",
+      "failures": [],
+      "checks": 97
+    },
+    {
+      "path": "potion_bag_regression.json",
+      "failures": [],
+      "checks": 43
+    },
+    {
+      "path": "salvage_mode_regression.json",
+      "failures": [],
+      "checks": 26
+    },
+    {
+      "path": "items_regression.json",
+      "failures": [],
+      "checks": 61
+    }
+  ],
+  "visual_review": "Inspected all four final captures; transparent silhouettes, rarity/socket overlays, potion marks and counts are visible.",
+  "rendering_followup": "../inventory_filter_v1/delivery_manifest.json",
+  "approval": "../../assets/ui/inventory_v1/approval.json"
+}

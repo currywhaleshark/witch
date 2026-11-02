@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>인벤토리 이미지 v1</title>
+<style>
+body{margin:0;background:#101c23;color:#e3e9df;font:16px/1.6 system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:28px 20px 70px}h1{font-size:30px;margin-bottom:8px}h2{font-size:21px;margin-top:36px}p{color:#b6c6cb}a{color:#d8b77b}img{display:block;width:100%;height:auto;border:1px solid #3e555e}nav{display:flex;gap:20px;flex-wrap:wrap}small{color:#a2b2b7}
+</style>
+<main>
+<h1>인벤토리 이미지 v1</h1>
+<p>장비 22종 · 물약 13종. 내장 image_gen으로 생성한 투명 PNG를 실제 가방과 하단 물약 슬롯에 적용했습니다.</p>
+<p>축소 필터 보정과 소형 물약 72% 크기를 반영한 현재 화면입니다. <a href="../inventory_filter_v1/review.html">보정 전후 비교</a></p>
+<nav><a href="#sheet">전체 이미지</a><a href="#potions">물약 가방</a><a href="#equipment">장비</a><a href="../../assets/ui/inventory_v1/README.md">제작 기록</a><a href="../../assets/ui/inventory_v1/generation_manifest.json">생성 프롬프트</a></nav>
+<h2 id="sheet">전체 이미지</h2>
+<p>35종을 같은 크기의 검토 타일에 표시한 이미지입니다.</p>
+<a href="contact_sheet.png"><img src="contact_sheet.png" alt="장비 22종과 물약 13종 전체 이미지"></a>
+<h2 id="potions">물약 가방과 퀵슬롯</h2>
+<p>5×3 가방과 네 퀵슬롯. 종류별 색, 병 모양, 소·중·대·완 표시와 수량을 함께 보여 줍니다.</p>
+<a href="potions.png"><img src="potions.png" alt="실제 게임의 물약 가방과 하단 퀵슬롯"></a>
+<h2 id="equipment">매개체·설계도·부품·장신구</h2>
+<p>실제 칸 크기에서 희귀도 테두리와 소켓을 유지합니다.</p>
+<a href="equipment_mediums.png"><img src="equipment_mediums.png" alt="매개체와 장신구를 넣은 실제 장비창"></a>
+<h2>의류와 고유 아이템</h2>
+<a href="equipment_clothing.png"><img src="equipment_clothing.png" alt="의류와 두 고유 아이템이 있는 실제 장비창"></a>
+<p><small>Godot 4.6.2, OpenGL Compatibility, 1280×800. 아이콘 검사 97항목, 물약 가방 43항목, 분해 모드 26항목, 아이템 61항목 통과. 화면은 테스트용 아이템 배치이며 외형은 2026-11-02 사용자가 프로토타입용으로 선택했습니다.</small></p>
+</main>
+</html>

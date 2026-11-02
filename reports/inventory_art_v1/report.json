@@ -1,0 +1,491 @@
+{
+  "assets": [
+    {
+      "id": "glass_orb",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/glass_orb.png",
+      "region": "[P: (0.0, 3.0), S: (242.0, 250.0)]",
+      "sha256": "8bcd1792b7fc5cdde6dc32c70521f64cf212943577e76c432940fe3d1b5d0e53"
+    },
+    {
+      "id": "crystal_core",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/crystal_core.png",
+      "region": "[P: (20.0, 3.0), S: (229.0, 249.0)]",
+      "sha256": "dab33358fe2d675c9022edd0dd04e4b927d7d1939a345c1b6063a404a1547f90"
+    },
+    {
+      "id": "bp_shotgun",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/bp_shotgun.png",
+      "region": "[P: (0.0, 4.0), S: (252.0, 248.0)]",
+      "sha256": "8a62b85733d285717975fe247f2300446de8cad945df47243e5a924402c23340"
+    },
+    {
+      "id": "bp_chainsaw",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/bp_chainsaw.png",
+      "region": "[P: (10.0, 3.0), S: (240.0, 245.0)]",
+      "sha256": "67fd38541726aa2d05629e8cd398a356e7fd01c9f354ae1d48d5fa1fd112e1e8"
+    },
+    {
+      "id": "bp_automaton",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/bp_automaton.png",
+      "region": "[P: (8.0, 2.0), S: (244.0, 245.0)]",
+      "sha256": "635412ef6ca7222754d45f2b22b6407b7762ecae854839f620bb96b9dd14fd7f"
+    },
+    {
+      "id": "part_cutting",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/part_cutting.png",
+      "region": "[P: (10.0, 8.0), S: (242.0, 235.0)]",
+      "sha256": "8bed9af556b5575cd5e04f9afd9cc07c9303216e98b68a44de24a0c35838c4eb"
+    },
+    {
+      "id": "part_ballistic",
+      "imported_size": [
+        256,
+        170
+      ],
+      "mip_bytes": 231884,
+      "path": "res://assets/ui/inventory_v1/part_ballistic.png",
+      "region": "[P: (0.0, 10.0), S: (253.0, 141.0)]",
+      "sha256": "0f9d2ca55f71bb6fa5542382fa3c4f045ac428830f1481f236552d2616663fc6"
+    },
+    {
+      "id": "part_power",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/part_power.png",
+      "region": "[P: (0.0, 7.0), S: (253.0, 245.0)]",
+      "sha256": "4f05f58a9ce357fe7cd661aaa9ec63da89ef40bb3c8c85ae1dc4e5a5313fed16"
+    },
+    {
+      "id": "ribbon_tie",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/ribbon_tie.png",
+      "region": "[P: (4.0, 8.0), S: (249.0, 237.0)]",
+      "sha256": "243f13203728e5d9730404c5a28afc2a41a5174c807591f9a3b0010666b825a9"
+    },
+    {
+      "id": "star_pin",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/star_pin.png",
+      "region": "[P: (9.0, 14.0), S: (241.0, 214.0)]",
+      "sha256": "9e79e4fcfc6a89495100ddfc5fe717923172a80ef4e19f5eee9f209dce918464"
+    },
+    {
+      "id": "cotton_coat",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/cotton_coat.png",
+      "region": "[P: (15.0, 3.0), S: (204.0, 251.0)]",
+      "sha256": "6fe94c0af7b5909f7b131fa3cc23c9cea85352f3e9f2314a393c6cb25eecbd18"
+    },
+    {
+      "id": "quilted_cape",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/quilted_cape.png",
+      "region": "[P: (2.0, 13.0), S: (252.0, 243.0)]",
+      "sha256": "3b5fcbde2b49498c8db2159ab0aa63fb0780ab144493f6f9dbc79afb0743b5a8"
+    },
+    {
+      "id": "cotton_gloves",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/cotton_gloves.png",
+      "region": "[P: (0.0, 5.0), S: (256.0, 245.0)]",
+      "sha256": "507fd2014633782a70cb5ef70a9ea2134590cccd7ff6217f57285ebc363ef89b"
+    },
+    {
+      "id": "work_gloves",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/work_gloves.png",
+      "region": "[P: (3.0, 1.0), S: (251.0, 251.0)]",
+      "sha256": "7267cc84415ead5452c87bdc86041d0d43b4a500a4e5b7fea4ccdee8001160c4"
+    },
+    {
+      "id": "sneakers",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/sneakers.png",
+      "region": "[P: (0.0, 33.0), S: (254.0, 212.0)]",
+      "sha256": "270a030187fef3b910da7360b33aa3a945413991cfbea0800eae5feae9e58f6c"
+    },
+    {
+      "id": "leather_boots",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/leather_boots.png",
+      "region": "[P: (0.0, 0.0), S: (253.0, 251.0)]",
+      "sha256": "c259b0ef9521e4c0067bcb1e70788b2099138dd7497dcabd0e9d78f770c7a5ab"
+    },
+    {
+      "id": "brass_brooch",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/brass_brooch.png",
+      "region": "[P: (10.0, 12.0), S: (235.0, 226.0)]",
+      "sha256": "4c3589d63164e3126077ab2332483a1107161eaae5685c8fe67f9f69a6982542"
+    },
+    {
+      "id": "silver_brooch",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/silver_brooch.png",
+      "region": "[P: (10.0, 0.0), S: (237.0, 256.0)]",
+      "sha256": "98b2e35b7b7404943e8274cba47c01be10feba37f5700c6ab17ed0d9504c2a5f"
+    },
+    {
+      "id": "copper_ring",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/copper_ring.png",
+      "region": "[P: (8.0, 7.0), S: (234.0, 240.0)]",
+      "sha256": "9ebfb6583b9242022064c2550f17227f67ec7f274fad0d531e683187857e9590"
+    },
+    {
+      "id": "silver_ring",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/silver_ring.png",
+      "region": "[P: (8.0, 13.0), S: (236.0, 232.0)]",
+      "sha256": "384ee10e86c3470c678619591b389db7086d507232943abaeab47837d152b4bd"
+    },
+    {
+      "id": "executioner_pulley",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/executioner_pulley.png",
+      "region": "[P: (8.0, 3.0), S: (246.0, 250.0)]",
+      "sha256": "79b4a450c1efd767d75f6d8385cbf0fd133c0eabecf75c2ab5217a98da8986c1"
+    },
+    {
+      "id": "self_replicating_spring",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/self_replicating_spring.png",
+      "region": "[P: (16.0, 2.0), S: (236.0, 251.0)]",
+      "sha256": "e009e7281bdd8cbd1b163190e121acc11c02d10fd5f764ea2325a083d9c4f31b"
+    },
+    {
+      "id": "health_s",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/health_s.png",
+      "region": "[P: (8.0, 8.0), S: (244.0, 235.0)]",
+      "sha256": "a6bdfe9b603bb9ccce8a286c3af9fb7691894e9ea9d67a34b054d1c5b04e0339"
+    },
+    {
+      "id": "health_m",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/health_m.png",
+      "region": "[P: (11.0, 1.0), S: (238.0, 251.0)]",
+      "sha256": "fb39f3604fdea3cf202ae399bd87c874cfec2d7eb40a4cee31c62063c2864de5"
+    },
+    {
+      "id": "health_l",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/health_l.png",
+      "region": "[P: (0.0, 0.0), S: (252.0, 254.0)]",
+      "sha256": "705e46b06388aba63f3f8aee26137ece520666c3f3855a41617e0db4deba49b4"
+    },
+    {
+      "id": "mana_s",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/mana_s.png",
+      "region": "[P: (18.0, 6.0), S: (229.0, 244.0)]",
+      "sha256": "31ecd1b5a7ce6429181bb13ccfd4dcda2b30a54e218c5563dc192b75d3fa276c"
+    },
+    {
+      "id": "mana_m",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/mana_m.png",
+      "region": "[P: (0.0, 0.0), S: (249.0, 256.0)]",
+      "sha256": "22ebf769af6b786ce35d692a49e4fc94dafa59a6fc863c7a855d739aa7ff6501"
+    },
+    {
+      "id": "mana_l",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/mana_l.png",
+      "region": "[P: (0.0, 3.0), S: (247.0, 250.0)]",
+      "sha256": "b3d65ae6b7b0bb6a68e4bae71fd7b3c2e8dbb051de377c2a4c41edecd02b4aa0"
+    },
+    {
+      "id": "rejuv_s",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/rejuv_s.png",
+      "region": "[P: (18.0, 4.0), S: (231.0, 249.0)]",
+      "sha256": "98bbf742371828d14abcbb5787d7185b61b8189f329486ac4199a45e4dfcb1c5"
+    },
+    {
+      "id": "rejuv_m",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/rejuv_m.png",
+      "region": "[P: (8.0, 0.0), S: (239.0, 256.0)]",
+      "sha256": "f6c1fab2810218b2353359236c12a4b492a664393f52f72a5bb2ddc15b4d6908"
+    },
+    {
+      "id": "rejuv_l",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/rejuv_l.png",
+      "region": "[P: (0.0, 3.0), S: (252.0, 250.0)]",
+      "sha256": "a9410d850cf41b2366292e942f3700363d1897d66e57603ba5d1216679e2fba0"
+    },
+    {
+      "id": "full_health",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/full_health.png",
+      "region": "[P: (4.0, 1.0), S: (243.0, 252.0)]",
+      "sha256": "8586b0914f7f6300771f99322499b056089cc250d1b797e2e1a03b2997c00a87"
+    },
+    {
+      "id": "full_mana",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/full_mana.png",
+      "region": "[P: (8.0, 0.0), S: (234.0, 255.0)]",
+      "sha256": "b9ef63d9618a92088c87b87909d9f0acd5fed0c7cd22202c19b2f9c7975f9b53"
+    },
+    {
+      "id": "full_rejuv",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/full_rejuv.png",
+      "region": "[P: (10.0, 0.0), S: (237.0, 253.0)]",
+      "sha256": "598143f8f0c20ed44bda6499755fd972f826ea041bb99ac227d5a2df2eedbdbd"
+    },
+    {
+      "id": "speed",
+      "imported_size": [
+        256,
+        256
+      ],
+      "mip_bytes": 349524,
+      "path": "res://assets/ui/inventory_v1/speed.png",
+      "region": "[P: (6.0, 0.0), S: (244.0, 253.0)]",
+      "sha256": "0c218f35d3f2364679520dcaf628f87b0f836b4593512264ca2e48d5a37cbc96"
+    }
+  ],
+  "checks": [
+    "all twenty bases, two uniques and thirteen potions have explicit icon IDs",
+    "glass_orb has a runtime texture",
+    "glass_orb is a transparent bounded mipmapped UI texture",
+    "crystal_core has a runtime texture",
+    "crystal_core is a transparent bounded mipmapped UI texture",
+    "bp_shotgun has a runtime texture",
+    "bp_shotgun is a transparent bounded mipmapped UI texture",
+    "bp_chainsaw has a runtime texture",
+    "bp_chainsaw is a transparent bounded mipmapped UI texture",
+    "bp_automaton has a runtime texture",
+    "bp_automaton is a transparent bounded mipmapped UI texture",
+    "part_cutting has a runtime texture",
+    "part_cutting is a transparent bounded mipmapped UI texture",
+    "part_ballistic has a runtime texture",
+    "part_ballistic is a transparent bounded mipmapped UI texture",
+    "part_power has a runtime texture",
+    "part_power is a transparent bounded mipmapped UI texture",
+    "ribbon_tie has a runtime texture",
+    "ribbon_tie is a transparent bounded mipmapped UI texture",
+    "star_pin has a runtime texture",
+    "star_pin is a transparent bounded mipmapped UI texture",
+    "cotton_coat has a runtime texture",
+    "cotton_coat is a transparent bounded mipmapped UI texture",
+    "quilted_cape has a runtime texture",
+    "quilted_cape is a transparent bounded mipmapped UI texture",
+    "cotton_gloves has a runtime texture",
+    "cotton_gloves is a transparent bounded mipmapped UI texture",
+    "work_gloves has a runtime texture",
+    "work_gloves is a transparent bounded mipmapped UI texture",
+    "sneakers has a runtime texture",
+    "sneakers is a transparent bounded mipmapped UI texture",
+    "leather_boots has a runtime texture",
+    "leather_boots is a transparent bounded mipmapped UI texture",
+    "brass_brooch has a runtime texture",
+    "brass_brooch is a transparent bounded mipmapped UI texture",
+    "silver_brooch has a runtime texture",
+    "silver_brooch is a transparent bounded mipmapped UI texture",
+    "copper_ring has a runtime texture",
+    "copper_ring is a transparent bounded mipmapped UI texture",
+    "silver_ring has a runtime texture",
+    "silver_ring is a transparent bounded mipmapped UI texture",
+    "executioner_pulley has a runtime texture",
+    "executioner_pulley is a transparent bounded mipmapped UI texture",
+    "self_replicating_spring has a runtime texture",
+    "self_replicating_spring is a transparent bounded mipmapped UI texture",
+    "health_s has a runtime texture",
+    "health_s is a transparent bounded mipmapped UI texture",
+    "health_m has a runtime texture",
+    "health_m is a transparent bounded mipmapped UI texture",
+    "health_l has a runtime texture",
+    "health_l is a transparent bounded mipmapped UI texture",
+    "mana_s has a runtime texture",
+    "mana_s is a transparent bounded mipmapped UI texture",
+    "mana_m has a runtime texture",
+    "mana_m is a transparent bounded mipmapped UI texture",
+    "mana_l has a runtime texture",
+    "mana_l is a transparent bounded mipmapped UI texture",
+    "rejuv_s has a runtime texture",
+    "rejuv_s is a transparent bounded mipmapped UI texture",
+    "rejuv_m has a runtime texture",
+    "rejuv_m is a transparent bounded mipmapped UI texture",
+    "rejuv_l has a runtime texture",
+    "rejuv_l is a transparent bounded mipmapped UI texture",
+    "full_health has a runtime texture",
+    "full_health is a transparent bounded mipmapped UI texture",
+    "full_mana has a runtime texture",
+    "full_mana is a transparent bounded mipmapped UI texture",
+    "full_rejuv has a runtime texture",
+    "full_rejuv is a transparent bounded mipmapped UI texture",
+    "speed has a runtime texture",
+    "speed is a transparent bounded mipmapped UI texture",
+    "glass_orb fits equipment review page 1",
+    "crystal_core fits equipment review page 1",
+    "bp_shotgun fits equipment review page 1",
+    "bp_chainsaw fits equipment review page 1",
+    "bp_automaton fits equipment review page 1",
+    "part_cutting fits equipment review page 1",
+    "part_ballistic fits equipment review page 1",
+    "part_power fits equipment review page 1",
+    "brass_brooch fits equipment review page 1",
+    "silver_brooch fits equipment review page 1",
+    "copper_ring fits equipment review page 1",
+    "silver_ring fits equipment review page 1",
+    "equipment_mediums GPU capture saved",
+    "ribbon_tie fits equipment review page 2",
+    "star_pin fits equipment review page 2",
+    "cotton_coat fits equipment review page 2",
+    "quilted_cape fits equipment review page 2",
+    "cotton_gloves fits equipment review page 2",
+    "work_gloves fits equipment review page 2",
+    "sneakers fits equipment review page 2",
+    "leather_boots fits equipment review page 2",
+    "executioner_pulley fits the unique review",
+    "self_replicating_spring fits the unique review",
+    "equipment_clothing GPU capture saved",
+    "potions GPU capture saved",
+    "contact_sheet GPU capture saved"
+  ],
+  "engine": "4.6.2-stable (official)",
+  "failures": [],
+  "texture_mip_bytes": 12115700
+}

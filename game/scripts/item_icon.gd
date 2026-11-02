@@ -1,7 +1,10 @@
 extends RefCounted
-## Temporary item pictures for the grid inventory: simple shapes drawn per base, so a rare's
-## invented name still shows what it is. Replace with painted icons later; callers only pass
-## the canvas, the cell rectangle and the item.
+## Inventory artwork with live rarity/socket/count overlays. Simple shapes remain the fallback
+## for new definitions and the silhouettes of empty equipment slots.
+const ART_PATH = "res://assets/ui/inventory_v1/"
+# Squat small bottles otherwise look larger than the narrow medium bottles.
+const ART_SCALES = {"health_s": 0.72, "mana_s": 0.72, "rejuv_s": 0.72}
+static var art_cache: Dictionary = {}
 const BRASS = Color("d8b77b")
 const COPPER = Color("c47a4c")
 const SILVER = Color("c9d1d6")
@@ -14,7 +17,34 @@ const GLASS = Color("9fd6d2")
 const DARK = Color("10181c")
 const POTION_COLORS = {"hp": Color("e88e78"), "mp": Color("79c9dc"), "both": Color("bd94dc"), "speed": Color("a8d672")}
 
-static func potion(canvas: Control, rect: Rect2, data: Dictionary, count: int, alpha: float = 1.0) -> void:
+static func art(id: String) -> Dictionary:
+	if not art_cache.has(id):
+		var path := ART_PATH + id + ".png"
+		if not ResourceLoader.exists(path):
+			art_cache[id] = {}
+		else:
+			var texture := load(path) as Texture2D
+			art_cache[id] = {"texture": texture, "region": Rect2(texture.get_image().get_used_rect())}
+	return art_cache[id]
+
+static func draw_art(canvas: CanvasItem, box: Rect2, id: String, alpha: float = 1.0) -> bool:
+	var asset := art(id)
+	if asset.is_empty():
+		return false
+	# Importing mipmaps alone does not enable their use in CanvasItem drawing.
+	canvas.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	var region: Rect2 = asset.region
+	var scale := minf(box.size.x / region.size.x, box.size.y / region.size.y)
+	var size := region.size * scale * float(ART_SCALES.get(id, 1.0))
+	canvas.draw_texture_rect_region(asset.texture, Rect2(box.get_center() - size / 2, size), region, Color(1, 1, 1, alpha))
+	return true
+
+static func potion(canvas: Control, rect: Rect2, data: Dictionary, count: int, alpha: float = 1.0, id: String = "") -> void:
+	var font := canvas.get_theme_default_font()
+	if draw_art(canvas, Rect2(rect.position + Vector2(5, 5), rect.size - Vector2(10, 20)), id, alpha):
+		canvas.draw_string(font, rect.position + Vector2(5, rect.size.y - 5), data.mark, HORIZONTAL_ALIGNMENT_LEFT, -1, 12, Color(PAPER, alpha))
+		canvas.draw_string(font, rect.position + Vector2(4, rect.size.y - 5), "×%d" % count, HORIZONTAL_ALIGNMENT_RIGHT, rect.size.x - 8, 12, Color(PAPER, alpha))
+		return
 	var tint: Color = POTION_COLORS[data.kind]
 	var center := rect.get_center()
 	var bottle := Rect2(center - Vector2(14, 17), Vector2(28, 34))
@@ -22,7 +52,6 @@ static func potion(canvas: Control, rect: Rect2, data: Dictionary, count: int, a
 	canvas.draw_rect(bottle, Color(tint.darkened(0.25), alpha))
 	canvas.draw_rect(bottle, Color(tint, alpha), false, 1.0)
 	canvas.draw_line(bottle.position + Vector2(4, 4), bottle.position + Vector2(4, 15), Color(SILVER, alpha * 0.55), 2.0)
-	var font := canvas.get_theme_default_font()
 	var mark: String = data.mark
 	var width := font.get_string_size(mark, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
 	canvas.draw_string(font, center + Vector2(-width / 2, 5), mark, HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color(DARK, alpha))
@@ -33,6 +62,11 @@ static func draw(canvas: CanvasItem, rect: Rect2, item: Dictionary, items) -> vo
 	canvas.draw_rect(rect.grow(-1), Color(rarity, 0.16))
 	canvas.draw_rect(rect.grow(-1), Color(rarity, 0.75), false, 1.0)
 	var box := rect.grow(-maxf(4.0, minf(rect.size.x, rect.size.y) * 0.12))
+	if int(item.get("sockets", 0)) > 0:
+		box.size.y = maxf(12, box.size.y - 12)
+	if draw_art(canvas, box, item.get("unique", item.base)):
+		sockets(canvas, rect, item, items)
+		return
 	match item.base:
 		"glass_orb":
 			orb(canvas, box, GLASS)

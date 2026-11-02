@@ -402,7 +402,7 @@ func draw_hand() -> void:
 	if holding_potion():
 		var stack := potion_stack(held_potion.quick, held_potion.index)
 		if stack.count > 0 and stack.id == held_potion.id:
-			ItemIcon.potion(hand, Rect2(mouse - Vector2.ONE * POTION_CELL / 2, Vector2.ONE * POTION_CELL), arena.config.potions[stack.id], stack.count)
+			ItemIcon.potion(hand, Rect2(mouse - Vector2.ONE * POTION_CELL / 2, Vector2.ONE * POTION_CELL), arena.config.potions[stack.id], stack.count, 1.0, stack.id)
 	elif arena.held_item != null:
 		var size := Vector2(arena.items.size_of(arena.held_item)) * CELL
 		ItemIcon.draw(hand, Rect2(mouse - size / 2, size), arena.held_item, arena.items)
@@ -529,7 +529,7 @@ func draw_potion_cell(view: Control, quick: bool, index: int) -> void:
 	view.draw_rect(rect, Color("0d181d"))
 	view.draw_rect(rect, GOLD if selected or under_mouse else EDGE, false, 2.0 if selected else 1.0)
 	if stack.count > 0:
-		ItemIcon.potion(view, rect, arena.config.potions[stack.id], stack.count, 0.3 if selected else 1.0)
+		ItemIcon.potion(view, rect, arena.config.potions[stack.id], stack.count, 0.3 if selected else 1.0, stack.id)
 	if quick:
 		view.draw_string(get_theme_default_font(), Vector2(6, 16), str(index + 1), HORIZONTAL_ALIGNMENT_LEFT, -1, 12, GOLD)
 

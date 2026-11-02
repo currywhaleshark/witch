@@ -1,0 +1,20 @@
+{
+  "source_png_count": 35,
+  "runtime_sha256": "6a3d236bf8fe0803f1f2403e7b320188f0623bf7434d96c285158dc48fa89ab4",
+  "visual_review": "Inspected native potion, equipment and full icon sheet captures. Fine texture sparkle is smoothed; small bottles are smaller than medium bottles, including the HUD.",
+  "original_art_manifest": "before/delivery_manifest.json",
+  "user_art_selection": true,
+  "date": "2026-11-02",
+  "runtime_file": "game/scripts/item_icon.gd",
+  "changes": [
+    "CanvasItem LINEAR_WITH_MIPMAPS for shared icon drawing",
+    "Small health/mana/rejuvenation bottles draw at 0.72 of their fitted dimensions"
+  ],
+  "source_pngs_unchanged": true,
+  "validation": {
+    "path": "after/report.json",
+    "failures": [],
+    "checks": 97
+  },
+  "approval": "../../assets/ui/inventory_v1/approval.json"
+}

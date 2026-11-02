@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-02",
+  "user_request": "커밋",
+  "status": "selected_for_prototype",
+  "scope": [
+    "Twenty equipment base icons, two unique icons and thirteen potion icons",
+    "Inventory, equipped item, held item and potion quickslot rendering",
+    "Linear mipmap filtering for reduced-size artwork",
+    "Small health, mana and rejuvenation bottles at 72 percent scale"
+  ],
+  "review": "reports/inventory_filter_v1/review.html",
+  "validation": "reports/inventory_filter_v1/delivery_manifest.json"
+}

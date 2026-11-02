@@ -14,6 +14,7 @@ const KEYS = ["LMB", "RMB", "Q", "W", "E", "R"]
 const POTION_COLORS = {"hp": Color("ee987d"), "mp": Color("8dd8c4"), "both": Color("c9a0dc"), "speed": Color("a8d672")}
 # Slot icons follow the bound skill, not the slot position.
 const SkillIcon = preload("res://scripts/skill_icon.gd")
+const ItemIcon = preload("res://scripts/item_icon.gd")
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -135,9 +136,10 @@ func _draw() -> void:
 			# An empty stack stays empty until restocked by hand.
 			centered(r.position + Vector2(19, 41), "—", 18, EDGE)
 			continue
-		draw_rect(Rect2(r.position + Vector2(13, 17), Vector2(12, 5)), EDGE)
-		draw_rect(Rect2(r.position + Vector2(9, 22), Vector2(20, 24)), tint.darkened(0.25))
-		centered(r.position + Vector2(19, 39), potion.mark, 12, INK)
+		if not ItemIcon.draw_art(self, Rect2(r.position + Vector2(4, 16), Vector2(30, 32)), slot.id):
+			draw_rect(Rect2(r.position + Vector2(13, 17), Vector2(12, 5)), EDGE)
+			draw_rect(Rect2(r.position + Vector2(9, 22), Vector2(20, 24)), tint.darkened(0.25))
+		label_at(r.position + Vector2(23, 13), potion.mark, 10, PAPER)
 		centered(r.position + Vector2(19, 60), "×%d" % slot.count, 12, PAPER)
 		var cooldown: float = arena.potion_cooldown(slot.id)
 		if cooldown > 0:

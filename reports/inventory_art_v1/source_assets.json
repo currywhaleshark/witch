@@ -1,0 +1,562 @@
+[
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "bp_automaton",
+    "sha256": "635412ef6ca7222754d45f2b22b6407b7762ecae854839f620bb96b9dd14fd7f",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 8), S: (1238, 1200)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "bp_chainsaw",
+    "sha256": "67fd38541726aa2d05629e8cd398a356e7fd01c9f354ae1d48d5fa1fd112e1e8",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 15), S: (1224, 1197)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "bp_shotgun",
+    "sha256": "8a62b85733d285717975fe247f2300446de8cad945df47243e5a924402c23340",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 19), S: (1242, 1219)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "brass_brooch",
+    "sha256": "4c3589d63164e3126077ab2332483a1107161eaae5685c8fe67f9f69a6982542",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 23), S: (1222, 1231)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "copper_ring",
+    "sha256": "9ebfb6583b9242022064c2550f17227f67ec7f274fad0d531e683187857e9590",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 29), S: (1230, 1205)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "cotton_coat",
+    "sha256": "6fe94c0af7b5909f7b131fa3cc23c9cea85352f3e9f2314a393c6cb25eecbd18",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 14), S: (1234, 1240)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "cotton_gloves",
+    "sha256": "507fd2014633782a70cb5ef70a9ea2134590cccd7ff6217f57285ebc363ef89b",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 22), S: (1254, 1208)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "crystal_core",
+    "sha256": "dab33358fe2d675c9022edd0dd04e4b927d7d1939a345c1b6063a404a1547f90",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 13), S: (1230, 1220)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "executioner_pulley",
+    "sha256": "79b4a450c1efd767d75f6d8385cbf0fd133c0eabecf75c2ab5217a98da8986c1",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 2), S: (1248, 1252)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "full_health",
+    "sha256": "8586b0914f7f6300771f99322499b056089cc250d1b797e2e1a03b2997c00a87",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 5), S: (1240, 1235)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "full_mana",
+    "sha256": "b9ef63d9618a92088c87b87909d9f0acd5fed0c7cd22202c19b2f9c7975f9b53",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 0), S: (1226, 1254)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "full_rejuv",
+    "sha256": "598143f8f0c20ed44bda6499755fd972f826ea041bb99ac227d5a2df2eedbdbd",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 0), S: (1234, 1254)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "glass_orb",
+    "sha256": "8bcd1792b7fc5cdde6dc32c70521f64cf212943577e76c432940fe3d1b5d0e53",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 14), S: (1232, 1240)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "health_l",
+    "sha256": "705e46b06388aba63f3f8aee26137ece520666c3f3855a41617e0db4deba49b4",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 0), S: (1242, 1254)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "health_m",
+    "sha256": "fb39f3604fdea3cf202ae399bd87c874cfec2d7eb40a4cee31c62063c2864de5",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 1), S: (1240, 1237)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "health_s",
+    "sha256": "a6bdfe9b603bb9ccce8a286c3af9fb7691894e9ea9d67a34b054d1c5b04e0339",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 25), S: (1240, 1203)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "leather_boots",
+    "sha256": "c259b0ef9521e4c0067bcb1e70788b2099138dd7497dcabd0e9d78f770c7a5ab",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 0), S: (1241, 1254)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "mana_l",
+    "sha256": "b3d65ae6b7b0bb6a68e4bae71fd7b3c2e8dbb051de377c2a4c41edecd02b4aa0",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 13), S: (1234, 1241)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "mana_m",
+    "sha256": "22ebf769af6b786ce35d692a49e4fc94dafa59a6fc863c7a855d739aa7ff6501",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 0), S: (1232, 1254)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.00392156885936856,
+      0.0
+    ],
+    "id": "mana_s",
+    "sha256": "31ecd1b5a7ce6429181bb13ccfd4dcda2b30a54e218c5563dc192b75d3fa276c",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 28), S: (1218, 1226)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "part_ballistic",
+    "sha256": "0f9d2ca55f71bb6fa5542382fa3c4f045ac428830f1481f236552d2616663fc6",
+    "size": [
+      1536,
+      1024
+    ],
+    "used_rect": "[P: (0, 47), S: (1519, 923)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "part_cutting",
+    "sha256": "8bed9af556b5575cd5e04f9afd9cc07c9303216e98b68a44de24a0c35838c4eb",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 21), S: (1238, 1233)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.00392156885936856,
+      0.0
+    ],
+    "id": "part_power",
+    "sha256": "4f05f58a9ce357fe7cd661aaa9ec63da89ef40bb3c8c85ae1dc4e5a5313fed16",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 23), S: (1241, 1231)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "quilted_cape",
+    "sha256": "3b5fcbde2b49498c8db2159ab0aa63fb0780ab144493f6f9dbc79afb0743b5a8",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 39), S: (1244, 1215)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.00392156885936856,
+      0.0
+    ],
+    "id": "rejuv_l",
+    "sha256": "a9410d850cf41b2366292e942f3700363d1897d66e57603ba5d1216679e2fba0",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 14), S: (1250, 1240)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "rejuv_m",
+    "sha256": "f6c1fab2810218b2353359236c12a4b492a664393f52f72a5bb2ddc15b4d6908",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 0), S: (1218, 1254)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.00392156885936856,
+      0.0
+    ],
+    "id": "rejuv_s",
+    "sha256": "98bbf742371828d14abcbb5787d7185b61b8189f329486ac4199a45e4dfcb1c5",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 17), S: (1220, 1237)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "ribbon_tie",
+    "sha256": "243f13203728e5d9730404c5a28afc2a41a5174c807591f9a3b0010666b825a9",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (17, 39), S: (1223, 1215)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "self_replicating_spring",
+    "sha256": "e009e7281bdd8cbd1b163190e121acc11c02d10fd5f764ea2325a083d9c4f31b",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 8), S: (1234, 1246)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "silver_brooch",
+    "sha256": "98b2e35b7b7404943e8274cba47c01be10feba37f5700c6ab17ed0d9504c2a5f",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 0), S: (1214, 1254)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "silver_ring",
+    "sha256": "384ee10e86c3470c678619591b389db7086d507232943abaeab47837d152b4bd",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 29), S: (1238, 1202)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "sneakers",
+    "sha256": "270a030187fef3b910da7360b33aa3a945413991cfbea0800eae5feae9e58f6c",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 13), S: (1253, 1241)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "speed",
+    "sha256": "0c218f35d3f2364679520dcaf628f87b0f836b4593512264ca2e48d5a37cbc96",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (0, 0), S: (1240, 1239)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "star_pin",
+    "sha256": "9e79e4fcfc6a89495100ddfc5fe717923172a80ef4e19f5eee9f209dce918464",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (45, 47), S: (1178, 1207)]"
+  },
+  {
+    "alpha": 2,
+    "corner_alpha": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "id": "work_gloves",
+    "sha256": "7267cc84415ead5452c87bdc86041d0d43b4a500a4e5b7fea4ccdee8001160c4",
+    "size": [
+      1254,
+      1254
+    ],
+    "used_rect": "[P: (16, 5), S: (1227, 1249)]"
+  }
+]

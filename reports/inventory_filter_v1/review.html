@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>아이템 축소 표시 보정</title>
+<style>
+body{background:#101c23;color:#e3e9df;font:16px/1.6 system-ui,sans-serif;margin:0}main{max-width:1000px;margin:auto;padding:28px 20px 60px}h1{margin-bottom:6px;font-size:28px}h2{font-size:21px;margin-top:32px}p{color:#b6c6cb}a{color:#d8b77b}.pair{display:flex;gap:24px;flex-wrap:wrap}figure{margin:0}figcaption{margin-bottom:8px;color:#d8b77b}.crop{position:relative;width:388px;height:554px;overflow:hidden;border:1px solid #526166}.crop img{position:absolute;width:1280px;height:800px;max-width:none;left:-868px;top:-84px}.hud{width:190px;height:110px}.hud img{left:-124px;top:-654px}small{color:#a2b2b7}
+</style>
+<main>
+<h1>아이템 축소 표시 보정</h1>
+<p>장비·물약에 축소용 mipmap 필터를 적용하고, 소형 물약 3종은 가로·세로를 기존의 72%로 줄였습니다. 원본 PNG 35장은 그대로입니다.</p>
+<p>아래는 실제 1280×800 게임 캡처에서 창 부분을 1:1 크기로 보여 줍니다. 브라우저 확대율 100%에서 확인할 수 있습니다.</p>
+<h2>물약 가방</h2>
+<div class="pair">
+<figure><figcaption>적용 전</figcaption><div class="crop"><img src="before/potions.png" alt="기존 물약 가방"></div></figure>
+<figure><figcaption>적용 후 · 소형 72%</figcaption><div class="crop"><img src="after/potions.png" alt="보정한 물약 가방"></div></figure>
+</div>
+<h2>장비</h2>
+<div class="pair">
+<figure><figcaption>적용 전</figcaption><div class="crop"><img src="before/equipment_mediums.png" alt="기존 장비창"></div></figure>
+<figure><figcaption>적용 후</figcaption><div class="crop"><img src="after/equipment_mediums.png" alt="보정한 장비창"></div></figure>
+</div>
+<h2>하단 퀵슬롯</h2>
+<div class="pair">
+<figure><figcaption>적용 전</figcaption><div class="crop hud"><img src="before/potions.png" alt="기존 하단 물약 슬롯"></div></figure>
+<figure><figcaption>적용 후</figcaption><div class="crop hud"><img src="after/potions.png" alt="보정한 하단 물약 슬롯"></div></figure>
+</div>
+<p><a href="after/contact_sheet.png">35종 전체 보기</a> · <a href="after/potions.png">물약 전체 화면</a> · <a href="delivery_manifest.json">검증 기록</a></p>
+<small>Godot 4.6.2 / OpenGL Compatibility / GPU 검사 97항목 통과. 이번 수정은 그릴 때의 필터와 소형 물약 크기 조정이며 이미지 재생성이나 원본 픽셀 가공은 하지 않았습니다.</small>
+</main>
+</html>
