@@ -1,0 +1,1017 @@
+[
+  {
+    "id": "glass_orb",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\glass_orb_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\glass_orb_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\glass_orb_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\glass_orb_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\glass_orb_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\glass_orb_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "crystal_core",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\crystal_core_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\crystal_core_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\crystal_core_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\crystal_core_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\crystal_core_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\crystal_core_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "bp_shotgun",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_shotgun_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_shotgun_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_shotgun_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_shotgun_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_shotgun_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_shotgun_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "bp_chainsaw",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_chainsaw_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_chainsaw_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_chainsaw_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_chainsaw_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_chainsaw_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_chainsaw_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "bp_automaton",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_automaton_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_automaton_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_automaton_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_automaton_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_automaton_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bp_automaton_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "part_ballistic",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_ballistic_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_ballistic_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_ballistic_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_ballistic_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_ballistic_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_ballistic_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "part_power",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_power_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_power_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_power_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_power_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_power_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\part_power_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "ribbon_tie",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\ribbon_tie_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\ribbon_tie_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\ribbon_tie_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\ribbon_tie_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\ribbon_tie_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\ribbon_tie_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "star_pin",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\star_pin_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\star_pin_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\star_pin_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\star_pin_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\star_pin_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\star_pin_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "quilted_cape",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\quilted_cape_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\quilted_cape_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\quilted_cape_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\quilted_cape_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\quilted_cape_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\quilted_cape_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "cotton_gloves",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\cotton_gloves_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\cotton_gloves_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\cotton_gloves_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\cotton_gloves_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\cotton_gloves_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\cotton_gloves_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "work_gloves",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\work_gloves_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\work_gloves_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\work_gloves_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\work_gloves_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\work_gloves_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\work_gloves_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "sneakers",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sneakers_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sneakers_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sneakers_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sneakers_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sneakers_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sneakers_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "leather_boots",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\leather_boots_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\leather_boots_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\leather_boots_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\leather_boots_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\leather_boots_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\leather_boots_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "brass_brooch",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\brass_brooch_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\brass_brooch_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\brass_brooch_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\brass_brooch_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\brass_brooch_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\brass_brooch_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "silver_brooch",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_brooch_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_brooch_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_brooch_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_brooch_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_brooch_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_brooch_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "silver_ring",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_ring_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_ring_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_ring_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_ring_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_ring_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\silver_ring_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "executioner_pulley",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\executioner_pulley_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\executioner_pulley_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\executioner_pulley_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\executioner_pulley_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\executioner_pulley_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\executioner_pulley_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "self_replicating_spring",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\self_replicating_spring_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\self_replicating_spring_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\self_replicating_spring_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\self_replicating_spring_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\self_replicating_spring_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\self_replicating_spring_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "health_m",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_m_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_m_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_m_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_m_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_m_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_m_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "health_l",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_l_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_l_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_l_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_l_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_l_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\health_l_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "mana_s",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_s_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_s_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_s_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_s_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_s_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_s_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "mana_m",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_m_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_m_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_m_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_m_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_m_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_m_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "mana_l",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_l_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_l_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_l_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_l_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_l_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\mana_l_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "rejuv_s",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_s_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_s_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_s_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_s_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_s_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_s_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "rejuv_m",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_m_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_m_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_m_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_m_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_m_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_m_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "rejuv_l",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_l_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_l_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_l_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_l_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_l_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rejuv_l_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "full_health",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_health_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_health_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_health_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_health_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_health_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_health_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "full_mana",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_mana_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_mana_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_mana_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_mana_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_mana_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_mana_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "full_rejuv",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_rejuv_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_rejuv_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_rejuv_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_rejuv_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_rejuv_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\full_rejuv_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "speed",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\speed_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\speed_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\speed_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\speed_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\speed_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\speed_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "currency",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\currency_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\currency_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\currency_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\currency_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\currency_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\currency_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "bel",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bel_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bel_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bel_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bel_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bel_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\bel_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "rok",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rok_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rok_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rok_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rok_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rok_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\rok_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  },
+  {
+    "id": "sha",
+    "material": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sha_material.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sha_material_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sha_material_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    },
+    "wire": {
+      "ok": true,
+      "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sha_wire.png",
+      "views": [
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sha_wire_top.png",
+        "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\authoring\\sha_wire_three_quarter.png"
+      ],
+      "layout": "2x1",
+      "order": [
+        "top",
+        "three_quarter"
+      ]
+    }
+  }
+]

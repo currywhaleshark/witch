@@ -1,0 +1,12 @@
+{
+  "game/scripts/arena.gd": "1fb8b4c0db9a04dcd001a0893dd0f24226f8785557dff83349764d4f00600af9",
+  "game/scripts/ground_loot.gd": "85efb67944d0c7a31720419a56d8317499007e26afca0fbe986ffa5c22e7a227",
+  "game/data/items.json": "fee4124b9e9ff34069a29ed176103d0982bd6a3a75fc50126724274b20f327d9",
+  "game/data/trial.json": "cb46bec2e20b20acae9feb56b32ddfcd2c28c683fd18a089a96b201aa167e8c5",
+  "game/scripts/player_visual.gd": "d4f7d4cafcd8e7ce4ebd1115ed8af15f4347300807e4d8f890b9d68d1310a779",
+  "game/project.godot": "e94e469016761288523ed2eed72ae4f278250ae6b4dfb81eb5cdda69cff42030",
+  "game/assets/props/ground_loot_v1/health_s.glb": "0bd93210c7cc52e5df79dbdd13470d4ecfbb2da6bf0cdc02d048ce97d30651b0",
+  "game/assets/props/ground_loot_v1/copper_ring.glb": "567dd0480320275e16788b0a08a9c4a070b01ec6f6aafda1605647cd120a7c16",
+  "game/assets/props/ground_loot_v1/part_cutting.glb": "b5543b79a61c5c636bbe3fb1ba92b34e065c532be431175101181d12866ee06e",
+  "game/assets/props/ground_loot_v1/cotton_coat.glb": "c2ca3379605198deb7b9dad8d04cca3607a5e1802aa6d3b0e8d2e791e24ca8a2"
+}

@@ -1,0 +1,179 @@
+00:03.688  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\props\ground_loot_v2\ground_loot_v2.blend"
+00:05.609  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\glass_orb_material_top.png'
+00:05.625  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\glass_orb_material_three_quarter.png'
+00:05.781  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\glass_orb_wire_top.png'
+00:05.828  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\glass_orb_wire_three_quarter.png'
+REVIEWED glass_orb
+00:05.891  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\crystal_core_material_top.png'
+00:05.922  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\crystal_core_material_three_quarter.png'
+00:06.047  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\crystal_core_wire_top.png'
+00:06.078  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\crystal_core_wire_three_quarter.png'
+REVIEWED crystal_core
+00:06.156  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_shotgun_material_top.png'
+00:06.188  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_shotgun_material_three_quarter.png'
+00:06.266  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_shotgun_wire_top.png'
+00:06.313  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_shotgun_wire_three_quarter.png'
+REVIEWED bp_shotgun
+00:06.391  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_chainsaw_material_top.png'
+00:06.406  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_chainsaw_material_three_quarter.png'
+00:06.500  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_chainsaw_wire_top.png'
+00:06.531  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_chainsaw_wire_three_quarter.png'
+REVIEWED bp_chainsaw
+00:06.609  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_automaton_material_top.png'
+00:06.641  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_automaton_material_three_quarter.png'
+00:06.734  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_automaton_wire_top.png'
+00:06.781  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bp_automaton_wire_three_quarter.png'
+REVIEWED bp_automaton
+00:06.844  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\part_ballistic_material_top.png'
+00:06.875  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\part_ballistic_material_three_quarter.png'
+00:06.938  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\part_ballistic_wire_top.png'
+00:06.969  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\part_ballistic_wire_three_quarter.png'
+REVIEWED part_ballistic
+00:07.047  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\part_power_material_top.png'
+00:07.063  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\part_power_material_three_quarter.png'
+00:07.188  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\part_power_wire_top.png'
+00:07.219  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\part_power_wire_three_quarter.png'
+REVIEWED part_power
+00:07.281  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\ribbon_tie_material_top.png'
+00:07.313  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\ribbon_tie_material_three_quarter.png'
+00:07.375  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\ribbon_tie_wire_top.png'
+00:07.391  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\ribbon_tie_wire_three_quarter.png'
+REVIEWED ribbon_tie
+00:07.469  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\star_pin_material_top.png'
+00:07.484  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\star_pin_material_three_quarter.png'
+00:07.547  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\star_pin_wire_top.png'
+00:07.578  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\star_pin_wire_three_quarter.png'
+REVIEWED star_pin
+00:07.656  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\quilted_cape_material_top.png'
+00:07.672  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\quilted_cape_material_three_quarter.png'
+00:07.781  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\quilted_cape_wire_top.png'
+00:07.813  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\quilted_cape_wire_three_quarter.png'
+REVIEWED quilted_cape
+00:07.891  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\cotton_gloves_material_top.png'
+00:07.922  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\cotton_gloves_material_three_quarter.png'
+00:08.031  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\cotton_gloves_wire_top.png'
+00:08.063  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\cotton_gloves_wire_three_quarter.png'
+REVIEWED cotton_gloves
+00:08.156  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\work_gloves_material_top.png'
+00:08.188  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\work_gloves_material_three_quarter.png'
+00:08.313  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\work_gloves_wire_top.png'
+00:08.391  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\work_gloves_wire_three_quarter.png'
+REVIEWED work_gloves
+00:08.500  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\sneakers_material_top.png'
+00:08.531  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\sneakers_material_three_quarter.png'
+00:08.656  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\sneakers_wire_top.png'
+00:08.703  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\sneakers_wire_three_quarter.png'
+REVIEWED sneakers
+00:08.813  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\leather_boots_material_top.png'
+00:08.844  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\leather_boots_material_three_quarter.png'
+00:09.000  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\leather_boots_wire_top.png'
+00:09.063  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\leather_boots_wire_three_quarter.png'
+REVIEWED leather_boots
+00:09.156  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\brass_brooch_material_top.png'
+00:09.203  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\brass_brooch_material_three_quarter.png'
+00:09.281  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\brass_brooch_wire_top.png'
+00:09.313  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\brass_brooch_wire_three_quarter.png'
+REVIEWED brass_brooch
+00:09.391  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\silver_brooch_material_top.png'
+00:09.422  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\silver_brooch_material_three_quarter.png'
+00:09.516  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\silver_brooch_wire_top.png'
+00:09.563  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\silver_brooch_wire_three_quarter.png'
+REVIEWED silver_brooch
+00:09.625  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\silver_ring_material_top.png'
+00:09.656  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\silver_ring_material_three_quarter.png'
+00:09.719  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\silver_ring_wire_top.png'
+00:09.750  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\silver_ring_wire_three_quarter.png'
+REVIEWED silver_ring
+00:09.828  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\executioner_pulley_material_top.png'
+00:09.844  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\executioner_pulley_material_three_quarter.png'
+00:09.984  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\executioner_pulley_wire_top.png'
+00:10.047  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\executioner_pulley_wire_three_quarter.png'
+REVIEWED executioner_pulley
+00:10.141  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\self_replicating_spring_material_top.png'
+00:10.172  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\self_replicating_spring_material_three_quarter.png'
+00:10.297  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\self_replicating_spring_wire_top.png'
+00:10.359  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\self_replicating_spring_wire_three_quarter.png'
+REVIEWED self_replicating_spring
+00:10.438  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\health_m_material_top.png'
+00:10.469  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\health_m_material_three_quarter.png'
+00:10.563  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\health_m_wire_top.png'
+00:10.594  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\health_m_wire_three_quarter.png'
+REVIEWED health_m
+00:10.672  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\health_l_material_top.png'
+00:10.703  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\health_l_material_three_quarter.png'
+00:10.813  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\health_l_wire_top.png'
+00:10.844  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\health_l_wire_three_quarter.png'
+REVIEWED health_l
+00:10.922  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_s_material_top.png'
+00:10.938  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_s_material_three_quarter.png'
+00:11.016  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_s_wire_top.png'
+00:11.047  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_s_wire_three_quarter.png'
+REVIEWED mana_s
+00:11.109  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_m_material_top.png'
+00:11.141  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_m_material_three_quarter.png'
+00:11.203  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_m_wire_top.png'
+00:11.234  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_m_wire_three_quarter.png'
+REVIEWED mana_m
+00:11.328  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_l_material_top.png'
+00:11.359  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_l_material_three_quarter.png'
+00:11.453  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_l_wire_top.png'
+00:11.500  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\mana_l_wire_three_quarter.png'
+REVIEWED mana_l
+00:11.594  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_s_material_top.png'
+00:11.625  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_s_material_three_quarter.png'
+00:11.703  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_s_wire_top.png'
+00:11.766  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_s_wire_three_quarter.png'
+REVIEWED rejuv_s
+00:11.844  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_m_material_top.png'
+00:11.875  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_m_material_three_quarter.png'
+00:11.953  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_m_wire_top.png'
+00:11.984  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_m_wire_three_quarter.png'
+REVIEWED rejuv_m
+00:12.047  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_l_material_top.png'
+00:12.063  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_l_material_three_quarter.png'
+00:12.141  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_l_wire_top.png'
+00:12.172  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rejuv_l_wire_three_quarter.png'
+REVIEWED rejuv_l
+00:12.234  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_health_material_top.png'
+00:12.266  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_health_material_three_quarter.png'
+00:12.344  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_health_wire_top.png'
+00:12.375  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_health_wire_three_quarter.png'
+REVIEWED full_health
+00:12.438  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_mana_material_top.png'
+00:12.469  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_mana_material_three_quarter.png'
+00:12.547  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_mana_wire_top.png'
+00:12.578  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_mana_wire_three_quarter.png'
+REVIEWED full_mana
+00:12.656  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_rejuv_material_top.png'
+00:12.688  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_rejuv_material_three_quarter.png'
+00:12.766  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_rejuv_wire_top.png'
+00:12.797  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\full_rejuv_wire_three_quarter.png'
+REVIEWED full_rejuv
+00:12.875  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\speed_material_top.png'
+00:12.906  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\speed_material_three_quarter.png'
+00:12.984  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\speed_wire_top.png'
+00:13.047  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\speed_wire_three_quarter.png'
+REVIEWED speed
+00:13.125  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\currency_material_top.png'
+00:13.156  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\currency_material_three_quarter.png'
+00:13.250  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\currency_wire_top.png'
+00:13.313  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\currency_wire_three_quarter.png'
+REVIEWED currency
+00:13.406  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bel_material_top.png'
+00:13.438  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bel_material_three_quarter.png'
+00:13.516  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bel_wire_top.png'
+00:13.547  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\bel_wire_three_quarter.png'
+REVIEWED bel
+00:13.609  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rok_material_top.png'
+00:13.641  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rok_material_three_quarter.png'
+00:13.703  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rok_wire_top.png'
+00:13.734  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\rok_wire_three_quarter.png'
+REVIEWED rok
+00:13.813  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\sha_material_top.png'
+00:13.844  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\sha_material_three_quarter.png'
+00:13.906  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\sha_wire_top.png'
+00:13.938  render           | Saved: 'C:\Users\yurib\Documents\New project\witch\reports\ground_loot_v2\authoring\sha_wire_three_quarter.png'
+REVIEWED sha
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

@@ -84,7 +84,9 @@ func labels(drops: Array, camera: Camera3D, font: Font, viewport_size: Vector2, 
 		if loot.node.get_instance_id() == focused_id:
 			for previous in previous_labels:
 				if is_same(previous.loot, loot):
-					var stable := Rect2(previous.rect.position + anchor - previous.anchor, size)
+					# Subtract anchors first: an unchanged anchor must give exactly zero,
+					# even when authored models have fractional support heights.
+					var stable := Rect2(previous.rect.position + (anchor - previous.anchor), size)
 					if area.encloses(stable):
 						candidates.push_front(stable)
 					break

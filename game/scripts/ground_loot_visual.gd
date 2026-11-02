@@ -1,23 +1,25 @@
 extends RefCounted
-## Four authored drop candidates. All geometry shares the existing drop transform.
-const FOLDER = "res://assets/props/ground_loot_v1/"
-const IDS = ["health_s", "copper_ring", "part_cutting", "cotton_coat"]
+## Authored loot profiles retain the four v1 models and complete the existing item set.
+## All geometry shares the existing drop transform and ownership path.
+const PROFILE_PATH = "res://assets/props/ground_loot_v2/models.json"
 static var scenes: Dictionary = {}
 static var profiles: Dictionary = {}
 
 static func create(parent: Node3D, payload: Dictionary) -> Dictionary:
 	var id: String = payload.get("id", "")
 	if payload.kind == "equipment":
-		# A unique has its own design and must not borrow its base's candidate.
+		# Unique artwork takes precedence over its ordinary base.
 		id = payload.item.get("unique", payload.item.base)
-	elif payload.kind != "potion":
-		return {}
-	if id not in IDS:
+	elif payload.kind == "currency":
+		id = "currency"
+	elif payload.kind not in ["potion", "piece"]:
 		return {}
 	if profiles.is_empty():
-		profiles = JSON.parse_string(FileAccess.get_file_as_string(FOLDER + "models.json"))
+		profiles = JSON.parse_string(FileAccess.get_file_as_string(PROFILE_PATH))
+	if not profiles.has(id):
+		return {}
 	if not scenes.has(id):
-		scenes[id] = load(FOLDER + id + ".glb")
+		scenes[id] = load(profiles[id].path)
 	var visual := Node3D.new()
 	visual.name = "GroundLoot_" + id
 	parent.add_child(visual)

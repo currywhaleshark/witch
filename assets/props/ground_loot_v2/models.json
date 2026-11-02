@@ -1,0 +1,692 @@
+{
+  "blender": "5.1.1",
+  "source": "assets/props/ground_loot_v2/ground_loot_v2.blend",
+  "assets": [
+    {
+      "id": "glass_orb",
+      "source_parts": 6,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 1376,
+      "dimensions_godot": [
+        0.2636100649833679,
+        0.26813164353370667,
+        0.31483644247055054
+      ],
+      "rest_height": 0.14606582176685334,
+      "radius": 0.16199218294204842,
+      "sha256": "d6b89fb177c074dffa51dc6e6401e106a045b7f782734f3fbe08fa82c0008f80",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "crystal_core",
+      "source_parts": 6,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 416,
+      "dimensions_godot": [
+        0.19200000166893005,
+        0.2385621815919876,
+        0.3878049850463867
+      ],
+      "rest_height": 0.13128109079599382,
+      "radius": 0.19464681610432685,
+      "sha256": "8359a7357b6e7d0ee1d9aed77a04ad7e4f83b03dc8df823e50f47c36445b2f94",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "bp_shotgun",
+      "source_parts": 11,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 2236,
+      "dimensions_godot": [
+        0.29633915424346924,
+        0.050000011920928955,
+        0.414000004529953
+      ],
+      "rest_height": 0.037000005960464474,
+      "radius": 0.2530958852095004,
+      "sha256": "4b550bded7c2255da8cb902ab7310cb2e05898f0c709ffe73759767ea10bc756",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "bp_chainsaw",
+      "source_parts": 17,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 3036,
+      "dimensions_godot": [
+        0.29633915424346924,
+        0.050000011920928955,
+        0.414000004529953
+      ],
+      "rest_height": 0.037000005960464474,
+      "radius": 0.2530958852095004,
+      "sha256": "db88fa4a53fe4208d6e7ee4ff3a363a6b36d6dae45300d968fb591bfb579d88c",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "bp_automaton",
+      "source_parts": 16,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 3272,
+      "dimensions_godot": [
+        0.29633915424346924,
+        0.050000011920928955,
+        0.414000004529953
+      ],
+      "rest_height": 0.037000005960464474,
+      "radius": 0.2530958852095004,
+      "sha256": "f48b3f957d9bf5a9ce2971146fcfd7305a6a0335a5b29f6b88f3e58983473a03",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "part_ballistic",
+      "source_parts": 13,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 2400,
+      "dimensions_godot": [
+        0.4207942485809326,
+        0.1730000004172325,
+        0.17132748663425446
+      ],
+      "rest_height": 0.09850000393390655,
+      "radius": 0.21684833562378714,
+      "sha256": "84ed57d5dede67168223bebf5f4b16deef7e7f93163a73e0ba8744854d409379",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "part_power",
+      "source_parts": 13,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 3248,
+      "dimensions_godot": [
+        0.37139999866485596,
+        0.25837138295173645,
+        0.18400000035762787
+      ],
+      "rest_height": 0.14118569147586824,
+      "radius": 0.1993295230689362,
+      "sha256": "403d8a6d91cc9517d430832f9f6c75e59b1ec76cf2ccc5cd85e4eb2896c36a61",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "ribbon_tie",
+      "source_parts": 7,
+      "meshes": 1,
+      "materials": 1,
+      "triangles": 740,
+      "dimensions_godot": [
+        0.3781972825527191,
+        0.06749999895691872,
+        0.29480016231536865
+      ],
+      "rest_height": 0.045749997615814206,
+      "radius": 0.22396805052783098,
+      "sha256": "34e4765d72fff4296db5ff2a26c3894610ff0931f61189c45cdaeb113bd9a3be",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "star_pin",
+      "source_parts": 8,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 1740,
+      "dimensions_godot": [
+        0.3939703404903412,
+        0.06999999657273293,
+        0.301618367433548
+      ],
+      "rest_height": 0.04699999642372131,
+      "radius": 0.23280007582034232,
+      "sha256": "5be2d6f8ee814761bac55df120098f81da5cc09b2a0cb54131db73fdeac6bcdc",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "quilted_cape",
+      "source_parts": 12,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 1056,
+      "dimensions_godot": [
+        0.4123184084892273,
+        0.1145000010728836,
+        0.38999998569488525
+      ],
+      "rest_height": 0.0692500005364418,
+      "radius": 0.25610628662937646,
+      "sha256": "2c0105402576661d85cfb5a05639d157c0fb503539cdd8049fb99ffc177713ba",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "cotton_gloves",
+      "source_parts": 22,
+      "meshes": 1,
+      "materials": 1,
+      "triangles": 2856,
+      "dimensions_godot": [
+        0.42671576142311096,
+        0.07599999755620956,
+        0.3460000157356262
+      ],
+      "rest_height": 0.04999999877810478,
+      "radius": 0.23792716984284995,
+      "sha256": "ac1ef1f086780a5d31df166096aab9a01198a15b6c0585314dbba0cf5a0b1483",
+      "qa_groups": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "id": "work_gloves",
+      "source_parts": 28,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 3984,
+      "dimensions_godot": [
+        0.42671576142311096,
+        0.08399999514222145,
+        0.3460000157356262
+      ],
+      "rest_height": 0.05399999570846557,
+      "radius": 0.23792716984284995,
+      "sha256": "53e8e7435692c32651d17b21b0d1aa673f3ad8eaca6da07ed72edaab4d018b51",
+      "qa_groups": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "id": "sneakers",
+      "source_parts": 24,
+      "meshes": 1,
+      "materials": 1,
+      "triangles": 4680,
+      "dimensions_godot": [
+        0.35199999809265137,
+        0.12099999561905861,
+        0.4020000100135803
+      ],
+      "rest_height": 0.07249999594688415,
+      "radius": 0.2405555291956026,
+      "sha256": "020600d848e5076ef48d73c61283dd7a62195cfc75df4db62d76e8e6fe94ef98",
+      "qa_groups": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "id": "leather_boots",
+      "source_parts": 26,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 5128,
+      "dimensions_godot": [
+        0.35199999809265137,
+        0.23900000005960464,
+        0.4020000100135803
+      ],
+      "rest_height": 0.13150000375509263,
+      "radius": 0.2405555291956026,
+      "sha256": "a5a889a8497ad0f36a1d8663d68e8545e5a61e47b66c06fd5606e76ec28165ae",
+      "qa_groups": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "id": "brass_brooch",
+      "source_parts": 7,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 2796,
+      "dimensions_godot": [
+        0.3181486427783966,
+        0.06599999964237213,
+        0.3181486427783966
+      ],
+      "rest_height": 0.04499999982118606,
+      "radius": 0.15988034886625013,
+      "sha256": "26234c7bd6e70cc794f6f8f0ca378d20e6265eb89669ef056b8fe0f0cfac1975",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "silver_brooch",
+      "source_parts": 15,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 2756,
+      "dimensions_godot": [
+        0.32999999821186066,
+        0.07400000095367432,
+        0.28951913118362427
+      ],
+      "rest_height": 0.049000000476837155,
+      "radius": 0.1650000150750074,
+      "sha256": "0648d0bc4d32554177341f57f05bc54a9810c528df2d04dd48193f52b627b3fb",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "silver_ring",
+      "source_parts": 5,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 1076,
+      "dimensions_godot": [
+        0.25200000405311584,
+        0.08839230611920357,
+        0.278999999165535
+      ],
+      "rest_height": 0.05619615119695663,
+      "radius": 0.13949999222063258,
+      "sha256": "bf00052b7568fa028c9d0f6f29c27fb77e08f2675124c0a8f90ba75cb16fd6cb",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "executioner_pulley",
+      "source_parts": 14,
+      "meshes": 1,
+      "materials": 1,
+      "triangles": 3256,
+      "dimensions_godot": [
+        0.274162158370018,
+        0.2639999985694885,
+        0.409008264541626
+      ],
+      "rest_height": 0.14399999928474427,
+      "radius": 0.24051497904273764,
+      "sha256": "bf91cbc68ae9d5990ff5736cd972fa7d56ca5b1019470a7c5b5821353f8afa11",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "self_replicating_spring",
+      "source_parts": 13,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 6368,
+      "dimensions_godot": [
+        0.35278773307800293,
+        0.10199999809265137,
+        0.3009999990463257
+      ],
+      "rest_height": 0.06299999904632568,
+      "radius": 0.1836677070044973,
+      "sha256": "8c4255d663f8cee9804852166efd7a4dc05734b6bbab0521669efaae1bdd11da",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "health_m",
+      "source_parts": 5,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 1188,
+      "dimensions_godot": [
+        0.24303999543190002,
+        0.29444125294685364,
+        0.46716807782649994
+      ],
+      "rest_height": 0.15922062647342683,
+      "radius": 0.23358404687995224,
+      "sha256": "549233900fa7ceeeeeb207c17f41c084a255f69f6b461c8e5beac198e2e0f442",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "health_l",
+      "source_parts": 7,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 1308,
+      "dimensions_godot": [
+        0.35873642563819885,
+        0.37927405536174774,
+        0.4413025975227356
+      ],
+      "rest_height": 0.20163703513145448,
+      "radius": 0.23211314027852945,
+      "sha256": "935af995aaa8773ed204cb2e53f529f5fb5f4d13322ea3de00e5fdaf9a0c5ba6",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "mana_s",
+      "source_parts": 5,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 1284,
+      "dimensions_godot": [
+        0.23600000143051147,
+        0.23582200706005096,
+        0.3132930099964142
+      ],
+      "rest_height": 0.1299110035300255,
+      "radius": 0.15747489923608546,
+      "sha256": "425b9d8e04cb2fe11eecdae8a4a31fcce201dfd06d189865df9d7dd8acf4930d",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "mana_m",
+      "source_parts": 5,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 1188,
+      "dimensions_godot": [
+        0.24303999543190002,
+        0.29444125294685364,
+        0.46716807782649994
+      ],
+      "rest_height": 0.15922062647342683,
+      "radius": 0.23358404687995224,
+      "sha256": "2db65373c6aed211a63ba0dcc5294cfd2e3765cfa0a9284137c9591ff31fbbaa",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "mana_l",
+      "source_parts": 7,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 1308,
+      "dimensions_godot": [
+        0.35873642563819885,
+        0.37927405536174774,
+        0.4413025975227356
+      ],
+      "rest_height": 0.20163703513145448,
+      "radius": 0.23211314027852945,
+      "sha256": "b1a81089f321dfe4520d890cc2fa5d956c745078fa49469b731aa31c29de6276",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "rejuv_s",
+      "source_parts": 5,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 1284,
+      "dimensions_godot": [
+        0.23600000143051147,
+        0.23582200706005096,
+        0.3132930099964142
+      ],
+      "rest_height": 0.1299110035300255,
+      "radius": 0.15747489923608546,
+      "sha256": "49c9306f79f1116ad446ed95d65247908c45b21c02eb30cdaa964aa9ba834849",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "rejuv_m",
+      "source_parts": 5,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 1188,
+      "dimensions_godot": [
+        0.24303999543190002,
+        0.29444125294685364,
+        0.46716807782649994
+      ],
+      "rest_height": 0.15922062647342683,
+      "radius": 0.23358404687995224,
+      "sha256": "f5d55727102a489347ea80af31b6d2a3a4af08f9fbe2cda9b0f5e09183655bd5",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "rejuv_l",
+      "source_parts": 7,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 1308,
+      "dimensions_godot": [
+        0.35873642563819885,
+        0.37927405536174774,
+        0.4413025975227356
+      ],
+      "rest_height": 0.20163703513145448,
+      "radius": 0.23211314027852945,
+      "sha256": "0876cd38e46998261c3882a2491c9f5401152d907781a85eb9a52dd52a0d4f3b",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "full_health",
+      "source_parts": 9,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 1172,
+      "dimensions_godot": [
+        0.3213307559490204,
+        0.29042480885982513,
+        0.3725764751434326
+      ],
+      "rest_height": 0.15721241188049317,
+      "radius": 0.18628823595109598,
+      "sha256": "a88d3a28d203072b5ecbb2cd98d15b9f827e42f4a5c001f26fd208c30d76de3a",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "full_mana",
+      "source_parts": 9,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 1172,
+      "dimensions_godot": [
+        0.3213307559490204,
+        0.29042480885982513,
+        0.3725764751434326
+      ],
+      "rest_height": 0.15721241188049317,
+      "radius": 0.18628823595109598,
+      "sha256": "a05e35471dc1513c12b35ce2276426be1f955870ba9d60227f314ab67cd189bc",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "full_rejuv",
+      "source_parts": 9,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 1172,
+      "dimensions_godot": [
+        0.3213307559490204,
+        0.29042480885982513,
+        0.3725764751434326
+      ],
+      "rest_height": 0.15721241188049317,
+      "radius": 0.18628823595109598,
+      "sha256": "a64aabba778e86de815f4c821aaf75d4c92edfcb4f914e81b2cb91980dc3e180",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "speed",
+      "source_parts": 5,
+      "meshes": 1,
+      "materials": 3,
+      "triangles": 960,
+      "dimensions_godot": [
+        0.1459999978542328,
+        0.20159709453582764,
+        0.379537895321846
+      ],
+      "rest_height": 0.11279854726791382,
+      "radius": 0.18976895071470773,
+      "sha256": "fa7e3121cc4aea6dad0bcba583441b92216064636602e7e180def5995133f115",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "currency",
+      "source_parts": 18,
+      "meshes": 1,
+      "materials": 1,
+      "triangles": 3012,
+      "dimensions_godot": [
+        0.24399999529123306,
+        0.05349999852478504,
+        0.23399999737739563
+      ],
+      "rest_height": 0.03875000019371509,
+      "radius": 0.137149656252877,
+      "sha256": "14d79d78cb199421059cc9c89835a4a90dc85260d8a1c4e0a316d7f84b6ccd61",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "bel",
+      "source_parts": 3,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 296,
+      "dimensions_godot": [
+        0.19861194491386414,
+        0.05399705097079277,
+        0.27135929465293884
+      ],
+      "rest_height": 0.03899852548539638,
+      "radius": 0.14436241385839824,
+      "sha256": "bb50429a83915a36a00243856e1f4c1612f549eef7afaf7e9a0a529b4aa9829c",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "rok",
+      "source_parts": 4,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 516,
+      "dimensions_godot": [
+        0.19861194491386414,
+        0.05399976670742035,
+        0.27135929465293884
+      ],
+      "rest_height": 0.03899988335371017,
+      "radius": 0.14436241385839824,
+      "sha256": "80be400f509a6c0775726cf2e38b8aca05671be9549172e91c1fd2545879f8f9",
+      "qa_groups": [
+        "main"
+      ]
+    },
+    {
+      "id": "sha",
+      "source_parts": 4,
+      "meshes": 1,
+      "materials": 2,
+      "triangles": 356,
+      "dimensions_godot": [
+        0.19861194491386414,
+        0.05299878120422363,
+        0.27135929465293884
+      ],
+      "rest_height": 0.03849939060211181,
+      "radius": 0.14436241385839824,
+      "sha256": "f17811e0a3b536f220040836d444d784d0c7449cd943fcb1a5acb4a36db23ea6",
+      "qa_groups": [
+        "main"
+      ]
+    }
+  ],
+  "preserved_v1": [
+    {
+      "id": "health_s",
+      "meshes": 5,
+      "triangles": 1964,
+      "dimensions_godot": [
+        0.23577535152435303,
+        0.23562783002853394,
+        0.31007298827171326
+      ],
+      "rest_height": 0.12981391501426698,
+      "sha256": "0bd93210c7cc52e5df79dbdd13470d4ecfbb2da6bf0cdc02d048ce97d30651b0"
+    },
+    {
+      "id": "copper_ring",
+      "meshes": 4,
+      "triangles": 1660,
+      "dimensions_godot": [
+        0.27000001072883606,
+        0.09724999964237213,
+        0.2889000177383423
+      ],
+      "rest_height": 0.06062499982118606,
+      "sha256": "567dd0480320275e16788b0a08a9c4a070b01ec6f6aafda1605647cd120a7c16"
+    },
+    {
+      "id": "part_cutting",
+      "meshes": 15,
+      "triangles": 4956,
+      "dimensions_godot": [
+        0.468074768781662,
+        0.1860000044107437,
+        0.326149582862854
+      ],
+      "rest_height": 0.10500000220537185,
+      "sha256": "b5543b79a61c5c636bbe3fb1ba92b34e065c532be431175101181d12866ee06e"
+    },
+    {
+      "id": "cotton_coat",
+      "meshes": 13,
+      "triangles": 1556,
+      "dimensions_godot": [
+        0.4393865764141083,
+        0.13750000298023224,
+        0.44999998807907104
+      ],
+      "rest_height": 0.08075000149011612,
+      "sha256": "c2ca3379605198deb7b9dad8d04cca3607a5e1802aa6d3b0e8d2e791e24ca8a2"
+    }
+  ],
+  "total_new_triangles": 71132,
+  "notes": "Original authored static props from the selected inventory icons; source parts retained; vertex-color runtime meshes, <=3 opaque PBR surfaces."
+}

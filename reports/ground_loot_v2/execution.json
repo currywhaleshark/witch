@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\yurib\\Downloads\\Godot_v4.6.2-stable_win64.exe\\Godot_v4.6.2-stable_win64_console.exe",
+    "--path",
+    "game",
+    "--resolution",
+    "1280x800",
+    "--audio-driver",
+    "Dummy",
+    "--script",
+    "res://tests/ground_loot_art_v2.gd",
+    "--log-file",
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\runtime_engine.log",
+    "--",
+    "--capture"
+  ],
+  "exit_code": 0,
+  "seconds": 63.682400941848755
+}

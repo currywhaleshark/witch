@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-02",
+  "timezone": "Asia/Seoul",
+  "user_request": "커밋",
+  "status": "selected_for_prototype",
+  "scope": "The current 35 additional authored ground loot models and complete 39-ID integration, including potion size ordering and the stationary label precision correction.",
+  "preserved": "The four selected v1 GLBs remain byte-identical.",
+  "review": "reports/ground_loot_v2/review.html",
+  "validation": "reports/ground_loot_v2/delivery_manifest.json",
+  "does_not_imply": "Transparent glass, live rigid-body simulation, arbitrary terrain/wall clearance or final mass-drop performance approval."
+}

@@ -1,0 +1,110 @@
+00:03.578  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\props\ground_loot_v2\ground_loot_v2.blend"
+17:32:06 | INFO: Data are loaded, start creating Blender stuff
+17:32:06 | INFO: Blender create Mesh node Brass_pedestal.001
+17:32:06 | INFO: glTF import finished in 0.01s
+17:32:06 | INFO: Data are loaded, start creating Blender stuff
+17:32:06 | INFO: Blender create Mesh node Brass_pedestal.003
+17:32:06 | INFO: glTF import finished in 0.01s
+17:32:06 | INFO: Data are loaded, start creating Blender stuff
+17:32:06 | INFO: Blender create Mesh node Rolled_blue_drafting_sheet.001
+17:32:06 | INFO: glTF import finished in 0.01s
+17:32:06 | INFO: Data are loaded, start creating Blender stuff
+17:32:06 | INFO: Blender create Mesh node Rolled_blue_drafting_sheet.003
+17:32:06 | INFO: glTF import finished in 0.02s
+17:32:06 | INFO: Data are loaded, start creating Blender stuff
+17:32:06 | INFO: Blender create Mesh node Rolled_blue_drafting_sheet.005
+17:32:07 | INFO: glTF import finished in 0.02s
+17:32:07 | INFO: Data are loaded, start creating Blender stuff
+17:32:07 | INFO: Blender create Mesh node Cube.030
+17:32:07 | INFO: glTF import finished in 0.01s
+17:32:07 | INFO: Data are loaded, start creating Blender stuff
+17:32:07 | INFO: Blender create Mesh node Cube.033
+17:32:07 | INFO: glTF import finished in 0.02s
+17:32:07 | INFO: Data are loaded, start creating Blender stuff
+17:32:07 | INFO: Blender create Mesh node Bow_loop.002
+17:32:07 | INFO: glTF import finished in 0.01s
+17:32:07 | INFO: Data are loaded, start creating Blender stuff
+17:32:07 | INFO: Blender create Mesh node Five_point_star.001
+17:32:07 | INFO: glTF import finished in 0.01s
+17:32:07 | INFO: Data are loaded, start creating Blender stuff
+17:32:07 | INFO: Blender create Mesh node Folded_cape.001
+17:32:07 | INFO: glTF import finished in 0.01s
+17:32:07 | INFO: Data are loaded, start creating Blender stuff
+17:32:07 | INFO: Blender create Mesh node Sphere.016
+17:32:07 | INFO: glTF import finished in 0.02s
+17:32:08 | INFO: Data are loaded, start creating Blender stuff
+17:32:08 | INFO: Blender create Mesh node Sphere.040
+17:32:08 | INFO: glTF import finished in 0.02s
+17:32:08 | INFO: Data are loaded, start creating Blender stuff
+17:32:08 | INFO: Blender create Mesh node Sole.002
+17:32:08 | INFO: glTF import finished in 0.02s
+17:32:08 | INFO: Data are loaded, start creating Blender stuff
+17:32:08 | INFO: Blender create Mesh node Sole.006
+17:32:08 | INFO: glTF import finished in 0.03s
+17:32:08 | INFO: Data are loaded, start creating Blender stuff
+17:32:08 | INFO: Blender create Mesh node Twelve_tooth_frame.001
+17:32:08 | INFO: glTF import finished in 0.02s
+17:32:08 | INFO: Data are loaded, start creating Blender stuff
+17:32:08 | INFO: Blender create Mesh node Cylinder.113
+17:32:08 | INFO: glTF import finished in 0.02s
+17:32:09 | INFO: Data are loaded, start creating Blender stuff
+17:32:09 | INFO: Blender create Mesh node Torus.043
+17:32:09 | INFO: glTF import finished in 0.01s
+17:32:09 | INFO: Data are loaded, start creating Blender stuff
+17:32:09 | INFO: Blender create Mesh node Cylinder.123
+17:32:09 | INFO: glTF import finished in 0.01s
+17:32:09 | INFO: Data are loaded, start creating Blender stuff
+17:32:09 | INFO: Blender create Mesh node Cube.093
+17:32:09 | INFO: glTF import finished in 0.04s
+17:32:09 | INFO: Data are loaded, start creating Blender stuff
+17:32:09 | INFO: Blender create Mesh node Liquid_body.001
+17:32:09 | INFO: glTF import finished in 0.01s
+17:32:09 | INFO: Data are loaded, start creating Blender stuff
+17:32:09 | INFO: Blender create Mesh node Liquid_body.003
+17:32:09 | INFO: glTF import finished in 0.01s
+17:32:09 | INFO: Data are loaded, start creating Blender stuff
+17:32:09 | INFO: Blender create Mesh node Liquid_body.005
+17:32:09 | INFO: glTF import finished in 0.01s
+17:32:09 | INFO: Data are loaded, start creating Blender stuff
+17:32:09 | INFO: Blender create Mesh node Liquid_body.007
+17:32:09 | INFO: glTF import finished in 0.01s
+17:32:10 | INFO: Data are loaded, start creating Blender stuff
+17:32:10 | INFO: Blender create Mesh node Liquid_body.009
+17:32:10 | INFO: glTF import finished in 0.02s
+17:32:10 | INFO: Data are loaded, start creating Blender stuff
+17:32:10 | INFO: Blender create Mesh node Liquid_body.011
+17:32:10 | INFO: glTF import finished in 0.01s
+17:32:10 | INFO: Data are loaded, start creating Blender stuff
+17:32:10 | INFO: Blender create Mesh node Liquid_body.013
+17:32:10 | INFO: glTF import finished in 0.01s
+17:32:10 | INFO: Data are loaded, start creating Blender stuff
+17:32:10 | INFO: Blender create Mesh node Liquid_body.015
+17:32:10 | INFO: glTF import finished in 0.02s
+17:32:10 | INFO: Data are loaded, start creating Blender stuff
+17:32:10 | INFO: Blender create Mesh node Liquid_body.017
+17:32:10 | INFO: glTF import finished in 0.01s
+17:32:11 | INFO: Data are loaded, start creating Blender stuff
+17:32:11 | INFO: Blender create Mesh node Liquid_body.019
+17:32:11 | INFO: glTF import finished in 0.01s
+17:32:11 | INFO: Data are loaded, start creating Blender stuff
+17:32:11 | INFO: Blender create Mesh node Liquid_body.021
+17:32:11 | INFO: glTF import finished in 0.01s
+17:32:11 | INFO: Data are loaded, start creating Blender stuff
+17:32:11 | INFO: Blender create Mesh node Liquid_body.023
+17:32:11 | INFO: glTF import finished in 0.01s
+17:32:11 | INFO: Data are loaded, start creating Blender stuff
+17:32:11 | INFO: Blender create Mesh node Cylinder.141
+17:32:11 | INFO: glTF import finished in 0.02s
+17:32:11 | INFO: Data are loaded, start creating Blender stuff
+17:32:11 | INFO: Blender create Mesh node Broken_name_stone.001
+17:32:11 | INFO: glTF import finished in 0.03s
+17:32:11 | INFO: Data are loaded, start creating Blender stuff
+17:32:11 | INFO: Blender create Mesh node Broken_name_stone.003
+17:32:11 | INFO: glTF import finished in 0.01s
+17:32:12 | INFO: Data are loaded, start creating Blender stuff
+17:32:12 | INFO: Blender create Mesh node Broken_name_stone.005
+17:32:12 | INFO: glTF import finished in 0.01s
+GROUND_LOOT_V2_VALIDATION 496 checks; 0 failures []
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

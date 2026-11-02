@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\yurib\\Downloads\\Godot_v4.6.2-stable_win64.exe\\Godot_v4.6.2-stable_win64_console.exe",
+    "--path",
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\game",
+    "--audio-driver",
+    "Dummy",
+    "--log-file",
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\regressions\\items\\engine.log",
+    "--headless",
+    "--script",
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\ground_loot_v2\\regression_scripts\\items.gd"
+  ],
+  "exit_code": 0,
+  "seconds": 9.180649280548096,
+  "changed_inputs": []
+}

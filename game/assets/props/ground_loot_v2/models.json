@@ -1,0 +1,353 @@
+{
+  "health_s": {
+    "path": "res://assets/props/ground_loot_v1/health_s.glb",
+    "rest_height": 0.12981391501426698,
+    "dimensions": [
+      0.23577535152435303,
+      0.23562783002853394,
+      0.31007298827171326
+    ]
+  },
+  "copper_ring": {
+    "path": "res://assets/props/ground_loot_v1/copper_ring.glb",
+    "rest_height": 0.06062499982118606,
+    "dimensions": [
+      0.27000001072883606,
+      0.09724999964237213,
+      0.2889000177383423
+    ]
+  },
+  "part_cutting": {
+    "path": "res://assets/props/ground_loot_v1/part_cutting.glb",
+    "rest_height": 0.10500000220537185,
+    "dimensions": [
+      0.468074768781662,
+      0.1860000044107437,
+      0.326149582862854
+    ]
+  },
+  "cotton_coat": {
+    "path": "res://assets/props/ground_loot_v1/cotton_coat.glb",
+    "rest_height": 0.08075000149011612,
+    "dimensions": [
+      0.4393865764141083,
+      0.13750000298023224,
+      0.44999998807907104
+    ]
+  },
+  "glass_orb": {
+    "path": "res://assets/props/ground_loot_v2/glass_orb.glb",
+    "rest_height": 0.14606582176685334,
+    "dimensions": [
+      0.2636100649833679,
+      0.26813164353370667,
+      0.31483644247055054
+    ]
+  },
+  "crystal_core": {
+    "path": "res://assets/props/ground_loot_v2/crystal_core.glb",
+    "rest_height": 0.13128109079599382,
+    "dimensions": [
+      0.19200000166893005,
+      0.2385621815919876,
+      0.3878049850463867
+    ]
+  },
+  "bp_shotgun": {
+    "path": "res://assets/props/ground_loot_v2/bp_shotgun.glb",
+    "rest_height": 0.037000005960464474,
+    "dimensions": [
+      0.29633915424346924,
+      0.050000011920928955,
+      0.414000004529953
+    ]
+  },
+  "bp_chainsaw": {
+    "path": "res://assets/props/ground_loot_v2/bp_chainsaw.glb",
+    "rest_height": 0.037000005960464474,
+    "dimensions": [
+      0.29633915424346924,
+      0.050000011920928955,
+      0.414000004529953
+    ]
+  },
+  "bp_automaton": {
+    "path": "res://assets/props/ground_loot_v2/bp_automaton.glb",
+    "rest_height": 0.037000005960464474,
+    "dimensions": [
+      0.29633915424346924,
+      0.050000011920928955,
+      0.414000004529953
+    ]
+  },
+  "part_ballistic": {
+    "path": "res://assets/props/ground_loot_v2/part_ballistic.glb",
+    "rest_height": 0.09850000393390655,
+    "dimensions": [
+      0.4207942485809326,
+      0.1730000004172325,
+      0.17132748663425446
+    ]
+  },
+  "part_power": {
+    "path": "res://assets/props/ground_loot_v2/part_power.glb",
+    "rest_height": 0.14118569147586824,
+    "dimensions": [
+      0.37139999866485596,
+      0.25837138295173645,
+      0.18400000035762787
+    ]
+  },
+  "ribbon_tie": {
+    "path": "res://assets/props/ground_loot_v2/ribbon_tie.glb",
+    "rest_height": 0.045749997615814206,
+    "dimensions": [
+      0.3781972825527191,
+      0.06749999895691872,
+      0.29480016231536865
+    ]
+  },
+  "star_pin": {
+    "path": "res://assets/props/ground_loot_v2/star_pin.glb",
+    "rest_height": 0.04699999642372131,
+    "dimensions": [
+      0.3939703404903412,
+      0.06999999657273293,
+      0.301618367433548
+    ]
+  },
+  "quilted_cape": {
+    "path": "res://assets/props/ground_loot_v2/quilted_cape.glb",
+    "rest_height": 0.0692500005364418,
+    "dimensions": [
+      0.4123184084892273,
+      0.1145000010728836,
+      0.38999998569488525
+    ]
+  },
+  "cotton_gloves": {
+    "path": "res://assets/props/ground_loot_v2/cotton_gloves.glb",
+    "rest_height": 0.04999999877810478,
+    "dimensions": [
+      0.42671576142311096,
+      0.07599999755620956,
+      0.3460000157356262
+    ]
+  },
+  "work_gloves": {
+    "path": "res://assets/props/ground_loot_v2/work_gloves.glb",
+    "rest_height": 0.05399999570846557,
+    "dimensions": [
+      0.42671576142311096,
+      0.08399999514222145,
+      0.3460000157356262
+    ]
+  },
+  "sneakers": {
+    "path": "res://assets/props/ground_loot_v2/sneakers.glb",
+    "rest_height": 0.07249999594688415,
+    "dimensions": [
+      0.35199999809265137,
+      0.12099999561905861,
+      0.4020000100135803
+    ]
+  },
+  "leather_boots": {
+    "path": "res://assets/props/ground_loot_v2/leather_boots.glb",
+    "rest_height": 0.13150000375509263,
+    "dimensions": [
+      0.35199999809265137,
+      0.23900000005960464,
+      0.4020000100135803
+    ]
+  },
+  "brass_brooch": {
+    "path": "res://assets/props/ground_loot_v2/brass_brooch.glb",
+    "rest_height": 0.04499999982118606,
+    "dimensions": [
+      0.3181486427783966,
+      0.06599999964237213,
+      0.3181486427783966
+    ]
+  },
+  "silver_brooch": {
+    "path": "res://assets/props/ground_loot_v2/silver_brooch.glb",
+    "rest_height": 0.049000000476837155,
+    "dimensions": [
+      0.32999999821186066,
+      0.07400000095367432,
+      0.28951913118362427
+    ]
+  },
+  "silver_ring": {
+    "path": "res://assets/props/ground_loot_v2/silver_ring.glb",
+    "rest_height": 0.05619615119695663,
+    "dimensions": [
+      0.25200000405311584,
+      0.08839230611920357,
+      0.278999999165535
+    ]
+  },
+  "executioner_pulley": {
+    "path": "res://assets/props/ground_loot_v2/executioner_pulley.glb",
+    "rest_height": 0.14399999928474427,
+    "dimensions": [
+      0.274162158370018,
+      0.2639999985694885,
+      0.409008264541626
+    ]
+  },
+  "self_replicating_spring": {
+    "path": "res://assets/props/ground_loot_v2/self_replicating_spring.glb",
+    "rest_height": 0.06299999904632568,
+    "dimensions": [
+      0.35278773307800293,
+      0.10199999809265137,
+      0.3009999990463257
+    ]
+  },
+  "health_m": {
+    "path": "res://assets/props/ground_loot_v2/health_m.glb",
+    "rest_height": 0.15922062647342683,
+    "dimensions": [
+      0.24303999543190002,
+      0.29444125294685364,
+      0.46716807782649994
+    ]
+  },
+  "health_l": {
+    "path": "res://assets/props/ground_loot_v2/health_l.glb",
+    "rest_height": 0.20163703513145448,
+    "dimensions": [
+      0.35873642563819885,
+      0.37927405536174774,
+      0.4413025975227356
+    ]
+  },
+  "mana_s": {
+    "path": "res://assets/props/ground_loot_v2/mana_s.glb",
+    "rest_height": 0.1299110035300255,
+    "dimensions": [
+      0.23600000143051147,
+      0.23582200706005096,
+      0.3132930099964142
+    ]
+  },
+  "mana_m": {
+    "path": "res://assets/props/ground_loot_v2/mana_m.glb",
+    "rest_height": 0.15922062647342683,
+    "dimensions": [
+      0.24303999543190002,
+      0.29444125294685364,
+      0.46716807782649994
+    ]
+  },
+  "mana_l": {
+    "path": "res://assets/props/ground_loot_v2/mana_l.glb",
+    "rest_height": 0.20163703513145448,
+    "dimensions": [
+      0.35873642563819885,
+      0.37927405536174774,
+      0.4413025975227356
+    ]
+  },
+  "rejuv_s": {
+    "path": "res://assets/props/ground_loot_v2/rejuv_s.glb",
+    "rest_height": 0.1299110035300255,
+    "dimensions": [
+      0.23600000143051147,
+      0.23582200706005096,
+      0.3132930099964142
+    ]
+  },
+  "rejuv_m": {
+    "path": "res://assets/props/ground_loot_v2/rejuv_m.glb",
+    "rest_height": 0.15922062647342683,
+    "dimensions": [
+      0.24303999543190002,
+      0.29444125294685364,
+      0.46716807782649994
+    ]
+  },
+  "rejuv_l": {
+    "path": "res://assets/props/ground_loot_v2/rejuv_l.glb",
+    "rest_height": 0.20163703513145448,
+    "dimensions": [
+      0.35873642563819885,
+      0.37927405536174774,
+      0.4413025975227356
+    ]
+  },
+  "full_health": {
+    "path": "res://assets/props/ground_loot_v2/full_health.glb",
+    "rest_height": 0.15721241188049317,
+    "dimensions": [
+      0.3213307559490204,
+      0.29042480885982513,
+      0.3725764751434326
+    ]
+  },
+  "full_mana": {
+    "path": "res://assets/props/ground_loot_v2/full_mana.glb",
+    "rest_height": 0.15721241188049317,
+    "dimensions": [
+      0.3213307559490204,
+      0.29042480885982513,
+      0.3725764751434326
+    ]
+  },
+  "full_rejuv": {
+    "path": "res://assets/props/ground_loot_v2/full_rejuv.glb",
+    "rest_height": 0.15721241188049317,
+    "dimensions": [
+      0.3213307559490204,
+      0.29042480885982513,
+      0.3725764751434326
+    ]
+  },
+  "speed": {
+    "path": "res://assets/props/ground_loot_v2/speed.glb",
+    "rest_height": 0.11279854726791382,
+    "dimensions": [
+      0.1459999978542328,
+      0.20159709453582764,
+      0.379537895321846
+    ]
+  },
+  "currency": {
+    "path": "res://assets/props/ground_loot_v2/currency.glb",
+    "rest_height": 0.03875000019371509,
+    "dimensions": [
+      0.24399999529123306,
+      0.05349999852478504,
+      0.23399999737739563
+    ]
+  },
+  "bel": {
+    "path": "res://assets/props/ground_loot_v2/bel.glb",
+    "rest_height": 0.03899852548539638,
+    "dimensions": [
+      0.19861194491386414,
+      0.05399705097079277,
+      0.27135929465293884
+    ]
+  },
+  "rok": {
+    "path": "res://assets/props/ground_loot_v2/rok.glb",
+    "rest_height": 0.03899988335371017,
+    "dimensions": [
+      0.19861194491386414,
+      0.05399976670742035,
+      0.27135929465293884
+    ]
+  },
+  "sha": {
+    "path": "res://assets/props/ground_loot_v2/sha.glb",
+    "rest_height": 0.03849939060211181,
+    "dimensions": [
+      0.19861194491386414,
+      0.05299878120422363,
+      0.27135929465293884
+    ]
+  }
+}
