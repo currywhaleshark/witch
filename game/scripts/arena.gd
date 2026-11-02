@@ -660,10 +660,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			show_message("전기톱 Lv %d · 출혈 성장 %s안 · %.1f초 · 일반 %d%%" % [config.chainsaw_level, config.bleed.growth, plan.seconds, roundi(100 * plan.ratio * float(config.bleed.ratio.normal))])
 			return
 		if event.physical_keycode == KEY_B:
-			# Test tool: a boss walks in from a field edge.
-			spawn_enemy("boss_" + str(boss_serial), edge_point(), true, "boss", "latch")
-			boss_serial += 1
-			show_message("보스 등장")
+			call_test_boss()
 			return
 		if event.physical_keycode == KEY_F2:
 			state.mana = 0.0
@@ -752,6 +749,20 @@ func tick_boss_trigger() -> void:
 		boss_spawned = true
 		spawn_enemy("boss_field", Vector3(map.data.boss.pos[0], 0, map.data.boss.pos[1]), true, "boss", "latch")
 		show_message("보스 등장")
+
+func call_test_boss() -> void:
+	# Test tool: the boss appears in the map's boss arena (a field edge on the flat arena), and
+	# only while no boss is on the field. It also stands in for the arena's own entry boss.
+	if enemies.values().any(func(enemy): return config.enemy_types[enemy.kind].has("boss")):
+		show_message("이미 보스가 있습니다")
+		return
+	var pos: Vector3 = edge_point()
+	if map.data.has("boss"):
+		pos = Vector3(map.data.boss.pos[0], 0, map.data.boss.pos[1])
+		boss_spawned = true
+	spawn_enemy("boss_" + str(boss_serial), pos, true, "boss", "latch")
+	boss_serial += 1
+	show_message("보스 등장")
 
 func set_a5_mode(enabled: bool) -> void:
 	save_mana_log("mode_off" if a5_mode else "mode_on")
