@@ -1,0 +1,103 @@
+{
+  "blender": "5.1.1",
+  "checks": [
+    {
+      "label": "health_s saved editable scene",
+      "passed": true
+    },
+    {
+      "label": "health_s saved source triangle count",
+      "passed": true
+    },
+    {
+      "label": "copper_ring saved editable scene",
+      "passed": true
+    },
+    {
+      "label": "copper_ring saved source triangle count",
+      "passed": true
+    },
+    {
+      "label": "part_cutting saved editable scene",
+      "passed": true
+    },
+    {
+      "label": "part_cutting saved source triangle count",
+      "passed": true
+    },
+    {
+      "label": "cotton_coat saved editable scene",
+      "passed": true
+    },
+    {
+      "label": "cotton_coat saved source triangle count",
+      "passed": true
+    },
+    {
+      "label": "health_s export hash",
+      "passed": true
+    },
+    {
+      "label": "health_s reimport dimensions",
+      "passed": true
+    },
+    {
+      "label": "health_s true floor support",
+      "passed": true
+    },
+    {
+      "label": "health_s static unrigged asset",
+      "passed": true
+    },
+    {
+      "label": "copper_ring export hash",
+      "passed": true
+    },
+    {
+      "label": "copper_ring reimport dimensions",
+      "passed": true
+    },
+    {
+      "label": "copper_ring true floor support",
+      "passed": true
+    },
+    {
+      "label": "copper_ring static unrigged asset",
+      "passed": true
+    },
+    {
+      "label": "part_cutting export hash",
+      "passed": true
+    },
+    {
+      "label": "part_cutting reimport dimensions",
+      "passed": true
+    },
+    {
+      "label": "part_cutting true floor support",
+      "passed": true
+    },
+    {
+      "label": "part_cutting static unrigged asset",
+      "passed": true
+    },
+    {
+      "label": "cotton_coat export hash",
+      "passed": true
+    },
+    {
+      "label": "cotton_coat reimport dimensions",
+      "passed": true
+    },
+    {
+      "label": "cotton_coat true floor support",
+      "passed": true
+    },
+    {
+      "label": "cotton_coat static unrigged asset",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "source_sha256": "c0754c954de3b079e24d731d408dc6ce8ce3ea7762245f3917388cae3eecf3b6"
+}

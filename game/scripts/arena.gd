@@ -6,6 +6,7 @@ const ManaProbe = preload("res://scripts/mana_probe.gd")
 const Build = preload("res://scripts/build.gd")
 const Items = preload("res://scripts/items.gd")
 const GroundLoot = preload("res://scripts/ground_loot.gd")
+const GroundLootVisual = preload("res://scripts/ground_loot_visual.gd")
 const InventoryWindow = preload("res://scripts/inventory_window.gd")
 const BuildWindow = preload("res://scripts/build_window.gd")
 const FieldMap = preload("res://scripts/field_map.gd")
@@ -1035,20 +1036,25 @@ func drop_ground_loot(payload: Dictionary, at: Vector3) -> void:
 	var node := Node3D.new()
 	world.add_child(node)
 	var rest_height := 0.05
-	var visual: MeshInstance3D
-	match payload.kind:
-		"currency":
-			rest_height = 0.03
-			visual = Shape.cylinder(node, Vector3.ZERO, 0.16, 0.04, color)
-		"piece":
-			rest_height = 0.04
-			visual = Shape.box(node, Vector3.ZERO, Vector3(0.2, 0.06, 0.28), color)
-		"potion":
-			rest_height = 0.14
-			visual = Shape.cylinder(node, Vector3.ZERO, 0.12, 0.24, color, 0.075)
-			Shape.cylinder(visual, Vector3(0, 0.14, 0), 0.06, 0.04, BRASS)
-		_:
-			visual = Shape.cylinder(node, Vector3.ZERO, 0.17, 0.08, color)
+	var visual: Node3D
+	var authored := GroundLootVisual.create(node, payload)
+	if not authored.is_empty():
+		visual = authored.visual
+		rest_height = authored.rest_height
+	else:
+		match payload.kind:
+			"currency":
+				rest_height = 0.03
+				visual = Shape.cylinder(node, Vector3.ZERO, 0.16, 0.04, color)
+			"piece":
+				rest_height = 0.04
+				visual = Shape.box(node, Vector3.ZERO, Vector3(0.2, 0.06, 0.28), color)
+			"potion":
+				rest_height = 0.14
+				visual = Shape.cylinder(node, Vector3.ZERO, 0.12, 0.24, color, 0.075)
+				Shape.cylinder(visual, Vector3(0, 0.14, 0), 0.06, 0.04, BRASS)
+			_:
+				visual = Shape.cylinder(node, Vector3.ZERO, 0.17, 0.08, color)
 	node.position = spot + Vector3(0, rest_height, 0)
 	GroundLoot.pose_drop(visual, 0.0)
 	var selection := Shape.ring(node, Vector3(0, 0.06 - rest_height, 0), 0.27, Color("fff1c4"), 0.025)
@@ -1103,11 +1109,7 @@ func set_hovered_loot(next: Dictionary) -> void:
 			continue
 		var active := is_same(loot, next)
 		var color: Color = loot.color
-		var material: StandardMaterial3D = loot.visual.material_override
-		material.albedo_color = color.lerp(Color.WHITE, 0.45) if active else color
-		material.emission_enabled = active
-		material.emission = color
-		material.emission_energy_multiplier = 0.9
+		GroundLootVisual.highlight(loot.visual, active, color)
 		loot.selection.visible = active
 	hovered_loot = next
 

@@ -1,0 +1,56 @@
+{
+  "blender": "5.1.1",
+  "source": "assets/props/ground_loot_v1/ground_loot_v1.blend",
+  "assets": [
+    {
+      "id": "health_s",
+      "meshes": 5,
+      "triangles": 1964,
+      "dimensions_godot": [
+        0.23577535152435303,
+        0.23562783002853394,
+        0.31007298827171326
+      ],
+      "rest_height": 0.12981391501426698,
+      "sha256": "0bd93210c7cc52e5df79dbdd13470d4ecfbb2da6bf0cdc02d048ce97d30651b0"
+    },
+    {
+      "id": "copper_ring",
+      "meshes": 4,
+      "triangles": 1660,
+      "dimensions_godot": [
+        0.27000001072883606,
+        0.09724999964237213,
+        0.2889000177383423
+      ],
+      "rest_height": 0.06062499982118606,
+      "sha256": "567dd0480320275e16788b0a08a9c4a070b01ec6f6aafda1605647cd120a7c16"
+    },
+    {
+      "id": "part_cutting",
+      "meshes": 15,
+      "triangles": 4956,
+      "dimensions_godot": [
+        0.468074768781662,
+        0.1860000044107437,
+        0.326149582862854
+      ],
+      "rest_height": 0.10500000220537185,
+      "sha256": "b5543b79a61c5c636bbe3fb1ba92b34e065c532be431175101181d12866ee06e"
+    },
+    {
+      "id": "cotton_coat",
+      "meshes": 13,
+      "triangles": 1556,
+      "dimensions_godot": [
+        0.4393865764141083,
+        0.13750000298023224,
+        0.44999998807907104
+      ],
+      "rest_height": 0.08075000149011612,
+      "sha256": "c2ca3379605198deb7b9dad8d04cca3607a5e1802aa6d3b0e8d2e791e24ca8a2"
+    }
+  ],
+  "total_triangles": 10136,
+  "style": "Original low-detail geometry; opaque materials with broad highlights, no simulation or animation in GLBs."
+}

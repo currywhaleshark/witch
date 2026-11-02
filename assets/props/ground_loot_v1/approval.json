@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-02",
+  "user_request": "커밋하고 푸쉬",
+  "status": "selected_for_prototype",
+  "scope": ["health_s", "copper_ring", "part_cutting", "cotton_coat"],
+  "presentation": "Authored 3D drop models with the existing tumble, label, hover and pickup behavior",
+  "review": "reports/ground_loot_v1/review.html",
+  "validation": "reports/ground_loot_v1/delivery_manifest.json"
+}

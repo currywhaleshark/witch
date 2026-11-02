@@ -203,10 +203,10 @@ func run() -> void:
 	var first: Dictionary = arena.loot_labels()[0]
 	var second: Dictionary = arena.loot_labels()[1]
 	arena.update_loot_hover(first.rect.get_center())
-	check(is_same(arena.hovered_loot, first.loot) and first.loot.selection.visible and first.loot.visual.material_override.emission_enabled, "hovering a label highlights that item and its label")
+	check(is_same(arena.hovered_loot, first.loot) and first.loot.selection.visible and arena.GroundLootVisual.highlighted(first.loot.visual), "hovering a label highlights that item and its label")
 	await capture("crowded_hover")
 	arena.update_loot_hover(second.anchor)
-	check(is_same(arena.hovered_loot, second.loot) and second.loot.selection.visible and not first.loot.selection.visible and not first.loot.visual.material_override.emission_enabled, "moving onto another disc transfers both highlights")
+	check(is_same(arena.hovered_loot, second.loot) and second.loot.selection.visible and not first.loot.selection.visible and not arena.GroundLootVisual.highlighted(first.loot.visual), "moving onto another disc transfers both highlights")
 	arena.update_loot_hover(Vector2(3, 3))
 	check(arena.hovered_loot.is_empty() and not second.loot.selection.visible, "leaving loot clears its highlight")
 	arena.update_loot_hover(Vector2(640, 780))

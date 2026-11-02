@@ -1,0 +1,136 @@
+{
+  "validations": [
+    {
+      "failures": [],
+      "checks": 60,
+      "path": "runtime.json"
+    },
+    {
+      "failures": [],
+      "checks": 24,
+      "path": "asset_validation.json"
+    },
+    {
+      "failures": [],
+      "checks": 55,
+      "path": "ground_loot_regression.json"
+    },
+    {
+      "failures": [],
+      "checks": 26,
+      "path": "loot_resources_regression.json"
+    },
+    {
+      "failures": [],
+      "checks": 61,
+      "path": "items_regression.json"
+    }
+  ],
+  "captures": [
+    "flat_launch.png",
+    "flat_tumble.png",
+    "flat_native.png",
+    "alley_launch.png",
+    "alley_tumble.png",
+    "alley_native.png",
+    "alley_hidden.png",
+    "alley_hover_health_s.png",
+    "alley_hover_copper_ring.png",
+    "alley_hover_part_cutting.png",
+    "alley_hover_cotton_coat.png",
+    "detail_lineup.png"
+  ],
+  "scope": [
+    "health_s",
+    "copper_ring",
+    "part_cutting",
+    "cotton_coat"
+  ],
+  "inputs": [
+    {
+      "sha256": "1fb8b4c0db9a04dcd001a0893dd0f24226f8785557dff83349764d4f00600af9",
+      "path": "game/scripts/arena.gd"
+    },
+    {
+      "sha256": "ac97934702d10174e83f6bfb012611e673769d1e39eecf194ddc26fa35aaeedb",
+      "path": "game/scripts/ground_loot.gd"
+    },
+    {
+      "sha256": "52a22e87a81dd634ed6b8a64f0742771186a32b24e7ab163dc79ef442a544c78",
+      "path": "game/scripts/ground_loot_visual.gd"
+    },
+    {
+      "sha256": "66081c43a95c05071a1985575f4713ccd87adfff6fb6bd627683bf0e1adb2f56",
+      "path": "game/tests/ground_loot_art.gd"
+    },
+    {
+      "sha256": "842d7eb4c65af0f04370ddba985d106e11d6214face70c6b63e6a05851693f33",
+      "path": "game/tests/ground_loot.gd"
+    },
+    {
+      "sha256": "67a98248bc5afb70127d6b08df3ad04594131517af759535dd565881a01bb23e",
+      "path": "tools/build_ground_loot_v1.py"
+    },
+    {
+      "sha256": "5d234a3fd5b3fa806b1ad500fd7decf2552e237a6b25bed73781e28ce53559e8",
+      "path": "tools/validate_ground_loot_v1.py"
+    },
+    {
+      "sha256": "c0754c954de3b079e24d731d408dc6ce8ce3ea7762245f3917388cae3eecf3b6",
+      "path": "assets/props/ground_loot_v1/ground_loot_v1.blend"
+    },
+    {
+      "sha256": "b1f5d5e778bbf6ad509e7022f8c232f6e59882422068531706439837f3e10ac2",
+      "path": "assets/props/ground_loot_v1/models.json"
+    },
+    {
+      "sha256": "a9bd3ed11ccadfc6d17d5ca5c9cf6108ed7c39392eb3842eb1b704eeb757a4b5",
+      "path": "game/assets/props/ground_loot_v1/models.json"
+    },
+    {
+      "sha256": "567dd0480320275e16788b0a08a9c4a070b01ec6f6aafda1605647cd120a7c16",
+      "path": "game/assets/props/ground_loot_v1/copper_ring.glb"
+    },
+    {
+      "sha256": "27c1ab38a9bc1755db73d3ed94a4c1cbca7a993db5119b791b6fde0d123d6e53",
+      "path": "game/assets/props/ground_loot_v1/copper_ring.glb.import"
+    },
+    {
+      "sha256": "c2ca3379605198deb7b9dad8d04cca3607a5e1802aa6d3b0e8d2e791e24ca8a2",
+      "path": "game/assets/props/ground_loot_v1/cotton_coat.glb"
+    },
+    {
+      "sha256": "1866e8c1e8cef6bb97d6bda24d02b1a9df52ef404b837406eb6831a8c6e9a125",
+      "path": "game/assets/props/ground_loot_v1/cotton_coat.glb.import"
+    },
+    {
+      "sha256": "0bd93210c7cc52e5df79dbdd13470d4ecfbb2da6bf0cdc02d048ce97d30651b0",
+      "path": "game/assets/props/ground_loot_v1/health_s.glb"
+    },
+    {
+      "sha256": "205d56a4d2b286d5c8b4d18b592e6740b3dcbb5124aeec405a05bb03d82876fd",
+      "path": "game/assets/props/ground_loot_v1/health_s.glb.import"
+    },
+    {
+      "sha256": "b5543b79a61c5c636bbe3fb1ba92b34e065c532be431175101181d12866ee06e",
+      "path": "game/assets/props/ground_loot_v1/part_cutting.glb"
+    },
+    {
+      "sha256": "e6e3234be0c0a84b638d73bc6ca40ef27fce9168c37c8b11e7f521f7a66e3f51",
+      "path": "game/assets/props/ground_loot_v1/part_cutting.glb.import"
+    }
+  ],
+  "limits": [
+    "Four IDs only",
+    "Opaque bottle representation",
+    "Existing cosmetic drop motion; no new rigid-body physics",
+    "No exhaustive arbitrary terrain/prop clearance or mass-drop performance claim"
+  ],
+  "visual_review": "Native courtyard, tumble, material highlight and enlarged four-model lineup inspected. Review waits for elevated floor collision/navigation; enemies moved off-screen.",
+  "source": "Original Blender geometry, inventory PNGs used only as visual references",
+  "native_camera_size": 10.0192031860352,
+  "date": "2026-11-02",
+  "detail_zoom": 2.7,
+  "user_art_selection": true,
+  "approval": "../../assets/props/ground_loot_v1/approval.json"
+}

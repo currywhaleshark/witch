@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>필드 드롭 모델 · 네 종류 시범</title>
+<style>
+body{margin:0;background:#101c23;color:#e3e9df;font:16px/1.65 system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:28px 20px 70px}h1{font-size:29px;margin-bottom:8px}h2{font-size:21px;margin-top:32px}p{color:#b6c6cb}a{color:#d8b77b}img.shot{display:block;width:100%;height:auto;border:1px solid #3e555e}.refs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.ref{background:#172b34;text-align:center;padding:12px}.ref img{height:108px;max-width:90%;object-fit:contain}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}button{background:#213b45;border:1px solid #526166;color:#e3e9df;padding:8px 16px;cursor:pointer}button.active{border-color:#d8b77b;color:#d8b77b}small{color:#a2b2b7}
+</style>
+<main>
+<h1>필드 드롭 모델 · 네 종류 시범</h1>
+<p>소형 체력 물약 · 구리 반지 · 절삭 부품 · 접힌 무명 겉옷을 실제 필드에 연결했습니다.</p>
+<div class="refs">
+<div class="ref"><img src="../../game/assets/ui/inventory_v1/health_s.png" alt="체력 물약 아이콘"><div>소형 체력 물약</div></div>
+<div class="ref"><img src="../../game/assets/ui/inventory_v1/copper_ring.png" alt="구리 반지 아이콘"><div>구리 반지</div></div>
+<div class="ref"><img src="../../game/assets/ui/inventory_v1/part_cutting.png" alt="절삭 부품 아이콘"><div>절삭 부품</div></div>
+<div class="ref"><img src="../../game/assets/ui/inventory_v1/cotton_coat.png" alt="무명 겉옷 아이콘"><div>무명 겉옷 → 접힌 옷</div></div>
+</div>
+<h2>모델 모양 확인 · 2.7배 확대</h2>
+<p>왼쪽부터 물약, 반지, 절삭 부품, 접힌 옷입니다. 실제 골목 조명과 그림자를 사용했습니다.</p>
+<a href="detail_lineup.png"><img class="shot" src="detail_lineup.png" alt="네 3D 드롭 모델 확대"></a>
+<h2>기본 게임 시점 · 낙하와 선택</h2>
+<p>기본 카메라 배율의 1280×800 캡처입니다. 버튼으로 떨어지는 모습과 숨김·강조 상태를 비교할 수 있습니다.</p>
+<div class="tabs">
+<button data-shot="alley_native" class="active">착지</button><button data-shot="alley_launch">낙하 시작</button><button data-shot="alley_tumble">회전 중</button><button data-shot="alley_hidden">5초 후</button><button data-shot="alley_hover_health_s">물약 강조</button><button data-shot="alley_hover_copper_ring">반지 강조</button><button data-shot="alley_hover_part_cutting">부품 강조</button><button data-shot="alley_hover_cotton_coat">옷 강조</button>
+</div>
+<img id="state" class="shot" src="alley_native.png" alt="기본 게임 시점의 필드 아이템">
+<p><a href="../../assets/props/ground_loot_v1/README.md">모델·원본·재현 방법</a> · <a href="delivery_manifest.json">검증 기록</a></p>
+<small>네 종류만 적용했으며 2026-11-02 사용자가 현재 외형을 프로토타입용으로 선택했습니다. Blender 저장본/재임포트 24항목, GPU 런타임 60항목, 기존 전리품·자원·아이템 142항목 통과. 리뷰에서는 적을 화면 밖으로 옮겼습니다.</small>
+</main>
+<script>document.querySelectorAll('[data-shot]').forEach(button=>button.onclick=()=>{document.querySelector('#state').src=button.dataset.shot+'.png';document.querySelectorAll('[data-shot]').forEach(b=>b.classList.toggle('active',b===button));});</script>
+</html>
