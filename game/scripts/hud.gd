@@ -93,12 +93,16 @@ func _draw() -> void:
 			centered(p + Vector2(0, -8), " · ".join(debuffs), 11, TEAL)
 		elif enemy.windup > 0:
 			centered(p + Vector2(0, -8), "!", 17, RED)
-	# Loot on the field shows its name in its rarity colour.
-	for loot in arena.ground_items:
-		if not is_instance_valid(loot.node) or arena.camera.is_position_behind(loot.node.position):
-			continue
-		var at: Vector2 = arena.camera.unproject_position(loot.node.position + Vector3.UP * 0.3)
-		centered(at, loot.item.name, 13, Color(arena.items.data.rarity_colors[loot.item.rarity]))
+	# Drawing and clicks use the same separated rectangles, including when the camera moves.
+	for entry in arena.loot_labels():
+		var loot: Dictionary = entry.loot
+		var rect: Rect2 = entry.rect
+		var loot_active := is_same(loot, arena.hovered_loot)
+		var color: Color = loot.color
+		panel(rect, Color("304548f5") if loot_active else Color("0d1b24e8"), Color("fff1c4") if loot_active else Color(color, 0.5))
+		if loot_active:
+			draw_rect(rect, Color("fff1c4"), false, 2.0)
+		label_at(rect.position + Vector2(7, 4 + font.get_ascent(13)), loot.name, 13, color.lerp(Color.WHITE, 0.3) if loot_active else color)
 	for ally in arena.allies:
 		# Summon durability: a thin teal bar only once it has been hit.
 		if ally.hp >= ally.max_hp or arena.camera.is_position_behind(ally.node.position):
@@ -186,7 +190,11 @@ func _draw() -> void:
 		label_at(Vector2(40, 177), "버프  ·  이동 속도 +%d%%  ·  %d초" % [roundi(100 * arena.config.potions.speed.speed_bonus), ceili(arena.speed_buff)], 13, Color("a8d672"))
 	if arena.a5_mode:
 		a5_panel(Vector2(24, 193))
-	if arena.paused or arena.hp <= 0 or arena.field_cleared():
+	if arena.field_cleared() and not arena.ground_items.is_empty() and not arena.paused and arena.hp > 0:
+		panel(Rect2(w / 2 - 180, 22, 360, 62), INK, GOLD)
+		centered(Vector2(w / 2, 47), "필드 정리 완료", 20, PAPER)
+		centered(Vector2(w / 2, 69), "전리품 클릭하여 줍기  ·  Enter 다시 시작", 13, MUTED)
+	elif arena.paused or arena.hp <= 0 or arena.field_cleared():
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0.025, 0.055, 0.07, 0.82))
 		var title = "잠시 정지" if arena.paused else ("마녀가 쓰러졌습니다" if arena.hp <= 0 else "필드 정리 완료")
 		centered(Vector2(w / 2, h / 2 - 82), "MACHINERY / TEST FIELD", 13, GOLD)

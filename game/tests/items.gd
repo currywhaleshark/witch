@@ -34,6 +34,11 @@ func fresh(spot: Vector3 = Vector3(2, 0, 0)) -> void:
 	arena.config.enemy_speed = 0
 	arena.config.mana_regen = 0
 	arena.muted = true
+	# Resource rewards have their own pickup regression; isolate these equipment counts.
+	for grade in arena.items.data.currency.drops:
+		arena.items.data.currency.drops[grade].chance = 0.0
+		arena.items.data.piece_drops[grade] = 0.0
+		arena.items.data.potion_drops.chance[grade] = 0.0
 	arena.force_rolls = {"hit": true, "crit": false}
 	for id in arena.enemies.keys():
 		arena.enemies[id].body.free()
@@ -66,7 +71,12 @@ func click_loot(loot: Dictionary, on_name: bool = false) -> void:
 	var press := InputEventMouseButton.new()
 	press.button_index = MOUSE_BUTTON_LEFT
 	press.pressed = true
-	press.position = arena.camera.unproject_position(loot.node.position + (Vector3.UP * 0.3 if on_name else Vector3.ZERO)) - (Vector2(0, 6) if on_name else Vector2.ZERO)
+	press.position = arena.camera.unproject_position(loot.visual.global_position)
+	if on_name:
+		for entry in arena.loot_labels():
+			if is_same(entry.loot, loot):
+				press.position = entry.rect.get_center()
+				break
 	root.push_input(press, true)
 	var release: InputEventMouseButton = press.duplicate()
 	release.pressed = false

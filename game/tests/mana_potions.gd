@@ -78,10 +78,15 @@ func run() -> void:
 	arena.enemies.t0.hp = 1.0
 	arena.strike("t0", 10.0, false, "witch", "staff")
 	data.potion_drops.chance.normal = 0.08
+	var dropped: Array = arena.ground_items.filter(func(loot): return loot.kind == "potion")
+	check(dropped.size() == 1 and arena.potion_stash.values().all(func(count): return count == 0), "a defeated enemy leaves its potion on the ground until picked up")
+	for loot in dropped:
+		arena.player.position = loot.node.position
+		arena.pick_up(loot)
 	var stashed := 0
 	for id in arena.potion_stash:
 		stashed += arena.potion_stash[id]
-	check(stashed == 1, "enemies sometimes drop a potion into the stash")
+	check(stashed == 1, "a picked-up potion enters its stash")
 	arena.coins = 30
 	var owned: int = arena.potion_stash.health_m
 	check(arena.buy_potion("health_m") and arena.coins == 30 - int(data.potion_prices.health_m) and arena.potion_stash.health_m == owned + 1, "the trial shop sells a potion for 각인전")

@@ -5,6 +5,7 @@ const Hud = preload("res://scripts/hud.gd")
 const ManaProbe = preload("res://scripts/mana_probe.gd")
 const Build = preload("res://scripts/build.gd")
 const Items = preload("res://scripts/items.gd")
+const GroundLoot = preload("res://scripts/ground_loot.gd")
 const InventoryWindow = preload("res://scripts/inventory_window.gd")
 const BuildWindow = preload("res://scripts/build_window.gd")
 const FieldMap = preload("res://scripts/field_map.gd")
@@ -63,6 +64,11 @@ var dash: Dictionary = {}
 var items: RefCounted
 var loot_rng = RandomNumberGenerator.new()
 var ground_items: Array = []
+var deferred_ground_items: Array = []
+var loot_layout := GroundLoot.new()
+var hovered_loot: Dictionary = {}
+var show_all_loot_labels := false
+var loot_pointer := Vector2.ZERO
 # The loot she was clicked over to; it goes into the bag once she is near it.
 var loot_target: Dictionary = {}
 var bag: Array = []
@@ -317,6 +323,9 @@ func reset_arena() -> void:
 		if is_instance_valid(loot.node):
 			loot.node.free()
 	ground_items.clear()
+	deferred_ground_items.clear()
+	hovered_loot = {}
+	loot_layout.invalidate()
 	loot_target = {}
 	if held_item != null and stow(held_item):
 		held_item = null
@@ -483,6 +492,22 @@ func dress_enemy(enemy: Dictionary, outlined: bool, alive: bool = true) -> void:
 	for mesh in enemy.model.find_children("*", "MeshInstance3D", true, false):
 		mesh.material_overlay = enemy_overlays[key]
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouse:
+		loot_pointer = event.position
+	# Observe releases before GUI controls, so Alt cannot stick after moving over a window.
+	if event is InputEventKey and event.physical_keycode == KEY_ALT:
+		if not event.echo:
+			show_all_loot_labels = event.pressed and not loading
+			if not show_all_loot_labels:
+				# An expired label revealed by Alt must not keep itself alive through label hover.
+				set_hovered_loot({})
+				if is_instance_valid(player_visual):
+					update_loot_hover(loot_pointer)
+			if is_instance_valid(hud):
+				hud.queue_redraw()
+		get_viewport().set_input_as_handled()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if loading:
 		return
@@ -635,6 +660,10 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		hold.clear()
 		move_hold.clear()
+		show_all_loot_labels = false
+		set_hovered_loot({})
+		if is_instance_valid(hud):
+			hud.queue_redraw()
 	elif what == NOTIFICATION_WM_CLOSE_REQUEST:
 		save_mana_log("quit")
 
@@ -931,20 +960,18 @@ func reroll(slot: String, affix: int) -> bool:
 	refresh_gear()
 	return true
 
-func earn_spoils(grade: String) -> void:
-	# 각인전 and name pieces go straight into the purse; items still drop on the ground.
+func drop_spoils(grade: String, at: Vector3) -> void:
+	# Keep the existing roll order and quantities; ownership changes only on pickup.
 	var drop: Dictionary = items.data.currency.drops.get(grade, items.data.currency.drops.normal)
 	if loot_rng.randf() < float(drop.chance):
-		coins += loot_rng.randi_range(int(drop.range[0]), int(drop.range[1]))
+		drop_resource("currency", "", loot_rng.randi_range(int(drop.range[0]), int(drop.range[1])), at)
 	var potions: Dictionary = items.data.potion_drops
 	if loot_rng.randf() < float(potions.chance.get(grade, 0.0)):
 		var potion: String = items.weighted(loot_rng, potions.weights)
-		potion_stash[potion] += 1
-		show_message("%s 획득" % config.potions[potion].name)
+		drop_resource("potion", potion, 1, at)
 	if loot_rng.randf() < float(items.data.piece_drops.get(grade, 0.0)):
 		var id: String = items.data.pieces.keys()[loot_rng.randi_range(0, items.data.pieces.size() - 1)]
-		pieces[id] += 1
-		show_message("%s 획득" % items.data.pieces[id].name)
+		drop_resource("piece", id, 1, at)
 
 func drop_loot(grade: String, at: Vector3) -> void:
 	# Item level is the trial character level, +1 for elites and +2 for bosses (04 §4.3).
@@ -953,24 +980,114 @@ func drop_loot(grade: String, at: Vector3) -> void:
 		drop_item(item, at + Vector3(loot_rng.randf_range(-0.5, 0.5), 0, loot_rng.randf_range(-0.5, 0.5)))
 
 func drop_item(item: Dictionary, at: Vector3) -> void:
-	var color := Color(items.data.rarity_colors[item.rarity])
-	var node: MeshInstance3D = Shape.cylinder(world, map.grounded(at) + Vector3(0, 0.05, 0), 0.17, 0.08, color)
-	ground_items.append({"item": item, "node": node})
+	drop_ground_loot({"kind": "equipment", "item": item, "name": item.name, "color": Color(items.data.rarity_colors[item.rarity])}, at)
+
+func drop_resource(kind: String, id: String, amount: int, at: Vector3) -> void:
+	var title: String
+	var color: Color
+	match kind:
+		"currency":
+			title = "%d %s" % [amount, items.data.currency.name]
+			color = GOLD_FLASH
+		"piece":
+			title = items.data.pieces[id].name
+			color = Color("c9a0dc")
+		"potion":
+			title = config.potions[id].name
+			color = Hud.POTION_COLORS[config.potions[id].kind]
+		_:
+			return
+	if amount <= 0:
+		return
+	if kind != "currency" and amount > 1:
+		title += " × %d" % amount
+	drop_ground_loot({"kind": kind, "id": id, "amount": amount, "name": title, "color": color}, at)
+
+func drop_ground_loot(payload: Dictionary, at: Vector3) -> void:
+	var spot = GroundLoot.find_position(map, at, ground_items)
+	if spot == null:
+		deferred_ground_items.append({"loot": payload, "at": at})
+		return
+	var color: Color = payload.color
+	# The pickup destination stays on the floor while only the visible mesh falls and spins.
+	var node := Node3D.new()
+	world.add_child(node)
+	var rest_height := 0.05
+	var visual: MeshInstance3D
+	match payload.kind:
+		"currency":
+			rest_height = 0.03
+			visual = Shape.cylinder(node, Vector3.ZERO, 0.16, 0.04, color)
+		"piece":
+			rest_height = 0.04
+			visual = Shape.box(node, Vector3.ZERO, Vector3(0.2, 0.06, 0.28), color)
+		"potion":
+			rest_height = 0.14
+			visual = Shape.cylinder(node, Vector3.ZERO, 0.12, 0.24, color, 0.075)
+			Shape.cylinder(visual, Vector3(0, 0.14, 0), 0.06, 0.04, BRASS)
+		_:
+			visual = Shape.cylinder(node, Vector3.ZERO, 0.17, 0.08, color)
+	node.position = spot + Vector3(0, rest_height, 0)
+	GroundLoot.pose_drop(visual, 0.0)
+	var selection := Shape.ring(node, Vector3(0, 0.06 - rest_height, 0), 0.27, Color("fff1c4"), 0.025)
+	selection.visible = false
+	ground_items.append(payload.merged({"node": node, "visual": visual, "selection": selection, "age": 0.0}))
+	loot_layout.invalidate()
+
+func tick_ground_loot(dt: float) -> void:
+	if paused:
+		return
+	var moved := false
+	for loot in ground_items:
+		var before: float = loot.age
+		loot.age = minf(GroundLoot.LABEL_SECONDS, before + dt)
+		if before < GroundLoot.DROP_SECONDS:
+			GroundLoot.pose_drop(loot.visual, loot.age)
+			moved = true
+	if moved:
+		loot_layout.invalidate()
+
+func loot_labels() -> Array:
+	var shown: Array = []
+	for loot in ground_items:
+		if show_all_loot_labels or loot.age < GroundLoot.LABEL_SECONDS or is_same(loot, hovered_loot):
+			shown.append(loot.node.get_instance_id())
+	var focused: int = 0 if hovered_loot.is_empty() else hovered_loot.node.get_instance_id()
+	return loot_layout.labels(ground_items, camera, hud.font, get_viewport().get_visible_rect().size, shown, focused)
+
+func loot_pointer_available(screen: Vector2) -> bool:
+	if not Rect2(Vector2.ZERO, get_viewport().get_visible_rect().size - Vector2(0, 155)).has_point(screen):
+		return false
+	for window in [inventory_window, character_window, skill_window]:
+		if is_instance_valid(window) and window.is_visible_in_tree() and window.get_global_rect().has_point(screen):
+			return false
+	return true
 
 func loot_at(screen: Vector2) -> Dictionary:
-	# The loot under the cursor: its disc on the ground or the name drawn above it. Where drops
-	# overlap, the last one dropped (its name drawn on top) comes first.
-	for index in range(ground_items.size() - 1, -1, -1):
-		var loot: Dictionary = ground_items[index]
-		if not is_instance_valid(loot.node) or camera.is_position_behind(loot.node.position):
+	return GroundLoot.pick(screen, loot_labels(), ground_items, camera) if loot_pointer_available(screen) else {}
+
+func update_loot_hover(screen: Vector2) -> void:
+	loot_pointer = screen
+	var next: Dictionary = {}
+	if not loading and not paused and hp > 0 and not player_visual.field_entry_active() and held_item == null and held_piece == "":
+		next = loot_at(screen)
+	set_hovered_loot(next)
+
+func set_hovered_loot(next: Dictionary) -> void:
+	if is_same(next, hovered_loot):
+		return
+	for loot in [hovered_loot, next]:
+		if loot.is_empty() or not is_instance_valid(loot.node):
 			continue
-		if camera.unproject_position(loot.node.position).distance_to(screen) <= 22:
-			return loot
-		var label: Vector2 = camera.unproject_position(loot.node.position + Vector3.UP * 0.3)
-		var width: float = hud.font.get_string_size(loot.item.name, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x
-		if Rect2(label.x - width / 2 - 4, label.y - 16, width + 8, 20).has_point(screen):
-			return loot
-	return {}
+		var active := is_same(loot, next)
+		var color: Color = loot.color
+		var material: StandardMaterial3D = loot.visual.material_override
+		material.albedo_color = color.lerp(Color.WHITE, 0.45) if active else color
+		material.emission_enabled = active
+		material.emission = color
+		material.emission_energy_multiplier = 0.9
+		loot.selection.visible = active
+	hovered_loot = next
 
 func pick_up(loot: Dictionary) -> void:
 	# A click on loot walks her over to it; walking past loot never picks it up.
@@ -997,12 +1114,27 @@ func tick_pickup() -> void:
 	loot_target = {}
 	moving = false
 	move_marker.visible = false
-	if not stow(loot.item):
-		show_message("가방에 자리가 없습니다")
-		return
+	match loot.kind:
+		"equipment":
+			if not stow(loot.item):
+				show_message("가방에 자리가 없습니다")
+				return
+		"currency":
+			coins += int(loot.amount)
+		"piece":
+			pieces[loot.id] += int(loot.amount)
+		"potion":
+			potion_stash[loot.id] += int(loot.amount)
 	loot.node.queue_free()
 	ground_items.remove_at(index)
-	show_message(items.display_name(loot.item))
+	if is_same(hovered_loot, loot):
+		hovered_loot = {}
+	loot_layout.invalidate()
+	var waiting := deferred_ground_items.duplicate()
+	deferred_ground_items.clear()
+	for entry in waiting:
+		drop_ground_loot(entry.loot, entry.at)
+	show_message(items.display_name(loot.item) if loot.kind == "equipment" else loot.name + " 획득")
 	refresh_build_windows()
 
 func sync_tool_upkeep() -> void:
@@ -1516,6 +1648,29 @@ func set_destination(pos: Vector3) -> void:
 	move_marker.position = destination + Vector3(0, 0.04, 0)
 	move_marker.visible = true
 
+func walk_to_destination(dt: float) -> void:
+	var delta: Vector3 = destination - player.position
+	# Feet always follow the floor, so arrival is about where she stands, not how high.
+	delta.y = 0.0
+	if delta.length() < (0.01 if not pending_cast.is_empty() else 0.15):
+		moving = false
+		move_marker.visible = false
+	else:
+		var speed: float = config.player_speed * (1.0 + (config.potions.speed.speed_bonus if speed_buff > 0 else 0.0)) * (1.0 + gear_total("move_speed") / 100.0)
+		var step: Vector3 = follow(player_route, player.position, destination, 0.5, dt) - player.position
+		step.y = 0
+		if step.length() < 0.001:
+			step = delta
+		var before: Vector3 = player.position
+		player.velocity = step.normalized() * minf(speed, step.length() / dt)
+		player.move_and_slide()
+		player_model.look_at(player.position + step.normalized())
+		var made := Vector2(player.position.x - before.x, player.position.z - before.z).length()
+		if pending_cast.is_empty() and delta.length() < 0.6 and made < 0.1 * minf(speed * dt, delta.length()):
+			# Stop at an obstructing step or prop edge instead of pushing into it indefinitely.
+			moving = false
+			move_marker.visible = false
+
 func tick_pending_cast(dt: float) -> void:
 	if pending_cast.is_empty():
 		return
@@ -1867,7 +2022,7 @@ func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 		enemies.erase(id)
 		kills += 1
 		drop_loot(enemy.grade, enemy.body.position)
-		earn_spoils(enemy.grade)
+		drop_spoils(enemy.grade, enemy.body.position)
 		# 「록」 in the medium: each kill mends a little.
 		if hp > 0 and gear_total("life_on_kill") > 0:
 			hp = minf(config.max_hp, hp + gear_total("life_on_kill"))
@@ -2213,10 +2368,19 @@ func _physics_process(dt: float) -> void:
 		map.fade_between(camera.global_position,player.position+Vector3.UP)
 		hud.queue_redraw()
 		return
+	tick_ground_loot(dt)
 	sync_automaton_cost()
 	if not paused and field_cleared():
 		cancel_summon_assemblies("field_cleared")
 	var visual_start_position := player.position
+	var collecting_after_clear := field_cleared() and not loot_target.is_empty()
+	if not paused and hp > 0 and collecting_after_clear:
+		# Collect the final enemy's drops without restarting any combat/resource clocks.
+		tick_pickup()
+		if moving and not loot_target.is_empty():
+			walk_to_destination(dt)
+			player.position.y = map.ground_y(player.position)
+			tick_pickup()
 	if not paused and hp > 0 and not field_cleared():
 		elapsed += dt
 		var advanced: Dictionary = rules.advance(state, dt)
@@ -2250,28 +2414,7 @@ func _physics_process(dt: float) -> void:
 		if not dash.is_empty():
 			tick_dash(dt)
 		elif moving and action_time <= 0:
-			var delta: Vector3 = destination - player.position
-			# Feet always follow the floor, so arrival is about where she stands, not how high.
-			delta.y = 0.0
-			if delta.length() < (0.01 if not pending_cast.is_empty() else 0.15):
-				moving = false
-				move_marker.visible = false
-			else:
-				var speed: float = config.player_speed * (1.0 + (config.potions.speed.speed_bonus if speed_buff > 0 else 0.0)) * (1.0 + gear_total("move_speed") / 100.0)
-				var step: Vector3 = follow(player_route, player.position, destination, 0.5, dt) - player.position
-				step.y = 0
-				if step.length() < 0.001:
-					step = delta
-				var before: Vector3 = player.position
-				player.velocity = step.normalized() * minf(speed, step.length() / dt)
-				player.move_and_slide()
-				player_model.look_at(player.position + step.normalized())
-				var made := Vector2(player.position.x - before.x, player.position.z - before.z).length()
-				if pending_cast.is_empty() and delta.length() < 0.6 and made < 0.1 * minf(speed * dt, delta.length()):
-					# Blocked just short of the spot by a step or prop edge: stop there instead of
-					# pushing against it for as long as the order stands.
-					moving = false
-					move_marker.visible = false
+			walk_to_destination(dt)
 		# Feet follow the floor: bodies only collide with walls, so steps lift them here.
 		player.position.y = map.ground_y(player.position)
 		for id in enemies.keys():
@@ -2294,7 +2437,7 @@ func _physics_process(dt: float) -> void:
 	if is_instance_valid(grinder_disk) and state.active_tool == "grinder" and not paused and hp > 0 and not field_cleared():
 		grinder_disk.rotate_object_local(Vector3.UP, dt * 18)
 	var visual_distance := player.position.distance_to(visual_start_position)
-	player_visual.sync_state(dt, visual_distance > 0.0001, action_time, paused, hp <= 0, field_cleared(), visual_distance / maxf(dt, 0.000001))
+	player_visual.sync_state(dt, visual_distance > 0.0001, 0.0 if collecting_after_clear else action_time, paused, hp <= 0, field_cleared() and not (collecting_after_clear and visual_distance > 0.0001), visual_distance / maxf(dt, 0.000001))
 	tick_staff_trail(dt)
 	shield_ring.visible = false
 	place_camera(player.position)
@@ -2303,7 +2446,9 @@ func _physics_process(dt: float) -> void:
 		# Short crit or boss-impact jolt; the camera angle never changes, only a small offset.
 		shake_time = maxf(0, shake_time - dt)
 		camera.position += Vector3(sin(elapsed * 90), 0, cos(elapsed * 77)) * 0.06
-	var hovered = pick_cursor(get_viewport().get_mouse_position())
+	var mouse := get_viewport().get_mouse_position()
+	update_loot_hover(mouse)
+	var hovered = pick_cursor(mouse) if hovered_loot.is_empty() and loot_pointer_available(mouse) else {}
 	hover_id = hovered.get("enemy_id", "")
 	hover_ring.visible = enemies.has(hover_id)
 	if hover_id != outlined_id:

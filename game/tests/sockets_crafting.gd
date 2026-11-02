@@ -164,10 +164,15 @@ func run() -> void:
 	arena.strike("t0", 10.0, false, "witch", "staff")
 	data.currency.drops.normal.chance = 0.4
 	data.piece_drops.normal = 0.03
+	check(arena.coins == 0 and arena.pieces.values().all(func(count): return count == 0), "kills leave currency and name pieces unowned on the ground")
+	for loot in arena.ground_items.duplicate():
+		if loot.kind in ["currency", "piece"]:
+			arena.player.position = loot.node.position
+			arena.pick_up(loot)
 	var total_pieces := 0
 	for id in arena.pieces:
 		total_pieces += arena.pieces[id]
-	check(arena.coins >= int(data.currency.drops.normal.range[0]) and total_pieces == 1, "kills pay 각인전 and sometimes a name piece")
+	check(arena.coins >= int(data.currency.drops.normal.range[0]) and total_pieces == 1, "picking up kill rewards adds their currency and name piece")
 	var key := InputEventKey.new()
 	key.physical_keycode = KEY_G
 	key.ctrl_pressed = true
