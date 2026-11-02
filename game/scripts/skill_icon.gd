@@ -4,7 +4,7 @@ extends RefCounted
 ## own (03 candidates not built yet) get a plain gear.
 const GOLD = Color("d8b77b")
 const KINDS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8, "spring_dash": 9,
-	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12}
+	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12, "matchlock": 14, "reload": 15}
 const PLAIN = 13
 
 static func draw(canvas: CanvasItem, p: Vector2, id: String, color: Color, scale: float = 1.0) -> void:
@@ -91,6 +91,19 @@ static func shape(canvas: CanvasItem, p: Vector2, kind: int, color: Color) -> vo
 				canvas.draw_line(p + Vector2(9, 0).rotated(k * TAU / 6), p + Vector2(14, 0).rotated(k * TAU / 6), color, 4)
 			canvas.draw_arc(p, 18, -2.2, 0.6, 16, GOLD, 2)
 			canvas.draw_line(p + Vector2(18, 0).rotated(0.6), p + Vector2(18, 0).rotated(0.6) + Vector2(-6, -1), GOLD, 2)
+		14:
+			# Matchlock: a long barrel and stock with the glowing match at the lock.
+			canvas.draw_line(p + Vector2(-16, 6), p + Vector2(17, -8), color, 3)
+			canvas.draw_polyline(PackedVector2Array([p + Vector2(-16, 6), p + Vector2(-17, 13), p + Vector2(-8, 11), p + Vector2(-3, 2)]), color, 2)
+			canvas.draw_line(p + Vector2(-4, 1), p + Vector2(-7, -8), color, 2)
+			canvas.draw_circle(p + Vector2(-7, -10), 2.5, GOLD)
+		15:
+			# Reload mechanism: rounds feeding into a gear.
+			canvas.draw_arc(p + Vector2(5, 3), 8, 0, TAU, 18, color, 2)
+			for k in 6:
+				canvas.draw_line(p + Vector2(5, 3) + Vector2(8, 0).rotated(k * TAU / 6), p + Vector2(5, 3) + Vector2(12, 0).rotated(k * TAU / 6), color, 3)
+			for k in 3:
+				canvas.draw_rect(Rect2(p + Vector2(-17 + k * 6, -15 + k * 4), Vector2(4, 8)), GOLD)
 		_:
 			canvas.draw_arc(p, 8, 0, TAU, 20, color, 2)
 			for k in 8:

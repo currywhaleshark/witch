@@ -11,7 +11,7 @@ const GOLD = Color("d8b77b")
 const TREE_NAMES = {"firearm": "화기", "drive": "구동", "automation": "자동화"}
 const SLOT_NAMES = {"rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r": "R"}
 # Every skill a slot can carry, grouped by tree; the basic attack stays on the left button.
-const LOADOUT = ["shotgun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash", "automaton", "turret", "relay"]
+const LOADOUT = ["matchlock", "shotgun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash", "automaton", "turret", "relay"]
 
 # Skill tree layout: candidates from 03 in tier rows, links of related study (not prerequisites).
 # Each skill is an icon; its name and effect are in the hover tip. Skills are put on keys by
@@ -396,6 +396,10 @@ func effect_note(id: String) -> String:
 		"shotgun":
 			var knock: float = float(arena.rules.skills.shotgun.knockback_level)
 			return "피해 +%d%% · %s" % [roundi(100 * (arena.skill_level_factor("shotgun") - 1.0)), "넉백" if arena.config.shotgun_level >= knock else "Lv%d 넉백" % knock]
+		"matchlock":
+			return "피해 +%d%% · 장탄 %d발 · 발당 MP %s · 장전 %.2f초" % [roundi(100 * (arena.skill_level_factor("matchlock") - 1.0)), arena.gun_magazine("matchlock"), str(snappedf(arena.round_cost("matchlock"), 0.1)), arena.reload_seconds("matchlock")]
+		"reload":
+			return "장탄 +%d발 · 장전 시간 −%s%% · 포탑 연사 +%d%%" % [int(config.passives.reload.magazine_per_level) * int(arena.reload_level()), str(snappedf(100 * float(config.passives.reload.reload_time_cut_per_level) * arena.reload_level(), 0.1)), roundi(100 * (arena.turret_fire_rate() - 1.0))]
 		"automaton", "turret":
 			return "체력 ×%.2f · 피해 ×%.2f · 명중 %d%% · 치명 %d%%" % [arena.summon_growth("hp", id), arena.summon_growth("damage", id),
 				roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[id + "_level"] - 1), config.hit_min, config.hit_cap)), roundi(100 * arena.crit_chance(id))]

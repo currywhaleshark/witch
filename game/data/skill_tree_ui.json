@@ -3,7 +3,7 @@
   "columns": 7,
   "trees": [
     {"tree": "firearm", "nodes": [
-      {"name": "화승총", "tier": 1, "col": 2},
+      {"name": "화승총", "tier": 1, "col": 2, "id": "matchlock"},
       {"name": "화약통", "tier": 1, "col": 5},
       {"name": "산탄포", "tier": 2, "col": 1, "id": "shotgun"},
       {"name": "강선 장총", "tier": 2, "col": 3},
@@ -14,7 +14,7 @@
       {"name": "중장 함포", "tier": 4, "col": 3}],
      "passives": [
       {"name": "탄도 계산", "id": "ballistics"},
-      {"name": "재장전 기구 개선"},
+      {"name": "재장전 기구 개선", "id": "reload"},
       {"name": "반동 제어"}],
      "links": [["화승총", "산탄포"], ["화승총", "강선 장총"], ["화승총", "회전 기관포"], ["회전 기관포", "다연장 포격"], ["회전 기관포", "중장 함포"]]},
     {"tree": "drive", "nodes": [

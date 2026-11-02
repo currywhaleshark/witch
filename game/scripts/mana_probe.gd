@@ -7,7 +7,8 @@ var gap_count = 0
 var longest_gap = 0.0
 var current_gap = 0.0
 var unaffordable_seconds: Dictionary = {}
-var counts = {"mana_failures": 0, "fallback_attacks": 0, "tool_auto_releases": 0, "tool_manual_releases": 0, "deaths": 0, "kills": 0, "debug_mana_edits": 0, "hits": 0, "misses": 0, "crits": 0, "stuns": 0, "blocks": 0, "allies_lost": 0, "bleeds_applied": 0, "bleed_ticks": 0}
+var counts = {"mana_failures": 0, "fallback_attacks": 0, "tool_auto_releases": 0, "tool_manual_releases": 0, "deaths": 0, "kills": 0, "debug_mana_edits": 0, "hits": 0, "misses": 0, "crits": 0, "stuns": 0, "blocks": 0, "allies_lost": 0, "bleeds_applied": 0, "bleed_ticks": 0,
+	"enemy_flinches": 0, "enemy_attacks_interrupted": 0}
 var casts: Dictionary = {}
 var potions: Dictionary = {}
 # Stage B breakdowns: direct damage dealt per source, and what each enemy grade did and suffered.

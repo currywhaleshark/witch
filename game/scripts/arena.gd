@@ -16,11 +16,12 @@ const AutomatonAssembly = preload("res://scripts/automaton_assembly.gd")
 const TurretAssembly = preload("res://scripts/turret_assembly.gd")
 const ShotgunCast = preload("res://scripts/shotgun_cast.gd")
 const ShotgunGeometry = preload("res://scripts/shotgun_geometry.gd")
+const FloatingGun = preload("res://scripts/floating_gun.gd")
 const ShieldVisual = preload("res://scripts/shield_visual.gd")
 const CastCircle = preload("res://scripts/cast_circle.gd")
 const SpringPlate = preload("res://scripts/spring_plate.gd")
 # Which skill tree draws the casting circle; the basic attack draws none.
-const SKILL_TREES = {"shotgun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
+const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
 	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const AssetWarmup = preload("res://scripts/asset_warmup.gd")
@@ -52,6 +53,7 @@ const TOOL_COLORS = {"bolt_cutter": BRASS, "grinder": STEEL, "chainsaw": BLEED_R
 const PICK_LAYER = 8
 # Held inputs repeat only attack-like casts; toggles, summons and placement stay one per press.
 const REPEAT_KINDS = ["aim", "enemy"]
+const GUNS = ["matchlock"]
 var config: Dictionary
 var rules: RefCounted
 # The automaton skill's own cost, which nodes A and B keep; no node swaps in a cheaper, quicker one.
@@ -117,8 +119,14 @@ var windup: Dictionary = {}
 var automaton_assembly: Node3D
 var turret_assembly: Node3D
 var shotgun_assembly: Node3D
+# The firearm gun floating at her shoulder ({id, ammo, reload_left, visual}); while it is out the
+# basic attack shoots, and empty rounds load back one at a time.
+var gun: Dictionary = {}
+var gun_assembly: Node3D
+var basic_range: float
 var spring_plate: Node3D
 var last_shotgun: Dictionary = {}
+var last_shot: Dictionary = {}
 var hold: Dictionary = {}
 # A held ground click keeps steering on its own, so skill presses never replace it.
 var move_hold: Dictionary = {}
@@ -202,6 +210,7 @@ func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
 	rules = Rules.new(config)
 	automaton_cost = {"mana_cost": rules.skills.automaton.mana_cost, "cooldown_seconds": rules.skills.automaton.cooldown_seconds}
+	basic_range = float(rules.skills.basic_attack.range)
 	items = Items.new()
 	loot_rng.randomize()
 	for slot in items.data.slots:
@@ -340,6 +349,9 @@ func reset_arena() -> void:
 	automaton_assembly = null
 	turret_assembly = null
 	shotgun_assembly = null
+	gun_assembly = null
+	gun = {}
+	sync_gun()
 	last_shotgun.clear()
 	spring_plate = null
 	for id in enemies:
@@ -466,7 +478,7 @@ func spawn_enemy(id: String, pos: Vector3, heavy: bool = false, grade: String = 
 	enemies[id] = {"body": body, "model": model, "hp": maximum, "max_hp": maximum, "heavy": type.get("heavy", false), "kind": kind, "level": enemy_level,
 		"grade": grade, "size": size, "cooldown": 1.0, "windup": 0.0, "attack": "", "charge_cooldown": 1.0, "charging": 0.0,
 		"charge_dir": Vector3.ZERO, "charge_hit": false, "target": "", "retarget": 0.0, "slow": 0.0, "shred": 0.0, "bleeds": [], "flash": 0.0,
-		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": [], "route": {}}
+		"respawn": true, "timers": {}, "phases_done": [], "pattern_dir": Vector3.ZERO, "frames": [], "route": {}, "flinch": 0.0, "flinch_guard": 0.0}
 	dress_enemy(enemies[id], id == outlined_id)
 
 func free_enemy_spot(pos: Vector3, size: float) -> Vector3:
@@ -756,6 +768,8 @@ func bind_slot(slot: String, skill_id: String) -> void:
 	# A running tool that no slot holds any more could never be switched off; release it.
 	if state.active_tool != null and not state.bindings.values().has(state.active_tool):
 		state.active_tool = null
+	if not gun.is_empty() and not state.bindings.values().has(gun.id):
+		dismiss_gun()
 
 func split_build_log() -> void:
 	# Called before a C/S window change: the running A5 segment is saved with the build it was
@@ -1399,6 +1413,107 @@ func sync_automaton_cost() -> void:
 	for id in base_mana_costs:
 		var cost: float = float(node.get("mana_cost", automaton_cost.mana_cost)) if id == "automaton" else float(base_mana_costs[id])
 		rules.skills[id].mana_cost = cost * (1.0 - cut)
+	# A gun is assembled loaded: its cost is a full magazine at its per-round price.
+	for id in GUNS:
+		rules.skills[id].mana_cost = gun_magazine(id) * round_cost(id)
+	sync_gun()
+
+func round_cost(id: String) -> float:
+	# Mana cost cuts trim every round as they trim every skill, at most by half.
+	return float(rules.skills[id].round_cost) * (1.0 - clampf(gear_total("mana_cost_pct") / 100.0, 0.0, 0.5))
+
+func reload_level() -> float:
+	return float(config.passive_levels.get("reload", 0))
+
+func turret_fire_rate() -> float:
+	# The reload mechanism's feed also speeds up the turret, which feeds rounds the same way (03 §2.1).
+	return 1.0 + float(config.passives.reload.turret_rate_per_level) * reload_level()
+
+func gun_magazine(id: String) -> int:
+	# Reload mechanism levels add rounds to every gun's magazine.
+	return int(rules.skills[id].magazine) + int(config.passives.reload.magazine_per_level) * int(reload_level())
+
+func reload_seconds(id: String) -> float:
+	# One empty round loads back each interval; each reload mechanism level cuts a share of it.
+	return float(rules.skills[id].reload_seconds) * maxf(0.1, 1.0 - float(config.passives.reload.reload_time_cut_per_level) * reload_level())
+
+func tick_gun_reload(dt: float) -> void:
+	# Empty rounds load back on their own, one per interval, each paying its mana as it goes in.
+	# With too little mana the next round waits; a full magazine keeps the clock wound.
+	if gun.is_empty():
+		return
+	var interval := reload_seconds(gun.id)
+	if int(gun.ammo) >= gun_magazine(gun.id):
+		gun.reload_left = interval
+		return
+	gun.reload_left = float(gun.reload_left) - dt
+	if gun.reload_left > 0:
+		return
+	var cost := round_cost(gun.id)
+	if state.mana + rules.EPS < cost:
+		gun.reload_left = 0.0
+		return
+	state.mana = maxf(0.0, state.mana - cost)
+	probe.record([{"type": "tool_upkeep", "tool": gun.id, "amount": cost}])
+	gun.ammo = int(gun.ammo) + 1
+	gun.reload_left += interval
+
+func sync_gun() -> void:
+	# The basic attack takes the gun's reach while one is out.
+	rules.skills.basic_attack.range = float(rules.skills[gun.id].range) if not gun.is_empty() else basic_range
+	# A lower reload level shrinks the magazine; rounds over it are dropped.
+	if not gun.is_empty():
+		gun.ammo = mini(int(gun.ammo), gun_magazine(gun.id))
+
+func equip_gun(id: String) -> void:
+	# A gun and a tool both change the basic attack, so the gun puts the tool away (and back).
+	if state.active_tool != null:
+		state.active_tool = null
+		flash_tool_change(null)
+	var visual: Node3D = gun_assembly if is_instance_valid(gun_assembly) else null
+	gun_assembly = null
+	if not gun.is_empty() and gun.visual != visual and is_instance_valid(gun.visual):
+		gun.visual.dismiss()
+	if visual == null:
+		visual = FloatingGun.new()
+		world.add_child(visual)
+		visual.initialize(self)
+	visual.gun_id = id
+	visual.ready_to_fire()
+	gun = {"id": id, "ammo": gun_magazine(id), "reload_left": reload_seconds(id), "visual": visual}
+	sync_automaton_cost()
+	play_sfx("tool_change", 1.3)
+
+func dismiss_gun() -> void:
+	if gun.is_empty():
+		return
+	if is_instance_valid(gun.visual):
+		gun.visual.dismiss()
+	gun = {}
+	sync_automaton_cost()
+
+func fire_gun(event: Dictionary, direction: Vector3) -> void:
+	# One round per shot, hit or miss, from the floating gun's muzzle to the chosen enemy.
+	var skill: Dictionary = rules.skills[gun.id]
+	var best := nearest_enemy(player.position, float(skill.range), direction, 0.2, false, true)
+	if event.get("target_enemy") != null and enemies.has(event.target_enemy):
+		best = event.target_enemy
+	gun.ammo = maxi(0, int(gun.ammo) - 1)
+	var aim: Vector3 = player.position + direction * float(skill.range) + Vector3.UP * 1.2
+	if best != "":
+		aim = enemies[best].body.position + Vector3.UP * 0.9 * enemies[best].size
+	var origin: Vector3 = player.position + Vector3.UP * 1.3
+	if is_instance_valid(gun.visual):
+		gun.visual.shoot(aim)
+		origin = gun.visual.muzzle()
+	var hit := "miss"
+	if best != "":
+		hit = strike(best, float(skill.shot_damage), true, "witch", gun.id)
+	spawn_vfx().muzzle(origin, [aim], [best == ""], map.ground_y(origin))
+	play_sfx("shotgun_fire", 1.15 if hit != "miss" else 1.3)
+	last_shot = {"gun": gun.id, "target": best, "result": hit, "origin": origin, "aim": aim}
+	if int(gun.ammo) == 0:
+		show_message("탄이 없습니다")
 
 func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void:
 	sync_automaton_cost()
@@ -1409,6 +1524,15 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 	if action_time > 0:
 		# An attack motion finishes first; the latest input runs right after it.
 		queued_input = {"slot": slot, "cursor": cursor.duplicate(true), "shift": shift}
+		return
+	var bound = state.bindings[slot]
+	if bound != null and bound in GUNS and gun.get("id") == bound:
+		# Pressing the gun's key again takes it apart, free, like switching a tool off.
+		cancel_pending_cast()
+		dismiss_gun()
+		return
+	if slot == "lmb" and not gun.is_empty() and int(gun.ammo) <= 0 and (shift or cursor.get("enemy_id") != null):
+		show_message("탄이 없습니다")
 		return
 	cancel_pending_cast()
 	var stationary = shift and slot == "lmb"
@@ -1442,7 +1566,7 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	var skill: Dictionary = {} if cast.is_empty() else rules.skills[cast.skill]
 	var seconds = 0.0
 	if cast.get("skill") == rules.basic_id:
-		seconds = attack_seconds(cast.active_tool)
+		seconds = attack_seconds(gun.id if not gun.is_empty() else cast.active_tool)
 	elif not skill.is_empty() and not skill.get("while_moving", false):
 		seconds = cast_seconds(skill)
 	if seconds <= 0:
@@ -1460,8 +1584,12 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		moving = false
 		move_marker.visible = false
 	action_time = seconds
+	# With a gun out the basic attack is a pointing cast that the gun answers, not a staff swing,
+	# and it fires at the gun's own point of the motion.
+	var shooting: bool = cast.skill == rules.basic_id and not gun.is_empty()
+	var release_ratio: float = float(rules.skills[gun.id].shot_release_ratio) if shooting else float(skill.get("release_ratio", 1.0))
 	windup = {"slot": slot, "binding": state.bindings[slot], "cursor": snapshot, "shift": shift, "stationary": stationary,
-		"skill": cast.skill, "release": seconds * float(skill.get("release_ratio", 1.0))}
+		"skill": cast.skill, "release": seconds * release_ratio}
 	if SKILL_TREES.has(cast.skill):
 		windup.circle_total = windup.release
 		charging_circle = spawn_cast_circle(SKILL_TREES[cast.skill], false)
@@ -1484,8 +1612,15 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	elif cast.skill == "spring_dash":
 		windup.visual_duration = windup.release
 		begin_spring_plate(cast_direction(cast))
+	elif cast.skill in GUNS:
+		windup.visual_duration = windup.release
+		if is_instance_valid(gun_assembly):
+			gun_assembly.dismiss()
+		gun_assembly = FloatingGun.new()
+		world.add_child(gun_assembly)
+		gun_assembly.initialize(self)
 	player_model.look_at(player.position + cast_direction(cast))
-	player_visual.begin_motion("attack" if cast.skill == rules.basic_id else ("spring_jump" if cast.skill == "spring_dash" else "cast"), seconds, float(skill.get("release_ratio", 1.0)))
+	player_visual.begin_motion("attack" if cast.skill == rules.basic_id and not shooting else ("spring_jump" if cast.skill == "spring_dash" else "cast"), seconds, release_ratio)
 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
 
 func tick_windup(dt: float) -> void:
@@ -1511,6 +1646,8 @@ func tick_windup(dt: float) -> void:
 		shotgun_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(spring_plate):
 		spring_plate.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if is_instance_valid(gun_assembly):
+		gun_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if windup.release > 0:
 		return
 	var started: Dictionary = windup
@@ -1594,6 +1731,9 @@ func cancel_summon_assemblies(reason: String) -> void:
 	if is_instance_valid(shotgun_assembly):
 		shotgun_assembly.cancel(reason)
 	shotgun_assembly = null
+	if is_instance_valid(gun_assembly):
+		gun_assembly.dismiss()
+	gun_assembly = null
 	if is_instance_valid(spring_plate):
 		spring_plate.cancel(reason)
 	spring_plate = null
@@ -1783,6 +1923,7 @@ func apply_transition(result: Dictionary) -> void:
 				show_message({"invalid_target": "대상이 없습니다", "out_of_range": "너무 멉니다", "invalid_ground": "설치할 수 없습니다", "cooldown": "아직 준비 중입니다", "insufficient_mana": "마나가 부족합니다", "empty_slot": "빈 슬롯입니다"}.get(event.reason, "사용할 수 없습니다"))
 			"basic_attack_fallback": fallback_time = 0.7
 			"tool_changed":
+				dismiss_gun()
 				play_sfx("tool_change", 1.65)
 				flash_tool_change(event.tool)
 			"tool_released": flash_tool_change(null)
@@ -1874,6 +2015,9 @@ func execute_cast(event: Dictionary) -> void:
 	var target = cast_target(event)
 	var direction = cast_direction(event)
 	player_model.look_at(player.position + direction)
+	if event.skill == rules.basic_id and not gun.is_empty():
+		fire_gun(event, direction)
+		return
 	match event.skill:
 		"basic_attack":
 			var tool = event.active_tool
@@ -1914,6 +2058,8 @@ func execute_cast(event: Dictionary) -> void:
 				play_sfx("staff_hit", 1.2)
 		"shotgun":
 			fire_shotgun(target, aims_at_enemy(event))
+		"matchlock":
+			equip_gun(event.skill)
 		"spring_dash":
 			start_dash(target, direction, aims_at_enemy(event))
 		"bolt_cutter", "grinder", "chainsaw": pass  # the staff itself transforms; no ground ring
@@ -2054,6 +2200,39 @@ func passive_factor(attack: String) -> float:
 		factor += gear_total("tag:" + tag) / 100.0
 	return factor
 
+func flinch_seconds(enemy: Dictionary) -> float:
+	# Lighter grades flinch longer; each level the enemy stands above the witch shortens it
+	# (below her, lengthens it). Bosses keep their own patterns and never flinch.
+	var plan: Dictionary = config.enemy_flinch
+	if config.enemy_types[enemy.kind].has("boss"):
+		return 0.0
+	var gap: float = float(build.level) - float(enemy.level)
+	var factor: float = clampf(1.0 + float(plan.level_step) * gap, float(plan.min_factor), float(plan.max_factor))
+	return float(plan.seconds.get(enemy.grade, 0.0)) * factor
+
+func flinch(enemy: Dictionary) -> void:
+	# A direct hit (any source, not bleed) makes the enemy flinch: it stops where it is and loses
+	# the attack it was winding up. A short guard afterwards keeps fast hits from pinning it.
+	# A telegraphed brute charge, once its line is on the ground, is not broken off.
+	if float(enemy.flinch_guard) > 0 or float(enemy.get("charging", 0.0)) > 0:
+		return
+	if enemy.windup > 0 and enemy.attack == "charge":
+		return
+	var seconds := flinch_seconds(enemy)
+	if seconds <= 0:
+		return
+	enemy.flinch = seconds
+	enemy.flinch_guard = seconds + float(config.enemy_flinch.guard_seconds)
+	probe.counts.enemy_flinches += 1
+	if enemy.windup > 0:
+		enemy.windup = 0.0
+		enemy.attack = ""
+		probe.counts.enemy_attacks_interrupted += 1
+		if enemy.model.has_method("interrupt_attack"):
+			enemy.model.interrupt_attack()
+		else:
+			enemy.model.rotation.z = 0
+
 func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 	# Returns the HP actually removed, for the A5 log. Bleed ticks pass direct = false.
 	if not enemies.has(id):
@@ -2066,6 +2245,7 @@ func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 	enemy.hp -= taken
 	if direct:
 		enemy.flash = 0.16
+		flinch(enemy)
 	if enemy.hp <= 0:
 		# No ground ring on death: the collapse itself shows it. The falling corpse keeps neither
 		# the selection outline nor the grade aura.
@@ -2527,6 +2707,7 @@ func _physics_process(dt: float) -> void:
 		tick_pickup()
 		tick_boss_trigger()
 		tick_windup(dt)
+		tick_gun_reload(dt)
 		if action_time > 0:
 			action_time = maxf(0, action_time - dt)
 			if action_time == 0 and not queued_input.is_empty():
@@ -2685,6 +2866,12 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	enemy.shred = maxf(0, enemy.shred - dt)
 	enemy.flash = maxf(0, enemy.flash - dt)
 	enemy.model.scale = Vector3.ONE * enemy.size * (1.08 if enemy.flash > 0 else 1.0)
+	enemy.flinch_guard = maxf(0, float(enemy.get("flinch_guard", 0.0)) - dt)
+	if float(enemy.get("flinch", 0.0)) > 0 and enemy.get("knockback_left", 0.0) <= 0.0:
+		# Flinching: it stands still and starts nothing until it recovers.
+		enemy.flinch = maxf(0, float(enemy.flinch) - dt)
+		enemy.body.velocity = Vector3.ZERO
+		return
 	if enemy.get("knockback_left", 0.0) > 0.0:
 		# Knocked back: it slides away and neither steers nor advances its attack meanwhile.
 		var travel: float = minf(enemy.knockback_speed * dt, enemy.knockback_left)
@@ -3044,7 +3231,7 @@ func _tick_allies(dt: float) -> void:
 			var damage: float = config.summon_damage * (float(config.automaton_nodes.B.damage_factor) if ally.node_kind == "B" else 1.0)
 			damage = (damage if ally.mobile else config.turret_damage) * summon_growth("damage", "automaton" if ally.mobile else "turret")
 			strike(ally.target, damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret", "saw" if saw else "")
-			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown
+			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown / turret_fire_rate()
 	separate_allies(dt)
 
 func show_message(value: String) -> void:

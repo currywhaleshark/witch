@@ -317,6 +317,12 @@ func strike_point() -> Vector3:
 	var local := skeleton.get_bone_global_rest(forearm).affine_inverse() * point
 	return skeleton.global_transform * skeleton.get_bone_global_pose(forearm) * local
 
+func interrupt_attack() -> void:
+	# A flinch broke the windup: drop the attack pose for the hit reaction, with no release.
+	_pending_release = false
+	_recovery = -1.0
+	_reaction = 0.26
+
 func begin_attack(_attack: String, windup: float) -> void:
 	_attack_total = maxf(windup, 0.0001)
 	_pending_release = true

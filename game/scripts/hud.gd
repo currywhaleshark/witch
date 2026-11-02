@@ -54,6 +54,12 @@ func _draw() -> void:
 		status = "%s 가동  ·  MP −%s/s" % [arena.rules.skills[tool].name, str(arena.rules.skills[tool].upkeep_per_second)]
 	if active and arena.state.mana < 10:
 		status = "마나 소진 임박  ·  같은 키로 해제"
+	var gun: Dictionary = arena.gun
+	if not gun.is_empty():
+		active = true
+		status = "%s  ·  탄 %d/%d  ·  같은 키로 해제" % [arena.rules.skills[gun.id].name, gun.ammo, arena.gun_magazine(gun.id)]
+		if int(gun.ammo) < arena.gun_magazine(gun.id):
+			status = "%s  ·  탄 %d/%d  ·  장전 %.1f초" % [arena.rules.skills[gun.id].name, gun.ammo, arena.gun_magazine(gun.id), maxf(0.0, float(gun.reload_left))]
 	panel(Rect2(24, 115, 300, 38), INK, GOLD if active else EDGE)
 	draw_circle(Vector2(44, 134), 5, GOLD if active else MUTED)
 	label_at(Vector2(61, 140), status, 14, GOLD if active else MUTED)
@@ -151,7 +157,7 @@ func _draw() -> void:
 		var skill: Dictionary = arena.rules.skills[arena.state.bindings[slot]]
 		var cooldown: float = arena.state.cooldowns.get(skill.id, 0)
 		var insufficient: bool = arena.state.mana < skill.mana_cost
-		var running: bool = skill.kind == "tool" and tool == skill.id
+		var running: bool = (skill.kind == "tool" and tool == skill.id) or arena.gun.get("id") == skill.id
 		var color = GOLD if running else (Color("72888c") if insufficient else TEAL)
 		if i == 0 and arena.fallback_time > 0:
 			color = GOLD
@@ -160,6 +166,8 @@ func _draw() -> void:
 		label_at(rect.position + Vector2(8, 17), KEYS[i], 11, color, true)
 		icon(rect.position + Vector2(45, 45), skill.id, color)
 		var title: String = skill.name
+		if skill.id == "basic_attack" and not gun.is_empty():
+			title = "사격"
 		if arena.config.has(skill.id + "_level"):
 			# Trial skill levels exist only for the shield and the summons so far.
 			title += " Lv%d" % arena.config[skill.id + "_level"]
@@ -167,8 +175,13 @@ func _draw() -> void:
 		var detail = "MP %d" % skill.mana_cost
 		if skill.kind == "tool":
 			detail = "유지 %s · %.2f초" % [str(skill.upkeep_per_second), arena.attack_seconds(skill.id)]
+		elif skill.id == "basic_attack" and not gun.is_empty():
+			detail = "탄 %d/%d · %.2f초" % [gun.ammo, arena.gun_magazine(gun.id), arena.attack_seconds(gun.id)]
 		elif skill.id == "basic_attack":
 			detail = "동작 %.2f초" % arena.attack_seconds(tool)
+		elif skill.id in arena.GUNS:
+			detail = "탄 %d/%d" % [gun.ammo, arena.gun_magazine(skill.id)] if gun.get("id") == skill.id else "MP %d · %d발" % [skill.mana_cost, arena.gun_magazine(skill.id)]
+
 		elif skill.id == "shield":
 			detail = "막기 %d%%" % roundi(100 * arena.block_chance())
 			if arena.shield_time > 0:
