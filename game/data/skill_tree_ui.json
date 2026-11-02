@@ -6,7 +6,7 @@
       {"name": "화승총", "tier": 1, "col": 2, "id": "matchlock"},
       {"name": "화약통", "tier": 1, "col": 5},
       {"name": "산탄포", "tier": 2, "col": 1, "id": "shotgun"},
-      {"name": "강선 장총", "tier": 2, "col": 3},
+      {"name": "강선 장총", "tier": 2, "col": 3, "id": "rifle"},
       {"name": "반동 도약", "tier": 2, "col": 6},
       {"name": "회전 기관포", "tier": 3, "col": 2},
       {"name": "연막 발사기", "tier": 3, "col": 6},

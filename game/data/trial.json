@@ -52,6 +52,8 @@
   "chainsaw_level": 1,
   "shotgun_level": 1,
   "matchlock_level": 1,
+  "rifle_level": 1,
+  "rifle_node": "base",
   "bleed": {"ratio": {"normal": 0.24, "champion": 0.18, "elite": 0.12, "boss": 0.04}, "seconds": 4, "tick_seconds": 0.5,
     "max_stacks": 5, "weights": [1, 0.8, 0.6, 0.45, 0.35], "growth": "B", "growth_steps": ["A", "B"],
     "a_ratio_per_level": 0.06, "b_seconds_per_level": 0.2, "b_weight_every": 5, "b_weight_per_milestone": 0.2},
@@ -100,11 +102,11 @@
   "build": {"level": 1, "max_level": 30, "stat_points_per_level": 5, "skill_points_per_level": 1, "skill_max_level": 10, "node_cost": 1,
     "hp_per_level": 2, "mana_per_level": 2, "enemy_hp_per_level": 0.09, "enemy_damage_per_level": 0.06, "log_min_seconds": 10,
     "stat_effects": {"power": 0.01, "vitality": 2, "will": 1},
-    "skill_tree": [{"tree": "firearm", "entries": [{"id": "matchlock", "kind": "skill"}, {"id": "shotgun", "kind": "skill"}, {"id": "ballistics", "kind": "passive"}, {"id": "reload", "kind": "passive"}]},
+    "skill_tree": [{"tree": "firearm", "entries": [{"id": "matchlock", "kind": "skill"}, {"id": "shotgun", "kind": "skill"}, {"id": "rifle", "kind": "skill", "nodes": true}, {"id": "ballistics", "kind": "passive"}, {"id": "reload", "kind": "passive"}]},
       {"tree": "drive", "entries": [{"id": "chainsaw", "kind": "skill"}, {"id": "shield", "kind": "skill"}, {"id": "cutting_precision", "kind": "passive"}]},
       {"tree": "automation", "entries": [{"id": "automaton", "kind": "skill", "nodes": true}, {"id": "turret", "kind": "skill"}, {"id": "production_efficiency", "kind": "passive"}]}]},
   "attack_tags": {"bolt_cutter": "cutting", "grinder": "cutting", "chainsaw": "cutting", "automaton_saw": "cutting",
-    "shotgun": "projectile", "turret": "projectile", "matchlock": "projectile"},
+    "shotgun": "projectile", "turret": "projectile", "matchlock": "projectile", "rifle": "projectile"},
   "passives": {"cutting_precision": {"name": "절삭 정밀화", "tag": "cutting", "tag_name": "절삭", "damage_per_level": 0.05},
     "ballistics": {"name": "탄도 계산", "tag": "projectile", "tag_name": "발사체", "damage_per_level": 0.05},
     "production_efficiency": {"name": "생산 효율", "cast_speed_per_level": 4},
@@ -154,6 +156,11 @@
      "cast_seconds": 0.12, "release_ratio": 0.5, "dash_seconds": 0.2, "min_distance": 1.5, "stop_short": 1.2},
     {"id": "relay", "name": "표적 중계", "kind": "enemy", "mana_cost": 3, "cooldown_seconds": 0.5, "upkeep_per_second": 0, "range": 14, "while_moving": true},
     {"id": "matchlock", "name": "화승총", "kind": "self", "mana_cost": 12, "cooldown_seconds": 0, "upkeep_per_second": 0, "range": 9, "cast_seconds": 0.5, "release_ratio": 0.8,
-     "magazine": 6, "round_cost": 2, "attack_seconds": 0.75, "shot_release_ratio": 0.42, "shot_damage": 26, "reload_seconds": 2.0}
+     "magazine": 6, "round_cost": 2, "attack_seconds": 0.75, "shot_release_ratio": 0.42, "shot_damage": 26, "reload_seconds": 2.0},
+    {"id": "rifle", "name": "강선 장총", "kind": "self", "mana_cost": 20, "cooldown_seconds": 0, "upkeep_per_second": 0, "range": 13, "cast_seconds": 0.6, "release_ratio": 0.8,
+     "magazine": 4, "round_cost": 5, "attack_seconds": 1.0, "shot_release_ratio": 0.1, "shot_damage": 60, "reload_seconds": 2.5,
+     "nodes": {"base": {"shot_damage": 60, "knockback_distance": 0.6, "knockback_seconds": 0.1},
+       "explosive": {"shot_damage": 42, "blast_radius": 1.6},
+       "piercing": {"shot_damage": 42, "pierce_width": 0.6}}}
   ]
 }

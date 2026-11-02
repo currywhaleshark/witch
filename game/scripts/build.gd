@@ -5,6 +5,7 @@ extends RefCounted
 const STATS = ["power", "dexterity", "vitality", "will"]
 const STAT_NAMES = {"power": "위력", "dexterity": "기교", "vitality": "활력", "will": "의지"}
 const NODE_NAMES = {"base": "노드 없음", "A": "A 자폭 특화", "B": "B 지속공격 특화"}
+const RIFLE_NODE_NAMES = {"base": "일반탄", "explosive": "폭발탄", "piercing": "천공탄"}
 
 var arena: Node
 var rules: Dictionary
@@ -13,6 +14,7 @@ var stats: Dictionary = {}
 var skills: Dictionary = {}
 var passives: Dictionary = {}
 var node: String
+var rifle_node: String
 var base_hp: float
 var base_mana: float
 
@@ -28,6 +30,7 @@ func _init(owner: Node) -> void:
 	for id in config.passives:
 		passives[id] = int(config.passive_levels[id])
 	node = config.automaton_node
+	rifle_node = config.rifle_node
 	base_hp = float(config.max_hp)
 	base_mana = float(config.max_mana)
 
@@ -53,6 +56,8 @@ func skill_points() -> int:
 	for id in passives:
 		spent += passives[id]
 	if node != "base":
+		spent += int(rules.node_cost)
+	if rifle_node != "base":
 		spent += int(rules.node_cost)
 	return level * int(rules.skill_points_per_level) - spent
 
@@ -105,6 +110,17 @@ func set_node(value: String) -> bool:
 	apply()
 	return true
 
+func set_rifle_node(value: String) -> bool:
+	# The rifle's rounds: plain (strongest, slight knockback), explosive or piercing, one at a time.
+	var cost: int = int(rules.node_cost)
+	var extra: int = (cost if value != "base" else 0) - (cost if rifle_node != "base" else 0)
+	if extra > 0 and skill_points() < extra:
+		return false
+	arena.split_build_log()
+	rifle_node = value
+	apply()
+	return true
+
 func stat(id: String) -> float:
 	# Allocated points only; items carry no base stat options in this trial.
 	return float(stats[id])
@@ -127,6 +143,7 @@ func reset_skills() -> void:
 	for id in passives:
 		passives[id] = 0
 	node = "base"
+	rifle_node = "base"
 	apply()
 
 func apply() -> void:
@@ -143,6 +160,7 @@ func apply() -> void:
 	for id in passives:
 		config.passive_levels[id] = float(passives[id])
 	config.automaton_node = node
+	config.rifle_node = rifle_node
 	arena.sync_automaton_cost()
 	arena.sync_tool_upkeep()
 	# Level, vitality and will move the maximums; current HP and mana follow a rise and are clipped by a fall.
@@ -160,5 +178,5 @@ func power_factor() -> float:
 	return 1.0 + float(rules.stat_effects.power) * stat("power")
 
 func snapshot() -> Dictionary:
-	return {"level": level, "stats": stats.duplicate(), "skills": skills.duplicate(), "passives": passives.duplicate(), "node": node, "equipment": arena.equipment_summary(),
+	return {"level": level, "stats": stats.duplicate(), "skills": skills.duplicate(), "passives": passives.duplicate(), "node": node, "rifle_node": rifle_node, "equipment": arena.equipment_summary(),
 		"stat_points_left": stat_points(), "skill_points_left": skill_points(), "enemy_level": arena.enemy_level}

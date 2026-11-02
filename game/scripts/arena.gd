@@ -21,7 +21,7 @@ const ShieldVisual = preload("res://scripts/shield_visual.gd")
 const CastCircle = preload("res://scripts/cast_circle.gd")
 const SpringPlate = preload("res://scripts/spring_plate.gd")
 # Which skill tree draws the casting circle; the basic attack draws none.
-const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
+const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "rifle": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
 	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const AssetWarmup = preload("res://scripts/asset_warmup.gd")
@@ -53,7 +53,8 @@ const TOOL_COLORS = {"bolt_cutter": BRASS, "grinder": STEEL, "chainsaw": BLEED_R
 const PICK_LAYER = 8
 # Held inputs repeat only attack-like casts; toggles, summons and placement stay one per press.
 const REPEAT_KINDS = ["aim", "enemy"]
-const GUNS = ["matchlock"]
+const GUNS = ["matchlock", "rifle"]
+const RIFLE_STRETCH = Vector3(0.8, 0.8, 1.4)
 var config: Dictionary
 var rules: RefCounted
 # The automaton skill's own cost, which nodes A and B keep; no node swaps in a cheaper, quicker one.
@@ -1487,6 +1488,7 @@ func equip_gun(id: String) -> void:
 		gun.visual.dismiss()
 	if visual == null:
 		visual = FloatingGun.new()
+		visual.stretch = RIFLE_STRETCH if id == "rifle" else Vector3.ONE
 		world.add_child(visual)
 		visual.initialize(self)
 	visual.gun_id = id
@@ -1503,6 +1505,11 @@ func dismiss_gun() -> void:
 	gun = {}
 	sync_automaton_cost()
 
+func gun_round(id: String) -> Dictionary:
+	# The rifle's node picks its round; other guns fire their own single kind.
+	var skill: Dictionary = rules.skills[id]
+	return skill.nodes[config.rifle_node] if skill.has("nodes") else skill
+
 func fire_gun(event: Dictionary, direction: Vector3) -> void:
 	# One round per shot, hit or miss, from the floating gun's muzzle to the chosen enemy.
 	var skill: Dictionary = rules.skills[gun.id]
@@ -1517,12 +1524,47 @@ func fire_gun(event: Dictionary, direction: Vector3) -> void:
 	if is_instance_valid(gun.visual):
 		gun.visual.shoot(aim)
 		origin = gun.visual.muzzle()
+	var shell: Dictionary = gun_round(gun.id)
+	var damage: float = float(shell.shot_damage)
+	var struck: Array = []
 	var hit := "miss"
-	if best != "":
-		hit = strike(best, float(skill.shot_damage), true, "witch", gun.id)
-	spawn_vfx().muzzle(origin, [aim], [best == ""], map.ground_y(origin))
-	play_sfx("shotgun_fire", 1.15 if hit != "miss" else 1.3)
-	last_shot = {"gun": gun.id, "target": best, "result": hit, "origin": origin, "aim": aim}
+	if shell.has("pierce_width"):
+		# Piercing rounds run the whole range and strike every enemy along the line in sight.
+		aim = player.position + direction * float(skill.range) + Vector3.UP * 1.2
+		if best != "":
+			var flat: Vector3 = enemies[best].body.position - player.position
+			flat.y = 0.0
+			aim = player.position + flat.normalized() * float(skill.range) + Vector3.UP * 1.2
+		var line: Vector3 = aim - player.position
+		line.y = 0.0
+		line = line.normalized()
+		for id in enemies.keys():
+			var delta: Vector3 = enemies[id].body.position - player.position
+			delta.y = 0.0
+			var along: float = delta.dot(line)
+			if along > 0 and along <= float(skill.range) and (delta - line * along).length() <= float(shell.pierce_width) * enemies[id].size and map.sees(player.position, enemies[id].body.position):
+				struck.append(id)
+		for id in struck:
+			var result := strike(id, damage, true, "witch", gun.id)
+			if result != "miss":
+				hit = result
+	elif best != "":
+		struck.append(best)
+		hit = strike(best, damage, true, "witch", gun.id)
+		if shell.has("knockback_distance") and hit != "miss":
+			push_back(best, float(shell.knockback_distance), float(shell.knockback_seconds))
+	if shell.has("blast_radius"):
+		# Explosive rounds burst where they land, hit or miss: everyone else nearby is caught too.
+		var at: Vector3 = Vector3(aim.x, map.ground_y(aim), aim.z)
+		for id in enemies.keys():
+			if (id != best or hit == "miss") and Vector2(enemies[id].body.position.x - at.x, enemies[id].body.position.z - at.z).length() <= float(shell.blast_radius):
+				if not struck.has(id):
+					struck.append(id)
+				strike(id, damage, false, "witch", gun.id)
+		spawn_vfx().blast(at, float(shell.blast_radius), map.ground_y(at), false)
+	spawn_vfx().muzzle(origin, [aim], [struck.is_empty()], map.ground_y(origin))
+	play_sfx("shotgun_fire", (0.85 if gun.id == "rifle" else 1.15) if hit != "miss" else 1.3)
+	last_shot = {"gun": gun.id, "target": best, "result": hit, "origin": origin, "aim": aim, "struck": struck}
 	if int(gun.ammo) == 0:
 		show_message("탄이 없습니다")
 
@@ -1628,6 +1670,7 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		if is_instance_valid(gun_assembly):
 			gun_assembly.dismiss()
 		gun_assembly = FloatingGun.new()
+		gun_assembly.stretch = RIFLE_STRETCH if cast.skill == "rifle" else Vector3.ONE
 		world.add_child(gun_assembly)
 		gun_assembly.initialize(self)
 	player_model.look_at(player.position + cast_direction(cast))
@@ -1763,10 +1806,16 @@ func begin_shotgun_visual(target: Vector3, at_enemy: bool = false) -> void:
 	shotgun_assembly.global_transform=ShotgunGeometry.frame(self,target,at_enemy)
 
 func knock_back(id: String) -> void:
-	# Shotgun Lv5+ (the firearm tree is safest at range): a hit shoves the enemy straight away
-	# from her. Heavy enemies go half as far, bosses and charging brutes not at all.
+	# Shotgun Lv5+ (the firearm tree is safest at range): a hit shoves the enemy straight away.
 	var skill: Dictionary = rules.skills.shotgun
-	if not enemies.has(id) or config.shotgun_level < float(skill.knockback_level):
+	if config.shotgun_level < float(skill.knockback_level):
+		return
+	push_back(id, float(skill.knockback_distance), float(skill.knockback_seconds))
+
+func push_back(id: String, distance: float, seconds: float) -> void:
+	# Shoves the enemy straight away from her. Heavy enemies go half as far, bosses and charging
+	# brutes not at all.
+	if not enemies.has(id):
 		return
 	var enemy: Dictionary = enemies[id]
 	if config.enemy_types[enemy.kind].has("boss") or enemy.get("charging", 0.0) > 0:
@@ -1775,10 +1824,10 @@ func knock_back(id: String) -> void:
 	away.y = 0.0
 	if away.length() < 0.01:
 		away = -player_model.global_basis.z
-	var distance: float = float(skill.knockback_distance) * (0.5 if enemy.heavy else 1.0)
+	distance *= 0.5 if enemy.heavy else 1.0
 	enemy.knockback_dir = away.normalized()
 	enemy.knockback_left = distance
-	enemy.knockback_speed = distance / float(skill.knockback_seconds)
+	enemy.knockback_speed = distance / seconds
 
 func fire_shotgun(target: Vector3, at_enemy: bool = false) -> void:
 	var shot: Transform3D=ShotgunGeometry.frame(self,target,at_enemy)
@@ -2069,7 +2118,7 @@ func execute_cast(event: Dictionary) -> void:
 				play_sfx("staff_hit", 1.2)
 		"shotgun":
 			fire_shotgun(target, aims_at_enemy(event))
-		"matchlock":
+		"matchlock", "rifle":
 			equip_gun(event.skill)
 		"spring_dash":
 			start_dash(target, direction, aims_at_enemy(event))

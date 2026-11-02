@@ -11,7 +11,7 @@ const GOLD = Color("d8b77b")
 const TREE_NAMES = {"firearm": "화기", "drive": "구동", "automation": "자동화"}
 const SLOT_NAMES = {"rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r": "R"}
 # Every skill a slot can carry, grouped by tree; the basic attack stays on the left button.
-const LOADOUT = ["matchlock", "shotgun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash", "automaton", "turret", "relay"]
+const LOADOUT = ["matchlock", "rifle", "shotgun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash", "automaton", "turret", "relay"]
 
 # Skill tree layout: candidates from 03 in tier rows, links of related study (not prerequisites).
 # Each skill is an icon; its name and effect are in the hover tip. Skills are put on keys by
@@ -199,6 +199,14 @@ func _skills() -> void:
 			pick.tooltip_text = "태엽인형 특화 · %d점" % build.rules.node_cost
 			choices.append(pick)
 		body.add_child(row(choices))
+	if tree_tab == "firearm":
+		var rounds: Array = []
+		for choice in Build.RIFLE_NODE_NAMES:
+			var pick := button(("● " if build.rifle_node == choice else "") + Build.RIFLE_NODE_NAMES[choice], func(): build.set_rifle_node(choice),
+				build.rifle_node != choice and (choice == "base" or build.rifle_node != "base" or build.skill_points() >= int(build.rules.node_cost)))
+			pick.tooltip_text = "강선 장총 탄 · %d점" % build.rules.node_cost
+			rounds.append(pick)
+		body.add_child(row(rounds))
 	var slots := HBoxContainer.new()
 	slots.add_theme_constant_override("separation", 8)
 	for slot in SLOT_NAMES:
@@ -398,6 +406,10 @@ func effect_note(id: String) -> String:
 			return "피해 +%d%% · %s" % [roundi(100 * (arena.skill_level_factor("shotgun") - 1.0)), "넉백" if arena.config.shotgun_level >= knock else "Lv%d 넉백" % knock]
 		"matchlock":
 			return "피해 +%d%% · 장탄 %d발 · 발당 MP %s · 장전 %.2f초" % [roundi(100 * (arena.skill_level_factor("matchlock") - 1.0)), arena.gun_magazine("matchlock"), str(snappedf(arena.round_cost("matchlock"), 0.1)), arena.reload_seconds("matchlock")]
+		"rifle":
+			var shell: Dictionary = arena.rules.skills.rifle.nodes[config.rifle_node]
+			var kind: String = {"base": "넉백", "explosive": "폭발 %.1fm" % float(shell.get("blast_radius", 0.0)), "piercing": "관통"}[config.rifle_node]
+			return "%s · 피해 %d · %s · 장탄 %d발 · 발당 MP %s" % [Build.RIFLE_NODE_NAMES[config.rifle_node], roundi(float(shell.shot_damage) * arena.skill_level_factor("rifle")), kind, arena.gun_magazine("rifle"), str(snappedf(arena.round_cost("rifle"), 0.1))]
 		"reload":
 			return "장탄 +%d발 · 장전 시간 −%s%% · 포탑 연사 +%d%%" % [int(config.passives.reload.magazine_per_level) * int(arena.reload_level()), str(snappedf(100 * float(config.passives.reload.reload_time_cut_per_level) * arena.reload_level(), 0.1)), roundi(100 * (arena.turret_fire_rate() - 1.0))]
 		"automaton", "turret":

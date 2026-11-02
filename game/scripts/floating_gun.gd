@@ -8,6 +8,8 @@ const SIDE := 0.5
 const HEIGHT := 1.3
 const FORWARD := 0.45
 var gun_id := ""
+# The rifle borrows the same stand-in model, drawn longer and slimmer.
+var stretch := Vector3.ONE
 var _flash: MeshInstance3D
 var _kick := 0.0
 var _bob := 0.0
@@ -48,7 +50,7 @@ func follow(dt: float) -> void:
 	axis.y = clampf(axis.y, -0.3 * axis.length(), 0.3 * axis.length())
 	if Vector2(axis.x, axis.z).length() < 0.05:
 		axis = facing
-	global_transform = Transform3D(Basis.looking_at(axis.normalized(), Vector3.UP), origin)
+	global_transform = Transform3D(Basis.looking_at(axis.normalized(), Vector3.UP).scaled_local(stretch), origin)
 
 func ready_to_fire() -> void:
 	# The cast released: the assembled gun stays, solid, instead of fading like a summon preview.

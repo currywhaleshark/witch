@@ -4,7 +4,7 @@ extends RefCounted
 ## own (03 candidates not built yet) get a plain gear.
 const GOLD = Color("d8b77b")
 const KINDS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8, "spring_dash": 9,
-	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12, "matchlock": 14, "reload": 15}
+	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12, "matchlock": 14, "reload": 15, "rifle": 16}
 const PLAIN = 13
 
 static func draw(canvas: CanvasItem, p: Vector2, id: String, color: Color, scale: float = 1.0) -> void:
@@ -97,6 +97,14 @@ static func shape(canvas: CanvasItem, p: Vector2, kind: int, color: Color) -> vo
 			canvas.draw_polyline(PackedVector2Array([p + Vector2(-16, 6), p + Vector2(-17, 13), p + Vector2(-8, 11), p + Vector2(-3, 2)]), color, 2)
 			canvas.draw_line(p + Vector2(-4, 1), p + Vector2(-7, -8), color, 2)
 			canvas.draw_circle(p + Vector2(-7, -10), 2.5, GOLD)
+		16:
+			# Rifled long gun: a long barrel with rifling marks and a scope.
+			canvas.draw_line(p + Vector2(-17, 8), p + Vector2(18, -10), color, 3)
+			canvas.draw_polyline(PackedVector2Array([p + Vector2(-17, 8), p + Vector2(-17, 15), p + Vector2(-9, 11)]), color, 2)
+			canvas.draw_rect(Rect2(p + Vector2(-4, -10), Vector2(10, 4)), GOLD)
+			for k in 3:
+				var at: Vector2 = p + Vector2(6 + k * 4, -3 - k * 2)
+				canvas.draw_line(at, at + Vector2(1, 3), GOLD, 1.5)
 		15:
 			# Reload mechanism: rounds feeding into a gear.
 			canvas.draw_arc(p + Vector2(5, 3), 8, 0, TAU, 18, color, 2)
