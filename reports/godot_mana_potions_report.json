@@ -14,7 +14,7 @@
     "filling a quickslot by hand takes its kind from the stash",
     "the stash survives a restart and the loadout still restocks",
     "the potion view's buy button spends 각인전",
-    "the potion view's quickslot picker assigns a stack"
+    "clicking a potion bag stack then a quickslot assigns the stack"
   ],
   "engine": "4.6.2-stable (official)",
   "failures": []

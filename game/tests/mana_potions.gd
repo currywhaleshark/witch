@@ -116,11 +116,10 @@ func run() -> void:
 	var buy: Array = arena.inventory_window.find_children("*", "Button", true, false).filter(func(b): return b.text == "구매" and not b.disabled)
 	buy[0].pressed.emit()
 	check(arena.coins < 100, "the potion view's buy button spends 각인전")
-	var picker: OptionButton = arena.inventory_window.find_child("Quickslot_3", true, false)
-	var index: int = arena.config.potions.keys().find("mana_s")
-	picker.select(index)
-	picker.item_selected.emit(index)
-	check(arena.potion_slots[3].id == "mana_s" and arena.potion_slots[3].count == 3, "the potion view's quickslot picker assigns a stack")
+	var index: int = arena.potion_cells.find("mana_s")
+	arena.inventory_window.click_potion(false, index)
+	arena.inventory_window.click_potion(true, 3)
+	check(arena.potion_slots[3].id == "mana_s" and arena.potion_slots[3].count == 3, "clicking a potion bag stack then a quickslot assigns the stack")
 	arena.inventory_window.visible = false
 
 	var report = {"engine": Engine.get_version_info().string, "checks": checks, "failures": failures}

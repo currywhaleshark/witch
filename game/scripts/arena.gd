@@ -93,6 +93,8 @@ var base_mana_costs: Dictionary = {}
 # C10: potions bought or dropped wait in the stash; the four quickslots are refilled by hand
 # from it (04 §8.2: no automatic refill). The stash persists; a restart still restocks the loadout.
 var potion_stash: Dictionary = {}
+const POTION_BAG_CAPACITY = 15
+var potion_cells: Array[String] = []
 var state: Dictionary
 var player: CharacterBody3D
 var player_model: Node3D
@@ -316,6 +318,7 @@ func play_sfx(cue: String, fallback_pitch: float = 1.0, gain_db: float = 0.0) ->
 
 func reset_arena() -> void:
 	if is_instance_valid(inventory_window):
+		inventory_window.clear_potion_hand()
 		inventory_window.set_salvage_mode(false)
 	for child in world.get_children():
 		if child.is_in_group("actor_corpses") or child.is_in_group("cast_assemblies"):
@@ -535,6 +538,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				return
 	if event is InputEventMouse:
 		pointer = event.position
+	if event is InputEventMouseButton and event.pressed and inventory_window.holding_potion():
+		# Cancel a potion selection outside the window without consuming it or attacking.
+		inventory_window.clear_potion_hand()
+		get_viewport().set_input_as_handled()
+		return
 	if event is InputEventMouseButton and event.pressed and (held_item != null or held_piece != ""):
 		# A click past the windows with something in the hand: the item drops at her feet, a
 		# piece goes back to the pouch, and no attack comes out of it.
@@ -1083,7 +1091,7 @@ func loot_at(screen: Vector2) -> Dictionary:
 func update_loot_hover(screen: Vector2) -> void:
 	loot_pointer = screen
 	var next: Dictionary = {}
-	if not loading and not paused and hp > 0 and not player_visual.field_entry_active() and held_item == null and held_piece == "":
+	if not loading and not paused and hp > 0 and not player_visual.field_entry_active() and held_item == null and held_piece == "" and not inventory_window.holding_potion():
 		next = loot_at(screen)
 	set_hovered_loot(next)
 
@@ -1138,7 +1146,9 @@ func tick_pickup() -> void:
 		"piece":
 			pieces[loot.id] += int(loot.amount)
 		"potion":
-			potion_stash[loot.id] += int(loot.amount)
+			if not store_potion(loot.id, int(loot.amount)):
+				show_message("물약 가방에 자리가 없습니다")
+				return
 	loot.node.queue_free()
 	ground_items.remove_at(index)
 	if is_same(hovered_loot, loot):
@@ -2145,29 +2155,100 @@ func drink(index: int) -> void:
 	spawn_vfx().potion_glow(player.position, {"hp": Color(1.0, 0.32, 0.28), "mp": Color(0.35, 0.85, 1.0), "both": Color(0.82, 0.55, 1.0), "speed": Color(0.62, 1.0, 0.38)}[potion.kind], map.ground_y(player.position))
 	play_sfx("potion_drink", 1.4)
 
+func arrange_potions() -> void:
+	# Counts stay in the stash; this fixed grid remembers where each nonempty kind lives.
+	while potion_cells.size() < POTION_BAG_CAPACITY:
+		potion_cells.append("")
+	for index in potion_cells.size():
+		if potion_stash.get(potion_cells[index], 0) <= 0:
+			potion_cells[index] = ""
+	for id in potion_stash:
+		if potion_stash[id] > 0 and not potion_cells.has(id):
+			var empty := potion_cells.find("")
+			if empty >= 0:
+				potion_cells[empty] = id
+
+func store_potion(id: String, count: int) -> bool:
+	arrange_potions()
+	if not config.potions.has(id) or count <= 0:
+		return false
+	if not potion_cells.has(id):
+		var empty := potion_cells.find("")
+		if empty < 0:
+			return false
+		potion_cells[empty] = id
+	potion_stash[id] = int(potion_stash.get(id, 0)) + count
+	return true
+
+func move_potion_cell(from: int, to: int) -> void:
+	var old: String = potion_cells[to]
+	potion_cells[to] = potion_cells[from]
+	potion_cells[from] = old
+	refresh_build_windows()
+
+func put_quickslot_in_bag(index: int, cell: int) -> bool:
+	arrange_potions()
+	var slot: Dictionary = potion_slots[index]
+	if slot.count <= 0:
+		return false
+	var target: String = potion_cells[cell]
+	if target != "" and target != slot.id:
+		return assign_quickslot(index, target)
+	var existing := potion_cells.find(slot.id)
+	if not store_potion(slot.id, slot.count):
+		return false
+	if existing < 0:
+		potion_cells[potion_cells.find(slot.id)] = ""
+		potion_cells[cell] = slot.id
+	slot.count = 0
+	refresh_build_windows()
+	return true
+
+func move_potion_quickslot(from: int, to: int) -> void:
+	if from != to:
+		if potion_slots[from].id == potion_slots[to].id:
+			potion_slots[to].count += potion_slots[from].count
+			potion_slots[from].count = 0
+		else:
+			var old: Dictionary = potion_slots[to]
+			potion_slots[to] = potion_slots[from]
+			potion_slots[from] = old
+	refresh_build_windows()
+
 func buy_potion(id: String) -> bool:
 	# Trial shop in the inventory: full-restore potions are drop-only (04 §8.2).
 	var price: int = int(items.data.potion_prices.get(id, 0))
 	if price <= 0 or coins < price:
 		return false
+	if not store_potion(id, 1):
+		show_message("물약 가방에 자리가 없습니다")
+		return false
 	coins -= price
-	potion_stash[id] += 1
 	refresh_build_windows()
 	return true
 
-func assign_quickslot(index: int, id: String) -> void:
+func assign_quickslot(index: int, id: String) -> bool:
 	# The slot's potions go back to the stash and the chosen kind's whole stack moves in.
+	arrange_potions()
 	var slot: Dictionary = potion_slots[index]
+	var source := potion_cells.find(id)
+	if slot.count > 0 and not potion_cells.has(slot.id) and source < 0 and not potion_cells.has(""):
+		return false
 	potion_stash[slot.id] += slot.count
+	if source >= 0 and slot.id != id:
+		potion_cells[source] = slot.id if slot.count > 0 and not potion_cells.has(slot.id) else ""
 	slot.id = id
 	slot.count = potion_stash[id]
 	potion_stash[id] = 0
+	arrange_potions()
 	refresh_build_windows()
+	return true
 
 func fill_quickslot(index: int) -> void:
 	var slot: Dictionary = potion_slots[index]
 	slot.count += potion_stash[slot.id]
 	potion_stash[slot.id] = 0
+	arrange_potions()
 	refresh_build_windows()
 
 func potion_factor() -> float:

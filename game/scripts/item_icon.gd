@@ -12,6 +12,21 @@ const PAPER = Color("d9d2b8")
 const INK = Color("2f5f8a")
 const GLASS = Color("9fd6d2")
 const DARK = Color("10181c")
+const POTION_COLORS = {"hp": Color("e88e78"), "mp": Color("79c9dc"), "both": Color("bd94dc"), "speed": Color("a8d672")}
+
+static func potion(canvas: Control, rect: Rect2, data: Dictionary, count: int, alpha: float = 1.0) -> void:
+	var tint: Color = POTION_COLORS[data.kind]
+	var center := rect.get_center()
+	var bottle := Rect2(center - Vector2(14, 17), Vector2(28, 34))
+	canvas.draw_rect(Rect2(center + Vector2(-8, -24), Vector2(16, 7)), Color(BRASS, alpha))
+	canvas.draw_rect(bottle, Color(tint.darkened(0.25), alpha))
+	canvas.draw_rect(bottle, Color(tint, alpha), false, 1.0)
+	canvas.draw_line(bottle.position + Vector2(4, 4), bottle.position + Vector2(4, 15), Color(SILVER, alpha * 0.55), 2.0)
+	var font := canvas.get_theme_default_font()
+	var mark: String = data.mark
+	var width := font.get_string_size(mark, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
+	canvas.draw_string(font, center + Vector2(-width / 2, 5), mark, HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color(DARK, alpha))
+	canvas.draw_string(font, rect.position + Vector2(4, rect.size.y - 5), "×%d" % count, HORIZONTAL_ALIGNMENT_RIGHT, rect.size.x - 8, 12, Color(PAPER, alpha))
 
 static func draw(canvas: CanvasItem, rect: Rect2, item: Dictionary, items) -> void:
 	var rarity := Color(items.data.rarity_colors[item.rarity])

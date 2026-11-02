@@ -16,6 +16,8 @@ const GOLD = Color("d8b77b")
 const GOOD = Color("6fae7a")
 const BAD = Color("c25b5b")
 const CELL = 36
+const POTION_CELL = 72
+const POTION_COLUMNS = 5
 # Where each worn slot sits on the paper doll, in pixels over the bag's width.
 const DOLL = {
 	"head": Rect2(144, 0, 72, 72), "brooch": Rect2(234, 18, 36, 36),
@@ -26,6 +28,7 @@ var arena: Node
 var body: VBoxContainer
 var mode := "bag"
 var salvage_mode := false
+var held_potion: Dictionary = {}
 var hover = null
 var hover_compare := false
 var tip: PanelContainer
@@ -79,6 +82,7 @@ func toggle() -> void:
 	visible = not visible
 	if not visible:
 		salvage_mode = false
+		clear_potion_hand()
 		arena.return_held()
 		set_hover(null)
 	refresh()
@@ -89,6 +93,11 @@ func _process(_delta: float) -> void:
 	hand.size = get_viewport_rect().size
 	hand.position = Vector2.ZERO
 	hand.queue_redraw()
+	if mode == "potions":
+		holding_potion()
+		# Drinking with 1-4 changes counts without rebuilding the inventory.
+		for view in views:
+			view.queue_redraw()
 	if tip.visible:
 		var mouse := get_viewport().get_mouse_position()
 		var spot := mouse + Vector2(18, 12)
@@ -122,6 +131,8 @@ func refresh() -> void:
 		return
 	if mode != "bag":
 		salvage_mode = false
+	if mode != "potions":
+		clear_potion_hand()
 	set_hover(null)
 	for child in body.get_children():
 		body.remove_child(child)
@@ -129,9 +140,9 @@ func refresh() -> void:
 	views.clear()
 	var data: Dictionary = arena.items.data
 	var tabs := HBoxContainer.new()
-	tabs.add_child(small_button("가방", func(): mode = "bag", mode != "bag"))
-	tabs.add_child(small_button("작업대", func(): mode = "bench", mode != "bench"))
-	tabs.add_child(small_button("물약", func(): mode = "potions", mode != "potions"))
+	tabs.add_child(small_button("가방", func(): select_mode("bag"), mode != "bag"))
+	tabs.add_child(small_button("작업대", func(): select_mode("bench"), mode != "bench"))
+	tabs.add_child(small_button("물약", func(): select_mode("potions"), mode != "potions"))
 	var gap := Control.new()
 	gap.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	tabs.add_child(gap)
@@ -151,6 +162,12 @@ func refresh() -> void:
 	reset_size()
 	# On the right edge, so it sits beside the character window (C) on the left.
 	position = Vector2(get_viewport_rect().size.x - size.x - 24, 84)
+
+func select_mode(next: String) -> void:
+	clear_potion_hand()
+	if next == "potions":
+		arena.return_held()
+	mode = next
 
 func canvas_view(view_name: String, size_px: Vector2, painter: Callable, handler: Callable) -> Control:
 	var view := Control.new()
@@ -382,7 +399,11 @@ func draw_wallet(view: Control) -> void:
 # Hand and tooltip.
 func draw_hand() -> void:
 	var mouse := get_viewport().get_mouse_position()
-	if arena.held_item != null:
+	if holding_potion():
+		var stack := potion_stack(held_potion.quick, held_potion.index)
+		if stack.count > 0 and stack.id == held_potion.id:
+			ItemIcon.potion(hand, Rect2(mouse - Vector2.ONE * POTION_CELL / 2, Vector2.ONE * POTION_CELL), arena.config.potions[stack.id], stack.count)
+	elif arena.held_item != null:
 		var size := Vector2(arena.items.size_of(arena.held_item)) * CELL
 		ItemIcon.draw(hand, Rect2(mouse - size / 2, size), arena.held_item, arena.items)
 	elif arena.held_piece != "":
@@ -436,35 +457,125 @@ func tooltip_bbcode(item: Dictionary, compare: bool) -> String:
 	return "\n".join(out)
 
 func potion_view() -> VBoxContainer:
-	# C10: the stash with a trial shop, and the four quickslots refilled by hand.
+	# Fifteen stacked bag cells, four physical quickslots, then the existing trial shop.
+	arena.arrange_potions()
 	var potions: Dictionary = arena.config.potions
 	var prices: Dictionary = arena.items.data.potion_prices
 	var view := VBoxContainer.new()
-	var ids: Array = potions.keys()
+	view.add_theme_constant_override("separation", 10)
+	var bag_grid := GridContainer.new()
+	bag_grid.name = "PotionBag"
+	bag_grid.columns = POTION_COLUMNS
+	bag_grid.add_theme_constant_override("h_separation", 0)
+	bag_grid.add_theme_constant_override("v_separation", 0)
+	for index in arena.POTION_BAG_CAPACITY:
+		bag_grid.add_child(potion_cell(false, index))
+	view.add_child(bag_grid)
+	var centered := CenterContainer.new()
+	var slots := HBoxContainer.new()
+	slots.name = "PotionQuickslots"
+	slots.add_theme_constant_override("separation", 6)
 	for index in arena.potion_slots.size():
-		var line := HBoxContainer.new()
-		var slot: Dictionary = arena.potion_slots[index]
-		line.add_child(text("%d  ×%d" % [index + 1, slot.count], GOLD))
-		var picker := OptionButton.new()
-		picker.name = "Quickslot_%d" % index
-		picker.focus_mode = Control.FOCUS_NONE
-		for id in ids:
-			picker.add_item("%s  %d" % [potions[id].name, arena.potion_stash[id]])
-		picker.select(ids.find(slot.id))
-		picker.item_selected.connect(func(pick: int): arena.assign_quickslot(index, ids[pick]))
-		line.add_child(picker)
-		line.add_child(small_button("채우기", func(): arena.fill_quickslot(index), arena.potion_stash[slot.id] > 0, "보관함의 같은 물약을 이 칸으로"))
-		view.add_child(line)
+		slots.add_child(potion_cell(true, index))
+	centered.add_child(slots)
+	view.add_child(centered)
 	view.add_child(HSeparator.new())
+	var shop := ScrollContainer.new()
+	shop.name = "PotionShop"
+	shop.custom_minimum_size = Vector2(POTION_COLUMNS * POTION_CELL, 170)
+	shop.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	var grid := GridContainer.new()
 	grid.columns = 3
-	for id in ids:
+	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	for id in potions:
 		grid.add_child(text("%s ×%d" % [potions[id].name, arena.potion_stash[id]]))
 		var price: int = int(prices.get(id, 0))
 		grid.add_child(text("%d전" % price if price > 0 else "—", MUTED, 13))
 		grid.add_child(small_button("구매", func(): arena.buy_potion(id), price > 0 and arena.coins >= price))
-	view.add_child(grid)
+	shop.add_child(grid)
+	view.add_child(shop)
 	return view
+
+func holding_potion() -> bool:
+	if held_potion.is_empty():
+		return false
+	var stack := potion_stack(held_potion.quick, held_potion.index)
+	if stack.count <= 0 or stack.id != held_potion.id:
+		clear_potion_hand()
+		return false
+	return true
+
+func clear_potion_hand() -> void:
+	held_potion.clear()
+	if is_instance_valid(tip):
+		tip.visible = false
+
+func potion_stack(quick: bool, index: int) -> Dictionary:
+	if quick:
+		return arena.potion_slots[index]
+	var id: String = arena.potion_cells[index]
+	return {"id": id, "count": int(arena.potion_stash.get(id, 0))}
+
+func potion_cell(quick: bool, index: int) -> Control:
+	return canvas_view(("Quickslot_" if quick else "PotionCell_") + str(index), Vector2.ONE * POTION_CELL,
+		func(view): draw_potion_cell(view, quick, index),
+		func(view, event): potion_input(view, event, quick, index))
+
+func draw_potion_cell(view: Control, quick: bool, index: int) -> void:
+	var rect := Rect2(Vector2.ZERO, Vector2.ONE * POTION_CELL).grow(-1)
+	var stack := potion_stack(quick, index)
+	var selected: bool = holding_potion() and held_potion.quick == quick and held_potion.index == index
+	var under_mouse := rect.has_point(view.get_local_mouse_position())
+	view.draw_rect(rect, Color("0d181d"))
+	view.draw_rect(rect, GOLD if selected or under_mouse else EDGE, false, 2.0 if selected else 1.0)
+	if stack.count > 0:
+		ItemIcon.potion(view, rect, arena.config.potions[stack.id], stack.count, 0.3 if selected else 1.0)
+	if quick:
+		view.draw_string(get_theme_default_font(), Vector2(6, 16), str(index + 1), HORIZONTAL_ALIGNMENT_LEFT, -1, 12, GOLD)
+
+func potion_input(view: Control, event: InputEvent, quick: bool, index: int) -> void:
+	if event is InputEventMouseMotion:
+		var stack := potion_stack(quick, index)
+		set_hover(null)
+		if not holding_potion():
+			var lines := "%d번 물약 슬롯" % (index + 1) if quick else "물약 가방"
+			if stack.count > 0:
+				lines = "%s ×%d\n클릭: 묶음 집기" % [arena.config.potions[stack.id].name, stack.count]
+			else:
+				lines += "\n물약 묶음을 집어 여기에 놓기"
+			tip_text.text = lines
+			tip.visible = true
+		view.queue_redraw()
+	elif event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			clear_potion_hand()
+		elif event.button_index == MOUSE_BUTTON_LEFT:
+			click_potion(quick, index)
+
+func click_potion(quick: bool, index: int) -> void:
+	if arena.held_item != null or arena.held_piece != "":
+		return
+	if not holding_potion():
+		var stack := potion_stack(quick, index)
+		if stack.count > 0:
+			# Reserve a source, not a second owned stack; cancel/close cannot lose a potion.
+			held_potion = {"quick": quick, "index": index, "id": stack.id}
+			tip.visible = false
+		return
+	var source := held_potion.duplicate()
+	var stack := potion_stack(source.quick, source.index)
+	clear_potion_hand()
+	if stack.count <= 0 or stack.id != source.id:
+		return
+	if quick:
+		if source.quick:
+			arena.move_potion_quickslot(source.index, index)
+		else:
+			arena.assign_quickslot(index, source.id)
+	elif source.quick:
+		arena.put_quickslot_in_bag(source.index, index)
+	else:
+		arena.move_potion_cell(source.index, index)
 
 func bench() -> ScrollContainer:
 	# Worn items only: re-roll one option, or pay to take the last piece back out.
