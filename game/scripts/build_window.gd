@@ -260,11 +260,13 @@ func node_box(node: Dictionary) -> Control:
 	box.gui_input.connect(func(event):
 		if not event is InputEventMouseButton or not event.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT]:
 			return
+		# Accepted first: click_node rebuilds the window, and a box already out of the tree can
+		# no longer stop the click from reaching the field.
+		box.accept_event()
 		if event.pressed:
 			dragged = false
 		elif state == "levels" and not dragged:
-			click_node(id, 1 if event.button_index == MOUSE_BUTTON_LEFT else -1)
-		box.accept_event())
+			click_node(id, 1 if event.button_index == MOUSE_BUTTON_LEFT else -1))
 	box.set_drag_forwarding(func(_at): return start_drag(id, ""), func(_at, _data): return false, func(_at, _data): pass)
 	return box
 

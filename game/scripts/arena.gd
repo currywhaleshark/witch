@@ -63,6 +63,8 @@ var dash: Dictionary = {}
 var items: RefCounted
 var loot_rng = RandomNumberGenerator.new()
 var ground_items: Array = []
+# The loot she was clicked over to; it goes into the bag once she is near it.
+var loot_target: Dictionary = {}
 var bag: Array = []
 # What the inventory window's cursor carries: an item taken out of the bag or a slot, or a name
 # piece to click into a socket. Both stay on the arena so a restart or closing the window can
@@ -315,6 +317,7 @@ func reset_arena() -> void:
 		if is_instance_valid(loot.node):
 			loot.node.free()
 	ground_items.clear()
+	loot_target = {}
 	if held_item != null and stow(held_item):
 		held_item = null
 	automaton_assembly = null
@@ -530,6 +533,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			drink(index)
 		return
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and not event.shift_pressed and pointer_over_field():
+		var loot := loot_at(event.position)
+		if not loot.is_empty():
+			cancel_pending_cast()
+			move_hold.clear()
+			pick_up(loot)
+			return
 	var slot = ""
 	var shift = false
 	var source = {}
@@ -612,6 +622,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			show_message("마나 회복 %s/s" % str(config.mana_regen))
 			return
 	if slot != "" and (pointer_over_field() or event is InputEventKey):
+		loot_target = {}
 		var cursor = field_cursor()
 		if slot == "lmb" and not shift and cursor.get("enemy_id") == null:
 			move_hold = source
@@ -946,20 +957,53 @@ func drop_item(item: Dictionary, at: Vector3) -> void:
 	var node: MeshInstance3D = Shape.cylinder(world, map.grounded(at) + Vector3(0, 0.05, 0), 0.17, 0.08, color)
 	ground_items.append({"item": item, "node": node})
 
+func loot_at(screen: Vector2) -> Dictionary:
+	# The loot under the cursor: its disc on the ground or the name drawn above it. Where drops
+	# overlap, the last one dropped (its name drawn on top) comes first.
+	for index in range(ground_items.size() - 1, -1, -1):
+		var loot: Dictionary = ground_items[index]
+		if not is_instance_valid(loot.node) or camera.is_position_behind(loot.node.position):
+			continue
+		if camera.unproject_position(loot.node.position).distance_to(screen) <= 22:
+			return loot
+		var label: Vector2 = camera.unproject_position(loot.node.position + Vector3.UP * 0.3)
+		var width: float = hud.font.get_string_size(loot.item.name, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x
+		if Rect2(label.x - width / 2 - 4, label.y - 16, width + 8, 20).has_point(screen):
+			return loot
+	return {}
+
+func pick_up(loot: Dictionary) -> void:
+	# A click on loot walks her over to it; walking past loot never picks it up.
+	loot_target = loot
+	tick_pickup()
+	if not loot_target.is_empty():
+		set_destination(loot.node.position)
+
 func tick_pickup() -> void:
-	# Walking over loot picks it up while the bag has room.
-	for loot in ground_items.duplicate():
-		var flat: Vector3 = loot.node.position - player.position
-		flat.y = 0.0
-		if flat.length() > float(items.data.pickup_radius):
-			continue
-		if not stow(loot.item):
-			show_message("가방에 자리가 없습니다")
-			continue
-		loot.node.queue_free()
-		ground_items.erase(loot)
-		show_message(items.display_name(loot.item))
-		refresh_build_windows()
+	if loot_target.is_empty():
+		return
+	var loot: Dictionary = loot_target
+	var index: int = -1
+	for i in ground_items.size():
+		if is_same(ground_items[i], loot):
+			index = i
+	if index < 0:
+		loot_target = {}
+		return
+	var flat: Vector3 = loot.node.position - player.position
+	flat.y = 0.0
+	if flat.length() > float(items.data.pickup_radius):
+		return
+	loot_target = {}
+	moving = false
+	move_marker.visible = false
+	if not stow(loot.item):
+		show_message("가방에 자리가 없습니다")
+		return
+	loot.node.queue_free()
+	ground_items.remove_at(index)
+	show_message(items.display_name(loot.item))
+	refresh_build_windows()
 
 func sync_tool_upkeep() -> void:
 	# Upkeep options and the power part trim every tool's drain, never below a tenth.

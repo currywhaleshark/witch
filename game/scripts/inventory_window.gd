@@ -153,7 +153,13 @@ func canvas_view(view_name: String, size_px: Vector2, painter: Callable, handler
 	view.custom_minimum_size = size_px
 	view.mouse_filter = Control.MOUSE_FILTER_STOP
 	view.draw.connect(func(): painter.call(view))
-	view.gui_input.connect(func(event): handler.call(view, event))
+	# Clicks are accepted before they are handled: handling one rebuilds the window, and a view
+	# already out of the tree can no longer stop the click from reaching the field, where it
+	# would attack or drop the item just lifted.
+	view.gui_input.connect(func(event):
+		if event is InputEventMouseButton:
+			view.accept_event()
+		handler.call(view, event))
 	view.mouse_exited.connect(func():
 		set_hover(null)
 		view.queue_redraw())
@@ -196,7 +202,6 @@ func doll_input(view: Control, event: InputEvent) -> void:
 		var slot := slot_at(event.position)
 		if slot != "":
 			click_slot(slot, event.button_index == MOUSE_BUTTON_RIGHT)
-		view.accept_event()
 
 func click_slot(slot: String, right: bool = false) -> void:
 	# Left: put a held piece in, wear the held item, or lift the worn one. Right: take it off.
@@ -258,7 +263,6 @@ func bag_input(view: Control, event: InputEvent) -> void:
 		var right: bool = event.button_index == MOUSE_BUTTON_RIGHT
 		var cell: Vector2i = held_origin(event.position) if arena.held_item != null and not right else cell_at(event.position)
 		click_bag(cell, right)
-		view.accept_event()
 
 func click_bag(cell: Vector2i, right: bool = false) -> void:
 	# With an item held, cell is where its top-left corner goes; otherwise the cell clicked.
@@ -309,7 +313,6 @@ func draw_piece(view: Control, id: String) -> void:
 func piece_input(view: Control, event: InputEvent, id: String) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		click_piece(id)
-		view.accept_event()
 
 func click_piece(id: String) -> void:
 	# Lifts one kind of piece (clicking it again puts it back); an item in the hand blocks it.
@@ -330,7 +333,6 @@ func salvage_input(view: Control, event: InputEvent) -> void:
 		view.queue_redraw()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		arena.salvage_held()
-		view.accept_event()
 
 func draw_wallet(view: Control) -> void:
 	# 각인전 as a coin and material as a gear, numbers only; the names are in the hover tip.

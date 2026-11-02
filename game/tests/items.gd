@@ -61,6 +61,23 @@ func struck(source: String, roller: String = "witch") -> float:
 	arena.strike("t0", 10.0, false, roller, source)
 	return before - arena.enemies.t0.hp
 
+func click_loot(loot: Dictionary, on_name: bool = false) -> void:
+	# A real left click on the loot's disc, or on the name drawn above it.
+	var press := InputEventMouseButton.new()
+	press.button_index = MOUSE_BUTTON_LEFT
+	press.pressed = true
+	press.position = arena.camera.unproject_position(loot.node.position + (Vector3.UP * 0.3 if on_name else Vector3.ZERO)) - (Vector2(0, 6) if on_name else Vector2.ZERO)
+	root.push_input(press, true)
+	var release: InputEventMouseButton = press.duplicate()
+	release.pressed = false
+	root.push_input(release, true)
+
+func walk_for(frames: int, done: Callable) -> void:
+	for i in frames:
+		if done.call():
+			return
+		await step()
+
 func run() -> void:
 	arena = load("res://main.tscn").instantiate()
 	root.add_child(arena)
@@ -126,9 +143,16 @@ func run() -> void:
 	arena.strike("t0", 10.0, false, "witch", "staff")
 	arena.items.data.drops.normal.chance = 0.1
 	check(arena.ground_items.size() == 1 and arena.ground_items[0].item.level == 7, "a defeated enemy drops loot at the trial level")
-	arena.player.position = arena.ground_items[0].node.position
+	var loot: Dictionary = arena.ground_items[0]
+	arena.player.position = loot.node.position
 	await step(2)
-	check(arena.ground_items.is_empty() and arena.bag.size() == 1, "walking over loot picks it up")
+	check(arena.ground_items.size() == 1 and arena.bag.is_empty(), "walking over loot does not pick it up")
+	arena.player.position = loot.node.position + Vector3(3, 0, 0)
+	await step()
+	click_loot(loot)
+	check(arena.loot_target == loot and arena.moving and arena.hold.is_empty(), "clicking loot walks her to it without attacking")
+	await walk_for(240, func(): return arena.ground_items.is_empty())
+	check(arena.ground_items.is_empty() and arena.bag.size() == 1, "she picks up the clicked loot when she reaches it")
 	while arena.stow(items.generate(rng, 1, "normal", "ring")):
 		pass
 	var stowed: int = arena.bag.size()
@@ -138,8 +162,9 @@ func run() -> void:
 		cells += size.x * size.y
 	check(cells == arena.bag_grid().x * arena.bag_grid().y, "rings fill every cell the first item left free")
 	arena.drop_item(items.generate(rng, 1, "normal", "ring"), arena.player.position)
+	click_loot(arena.ground_items[0])
 	await step(2)
-	check(arena.ground_items.size() == 1, "a full bag leaves loot on the ground")
+	check(arena.ground_items.size() == 1 and arena.loot_target.is_empty(), "a full bag leaves clicked loot on the ground")
 	arena.reset_arena()
 	check(arena.ground_items.is_empty() and arena.bag.size() == stowed, "a restart clears the field but keeps the bag")
 
@@ -277,6 +302,49 @@ func run() -> void:
 	outside.position = Vector2(60, 420)
 	root.push_input(outside, true)
 	check(arena.ground_items.size() == ground + 1 and arena.held_item == null and arena.hold.is_empty(), "a click outside the window drops the held item on the ground without attacking")
+	# Real clicks on the window: they rebuild it, and still must not reach the field.
+	await step()
+	var bag_view: Control = window.find_child("Bag", true, false)
+	var picked: Dictionary = arena.bag[0]
+	var press := InputEventMouseButton.new()
+	press.button_index = MOUSE_BUTTON_LEFT
+	press.pressed = true
+	press.position = bag_view.get_global_rect().position + (Vector2(picked.at) + Vector2(0.5, 0.5)) * window.CELL
+	ground = arena.ground_items.size()
+	root.push_input(press, true)
+	check(arena.held_item == picked and arena.ground_items.size() == ground and arena.hold.is_empty(), "a real left click on a bag item lifts it without dropping or attacking")
+	await step()
+	var doll_view: Control = window.find_child("Doll", true, false)
+	press.position = doll_view.get_global_rect().position + window.DOLL[picked.slot].get_center()
+	root.push_input(press, true)
+	check(arena.equipment[picked.slot] == picked and arena.held_item == null and arena.hold.is_empty(), "a real left click on its slot wears the held item without attacking")
+	await step()
+	doll_view = window.find_child("Doll", true, false)
+	press.position = doll_view.get_global_rect().position + window.DOLL[picked.slot].get_center()
+	root.push_input(press, true)
+	check(arena.held_item == picked and arena.ground_items.size() == ground, "a real left click on a worn item lifts it")
+	press.position = Vector2(60, 420)
+	root.push_input(press, true)
+	check(arena.held_item == null and arena.ground_items.size() == ground + 1 and arena.hold.is_empty(), "a lifted worn item drops outside the window")
+	await step(10)
+	var thrown: Dictionary = arena.ground_items[-1]
+	check(arena.ground_items.has(thrown), "a thrown-away item stays on the ground beside her")
+	click_loot(thrown, true)
+	await walk_for(120, func(): return not arena.ground_items.has(thrown))
+	check(not arena.ground_items.has(thrown) and arena.bag.has(thrown.item) and arena.hold.is_empty(), "clicking its name picks it up again")
+	ground = arena.ground_items.size()
+	var new_ring: Dictionary = items.generate(rng, 30, "magic", "ring")
+	arena.stow(new_ring)
+	arena.refresh_build_windows()
+	await step()
+	bag_view = window.find_child("Bag", true, false)
+	var mana_before: float = arena.state.mana
+	press.button_index = MOUSE_BUTTON_RIGHT
+	press.position = bag_view.get_global_rect().position + (Vector2(new_ring.at) + Vector2(0.5, 0.5)) * window.CELL
+	root.push_input(press, true)
+	await step()
+	check(arena.equipment.ring == new_ring and arena.hold.is_empty() and arena.state.mana == mana_before, "a real right click wears a bag item without casting the right-click skill")
+	await step()
 	window.click_bag(arena.bag[0].at)
 	outside.button_index = MOUSE_BUTTON_RIGHT
 	root.push_input(outside, true)
