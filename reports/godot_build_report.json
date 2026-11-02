@@ -11,6 +11,7 @@
     "dropping the node refunds it and restores the cheap cost",
     "lowering the level refunds a pool that no longer fits",
     "a pool that still fits keeps its spending",
+    "each level adds 2 max HP and 2 max MP",
     "power raises the witch's own hits, not her summons'",
     "vitality raises max HP and current HP rises with it",
     "will raises max mana",

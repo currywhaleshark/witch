@@ -145,11 +145,11 @@ func apply() -> void:
 	config.automaton_node = node
 	arena.sync_automaton_cost()
 	arena.sync_tool_upkeep()
-	# Vitality and will move the maximums; current HP and mana follow a rise and are clipped by a fall.
-	var hp_max: float = base_hp + float(effects.vitality) * stat("vitality") + arena.gear_total("life")
+	# Level, vitality and will move the maximums; current HP and mana follow a rise and are clipped by a fall.
+	var hp_max: float = base_hp + float(rules.hp_per_level) * (level - 1) + float(effects.vitality) * stat("vitality") + arena.gear_total("life")
 	arena.hp = clampf(arena.hp + hp_max - float(config.max_hp), 0.0, hp_max) if arena.hp > 0 else arena.hp
 	config.max_hp = hp_max
-	var mana_max: float = base_mana + float(effects.will) * stat("will") + arena.gear_total("mana")
+	var mana_max: float = base_mana + float(rules.mana_per_level) * (level - 1) + float(effects.will) * stat("will") + arena.gear_total("mana")
 	arena.state.mana = clampf(arena.state.mana + mana_max - float(arena.state.max_mana), 0.0, mana_max)
 	arena.state.max_mana = mana_max
 	config.max_mana = mana_max

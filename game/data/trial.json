@@ -95,7 +95,7 @@
   "automaton_level": 1,
   "automaton_node": "base",
   "build": {"level": 1, "max_level": 30, "stat_points_per_level": 5, "skill_points_per_level": 1, "skill_max_level": 10, "node_cost": 1,
-    "enemy_hp_per_level": 0.09, "enemy_damage_per_level": 0.05, "log_min_seconds": 10,
+    "hp_per_level": 2, "mana_per_level": 2, "enemy_hp_per_level": 0.09, "enemy_damage_per_level": 0.06, "log_min_seconds": 10,
     "stat_effects": {"power": 0.01, "vitality": 2, "will": 1},
     "skill_tree": [{"tree": "firearm", "entries": [{"id": "shotgun", "kind": "skill"}, {"id": "ballistics", "kind": "passive"}]},
       {"tree": "drive", "entries": [{"id": "chainsaw", "kind": "skill"}, {"id": "shield", "kind": "skill"}, {"id": "cutting_precision", "kind": "passive"}]},

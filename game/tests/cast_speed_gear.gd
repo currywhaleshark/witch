@@ -80,7 +80,7 @@ func run() -> void:
 	var hp_before: float = arena.config.max_hp
 	wear("ring", {"life": 30})
 	wear("brooch", {"mana": 20})
-	check(is_equal_approx(arena.config.max_hp, hp_before + 30) and is_equal_approx(arena.state.max_mana, 80.0) and arena.config.cast_speed_score == 0, "slots spent on life or mana give that instead of cast speed")
+	check(is_equal_approx(arena.config.max_hp, hp_before + 30) and is_equal_approx(arena.state.max_mana, 80.0 + float(build.rules.mana_per_level) * (build.level - 1)) and arena.config.cast_speed_score == 0, "slots spent on life or mana give that instead of cast speed")
 	build.reset_stats()
 	check(build.stat_points() == stat_budget and arena.equipment.ring != null, "worn items sit outside the point budget and survive a free stat reset")
 

@@ -143,7 +143,7 @@ func stepper(label: String, value: String, minus: Callable, plus: Callable, can_
 func _character() -> void:
 	var build = arena.build
 	body.add_child(stepper("시험 레벨", "Lv %d" % build.level, func(): return build.step_level(-1), func(): return build.step_level(1),
-		build.level > 1, build.level < int(build.rules.max_level), "레벨당 스탯 %d · 스킬 %d" % [build.rules.stat_points_per_level, build.rules.skill_points_per_level]))
+		build.level > 1, build.level < int(build.rules.max_level), "레벨당 스탯 %d · 스킬 %d · HP +%d · MP +%d" % [build.rules.stat_points_per_level, build.rules.skill_points_per_level, build.rules.hp_per_level, build.rules.mana_per_level]))
 	var rules: Dictionary = build.rules
 	body.add_child(stepper("적 레벨", "Lv %d" % arena.enemy_level, func(): return arena.step_enemy_level(-1), func(): return arena.step_enemy_level(1),
 		arena.enemy_level > 1, arena.enemy_level < int(rules.max_level), "HP ×%.2f · 피해 ×%.2f%s" % [arena.enemy_level_factor("hp", arena.enemy_level),

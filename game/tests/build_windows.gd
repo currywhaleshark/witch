@@ -110,20 +110,24 @@ func run() -> void:
 
 	await fresh()
 	build.set_level(30)
+	# Each level past the first adds its own HP and MP on top of the stats.
+	var level_hp: float = 29 * float(build.rules.hp_per_level)
+	var level_mana: float = 29 * float(build.rules.mana_per_level)
+	check(level_hp == 58.0 and level_mana == 58.0 and is_equal_approx(arena.config.max_hp, 100.0 + level_hp) and is_equal_approx(arena.state.max_mana, 60.0 + level_mana), "each level adds 2 max HP and 2 max MP")
 	build.change_stat("power", 10)
 	check(is_equal_approx(struck("witch"), 10.0 * (1.0 + 10 * float(effects.power))) and is_equal_approx(struck("automaton"), 10.0), "power raises the witch's own hits, not her summons'")
 	var hp_before: float = arena.hp
 	build.change_stat("vitality", 10)
-	check(is_equal_approx(arena.config.max_hp, 100.0 + 10 * float(effects.vitality)) and is_equal_approx(arena.hp, hp_before + 10 * float(effects.vitality)), "vitality raises max HP and current HP rises with it")
+	check(is_equal_approx(arena.config.max_hp, 100.0 + level_hp + 10 * float(effects.vitality)) and is_equal_approx(arena.hp, hp_before + 10 * float(effects.vitality)), "vitality raises max HP and current HP rises with it")
 	build.change_stat("will", 10)
-	check(is_equal_approx(arena.state.max_mana, 60.0 + 10 * float(effects.will)) and is_equal_approx(arena.state.mana, arena.state.max_mana), "will raises max mana")
+	check(is_equal_approx(arena.state.max_mana, 60.0 + level_mana + 10 * float(effects.will)) and is_equal_approx(arena.state.mana, arena.state.max_mana), "will raises max mana")
 	var hit_before: float = arena.hit_chance("t0")
 	build.change_stat("dexterity", 50)
 	check(arena.config.dexterity == 50 and arena.hit_chance("t0") > hit_before, "dexterity feeds the existing hit formula")
 	build.reset_stats()
-	check(build.stat_points() == 30 * per_stat and arena.config.max_hp == 100.0 and arena.state.max_mana == 60.0 and arena.hp <= 100.0, "resetting stats is free and returns every point")
+	check(build.stat_points() == 30 * per_stat and arena.config.max_hp == 100.0 + level_hp and arena.state.max_mana == 60.0 + level_mana and arena.hp <= 100.0 + level_hp, "resetting stats is free and returns every point")
 	arena.reset_arena()
-	check(arena.hp == arena.config.max_hp and arena.state.max_mana == 60.0, "a restart uses the build's maximums")
+	check(arena.hp == arena.config.max_hp and arena.state.max_mana == 60.0 + level_mana, "a restart uses the build's maximums")
 
 	await fresh()
 	key(KEY_C)
@@ -201,7 +205,7 @@ func run() -> void:
 		await step()
 	var path: String = arena.save_mana_log("manual")
 	var saved = JSON.parse_string(FileAccess.get_file_as_string(path)) if path != "" else null
-	check(saved != null and saved.settings.build.level == 4 and saved.settings.build.stats.will == 3 and saved.settings.max_mana == 63, "the A5 log records the trial build")
+	check(saved != null and saved.settings.build.level == 4 and saved.settings.build.stats.will == 3 and saved.settings.max_mana == 69, "the A5 log records the trial build")
 	for i in 60 * 11:
 		await step()
 	var files: int = DirAccess.get_files_at(arena.log_dir).size()
@@ -211,7 +215,7 @@ func run() -> void:
 	for file in names:
 		if file.ends_with("_build_changed.json"):
 			split = JSON.parse_string(FileAccess.get_file_as_string(arena.log_dir.path_join(file)))
-	check(names.size() == files + 1 and split != null and split.settings.build.stats.will == 3 and split.settings.max_mana == 63, "a build change first saves the segment with the build it was played with")
+	check(names.size() == files + 1 and split != null and split.settings.build.stats.will == 3 and split.settings.max_mana == 69, "a build change first saves the segment with the build it was played with")
 	for i in 180:
 		await step()
 	build.change_stat("will", 1)

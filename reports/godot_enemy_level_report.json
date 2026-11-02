@@ -5,7 +5,7 @@
     "the enemy level follows the trial level",
     "a living enemy grows with the level and keeps its HP fraction",
     "new enemies spawn at the enemy level, grade multiplier included",
-    "enemy hits deal the level's damage factor (22.05, expected 22.05)",
+    "enemy hits deal the level's damage factor (24.66, expected 24.66)",
     "a restart respawns enemies at the enemy level",
     "the enemy level can be set apart from the trial level",
     "a set-apart enemy level ignores trial level changes",

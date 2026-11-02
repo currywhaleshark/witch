@@ -207,7 +207,7 @@ func run() -> void:
 	wear("brooch", {"crit_pct": 5})
 	wear("head", {"hit_pct": 20, "mana": 20, "damage_reduction": 5})
 	check(is_equal_approx(arena.crit_chance(), crit + 0.05) and arena.hit_chance("t0") > hit, "crit and hit options feed the existing rolls")
-	check(is_equal_approx(arena.state.max_mana, 80.0), "max mana options raise the pool")
+	check(is_equal_approx(arena.state.max_mana, 80.0 + float(arena.build.rules.mana_per_level) * (arena.build.level - 1)), "max mana options raise the pool")
 	var hp: float = arena.hp
 	arena.damage_player(20.0)
 	check(is_equal_approx(hp - arena.hp, 19.0), "damage reduction trims a hit by its points")
@@ -218,7 +218,7 @@ func run() -> void:
 	arena.unequip("gloves")
 	wear("gloves", {"attack_speed": 20})
 	check(arena.config.cast_speed_score == 20 and arena.attack_seconds() < attack and arena.hit_recovery_seconds() < recovery, "cast, attack and hit recovery speed options fill their own scores")
-	check(is_equal_approx(arena.config.max_hp, 130.0), "life options raise max HP")
+	check(is_equal_approx(arena.config.max_hp, 130.0 + float(arena.build.rules.hp_per_level) * (arena.build.level - 1)), "life options raise max HP")
 	arena.config.mana_regen = 2.0
 	arena.state.mana = 0.0
 	for i in 60:
