@@ -9,6 +9,8 @@ const DROP_SECONDS := 0.4
 const DROP_HEIGHT := 0.95
 var cached_key: Array = []
 var cached_labels: Array = []
+# Grid offsets sorted nearest first, per label pitch; sorting them per label every frame stalled drops.
+var offset_cache: Dictionary = {}
 
 static func pose_drop(visual: Node3D, age: float) -> void:
 	var phase := clampf(age / DROP_SECONDS, 0.0, 1.0)
@@ -71,14 +73,6 @@ func labels(drops: Array, camera: Camera3D, font: Font, viewport_size: Vector2, 
 		# pushing every label off the top of the screen. Existing item discs stay unobscured.
 		var candidates: Array[Rect2] = []
 		var pitch := size + Vector2.ONE * LABEL_GAP
-		var columns := ceili(area.size.x / pitch.x)
-		var rows := ceili(area.size.y / pitch.y)
-		for x in range(-columns, columns + 1):
-			for y in range(-rows, rows + 1):
-				var rect := Rect2(base.position + Vector2(x, y) * pitch, size)
-				if area.encloses(rect):
-					candidates.append(rect)
-		candidates.sort_custom(func(a: Rect2, b: Rect2): return a.position.distance_squared_to(base.position) < b.position.distance_squared_to(base.position))
 		# Keep the hovered label under the pointer when neighbouring labels time out or Alt
 		# changes visibility. Camera/mesh motion still carries it along with its own item.
 		if loot.node.get_instance_id() == focused_id:
@@ -88,9 +82,21 @@ func labels(drops: Array, camera: Camera3D, font: Font, viewport_size: Vector2, 
 					# even when authored models have fractional support heights.
 					var stable := Rect2(previous.rect.position + (anchor - previous.anchor), size)
 					if area.encloses(stable):
-						candidates.push_front(stable)
+						candidates.append(stable)
 					break
-		for rect in candidates:
+		var offsets: Array = sorted_offsets(pitch, ceili(area.size.x / pitch.x), ceili(area.size.y / pitch.y))
+		var next := 0
+		while true:
+			var rect: Rect2
+			if not candidates.is_empty():
+				rect = candidates.pop_back()
+			elif next < offsets.size():
+				rect = Rect2(base.position + Vector2(offsets[next]) * pitch, size)
+				next += 1
+				if not area.encloses(rect):
+					continue
+			else:
+				break
 			var occupied := false
 			for disc in discs:
 				if rect.grow(LABEL_GAP / 2).intersects(disc):
@@ -106,6 +112,22 @@ func labels(drops: Array, camera: Camera3D, font: Font, viewport_size: Vector2, 
 				cached_labels.append({"loot": loot, "rect": rect, "anchor": anchor})
 				break
 	return cached_labels
+
+func sorted_offsets(pitch: Vector2, columns: int, rows: int) -> Array:
+	var key := [pitch, columns, rows]
+	if not offset_cache.has(key):
+		var offsets: Array = []
+		for x in range(-columns, columns + 1):
+			for y in range(-rows, rows + 1):
+				offsets.append(Vector2i(x, y))
+		# Equal distances keep their column-major order, so the layout does not depend on sort internals.
+		var order := func(a: Vector2i, b: Vector2i) -> bool:
+			var da := (Vector2(a) * pitch).length_squared()
+			var db := (Vector2(b) * pitch).length_squared()
+			return da < db or (da == db and (a.x < b.x or (a.x == b.x and a.y < b.y)))
+		offsets.sort_custom(order)
+		offset_cache[key] = offsets
+	return offset_cache[key]
 
 func invalidate() -> void:
 	cached_key.clear()

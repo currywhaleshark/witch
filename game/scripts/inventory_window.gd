@@ -21,7 +21,7 @@ const POTION_COLUMNS = 5
 # Where each worn slot sits on the paper doll, in pixels over the bag's width.
 const DOLL = {
 	"head": Rect2(144, 0, 72, 72), "brooch": Rect2(234, 18, 36, 36),
-	"medium": Rect2(54, 54, 72, 108), "outfit": Rect2(144, 84, 72, 108), "ring": Rect2(234, 120, 36, 36),
+	"medium": Rect2(54, 72, 72, 72), "outfit": Rect2(144, 84, 72, 108), "ring": Rect2(234, 120, 36, 36),
 	"gloves": Rect2(54, 174, 72, 72), "shoes": Rect2(234, 174, 72, 72)}
 
 var arena: Node

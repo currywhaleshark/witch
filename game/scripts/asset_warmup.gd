@@ -1,6 +1,7 @@
 extends Node3D
 ## Start-of-game warmup behind the loading screen, so the field entry and first casts don't stall.
-## 1) threaded loads of assets that are otherwise loaded on first use (transformed outfit, actors),
+## 1) threaded loads of assets that are otherwise loaded on first use (transformed outfit, actors,
+##    ground loot models),
 ## 2) the transformed outfit's texture content keys (the modular runtime hashes texture pixels),
 ## 3) one rendered frame of every part model and effect shader, so the Compatibility renderer
 ##    compiles their shaders now instead of mid-combat.
@@ -10,6 +11,8 @@ const ModularRuntime = preload("res://scripts/modular_character_runtime.gd")
 const ActorVisual = preload("res://scripts/actor_visual.gd")
 const FieldEntry = preload("res://scripts/field_entry_transformation.gd")
 const OutfitReveal = preload("res://scripts/outfit_reveal.gd")
+const GroundLootVisual = preload("res://scripts/ground_loot_visual.gd")
+const Shape = preload("res://scripts/shapes.gd")
 const STAFF := "res://assets/weapons/staff_material_v3/staff_parts.glb"
 const PART_SCRIPTS := ["res://scripts/automaton_assembly.gd", "res://scripts/turret_assembly.gd",
 	"res://scripts/shotgun_cast.gd", "res://scripts/spring_plate.gd", "res://scripts/shield_visual.gd"]
@@ -25,6 +28,7 @@ var done := false
 func run(camera: Camera3D) -> void:
 	var paths: Array = [FieldEntry.OUTFIT, STAFF]
 	paths.append_array(ActorVisual.FILES.values())
+	paths.append_array(loot_paths())
 	paths.append_array(SHADERS)
 	var pending: Array = paths.filter(func(path): return not held.has(path) and ResourceLoader.exists(path))
 	for path in pending:
@@ -39,6 +43,10 @@ func run(camera: Camera3D) -> void:
 			pending.erase(path)
 		progress = 0.6 * (1.0 - float(pending.size()) / maxf(1.0, paths.size()))
 		await get_tree().process_frame
+	# The first drop of each loot model reuses these scenes instead of loading its GLB mid-combat.
+	for id in GroundLootVisual.profiles:
+		if held.get(GroundLootVisual.profiles[id].path) is PackedScene:
+			GroundLootVisual.scenes[id] = held[GroundLootVisual.profiles[id].path]
 	step = "변신 의상 준비 중"
 	var outfit: PackedScene = held.get(FieldEntry.OUTFIT)
 	if outfit != null:
@@ -68,6 +76,19 @@ func run(camera: Camera3D) -> void:
 	done = true
 	finished.emit()
 
+func loot_paths() -> Array:
+	if GroundLootVisual.profiles.is_empty():
+		var profiles = JSON.parse_string(FileAccess.get_file_as_string(GroundLootVisual.PROFILE_PATH))
+		if not profiles is Dictionary:
+			return []
+		GroundLootVisual.profiles = profiles
+	var paths: Array = []
+	for id in GroundLootVisual.profiles:
+		var path: String = GroundLootVisual.profiles[id].path
+		if path not in paths:
+			paths.append(path)
+	return paths
+
 func _stage(camera: Camera3D) -> void:
 	# The orthographic camera looks at its focus 30m ahead; lay everything out around it.
 	global_position = camera.global_position - camera.global_basis.z * 30.0
@@ -95,6 +116,26 @@ func _stage(camera: Camera3D) -> void:
 				mesh.set_surface_override_material(surface, material)
 		_place(revealed, slot)
 		slot += 1
+	# Ground loot is small: a dense grid of each model as dropped and as hover-highlighted,
+	# plus the selection ring drawn under a hovered item.
+	var loot: Array = loot_paths().filter(func(path): return held.get(path) is PackedScene)
+	for i in loot.size():
+		for lit in [false, true]:
+			var model: Node3D = held[loot[i]].instantiate()
+			if lit:
+				var visual := Node3D.new()
+				visual.add_child(model)
+				var materials: Array = []
+				GroundLootVisual.collect_materials(visual, materials)
+				visual.set_meta("loot_materials", materials)
+				GroundLootVisual.highlight(visual, true, Color.WHITE)
+				model = visual
+			add_child(model)
+			model.position = Vector3((i % 10) - 4.5, 0.0, int(i / 10) * 2 + int(lit) - 3.5) * 0.5
+	var ring := Node3D.new()
+	Shape.ring(ring, Vector3.ZERO, 0.27, Color("fff1c4"), 0.025)
+	_place(ring, slot)
+	slot += 1
 	for path in SHADERS:
 		if held.get(path) is Shader:
 			var quad := MeshInstance3D.new()

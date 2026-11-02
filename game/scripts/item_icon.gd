@@ -5,6 +5,8 @@ const ART_PATH = "res://assets/ui/inventory_v1/"
 # Squat small bottles otherwise look larger than the narrow medium bottles.
 const ART_SCALES = {"health_s": 0.72, "mana_s": 0.72, "rejuv_s": 0.72}
 static var art_cache: Dictionary = {}
+# Alpha (0-255) above which an art pixel counts as part of the drawn object.
+const ALPHA_VISIBLE = 24
 const BRASS = Color("d8b77b")
 const COPPER = Color("c47a4c")
 const SILVER = Color("c9d1d6")
@@ -24,8 +26,61 @@ static func art(id: String) -> Dictionary:
 			art_cache[id] = {}
 		else:
 			var texture := load(path) as Texture2D
-			art_cache[id] = {"texture": texture, "region": Rect2(texture.get_image().get_used_rect())}
+			art_cache[id] = {"texture": texture, "region": Rect2(visible_rect(texture.get_image()))}
 	return art_cache[id]
+
+static func visible_rect(image: Image) -> Rect2i:
+	# The visible object, not get_used_rect(): downscaling leaves near-transparent fringe pixels
+	# on one side, which would pull the centred art off the middle of its cells.
+	if image.get_format() != Image.FORMAT_RGBA8:
+		image = image.duplicate()
+		if image.is_compressed():
+			image.decompress()
+		image.convert(Image.FORMAT_RGBA8)
+	var data := image.get_data()
+	var width := image.get_width()
+	var height := image.get_height()
+	# Each edge walks inwards until a row/column holds a visible pixel (plain loops: this runs
+	# once per art and must stay cheap).
+	var top := 0
+	var found := false
+	while top < height and not found:
+		for x in width:
+			if data[(top * width + x) * 4 + 3] > ALPHA_VISIBLE:
+				found = true
+				break
+		if not found:
+			top += 1
+	if not found:
+		return image.get_used_rect()
+	var bottom := height - 1
+	found = false
+	while not found:
+		for x in width:
+			if data[(bottom * width + x) * 4 + 3] > ALPHA_VISIBLE:
+				found = true
+				break
+		if not found:
+			bottom -= 1
+	var left := 0
+	found = false
+	while not found:
+		for y in range(top, bottom + 1):
+			if data[(y * width + left) * 4 + 3] > ALPHA_VISIBLE:
+				found = true
+				break
+		if not found:
+			left += 1
+	var right := width - 1
+	found = false
+	while not found:
+		for y in range(top, bottom + 1):
+			if data[(y * width + right) * 4 + 3] > ALPHA_VISIBLE:
+				found = true
+				break
+		if not found:
+			right -= 1
+	return Rect2i(left, top, right - left + 1, bottom - top + 1)
 
 static func draw_art(canvas: CanvasItem, box: Rect2, id: String, alpha: float = 1.0) -> bool:
 	var asset := art(id)
@@ -61,9 +116,8 @@ static func draw(canvas: CanvasItem, rect: Rect2, item: Dictionary, items) -> vo
 	var rarity := Color(items.data.rarity_colors[item.rarity])
 	canvas.draw_rect(rect.grow(-1), Color(rarity, 0.16))
 	canvas.draw_rect(rect.grow(-1), Color(rarity, 0.75), false, 1.0)
-	var box := rect.grow(-maxf(4.0, minf(rect.size.x, rect.size.y) * 0.12))
-	if int(item.get("sockets", 0)) > 0:
-		box.size.y = maxf(12, box.size.y - 12)
+	# The art nearly fills its cells, centred at its own aspect; sockets are drawn over it.
+	var box := rect.grow(-maxf(2.0, minf(rect.size.x, rect.size.y) * 0.05))
 	if draw_art(canvas, box, item.get("unique", item.base)):
 		sockets(canvas, rect, item, items)
 		return
@@ -105,7 +159,8 @@ static func draw(canvas: CanvasItem, rect: Rect2, item: Dictionary, items) -> vo
 	sockets(canvas, rect, item, items)
 
 static func sockets(canvas: CanvasItem, rect: Rect2, item: Dictionary, items) -> void:
-	# Empty sockets as dark holes, filled ones with the piece's syllable, along the bottom edge.
+	# Empty sockets as dark holes, filled ones with the piece's syllable, along the bottom edge
+	# on top of the item's art.
 	var count: int = int(item.get("sockets", 0))
 	if count == 0:
 		return

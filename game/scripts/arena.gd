@@ -1163,7 +1163,12 @@ func tick_pickup() -> void:
 	move_marker.visible = false
 	match loot.kind:
 		"equipment":
-			if not stow(loot.item):
+			# With the inventory open it comes up on the cursor, ready to be placed or worn.
+			if held_item == null and is_instance_valid(inventory_window) and inventory_window.is_visible_in_tree():
+				loot.item.erase("at")
+				held_item = loot.item
+				refresh_build_windows()
+			elif not stow(loot.item):
 				show_message("가방에 자리가 없습니다")
 				return
 		"currency":
