@@ -255,6 +255,15 @@ func blast(at: Vector3, radius: float, floor_y: float, big: bool) -> void:
 		var dir := Vector3(cos(a), 0, sin(a))
 		puff(base + dir * 0.3 + Vector3(0, 0.12, 0), dir * radius * 2.0, 0.2, 0.9, Color(DUST, 0.45), rng.randf_range(0.7, 0.95), 0.1)
 
+func small_blast(at: Vector3, radius: float, floor_y: float) -> void:
+	# A cluster bomblet: a flash, a ring at its radius, a few sparks and one puff. Dozens land in a
+	# barrage, so each stays a tenth of the full blast and they share their airburst's effect node.
+	var base := Vector3(at.x, floor_y, at.z)
+	flash(base + Vector3.UP * 0.3, radius * 0.6, Color(1.0, 0.66, 0.34), 0.12, 1.0)
+	ground_ring(base, 0.1, radius, 0.14, Color(1.0, 0.6, 0.32), 0.25)
+	sparks(base + Vector3.UP * 0.2, Vector3.UP, 6, 5.0, 0.9, SPARK, 0.4, 0.016, floor_y)
+	puff(base + Vector3.UP * 0.3, Vector3.UP * 0.8, 0.22, 0.8, Color(SOOT, 0.45), 0.8, 0.6)
+
 func glow_light(at: Vector3, color: Color, energy: float, reach: float, life: float) -> void:
 	# A short real light that lights the surroundings in the effect colour, then fades out.
 	var light := OmniLight3D.new()

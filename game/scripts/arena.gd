@@ -2063,7 +2063,9 @@ func tick_shells(dt: float) -> void:
 			shell.visual.place(1.0 - maxf(0.0, shell.left) / float(shell.flight))
 			if is_instance_valid(shell.trail):
 				shell.trail.streak(before, shell.visual.global_position, 0.06, Color(1.0, 0.85, 0.6, 0.8), 0.2)
-				shell.trail.puff(before, Vector3.ZERO, 0.18, 0.6, Color(0.55, 0.55, 0.52, 0.35), 0.6, 0.1)
+				# Smoke every third frame is enough for the trail and keeps a barrage's particles down.
+				if Engine.get_physics_frames() % 3 == 0:
+					shell.trail.puff(before, Vector3.ZERO, 0.18, 0.6, Color(0.55, 0.55, 0.52, 0.35), 0.6, 0.1)
 		if shell.left > 0:
 			continue
 		shells.erase(shell)
@@ -2078,6 +2080,8 @@ func land_shell(shell: Dictionary) -> void:
 		# Bursts overhead: bomblets rain over a wider patch, each a small blast.
 		var burst: Vector3 = shell.end
 		var fx := spawn_vfx()
+		# The bomblets draw into this same effect, so it must outlive their fall.
+		fx.entry.life = maxf(float(fx.entry.life), 1.2)
 		fx.flash(burst, 1.2, Color(1.0, 0.75, 0.4), 0.18, 1.0)
 		fx.sparks(burst, Vector3.DOWN, 18, 6.0, 1.2, Color(1.0, 0.8, 0.45), 0.4, 0.02, map.ground_y(at))
 		var bomblets: int = int(impact.shell.bomblets)
@@ -2086,7 +2090,7 @@ func land_shell(shell: Dictionary) -> void:
 			var spot: Vector3 = at + Vector3(cos(angle), 0, sin(angle)) * float(impact.shell.bomblet_spread) * (0.45 + 0.55 * fposmod(i * 0.618, 1.0))
 			spot = map.grounded(spot) if map.walkable(spot) else at
 			fx.streak(burst, spot, 0.04, Color(1.0, 0.7, 0.35, 0.7), 0.25)
-			send_shell("", spot, 0.22 + 0.03 * i, 0.0, {"kind": "blast", "radius": impact.radius, "damage": impact.damage, "source": impact.source, "shell": {}, "small": true})
+			send_shell("", spot, 0.22 + 0.03 * i, 0.0, {"kind": "blast", "radius": impact.radius, "damage": impact.damage, "source": impact.source, "shell": {}, "small": true, "fx": fx, "first": i == 0})
 		play_sfx("shotgun_fire", 0.7, -4.0)
 		return
 	var struck: Array = []
@@ -2096,9 +2100,15 @@ func land_shell(shell: Dictionary) -> void:
 			struck.append(id)
 			strike_amount(id, float(impact.damage), impact.source)
 	var heavy: bool = impact.get("heavy", false)
-	spawn_vfx().blast(at, float(impact.radius), map.ground_y(at), heavy)
-	shake_time = maxf(shake_time, 0.3 if heavy else (0.05 if impact.get("small", false) else 0.12))
-	play_sfx("automaton_explode", 0.5 if heavy else (1.1 if impact.get("small", false) else 0.75))
+	var small: bool = impact.get("small", false)
+	if small and is_instance_valid(impact.get("fx")):
+		impact.fx.small_blast(at, float(impact.radius), map.ground_y(at))
+	else:
+		spawn_vfx().blast(at, float(impact.radius), map.ground_y(at), heavy)
+	shake_time = maxf(shake_time, 0.3 if heavy else (0.05 if small else 0.12))
+	# A shell's bomblets crackle under one sound, not one each.
+	if not small or impact.get("first", false):
+		play_sfx("automaton_explode", 0.5 if heavy else (1.1 if small else 0.75))
 	if impact.shell.has("fire_radius"):
 		start_fire(at, impact.shell, impact.source)
 	last_impact = {"at": at, "struck": struck, "source": impact.source, "radius": impact.radius}
