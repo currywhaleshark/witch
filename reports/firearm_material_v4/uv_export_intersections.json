@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "triangles": 28640,
+  "candidate_pairs": 384327,
+  "overlaps_above_0_0001_texel": [],
+  "scope": "Exported GLB UV-triangle intersections across every part and all six assets on the shared atlas; common edges have zero area."
+}

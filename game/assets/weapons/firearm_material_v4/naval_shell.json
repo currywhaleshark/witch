@@ -1,0 +1,128 @@
+{
+  "id": "naval_shell",
+  "blender_scene": "FirearmMaterialV4_naval_shell",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "v4_naval_shell__base_mark",
+      "role": "base_mark",
+      "group": "body",
+      "delay": 0.44,
+      "triangles": 140,
+      "origin": [
+        0.0,
+        0.0,
+        0.503
+      ]
+    },
+    {
+      "name": "v4_naval_shell__base_plate",
+      "role": "base_plate",
+      "group": "body",
+      "delay": 0.22,
+      "triangles": 236,
+      "origin": [
+        0.0,
+        0.0,
+        0.488
+      ]
+    },
+    {
+      "name": "v4_naval_shell__driving_band",
+      "role": "driving_band",
+      "group": "body",
+      "delay": 0.3,
+      "triangles": 480,
+      "origin": [
+        0.0,
+        0.0,
+        0.412
+      ]
+    },
+    {
+      "name": "v4_naval_shell__identity_band",
+      "role": "identity_band",
+      "group": "body",
+      "delay": 0.4,
+      "triangles": 480,
+      "origin": [
+        0.0,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "name": "v4_naval_shell__ogive_body",
+      "role": "ogive_body",
+      "group": "body",
+      "delay": 0.22,
+      "triangles": 516,
+      "origin": [
+        0.0,
+        0.0,
+        0.245
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_nose": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_trail": {
+      "position": [
+        0.0,
+        0.0,
+        0.51
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "triangles": 1852,
+  "materials": [
+    "M_FirearmV4_Surface"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.17,
+    0.17,
+    0.507
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.085,
+      -0.085,
+      -0.0
+    ],
+    "max": [
+      0.085,
+      0.085,
+      0.507
+    ]
+  },
+  "part_count": 5,
+  "version": 4,
+  "material_revision": "Shared baked PBR v4, original v1 geometry and sockets preserved",
+  "texture_set": "firearm_material_v4 shared atlas"
+}

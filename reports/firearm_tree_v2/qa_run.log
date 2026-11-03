@@ -1,0 +1,76 @@
+00:03.781  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\weapons\firearm_tree_v2\firearm_tree_v2.blend"
+SOURCE_QA matchlock True errors 0 warnings 10
+SOURCE_QA rifle True errors 0 warnings 14
+SOURCE_QA shotgun True errors 0 warnings 9
+08:54:19 | INFO: Data are loaded, start creating Blender stuff
+08:54:19 | INFO: Blender create Mesh node walnut_stock.001
+08:54:19 | INFO: Blender create Mesh node long_barrel.001
+08:54:19 | INFO: Blender create Mesh node muzzle_lip.001
+08:54:19 | INFO: Blender create Mesh node barrel_band_0.001
+08:54:19 | INFO: Blender create Mesh node barrel_band_1.001
+08:54:19 | INFO: Blender create Mesh node barrel_band_2.001
+08:54:19 | INFO: Blender create Mesh node breech.001
+08:54:19 | INFO: Blender create Mesh node side_plate.001
+08:54:19 | INFO: Blender create Mesh node serpentine_match_arm.001
+08:54:19 | INFO: Blender create Mesh node match_cord.001
+08:54:19 | INFO: Blender create Mesh node match_tip.001
+08:54:19 | INFO: Blender create Mesh node pan.001
+08:54:19 | INFO: Blender create Mesh node plate_screw_0.001
+08:54:19 | INFO: Blender create Mesh node plate_screw_1.001
+08:54:19 | INFO: Blender create Mesh node butt_cap.001
+08:54:19 | INFO: Blender create Mesh node guard.001
+08:54:19 | INFO: Blender create Mesh node underbarrel_rod.001
+08:54:19 | INFO: Blender create Mesh node power_seal.001
+08:54:19 | INFO: glTF import finished in 0.08s
+REIMPORT_QA matchlock True errors 0 warnings 20
+08:54:22 | INFO: Data are loaded, start creating Blender stuff
+08:54:22 | INFO: Blender create Mesh node navy_stock.001
+08:54:22 | INFO: Blender create Mesh node precision_barrel.001
+08:54:22 | INFO: Blender create Mesh node muzzle_crown.001
+08:54:22 | INFO: Blender create Mesh node floating_barrel_brace_0.001
+08:54:22 | INFO: Blender create Mesh node floating_barrel_brace_1.001
+08:54:22 | INFO: Blender create Mesh node receiver.002
+08:54:22 | INFO: Blender create Mesh node breech_cover.001
+08:54:22 | INFO: Blender create Mesh node foregrip_trim_-0.051
+08:54:22 | INFO: Blender create Mesh node foregrip_trim_0.051
+08:54:22 | INFO: Blender create Mesh node optic_pedestal_0.001
+08:54:22 | INFO: Blender create Mesh node optic_pedestal_1.001
+08:54:22 | INFO: Blender create Mesh node optic_tube.001
+08:54:22 | INFO: Blender create Mesh node optic_front_lens.001
+08:54:22 | INFO: Blender create Mesh node optic_back_lens.001
+08:54:22 | INFO: Blender create Mesh node bolt_handle.001
+08:54:22 | INFO: Blender create Mesh node bolt_knob.001
+08:54:22 | INFO: Blender create Mesh node butt_plate.001
+08:54:22 | INFO: Blender create Mesh node trigger_guard.002
+08:54:22 | INFO: Blender create Mesh node charge_inlay.001
+08:54:22 | INFO: Blender create Mesh node receiver_screw_0.001
+08:54:22 | INFO: Blender create Mesh node receiver_screw_1.001
+08:54:22 | INFO: glTF import finished in 0.09s
+REIMPORT_QA rifle True errors 0 warnings 24
+08:54:26 | INFO: Data are loaded, start creating Blender stuff
+08:54:26 | INFO: Blender create Mesh node scatter_barrel_0.001
+08:54:26 | INFO: Blender create Mesh node scatter_lip_0.001
+08:54:26 | INFO: Blender create Mesh node scatter_barrel_1.001
+08:54:26 | INFO: Blender create Mesh node scatter_lip_1.001
+08:54:26 | INFO: Blender create Mesh node barrel_bridge.001
+08:54:26 | INFO: Blender create Mesh node receiver.003
+08:54:26 | INFO: Blender create Mesh node receiver_top.001
+08:54:26 | INFO: Blender create Mesh node short_stock.001
+08:54:26 | INFO: Blender create Mesh node stock_plate.001
+08:54:26 | INFO: Blender create Mesh node lower_handguard.001
+08:54:26 | INFO: Blender create Mesh node grip_rib_0.001
+08:54:26 | INFO: Blender create Mesh node grip_rib_1.001
+08:54:26 | INFO: Blender create Mesh node grip_rib_2.001
+08:54:26 | INFO: Blender create Mesh node grip_rib_3.001
+08:54:26 | INFO: Blender create Mesh node hinge_-1.001
+08:54:26 | INFO: Blender create Mesh node hinge_bolt_-1.001
+08:54:26 | INFO: Blender create Mesh node hinge_1.001
+08:54:26 | INFO: Blender create Mesh node hinge_bolt_1.001
+08:54:26 | INFO: Blender create Mesh node trigger_guard.003
+08:54:26 | INFO: Blender create Mesh node core_inlay.001
+08:54:26 | INFO: glTF import finished in 0.10s
+REIMPORT_QA shotgun True errors 0 warnings 23
+FIREARM_QA_DONE True
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

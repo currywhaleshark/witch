@@ -78,7 +78,7 @@ func run() -> void:
 	check(float(rifle.range) > float(matchlock.range) and int(rifle.magazine) < int(matchlock.magazine) and float(rifle.round_cost) > float(matchlock.round_cost), "the rifle reaches further with fewer, dearer rounds than the matchlock")
 	await fresh("base")
 	check(arena.gun.get("id") == "rifle" and arena.gun.ammo == int(rifle.magazine), "the rifle assembles loaded")
-	check(is_instance_valid(arena.gun.visual) and arena.gun.visual.stretch.z > 1.0, "its stand-in model is drawn longer")
+	check(is_instance_valid(arena.gun.visual) and arena.gun.visual.parts_scene.resource_path.ends_with("/rifle.glb") and arena.gun.visual.scale.is_equal_approx(Vector3.ONE), "the rifle uses its dedicated long gun at authored scale")
 	var start: Vector3 = arena.player.position
 	var shot: Dictionary = await shoot()
 	check(arena.player.position.distance_to(start) < 0.05, "it shoots from 10m without walking in")

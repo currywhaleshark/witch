@@ -1,0 +1,70 @@
+{
+  "captures": 300,
+  "checks": [
+    "GPU startup warmup includes dedicated matchlock and rifle",
+    "matchlock actual arena selected model",
+    "matchlock actual arena selected model",
+    "rifle actual arena selected model",
+    "rifle actual arena selected model",
+    "actual shotgun release retained",
+    "actual shotgun release retained"
+  ],
+  "note": "Three v2/v3 pairs at identical metre scale; actual arena assembly/shooting at native and enlarged camera. Same geometry and same lights; new shared baked PBR maps. Gameplay rules unchanged.",
+  "passed": true,
+  "sequences": [
+    {
+      "asset": "matchlock",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_matchlock_native",
+      "kind": "actual_game",
+      "native": true,
+      "release_seconds": 0.4
+    },
+    {
+      "asset": "matchlock",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_matchlock_close",
+      "kind": "actual_game",
+      "native": false,
+      "release_seconds": 0.4
+    },
+    {
+      "asset": "rifle",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_rifle_native",
+      "kind": "actual_game",
+      "native": true,
+      "release_seconds": 0.48
+    },
+    {
+      "asset": "rifle",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_rifle_close",
+      "kind": "actual_game",
+      "native": false,
+      "release_seconds": 0.48
+    },
+    {
+      "asset": "shotgun",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_shotgun_native",
+      "kind": "actual_game",
+      "native": true,
+      "release_seconds": 0.3
+    },
+    {
+      "asset": "shotgun",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_shotgun_close",
+      "kind": "actual_game",
+      "native": false,
+      "release_seconds": 0.3
+    }
+  ]
+}

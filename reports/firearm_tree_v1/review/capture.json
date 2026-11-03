@@ -1,0 +1,112 @@
+{
+  "captures": 732,
+  "checks": [
+    "GPU startup warmup includes dedicated matchlock and rifle",
+    "matchlock actual arena selected model",
+    "matchlock actual arena selected model",
+    "rifle actual arena selected model",
+    "rifle actual arena selected model",
+    "actual shotgun release retained",
+    "actual shotgun release retained"
+  ],
+  "note": "Future skill animations are isolated art previews, not gameplay implementations. Game sequences use actual current release clocks.",
+  "passed": true,
+  "sequences": [
+    {
+      "asset": "matchlock",
+      "fps": 24,
+      "frames": 67,
+      "id": "demo_matchlock",
+      "kind": "asset_demo"
+    },
+    {
+      "asset": "rifle",
+      "fps": 24,
+      "frames": 67,
+      "id": "demo_rifle",
+      "kind": "asset_demo"
+    },
+    {
+      "asset": "shotgun",
+      "fps": 24,
+      "frames": 67,
+      "id": "demo_shotgun",
+      "kind": "asset_demo"
+    },
+    {
+      "asset": "powder_barrel",
+      "fps": 24,
+      "frames": 85,
+      "id": "demo_powder_barrel",
+      "kind": "asset_demo"
+    },
+    {
+      "asset": "gatling",
+      "fps": 24,
+      "frames": 67,
+      "id": "demo_gatling",
+      "kind": "asset_demo"
+    },
+    {
+      "asset": "smoke_launcher",
+      "fps": 24,
+      "frames": 67,
+      "id": "demo_smoke_launcher",
+      "kind": "asset_demo"
+    },
+    {
+      "asset": "matchlock",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_matchlock_native",
+      "kind": "actual_game",
+      "native": true,
+      "release_seconds": 0.4
+    },
+    {
+      "asset": "matchlock",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_matchlock_close",
+      "kind": "actual_game",
+      "native": false,
+      "release_seconds": 0.4
+    },
+    {
+      "asset": "rifle",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_rifle_native",
+      "kind": "actual_game",
+      "native": true,
+      "release_seconds": 0.48
+    },
+    {
+      "asset": "rifle",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_rifle_close",
+      "kind": "actual_game",
+      "native": false,
+      "release_seconds": 0.48
+    },
+    {
+      "asset": "shotgun",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_shotgun_native",
+      "kind": "actual_game",
+      "native": true,
+      "release_seconds": 0.3
+    },
+    {
+      "asset": "shotgun",
+      "fps": 30,
+      "frames": 49,
+      "id": "game_shotgun_close",
+      "kind": "actual_game",
+      "native": false,
+      "release_seconds": 0.3
+    }
+  ]
+}

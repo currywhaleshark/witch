@@ -1,0 +1,1805 @@
+{
+  "powder_barrel": {
+    "id": "powder_barrel",
+    "blender_scene": "FirearmMaterialV4_powder_barrel",
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "parts": [
+      {
+        "name": "v4_powder_barrel__brass_hoop_trim_0",
+        "role": "brass_hoop_trim_0",
+        "group": "drum",
+        "delay": 0.31,
+        "triangles": 768,
+        "origin": [
+          -0.145,
+          0.248,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__brass_hoop_trim_1",
+        "role": "brass_hoop_trim_1",
+        "group": "drum",
+        "delay": 0.31,
+        "triangles": 768,
+        "origin": [
+          0.145,
+          0.248,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__end_cap_0",
+        "role": "end_cap_0",
+        "group": "drum",
+        "delay": 0.21,
+        "triangles": 284,
+        "origin": [
+          -0.219,
+          0.248,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__end_cap_1",
+        "role": "end_cap_1",
+        "group": "drum",
+        "delay": 0.21,
+        "triangles": 284,
+        "origin": [
+          0.219,
+          0.248,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__end_emblem_0",
+        "role": "end_emblem_0",
+        "group": "drum",
+        "delay": 0.34,
+        "triangles": 156,
+        "origin": [
+          -0.23433,
+          0.248114,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__end_emblem_1",
+        "role": "end_emblem_1",
+        "group": "drum",
+        "delay": 0.34,
+        "triangles": 156,
+        "origin": [
+          0.23433,
+          0.248114,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_00",
+        "role": "fuse_00",
+        "group": "fuse",
+        "delay": 0.38,
+        "triangles": 28,
+        "origin": [
+          0.27,
+          0.353,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_01",
+        "role": "fuse_01",
+        "group": "fuse",
+        "delay": 0.39,
+        "triangles": 28,
+        "origin": [
+          0.305,
+          0.383,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_02",
+        "role": "fuse_02",
+        "group": "fuse",
+        "delay": 0.4,
+        "triangles": 28,
+        "origin": [
+          0.335,
+          0.423,
+          0.009
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_03",
+        "role": "fuse_03",
+        "group": "fuse",
+        "delay": 0.41000000000000003,
+        "triangles": 28,
+        "origin": [
+          0.37,
+          0.453,
+          0.0215
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_04",
+        "role": "fuse_04",
+        "group": "fuse",
+        "delay": 0.42,
+        "triangles": 28,
+        "origin": [
+          0.41,
+          0.4605,
+          0.0275
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_05",
+        "role": "fuse_05",
+        "group": "fuse",
+        "delay": 0.43,
+        "triangles": 28,
+        "origin": [
+          0.45,
+          0.4505,
+          0.028
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_06",
+        "role": "fuse_06",
+        "group": "fuse",
+        "delay": 0.44,
+        "triangles": 28,
+        "origin": [
+          0.485,
+          0.4305,
+          0.023
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_07",
+        "role": "fuse_07",
+        "group": "fuse",
+        "delay": 0.45,
+        "triangles": 28,
+        "origin": [
+          0.51,
+          0.4055,
+          0.015
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_ember",
+        "role": "fuse_ember",
+        "group": "fuse",
+        "delay": 0.49,
+        "triangles": 276,
+        "origin": [
+          0.52,
+          0.393,
+          0.01
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__fuse_socket",
+        "role": "fuse_socket",
+        "group": "drum",
+        "delay": 0.36,
+        "triangles": 204,
+        "origin": [
+          0.235,
+          0.343,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__rolling_hoop_0",
+        "role": "rolling_hoop_0",
+        "group": "drum",
+        "delay": 0.27,
+        "triangles": 768,
+        "origin": [
+          -0.145,
+          0.248,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__rolling_hoop_1",
+        "role": "rolling_hoop_1",
+        "group": "drum",
+        "delay": 0.27,
+        "triangles": 768,
+        "origin": [
+          0.145,
+          0.248,
+          -0.0
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_00",
+        "role": "stave_00",
+        "group": "drum",
+        "delay": 0.04,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.443025,
+          0.056885
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_01",
+        "role": "stave_01",
+        "group": "drum",
+        "delay": 0.055,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.393537,
+          0.145537
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_02",
+        "role": "stave_02",
+        "group": "drum",
+        "delay": 0.07,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.304885,
+          0.195025
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_03",
+        "role": "stave_03",
+        "group": "drum",
+        "delay": 0.08499999999999999,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.191115,
+          0.195025
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_04",
+        "role": "stave_04",
+        "group": "drum",
+        "delay": 0.04,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.102463,
+          0.145537
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_05",
+        "role": "stave_05",
+        "group": "drum",
+        "delay": 0.055,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.052975,
+          0.056885
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_06",
+        "role": "stave_06",
+        "group": "drum",
+        "delay": 0.07,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.052975,
+          -0.056885
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_07",
+        "role": "stave_07",
+        "group": "drum",
+        "delay": 0.08499999999999999,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.102463,
+          -0.145537
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_08",
+        "role": "stave_08",
+        "group": "drum",
+        "delay": 0.04,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.191115,
+          -0.195025
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_09",
+        "role": "stave_09",
+        "group": "drum",
+        "delay": 0.055,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.304885,
+          -0.195025
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_10",
+        "role": "stave_10",
+        "group": "drum",
+        "delay": 0.07,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.393537,
+          -0.145537
+        ]
+      },
+      {
+        "name": "v4_powder_barrel__stave_11",
+        "role": "stave_11",
+        "group": "drum",
+        "delay": 0.08499999999999999,
+        "triangles": 156,
+        "origin": [
+          0.0,
+          0.443025,
+          -0.056885
+        ]
+      }
+    ],
+    "sockets": {
+      "Socket_roll_axis": {
+        "position": [
+          0.0,
+          0.248,
+          -0.0
+        ],
+        "direction": [
+          1,
+          0,
+          0
+        ]
+      },
+      "Socket_fuse_tip": {
+        "position": [
+          0.52,
+          0.393,
+          0.01
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_burst": {
+        "position": [
+          0.0,
+          0.248,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    "triangles": 6528,
+    "materials": [
+      "M_FirearmV4_Glow",
+      "M_FirearmV4_Surface"
+    ],
+    "units": "metres",
+    "dimensions": [
+      0.76978,
+      0.496,
+      0.496
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.24033,
+        0.0,
+        -0.248
+      ],
+      "max": [
+        0.529452,
+        0.496,
+        0.248
+      ]
+    },
+    "part_count": 30,
+    "version": 4,
+    "material_revision": "Shared baked PBR v4, original v1 geometry and sockets preserved",
+    "texture_set": "firearm_material_v4 shared atlas"
+  },
+  "gatling": {
+    "id": "gatling",
+    "blender_scene": "FirearmMaterialV4_gatling",
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "parts": [
+      {
+        "name": "v4_gatling__barrel_muzzle_0",
+        "role": "barrel_muzzle_0",
+        "group": "rotor",
+        "delay": 0.45,
+        "triangles": 384,
+        "origin": [
+          0.133,
+          0.0,
+          0.023
+        ]
+      },
+      {
+        "name": "v4_gatling__barrel_muzzle_1",
+        "role": "barrel_muzzle_1",
+        "group": "rotor",
+        "delay": 0.45,
+        "triangles": 384,
+        "origin": [
+          0.0665,
+          0.115181,
+          0.023
+        ]
+      },
+      {
+        "name": "v4_gatling__barrel_muzzle_2",
+        "role": "barrel_muzzle_2",
+        "group": "rotor",
+        "delay": 0.45,
+        "triangles": 384,
+        "origin": [
+          -0.0665,
+          0.115181,
+          0.023
+        ]
+      },
+      {
+        "name": "v4_gatling__barrel_muzzle_3",
+        "role": "barrel_muzzle_3",
+        "group": "rotor",
+        "delay": 0.45,
+        "triangles": 384,
+        "origin": [
+          -0.133,
+          0.0,
+          0.023
+        ]
+      },
+      {
+        "name": "v4_gatling__barrel_muzzle_4",
+        "role": "barrel_muzzle_4",
+        "group": "rotor",
+        "delay": 0.45,
+        "triangles": 384,
+        "origin": [
+          -0.0665,
+          -0.115181,
+          0.023
+        ]
+      },
+      {
+        "name": "v4_gatling__barrel_muzzle_5",
+        "role": "barrel_muzzle_5",
+        "group": "rotor",
+        "delay": 0.45,
+        "triangles": 384,
+        "origin": [
+          0.0665,
+          -0.115181,
+          0.023
+        ]
+      },
+      {
+        "name": "v4_gatling__bottom_mount",
+        "role": "bottom_mount",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.0,
+          -0.24,
+          0.96
+        ]
+      },
+      {
+        "name": "v4_gatling__bundle_collar_0",
+        "role": "bundle_collar_0",
+        "group": "rotor",
+        "delay": 0.39,
+        "triangles": 576,
+        "origin": [
+          0.0,
+          0.0,
+          0.2
+        ]
+      },
+      {
+        "name": "v4_gatling__bundle_collar_1",
+        "role": "bundle_collar_1",
+        "group": "rotor",
+        "delay": 0.39,
+        "triangles": 576,
+        "origin": [
+          0.0,
+          0.0,
+          0.61
+        ]
+      },
+      {
+        "name": "v4_gatling__center_spindle",
+        "role": "center_spindle",
+        "group": "rotor",
+        "delay": 0.16,
+        "triangles": 204,
+        "origin": [
+          0.0,
+          0.0,
+          0.405
+        ]
+      },
+      {
+        "name": "v4_gatling__core_ring",
+        "role": "core_ring",
+        "group": "body",
+        "delay": 0.44,
+        "triangles": 576,
+        "origin": [
+          0.0,
+          0.0,
+          1.19
+        ]
+      },
+      {
+        "name": "v4_gatling__feed_bridge",
+        "role": "feed_bridge",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.23,
+          -0.015,
+          0.94
+        ]
+      },
+      {
+        "name": "v4_gatling__feed_cover",
+        "role": "feed_cover",
+        "group": "body",
+        "delay": 0.34,
+        "triangles": 284,
+        "origin": [
+          0.466,
+          -0.015,
+          0.94
+        ]
+      },
+      {
+        "name": "v4_gatling__feed_teeth_0",
+        "role": "feed_teeth_0",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.485,
+          -0.10467,
+          1.027088
+        ]
+      },
+      {
+        "name": "v4_gatling__feed_teeth_1",
+        "role": "feed_teeth_1",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.485,
+          -0.063677,
+          1.055133
+        ]
+      },
+      {
+        "name": "v4_gatling__feed_teeth_2",
+        "role": "feed_teeth_2",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.485,
+          -0.015,
+          1.065
+        ]
+      },
+      {
+        "name": "v4_gatling__feed_teeth_3",
+        "role": "feed_teeth_3",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.485,
+          0.033677,
+          1.055133
+        ]
+      },
+      {
+        "name": "v4_gatling__feed_teeth_4",
+        "role": "feed_teeth_4",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.485,
+          0.07467,
+          1.027088
+        ]
+      },
+      {
+        "name": "v4_gatling__motor_rail_0p24",
+        "role": "motor_rail_0.24",
+        "group": "body",
+        "delay": 0.25,
+        "triangles": 28,
+        "origin": [
+          0.24,
+          -0.08,
+          0.975
+        ]
+      },
+      {
+        "name": "v4_gatling__motor_rail_neg0p24",
+        "role": "motor_rail_-0.24",
+        "group": "body",
+        "delay": 0.25,
+        "triangles": 28,
+        "origin": [
+          -0.24,
+          -0.08,
+          0.975
+        ]
+      },
+      {
+        "name": "v4_gatling__mount_inlay",
+        "role": "mount_inlay",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.0,
+          -0.307,
+          0.96
+        ]
+      },
+      {
+        "name": "v4_gatling__rear_core",
+        "role": "rear_core",
+        "group": "body",
+        "delay": 0.46,
+        "triangles": 188,
+        "origin": [
+          0.0,
+          0.0,
+          1.185
+        ]
+      },
+      {
+        "name": "v4_gatling__rear_motor",
+        "role": "rear_motor",
+        "group": "body",
+        "delay": 0.04,
+        "triangles": 284,
+        "origin": [
+          0.0,
+          0.0,
+          0.98
+        ]
+      },
+      {
+        "name": "v4_gatling__rear_rim",
+        "role": "rear_rim",
+        "group": "body",
+        "delay": 0.2,
+        "triangles": 576,
+        "origin": [
+          0.0,
+          0.0,
+          1.155
+        ]
+      },
+      {
+        "name": "v4_gatling__rotating_barrel_0",
+        "role": "rotating_barrel_0",
+        "group": "rotor",
+        "delay": 0.28,
+        "triangles": 416,
+        "origin": [
+          0.133,
+          0.0,
+          0.360235
+        ]
+      },
+      {
+        "name": "v4_gatling__rotating_barrel_1",
+        "role": "rotating_barrel_1",
+        "group": "rotor",
+        "delay": 0.30000000000000004,
+        "triangles": 416,
+        "origin": [
+          0.0665,
+          0.115181,
+          0.360235
+        ]
+      },
+      {
+        "name": "v4_gatling__rotating_barrel_2",
+        "role": "rotating_barrel_2",
+        "group": "rotor",
+        "delay": 0.32,
+        "triangles": 416,
+        "origin": [
+          -0.0665,
+          0.115181,
+          0.360235
+        ]
+      },
+      {
+        "name": "v4_gatling__rotating_barrel_3",
+        "role": "rotating_barrel_3",
+        "group": "rotor",
+        "delay": 0.34,
+        "triangles": 416,
+        "origin": [
+          -0.133,
+          0.0,
+          0.360235
+        ]
+      },
+      {
+        "name": "v4_gatling__rotating_barrel_4",
+        "role": "rotating_barrel_4",
+        "group": "rotor",
+        "delay": 0.36000000000000004,
+        "triangles": 416,
+        "origin": [
+          -0.0665,
+          -0.115181,
+          0.360235
+        ]
+      },
+      {
+        "name": "v4_gatling__rotating_barrel_5",
+        "role": "rotating_barrel_5",
+        "group": "rotor",
+        "delay": 0.38,
+        "triangles": 416,
+        "origin": [
+          0.0665,
+          -0.115181,
+          0.360235
+        ]
+      },
+      {
+        "name": "v4_gatling__rotor_hub",
+        "role": "rotor_hub",
+        "group": "rotor",
+        "delay": 0.2,
+        "triangles": 284,
+        "origin": [
+          0.0,
+          0.0,
+          0.79
+        ]
+      },
+      {
+        "name": "v4_gatling__side_feed_drum",
+        "role": "side_feed_drum",
+        "group": "body",
+        "delay": 0.25,
+        "triangles": 284,
+        "origin": [
+          0.335,
+          -0.015,
+          0.94
+        ]
+      }
+    ],
+    "sockets": {
+      "Socket_muzzle": {
+        "position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_rotor": {
+        "position": [
+          0.0,
+          0.0,
+          0.42
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      },
+      "Socket_mount": {
+        "position": [
+          0.0,
+          -0.3,
+          0.96
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_ornament": {
+        "position": [
+          -0.245,
+          0.0,
+          1.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    "triangles": 9552,
+    "materials": [
+      "M_FirearmV4_Glow",
+      "M_FirearmV4_Surface"
+    ],
+    "units": "metres",
+    "dimensions": [
+      0.75,
+      0.5595,
+      1.20203
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.257,
+        -0.3145,
+        0.00047
+      ],
+      "max": [
+        0.493,
+        0.245,
+        1.2025
+      ]
+    },
+    "part_count": 32,
+    "version": 4,
+    "material_revision": "Shared baked PBR v4, original v1 geometry and sockets preserved",
+    "texture_set": "firearm_material_v4 shared atlas"
+  },
+  "smoke_launcher": {
+    "id": "smoke_launcher",
+    "blender_scene": "FirearmMaterialV4_smoke_launcher",
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "parts": [
+      {
+        "name": "v4_smoke_launcher__bank_support",
+        "role": "bank_support",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.0,
+          0.19,
+          0.11
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__base",
+        "role": "base",
+        "group": "body",
+        "delay": 0.02,
+        "triangles": 108,
+        "origin": [
+          0.0,
+          0.075,
+          0.07
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__base_trim",
+        "role": "base_trim",
+        "group": "body",
+        "delay": 0.2,
+        "triangles": 108,
+        "origin": [
+          0.0,
+          0.035,
+          0.07
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__bracket_pin_0p28",
+        "role": "bracket_pin_0.28",
+        "group": "body",
+        "delay": 0.34,
+        "triangles": 164,
+        "origin": [
+          0.308,
+          0.26,
+          0.2
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__bracket_pin_neg0p28",
+        "role": "bracket_pin_-0.28",
+        "group": "body",
+        "delay": 0.34,
+        "triangles": 164,
+        "origin": [
+          -0.308,
+          0.26,
+          0.2
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__canister_cap_0",
+        "role": "canister_cap_0",
+        "group": "canister_0",
+        "delay": 0.47,
+        "triangles": 188,
+        "origin": [
+          -0.203522,
+          0.356595,
+          -0.07774
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__canister_cap_1",
+        "role": "canister_cap_1",
+        "group": "canister_1",
+        "delay": 0.47,
+        "triangles": 188,
+        "origin": [
+          0.0,
+          0.356772,
+          -0.078008
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__canister_cap_2",
+        "role": "canister_cap_2",
+        "group": "canister_2",
+        "delay": 0.47,
+        "triangles": 188,
+        "origin": [
+          0.203522,
+          0.356595,
+          -0.07774
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__canister_cap_3",
+        "role": "canister_cap_3",
+        "group": "canister_3",
+        "delay": 0.47,
+        "triangles": 188,
+        "origin": [
+          -0.203522,
+          0.516595,
+          0.02226
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__canister_cap_4",
+        "role": "canister_cap_4",
+        "group": "canister_4",
+        "delay": 0.47,
+        "triangles": 188,
+        "origin": [
+          0.0,
+          0.516772,
+          0.021992
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__canister_cap_5",
+        "role": "canister_cap_5",
+        "group": "canister_5",
+        "delay": 0.47,
+        "triangles": 188,
+        "origin": [
+          0.203522,
+          0.516595,
+          0.02226
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__launch_tube_0",
+        "role": "launch_tube_0",
+        "group": "bank",
+        "delay": 0.2,
+        "triangles": 416,
+        "origin": [
+          -0.19752,
+          0.282154,
+          0.037363
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__launch_tube_1",
+        "role": "launch_tube_1",
+        "group": "bank",
+        "delay": 0.222,
+        "triangles": 416,
+        "origin": [
+          0.0,
+          0.282243,
+          0.037222
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__launch_tube_2",
+        "role": "launch_tube_2",
+        "group": "bank",
+        "delay": 0.244,
+        "triangles": 416,
+        "origin": [
+          0.19752,
+          0.282154,
+          0.037363
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__launch_tube_3",
+        "role": "launch_tube_3",
+        "group": "bank",
+        "delay": 0.266,
+        "triangles": 416,
+        "origin": [
+          -0.19752,
+          0.442154,
+          0.137363
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__launch_tube_4",
+        "role": "launch_tube_4",
+        "group": "bank",
+        "delay": 0.28800000000000003,
+        "triangles": 416,
+        "origin": [
+          0.0,
+          0.442243,
+          0.137222
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__launch_tube_5",
+        "role": "launch_tube_5",
+        "group": "bank",
+        "delay": 0.31,
+        "triangles": 416,
+        "origin": [
+          0.19752,
+          0.442154,
+          0.137363
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__power_inlay",
+        "role": "power_inlay",
+        "group": "body",
+        "delay": 0.46,
+        "triangles": 108,
+        "origin": [
+          0.0,
+          0.16,
+          -0.103
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__side_bracket_0p28",
+        "role": "side_bracket_0.28",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          0.28,
+          0.22,
+          0.2
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__side_bracket_neg0p28",
+        "role": "side_bracket_-0.28",
+        "group": "body",
+        "delay": 0.12,
+        "triangles": 108,
+        "origin": [
+          -0.28,
+          0.22,
+          0.2
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__smoke_canister_0",
+        "role": "smoke_canister_0",
+        "group": "canister_0",
+        "delay": 0.43,
+        "triangles": 188,
+        "origin": [
+          -0.198066,
+          0.293408,
+          0.01819
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__smoke_canister_1",
+        "role": "smoke_canister_1",
+        "group": "canister_1",
+        "delay": 0.442,
+        "triangles": 188,
+        "origin": [
+          0.0,
+          0.293513,
+          0.01803
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__smoke_canister_2",
+        "role": "smoke_canister_2",
+        "group": "canister_2",
+        "delay": 0.454,
+        "triangles": 188,
+        "origin": [
+          0.198066,
+          0.293408,
+          0.01819
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__smoke_canister_3",
+        "role": "smoke_canister_3",
+        "group": "canister_3",
+        "delay": 0.46599999999999997,
+        "triangles": 188,
+        "origin": [
+          -0.198066,
+          0.453408,
+          0.11819
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__smoke_canister_4",
+        "role": "smoke_canister_4",
+        "group": "canister_4",
+        "delay": 0.478,
+        "triangles": 188,
+        "origin": [
+          0.0,
+          0.453513,
+          0.11803
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__smoke_canister_5",
+        "role": "smoke_canister_5",
+        "group": "canister_5",
+        "delay": 0.49,
+        "triangles": 188,
+        "origin": [
+          0.198066,
+          0.453408,
+          0.11819
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__tube_rim_0",
+        "role": "tube_rim_0",
+        "group": "bank",
+        "delay": 0.38,
+        "triangles": 384,
+        "origin": [
+          -0.203522,
+          0.356595,
+          -0.07774
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__tube_rim_1",
+        "role": "tube_rim_1",
+        "group": "bank",
+        "delay": 0.38,
+        "triangles": 384,
+        "origin": [
+          0.0,
+          0.356772,
+          -0.078008
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__tube_rim_2",
+        "role": "tube_rim_2",
+        "group": "bank",
+        "delay": 0.38,
+        "triangles": 384,
+        "origin": [
+          0.203522,
+          0.356595,
+          -0.07774
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__tube_rim_3",
+        "role": "tube_rim_3",
+        "group": "bank",
+        "delay": 0.38,
+        "triangles": 384,
+        "origin": [
+          -0.203522,
+          0.516595,
+          0.02226
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__tube_rim_4",
+        "role": "tube_rim_4",
+        "group": "bank",
+        "delay": 0.38,
+        "triangles": 384,
+        "origin": [
+          0.0,
+          0.516772,
+          0.021992
+        ]
+      },
+      {
+        "name": "v4_smoke_launcher__tube_rim_5",
+        "role": "tube_rim_5",
+        "group": "bank",
+        "delay": 0.38,
+        "triangles": 384,
+        "origin": [
+          0.203522,
+          0.516595,
+          0.02226
+        ]
+      }
+    ],
+    "sockets": {
+      "Socket_launch_0": {
+        "position": [
+          -0.204234,
+          0.364837,
+          -0.090252
+        ],
+        "direction": [
+          -0.04744650423526764,
+          0.5494561195373535,
+          -0.8341743350028992
+        ]
+      },
+      "Socket_launch_1": {
+        "position": [
+          0.0,
+          0.365023,
+          -0.090534
+        ],
+        "direction": [
+          0.0,
+          0.5500756502151489,
+          -0.8351148366928101
+        ]
+      },
+      "Socket_launch_2": {
+        "position": [
+          0.204234,
+          0.364837,
+          -0.090252
+        ],
+        "direction": [
+          0.04744650423526764,
+          0.5494561195373535,
+          -0.8341743350028992
+        ]
+      },
+      "Socket_launch_3": {
+        "position": [
+          -0.204234,
+          0.524837,
+          0.009748
+        ],
+        "direction": [
+          -0.04744650423526764,
+          0.5494561195373535,
+          -0.8341743350028992
+        ]
+      },
+      "Socket_launch_4": {
+        "position": [
+          0.0,
+          0.525023,
+          0.009466
+        ],
+        "direction": [
+          0.0,
+          0.5500756502151489,
+          -0.8351148366928101
+        ]
+      },
+      "Socket_launch_5": {
+        "position": [
+          0.204234,
+          0.524837,
+          0.009748
+        ],
+        "direction": [
+          0.04744650423526764,
+          0.5494561195373535,
+          -0.8341743350028992
+        ]
+      },
+      "Socket_ground": {
+        "position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "direction": [
+          0,
+          1,
+          0
+        ]
+      },
+      "Socket_bank_pivot": {
+        "position": [
+          0.0,
+          0.2,
+          0.16
+        ],
+        "direction": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    "triangles": 8032,
+    "materials": [
+      "M_FirearmV4_Glow",
+      "M_FirearmV4_Surface"
+    ],
+    "units": "metres",
+    "dimensions": [
+      0.65,
+      0.5892,
+      0.42747
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.325,
+        0.0,
+        -0.132196
+      ],
+      "max": [
+        0.325,
+        0.589201,
+        0.295274
+      ]
+    },
+    "part_count": 32,
+    "version": 4,
+    "material_revision": "Shared baked PBR v4, original v1 geometry and sockets preserved",
+    "texture_set": "firearm_material_v4 shared atlas"
+  },
+  "artillery_shell": {
+    "id": "artillery_shell",
+    "blender_scene": "FirearmMaterialV4_artillery_shell",
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "parts": [
+      {
+        "name": "v4_artillery_shell__base_mark",
+        "role": "base_mark",
+        "group": "body",
+        "delay": 0.44,
+        "triangles": 140,
+        "origin": [
+          0.0,
+          0.0,
+          0.33198
+        ]
+      },
+      {
+        "name": "v4_artillery_shell__base_plate",
+        "role": "base_plate",
+        "group": "body",
+        "delay": 0.22,
+        "triangles": 236,
+        "origin": [
+          0.0,
+          0.0,
+          0.32208
+        ]
+      },
+      {
+        "name": "v4_artillery_shell__driving_band",
+        "role": "driving_band",
+        "group": "body",
+        "delay": 0.3,
+        "triangles": 480,
+        "origin": [
+          0.0,
+          0.0,
+          0.27192
+        ]
+      },
+      {
+        "name": "v4_artillery_shell__identity_band",
+        "role": "identity_band",
+        "group": "body",
+        "delay": 0.4,
+        "triangles": 480,
+        "origin": [
+          0.0,
+          0.0,
+          0.165
+        ]
+      },
+      {
+        "name": "v4_artillery_shell__ogive_body",
+        "role": "ogive_body",
+        "group": "body",
+        "delay": 0.22,
+        "triangles": 516,
+        "origin": [
+          0.0,
+          0.0,
+          0.1617
+        ]
+      }
+    ],
+    "sockets": {
+      "Socket_nose": {
+        "position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_trail": {
+        "position": [
+          0.0,
+          0.0,
+          0.3366
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "triangles": 1852,
+    "materials": [
+      "M_FirearmV4_Surface"
+    ],
+    "units": "metres",
+    "dimensions": [
+      0.1122,
+      0.1122,
+      0.33462
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.0561,
+        -0.0561,
+        -0.0
+      ],
+      "max": [
+        0.0561,
+        0.0561,
+        0.33462
+      ]
+    },
+    "part_count": 5,
+    "version": 4,
+    "material_revision": "Shared baked PBR v4, original v1 geometry and sockets preserved",
+    "texture_set": "firearm_material_v4 shared atlas"
+  },
+  "naval_shell": {
+    "id": "naval_shell",
+    "blender_scene": "FirearmMaterialV4_naval_shell",
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "parts": [
+      {
+        "name": "v4_naval_shell__base_mark",
+        "role": "base_mark",
+        "group": "body",
+        "delay": 0.44,
+        "triangles": 140,
+        "origin": [
+          0.0,
+          0.0,
+          0.503
+        ]
+      },
+      {
+        "name": "v4_naval_shell__base_plate",
+        "role": "base_plate",
+        "group": "body",
+        "delay": 0.22,
+        "triangles": 236,
+        "origin": [
+          0.0,
+          0.0,
+          0.488
+        ]
+      },
+      {
+        "name": "v4_naval_shell__driving_band",
+        "role": "driving_band",
+        "group": "body",
+        "delay": 0.3,
+        "triangles": 480,
+        "origin": [
+          0.0,
+          0.0,
+          0.412
+        ]
+      },
+      {
+        "name": "v4_naval_shell__identity_band",
+        "role": "identity_band",
+        "group": "body",
+        "delay": 0.4,
+        "triangles": 480,
+        "origin": [
+          0.0,
+          0.0,
+          0.25
+        ]
+      },
+      {
+        "name": "v4_naval_shell__ogive_body",
+        "role": "ogive_body",
+        "group": "body",
+        "delay": 0.22,
+        "triangles": 516,
+        "origin": [
+          0.0,
+          0.0,
+          0.245
+        ]
+      }
+    ],
+    "sockets": {
+      "Socket_nose": {
+        "position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_trail": {
+        "position": [
+          0.0,
+          0.0,
+          0.51
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "triangles": 1852,
+    "materials": [
+      "M_FirearmV4_Surface"
+    ],
+    "units": "metres",
+    "dimensions": [
+      0.17,
+      0.17,
+      0.507
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.085,
+        -0.085,
+        -0.0
+      ],
+      "max": [
+        0.085,
+        0.085,
+        0.507
+      ]
+    },
+    "part_count": 5,
+    "version": 4,
+    "material_revision": "Shared baked PBR v4, original v1 geometry and sockets preserved",
+    "texture_set": "firearm_material_v4 shared atlas"
+  },
+  "smoke_canister": {
+    "id": "smoke_canister",
+    "blender_scene": "FirearmMaterialV4_smoke_canister",
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "parts": [
+      {
+        "name": "v4_smoke_canister__canister_body",
+        "role": "canister_body",
+        "group": "body",
+        "delay": 0.22,
+        "triangles": 252,
+        "origin": [
+          0.0,
+          0.0,
+          0.115
+        ]
+      },
+      {
+        "name": "v4_smoke_canister__cap",
+        "role": "cap",
+        "group": "body",
+        "delay": 0.32,
+        "triangles": 188,
+        "origin": [
+          0.0,
+          0.0,
+          -0.005
+        ]
+      },
+      {
+        "name": "v4_smoke_canister__rim",
+        "role": "rim",
+        "group": "body",
+        "delay": 0.36,
+        "triangles": 384,
+        "origin": [
+          0.0,
+          0.0,
+          0.205
+        ]
+      }
+    ],
+    "sockets": {
+      "Socket_nose": {
+        "position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_smoke": {
+        "position": [
+          0.0,
+          0.0,
+          0.23
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "triangles": 824,
+    "materials": [
+      "M_FirearmV4_Surface"
+    ],
+    "units": "metres",
+    "dimensions": [
+      0.108,
+      0.108,
+      0.243
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.054,
+        -0.054,
+        -0.013
+      ],
+      "max": [
+        0.054,
+        0.054,
+        0.23
+      ]
+    },
+    "part_count": 3,
+    "version": 4,
+    "material_revision": "Shared baked PBR v4, original v1 geometry and sockets preserved",
+    "texture_set": "firearm_material_v4 shared atlas"
+  }
+}

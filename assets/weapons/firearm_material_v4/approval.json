@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-03",
+  "timezone": "Asia/Seoul",
+  "user_request": "커밋",
+  "status": "selected_for_prototype",
+  "scope": "The current six prepared firearm models, v4 materials and assembly/roll/fuse/scatter/rotation/launch review mechanisms.",
+  "assets": ["powder_barrel", "gatling", "smoke_launcher", "artillery_shell", "naval_shell", "smoke_canister"],
+  "preserved": "The three active guns retain their selected v2 proportions and v3 materials.",
+  "review": "reports/firearm_material_v4/review.html",
+  "validation": "reports/firearm_material_v4/delivery_manifest.json",
+  "does_not_imply": "New skill implementation, live debris/inter-part/wall physics, smoke-vision rules, arbitrary contact or final performance approval."
+}

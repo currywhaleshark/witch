@@ -1,0 +1,441 @@
+{
+  "id": "powder_barrel",
+  "blender_scene": "FirearmMaterialV4_powder_barrel",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "v4_powder_barrel__brass_hoop_trim_0",
+      "role": "brass_hoop_trim_0",
+      "group": "drum",
+      "delay": 0.31,
+      "triangles": 768,
+      "origin": [
+        -0.145,
+        0.248,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__brass_hoop_trim_1",
+      "role": "brass_hoop_trim_1",
+      "group": "drum",
+      "delay": 0.31,
+      "triangles": 768,
+      "origin": [
+        0.145,
+        0.248,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__end_cap_0",
+      "role": "end_cap_0",
+      "group": "drum",
+      "delay": 0.21,
+      "triangles": 284,
+      "origin": [
+        -0.219,
+        0.248,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__end_cap_1",
+      "role": "end_cap_1",
+      "group": "drum",
+      "delay": 0.21,
+      "triangles": 284,
+      "origin": [
+        0.219,
+        0.248,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__end_emblem_0",
+      "role": "end_emblem_0",
+      "group": "drum",
+      "delay": 0.34,
+      "triangles": 156,
+      "origin": [
+        -0.23433,
+        0.248114,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__end_emblem_1",
+      "role": "end_emblem_1",
+      "group": "drum",
+      "delay": 0.34,
+      "triangles": 156,
+      "origin": [
+        0.23433,
+        0.248114,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_00",
+      "role": "fuse_00",
+      "group": "fuse",
+      "delay": 0.38,
+      "triangles": 28,
+      "origin": [
+        0.27,
+        0.353,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_01",
+      "role": "fuse_01",
+      "group": "fuse",
+      "delay": 0.39,
+      "triangles": 28,
+      "origin": [
+        0.305,
+        0.383,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_02",
+      "role": "fuse_02",
+      "group": "fuse",
+      "delay": 0.4,
+      "triangles": 28,
+      "origin": [
+        0.335,
+        0.423,
+        0.009
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_03",
+      "role": "fuse_03",
+      "group": "fuse",
+      "delay": 0.41000000000000003,
+      "triangles": 28,
+      "origin": [
+        0.37,
+        0.453,
+        0.0215
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_04",
+      "role": "fuse_04",
+      "group": "fuse",
+      "delay": 0.42,
+      "triangles": 28,
+      "origin": [
+        0.41,
+        0.4605,
+        0.0275
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_05",
+      "role": "fuse_05",
+      "group": "fuse",
+      "delay": 0.43,
+      "triangles": 28,
+      "origin": [
+        0.45,
+        0.4505,
+        0.028
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_06",
+      "role": "fuse_06",
+      "group": "fuse",
+      "delay": 0.44,
+      "triangles": 28,
+      "origin": [
+        0.485,
+        0.4305,
+        0.023
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_07",
+      "role": "fuse_07",
+      "group": "fuse",
+      "delay": 0.45,
+      "triangles": 28,
+      "origin": [
+        0.51,
+        0.4055,
+        0.015
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_ember",
+      "role": "fuse_ember",
+      "group": "fuse",
+      "delay": 0.49,
+      "triangles": 276,
+      "origin": [
+        0.52,
+        0.393,
+        0.01
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__fuse_socket",
+      "role": "fuse_socket",
+      "group": "drum",
+      "delay": 0.36,
+      "triangles": 204,
+      "origin": [
+        0.235,
+        0.343,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__rolling_hoop_0",
+      "role": "rolling_hoop_0",
+      "group": "drum",
+      "delay": 0.27,
+      "triangles": 768,
+      "origin": [
+        -0.145,
+        0.248,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__rolling_hoop_1",
+      "role": "rolling_hoop_1",
+      "group": "drum",
+      "delay": 0.27,
+      "triangles": 768,
+      "origin": [
+        0.145,
+        0.248,
+        -0.0
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_00",
+      "role": "stave_00",
+      "group": "drum",
+      "delay": 0.04,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.443025,
+        0.056885
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_01",
+      "role": "stave_01",
+      "group": "drum",
+      "delay": 0.055,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.393537,
+        0.145537
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_02",
+      "role": "stave_02",
+      "group": "drum",
+      "delay": 0.07,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.304885,
+        0.195025
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_03",
+      "role": "stave_03",
+      "group": "drum",
+      "delay": 0.08499999999999999,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.191115,
+        0.195025
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_04",
+      "role": "stave_04",
+      "group": "drum",
+      "delay": 0.04,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.102463,
+        0.145537
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_05",
+      "role": "stave_05",
+      "group": "drum",
+      "delay": 0.055,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.052975,
+        0.056885
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_06",
+      "role": "stave_06",
+      "group": "drum",
+      "delay": 0.07,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.052975,
+        -0.056885
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_07",
+      "role": "stave_07",
+      "group": "drum",
+      "delay": 0.08499999999999999,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.102463,
+        -0.145537
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_08",
+      "role": "stave_08",
+      "group": "drum",
+      "delay": 0.04,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.191115,
+        -0.195025
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_09",
+      "role": "stave_09",
+      "group": "drum",
+      "delay": 0.055,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.304885,
+        -0.195025
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_10",
+      "role": "stave_10",
+      "group": "drum",
+      "delay": 0.07,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.393537,
+        -0.145537
+      ]
+    },
+    {
+      "name": "v4_powder_barrel__stave_11",
+      "role": "stave_11",
+      "group": "drum",
+      "delay": 0.08499999999999999,
+      "triangles": 156,
+      "origin": [
+        0.0,
+        0.443025,
+        -0.056885
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_roll_axis": {
+      "position": [
+        0.0,
+        0.248,
+        -0.0
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ]
+    },
+    "Socket_fuse_tip": {
+      "position": [
+        0.52,
+        0.393,
+        0.01
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_burst": {
+      "position": [
+        0.0,
+        0.248,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    }
+  },
+  "triangles": 6528,
+  "materials": [
+    "M_FirearmV4_Glow",
+    "M_FirearmV4_Surface"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.76978,
+    0.496,
+    0.496
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.24033,
+      0.0,
+      -0.248
+    ],
+    "max": [
+      0.529452,
+      0.496,
+      0.248
+    ]
+  },
+  "part_count": 30,
+  "version": 4,
+  "material_revision": "Shared baked PBR v4, original v1 geometry and sockets preserved",
+  "texture_set": "firearm_material_v4 shared atlas"
+}

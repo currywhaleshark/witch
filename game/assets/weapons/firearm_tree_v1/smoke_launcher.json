@@ -1,0 +1,525 @@
+{
+  "id": "smoke_launcher",
+  "blender_scene": "FirearmV1_smoke_launcher",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "smoke_launcher__bank_support",
+      "role": "bank_support",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.19,
+        0.11
+      ]
+    },
+    {
+      "name": "smoke_launcher__base",
+      "role": "base",
+      "group": "body",
+      "delay": 0.02,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.075,
+        0.07
+      ]
+    },
+    {
+      "name": "smoke_launcher__base_trim",
+      "role": "base_trim",
+      "group": "body",
+      "delay": 0.2,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.035,
+        0.07
+      ]
+    },
+    {
+      "name": "smoke_launcher__bracket_pin_0p28",
+      "role": "bracket_pin_0.28",
+      "group": "body",
+      "delay": 0.34,
+      "triangles": 164,
+      "origin": [
+        0.308,
+        0.26,
+        0.2
+      ]
+    },
+    {
+      "name": "smoke_launcher__bracket_pin_neg0p28",
+      "role": "bracket_pin_-0.28",
+      "group": "body",
+      "delay": 0.34,
+      "triangles": 164,
+      "origin": [
+        -0.308,
+        0.26,
+        0.2
+      ]
+    },
+    {
+      "name": "smoke_launcher__canister_cap_0",
+      "role": "canister_cap_0",
+      "group": "canister_0",
+      "delay": 0.47,
+      "triangles": 188,
+      "origin": [
+        -0.203522,
+        0.356595,
+        -0.07774
+      ]
+    },
+    {
+      "name": "smoke_launcher__canister_cap_1",
+      "role": "canister_cap_1",
+      "group": "canister_1",
+      "delay": 0.47,
+      "triangles": 188,
+      "origin": [
+        0.0,
+        0.356772,
+        -0.078008
+      ]
+    },
+    {
+      "name": "smoke_launcher__canister_cap_2",
+      "role": "canister_cap_2",
+      "group": "canister_2",
+      "delay": 0.47,
+      "triangles": 188,
+      "origin": [
+        0.203522,
+        0.356595,
+        -0.07774
+      ]
+    },
+    {
+      "name": "smoke_launcher__canister_cap_3",
+      "role": "canister_cap_3",
+      "group": "canister_3",
+      "delay": 0.47,
+      "triangles": 188,
+      "origin": [
+        -0.203522,
+        0.516595,
+        0.02226
+      ]
+    },
+    {
+      "name": "smoke_launcher__canister_cap_4",
+      "role": "canister_cap_4",
+      "group": "canister_4",
+      "delay": 0.47,
+      "triangles": 188,
+      "origin": [
+        0.0,
+        0.516772,
+        0.021992
+      ]
+    },
+    {
+      "name": "smoke_launcher__canister_cap_5",
+      "role": "canister_cap_5",
+      "group": "canister_5",
+      "delay": 0.47,
+      "triangles": 188,
+      "origin": [
+        0.203522,
+        0.516595,
+        0.02226
+      ]
+    },
+    {
+      "name": "smoke_launcher__launch_tube_0",
+      "role": "launch_tube_0",
+      "group": "bank",
+      "delay": 0.2,
+      "triangles": 416,
+      "origin": [
+        -0.19752,
+        0.282154,
+        0.037363
+      ]
+    },
+    {
+      "name": "smoke_launcher__launch_tube_1",
+      "role": "launch_tube_1",
+      "group": "bank",
+      "delay": 0.222,
+      "triangles": 416,
+      "origin": [
+        0.0,
+        0.282243,
+        0.037222
+      ]
+    },
+    {
+      "name": "smoke_launcher__launch_tube_2",
+      "role": "launch_tube_2",
+      "group": "bank",
+      "delay": 0.244,
+      "triangles": 416,
+      "origin": [
+        0.19752,
+        0.282154,
+        0.037363
+      ]
+    },
+    {
+      "name": "smoke_launcher__launch_tube_3",
+      "role": "launch_tube_3",
+      "group": "bank",
+      "delay": 0.266,
+      "triangles": 416,
+      "origin": [
+        -0.19752,
+        0.442154,
+        0.137363
+      ]
+    },
+    {
+      "name": "smoke_launcher__launch_tube_4",
+      "role": "launch_tube_4",
+      "group": "bank",
+      "delay": 0.28800000000000003,
+      "triangles": 416,
+      "origin": [
+        0.0,
+        0.442243,
+        0.137222
+      ]
+    },
+    {
+      "name": "smoke_launcher__launch_tube_5",
+      "role": "launch_tube_5",
+      "group": "bank",
+      "delay": 0.31,
+      "triangles": 416,
+      "origin": [
+        0.19752,
+        0.442154,
+        0.137363
+      ]
+    },
+    {
+      "name": "smoke_launcher__power_inlay",
+      "role": "power_inlay",
+      "group": "body",
+      "delay": 0.46,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.16,
+        -0.103
+      ]
+    },
+    {
+      "name": "smoke_launcher__side_bracket_0p28",
+      "role": "side_bracket_0.28",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.28,
+        0.22,
+        0.2
+      ]
+    },
+    {
+      "name": "smoke_launcher__side_bracket_neg0p28",
+      "role": "side_bracket_-0.28",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        -0.28,
+        0.22,
+        0.2
+      ]
+    },
+    {
+      "name": "smoke_launcher__smoke_canister_0",
+      "role": "smoke_canister_0",
+      "group": "canister_0",
+      "delay": 0.43,
+      "triangles": 188,
+      "origin": [
+        -0.198066,
+        0.293408,
+        0.01819
+      ]
+    },
+    {
+      "name": "smoke_launcher__smoke_canister_1",
+      "role": "smoke_canister_1",
+      "group": "canister_1",
+      "delay": 0.442,
+      "triangles": 188,
+      "origin": [
+        0.0,
+        0.293513,
+        0.01803
+      ]
+    },
+    {
+      "name": "smoke_launcher__smoke_canister_2",
+      "role": "smoke_canister_2",
+      "group": "canister_2",
+      "delay": 0.454,
+      "triangles": 188,
+      "origin": [
+        0.198066,
+        0.293408,
+        0.01819
+      ]
+    },
+    {
+      "name": "smoke_launcher__smoke_canister_3",
+      "role": "smoke_canister_3",
+      "group": "canister_3",
+      "delay": 0.46599999999999997,
+      "triangles": 188,
+      "origin": [
+        -0.198066,
+        0.453408,
+        0.11819
+      ]
+    },
+    {
+      "name": "smoke_launcher__smoke_canister_4",
+      "role": "smoke_canister_4",
+      "group": "canister_4",
+      "delay": 0.478,
+      "triangles": 188,
+      "origin": [
+        0.0,
+        0.453513,
+        0.11803
+      ]
+    },
+    {
+      "name": "smoke_launcher__smoke_canister_5",
+      "role": "smoke_canister_5",
+      "group": "canister_5",
+      "delay": 0.49,
+      "triangles": 188,
+      "origin": [
+        0.198066,
+        0.453408,
+        0.11819
+      ]
+    },
+    {
+      "name": "smoke_launcher__tube_rim_0",
+      "role": "tube_rim_0",
+      "group": "bank",
+      "delay": 0.38,
+      "triangles": 384,
+      "origin": [
+        -0.203522,
+        0.356595,
+        -0.07774
+      ]
+    },
+    {
+      "name": "smoke_launcher__tube_rim_1",
+      "role": "tube_rim_1",
+      "group": "bank",
+      "delay": 0.38,
+      "triangles": 384,
+      "origin": [
+        0.0,
+        0.356772,
+        -0.078008
+      ]
+    },
+    {
+      "name": "smoke_launcher__tube_rim_2",
+      "role": "tube_rim_2",
+      "group": "bank",
+      "delay": 0.38,
+      "triangles": 384,
+      "origin": [
+        0.203522,
+        0.356595,
+        -0.07774
+      ]
+    },
+    {
+      "name": "smoke_launcher__tube_rim_3",
+      "role": "tube_rim_3",
+      "group": "bank",
+      "delay": 0.38,
+      "triangles": 384,
+      "origin": [
+        -0.203522,
+        0.516595,
+        0.02226
+      ]
+    },
+    {
+      "name": "smoke_launcher__tube_rim_4",
+      "role": "tube_rim_4",
+      "group": "bank",
+      "delay": 0.38,
+      "triangles": 384,
+      "origin": [
+        0.0,
+        0.516772,
+        0.021992
+      ]
+    },
+    {
+      "name": "smoke_launcher__tube_rim_5",
+      "role": "tube_rim_5",
+      "group": "bank",
+      "delay": 0.38,
+      "triangles": 384,
+      "origin": [
+        0.203522,
+        0.516595,
+        0.02226
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_launch_0": {
+      "position": [
+        -0.204234,
+        0.364837,
+        -0.090252
+      ],
+      "direction": [
+        -0.04744650423526764,
+        0.5494561195373535,
+        -0.8341743350028992
+      ]
+    },
+    "Socket_launch_1": {
+      "position": [
+        0.0,
+        0.365023,
+        -0.090534
+      ],
+      "direction": [
+        0.0,
+        0.5500756502151489,
+        -0.8351148366928101
+      ]
+    },
+    "Socket_launch_2": {
+      "position": [
+        0.204234,
+        0.364837,
+        -0.090252
+      ],
+      "direction": [
+        0.04744650423526764,
+        0.5494561195373535,
+        -0.8341743350028992
+      ]
+    },
+    "Socket_launch_3": {
+      "position": [
+        -0.204234,
+        0.524837,
+        0.009748
+      ],
+      "direction": [
+        -0.04744650423526764,
+        0.5494561195373535,
+        -0.8341743350028992
+      ]
+    },
+    "Socket_launch_4": {
+      "position": [
+        0.0,
+        0.525023,
+        0.009466
+      ],
+      "direction": [
+        0.0,
+        0.5500756502151489,
+        -0.8351148366928101
+      ]
+    },
+    "Socket_launch_5": {
+      "position": [
+        0.204234,
+        0.524837,
+        0.009748
+      ],
+      "direction": [
+        0.04744650423526764,
+        0.5494561195373535,
+        -0.8341743350028992
+      ]
+    },
+    "Socket_ground": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ]
+    },
+    "Socket_bank_pivot": {
+      "position": [
+        0.0,
+        0.2,
+        0.16
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ]
+    }
+  },
+  "triangles": 8032,
+  "materials": [
+    "M_FirearmV1_brass",
+    "M_FirearmV1_navy",
+    "M_FirearmV1_silver",
+    "M_FirearmV1_steel",
+    "M_FirearmV1_teal"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.65,
+    0.5892,
+    0.42747
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.325,
+      0.0,
+      -0.132196
+    ],
+    "max": [
+      0.325,
+      0.589201,
+      0.295274
+    ]
+  },
+  "part_count": 32
+}

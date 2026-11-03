@@ -1,0 +1,34 @@
+{
+  "firearm_color.png": {
+    "size": [
+      1024,
+      1024
+    ],
+    "bytes": 1276313,
+    "sha256": "be5445db13981ee681c11b46fc4b2b3ef13b95b2658a0b0adabf9e7b81a61a70"
+  },
+  "firearm_emission.png": {
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 2936,
+    "sha256": "72ae422e42d64bf434607afa4f85f086771a913d0b93325336b9ee2d445f4b4c"
+  },
+  "firearm_normal.png": {
+    "size": [
+      1024,
+      1024
+    ],
+    "bytes": 300842,
+    "sha256": "ff88f1c8be2fde0f14cc2d08a0b7424f3120f9d142850941171b7d5f8fd65562"
+  },
+  "firearm_orm.png": {
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 387488,
+    "sha256": "0dfd2b0e0c6606e1324bb53d966bb0e8e6558f5eec86e3d9b0d7ed524e168cd3"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "models": {
+    "powder_barrel": {
+      "geometry_and_pivots_match_v1": true,
+      "normals_equal_rounded_1e4": true,
+      "parts": 30,
+      "triangles": 6528,
+      "tangents": 30,
+      "materials": 2,
+      "bytes": 318900,
+      "normal_reencode_delta_repaired": 0.00017321008631115603,
+      "textures": [
+        "textures/firearm_normal.png",
+        "textures/firearm_orm.png",
+        "textures/firearm_color.png",
+        "textures/firearm_emission.png"
+      ]
+    },
+    "gatling": {
+      "geometry_and_pivots_match_v1": true,
+      "normals_equal_rounded_1e4": true,
+      "parts": 32,
+      "triangles": 9552,
+      "tangents": 32,
+      "materials": 2,
+      "bytes": 449668,
+      "normal_reencode_delta_repaired": 0.0001731901955740434,
+      "textures": [
+        "textures/firearm_normal.png",
+        "textures/firearm_orm.png",
+        "textures/firearm_color.png",
+        "textures/firearm_emission.png"
+      ]
+    },
+    "smoke_launcher": {
+      "geometry_and_pivots_match_v1": true,
+      "normals_equal_rounded_1e4": true,
+      "parts": 32,
+      "triangles": 8032,
+      "tangents": 32,
+      "materials": 2,
+      "bytes": 391176,
+      "normal_reencode_delta_repaired": 0.00017318960892664543,
+      "textures": [
+        "textures/firearm_normal.png",
+        "textures/firearm_orm.png",
+        "textures/firearm_color.png",
+        "textures/firearm_emission.png"
+      ]
+    },
+    "artillery_shell": {
+      "geometry_and_pivots_match_v1": true,
+      "normals_equal_rounded_1e4": true,
+      "parts": 5,
+      "triangles": 1852,
+      "tangents": 5,
+      "materials": 1,
+      "bytes": 84088,
+      "normal_reencode_delta_repaired": 0.00014144605434546396,
+      "textures": [
+        "textures/firearm_normal.png",
+        "textures/firearm_orm.png",
+        "textures/firearm_color.png"
+      ]
+    },
+    "naval_shell": {
+      "geometry_and_pivots_match_v1": true,
+      "normals_equal_rounded_1e4": true,
+      "parts": 5,
+      "triangles": 1852,
+      "tangents": 5,
+      "materials": 1,
+      "bytes": 84204,
+      "normal_reencode_delta_repaired": 0.0001414213308793766,
+      "textures": [
+        "textures/firearm_normal.png",
+        "textures/firearm_orm.png",
+        "textures/firearm_color.png"
+      ]
+    },
+    "smoke_canister": {
+      "geometry_and_pivots_match_v1": true,
+      "normals_equal_rounded_1e4": true,
+      "parts": 3,
+      "triangles": 824,
+      "tangents": 3,
+      "materials": 1,
+      "bytes": 40396,
+      "normal_reencode_delta_repaired": 0.00017312642349232263,
+      "textures": [
+        "textures/firearm_normal.png",
+        "textures/firearm_orm.png",
+        "textures/firearm_color.png"
+      ]
+    }
+  },
+  "shared_textures": {
+    "firearm_normal.png": "ff88f1c8be2fde0f14cc2d08a0b7424f3120f9d142850941171b7d5f8fd65562",
+    "firearm_orm.png": "0dfd2b0e0c6606e1324bb53d966bb0e8e6558f5eec86e3d9b0d7ed524e168cd3",
+    "firearm_color.png": "be5445db13981ee681c11b46fc4b2b3ef13b95b2658a0b0adabf9e7b81a61a70",
+    "firearm_emission.png": "72ae422e42d64bf434607afa4f85f086771a913d0b93325336b9ee2d445f4b4c"
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "id": "shotgun",
+  "blender_scene": "FirearmV1_shotgun",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "shotgun__barrel_bridge",
+      "role": "barrel_bridge",
+      "group": "body",
+      "delay": 0.26,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.025,
+        0.22
+      ]
+    },
+    {
+      "name": "shotgun__core_inlay",
+      "role": "core_inlay",
+      "group": "body",
+      "delay": 0.47,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.098,
+        0.45
+      ]
+    },
+    {
+      "name": "shotgun__grip_rib_0",
+      "role": "grip_rib_0",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.14,
+        0.15
+      ]
+    },
+    {
+      "name": "shotgun__grip_rib_1",
+      "role": "grip_rib_1",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.14,
+        0.22
+      ]
+    },
+    {
+      "name": "shotgun__grip_rib_2",
+      "role": "grip_rib_2",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.14,
+        0.29
+      ]
+    },
+    {
+      "name": "shotgun__grip_rib_3",
+      "role": "grip_rib_3",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.14,
+        0.36
+      ]
+    },
+    {
+      "name": "shotgun__hinge_1",
+      "role": "hinge_1",
+      "group": "body",
+      "delay": 0.2,
+      "triangles": 188,
+      "origin": [
+        0.149,
+        -0.02,
+        0.46
+      ]
+    },
+    {
+      "name": "shotgun__hinge_bolt_1",
+      "role": "hinge_bolt_1",
+      "group": "body",
+      "delay": 0.34,
+      "triangles": 164,
+      "origin": [
+        0.162,
+        -0.02,
+        0.46
+      ]
+    },
+    {
+      "name": "shotgun__hinge_bolt_neg1",
+      "role": "hinge_bolt_-1",
+      "group": "body",
+      "delay": 0.34,
+      "triangles": 164,
+      "origin": [
+        -0.162,
+        -0.02,
+        0.46
+      ]
+    },
+    {
+      "name": "shotgun__hinge_neg1",
+      "role": "hinge_-1",
+      "group": "body",
+      "delay": 0.2,
+      "triangles": 188,
+      "origin": [
+        -0.149,
+        -0.02,
+        0.46
+      ]
+    },
+    {
+      "name": "shotgun__lower_handguard",
+      "role": "lower_handguard",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.1,
+        0.24
+      ]
+    },
+    {
+      "name": "shotgun__receiver",
+      "role": "receiver",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.015,
+        0.45
+      ]
+    },
+    {
+      "name": "shotgun__receiver_top",
+      "role": "receiver_top",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.08,
+        0.45
+      ]
+    },
+    {
+      "name": "shotgun__scatter_barrel_0",
+      "role": "scatter_barrel_0",
+      "group": "body",
+      "delay": 0.3,
+      "triangles": 560,
+      "origin": [
+        -0.086,
+        0.0,
+        0.195234
+      ]
+    },
+    {
+      "name": "shotgun__scatter_barrel_1",
+      "role": "scatter_barrel_1",
+      "group": "body",
+      "delay": 0.325,
+      "triangles": 560,
+      "origin": [
+        0.086,
+        0.0,
+        0.195234
+      ]
+    },
+    {
+      "name": "shotgun__scatter_lip_0",
+      "role": "scatter_lip_0",
+      "group": "body",
+      "delay": 0.42,
+      "triangles": 576,
+      "origin": [
+        -0.086,
+        0.0,
+        0.019
+      ]
+    },
+    {
+      "name": "shotgun__scatter_lip_1",
+      "role": "scatter_lip_1",
+      "group": "body",
+      "delay": 0.42,
+      "triangles": 576,
+      "origin": [
+        0.086,
+        0.0,
+        0.019
+      ]
+    },
+    {
+      "name": "shotgun__short_stock",
+      "role": "short_stock",
+      "group": "body",
+      "delay": 0.02,
+      "triangles": 132,
+      "origin": [
+        0.0,
+        -0.154438,
+        0.640485
+      ]
+    },
+    {
+      "name": "shotgun__stock_plate",
+      "role": "stock_plate",
+      "group": "body",
+      "delay": 0.31,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.166174,
+        0.780398
+      ]
+    },
+    {
+      "name": "shotgun__trigger_guard",
+      "role": "trigger_guard",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 60,
+      "origin": [
+        0.0,
+        -0.173724,
+        0.569945
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_muzzle": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_barrel_left": {
+      "position": [
+        -0.086,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_barrel_right": {
+      "position": [
+        0.086,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_ornament": {
+      "position": [
+        0.0,
+        -0.23,
+        0.58
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    }
+  },
+  "triangles": 4248,
+  "materials": [
+    "M_FirearmV1_brass",
+    "M_FirearmV1_navy",
+    "M_FirearmV1_silver",
+    "M_FirearmV1_steel",
+    "M_FirearmV1_teal",
+    "M_FirearmV1_wood"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.336,
+    0.37288,
+    0.8119
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.168,
+      -0.268876,
+      0.000468
+    ],
+    "max": [
+      0.168,
+      0.104,
+      0.812372
+    ]
+  },
+  "part_count": 20
+}

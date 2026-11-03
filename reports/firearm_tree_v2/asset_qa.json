@@ -1,0 +1,144 @@
+{
+  "matchlock": {
+    "source": {
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "v2_matchlock__walnut_stock: 2 n-gons",
+        "v2_matchlock__serpentine_match_arm: 2 n-gons",
+        "v2_matchlock__match_tip: 2 n-gons",
+        "v2_matchlock__pan: 2 n-gons",
+        "v2_matchlock__plate_screw_0: 2 n-gons",
+        "v2_matchlock__plate_screw_1: 2 n-gons",
+        "v2_matchlock__guard: 2 n-gons",
+        "v2_matchlock__underbarrel_rod: 2 n-gons",
+        "hidden back-to-back faces: v2_matchlock__walnut_stock<->v2_matchlock__power_seal (2 pairs) - delete to save tris",
+        "asset lowest point z=-0.1884 (not resting on ground plane z=0)"
+      ]
+    },
+    "reimport": {
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "v2_matchlock__walnut_stock.001: duplicate verts=48 loose verts=0",
+        "v2_matchlock__long_barrel.001: duplicate verts=110 loose verts=0",
+        "v2_matchlock__muzzle_lip.001: duplicate verts=120 loose verts=0",
+        "v2_matchlock__barrel_band_0.001: duplicate verts=120 loose verts=0",
+        "v2_matchlock__barrel_band_1.001: duplicate verts=120 loose verts=0",
+        "v2_matchlock__barrel_band_2.001: duplicate verts=120 loose verts=0",
+        "v2_matchlock__breech.001: duplicate verts=36 loose verts=0",
+        "v2_matchlock__side_plate.001: duplicate verts=36 loose verts=0",
+        "v2_matchlock__serpentine_match_arm.001: duplicate verts=35 loose verts=0",
+        "v2_matchlock__match_cord.001: duplicate verts=66 loose verts=0",
+        "v2_matchlock__match_tip.001: duplicate verts=72 loose verts=0",
+        "v2_matchlock__pan.001: duplicate verts=65 loose verts=0",
+        "v2_matchlock__plate_screw_0.001: duplicate verts=42 loose verts=0",
+        "v2_matchlock__plate_screw_1.001: duplicate verts=45 loose verts=0",
+        "v2_matchlock__butt_cap.001: duplicate verts=33 loose verts=0",
+        "v2_matchlock__guard.001: duplicate verts=39 loose verts=0",
+        "v2_matchlock__underbarrel_rod.001: duplicate verts=20 loose verts=0",
+        "v2_matchlock__power_seal.001: duplicate verts=36 loose verts=0",
+        "hidden back-to-back faces: v2_matchlock__walnut_stock.001<->v2_matchlock__power_seal.001 (2 pairs) - delete to save tris",
+        "asset lowest point z=-0.1884 (not resting on ground plane z=0)"
+      ]
+    }
+  },
+  "rifle": {
+    "source": {
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "v2_rifle__navy_stock: 2 n-gons",
+        "v2_rifle__foregrip_trim_neg0p051: 2 n-gons",
+        "v2_rifle__foregrip_trim_0p051: 2 n-gons",
+        "v2_rifle__optic_tube: 2 n-gons",
+        "v2_rifle__optic_front_lens: 2 n-gons",
+        "v2_rifle__optic_back_lens: 2 n-gons",
+        "v2_rifle__bolt_handle: 2 n-gons",
+        "v2_rifle__bolt_knob: 2 n-gons",
+        "v2_rifle__trigger_guard: 2 n-gons",
+        "v2_rifle__receiver_screw_0: 2 n-gons",
+        "v2_rifle__receiver_screw_1: 2 n-gons",
+        "hidden back-to-back faces: v2_rifle__optic_tube<->v2_rifle__optic_back_lens (28 pairs) - delete to save tris",
+        "hidden back-to-back faces: v2_rifle__optic_tube<->v2_rifle__optic_front_lens (26 pairs) - delete to save tris",
+        "asset lowest point z=-0.1896 (not resting on ground plane z=0)"
+      ]
+    },
+    "reimport": {
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "v2_rifle__navy_stock.001: duplicate verts=44 loose verts=0",
+        "v2_rifle__precision_barrel.001: duplicate verts=104 loose verts=0",
+        "v2_rifle__muzzle_crown.001: duplicate verts=88 loose verts=0",
+        "v2_rifle__floating_barrel_brace_0.001: duplicate verts=88 loose verts=0",
+        "v2_rifle__floating_barrel_brace_1.001: duplicate verts=88 loose verts=0",
+        "v2_rifle__receiver.001: duplicate verts=36 loose verts=0",
+        "v2_rifle__breech_cover.001: duplicate verts=36 loose verts=0",
+        "v2_rifle__foregrip_trim_neg0p051.001: duplicate verts=28 loose verts=0",
+        "v2_rifle__foregrip_trim_0p051.001: duplicate verts=28 loose verts=0",
+        "v2_rifle__optic_pedestal_0.001: duplicate verts=36 loose verts=0",
+        "v2_rifle__optic_pedestal_1.001: duplicate verts=36 loose verts=0",
+        "v2_rifle__optic_tube.001: duplicate verts=97 loose verts=0",
+        "v2_rifle__optic_front_lens.001: duplicate verts=44 loose verts=0",
+        "v2_rifle__optic_back_lens.001: duplicate verts=44 loose verts=0",
+        "v2_rifle__bolt_handle.001: duplicate verts=28 loose verts=0",
+        "v2_rifle__bolt_knob.001: duplicate verts=57 loose verts=0",
+        "v2_rifle__butt_plate.001: duplicate verts=36 loose verts=0",
+        "v2_rifle__trigger_guard.001: duplicate verts=35 loose verts=0",
+        "v2_rifle__charge_inlay.001: duplicate verts=36 loose verts=0",
+        "v2_rifle__receiver_screw_0.001: duplicate verts=42 loose verts=0",
+        "v2_rifle__receiver_screw_1.001: duplicate verts=45 loose verts=0",
+        "hidden back-to-back faces: v2_rifle__optic_tube.001<->v2_rifle__optic_back_lens.001 (20 pairs) - delete to save tris",
+        "hidden back-to-back faces: v2_rifle__optic_tube.001<->v2_rifle__optic_front_lens.001 (20 pairs) - delete to save tris",
+        "asset lowest point z=-0.1896 (not resting on ground plane z=0)"
+      ]
+    }
+  },
+  "shotgun": {
+    "source": {
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "v2_shotgun__short_stock: 2 n-gons",
+        "v2_shotgun__hinge_neg1: 2 n-gons",
+        "v2_shotgun__hinge_bolt_neg1: 2 n-gons",
+        "v2_shotgun__hinge_1: 2 n-gons",
+        "v2_shotgun__hinge_bolt_1: 2 n-gons",
+        "v2_shotgun__trigger_guard: 2 n-gons",
+        "hidden back-to-back faces: v2_shotgun__receiver<->v2_shotgun__hinge_neg1 (21 pairs) - delete to save tris",
+        "hidden back-to-back faces: v2_shotgun__receiver<->v2_shotgun__hinge_1 (21 pairs) - delete to save tris",
+        "asset lowest point z=-0.1874 (not resting on ground plane z=0)"
+      ]
+    },
+    "reimport": {
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "v2_shotgun__scatter_barrel_0.001: duplicate verts=104 loose verts=0",
+        "v2_shotgun__scatter_lip_0.001: duplicate verts=120 loose verts=0",
+        "v2_shotgun__scatter_barrel_1.001: duplicate verts=104 loose verts=0",
+        "v2_shotgun__scatter_lip_1.001: duplicate verts=120 loose verts=0",
+        "v2_shotgun__barrel_bridge.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__receiver.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__receiver_top.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__short_stock.001: duplicate verts=41 loose verts=0",
+        "v2_shotgun__stock_plate.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__lower_handguard.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__grip_rib_0.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__grip_rib_1.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__grip_rib_2.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__grip_rib_3.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__hinge_neg1.001: duplicate verts=44 loose verts=0",
+        "v2_shotgun__hinge_bolt_neg1.001: duplicate verts=45 loose verts=0",
+        "v2_shotgun__hinge_1.001: duplicate verts=44 loose verts=0",
+        "v2_shotgun__hinge_bolt_1.001: duplicate verts=45 loose verts=0",
+        "v2_shotgun__trigger_guard.001: duplicate verts=36 loose verts=0",
+        "v2_shotgun__core_inlay.001: duplicate verts=36 loose verts=0",
+        "hidden back-to-back faces: v2_shotgun__receiver.001<->v2_shotgun__hinge_1.001 (19 pairs) - delete to save tris",
+        "hidden back-to-back faces: v2_shotgun__receiver.001<->v2_shotgun__hinge_neg1.001 (17 pairs) - delete to save tris",
+        "asset lowest point z=-0.1874 (not resting on ground plane z=0)"
+      ]
+    }
+  }
+}

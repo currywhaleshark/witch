@@ -1,24 +1,32 @@
 extends "res://scripts/summon_assembly.gd"
 ## A firearm skill's gun: it assembles beside the witch during the cast, then floats at her
-## shoulder until dismissed, recoiling on each shot. Arena owns ammo, damage and mana; the model
-## is the shotgun cast's airborne gun as a stand-in until the guns get models of their own.
-const PARTS = preload("res://assets/actors/shotgun_cast_v1/shotgun_parts.glb")
+## shoulder until dismissed, recoiling on each shot. Arena owns ammo, damage and mana.
+const MODELS = {
+	"matchlock": preload("res://assets/weapons/firearm_material_v3/matchlock.glb"),
+	"rifle": preload("res://assets/weapons/firearm_material_v3/rifle.glb"),
+}
 # Muzzle placement: the barrel runs back from it, so the gun's body sits by her right shoulder.
 const SIDE := 0.5
 const HEIGHT := 1.3
 const FORWARD := 0.45
 var gun_id := ""
-# The rifle borrows the same stand-in model, drawn longer and slimmer.
-var stretch := Vector3.ONE
 var _flash: MeshInstance3D
 var _kick := 0.0
 var _bob := 0.0
 var _aim := Vector3.ZERO
 
 func _init() -> void:
-	parts_scene = PARTS; assembly_name = "FloatingGun"
+	assembly_name = "FloatingGun"
 	effect_radius = 0.35; effect_height = 0.25
-	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/actors/shotgun_cast_v1/parts.json"))
+	configure("matchlock")
+
+func configure(id: String) -> void:
+	# Call before initialize: each gun assembles its own rigid parts, at native scale.
+	assert(MODELS.has(id))
+	gun_id = id
+	parts_scene = MODELS[id]
+	part_delays.clear()
+	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/weapons/firearm_material_v3/%s.json" % id))
 	for part in data.parts: part_delays[part.name] = float(part.delay)
 
 func initialize(arena: Node3D) -> void:
@@ -50,7 +58,7 @@ func follow(dt: float) -> void:
 	axis.y = clampf(axis.y, -0.3 * axis.length(), 0.3 * axis.length())
 	if Vector2(axis.x, axis.z).length() < 0.05:
 		axis = facing
-	global_transform = Transform3D(Basis.looking_at(axis.normalized(), Vector3.UP).scaled_local(stretch), origin)
+	global_transform = Transform3D(Basis.looking_at(axis.normalized(), Vector3.UP), origin)
 
 func ready_to_fire() -> void:
 	# The cast released: the assembled gun stays, solid, instead of fading like a summon preview.

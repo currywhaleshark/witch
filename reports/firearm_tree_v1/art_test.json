@@ -1,0 +1,62 @@
+{
+  "assets": {
+    "artillery_shell": {
+      "dimensions": "(0.1122, 0.1122, 0.33462)",
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 5,
+      "triangles": 1852
+    },
+    "gatling": {
+      "dimensions": "(0.75, 0.5595, 1.20203)",
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 32,
+      "triangles": 9552
+    },
+    "matchlock": {
+      "dimensions": "(0.188, 0.400145, 1.069693)",
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 18,
+      "triangles": 4660
+    },
+    "naval_shell": {
+      "dimensions": "(0.17, 0.17, 0.507)",
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 5,
+      "triangles": 1852
+    },
+    "powder_barrel": {
+      "dimensions": "(0.769782, 0.496, 0.496)",
+      "max_rigid_error": 0.000000298023223876953,
+      "parts": 30,
+      "triangles": 6528
+    },
+    "rifle": {
+      "dimensions": "(0.253773, 0.500956, 1.302)",
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 21,
+      "triangles": 4012
+    },
+    "shotgun": {
+      "dimensions": "(0.336, 0.372876, 0.811904)",
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 20,
+      "triangles": 4248
+    },
+    "smoke_canister": {
+      "dimensions": "(0.108, 0.108, 0.243)",
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 3,
+      "triangles": 824
+    },
+    "smoke_launcher": {
+      "dimensions": "(0.65, 0.589201, 0.42747)",
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 32,
+      "triangles": 8032
+    }
+  },
+  "checks": 827,
+  "failures": [],
+  "passed": true,
+  "scope": "Imported art/part contracts and deterministic review mechanisms. Future skills are not implemented."
+}

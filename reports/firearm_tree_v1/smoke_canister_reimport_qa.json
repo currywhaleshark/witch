@@ -1,0 +1,99 @@
+{
+  "ok": true,
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    "smoke_canister__canister_body.001: duplicate verts=53 loose verts=0",
+    "smoke_canister__cap.001: duplicate verts=44 loose verts=0",
+    "smoke_canister__rim.001: duplicate verts=88 loose verts=0",
+    "asset lowest point z=-0.054 (not resting on ground plane z=0)"
+  ],
+  "ground_z": -0.054,
+  "zfighting": [],
+  "floating": [],
+  "back_to_back": [],
+  "enclosed": [],
+  "objects": {
+    "smoke_canister__canister_body.001": {
+      "verts": 185,
+      "faces": 252,
+      "tris": 252,
+      "ngons": 0,
+      "boundary_edges": 106,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 53,
+      "islands": 6,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 0,
+      "uv_overlap_pct": 0.0,
+      "uv_coverage_pct": 70.3
+    },
+    "smoke_canister__cap.001": {
+      "verts": 144,
+      "faces": 188,
+      "tris": 188,
+      "ngons": 0,
+      "boundary_edges": 88,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 44,
+      "islands": 6,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 0,
+      "uv_overlap_pct": 0.0,
+      "uv_coverage_pct": 52.0
+    },
+    "smoke_canister__rim.001": {
+      "verts": 288,
+      "faces": 384,
+      "tris": 384,
+      "ngons": 0,
+      "boundary_edges": 176,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 88,
+      "islands": 10,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 0,
+      "uv_overlap_pct": 0.0,
+      "uv_coverage_pct": 38.5
+    }
+  }
+}

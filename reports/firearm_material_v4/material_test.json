@@ -1,0 +1,56 @@
+{
+  "checks": 746,
+  "failures": [],
+  "models": {
+    "artillery_shell": {
+      "materials": 1,
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 5,
+      "surfaces": 5,
+      "triangles": 1852
+    },
+    "gatling": {
+      "materials": 2,
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 32,
+      "surfaces": 32,
+      "triangles": 9552
+    },
+    "naval_shell": {
+      "materials": 1,
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 5,
+      "surfaces": 5,
+      "triangles": 1852
+    },
+    "powder_barrel": {
+      "materials": 2,
+      "max_rigid_error": 0.000000357627868652344,
+      "parts": 30,
+      "surfaces": 30,
+      "triangles": 6528
+    },
+    "smoke_canister": {
+      "materials": 1,
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 3,
+      "surfaces": 3,
+      "triangles": 824
+    },
+    "smoke_launcher": {
+      "materials": 2,
+      "max_rigid_error": 0.000000119209289550781,
+      "parts": 32,
+      "surfaces": 32,
+      "triangles": 8032
+    }
+  },
+  "passed": true,
+  "scope": "Prepared assets and existing review mechanisms; no new gameplay implementation.",
+  "shared_maps": [
+    "color",
+    "normal",
+    "orm",
+    "emission"
+  ]
+}

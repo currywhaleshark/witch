@@ -1,0 +1,301 @@
+{
+  "id": "matchlock",
+  "blender_scene": "FirearmV1_matchlock",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "matchlock__barrel_band_0",
+      "role": "barrel_band_0",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 576,
+      "origin": [
+        0.0,
+        -0.018,
+        0.19
+      ]
+    },
+    {
+      "name": "matchlock__barrel_band_1",
+      "role": "barrel_band_1",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 576,
+      "origin": [
+        0.0,
+        -0.018,
+        0.43
+      ]
+    },
+    {
+      "name": "matchlock__barrel_band_2",
+      "role": "barrel_band_2",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 576,
+      "origin": [
+        0.0,
+        -0.018,
+        0.6
+      ]
+    },
+    {
+      "name": "matchlock__breech",
+      "role": "breech",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.015,
+        0.68
+      ]
+    },
+    {
+      "name": "matchlock__butt_cap",
+      "role": "butt_cap",
+      "group": "body",
+      "delay": 0.3,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.159575,
+        1.042347
+      ]
+    },
+    {
+      "name": "matchlock__guard",
+      "role": "guard",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 60,
+      "origin": [
+        0.0,
+        -0.179312,
+        0.764822
+      ]
+    },
+    {
+      "name": "matchlock__long_barrel",
+      "role": "long_barrel",
+      "group": "body",
+      "delay": 0.32,
+      "triangles": 720,
+      "origin": [
+        0.0,
+        0.0,
+        0.310216
+      ]
+    },
+    {
+      "name": "matchlock__match_cord",
+      "role": "match_cord",
+      "group": "match_arm",
+      "delay": 0.46,
+      "triangles": 44,
+      "origin": [
+        0.093072,
+        0.079936,
+        0.623237
+      ]
+    },
+    {
+      "name": "matchlock__match_tip",
+      "role": "match_tip",
+      "group": "match_arm",
+      "delay": 0.48,
+      "triangles": 276,
+      "origin": [
+        0.095,
+        0.032,
+        0.59
+      ]
+    },
+    {
+      "name": "matchlock__muzzle_lip",
+      "role": "muzzle_lip",
+      "group": "body",
+      "delay": 0.42,
+      "triangles": 576,
+      "origin": [
+        0.0,
+        0.0,
+        0.014
+      ]
+    },
+    {
+      "name": "matchlock__pan",
+      "role": "pan",
+      "group": "body",
+      "delay": 0.2,
+      "triangles": 236,
+      "origin": [
+        0.091,
+        0.006,
+        0.61
+      ]
+    },
+    {
+      "name": "matchlock__plate_screw_0",
+      "role": "plate_screw_0",
+      "group": "body",
+      "delay": 0.34,
+      "triangles": 164,
+      "origin": [
+        0.081,
+        -0.02,
+        0.62
+      ]
+    },
+    {
+      "name": "matchlock__plate_screw_1",
+      "role": "plate_screw_1",
+      "group": "body",
+      "delay": 0.34,
+      "triangles": 164,
+      "origin": [
+        0.081,
+        -0.02,
+        0.76
+      ]
+    },
+    {
+      "name": "matchlock__power_seal",
+      "role": "power_seal",
+      "group": "body",
+      "delay": 0.46,
+      "triangles": 108,
+      "origin": [
+        -0.058,
+        -0.06,
+        0.76
+      ]
+    },
+    {
+      "name": "matchlock__serpentine_match_arm",
+      "role": "serpentine_match_arm",
+      "group": "match_arm",
+      "delay": 0.25,
+      "triangles": 60,
+      "origin": [
+        0.084505,
+        0.037315,
+        0.717933
+      ]
+    },
+    {
+      "name": "matchlock__side_plate",
+      "role": "side_plate",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.067,
+        -0.025,
+        0.69
+      ]
+    },
+    {
+      "name": "matchlock__underbarrel_rod",
+      "role": "underbarrel_rod",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 28,
+      "origin": [
+        -0.038,
+        -0.086,
+        0.315
+      ]
+    },
+    {
+      "name": "matchlock__walnut_stock",
+      "role": "walnut_stock",
+      "group": "body",
+      "delay": 0.02,
+      "triangles": 172,
+      "origin": [
+        0.0,
+        -0.146799,
+        0.669632
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_muzzle": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_ignition": {
+      "position": [
+        0.095,
+        0.03,
+        0.59
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_ornament": {
+      "position": [
+        0.0,
+        -0.19,
+        0.78
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    }
+  },
+  "triangles": 4660,
+  "materials": [
+    "M_FirearmV1_brass",
+    "M_FirearmV1_ember",
+    "M_FirearmV1_navy",
+    "M_FirearmV1_rope",
+    "M_FirearmV1_silver",
+    "M_FirearmV1_steel",
+    "M_FirearmV1_teal",
+    "M_FirearmV1_wood",
+    "M_FirearmV1_wood_light"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.188,
+    0.40014,
+    1.06969
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.068,
+      -0.273435,
+      -0.0
+    ],
+    "max": [
+      0.12,
+      0.12671,
+      1.069693
+    ]
+  },
+  "part_count": 18
+}

@@ -1,0 +1,49 @@
+{
+  "checks": 234,
+  "failures": [],
+  "models": {
+    "matchlock": {
+      "dimensions": [
+        0.14377,
+        0.28148,
+        1.39775
+      ],
+      "old_dimensions": [
+        0.188,
+        0.40014,
+        1.06969
+      ],
+      "parts": 18.0,
+      "triangles": 4692
+    },
+    "rifle": {
+      "dimensions": [
+        0.19377,
+        0.32659,
+        1.62
+      ],
+      "old_dimensions": [
+        0.25377,
+        0.50096,
+        1.302
+      ],
+      "parts": 21.0,
+      "triangles": 3980
+    },
+    "shotgun": {
+      "dimensions": [
+        0.254,
+        0.25838,
+        1.1305
+      ],
+      "old_dimensions": [
+        0.336,
+        0.37288,
+        0.8119
+      ],
+      "parts": 20.0,
+      "triangles": 4264
+    }
+  },
+  "passed": true
+}

@@ -54,7 +54,6 @@ const PICK_LAYER = 8
 # Held inputs repeat only attack-like casts; toggles, summons and placement stay one per press.
 const REPEAT_KINDS = ["aim", "enemy"]
 const GUNS = ["matchlock", "rifle"]
-const RIFLE_STRETCH = Vector3(0.8, 0.8, 1.4)
 var config: Dictionary
 var rules: RefCounted
 # The automaton skill's own cost, which nodes A and B keep; no node swaps in a cheaper, quicker one.
@@ -1488,7 +1487,7 @@ func equip_gun(id: String) -> void:
 		gun.visual.dismiss()
 	if visual == null:
 		visual = FloatingGun.new()
-		visual.stretch = RIFLE_STRETCH if id == "rifle" else Vector3.ONE
+		visual.configure(id)
 		world.add_child(visual)
 		visual.initialize(self)
 	visual.gun_id = id
@@ -1670,7 +1669,7 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		if is_instance_valid(gun_assembly):
 			gun_assembly.dismiss()
 		gun_assembly = FloatingGun.new()
-		gun_assembly.stretch = RIFLE_STRETCH if cast.skill == "rifle" else Vector3.ONE
+		gun_assembly.configure(cast.skill)
 		world.add_child(gun_assembly)
 		gun_assembly.initialize(self)
 	player_model.look_at(player.position + cast_direction(cast))

@@ -1,0 +1,30 @@
+{
+  "checks": 277,
+  "failures": [],
+  "models": {
+    "matchlock": {
+      "materials": 2,
+      "parts": 18,
+      "surfaces": 18,
+      "triangles": 4692
+    },
+    "rifle": {
+      "materials": 2,
+      "parts": 21,
+      "surfaces": 21,
+      "triangles": 3980
+    },
+    "shotgun": {
+      "materials": 2,
+      "parts": 20,
+      "surfaces": 20,
+      "triangles": 4264
+    }
+  },
+  "passed": true,
+  "shared_runtime_textures": [
+    "color",
+    "normal",
+    "orm"
+  ]
+}

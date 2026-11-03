@@ -1,0 +1,103 @@
+{
+  "id": "smoke_canister",
+  "blender_scene": "FirearmV1_smoke_canister",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "smoke_canister__canister_body",
+      "role": "canister_body",
+      "group": "body",
+      "delay": 0.22,
+      "triangles": 252,
+      "origin": [
+        0.0,
+        0.0,
+        0.115
+      ]
+    },
+    {
+      "name": "smoke_canister__cap",
+      "role": "cap",
+      "group": "body",
+      "delay": 0.32,
+      "triangles": 188,
+      "origin": [
+        0.0,
+        0.0,
+        -0.005
+      ]
+    },
+    {
+      "name": "smoke_canister__rim",
+      "role": "rim",
+      "group": "body",
+      "delay": 0.36,
+      "triangles": 384,
+      "origin": [
+        0.0,
+        0.0,
+        0.205
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_nose": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_smoke": {
+      "position": [
+        0.0,
+        0.0,
+        0.23
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "triangles": 824,
+  "materials": [
+    "M_FirearmV1_brass",
+    "M_FirearmV1_navy",
+    "M_FirearmV1_teal"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.108,
+    0.108,
+    0.243
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.054,
+      -0.054,
+      -0.013
+    ],
+    "max": [
+      0.054,
+      0.054,
+      0.23
+    ]
+  },
+  "part_count": 3
+}

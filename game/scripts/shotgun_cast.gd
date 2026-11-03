@@ -1,6 +1,6 @@
 extends "res://scripts/summon_assembly.gd"
 ## Transient floating cannon. Arena owns release, cone damage and resource use.
-const PARTS = preload("res://assets/actors/shotgun_cast_v1/shotgun_parts.glb")
+const PARTS = preload("res://assets/weapons/firearm_material_v3/shotgun.glb")
 var _flash: MeshInstance3D
 var _fired_origin := Vector3.ZERO
 var _fired_direction := Vector3.FORWARD
@@ -8,7 +8,7 @@ var _fired_direction := Vector3.FORWARD
 func _init() -> void:
 	parts_scene=PARTS; assembly_name="ShotgunCast"
 	effect_radius=0.35; effect_height=0.25
-	var data: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/actors/shotgun_cast_v1/parts.json"))
+	var data: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/weapons/firearm_material_v3/shotgun.json"))
 	for part in data.parts: part_delays[part.name]=float(part.delay)
 
 func initialize(arena: Node3D) -> void:

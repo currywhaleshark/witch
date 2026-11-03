@@ -1,0 +1,136 @@
+00:03.750  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\weapons\firearm_material_v4\firearm_material_v4.blend"
+SOURCE_QA powder_barrel True errors 0 warnings 14
+SOURCE_QA gatling True errors 0 warnings 9
+SOURCE_QA smoke_launcher True errors 0 warnings 14
+SOURCE_QA artillery_shell True errors 0 warnings 4
+SOURCE_QA naval_shell True errors 0 warnings 4
+SOURCE_QA smoke_canister True errors 0 warnings 3
+10:27:18 | INFO: Data are loaded, start creating Blender stuff
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_00_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_01_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_02_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_03_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_04_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_05_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_06_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_07_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_08_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_09_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_10_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__stave_11_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__rolling_hoop_0_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__brass_hoop_trim_0_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__rolling_hoop_1_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__brass_hoop_trim_1_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__end_cap_0_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__end_emblem_0_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__end_cap_1_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__end_emblem_1_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_socket_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_00_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_01_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_02_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_03_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_04_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_05_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_06_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_07_ExportTriangles
+10:27:18 | INFO: Blender create Mesh node v4_powder_barrel__fuse_ember_ExportTriangles
+10:27:18 | INFO: glTF import finished in 0.22s
+REIMPORT_QA powder_barrel True errors 0 warnings 30
+10:27:19 | INFO: Data are loaded, start creating Blender stuff
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rear_motor_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rear_rim_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rotor_hub_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rotating_barrel_0_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__barrel_muzzle_0_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rotating_barrel_1_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__barrel_muzzle_1_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rotating_barrel_2_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__barrel_muzzle_2_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rotating_barrel_3_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__barrel_muzzle_3_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rotating_barrel_4_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__barrel_muzzle_4_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rotating_barrel_5_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__barrel_muzzle_5_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__bundle_collar_0_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__bundle_collar_1_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__center_spindle_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__side_feed_drum_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__feed_cover_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__feed_bridge_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__feed_teeth_0_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__feed_teeth_1_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__feed_teeth_2_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__feed_teeth_3_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__feed_teeth_4_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__bottom_mount_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__mount_inlay_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__motor_rail_neg0p24_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__motor_rail_0p24_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__core_ring_ExportTriangles
+10:27:19 | INFO: Blender create Mesh node v4_gatling__rear_core_ExportTriangles
+10:27:19 | INFO: glTF import finished in 0.20s
+REIMPORT_QA gatling True errors 0 warnings 33
+10:27:20 | INFO: Data are loaded, start creating Blender stuff
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__base_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__base_trim_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__bank_support_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__launch_tube_0_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__tube_rim_0_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__smoke_canister_0_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__canister_cap_0_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__launch_tube_1_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__tube_rim_1_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__smoke_canister_1_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__canister_cap_1_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__launch_tube_2_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__tube_rim_2_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__smoke_canister_2_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__canister_cap_2_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__launch_tube_3_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__tube_rim_3_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__smoke_canister_3_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__canister_cap_3_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__launch_tube_4_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__tube_rim_4_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__smoke_canister_4_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__canister_cap_4_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__launch_tube_5_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__tube_rim_5_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__smoke_canister_5_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__canister_cap_5_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__side_bracket_neg0p28_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__bracket_pin_neg0p28_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__side_bracket_0p28_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__bracket_pin_0p28_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_smoke_launcher__power_inlay_ExportTriangles
+10:27:20 | INFO: glTF import finished in 0.17s
+REIMPORT_QA smoke_launcher True errors 0 warnings 32
+10:27:20 | INFO: Data are loaded, start creating Blender stuff
+10:27:20 | INFO: Blender create Mesh node v4_artillery_shell__ogive_body_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_artillery_shell__driving_band_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_artillery_shell__base_plate_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_artillery_shell__identity_band_ExportTriangles
+10:27:20 | INFO: Blender create Mesh node v4_artillery_shell__base_mark_ExportTriangles
+10:27:20 | INFO: glTF import finished in 0.04s
+REIMPORT_QA artillery_shell True errors 0 warnings 6
+10:27:21 | INFO: Data are loaded, start creating Blender stuff
+10:27:21 | INFO: Blender create Mesh node v4_naval_shell__ogive_body_ExportTriangles
+10:27:21 | INFO: Blender create Mesh node v4_naval_shell__driving_band_ExportTriangles
+10:27:21 | INFO: Blender create Mesh node v4_naval_shell__base_plate_ExportTriangles
+10:27:21 | INFO: Blender create Mesh node v4_naval_shell__identity_band_ExportTriangles
+10:27:21 | INFO: Blender create Mesh node v4_naval_shell__base_mark_ExportTriangles
+10:27:21 | INFO: glTF import finished in 0.03s
+REIMPORT_QA naval_shell True errors 0 warnings 6
+10:27:21 | INFO: Data are loaded, start creating Blender stuff
+10:27:21 | INFO: Blender create Mesh node v4_smoke_canister__canister_body_ExportTriangles
+10:27:21 | INFO: Blender create Mesh node v4_smoke_canister__cap_ExportTriangles
+10:27:21 | INFO: Blender create Mesh node v4_smoke_canister__rim_ExportTriangles
+10:27:21 | INFO: glTF import finished in 0.02s
+REIMPORT_QA smoke_canister True errors 0 warnings 4
+FIREARM_MATERIAL_QA_DONE 128 geometry/socket objects preserved
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

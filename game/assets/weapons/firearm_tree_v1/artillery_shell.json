@@ -1,0 +1,128 @@
+{
+  "id": "artillery_shell",
+  "blender_scene": "FirearmV1_artillery_shell",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "artillery_shell__base_mark",
+      "role": "base_mark",
+      "group": "body",
+      "delay": 0.44,
+      "triangles": 140,
+      "origin": [
+        0.0,
+        0.0,
+        0.33198
+      ]
+    },
+    {
+      "name": "artillery_shell__base_plate",
+      "role": "base_plate",
+      "group": "body",
+      "delay": 0.22,
+      "triangles": 236,
+      "origin": [
+        0.0,
+        0.0,
+        0.32208
+      ]
+    },
+    {
+      "name": "artillery_shell__driving_band",
+      "role": "driving_band",
+      "group": "body",
+      "delay": 0.3,
+      "triangles": 480,
+      "origin": [
+        0.0,
+        0.0,
+        0.27192
+      ]
+    },
+    {
+      "name": "artillery_shell__identity_band",
+      "role": "identity_band",
+      "group": "body",
+      "delay": 0.4,
+      "triangles": 480,
+      "origin": [
+        0.0,
+        0.0,
+        0.165
+      ]
+    },
+    {
+      "name": "artillery_shell__ogive_body",
+      "role": "ogive_body",
+      "group": "body",
+      "delay": 0.22,
+      "triangles": 516,
+      "origin": [
+        0.0,
+        0.0,
+        0.1617
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_nose": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_trail": {
+      "position": [
+        0.0,
+        0.0,
+        0.3366
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "triangles": 1852,
+  "materials": [
+    "M_FirearmV1_brass",
+    "M_FirearmV1_ember",
+    "M_FirearmV1_navy",
+    "M_FirearmV1_steel"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.1122,
+    0.1122,
+    0.33462
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.0561,
+      -0.0561,
+      -0.0
+    ],
+    "max": [
+      0.0561,
+      0.0561,
+      0.33462
+    ]
+  },
+  "part_count": 5
+}

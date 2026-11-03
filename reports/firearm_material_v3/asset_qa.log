@@ -1,0 +1,76 @@
+00:03.578  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\weapons\firearm_material_v3\firearm_material_v3.blend"
+SOURCE_QA matchlock True errors 0 warnings 10
+SOURCE_QA rifle True errors 0 warnings 14
+SOURCE_QA shotgun True errors 0 warnings 9
+10:13:18 | INFO: Data are loaded, start creating Blender stuff
+10:13:18 | INFO: Blender create Mesh node v3_matchlock__walnut_stock_ExportTriangles
+10:13:18 | INFO: Blender create Mesh node v3_matchlock__long_barrel_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__muzzle_lip_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__barrel_band_0_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__barrel_band_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__barrel_band_2_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__breech_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__side_plate_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__serpentine_match_arm_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__match_cord_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__match_tip_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__pan_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__plate_screw_0_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__plate_screw_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__butt_cap_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__guard_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__underbarrel_rod_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_matchlock__power_seal_ExportTriangles
+10:13:19 | INFO: glTF import finished in 0.21s
+REIMPORT_QA matchlock True errors 0 warnings 20
+10:13:19 | INFO: Data are loaded, start creating Blender stuff
+10:13:19 | INFO: Blender create Mesh node v3_rifle__navy_stock_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__precision_barrel_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__muzzle_crown_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__floating_barrel_brace_0_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__floating_barrel_brace_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__receiver_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__breech_cover_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__foregrip_trim_neg0p051_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__foregrip_trim_0p051_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__optic_pedestal_0_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__optic_pedestal_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__optic_tube_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__optic_front_lens_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__optic_back_lens_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__bolt_handle_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__bolt_knob_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__butt_plate_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__trigger_guard_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__charge_inlay_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__receiver_screw_0_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_rifle__receiver_screw_1_ExportTriangles
+10:13:19 | INFO: glTF import finished in 0.08s
+REIMPORT_QA rifle True errors 0 warnings 24
+10:13:19 | INFO: Data are loaded, start creating Blender stuff
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__scatter_barrel_0_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__scatter_lip_0_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__scatter_barrel_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__scatter_lip_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__barrel_bridge_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__receiver_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__receiver_top_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__short_stock_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__stock_plate_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__lower_handguard_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__grip_rib_0_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__grip_rib_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__grip_rib_2_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__grip_rib_3_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__hinge_neg1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__hinge_bolt_neg1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__hinge_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__hinge_bolt_1_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__trigger_guard_ExportTriangles
+10:13:19 | INFO: Blender create Mesh node v3_shotgun__core_inlay_ExportTriangles
+10:13:19 | INFO: glTF import finished in 0.08s
+REIMPORT_QA shotgun True errors 0 warnings 23
+FIREARM_MATERIAL_QA_DONE 69 geometry/socket objects preserved
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

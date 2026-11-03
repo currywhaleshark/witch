@@ -1,0 +1,50 @@
+{
+  "matchlock": {
+    "geometry_and_pivots_match_v2": true,
+    "normals_equal_rounded_1e4": true,
+    "parts": 18,
+    "triangles": 4692,
+    "tangents": 18,
+    "materials": 2,
+    "bytes": 232876,
+    "normal_reencode_delta_repaired": 0.006099742001240699,
+    "textures": [
+      "textures/firearm_normal.png",
+      "textures/firearm_orm.png",
+      "textures/firearm_color.png",
+      "textures/firearm_emission.png"
+    ]
+  },
+  "rifle": {
+    "geometry_and_pivots_match_v2": true,
+    "normals_equal_rounded_1e4": true,
+    "parts": 21,
+    "triangles": 3980,
+    "tangents": 21,
+    "materials": 2,
+    "bytes": 210252,
+    "normal_reencode_delta_repaired": 0.0021999099595453857,
+    "textures": [
+      "textures/firearm_normal.png",
+      "textures/firearm_orm.png",
+      "textures/firearm_color.png",
+      "textures/firearm_emission.png"
+    ]
+  },
+  "shotgun": {
+    "geometry_and_pivots_match_v2": true,
+    "normals_equal_rounded_1e4": true,
+    "parts": 20,
+    "triangles": 4264,
+    "tangents": 20,
+    "materials": 2,
+    "bytes": 215052,
+    "normal_reencode_delta_repaired": 0.0022999567103846774,
+    "textures": [
+      "textures/firearm_normal.png",
+      "textures/firearm_orm.png",
+      "textures/firearm_color.png",
+      "textures/firearm_emission.png"
+    ]
+  }
+}

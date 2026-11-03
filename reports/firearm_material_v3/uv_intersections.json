@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "triangles": 12936,
+  "candidate_pairs": 176379,
+  "overlaps_above_0_0001_texel": [],
+  "scope": "Exact clipped UV-triangle intersections across every part and all three assets on the shared atlas; common edges have zero area."
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-03",
+  "user_message": "좋아 나머지도",
+  "selection": "The current matchlock, rifle and shotgun material v3 appearance and existing game integration are selected for this prototype.",
+  "scope": [
+    "matchlock",
+    "rifle",
+    "shotgun"
+  ],
+  "does_not_approve": [
+    "new v4 materials",
+    "arbitrary contact",
+    "final performance"
+  ],
+  "delivery_manifest_sha256": "abf0c6601341ffb322418fa4d04b1ba10f451e1dc69e1ee3a2496f567e734456"
+}

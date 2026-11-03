@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-03",
+  "user_message": "좋아 재질 손보자",
+  "selection": "Current three firearm v2 proportions and prototype integration selected; next task is a material pass.",
+  "scope": [
+    "matchlock",
+    "rifle",
+    "shotgun"
+  ],
+  "does_not_approve": [
+    "new v3 materials",
+    "arbitrary contact clearance",
+    "final performance"
+  ],
+  "manifest_sha256": "243019a9de5d96bb6a52b62303ff59a3eb616d3e1f94a0271b9db78c719c76c6"
+}

@@ -1,0 +1,334 @@
+{
+  "id": "rifle",
+  "blender_scene": "FirearmV1_rifle",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "rifle__bolt_handle",
+      "role": "bolt_handle",
+      "group": "bolt",
+      "delay": 0.25,
+      "triangles": 44,
+      "origin": [
+        0.110203,
+        -0.019449,
+        0.894451
+      ]
+    },
+    {
+      "name": "rifle__bolt_knob",
+      "role": "bolt_knob",
+      "group": "bolt",
+      "delay": 0.2,
+      "triangles": 252,
+      "origin": [
+        0.144886,
+        -0.05,
+        0.9
+      ]
+    },
+    {
+      "name": "rifle__breech_cover",
+      "role": "breech_cover",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.042,
+        0.82
+      ]
+    },
+    {
+      "name": "rifle__butt_plate",
+      "role": "butt_plate",
+      "group": "body",
+      "delay": 0.3,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.178586,
+        1.2835
+      ]
+    },
+    {
+      "name": "rifle__charge_inlay",
+      "role": "charge_inlay",
+      "group": "body",
+      "delay": 0.45,
+      "triangles": 108,
+      "origin": [
+        -0.079,
+        -0.014,
+        0.85
+      ]
+    },
+    {
+      "name": "rifle__floating_barrel_brace_0",
+      "role": "floating_barrel_brace_0",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 384,
+      "origin": [
+        0.0,
+        -0.006,
+        0.34
+      ]
+    },
+    {
+      "name": "rifle__floating_barrel_brace_1",
+      "role": "floating_barrel_brace_1",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 384,
+      "origin": [
+        0.0,
+        -0.006,
+        0.57
+      ]
+    },
+    {
+      "name": "rifle__foregrip_trim_0p072",
+      "role": "foregrip_trim_0.072",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 44,
+      "origin": [
+        0.072,
+        -0.102067,
+        0.756687
+      ]
+    },
+    {
+      "name": "rifle__foregrip_trim_neg0p072",
+      "role": "foregrip_trim_-0.072",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 44,
+      "origin": [
+        -0.072,
+        -0.102067,
+        0.756687
+      ]
+    },
+    {
+      "name": "rifle__muzzle_crown",
+      "role": "muzzle_crown",
+      "group": "body",
+      "delay": 0.42,
+      "triangles": 384,
+      "origin": [
+        0.0,
+        0.0,
+        0.015
+      ]
+    },
+    {
+      "name": "rifle__navy_stock",
+      "role": "navy_stock",
+      "group": "body",
+      "delay": 0.02,
+      "triangles": 172,
+      "origin": [
+        0.0,
+        -0.152131,
+        0.885
+      ]
+    },
+    {
+      "name": "rifle__optic_back_lens",
+      "role": "optic_back_lens",
+      "group": "body",
+      "delay": 0.43,
+      "triangles": 188,
+      "origin": [
+        0.0,
+        0.169,
+        0.944
+      ]
+    },
+    {
+      "name": "rifle__optic_front_lens",
+      "role": "optic_front_lens",
+      "group": "body",
+      "delay": 0.43,
+      "triangles": 188,
+      "origin": [
+        0.0,
+        0.169,
+        0.596
+      ]
+    },
+    {
+      "name": "rifle__optic_pedestal_0",
+      "role": "optic_pedestal_0",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.094,
+        0.68
+      ]
+    },
+    {
+      "name": "rifle__optic_pedestal_1",
+      "role": "optic_pedestal_1",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        0.094,
+        0.89
+      ]
+    },
+    {
+      "name": "rifle__optic_tube",
+      "role": "optic_tube",
+      "group": "body",
+      "delay": 0.38,
+      "triangles": 444,
+      "origin": [
+        0.0,
+        0.169,
+        0.77
+      ]
+    },
+    {
+      "name": "rifle__precision_barrel",
+      "role": "precision_barrel",
+      "group": "body",
+      "delay": 0.29,
+      "triangles": 448,
+      "origin": [
+        0.0,
+        0.0,
+        0.390225
+      ]
+    },
+    {
+      "name": "rifle__receiver",
+      "role": "receiver",
+      "group": "body",
+      "delay": 0.12,
+      "triangles": 108,
+      "origin": [
+        0.0,
+        -0.012,
+        0.83
+      ]
+    },
+    {
+      "name": "rifle__receiver_screw_0",
+      "role": "receiver_screw_0",
+      "group": "body",
+      "delay": 0.34,
+      "triangles": 164,
+      "origin": [
+        0.082,
+        -0.02,
+        0.74
+      ]
+    },
+    {
+      "name": "rifle__receiver_screw_1",
+      "role": "receiver_screw_1",
+      "group": "body",
+      "delay": 0.34,
+      "triangles": 164,
+      "origin": [
+        0.082,
+        -0.02,
+        0.95
+      ]
+    },
+    {
+      "name": "rifle__trigger_guard",
+      "role": "trigger_guard",
+      "group": "body",
+      "delay": 0.25,
+      "triangles": 60,
+      "origin": [
+        0.0,
+        -0.182696,
+        0.969988
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_muzzle": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_ejection": {
+      "position": [
+        0.09,
+        0.015,
+        0.82
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_ornament": {
+      "position": [
+        0.0,
+        -0.2,
+        1.11
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    }
+  },
+  "triangles": 4012,
+  "materials": [
+    "M_FirearmV1_black",
+    "M_FirearmV1_brass",
+    "M_FirearmV1_navy",
+    "M_FirearmV1_silver",
+    "M_FirearmV1_steel",
+    "M_FirearmV1_teal"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.25377,
+    0.50096,
+    1.302
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.085,
+      -0.278956,
+      -0.0
+    ],
+    "max": [
+      0.168773,
+      0.222,
+      1.302
+    ]
+  },
+  "part_count": 21
+}

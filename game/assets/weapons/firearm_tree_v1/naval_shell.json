@@ -1,0 +1,127 @@
+{
+  "id": "naval_shell",
+  "blender_scene": "FirearmV1_naval_shell",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "parts": [
+    {
+      "name": "naval_shell__base_mark",
+      "role": "base_mark",
+      "group": "body",
+      "delay": 0.44,
+      "triangles": 140,
+      "origin": [
+        0.0,
+        0.0,
+        0.503
+      ]
+    },
+    {
+      "name": "naval_shell__base_plate",
+      "role": "base_plate",
+      "group": "body",
+      "delay": 0.22,
+      "triangles": 236,
+      "origin": [
+        0.0,
+        0.0,
+        0.488
+      ]
+    },
+    {
+      "name": "naval_shell__driving_band",
+      "role": "driving_band",
+      "group": "body",
+      "delay": 0.3,
+      "triangles": 480,
+      "origin": [
+        0.0,
+        0.0,
+        0.412
+      ]
+    },
+    {
+      "name": "naval_shell__identity_band",
+      "role": "identity_band",
+      "group": "body",
+      "delay": 0.4,
+      "triangles": 480,
+      "origin": [
+        0.0,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "name": "naval_shell__ogive_body",
+      "role": "ogive_body",
+      "group": "body",
+      "delay": 0.22,
+      "triangles": 516,
+      "origin": [
+        0.0,
+        0.0,
+        0.245
+      ]
+    }
+  ],
+  "sockets": {
+    "Socket_nose": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_trail": {
+      "position": [
+        0.0,
+        0.0,
+        0.51
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "triangles": 1852,
+  "materials": [
+    "M_FirearmV1_brass",
+    "M_FirearmV1_navy",
+    "M_FirearmV1_teal"
+  ],
+  "units": "metres",
+  "dimensions": [
+    0.17,
+    0.17,
+    0.507
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.085,
+      -0.085,
+      -0.0
+    ],
+    "max": [
+      0.085,
+      0.085,
+      0.507
+    ]
+  },
+  "part_count": 5
+}

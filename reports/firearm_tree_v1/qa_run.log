@@ -1,0 +1,207 @@
+00:03.343  blend            | Read blend: "C:\Users\yurib\Documents\New project\witch\assets\weapons\firearm_tree_v1\firearm_tree_v1.blend"
+SOURCE_QA artillery_shell True errors 0 warnings 4
+SOURCE_QA gatling True errors 0 warnings 9
+SOURCE_QA matchlock True errors 0 warnings 9
+SOURCE_QA naval_shell True errors 0 warnings 4
+SOURCE_QA powder_barrel True errors 0 warnings 14
+SOURCE_QA rifle True errors 0 warnings 12
+SOURCE_QA shotgun True errors 0 warnings 9
+SOURCE_QA smoke_canister True errors 0 warnings 3
+SOURCE_QA smoke_launcher True errors 0 warnings 14
+02:15:38 | INFO: Data are loaded, start creating Blender stuff
+02:15:38 | INFO: Blender create Mesh node ogive_body
+02:15:38 | INFO: Blender create Mesh node driving_band
+02:15:38 | INFO: Blender create Mesh node base_plate
+02:15:38 | INFO: Blender create Mesh node identity_band
+02:15:38 | INFO: Blender create Mesh node base_mark
+02:15:38 | INFO: glTF import finished in 0.03s
+REIMPORT_QA artillery_shell True errors 0 warnings 6
+02:15:39 | INFO: Data are loaded, start creating Blender stuff
+02:15:39 | INFO: Blender create Mesh node rear_motor
+02:15:39 | INFO: Blender create Mesh node rear_rim
+02:15:39 | INFO: Blender create Mesh node rotor_hub
+02:15:39 | INFO: Blender create Mesh node rotating_barrel_0
+02:15:39 | INFO: Blender create Mesh node barrel_muzzle_0
+02:15:39 | INFO: Blender create Mesh node rotating_barrel_1
+02:15:39 | INFO: Blender create Mesh node barrel_muzzle_1
+02:15:39 | INFO: Blender create Mesh node rotating_barrel_2
+02:15:39 | INFO: Blender create Mesh node barrel_muzzle_2
+02:15:39 | INFO: Blender create Mesh node rotating_barrel_3
+02:15:39 | INFO: Blender create Mesh node barrel_muzzle_3
+02:15:39 | INFO: Blender create Mesh node rotating_barrel_4
+02:15:39 | INFO: Blender create Mesh node barrel_muzzle_4
+02:15:39 | INFO: Blender create Mesh node rotating_barrel_5
+02:15:39 | INFO: Blender create Mesh node barrel_muzzle_5
+02:15:39 | INFO: Blender create Mesh node bundle_collar_0
+02:15:39 | INFO: Blender create Mesh node bundle_collar_1
+02:15:39 | INFO: Blender create Mesh node center_spindle
+02:15:39 | INFO: Blender create Mesh node side_feed_drum
+02:15:39 | INFO: Blender create Mesh node feed_cover
+02:15:39 | INFO: Blender create Mesh node feed_bridge
+02:15:39 | INFO: Blender create Mesh node feed_teeth_0
+02:15:39 | INFO: Blender create Mesh node feed_teeth_1
+02:15:39 | INFO: Blender create Mesh node feed_teeth_2
+02:15:39 | INFO: Blender create Mesh node feed_teeth_3
+02:15:39 | INFO: Blender create Mesh node feed_teeth_4
+02:15:39 | INFO: Blender create Mesh node bottom_mount
+02:15:39 | INFO: Blender create Mesh node mount_inlay
+02:15:39 | INFO: Blender create Mesh node motor_rail_-0.24
+02:15:39 | INFO: Blender create Mesh node motor_rail_0.24
+02:15:39 | INFO: Blender create Mesh node core_ring
+02:15:39 | INFO: Blender create Mesh node rear_core
+02:15:39 | INFO: glTF import finished in 0.14s
+REIMPORT_QA gatling True errors 0 warnings 33
+02:15:44 | INFO: Data are loaded, start creating Blender stuff
+02:15:44 | INFO: Blender create Mesh node walnut_stock
+02:15:44 | INFO: Blender create Mesh node long_barrel
+02:15:44 | INFO: Blender create Mesh node muzzle_lip
+02:15:44 | INFO: Blender create Mesh node barrel_band_0
+02:15:44 | INFO: Blender create Mesh node barrel_band_1
+02:15:44 | INFO: Blender create Mesh node barrel_band_2
+02:15:44 | INFO: Blender create Mesh node breech
+02:15:44 | INFO: Blender create Mesh node side_plate
+02:15:44 | INFO: Blender create Mesh node serpentine_match_arm
+02:15:44 | INFO: Blender create Mesh node match_cord
+02:15:44 | INFO: Blender create Mesh node match_tip
+02:15:44 | INFO: Blender create Mesh node pan
+02:15:44 | INFO: Blender create Mesh node plate_screw_0
+02:15:44 | INFO: Blender create Mesh node plate_screw_1
+02:15:44 | INFO: Blender create Mesh node butt_cap
+02:15:44 | INFO: Blender create Mesh node guard
+02:15:44 | INFO: Blender create Mesh node underbarrel_rod
+02:15:44 | INFO: Blender create Mesh node power_seal
+02:15:44 | INFO: glTF import finished in 0.12s
+REIMPORT_QA matchlock True errors 0 warnings 20
+02:15:46 | INFO: Data are loaded, start creating Blender stuff
+02:15:46 | INFO: Blender create Mesh node ogive_body.001
+02:15:46 | INFO: Blender create Mesh node driving_band.001
+02:15:46 | INFO: Blender create Mesh node base_plate.001
+02:15:46 | INFO: Blender create Mesh node identity_band.001
+02:15:46 | INFO: Blender create Mesh node base_mark.001
+02:15:46 | INFO: glTF import finished in 0.02s
+REIMPORT_QA naval_shell True errors 0 warnings 6
+02:15:47 | INFO: Data are loaded, start creating Blender stuff
+02:15:47 | INFO: Blender create Mesh node stave_00
+02:15:47 | INFO: Blender create Mesh node stave_01
+02:15:47 | INFO: Blender create Mesh node stave_02
+02:15:47 | INFO: Blender create Mesh node stave_03
+02:15:47 | INFO: Blender create Mesh node stave_04
+02:15:47 | INFO: Blender create Mesh node stave_05
+02:15:47 | INFO: Blender create Mesh node stave_06
+02:15:47 | INFO: Blender create Mesh node stave_07
+02:15:47 | INFO: Blender create Mesh node stave_08
+02:15:47 | INFO: Blender create Mesh node stave_09
+02:15:47 | INFO: Blender create Mesh node stave_10
+02:15:47 | INFO: Blender create Mesh node stave_11
+02:15:47 | INFO: Blender create Mesh node rolling_hoop_0
+02:15:47 | INFO: Blender create Mesh node brass_hoop_trim_0
+02:15:47 | INFO: Blender create Mesh node rolling_hoop_1
+02:15:47 | INFO: Blender create Mesh node brass_hoop_trim_1
+02:15:47 | INFO: Blender create Mesh node end_cap_0
+02:15:47 | INFO: Blender create Mesh node end_emblem_0
+02:15:47 | INFO: Blender create Mesh node end_cap_1
+02:15:47 | INFO: Blender create Mesh node end_emblem_1
+02:15:47 | INFO: Blender create Mesh node fuse_socket
+02:15:47 | INFO: Blender create Mesh node fuse_00
+02:15:47 | INFO: Blender create Mesh node fuse_01
+02:15:47 | INFO: Blender create Mesh node fuse_02
+02:15:47 | INFO: Blender create Mesh node fuse_03
+02:15:47 | INFO: Blender create Mesh node fuse_04
+02:15:47 | INFO: Blender create Mesh node fuse_05
+02:15:47 | INFO: Blender create Mesh node fuse_06
+02:15:47 | INFO: Blender create Mesh node fuse_07
+02:15:47 | INFO: Blender create Mesh node fuse_ember
+02:15:47 | INFO: glTF import finished in 0.13s
+REIMPORT_QA powder_barrel True errors 0 warnings 30
+02:15:52 | INFO: Data are loaded, start creating Blender stuff
+02:15:52 | INFO: Blender create Mesh node navy_stock
+02:15:52 | INFO: Blender create Mesh node precision_barrel
+02:15:52 | INFO: Blender create Mesh node muzzle_crown
+02:15:52 | INFO: Blender create Mesh node floating_barrel_brace_0
+02:15:52 | INFO: Blender create Mesh node floating_barrel_brace_1
+02:15:52 | INFO: Blender create Mesh node receiver
+02:15:52 | INFO: Blender create Mesh node breech_cover
+02:15:52 | INFO: Blender create Mesh node foregrip_trim_-0.072
+02:15:52 | INFO: Blender create Mesh node foregrip_trim_0.072
+02:15:52 | INFO: Blender create Mesh node optic_pedestal_0
+02:15:52 | INFO: Blender create Mesh node optic_pedestal_1
+02:15:52 | INFO: Blender create Mesh node optic_tube
+02:15:52 | INFO: Blender create Mesh node optic_front_lens
+02:15:52 | INFO: Blender create Mesh node optic_back_lens
+02:15:52 | INFO: Blender create Mesh node bolt_handle
+02:15:52 | INFO: Blender create Mesh node bolt_knob
+02:15:52 | INFO: Blender create Mesh node butt_plate
+02:15:52 | INFO: Blender create Mesh node trigger_guard
+02:15:52 | INFO: Blender create Mesh node charge_inlay
+02:15:52 | INFO: Blender create Mesh node receiver_screw_0
+02:15:52 | INFO: Blender create Mesh node receiver_screw_1
+02:15:52 | INFO: glTF import finished in 0.08s
+REIMPORT_QA rifle True errors 0 warnings 22
+02:15:54 | INFO: Data are loaded, start creating Blender stuff
+02:15:54 | INFO: Blender create Mesh node scatter_barrel_0
+02:15:54 | INFO: Blender create Mesh node scatter_lip_0
+02:15:54 | INFO: Blender create Mesh node scatter_barrel_1
+02:15:54 | INFO: Blender create Mesh node scatter_lip_1
+02:15:54 | INFO: Blender create Mesh node barrel_bridge
+02:15:54 | INFO: Blender create Mesh node receiver.001
+02:15:54 | INFO: Blender create Mesh node receiver_top
+02:15:54 | INFO: Blender create Mesh node short_stock
+02:15:54 | INFO: Blender create Mesh node stock_plate
+02:15:54 | INFO: Blender create Mesh node lower_handguard
+02:15:54 | INFO: Blender create Mesh node grip_rib_0
+02:15:54 | INFO: Blender create Mesh node grip_rib_1
+02:15:54 | INFO: Blender create Mesh node grip_rib_2
+02:15:54 | INFO: Blender create Mesh node grip_rib_3
+02:15:54 | INFO: Blender create Mesh node hinge_-1
+02:15:54 | INFO: Blender create Mesh node hinge_bolt_-1
+02:15:54 | INFO: Blender create Mesh node hinge_1
+02:15:54 | INFO: Blender create Mesh node hinge_bolt_1
+02:15:54 | INFO: Blender create Mesh node trigger_guard.001
+02:15:54 | INFO: Blender create Mesh node core_inlay
+02:15:54 | INFO: glTF import finished in 0.08s
+REIMPORT_QA shotgun True errors 0 warnings 23
+02:15:57 | INFO: Data are loaded, start creating Blender stuff
+02:15:57 | INFO: Blender create Mesh node canister_body
+02:15:57 | INFO: Blender create Mesh node cap
+02:15:57 | INFO: Blender create Mesh node rim
+02:15:57 | INFO: glTF import finished in 0.02s
+REIMPORT_QA smoke_canister True errors 0 warnings 4
+02:15:58 | INFO: Data are loaded, start creating Blender stuff
+02:15:58 | INFO: Blender create Mesh node base
+02:15:58 | INFO: Blender create Mesh node base_trim
+02:15:58 | INFO: Blender create Mesh node bank_support
+02:15:58 | INFO: Blender create Mesh node launch_tube_0
+02:15:58 | INFO: Blender create Mesh node tube_rim_0
+02:15:58 | INFO: Blender create Mesh node smoke_canister_0
+02:15:58 | INFO: Blender create Mesh node canister_cap_0
+02:15:58 | INFO: Blender create Mesh node launch_tube_1
+02:15:58 | INFO: Blender create Mesh node tube_rim_1
+02:15:58 | INFO: Blender create Mesh node smoke_canister_1
+02:15:58 | INFO: Blender create Mesh node canister_cap_1
+02:15:58 | INFO: Blender create Mesh node launch_tube_2
+02:15:58 | INFO: Blender create Mesh node tube_rim_2
+02:15:58 | INFO: Blender create Mesh node smoke_canister_2
+02:15:58 | INFO: Blender create Mesh node canister_cap_2
+02:15:58 | INFO: Blender create Mesh node launch_tube_3
+02:15:58 | INFO: Blender create Mesh node tube_rim_3
+02:15:58 | INFO: Blender create Mesh node smoke_canister_3
+02:15:58 | INFO: Blender create Mesh node canister_cap_3
+02:15:58 | INFO: Blender create Mesh node launch_tube_4
+02:15:58 | INFO: Blender create Mesh node tube_rim_4
+02:15:58 | INFO: Blender create Mesh node smoke_canister_4
+02:15:58 | INFO: Blender create Mesh node canister_cap_4
+02:15:58 | INFO: Blender create Mesh node launch_tube_5
+02:15:58 | INFO: Blender create Mesh node tube_rim_5
+02:15:58 | INFO: Blender create Mesh node smoke_canister_5
+02:15:58 | INFO: Blender create Mesh node canister_cap_5
+02:15:58 | INFO: Blender create Mesh node side_bracket_-0.28
+02:15:58 | INFO: Blender create Mesh node bracket_pin_-0.28
+02:15:58 | INFO: Blender create Mesh node side_bracket_0.28
+02:15:58 | INFO: Blender create Mesh node bracket_pin_0.28
+02:15:58 | INFO: Blender create Mesh node power_inlay
+02:15:58 | INFO: glTF import finished in 0.12s
+REIMPORT_QA smoke_launcher True errors 0 warnings 32
+FIREARM_QA_DONE True
+Blender 5.1.1 (hash b70da489d7f4 built 2026-04-14 01:37:22)
+
+Blender quit

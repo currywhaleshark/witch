@@ -1,0 +1,28 @@
+{
+  "captures": 239,
+  "passed": true,
+  "scope": "Six prepared assets: same-camera material comparisons, rear views, original rigid demos and static game-camera size reference. No new active skills.",
+  "sequences": [
+    {
+      "asset": "powder_barrel",
+      "fps": 24,
+      "frames": 85,
+      "id": "demo_powder_barrel",
+      "kind": "prepared_asset_demo"
+    },
+    {
+      "asset": "gatling",
+      "fps": 24,
+      "frames": 67,
+      "id": "demo_gatling",
+      "kind": "prepared_asset_demo"
+    },
+    {
+      "asset": "smoke_launcher",
+      "fps": 24,
+      "frames": 67,
+      "id": "demo_smoke_launcher",
+      "kind": "prepared_asset_demo"
+    }
+  ]
+}

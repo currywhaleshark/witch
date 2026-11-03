@@ -1,0 +1,68 @@
+{
+  "assets": {
+    "matchlock": {
+      "model": "res://assets/weapons/firearm_material_v3/matchlock.glb",
+      "metadata": "res://assets/weapons/firearm_material_v3/matchlock.json",
+      "status": "active_skill",
+      "parts": 18,
+      "triangles": 4692
+    },
+    "rifle": {
+      "model": "res://assets/weapons/firearm_material_v3/rifle.glb",
+      "metadata": "res://assets/weapons/firearm_material_v3/rifle.json",
+      "status": "active_skill",
+      "parts": 21,
+      "triangles": 3980
+    },
+    "shotgun": {
+      "model": "res://assets/weapons/firearm_material_v3/shotgun.glb",
+      "metadata": "res://assets/weapons/firearm_material_v3/shotgun.json",
+      "status": "active_skill",
+      "parts": 20,
+      "triangles": 4264
+    },
+    "powder_barrel": {
+      "model": "res://assets/weapons/firearm_material_v4/powder_barrel.glb",
+      "metadata": "res://assets/weapons/firearm_material_v4/powder_barrel.json",
+      "status": "prepared_asset",
+      "parts": 30,
+      "triangles": 6528
+    },
+    "gatling": {
+      "model": "res://assets/weapons/firearm_material_v4/gatling.glb",
+      "metadata": "res://assets/weapons/firearm_material_v4/gatling.json",
+      "status": "prepared_asset",
+      "parts": 32,
+      "triangles": 9552
+    },
+    "smoke_launcher": {
+      "model": "res://assets/weapons/firearm_material_v4/smoke_launcher.glb",
+      "metadata": "res://assets/weapons/firearm_material_v4/smoke_launcher.json",
+      "status": "prepared_asset",
+      "parts": 32,
+      "triangles": 8032
+    },
+    "artillery_shell": {
+      "model": "res://assets/weapons/firearm_material_v4/artillery_shell.glb",
+      "metadata": "res://assets/weapons/firearm_material_v4/artillery_shell.json",
+      "status": "prepared_asset",
+      "parts": 5,
+      "triangles": 1852
+    },
+    "naval_shell": {
+      "model": "res://assets/weapons/firearm_material_v4/naval_shell.glb",
+      "metadata": "res://assets/weapons/firearm_material_v4/naval_shell.json",
+      "status": "prepared_asset",
+      "parts": 5,
+      "triangles": 1852
+    },
+    "smoke_canister": {
+      "model": "res://assets/weapons/firearm_material_v4/smoke_canister.glb",
+      "metadata": "res://assets/weapons/firearm_material_v4/smoke_canister.json",
+      "status": "prepared_asset",
+      "parts": 3,
+      "triangles": 824
+    }
+  },
+  "scope": "Only the three existing gun skills are active; the other six are prepared assets."
+}

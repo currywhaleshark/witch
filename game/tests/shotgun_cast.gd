@@ -59,13 +59,13 @@ func run() -> void:
 		var fx:=start({"enemy_id":"target"})
 		var time: float=arena.windup.release
 		check(is_equal_approx(time,arena.cast_seconds(arena.rules.skills.shotgun)*float(arena.rules.skills.shotgun.release_ratio)),"assembly lasts until the skill's release fraction")
-		check(fx.parts.size()==40,"40 actual independent cannon parts")
+		check(fx.parts.size()==20,"20 independent parts of the dedicated twin-barrel shotgun")
 		var triangles:=0
 		for part in fx.parts:
 			for surface in part.mesh.mesh.get_surface_count(): triangles+=part.mesh.mesh.surface_get_array_index_len(surface)/3
-		check(triangles==8732,"derivative keeps 8732 source triangles")
+		check(triangles==4264,"the longer v2 shotgun has 4264 triangles")
 		arena.tick_windup(time*.24)
-		check(fx.debug_state().visible_parts>0 and fx.debug_state().visible_parts<40,"receiver and barrel appear in stages")
+		check(fx.debug_state().visible_parts>0 and fx.debug_state().visible_parts<20,"receiver and barrel appear in stages")
 		check(arena.state.mana==mana and arena.last_shotgun.is_empty() and not fx.debug_state().flash,"no costs or muzzle flash before release")
 		arena.tick_windup(time*.75)
 		check(arena.enemies.target.hp==1000.0 and arena.last_shotgun.is_empty(),"no damage at 99 percent")
