@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-03",
+  "status": "new generated concept/model candidate; fitting and rigging pending",
+  "image_generation": {
+    "mode": "built-in image_gen",
+    "concept": "assets/reference/equipment/exoskeleton_v2/concept_sheet_v1.png",
+    "concept_prompt": "assets/reference/equipment/exoskeleton_v2/generation_prompt.txt",
+    "tripo_input": "assets/reference/equipment/exoskeleton_v2/tripo_front_v1.png",
+    "tripo_input_prompt": "assets/reference/equipment/exoskeleton_v2/tripo_input_prompt.txt",
+    "references": [
+      "assets/reference/character/outfits/transformed_v1/concept_2026-10-27.jpg",
+      "assets/reference/character/modeling/middle_school_v1/semilong_front_apose_v1.png"
+    ]
+  },
+  "tripo": {
+    "url": "https://studio.tripo3d.ai/ko/workspace/generate/503ac1bc-485d-4fe3-a819-e74690f810b5",
+    "model": "H3.1",
+    "mode": "HD",
+    "target_polygons": 80000,
+    "topology": "triangles",
+    "textures": "2K PBR",
+    "private": true,
+    "part_generation": false,
+    "paid_segmentation": false,
+    "credits_used": 30,
+    "credit_balance_before": 2485,
+    "credit_balance_after": 2455,
+    "ui_counts": {
+      "faces": 78480,
+      "vertices": 45855
+    },
+    "ui_count_note": "File counts below are authoritative; UI differs."
+  },
+  "raw_inventory": {
+    "status": "generated_raw_source_not_fitted_or_rigged",
+    "raw_sha256": "d97beb91fd224ce9421d41666a3ad85b9a1d9bae79f6959cf7d0cb353ed15667",
+    "raw_bytes": 6209624,
+    "raw_meshes": 1,
+    "raw_primitives": 1,
+    "raw_triangles": 78478,
+    "raw_vertices": 46141,
+    "raw_skins": 0,
+    "raw_animations": 0,
+    "blender_meshes": {
+      "ExoskeletonV2_RawMesh": {
+        "vertices": 46141,
+        "triangles": 78478,
+        "dimensions_m": [
+          0.5925903916358948,
+          0.09967043995857239,
+          1.0
+        ],
+        "material_slots": 1,
+        "armature_modifiers": 0
+      }
+    },
+    "textures": [
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_0",
+        "size": [
+          2048,
+          2048
+        ],
+        "color_space": "sRGB",
+        "packed": true
+      },
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_1",
+        "size": [
+          2048,
+          2048
+        ],
+        "color_space": "Non-Color",
+        "packed": true
+      },
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_2",
+        "size": [
+          2048,
+          2048
+        ],
+        "color_space": "Non-Color",
+        "packed": true
+      }
+    ],
+    "scale_note": "Tripo-normalized 1m height; not character fitting scale."
+  },
+  "working_export": {
+    "meshes": 1,
+    "scenes": 1,
+    "triangles": 78474,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "animations": 0,
+    "bytes": 6211040,
+    "sha256": "31b965231954a42eb4a1e4a42f10186bcde04edeff87af2cc4e03d114af9d1a8"
+  },
+  "working_cleanup": {
+    "retained_positions_and_connectivity_unchanged": true,
+    "uv_faces_repaired": 12,
+    "overlap_slivers_removed": 4,
+    "max_uv_offset_texels_at_2048": 0.25,
+    "raw_source_untouched": true,
+    "retained_normal_vector_max_difference": 0.0005098527137260249
+  },
+  "limits": [
+    "No character fitting or garment/hair/body clearance tests.",
+    "No semantic joint segmentation, armature, bone attachment, animations or game replacement.",
+    "Welded diagnostic shows topology issues; do not apply blanket welding to the textured asset.",
+    "Dense generated source, not approved final runtime budget."
+  ],
+  "files": {
+    "assets/equipment/exoskeleton_v2/exoskeleton_v2_source.blend": "8a0c1e389f778cdeb041f50c054f9e01a14d1c0bd819680c75ba91272d05359c",
+    "assets/equipment/exoskeleton_v2/exoskeleton_v2_working.blend": "164ce2622d58efd647df036bdaceaedb9d2a78159ac8280ff4bd2168efa36a43",
+    "assets/equipment/exoskeleton_v2/exports/exoskeleton_v2_working.glb": "31b965231954a42eb4a1e4a42f10186bcde04edeff87af2cc4e03d114af9d1a8",
+    "assets/equipment/exoskeleton_v2/source/exoskeleton_tripo_h31_raw.glb": "d97beb91fd224ce9421d41666a3ad85b9a1d9bae79f6959cf7d0cb353ed15667",
+    "assets/reference/equipment/exoskeleton_v2/concept_sheet_v1.png": "6a4640cd2472c62b6466da9ad75d7bcdfcdcde5ab0bbc64b451a560b835d06fd",
+    "assets/reference/equipment/exoskeleton_v2/generation_prompt.txt": "a3e88d2522ee5b54f9e7d0aea2d16e8cff3ae417965965c30527c00b2e46430b",
+    "assets/reference/equipment/exoskeleton_v2/README.md": "8b379fd1f8b1d8c57d38fa93707e8910d03f0186717450a45b2be767ea652250",
+    "assets/reference/equipment/exoskeleton_v2/tripo_front_v1.png": "8e0955a34db43a3c4a1674397c51cc3925baecd9580f3f64ef9c4f9591ad7529",
+    "assets/reference/equipment/exoskeleton_v2/tripo_input_prompt.txt": "94909eb2d5427c3230c792c32c1f3acde7abed6b1e5d094e19ef00a9f0ac5308",
+    "reports/exoskeleton_v2/tripo_generated.png": "3c0164e4af38a3bf6e8fd822189bae2e57eeef948c687aa108f2391c4e201881"
+  }
+}

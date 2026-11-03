@@ -1,0 +1,54 @@
+{
+  "status": "generated_raw_source_not_fitted_or_rigged",
+  "raw_sha256": "d97beb91fd224ce9421d41666a3ad85b9a1d9bae79f6959cf7d0cb353ed15667",
+  "raw_bytes": 6209624,
+  "raw_meshes": 1,
+  "raw_primitives": 1,
+  "raw_triangles": 78478,
+  "raw_vertices": 46141,
+  "raw_skins": 0,
+  "raw_animations": 0,
+  "blender_meshes": {
+    "ExoskeletonV2_RawMesh": {
+      "vertices": 46141,
+      "triangles": 78478,
+      "dimensions_m": [
+        0.5925903916358948,
+        0.09967043995857239,
+        1.0
+      ],
+      "material_slots": 1,
+      "armature_modifiers": 0
+    }
+  },
+  "textures": [
+    {
+      "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_0",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "sRGB",
+      "packed": true
+    },
+    {
+      "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_1",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "Non-Color",
+      "packed": true
+    },
+    {
+      "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_2",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "Non-Color",
+      "packed": true
+    }
+  ],
+  "scale_note": "Tripo-normalized 1m height; not character fitting scale."
+}

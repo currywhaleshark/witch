@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "model": {
+    "meshes": 1,
+    "scenes": 1,
+    "triangles": 78474,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "animations": 0,
+    "bytes": 6211040,
+    "sha256": "31b965231954a42eb4a1e4a42f10186bcde04edeff87af2cc4e03d114af9d1a8"
+  }
+}

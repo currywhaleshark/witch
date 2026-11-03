@@ -1,0 +1,545 @@
+{
+  "id": "restraint_winch",
+  "parts": [
+    {
+      "name": "restraint_winch__axle_1",
+      "role": "axle_1",
+      "group": "body",
+      "delay": 0.25,
+      "surface": "brass",
+      "origin": [
+        0.34,
+        0.41,
+        0.025
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__axle_neg1",
+      "role": "axle_-1",
+      "group": "body",
+      "delay": 0.25,
+      "surface": "brass",
+      "origin": [
+        -0.34,
+        0.41,
+        0.025
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__cable_0",
+      "role": "cable_0",
+      "group": "cable_0",
+      "delay": 0.38,
+      "surface": "black",
+      "origin": [
+        0.0,
+        0.4,
+        -0.515
+      ],
+      "triangles": 28,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__cable_1",
+      "role": "cable_1",
+      "group": "cable_1",
+      "delay": 0.38,
+      "surface": "black",
+      "origin": [
+        -0.2,
+        0.4,
+        -0.515
+      ],
+      "triangles": 28,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__cable_2",
+      "role": "cable_2",
+      "group": "cable_2",
+      "delay": 0.38,
+      "surface": "black",
+      "origin": [
+        0.2,
+        0.4,
+        -0.515
+      ],
+      "triangles": 28,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__cheek_1",
+      "role": "cheek_1",
+      "group": "body",
+      "delay": 0.13,
+      "surface": "navy",
+      "origin": [
+        0.285,
+        0.39,
+        0.04
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__cheek_neg1",
+      "role": "cheek_-1",
+      "group": "body",
+      "delay": 0.13,
+      "surface": "navy",
+      "origin": [
+        -0.285,
+        0.39,
+        0.04
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__core",
+      "role": "core",
+      "group": "body",
+      "delay": 0.46,
+      "surface": "core",
+      "origin": [
+        0.41,
+        0.42,
+        0.19
+      ],
+      "triangles": 204,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__fairlead_0",
+      "role": "fairlead_0",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        0.4,
+        -0.24
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__fairlead_1",
+      "role": "fairlead_1",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "brass",
+      "origin": [
+        -0.2,
+        0.4,
+        -0.24
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__fairlead_2",
+      "role": "fairlead_2",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "brass",
+      "origin": [
+        0.2,
+        0.4,
+        -0.24
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__foot_1",
+      "role": "foot_1",
+      "group": "body",
+      "delay": 0.05,
+      "surface": "navy",
+      "origin": [
+        0.25,
+        0.115,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__foot_neg1",
+      "role": "foot_-1",
+      "group": "body",
+      "delay": 0.05,
+      "surface": "navy",
+      "origin": [
+        -0.25,
+        0.115,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__foot_trim_1",
+      "role": "foot_trim_1",
+      "group": "body",
+      "delay": 0.18,
+      "surface": "brass",
+      "origin": [
+        0.25,
+        0.18,
+        -0.1736
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__foot_trim_neg1",
+      "role": "foot_trim_-1",
+      "group": "body",
+      "delay": 0.18,
+      "surface": "brass",
+      "origin": [
+        -0.25,
+        0.18,
+        -0.1736
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__gearbox",
+      "role": "gearbox",
+      "group": "body",
+      "delay": 0.24,
+      "surface": "brass",
+      "origin": [
+        0.32,
+        0.4,
+        0.19
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__ground_foundation",
+      "role": "ground_foundation",
+      "group": "body",
+      "delay": 0.01,
+      "surface": "steel",
+      "origin": [
+        0.0,
+        0.065,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__hook_0",
+      "role": "hook_0",
+      "group": "hook_0",
+      "delay": 0.43,
+      "surface": "silver",
+      "origin": [
+        0.074978,
+        0.4,
+        -0.849771
+      ],
+      "triangles": 76,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__hook_1",
+      "role": "hook_1",
+      "group": "hook_1",
+      "delay": 0.43,
+      "surface": "silver",
+      "origin": [
+        -0.125022,
+        0.4,
+        -0.849771
+      ],
+      "triangles": 76,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__hook_2",
+      "role": "hook_2",
+      "group": "hook_2",
+      "delay": 0.43,
+      "surface": "silver",
+      "origin": [
+        0.274978,
+        0.4,
+        -0.849771
+      ],
+      "triangles": 76,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__hook_ferrule_0",
+      "role": "hook_ferrule_0",
+      "group": "hook_0",
+      "delay": 0.44,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        0.4,
+        -0.75
+      ],
+      "triangles": 268,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__hook_ferrule_1",
+      "role": "hook_ferrule_1",
+      "group": "hook_1",
+      "delay": 0.44,
+      "surface": "brass",
+      "origin": [
+        -0.2,
+        0.4,
+        -0.75
+      ],
+      "triangles": 204,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__hook_ferrule_2",
+      "role": "hook_ferrule_2",
+      "group": "hook_2",
+      "delay": 0.44,
+      "surface": "brass",
+      "origin": [
+        0.2,
+        0.4,
+        -0.75
+      ],
+      "triangles": 204,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__reel_groove_0",
+      "role": "reel_groove_0",
+      "group": "drum",
+      "delay": 0.3,
+      "surface": "brass",
+      "origin": [
+        -0.22,
+        0.41,
+        0.025
+      ],
+      "triangles": 576,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__reel_groove_1",
+      "role": "reel_groove_1",
+      "group": "drum",
+      "delay": 0.3,
+      "surface": "brass",
+      "origin": [
+        -0.11,
+        0.41,
+        0.025
+      ],
+      "triangles": 576,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__reel_groove_2",
+      "role": "reel_groove_2",
+      "group": "drum",
+      "delay": 0.3,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        0.41,
+        0.025
+      ],
+      "triangles": 576,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__reel_groove_3",
+      "role": "reel_groove_3",
+      "group": "drum",
+      "delay": 0.3,
+      "surface": "brass",
+      "origin": [
+        0.11,
+        0.41,
+        0.025
+      ],
+      "triangles": 576,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__reel_groove_4",
+      "role": "reel_groove_4",
+      "group": "drum",
+      "delay": 0.3,
+      "surface": "brass",
+      "origin": [
+        0.22,
+        0.41,
+        0.025
+      ],
+      "triangles": 576,
+      "attach_bone": ""
+    },
+    {
+      "name": "restraint_winch__spool",
+      "role": "spool",
+      "group": "drum",
+      "delay": 0.22,
+      "surface": "steel",
+      "origin": [
+        0.0,
+        0.41,
+        0.025
+      ],
+      "triangles": 284,
+      "attach_bone": ""
+    }
+  ],
+  "sockets": {
+    "Socket_cable_0": {
+      "position": [
+        0.0,
+        0.4,
+        -0.28
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_hook_0": {
+      "position": [
+        0.0,
+        0.4,
+        -0.75
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_cable_1": {
+      "position": [
+        -0.2,
+        0.4,
+        -0.28
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_hook_1": {
+      "position": [
+        -0.2,
+        0.4,
+        -0.75
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_cable_2": {
+      "position": [
+        0.2,
+        0.4,
+        -0.28
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_hook_2": {
+      "position": [
+        0.2,
+        0.4,
+        -0.75
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_drum_axis": {
+      "position": [
+        0.0,
+        0.41,
+        0.025
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ]
+    },
+    "Socket_target": {
+      "position": [
+        0.0,
+        0.4,
+        -2.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    }
+  },
+  "units": "metres",
+  "runtime_status": "prepared_asset",
+  "triangles": 5920,
+  "part_count": 29,
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.39,
+      0.0,
+      -0.979542
+    ],
+    "max": [
+      0.423,
+      0.6,
+      0.41
+    ]
+  },
+  "dimensions": [
+    0.813,
+    0.6,
+    1.38954
+  ],
+  "materials": [
+    "M_DriveV1_Surface",
+    "M_DriveV1_Glow"
+  ],
+  "texture_set": "drive_tree_v1 shared trim"
+}

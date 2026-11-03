@@ -1,0 +1,57 @@
+"""Build a local, offline review of actual Godot captures and saved-source inspection."""
+import json,re,hashlib
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];R=ROOT/'reports/exoskeleton_v3'
+capture=json.loads((R/'review/capture.json').read_text());fit=json.loads((R/'equipment_fit.json').read_text())
+data={'sequences':capture['sequences'],'contacts':{},'crossing_poses':fit['poses_with_crossings'],'total_poses':fit['pose_count']}
+for form in ['civilian','transformed']:
+ for motion in ['idle','run','attack','attack_thrust','cast','hit_react','spring_jump','collapse']:
+  rows=[x for x in fit['poses'] if x['form']==form and x['motion']==motion]
+  data['contacts'][form+'_'+motion]={'crossings':sum(bool(x['crossing_faces']) for x in rows),'samples':len(rows)}
+html='''<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>외골격 v3 · 분할 / 피팅 / 리깅</title>
+<style>
+:root{color-scheme:dark;--bg:#101a23;--panel:#172631;--line:#314651;--text:#e7eceb;--muted:#aabbbf;--teal:#85d9ca;--gold:#d5b583}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,"Malgun Gothic",sans-serif}main{max-width:1450px;padding:36px 28px 80px;margin:auto}h1{font-size:32px;line-height:1.25;margin:8px 0 18px}h2{font-size:22px;margin:36px 0 12px}p{max-width:1000px;margin:12px 0}.eyebrow{color:var(--gold);letter-spacing:.14em;font-size:12px}.muted,figcaption{color:var(--muted)}a{color:var(--teal)}.stats{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.stats span{border:1px solid var(--line);padding:8px 14px;border-radius:7px}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:8px}button,select{font:inherit;color:var(--text);background:#233945;border:1px solid #49606a;border-radius:5px;padding:7px 12px;cursor:pointer}button.active{border-color:var(--teal);color:var(--teal)}.motions{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.views,.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}figure{margin:0;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:7px;overflow:hidden}figure img{display:block;width:100%;height:auto}figcaption{padding:9px 14px;font-size:14px}.scrub{display:flex;gap:14px;align-items:center;margin:12px 0}.scrub input{flex:1;min-width:60px;accent-color:var(--teal)}.scrub output{min-width:125px;font-variant-numeric:tabular-nums}.note{border-left:3px solid var(--gold);padding:10px 16px;background:#24302f;color:#ddd6bd}.native{overflow:auto;border:1px solid var(--line);border-radius:7px}.native img{display:block;width:1280px;max-width:none}details{margin:18px 0;padding:15px;background:var(--panel);border:1px solid var(--line);border-radius:7px}summary{cursor:pointer;color:var(--gold)}li{margin:8px 0}.links{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0}@media(max-width:800px){main{padding:20px 12px}.views,.grid{grid-template-columns:1fr}h1{font-size:26px}}
+</style>
+<main><div class="eyebrow">WITCH / EQUIPMENT STUDY 03</div><h1>외골격 — 부품 분할과 착용 리그</h1>
+<p>등 동력부는 등 뒤를 향하고, 어깨 덮개는 팔 바깥쪽을 향하도록 따로 맞췄습니다. 기존 캐릭터의 움직임에 보조 리그를 연결한 첫 착용 시안입니다.</p>
+<div class="stats"><span>33개 강체 부품</span><span>34개 보조 본</span><span>79,242 삼각형</span><span>평상복 / 변신복 · 8개 모션</span></div>
+<div class="controls"><label>의상 <select id="form"><option value="civilian">평상복</option><option value="transformed">변신복</option></select></label><button id="play">일시정지</button><label>속도 <select id="speed"><option value="1">1×</option><option value="0.5">0.5×</option><option value="0.25">0.25×</option></select></label><span class="muted">Godot 실제 렌더 · 기존 모션의 원래 클립 길이</span></div>
+<div class="motions" id="motions"></div>
+<div class="views"><figure><img id="front" src="review/civilian_idle_front/000.jpg" alt="외골격 착용 앞쪽 모션"><figcaption>앞쪽 사선 — 어깨·팔꿈치·손목</figcaption></figure><figure><img id="back" src="review/civilian_idle_back/000.jpg" alt="외골격 착용 뒤쪽 모션"><figcaption>뒤쪽 사선 — 등 동력부와 어깨 연결대</figcaption></figure></div>
+<div class="scrub"><input id="frame" type="range" min="0" max="48" step="1" value="0" aria-label="모션 프레임"><output id="time">0.00 / 2.00초</output></div>
+<p class="note" id="contact"></p>
+<p class="muted">신규 스킬 발동은 아직 연결하지 않았습니다. 이 화면은 장착 리그와 기존 동작의 호환을 보는 검토용입니다. 점프는 포즈, 쓰러짐은 기존 클립 자체를 재생합니다.</p>
+<h2>측면 배치와 실제 표시 크기</h2><div class="grid"><figure><img id="side" src="review/models/civilian_side.jpg" alt="외골격 측면 배치"><figcaption>등 동력부를 뒤에 배치하고, 첫 피팅보다 몸 쪽으로 5.5cm 당겼습니다.</figcaption></figure><figure><img src="inspection/parts_back.png" alt="부품별 색으로 보는 뒷면 구조"><figcaption>부품 식별색 — 실제 황동·청록 재질은 위 모션 화면에서 확인할 수 있습니다.</figcaption></figure></div>
+<p class="muted">1280×800, 선택된 1.75배 카메라 기준. 아래 그림은 CSS 축소 없이 표시되며 좁은 창에서는 가로로 스크롤됩니다.</p><div class="native"><img id="native" src="review/models/civilian_native.jpg" alt="선택된 게임 표시 크기의 착용 모습"></div>
+<h2>부품과 관절</h2><div class="grid"><figure><img src="inspection/parts_exploded.png" alt="외골격 분해도"><figcaption>원본 17개 부품 + 어깨 연결대 14개 + 등 지지대 2개</figcaption></figure><figure><img src="inspection/parts_wire.png" alt="분리된 부품의 삼각형 와이어"><figcaption>원본 78,474개 면과 UV를 보존한 분할. 새 수작업 리토폴로지는 아닙니다.</figcaption></figure></div>
+<p>등·어깨·위팔·팔꿈치·아래팔·손목·무릎·정강이가 독립 부품입니다. 금속은 한 본에 100% 가중치로 묶었으며, 연결대는 길이를 늘리는 대신 7단 부품이 서로 미끄러집니다. 좌우 팔의 굽힘 방향을 고정해 비틀림 중 연결대가 뒤집히던 문제도 고쳤습니다.</p>
+<details open><summary>현재 남은 피팅 작업</summary><p>손목 고리와 소매의 작은 교차가 남고, 팔을 몸 안쪽으로 크게 돌리는 공격·캐스팅에서는 어깨와 케이프가 겹칩니다. 총 __CROSSINGS__ / __POSES__ 자세에서 의상과의 삼각형 교차가 검출됐습니다. 이 수치는 관통 깊이가 아니라 교차가 있는 자세 수입니다.</p><p>의상 전용 커프 여유와 어깨 회전 보정이 다음 피팅 대상입니다. 머리카락·맨몸·지면·부품 사이의 실시간 충돌, 스킬 조립 연출과 최종 경량화는 이번 검증 범위에 포함하지 않습니다.</p></details>
+<details><summary>파일과 검증 범위</summary><ul><li>원본 Tripo v2, 현재 캐릭터의 107개 본과 게임 스크립트는 보존했습니다.</li><li>Blender 저장본·GLB 재반입의 메시/가중치 검사, 원본 면·UV 보존 검사를 통과했습니다. UV 이음 중복과 원본 내부 면 경고는 기록에 남겼습니다.</li><li>400개 장착 자세, 추가 800개 키 샘플, 1,928개 연속 자세를 검사했습니다. 대기·달리기 루프 끝점도 확인했습니다.</li><li>편집용 Blender에는 본체·외골격·헤어가 함께 재생되는 8개 모션 NLA 목록이 있습니다. Space로 재생하고 OUTFIT 컬렉션으로 의상을 전환합니다.</li></ul></details>
+<div class="links"><a href="../../assets/equipment/exoskeleton_v3/exoskeleton_v3_animated.blend">Blender 모션 작업본</a><a href="../../assets/equipment/exoskeleton_v3/README.md">작업·연결 안내</a><a href="equipment_fit.json">의상 교차 기록</a><a href="delivery_manifest.json">검증·파일 기록</a></div>
+</main>
+<script>
+const data=__DATA__;
+const labels={idle:'대기',run:'달리기',attack:'휘두르기',attack_thrust:'찌르기',cast:'캐스팅',hit_react:'경직',spring_jump:'점프',collapse:'쓰러짐'};
+const el=id=>document.getElementById(id);let form='civilian',motion='idle',position=0,playing=true,last=0,shown=-1;
+function sequence(){return data.sequences.find(s=>s.form===form&&s.motion===motion&&s.view==='front')}
+function preload(){for(const view of ['front','back'])for(let n=0;n<49;n++){const img=new Image();img.src=`review/${form}_${motion}_${view}/${String(n).padStart(3,'0')}.jpg`}}
+function draw(force=false){const seq=sequence(),frame=Math.min(48,Math.round(position*seq.fps));if(frame===shown&&!force)return;shown=frame;for(const view of ['front','back'])el(view).src=`review/${form}_${motion}_${view}/${String(frame).padStart(3,'0')}.jpg`;el('frame').value=frame;el('time').textContent=`${(frame/seq.fps).toFixed(2)} / ${(48/seq.fps).toFixed(2)}초`}
+function refresh(){position=0;shown=-1;el('side').src=`review/models/${form}_side.jpg`;el('native').src=`review/models/${form}_native.jpg`;const c=data.contacts[form+'_'+motion];el('contact').textContent=`의상 간섭 기록: ${c.crossings} / ${c.samples}개 검사 자세에 교차가 있습니다. 손목 소매와 큰 회전의 어깨·케이프 부분을 확인해 주세요.`;document.querySelectorAll('[data-motion]').forEach(b=>b.classList.toggle('active',b.dataset.motion===motion));preload();draw(true)}
+for(const [id,label] of Object.entries(labels)){const b=document.createElement('button');b.textContent=label;b.dataset.motion=id;b.onclick=()=>{motion=id;refresh()};el('motions').append(b)}
+el('form').onchange=e=>{form=e.target.value;refresh()};el('play').onclick=()=>{playing=!playing;el('play').textContent=playing?'일시정지':'재생'};
+el('frame').oninput=e=>{playing=false;el('play').textContent='재생';position=Number(e.target.value)/sequence().fps;draw(true)};
+function tick(t){if(last&&playing){position+=(t-last)/1000*Number(el('speed').value);const duration=48/sequence().fps;if(position>duration)position%=duration;draw()}last=t;requestAnimationFrame(tick)}
+refresh();requestAnimationFrame(tick);
+</script></html>'''
+html=html.replace('__DATA__',json.dumps(data,ensure_ascii=False)).replace('__CROSSINGS__',str(fit['poses_with_crossings'])).replace('__POSES__',str(fit['pose_count']))
+(R/'review.html').write_text(html,encoding='utf-8')
+(R/'review_script.js').write_text(re.search(r'<script>([\s\S]*?)</script>',html).group(1),encoding='utf-8')
+expected=[]
+for seq in capture['sequences']:
+ expected.extend(R/'review'/seq['id']/(f'{i:03d}.jpg') for i in range(seq['frames']))
+expected.extend(R/'review/models'/f'{form}_{view}.jpg' for form in ['civilian','transformed'] for view in ['side','native'])
+assert len(expected)==capture['captures']==1572 and all(p.is_file() and p.stat().st_size>1000 for p in expected)
+print('EXO_V3_REVIEW_PACKAGED',len(expected))

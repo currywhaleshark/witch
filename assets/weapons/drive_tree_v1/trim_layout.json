@@ -1,0 +1,21 @@
+{
+  "keys": [
+    "navy",
+    "brass",
+    "steel",
+    "silver",
+    "black",
+    "teal",
+    "core",
+    "rope"
+  ],
+  "columns": 4,
+  "rows": 2,
+  "kind": "reusable planar trim charts; intentional UV reuse",
+  "maps": {
+    "color": 1024,
+    "normal": 1024,
+    "orm": 512,
+    "emission": 256
+  }
+}

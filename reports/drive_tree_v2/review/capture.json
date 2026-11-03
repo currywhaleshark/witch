@@ -1,0 +1,33 @@
+{
+  "captures": 388,
+  "left": "v2",
+  "passed": true,
+  "right": "v1",
+  "sequences": [
+    {
+      "asset": "guillotine",
+      "fps": 24,
+      "frames": 96,
+      "id": "compare_guillotine"
+    },
+    {
+      "asset": "guillotine_saw",
+      "fps": 24,
+      "frames": 96,
+      "id": "compare_guillotine_saw"
+    },
+    {
+      "asset": "guillotine_lock",
+      "fps": 24,
+      "frames": 96,
+      "id": "compare_guillotine_lock"
+    },
+    {
+      "asset": "compound_executor",
+      "fps": 24,
+      "frames": 96,
+      "id": "compare_compound_executor"
+    }
+  ],
+  "target": "One static rag at 0.60 scale for lock-order illustration; not gameplay."
+}

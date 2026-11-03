@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "clips": [
+    {
+      "motion": "idle",
+      "samples": 49,
+      "duration": 2.0,
+      "frame_end": 49.0
+    },
+    {
+      "motion": "run",
+      "samples": 97,
+      "duration": 4.0,
+      "frame_end": 97.0
+    },
+    {
+      "motion": "attack",
+      "samples": 49,
+      "duration": 2.0,
+      "frame_end": 49.0
+    },
+    {
+      "motion": "attack_thrust",
+      "samples": 49,
+      "duration": 2.0,
+      "frame_end": 49.0
+    },
+    {
+      "motion": "cast",
+      "samples": 34,
+      "duration": 1.33333337306976,
+      "frame_end": 33.000000953674245
+    },
+    {
+      "motion": "hit_react",
+      "samples": 13,
+      "duration": 0.5,
+      "frame_end": 13.0
+    },
+    {
+      "motion": "spring_jump",
+      "samples": 49,
+      "duration": 2.0,
+      "frame_end": 49.0
+    },
+    {
+      "motion": "collapse",
+      "samples": 60,
+      "duration": 2.41666674613953,
+      "frame_end": 59.00000190734872
+    }
+  ],
+  "verified_poses": 400,
+  "body_matrix_error": 1.0669231414794922e-05,
+  "exo_matrix_error": 1.233816146850586e-05,
+  "hair_matrix_error": 5.960464477539062e-07,
+  "rebound_reference_meshes": [
+    "REF_Civilian_Outfit_Shoes_v7",
+    "REF_Civilian_Outfit_Socks_v7",
+    "REF_Civilian_SourceOutfit_Cardigan_v11",
+    "REF_Civilian_SourceOutfit_Inner_v11",
+    "REF_Civilian_SourceOutfit_Skirt_v11",
+    "REF_Civilian_SourceOutfit_SkirtLining_v11",
+    "REF_Transformed_TF_blouse_v4",
+    "REF_Transformed_TF_boots_v4",
+    "REF_Transformed_TF_cape_v4",
+    "REF_Transformed_TF_garter_v4",
+    "REF_Transformed_TF_inner_coverage_v4",
+    "REF_Transformed_TF_skirt_v4",
+    "REF_Transformed_TF_sleeve_L_v4",
+    "REF_Transformed_TF_sleeve_R_v4",
+    "REF_Transformed_TF_stockings_v4",
+    "REF_Transformed_TF_tails_v4",
+    "REF_Transformed_TF_under_sleeves_v4",
+    "REF_Transformed_TF_under_torso_v4",
+    "REF_Transformed_TF_waist_v4",
+    "REF_Eyes_Eyes_Iris_v8"
+  ],
+  "fps": 24,
+  "scope": "Editable 24fps previews of existing game motions. No source character actions or rig rests changed."
+}

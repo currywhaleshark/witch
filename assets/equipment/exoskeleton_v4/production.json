@@ -1,0 +1,27 @@
+{
+  "version": "exoskeleton_v4",
+  "status": "fitted review candidate",
+  "requested": "손목 소매랑 케이프 뚫리는 부분부터 더 손봐보자 그리고 다리쪽은 떠있으니 잘 붙여놓고",
+  "source": "assets/equipment/exoskeleton_v3/exoskeleton_v3.blend",
+  "source_lineage": "Tripo v2 derivative; live Blender MCP fittings and authored rigid mechanisms; no new Tripo generation",
+  "tooling": {
+    "blender": "5.1.1",
+    "mcp_addon": "1.8 protocol 15",
+    "engine": "Godot 4.6.2"
+  },
+  "geometry": {
+    "parts": 55,
+    "bones": 56,
+    "triangles": 79049,
+    "retained_source_faces": 73673,
+    "archived_replaced_faces": 4801,
+    "new_connector_faces": 5376,
+    "max_equipment_influences": 1,
+    "materials": 3,
+    "original_images": 3,
+    "corrective_keys": 405
+  },
+  "current_review": "reports/exoskeleton_v4/review.html",
+  "user_art_approval": false,
+  "active_game_skill_integrated": false
+}

@@ -1,0 +1,267 @@
+{
+  "passed": true,
+  "meshes": {
+    "REF_Civilian_SourceOutfit_Cardigan_v11": {
+      "original": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11: 7249 verts with >4 bone influences",
+          "z-fighting: V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11 (11 overlapping coplanar tri pairs)",
+          "floating/detached part in V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11 (25 verts at [-0.079, -0.11, 1.084])",
+          "floating/detached part in V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11 (6 verts at [-0.072, -0.12, 1.124])",
+          "floating/detached part in V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11 (7 verts at [-0.039, 0.097, 1.19])",
+          "floating/detached part in V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11 (4 verts at [0.036, 0.097, 1.189])",
+          "floating/detached part in V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11 (7 verts at [0.196, 0.025, 1.323])"
+        ],
+        "warnings": [
+          "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11: duplicate verts=1608 loose verts=0",
+          "3 parts fully enclosed, not touching (eyes/internals?): ['V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11', 'V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11', 'V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11']",
+          "asset lowest point z=0.8127 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.8127,
+        "zfighting": [
+          {
+            "where": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "tri_pairs": 11
+          }
+        ],
+        "floating": [
+          {
+            "object": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 25,
+            "center": [
+              -0.079,
+              -0.11,
+              1.084
+            ]
+          },
+          {
+            "object": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 6,
+            "center": [
+              -0.072,
+              -0.12,
+              1.124
+            ]
+          },
+          {
+            "object": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 7,
+            "center": [
+              -0.039,
+              0.097,
+              1.19
+            ]
+          },
+          {
+            "object": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 4,
+            "center": [
+              0.036,
+              0.097,
+              1.189
+            ]
+          },
+          {
+            "object": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 7,
+            "center": [
+              0.196,
+              0.025,
+              1.323
+            ]
+          }
+        ],
+        "back_to_back": [],
+        "enclosed": [
+          {
+            "object": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 5,
+            "center": [
+              0.075,
+              -0.119,
+              1.149
+            ]
+          },
+          {
+            "object": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 7,
+            "center": [
+              0.097,
+              -0.124,
+              0.911
+            ]
+          },
+          {
+            "object": "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 4,
+            "center": [
+              0.138,
+              -0.11,
+              0.841
+            ]
+          }
+        ],
+        "objects": {
+          "V3_Original_REF_Civilian_SourceOutfit_Cardigan_v11": {
+            "verts": 14858,
+            "faces": 17965,
+            "tris": 17965,
+            "ngons": 0,
+            "boundary_edges": 11429,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 1608,
+            "islands": 175,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 7249
+          }
+        }
+      },
+      "fitted": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "REF_Civilian_SourceOutfit_Cardigan_v11: 7249 verts with >4 bone influences",
+          "z-fighting: REF_Civilian_SourceOutfit_Cardigan_v11 (11 overlapping coplanar tri pairs)",
+          "floating/detached part in REF_Civilian_SourceOutfit_Cardigan_v11 (25 verts at [-0.079, -0.11, 1.084])",
+          "floating/detached part in REF_Civilian_SourceOutfit_Cardigan_v11 (6 verts at [-0.072, -0.12, 1.124])",
+          "floating/detached part in REF_Civilian_SourceOutfit_Cardigan_v11 (7 verts at [-0.039, 0.097, 1.19])",
+          "floating/detached part in REF_Civilian_SourceOutfit_Cardigan_v11 (4 verts at [0.036, 0.097, 1.189])",
+          "floating/detached part in REF_Civilian_SourceOutfit_Cardigan_v11 (7 verts at [0.196, 0.025, 1.323])"
+        ],
+        "warnings": [
+          "REF_Civilian_SourceOutfit_Cardigan_v11: duplicate verts=1619 loose verts=0",
+          "3 parts fully enclosed, not touching (eyes/internals?): ['REF_Civilian_SourceOutfit_Cardigan_v11', 'REF_Civilian_SourceOutfit_Cardigan_v11', 'REF_Civilian_SourceOutfit_Cardigan_v11']",
+          "asset lowest point z=0.8127 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.8127,
+        "zfighting": [
+          {
+            "where": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "tri_pairs": 11
+          }
+        ],
+        "floating": [
+          {
+            "object": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 25,
+            "center": [
+              -0.079,
+              -0.11,
+              1.084
+            ]
+          },
+          {
+            "object": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 6,
+            "center": [
+              -0.072,
+              -0.12,
+              1.124
+            ]
+          },
+          {
+            "object": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 7,
+            "center": [
+              -0.039,
+              0.097,
+              1.19
+            ]
+          },
+          {
+            "object": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 4,
+            "center": [
+              0.036,
+              0.097,
+              1.189
+            ]
+          },
+          {
+            "object": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 7,
+            "center": [
+              0.196,
+              0.025,
+              1.323
+            ]
+          }
+        ],
+        "back_to_back": [],
+        "enclosed": [
+          {
+            "object": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 5,
+            "center": [
+              0.075,
+              -0.119,
+              1.149
+            ]
+          },
+          {
+            "object": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 7,
+            "center": [
+              0.097,
+              -0.124,
+              0.911
+            ]
+          },
+          {
+            "object": "REF_Civilian_SourceOutfit_Cardigan_v11",
+            "island_verts": 4,
+            "center": [
+              0.138,
+              -0.11,
+              0.841
+            ]
+          }
+        ],
+        "objects": {
+          "REF_Civilian_SourceOutfit_Cardigan_v11": {
+            "verts": 14858,
+            "faces": 17965,
+            "tris": 17965,
+            "ngons": 0,
+            "boundary_edges": 11429,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 1619,
+            "islands": 175,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "unweighted_verts": 0,
+            "verts_over_4_influences": 7249
+          }
+        }
+      },
+      "introduced_errors": [],
+      "topology_unchanged": true,
+      "uv_unchanged": true
+    }
+  },
+  "scope": "Four fitted source garments compared with immutable source copies; inherited geometry warnings remain. Original UVs are compared exactly rather than rasterized. Canonical export skeleton/binary preservation is checked separately."
+}

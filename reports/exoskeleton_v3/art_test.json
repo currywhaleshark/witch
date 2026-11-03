@@ -1,0 +1,11 @@
+{
+  "bridge_length_range_m": [
+    0.0777692496776581,
+    0.437346458435059
+  ],
+  "checks": 28005,
+  "failures": [],
+  "max_elbow_gap_m": 0.00000069829076210226,
+  "passed": true,
+  "poses": 400
+}

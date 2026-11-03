@@ -1,0 +1,359 @@
+{
+  "captures": 1516,
+  "equipment_pose_samples": 208,
+  "passed": true,
+  "scope": "Prepared-asset motions and actual character clips; no new active skills.",
+  "sequences": [
+    {
+      "asset": "guillotine",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_guillotine_base",
+      "variant": "base"
+    },
+    {
+      "asset": "guillotine_saw",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_guillotine_saw_base",
+      "variant": "base"
+    },
+    {
+      "asset": "guillotine_lock",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_guillotine_lock_base",
+      "variant": "base"
+    },
+    {
+      "asset": "restraint_winch",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_restraint_winch_single",
+      "variant": "single"
+    },
+    {
+      "asset": "restraint_winch",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_restraint_winch_pull",
+      "variant": "pull"
+    },
+    {
+      "asset": "restraint_winch",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_restraint_winch_bind",
+      "variant": "bind"
+    },
+    {
+      "asset": "hydraulic_press",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_hydraulic_press_base",
+      "variant": "base"
+    },
+    {
+      "asset": "compound_executor",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_compound_executor_base",
+      "variant": "base"
+    },
+    {
+      "asset": "broad_cutter",
+      "fps": 24,
+      "frames": 82,
+      "id": "demo_broad_cutter_base",
+      "variant": "base"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 24,
+      "frames": 82,
+      "id": "shock_frame_civilian_assembly",
+      "motion": "assembly"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_civilian_idle",
+      "motion": "idle"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_civilian_run",
+      "motion": "run"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_civilian_attack",
+      "motion": "attack"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_civilian_attack_thrust",
+      "motion": "attack_thrust"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_civilian_cast",
+      "motion": "cast"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_civilian_hit_react",
+      "motion": "hit_react"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_civilian_spring_jump",
+      "motion": "spring_jump"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_civilian_collapse",
+      "motion": "collapse"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 24,
+      "frames": 82,
+      "id": "shock_frame_transformed_assembly",
+      "motion": "assembly"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_transformed_idle",
+      "motion": "idle"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_transformed_run",
+      "motion": "run"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_transformed_attack",
+      "motion": "attack"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_transformed_attack_thrust",
+      "motion": "attack_thrust"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_transformed_cast",
+      "motion": "cast"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_transformed_hit_react",
+      "motion": "hit_react"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_transformed_spring_jump",
+      "motion": "spring_jump"
+    },
+    {
+      "asset": "shock_frame",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "shock_frame_transformed_collapse",
+      "motion": "collapse"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 24,
+      "frames": 82,
+      "id": "exoskeleton_civilian_assembly",
+      "motion": "assembly"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_civilian_idle",
+      "motion": "idle"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_civilian_run",
+      "motion": "run"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_civilian_attack",
+      "motion": "attack"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_civilian_attack_thrust",
+      "motion": "attack_thrust"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_civilian_cast",
+      "motion": "cast"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_civilian_hit_react",
+      "motion": "hit_react"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_civilian_spring_jump",
+      "motion": "spring_jump"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "civilian",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_civilian_collapse",
+      "motion": "collapse"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 24,
+      "frames": 82,
+      "id": "exoskeleton_transformed_assembly",
+      "motion": "assembly"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_transformed_idle",
+      "motion": "idle"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_transformed_run",
+      "motion": "run"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_transformed_attack",
+      "motion": "attack"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_transformed_attack_thrust",
+      "motion": "attack_thrust"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_transformed_cast",
+      "motion": "cast"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_transformed_hit_react",
+      "motion": "hit_react"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_transformed_spring_jump",
+      "motion": "spring_jump"
+    },
+    {
+      "asset": "exoskeleton",
+      "form": "transformed",
+      "fps": 12,
+      "frames": 13,
+      "id": "exoskeleton_transformed_collapse",
+      "motion": "collapse"
+    }
+  ]
+}

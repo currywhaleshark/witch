@@ -1,0 +1,3973 @@
+{
+  "pose_count": 400,
+  "poses_with_crossings": 297,
+  "maximum_by_part": {
+    "ExoV3_forearm_L": 384,
+    "ExoV3_forearm_R": 1131,
+    "ExoV3_wrist_L": 561,
+    "ExoV3_wrist_R": 433,
+    "ExoV3_bridge_L_3": 46,
+    "ExoV3_bridge_L_4": 48,
+    "ExoV3_bridge_L_6": 43,
+    "ExoV3_shoulder_L": 3426,
+    "ExoV3_upper_L": 1681,
+    "ExoV3_bridge_R_3": 43,
+    "ExoV3_bridge_R_4": 30,
+    "ExoV3_elbow_L": 298,
+    "ExoV3_bridge_L_5": 47,
+    "ExoV3_bridge_R_5": 28,
+    "ExoV3_shin_L": 148,
+    "ExoV3_bridge_L_2": 31,
+    "ExoV3_shin_R": 117,
+    "ExoV3_bridge_R_2": 35,
+    "ExoV3_bridge_R_1": 11,
+    "ExoV3_elbow_R": 369,
+    "ExoV3_bridge_L_1": 11,
+    "ExoV3_shoulder_R": 148
+  },
+  "poses": [
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 10,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 12,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 58,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 11,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 59,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 11,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 67,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 14,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 5,
+        "ExoV3_forearm_R": 12,
+        "ExoV3_wrist_L": 65,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 5,
+        "ExoV3_forearm_R": 3,
+        "ExoV3_wrist_L": 64,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 5,
+        "ExoV3_forearm_R": 12,
+        "ExoV3_wrist_L": 64,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 5,
+        "ExoV3_forearm_R": 14,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 61,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 11,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 69,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 12,
+        "ExoV3_forearm_R": 22,
+        "ExoV3_wrist_L": 64,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 13,
+        "ExoV3_forearm_R": 25,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 13,
+        "ExoV3_forearm_R": 25,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 13,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 64,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 11,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 67,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 14,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 3,
+        "ExoV3_wrist_L": 61,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 5,
+        "ExoV3_forearm_R": 3,
+        "ExoV3_wrist_L": 64,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 3,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 3,
+        "ExoV3_wrist_L": 61,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 11,
+        "ExoV3_forearm_R": 3,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 67,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 63,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 64,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 58,
+        "ExoV3_wrist_L": 22,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 73,
+        "ExoV3_forearm_R": 58,
+        "ExoV3_wrist_L": 20,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 74,
+        "ExoV3_forearm_R": 58,
+        "ExoV3_wrist_L": 18,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 74,
+        "ExoV3_forearm_R": 58,
+        "ExoV3_wrist_L": 17,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 75,
+        "ExoV3_forearm_R": 58,
+        "ExoV3_wrist_L": 17,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 75,
+        "ExoV3_forearm_R": 58,
+        "ExoV3_wrist_L": 17,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 75,
+        "ExoV3_forearm_R": 57,
+        "ExoV3_wrist_L": 17,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 75,
+        "ExoV3_forearm_R": 57,
+        "ExoV3_wrist_L": 17,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 75,
+        "ExoV3_forearm_R": 57,
+        "ExoV3_wrist_L": 17,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 75,
+        "ExoV3_forearm_R": 57,
+        "ExoV3_wrist_L": 17,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 74,
+        "ExoV3_forearm_R": 57,
+        "ExoV3_wrist_L": 19,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 73,
+        "ExoV3_forearm_R": 57,
+        "ExoV3_wrist_L": 21,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 57,
+        "ExoV3_wrist_L": 22,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 58,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 59,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 64,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 64,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 63,
+        "ExoV3_wrist_L": 24,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 63,
+        "ExoV3_wrist_L": 24,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 66,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 67,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 67,
+        "ExoV3_wrist_L": 23,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 34,
+        "ExoV3_wrist_L": 50,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 42,
+        "ExoV3_wrist_L": 39
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 38,
+        "ExoV3_wrist_L": 34
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_wrist_L": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.208333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.291666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_wrist_L": 56
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.458333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 21,
+        "ExoV3_bridge_L_6": 24,
+        "ExoV3_shoulder_L": 514,
+        "ExoV3_upper_L": 21
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_R_3": 11,
+        "ExoV3_bridge_R_4": 12,
+        "ExoV3_elbow_L": 136,
+        "ExoV3_forearm_L": 199,
+        "ExoV3_upper_L": 302
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_bridge_R_3": 23,
+        "ExoV3_bridge_R_4": 27,
+        "ExoV3_bridge_R_5": 8,
+        "ExoV3_elbow_L": 139,
+        "ExoV3_forearm_L": 213,
+        "ExoV3_upper_L": 294,
+        "ExoV3_wrist_L": 290
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_R_3": 24,
+        "ExoV3_bridge_R_4": 21,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_elbow_L": 87,
+        "ExoV3_forearm_L": 172,
+        "ExoV3_upper_L": 223,
+        "ExoV3_wrist_L": 435
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_R_3": 24,
+        "ExoV3_bridge_R_4": 17,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_elbow_L": 50,
+        "ExoV3_forearm_L": 100,
+        "ExoV3_upper_L": 209,
+        "ExoV3_wrist_L": 127,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_6": 24,
+        "ExoV3_bridge_R_3": 24,
+        "ExoV3_bridge_R_4": 17,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_forearm_L": 204,
+        "ExoV3_forearm_R": 95,
+        "ExoV3_shoulder_L": 469,
+        "ExoV3_upper_L": 16,
+        "ExoV3_wrist_L": 40,
+        "ExoV3_wrist_R": 7
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 14,
+        "ExoV3_bridge_L_4": 12,
+        "ExoV3_bridge_L_5": 11,
+        "ExoV3_bridge_R_3": 15,
+        "ExoV3_bridge_R_4": 20,
+        "ExoV3_bridge_R_5": 15
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_R_3": 19,
+        "ExoV3_bridge_R_4": 26,
+        "ExoV3_bridge_R_5": 22,
+        "ExoV3_forearm_L": 40,
+        "ExoV3_wrist_L": 41
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_R_3": 23,
+        "ExoV3_bridge_R_4": 20,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_forearm_L": 53,
+        "ExoV3_wrist_L": 37
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_bridge_R_3": 20,
+        "ExoV3_bridge_R_4": 18,
+        "ExoV3_bridge_R_5": 5,
+        "ExoV3_forearm_L": 39,
+        "ExoV3_wrist_L": 53,
+        "ExoV3_wrist_R": 19
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 3,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 36
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 29,
+        "ExoV3_forearm_R": 14,
+        "ExoV3_wrist_L": 54,
+        "ExoV3_wrist_R": 32
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 72,
+        "ExoV3_forearm_R": 63,
+        "ExoV3_wrist_L": 20,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 74,
+        "ExoV3_forearm_R": 66,
+        "ExoV3_wrist_L": 16,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 77,
+        "ExoV3_forearm_R": 72,
+        "ExoV3_wrist_L": 15,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 20,
+        "ExoV3_bridge_L_4": 20,
+        "ExoV3_forearm_L": 86,
+        "ExoV3_forearm_R": 76,
+        "ExoV3_wrist_L": 16,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_R_4": 3,
+        "ExoV3_forearm_L": 71,
+        "ExoV3_forearm_R": 75,
+        "ExoV3_wrist_L": 70,
+        "ExoV3_wrist_R": 13
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_R_3": 14,
+        "ExoV3_bridge_R_4": 14,
+        "ExoV3_forearm_L": 43,
+        "ExoV3_forearm_R": 85,
+        "ExoV3_wrist_L": 257,
+        "ExoV3_wrist_R": 14
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_R_3": 20,
+        "ExoV3_bridge_R_4": 13,
+        "ExoV3_forearm_L": 43,
+        "ExoV3_forearm_R": 89,
+        "ExoV3_wrist_L": 233,
+        "ExoV3_wrist_R": 14
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_R_3": 20,
+        "ExoV3_bridge_R_4": 16,
+        "ExoV3_forearm_L": 43,
+        "ExoV3_forearm_R": 88,
+        "ExoV3_wrist_L": 203,
+        "ExoV3_wrist_R": 14
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 22,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_bridge_R_3": 22,
+        "ExoV3_bridge_R_4": 27,
+        "ExoV3_forearm_L": 43,
+        "ExoV3_forearm_R": 85,
+        "ExoV3_wrist_L": 177,
+        "ExoV3_wrist_R": 15
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 23,
+        "ExoV3_forearm_L": 153,
+        "ExoV3_forearm_R": 85,
+        "ExoV3_wrist_L": 98,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_forearm_L": 194,
+        "ExoV3_forearm_R": 85,
+        "ExoV3_shin_L": 96,
+        "ExoV3_wrist_L": 285,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_elbow_L": 69,
+        "ExoV3_forearm_L": 253,
+        "ExoV3_forearm_R": 86,
+        "ExoV3_shin_L": 95,
+        "ExoV3_wrist_L": 17,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_elbow_L": 57,
+        "ExoV3_forearm_L": 230,
+        "ExoV3_forearm_R": 86,
+        "ExoV3_shin_L": 94,
+        "ExoV3_wrist_L": 16,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_elbow_L": 23,
+        "ExoV3_forearm_L": 212,
+        "ExoV3_forearm_R": 84,
+        "ExoV3_shin_L": 95,
+        "ExoV3_wrist_L": 16,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 299,
+        "ExoV3_forearm_R": 84,
+        "ExoV3_shin_L": 96,
+        "ExoV3_wrist_L": 16,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 8,
+        "ExoV3_bridge_L_4": 5,
+        "ExoV3_forearm_L": 303,
+        "ExoV3_forearm_R": 84,
+        "ExoV3_shin_L": 102,
+        "ExoV3_wrist_L": 96,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 20,
+        "ExoV3_bridge_L_4": 17,
+        "ExoV3_forearm_L": 187,
+        "ExoV3_forearm_R": 85,
+        "ExoV3_shin_L": 82,
+        "ExoV3_wrist_L": 206,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 22,
+        "ExoV3_bridge_L_4": 19,
+        "ExoV3_forearm_L": 160,
+        "ExoV3_forearm_R": 80,
+        "ExoV3_shin_L": 59,
+        "ExoV3_wrist_L": 61,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 5,
+        "ExoV3_bridge_L_4": 2,
+        "ExoV3_forearm_L": 128,
+        "ExoV3_forearm_R": 78,
+        "ExoV3_wrist_L": 175,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 78,
+        "ExoV3_forearm_R": 72,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 7
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 86,
+        "ExoV3_forearm_R": 72,
+        "ExoV3_wrist_L": 11,
+        "ExoV3_wrist_R": 6
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 75,
+        "ExoV3_forearm_R": 70,
+        "ExoV3_wrist_L": 18,
+        "ExoV3_wrist_R": 6
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 74,
+        "ExoV3_forearm_R": 63,
+        "ExoV3_wrist_L": 19,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 17,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 32,
+        "ExoV3_wrist_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 31,
+        "ExoV3_forearm_R": 19,
+        "ExoV3_wrist_L": 35,
+        "ExoV3_wrist_R": 20
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 6
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_forearm_R": 50,
+        "ExoV3_wrist_L": 37,
+        "ExoV3_wrist_R": 12
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 21,
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_forearm_L": 1,
+        "ExoV3_forearm_R": 96,
+        "ExoV3_wrist_L": 259,
+        "ExoV3_wrist_R": 24
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 24,
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_5": 22,
+        "ExoV3_bridge_L_6": 24,
+        "ExoV3_forearm_R": 78,
+        "ExoV3_shoulder_L": 87,
+        "ExoV3_wrist_L": 84,
+        "ExoV3_wrist_R": 10
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 24,
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_bridge_L_6": 26,
+        "ExoV3_forearm_R": 57,
+        "ExoV3_shoulder_L": 56,
+        "ExoV3_wrist_L": 52,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 21,
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_forearm_R": 55,
+        "ExoV3_wrist_L": 48,
+        "ExoV3_wrist_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 17,
+        "ExoV3_bridge_L_4": 8,
+        "ExoV3_forearm_R": 3,
+        "ExoV3_wrist_L": 35,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_4": 2,
+        "ExoV3_wrist_L": 52
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 20
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_R": 1,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_R": 8,
+        "ExoV3_wrist_R": 11
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_wrist_R": 3
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_R": 37,
+        "ExoV3_wrist_L": 16,
+        "ExoV3_wrist_R": 12
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 13,
+        "ExoV3_forearm_R": 76,
+        "ExoV3_wrist_L": 67,
+        "ExoV3_wrist_R": 14
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_forearm_R": 61,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_4": 2,
+        "ExoV3_forearm_R": 71,
+        "ExoV3_wrist_R": 23
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_R": 53,
+        "ExoV3_wrist_L": 28,
+        "ExoV3_wrist_R": 14
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 36,
+        "ExoV3_forearm_R": 25,
+        "ExoV3_wrist_L": 35,
+        "ExoV3_wrist_R": 13
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 31,
+        "ExoV3_forearm_R": 25,
+        "ExoV3_wrist_L": 35,
+        "ExoV3_wrist_R": 23
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 17,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 32,
+        "ExoV3_wrist_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 24,
+        "ExoV3_forearm_R": 22,
+        "ExoV3_wrist_L": 52,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 31,
+        "ExoV3_forearm_R": 31,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 33,
+        "ExoV3_forearm_R": 38,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 25
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 30,
+        "ExoV3_forearm_R": 46,
+        "ExoV3_wrist_L": 54,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 30,
+        "ExoV3_forearm_R": 44,
+        "ExoV3_wrist_L": 54,
+        "ExoV3_wrist_R": 25
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 30,
+        "ExoV3_forearm_R": 42,
+        "ExoV3_wrist_L": 54,
+        "ExoV3_wrist_R": 25
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 30,
+        "ExoV3_forearm_R": 42,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 25
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 30,
+        "ExoV3_forearm_R": 40,
+        "ExoV3_wrist_L": 59,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 30,
+        "ExoV3_forearm_R": 38,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 25
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 30,
+        "ExoV3_forearm_R": 38,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 25
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 29,
+        "ExoV3_forearm_R": 33,
+        "ExoV3_wrist_L": 59,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 33,
+        "ExoV3_forearm_R": 29,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 25
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 30,
+        "ExoV3_forearm_R": 25,
+        "ExoV3_wrist_L": 54,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 29,
+        "ExoV3_forearm_R": 25,
+        "ExoV3_wrist_L": 53,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 28,
+        "ExoV3_forearm_R": 22,
+        "ExoV3_wrist_L": 53,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 19,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 52,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 19,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 53,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 13,
+        "ExoV3_forearm_R": 21,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 13,
+        "ExoV3_forearm_R": 18,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 11,
+        "ExoV3_forearm_R": 18,
+        "ExoV3_wrist_L": 59,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 10,
+        "ExoV3_forearm_R": 14,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 10,
+        "ExoV3_forearm_R": 14,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_shin_L": 65,
+        "ExoV3_shin_R": 64,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_shin_L": 61,
+        "ExoV3_shin_R": 68,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_shin_L": 55,
+        "ExoV3_shin_R": 69,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 8,
+        "ExoV3_forearm_R": 13,
+        "ExoV3_wrist_L": 62,
+        "ExoV3_wrist_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 18,
+        "ExoV3_wrist_L": 42,
+        "ExoV3_wrist_R": 24
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 17,
+        "ExoV3_wrist_L": 64
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 13,
+        "ExoV3_forearm_R": 20,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 59
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_forearm_R": 56,
+        "ExoV3_wrist_L": 60,
+        "ExoV3_wrist_R": 47
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_wrist_L": 58,
+        "ExoV3_wrist_R": 60
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_wrist_L": 55,
+        "ExoV3_wrist_R": 61
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_wrist_L": 55,
+        "ExoV3_wrist_R": 57
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 57
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 47
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_wrist_L": 55
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_R": 58,
+        "ExoV3_wrist_L": 77,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_forearm_R": 45,
+        "ExoV3_wrist_L": 59,
+        "ExoV3_wrist_R": 7
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_forearm_R": 46,
+        "ExoV3_wrist_L": 55,
+        "ExoV3_wrist_R": 9
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_forearm_R": 41,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_forearm_R": 43,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_forearm_R": 44,
+        "ExoV3_wrist_L": 55,
+        "ExoV3_wrist_R": 6
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_forearm_R": 49,
+        "ExoV3_wrist_L": 57,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 1,
+        "ExoV3_forearm_R": 49,
+        "ExoV3_wrist_L": 55,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_forearm_R": 49,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_forearm_R": 49,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_forearm_R": 49,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_forearm_R": 49,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_forearm_R": 49,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 2,
+        "ExoV3_forearm_R": 49,
+        "ExoV3_wrist_L": 56,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.125,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.208333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.291666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.375,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.458333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.541666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.625,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.708333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.791666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.875,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.958333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58,
+        "ExoV3_shin_L": 24
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57,
+        "ExoV3_shin_L": 17
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58,
+        "ExoV3_shin_R": 38
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58,
+        "ExoV3_shin_R": 41
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58,
+        "ExoV3_shin_R": 34
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 59
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58,
+        "ExoV3_shin_R": 38
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58,
+        "ExoV3_shin_R": 18
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57,
+        "ExoV3_shin_L": 21
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57,
+        "ExoV3_shin_L": 18
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 57
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.125,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_shin_L": 40
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_shin_L": 40
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.291666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 11,
+        "ExoV3_bridge_L_3": 10,
+        "ExoV3_bridge_L_4": 8
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 8,
+        "ExoV3_bridge_L_4": 5,
+        "ExoV3_shin_R": 41
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 33,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_L_6": 24,
+        "ExoV3_bridge_R_2": 26,
+        "ExoV3_bridge_R_3": 42,
+        "ExoV3_bridge_R_4": 21,
+        "ExoV3_shin_R": 41,
+        "ExoV3_shoulder_L": 1671,
+        "ExoV3_upper_L": 39
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 28,
+        "ExoV3_bridge_L_4": 34,
+        "ExoV3_bridge_L_5": 43,
+        "ExoV3_bridge_L_6": 36,
+        "ExoV3_bridge_R_1": 8,
+        "ExoV3_bridge_R_2": 31,
+        "ExoV3_bridge_R_3": 30,
+        "ExoV3_bridge_R_4": 27,
+        "ExoV3_bridge_R_5": 28,
+        "ExoV3_elbow_L": 32,
+        "ExoV3_elbow_R": 13,
+        "ExoV3_forearm_L": 280,
+        "ExoV3_shin_R": 62,
+        "ExoV3_shoulder_L": 3060,
+        "ExoV3_upper_L": 1506,
+        "ExoV3_wrist_L": 561
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_4": 28,
+        "ExoV3_bridge_L_5": 25,
+        "ExoV3_bridge_L_6": 32,
+        "ExoV3_bridge_R_1": 11,
+        "ExoV3_bridge_R_2": 29,
+        "ExoV3_bridge_R_3": 26,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_elbow_L": 251,
+        "ExoV3_elbow_R": 198,
+        "ExoV3_forearm_L": 384,
+        "ExoV3_forearm_R": 951,
+        "ExoV3_shin_R": 62,
+        "ExoV3_shoulder_L": 2894,
+        "ExoV3_upper_L": 1681,
+        "ExoV3_wrist_L": 458,
+        "ExoV3_wrist_R": 330
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 31,
+        "ExoV3_bridge_L_5": 35,
+        "ExoV3_bridge_L_6": 35,
+        "ExoV3_bridge_R_1": 11,
+        "ExoV3_bridge_R_2": 24,
+        "ExoV3_bridge_R_3": 31,
+        "ExoV3_bridge_R_4": 18,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_elbow_L": 298,
+        "ExoV3_elbow_R": 369,
+        "ExoV3_forearm_L": 260,
+        "ExoV3_forearm_R": 1062,
+        "ExoV3_shin_R": 44,
+        "ExoV3_shoulder_L": 3117,
+        "ExoV3_upper_L": 1596,
+        "ExoV3_wrist_L": 257,
+        "ExoV3_wrist_R": 294
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 30,
+        "ExoV3_bridge_L_4": 31,
+        "ExoV3_bridge_L_5": 35,
+        "ExoV3_bridge_L_6": 36,
+        "ExoV3_bridge_R_1": 8,
+        "ExoV3_bridge_R_2": 24,
+        "ExoV3_bridge_R_3": 28,
+        "ExoV3_bridge_R_4": 21,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_elbow_L": 257,
+        "ExoV3_elbow_R": 274,
+        "ExoV3_forearm_L": 267,
+        "ExoV3_forearm_R": 1131,
+        "ExoV3_shin_R": 40,
+        "ExoV3_shoulder_L": 3426,
+        "ExoV3_upper_L": 1372,
+        "ExoV3_wrist_L": 300,
+        "ExoV3_wrist_R": 433
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_3": 36,
+        "ExoV3_bridge_L_4": 48,
+        "ExoV3_bridge_L_5": 47,
+        "ExoV3_bridge_L_6": 43,
+        "ExoV3_bridge_R_1": 5,
+        "ExoV3_bridge_R_2": 27,
+        "ExoV3_bridge_R_3": 24,
+        "ExoV3_bridge_R_4": 8,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_elbow_R": 201,
+        "ExoV3_forearm_L": 162,
+        "ExoV3_forearm_R": 881,
+        "ExoV3_shin_R": 8,
+        "ExoV3_shoulder_L": 3079,
+        "ExoV3_upper_L": 52,
+        "ExoV3_wrist_L": 546,
+        "ExoV3_wrist_R": 379
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 5,
+        "ExoV3_bridge_L_3": 17,
+        "ExoV3_bridge_L_4": 19,
+        "ExoV3_bridge_R_2": 35,
+        "ExoV3_bridge_R_3": 28,
+        "ExoV3_bridge_R_4": 15,
+        "ExoV3_bridge_R_5": 24
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_R_2": 32,
+        "ExoV3_bridge_R_3": 34,
+        "ExoV3_bridge_R_4": 21,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_shin_L": 33
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_R_2": 31,
+        "ExoV3_bridge_R_3": 35,
+        "ExoV3_bridge_R_4": 21,
+        "ExoV3_bridge_R_5": 24,
+        "ExoV3_shin_L": 33
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_bridge_R_2": 17,
+        "ExoV3_bridge_R_3": 25,
+        "ExoV3_bridge_R_4": 22,
+        "ExoV3_bridge_R_5": 17
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.958333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 8,
+        "ExoV3_bridge_L_3": 4,
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 20,
+        "ExoV3_bridge_L_3": 28,
+        "ExoV3_bridge_L_4": 22,
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 29,
+        "ExoV3_bridge_L_3": 46,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_R_2": 14,
+        "ExoV3_bridge_R_3": 10,
+        "ExoV3_bridge_R_4": 7,
+        "ExoV3_forearm_L": 56
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_1": 5,
+        "ExoV3_bridge_L_2": 24,
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 26,
+        "ExoV3_bridge_L_5": 29,
+        "ExoV3_bridge_R_2": 26,
+        "ExoV3_bridge_R_3": 29,
+        "ExoV3_bridge_R_4": 27,
+        "ExoV3_forearm_L": 55
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_bridge_L_1": 11,
+        "ExoV3_bridge_L_2": 26,
+        "ExoV3_bridge_L_3": 32,
+        "ExoV3_bridge_L_4": 31,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_bridge_R_2": 30,
+        "ExoV3_bridge_R_3": 42,
+        "ExoV3_bridge_R_4": 30,
+        "ExoV3_forearm_L": 50,
+        "ExoV3_wrist_R": 39
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_1": 8,
+        "ExoV3_bridge_L_2": 27,
+        "ExoV3_bridge_L_3": 33,
+        "ExoV3_bridge_L_4": 34,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_bridge_R_2": 27,
+        "ExoV3_bridge_R_3": 42,
+        "ExoV3_bridge_R_4": 29,
+        "ExoV3_forearm_L": 44,
+        "ExoV3_wrist_R": 80
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_1": 11,
+        "ExoV3_bridge_L_2": 26,
+        "ExoV3_bridge_L_3": 33,
+        "ExoV3_bridge_L_4": 33,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_bridge_R_2": 27,
+        "ExoV3_bridge_R_3": 43,
+        "ExoV3_bridge_R_4": 29,
+        "ExoV3_bridge_R_5": 5,
+        "ExoV3_forearm_L": 48,
+        "ExoV3_forearm_R": 1,
+        "ExoV3_wrist_R": 167
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_bridge_L_1": 11,
+        "ExoV3_bridge_L_2": 30,
+        "ExoV3_bridge_L_3": 31,
+        "ExoV3_bridge_L_4": 27,
+        "ExoV3_bridge_L_5": 26,
+        "ExoV3_bridge_R_2": 29,
+        "ExoV3_bridge_R_3": 40,
+        "ExoV3_bridge_R_4": 29,
+        "ExoV3_bridge_R_5": 17,
+        "ExoV3_forearm_L": 44,
+        "ExoV3_forearm_R": 161,
+        "ExoV3_wrist_R": 301
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_1": 8,
+        "ExoV3_bridge_L_2": 24,
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 31,
+        "ExoV3_bridge_L_5": 28,
+        "ExoV3_bridge_R_2": 14,
+        "ExoV3_bridge_R_3": 15,
+        "ExoV3_bridge_R_4": 11,
+        "ExoV3_forearm_L": 42,
+        "ExoV3_shin_L": 58,
+        "ExoV3_shin_R": 63
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 24,
+        "ExoV3_bridge_L_3": 28,
+        "ExoV3_bridge_L_4": 29,
+        "ExoV3_bridge_L_5": 29,
+        "ExoV3_bridge_R_3": 4,
+        "ExoV3_forearm_L": 40,
+        "ExoV3_shin_L": 105,
+        "ExoV3_wrist_L": 172
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 17,
+        "ExoV3_bridge_L_3": 23,
+        "ExoV3_bridge_L_4": 19,
+        "ExoV3_forearm_L": 29,
+        "ExoV3_shin_L": 148
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 17,
+        "ExoV3_bridge_L_3": 21,
+        "ExoV3_bridge_L_4": 17,
+        "ExoV3_forearm_L": 29,
+        "ExoV3_shin_L": 128
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 17,
+        "ExoV3_bridge_L_3": 18,
+        "ExoV3_bridge_L_4": 17,
+        "ExoV3_forearm_L": 29,
+        "ExoV3_shin_L": 121
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 17,
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_4": 20,
+        "ExoV3_forearm_L": 29,
+        "ExoV3_shin_L": 121
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 28,
+        "ExoV3_bridge_L_3": 41,
+        "ExoV3_bridge_L_4": 31,
+        "ExoV3_forearm_L": 34,
+        "ExoV3_shin_L": 105
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 29,
+        "ExoV3_bridge_L_3": 46,
+        "ExoV3_bridge_L_4": 26,
+        "ExoV3_bridge_L_5": 5,
+        "ExoV3_forearm_L": 42,
+        "ExoV3_shin_L": 100,
+        "ExoV3_wrist_L": 113
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 29,
+        "ExoV3_bridge_L_3": 45,
+        "ExoV3_bridge_L_4": 24,
+        "ExoV3_bridge_L_5": 5,
+        "ExoV3_forearm_L": 44,
+        "ExoV3_shin_L": 79
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 29,
+        "ExoV3_bridge_L_3": 39,
+        "ExoV3_bridge_L_4": 32,
+        "ExoV3_forearm_L": 50,
+        "ExoV3_shin_L": 33
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 18,
+        "ExoV3_bridge_L_3": 22,
+        "ExoV3_bridge_L_4": 16,
+        "ExoV3_forearm_L": 55
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 8,
+        "ExoV3_bridge_L_3": 8,
+        "ExoV3_forearm_L": 56
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 58
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.125,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 28,
+        "ExoV3_bridge_L_3": 39,
+        "ExoV3_bridge_L_4": 23,
+        "ExoV3_bridge_L_5": 29
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 13,
+        "ExoV3_bridge_L_3": 24,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_wrist_L": 81
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 17,
+        "ExoV3_bridge_L_3": 27,
+        "ExoV3_bridge_L_4": 20,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_bridge_L_6": 17,
+        "ExoV3_shoulder_L": 64
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 17,
+        "ExoV3_bridge_L_3": 28,
+        "ExoV3_bridge_L_4": 22,
+        "ExoV3_bridge_L_5": 24,
+        "ExoV3_bridge_L_6": 18,
+        "ExoV3_shoulder_L": 66
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 29,
+        "ExoV3_bridge_L_3": 29,
+        "ExoV3_bridge_L_5": 24
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 31,
+        "ExoV3_bridge_L_3": 41,
+        "ExoV3_bridge_L_4": 23,
+        "ExoV3_wrist_L": 59
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 14,
+        "ExoV3_bridge_L_3": 13,
+        "ExoV3_bridge_L_4": 3,
+        "ExoV3_wrist_L": 62
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.458333333333333,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 11,
+        "ExoV3_bridge_L_3": 7,
+        "ExoV3_wrist_L": 72,
+        "ExoV3_wrist_R": 4
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 8,
+        "ExoV3_bridge_L_3": 6,
+        "ExoV3_wrist_L": 97
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 123
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 105
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 105
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 91
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 56
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 41
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_bridge_L_2": 17,
+        "ExoV3_bridge_L_3": 15,
+        "ExoV3_bridge_L_4": 11
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.875,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.958333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.125,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.208333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.291666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.375,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.458333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.541666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.625,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.708333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.791666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.875,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.958333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_shin_R": 13
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.208333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.291666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.375,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.458333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.541666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.625,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.708333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_shin_L": 104,
+        "ExoV3_shin_R": 109
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_shin_L": 100,
+        "ExoV3_shin_R": 117
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_shin_L": 87,
+        "ExoV3_shin_R": 112
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.958333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 11
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.125,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 71
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "ExoV3_shin_R": 29,
+        "ExoV3_wrist_L": 25
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.208333333333333,
+      "crossing_faces": {
+        "ExoV3_shin_L": 23,
+        "ExoV3_shin_R": 13,
+        "ExoV3_wrist_L": 29
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossing_faces": {
+        "ExoV3_shin_L": 54,
+        "ExoV3_wrist_L": 45
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.291666666666667,
+      "crossing_faces": {
+        "ExoV3_forearm_R": 3,
+        "ExoV3_shin_L": 31,
+        "ExoV3_wrist_L": 64,
+        "ExoV3_wrist_R": 39
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "ExoV3_forearm_L": 25,
+        "ExoV3_wrist_L": 383
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.375,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 37
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 23
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.458333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossing_faces": {
+        "ExoV3_shoulder_R": 48,
+        "ExoV3_wrist_R": 21
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.541666666666667,
+      "crossing_faces": {
+        "ExoV3_wrist_L": 49,
+        "ExoV3_wrist_R": 5
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 59,
+        "ExoV3_wrist_L": 24,
+        "ExoV3_wrist_R": 17
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.625,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 52,
+        "ExoV3_shoulder_R": 148,
+        "ExoV3_wrist_L": 9,
+        "ExoV3_wrist_R": 44
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 40,
+        "ExoV3_shoulder_R": 86,
+        "ExoV3_wrist_L": 8,
+        "ExoV3_wrist_R": 36
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.708333333333333,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 37,
+        "ExoV3_shoulder_R": 54,
+        "ExoV3_wrist_L": 29,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 28,
+        "ExoV3_shoulder_R": 50,
+        "ExoV3_wrist_L": 58,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.791666666666667,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 26,
+        "ExoV3_shoulder_R": 49,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 26,
+        "ExoV3_shoulder_R": 49,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.875,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 26,
+        "ExoV3_shoulder_R": 49,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 26,
+        "ExoV3_shoulder_R": 49,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.958333333333333,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 26,
+        "ExoV3_shoulder_R": 49,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 26
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossing_faces": {
+        "ExoV3_shoulder_L": 26,
+        "ExoV3_shoulder_R": 49,
+        "ExoV3_wrist_L": 63,
+        "ExoV3_wrist_R": 26
+      }
+    }
+  ],
+  "scope": "Strict non-coplanar garment/equipment triangle crossings. Actual engine poses and skinned GLB. Excludes hair, bare body, swept collision and arbitrary poses."
+}

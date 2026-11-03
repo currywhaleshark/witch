@@ -1,0 +1,281 @@
+{
+  "id": "broad_cutter",
+  "parts": [
+    {
+      "name": "broad_cutter__core",
+      "role": "core",
+      "group": "body",
+      "delay": 0.42,
+      "surface": "core",
+      "origin": [
+        0.0,
+        0.78,
+        -0.055
+      ],
+      "triangles": 204,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__drive_link_1",
+      "role": "drive_link_1",
+      "group": "link_1",
+      "delay": 0.24,
+      "surface": "brass",
+      "origin": [
+        0.109956,
+        0.880058,
+        -0.09
+      ],
+      "triangles": 220,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__drive_link_neg1",
+      "role": "drive_link_-1",
+      "group": "link_-1",
+      "delay": 0.24,
+      "surface": "brass",
+      "origin": [
+        -0.109956,
+        0.880058,
+        -0.09
+      ],
+      "triangles": 220,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__forged_jaw_1",
+      "role": "forged_jaw_1",
+      "group": "jaw_1",
+      "delay": 0.3,
+      "surface": "steel",
+      "origin": [
+        0.15795,
+        1.369679,
+        -0.0
+      ],
+      "triangles": 160,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__forged_jaw_neg1",
+      "role": "forged_jaw_-1",
+      "group": "jaw_-1",
+      "delay": 0.3,
+      "surface": "steel",
+      "origin": [
+        -0.15795,
+        1.369679,
+        -0.0
+      ],
+      "triangles": 160,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__honed_edge_1",
+      "role": "honed_edge_1",
+      "group": "jaw_1",
+      "delay": 0.37,
+      "surface": "silver",
+      "origin": [
+        0.062591,
+        1.469826,
+        -0.044
+      ],
+      "triangles": 120,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__honed_edge_neg1",
+      "role": "honed_edge_-1",
+      "group": "jaw_-1",
+      "delay": 0.37,
+      "surface": "silver",
+      "origin": [
+        -0.062591,
+        1.469826,
+        -0.044
+      ],
+      "triangles": 120,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__jaw_axle_1",
+      "role": "jaw_axle_1",
+      "group": "body",
+      "delay": 0.25,
+      "surface": "brass",
+      "origin": [
+        0.105,
+        0.94,
+        -0.0
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__jaw_axle_neg1",
+      "role": "jaw_axle_-1",
+      "group": "body",
+      "delay": 0.25,
+      "surface": "brass",
+      "origin": [
+        -0.105,
+        0.94,
+        -0.0
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__power_collar",
+      "role": "power_collar",
+      "group": "body",
+      "delay": 0.15,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        0.68,
+        -0.0
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "broad_cutter__saddle",
+      "role": "saddle",
+      "group": "body",
+      "delay": 0.08,
+      "surface": "navy",
+      "origin": [
+        0.0,
+        0.76,
+        0.03
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    }
+  ],
+  "sockets": {
+    "Socket_jaw_-1": {
+      "position": [
+        -0.105,
+        0.94,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    },
+    "Socket_jaw_pin_-1": {
+      "position": [
+        -0.18,
+        0.99,
+        -0.09
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_jaw_1": {
+      "position": [
+        0.105,
+        0.94,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    },
+    "Socket_jaw_pin_1": {
+      "position": [
+        0.18,
+        0.99,
+        -0.09
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_mount": {
+      "position": [
+        0.0,
+        0.65,
+        -0.0
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ]
+    },
+    "Socket_cut": {
+      "position": [
+        0.0,
+        1.5,
+        -0.0
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ]
+    },
+    "Socket_slider": {
+      "position": [
+        0.0,
+        0.77,
+        -0.09
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    }
+  },
+  "units": "metres",
+  "runtime_status": "prepared_asset",
+  "triangles": 1876,
+  "part_count": 11,
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.3099,
+      0.615,
+      -0.115
+    ],
+    "max": [
+      0.3099,
+      1.858658,
+      0.105
+    ]
+  },
+  "dimensions": [
+    0.6198,
+    1.24366,
+    0.22
+  ],
+  "materials": [
+    "M_DriveV1_Surface",
+    "M_DriveV1_Glow"
+  ],
+  "texture_set": "drive_tree_v1 shared trim"
+}

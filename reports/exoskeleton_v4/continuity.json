@@ -1,0 +1,2821 @@
+{
+  "checks": 580,
+  "clips": [
+    {
+      "frames": 241,
+      "loop_seam": {
+        "back_link_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "back_link_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "back_power": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "bridge_L_0": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_L_1": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_L_2": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_L_3": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_L_4": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_L_5": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_L_6": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_R_0": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_R_1": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_R_2": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_R_3": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_R_4": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_R_5": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "bridge_R_6": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "elbow_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "elbow_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "forearm_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "forearm_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "knee_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "knee_R": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "mount_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "mount_R": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "shin_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "shin_R": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "shoulder_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "shoulder_R": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_R": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_dist_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_dist_R": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_prox_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_prox_R": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_slide_L_0": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_slide_L_1": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_slide_L_2": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_slide_L_3": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_slide_L_4": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_slide_L_5": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_slide_L_6": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_slide_L_7": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "upper_slide_R_0": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_slide_R_1": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_slide_R_2": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_slide_R_3": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_slide_R_4": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_slide_R_5": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_slide_R_6": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "upper_slide_R_7": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "wrist_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "wrist_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        }
+      },
+      "maximum_steps": {
+        "back_link_L": {
+          "degrees": 0.11869406690113,
+          "phase": 0.2,
+          "travel_m": 0.00040766317397356
+        },
+        "back_link_R": {
+          "degrees": 0.11869406690113,
+          "phase": 0.2,
+          "travel_m": 0.00040766317397356
+        },
+        "back_power": {
+          "degrees": 0.11869406690113,
+          "phase": 0.2,
+          "travel_m": 0.00040766317397356
+        },
+        "bridge_L_0": {
+          "degrees": 0.125114538102434,
+          "phase": 0.725,
+          "travel_m": 0.000527804892044514
+        },
+        "bridge_L_1": {
+          "degrees": 0.125114538102434,
+          "phase": 0.725,
+          "travel_m": 0.000498457462526858
+        },
+        "bridge_L_2": {
+          "degrees": 0.125114538102434,
+          "phase": 0.725,
+          "travel_m": 0.000472937652375549
+        },
+        "bridge_L_3": {
+          "degrees": 0.125114538102434,
+          "phase": 0.725,
+          "travel_m": 0.000451494794106111
+        },
+        "bridge_L_4": {
+          "degrees": 0.125114538102434,
+          "phase": 0.725,
+          "travel_m": 0.000435029593063518
+        },
+        "bridge_L_5": {
+          "degrees": 0.125114538102434,
+          "phase": 0.725,
+          "travel_m": 0.000423982593929395
+        },
+        "bridge_L_6": {
+          "degrees": 0.125114538102434,
+          "phase": 0.725,
+          "travel_m": 0.00041892976150848
+        },
+        "bridge_R_0": {
+          "degrees": 0.11869406690113,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000431324617238715
+        },
+        "bridge_R_1": {
+          "degrees": 0.11869406690113,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000390874280128628
+        },
+        "bridge_R_2": {
+          "degrees": 0.11869406690113,
+          "phase": 0.191666666666667,
+          "travel_m": 0.00036022491985932
+        },
+        "bridge_R_3": {
+          "degrees": 0.11869406690113,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000342202198226005
+        },
+        "bridge_R_4": {
+          "degrees": 0.11869406690113,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000338681624270976
+        },
+        "bridge_R_5": {
+          "degrees": 0.11869406690113,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000350147049175575
+        },
+        "bridge_R_6": {
+          "degrees": 0.11869406690113,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000375240517314523
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 0.068528041664785,
+          "phase": 0.1,
+          "travel_m": 0.000112054556666408
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 0.068528041664785,
+          "phase": 0.366666666666667,
+          "travel_m": 0.000123213612823747
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 0.068528041664785,
+          "phase": 0.1,
+          "travel_m": 0.000202120034373365
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 0.068528041664785,
+          "phase": 0.366666666666667,
+          "travel_m": 0.000222244474571198
+        },
+        "elbow_L": {
+          "degrees": 0.125114538102434,
+          "phase": 0.479166666666667,
+          "travel_m": 0.000344978063367307
+        },
+        "elbow_R": {
+          "degrees": 0.111905832701702,
+          "phase": 0.2,
+          "travel_m": 0.000527059484738857
+        },
+        "forearm_L": {
+          "degrees": 0.125114538102434,
+          "phase": 0.479166666666667,
+          "travel_m": 0.000344978063367307
+        },
+        "forearm_R": {
+          "degrees": 0.111905832701702,
+          "phase": 0.2,
+          "travel_m": 0.000527059484738857
+        },
+        "knee_L": {
+          "degrees": 0.0559529096807445,
+          "phase": 0.366666666666667,
+          "travel_m": 0.00027727399719879
+        },
+        "knee_R": {
+          "degrees": 0.0559529096807445,
+          "phase": 0.0708333333333333,
+          "travel_m": 0.000264054106082767
+        },
+        "mount_L": {
+          "degrees": 0.111905832701702,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000345797481713817
+        },
+        "mount_R": {
+          "degrees": 0.111905832701702,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000314811244606972
+        },
+        "shin_L": {
+          "degrees": 0.0559529096807445,
+          "phase": 0.366666666666667,
+          "travel_m": 0.00027727399719879
+        },
+        "shin_R": {
+          "degrees": 0.0559529096807445,
+          "phase": 0.0708333333333333,
+          "travel_m": 0.000264054106082767
+        },
+        "shoulder_L": {
+          "degrees": 0.125114538102434,
+          "phase": 0.191666666666667,
+          "travel_m": 0.000445774028776214
+        },
+        "shoulder_R": {
+          "degrees": 0.0969132939991531,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.000278519582934678
+        },
+        "upper_L": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000453771586762741
+        },
+        "upper_R": {
+          "degrees": 0.0791293690406109,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.000278537860140204
+        },
+        "upper_dist_L": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000406309234676883
+        },
+        "upper_dist_R": {
+          "degrees": 0.0791293690406109,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.000280039355857298
+        },
+        "upper_prox_L": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000453771586762741
+        },
+        "upper_prox_R": {
+          "degrees": 0.0791293690406109,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.000278537860140204
+        },
+        "upper_slide_L_0": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000386372063076124
+        },
+        "upper_slide_L_1": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000353621988324448
+        },
+        "upper_slide_L_2": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000323728774674237
+        },
+        "upper_slide_L_3": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000297530670650303
+        },
+        "upper_slide_L_4": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000276117323664948
+        },
+        "upper_slide_L_5": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000260670814896002
+        },
+        "upper_slide_L_6": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.000252286554314196
+        },
+        "upper_slide_L_7": {
+          "degrees": 0.125114538102434,
+          "phase": 0.2125,
+          "travel_m": 0.00025161451776512
+        },
+        "upper_slide_R_0": {
+          "degrees": 0.0884693258953794,
+          "phase": 0.725,
+          "travel_m": 0.000342304963851348
+        },
+        "upper_slide_R_1": {
+          "degrees": 0.0884693258953794,
+          "phase": 0.725,
+          "travel_m": 0.000342702551279217
+        },
+        "upper_slide_R_2": {
+          "degrees": 0.0884693258953794,
+          "phase": 0.725,
+          "travel_m": 0.000345700478646904
+        },
+        "upper_slide_R_3": {
+          "degrees": 0.0884693258953794,
+          "phase": 0.725,
+          "travel_m": 0.000351287133526057
+        },
+        "upper_slide_R_4": {
+          "degrees": 0.0884693258953794,
+          "phase": 0.725,
+          "travel_m": 0.000359331199433655
+        },
+        "upper_slide_R_5": {
+          "degrees": 0.0884693258953794,
+          "phase": 0.725,
+          "travel_m": 0.000369777699233964
+        },
+        "upper_slide_R_6": {
+          "degrees": 0.0884693258953794,
+          "phase": 0.725,
+          "travel_m": 0.000382253434509039
+        },
+        "upper_slide_R_7": {
+          "degrees": 0.0884693258953794,
+          "phase": 0.725,
+          "travel_m": 0.000396739604184404
+        },
+        "wrist_L": {
+          "degrees": 0.125114538102434,
+          "phase": 0.479166666666667,
+          "travel_m": 0.000344978063367307
+        },
+        "wrist_R": {
+          "degrees": 0.111905832701702,
+          "phase": 0.2,
+          "travel_m": 0.000527059484738857
+        }
+      },
+      "minimum_bend_cross_length": 0.956712007522583,
+      "motion": "idle"
+    },
+    {
+      "frames": 241,
+      "loop_seam": {
+        "back_link_L": {
+          "degrees": 0.0,
+          "travel_m": 0.000000119209289550781
+        },
+        "back_link_R": {
+          "degrees": 0.0,
+          "travel_m": 0.000000119209289550781
+        },
+        "back_power": {
+          "degrees": 0.0,
+          "travel_m": 0.000000119209289550781
+        },
+        "bridge_L_0": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000149011611938477
+        },
+        "bridge_L_1": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000149011611938477
+        },
+        "bridge_L_2": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000210734238947907
+        },
+        "bridge_L_3": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000149011611938477
+        },
+        "bridge_L_4": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000210734238947907
+        },
+        "bridge_L_5": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000210734238947907
+        },
+        "bridge_L_6": {
+          "degrees": 0.0,
+          "travel_m": 0.000000123778335137104
+        },
+        "bridge_R_0": {
+          "degrees": 0.0,
+          "travel_m": 0.000000119209289550781
+        },
+        "bridge_R_1": {
+          "degrees": 0.0,
+          "travel_m": 0.000000108033418655396
+        },
+        "bridge_R_2": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000968575477600098
+        },
+        "bridge_R_3": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000745058059692383
+        },
+        "bridge_R_4": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000759813119088903
+        },
+        "bridge_R_5": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000614390600617298
+        },
+        "bridge_R_6": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000333200098623365
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.0000000298023223876953
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "elbow_L": {
+          "degrees": 0.0,
+          "travel_m": 0.00000011922384146601
+        },
+        "elbow_R": {
+          "degrees": 0.0,
+          "travel_m": 0.000000066640019724673
+        },
+        "forearm_L": {
+          "degrees": 0.0,
+          "travel_m": 0.00000011922384146601
+        },
+        "forearm_R": {
+          "degrees": 0.0,
+          "travel_m": 0.000000066640019724673
+        },
+        "knee_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "knee_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "mount_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000149011611938477
+        },
+        "mount_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000298023223876953
+        },
+        "shin_L": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "shin_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0
+        },
+        "shoulder_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.000000123778335137104
+        },
+        "shoulder_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000333200098623365
+        },
+        "upper_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.000000123778335137104
+        },
+        "upper_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000333200098623365
+        },
+        "upper_dist_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.000000120137002568299
+        },
+        "upper_dist_R": {
+          "degrees": 0.0,
+          "travel_m": 0.00000012287812012346
+        },
+        "upper_prox_L": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.000000123778335137104
+        },
+        "upper_prox_R": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000333200098623365
+        },
+        "upper_slide_L_0": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.00000012287812012346
+        },
+        "upper_slide_L_1": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.00000012287812012346
+        },
+        "upper_slide_L_2": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.000000120137002568299
+        },
+        "upper_slide_L_3": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.00000012287812012346
+        },
+        "upper_slide_L_4": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.000000123778335137104
+        },
+        "upper_slide_L_5": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.000000120137002568299
+        },
+        "upper_slide_L_6": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.000000123778335137104
+        },
+        "upper_slide_L_7": {
+          "degrees": 0.0395646811852521,
+          "travel_m": 0.00000012287812012346
+        },
+        "upper_slide_R_0": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000298023223876953
+        },
+        "upper_slide_R_1": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000298023223876953
+        },
+        "upper_slide_R_2": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000333200098623365
+        },
+        "upper_slide_R_3": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000298023223876953
+        },
+        "upper_slide_R_4": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000333200098623365
+        },
+        "upper_slide_R_5": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000614390600617298
+        },
+        "upper_slide_R_6": {
+          "degrees": 0.0,
+          "travel_m": 0.000000066640019724673
+        },
+        "upper_slide_R_7": {
+          "degrees": 0.0,
+          "travel_m": 0.0000000421468477895814
+        },
+        "wrist_L": {
+          "degrees": 0.0,
+          "travel_m": 0.00000011922384146601
+        },
+        "wrist_R": {
+          "degrees": 0.0,
+          "travel_m": 0.000000066640019724673
+        }
+      },
+      "maximum_steps": {
+        "back_link_L": {
+          "degrees": 1.74674862963595,
+          "phase": 0.604166666666667,
+          "travel_m": 0.0064808065071702
+        },
+        "back_link_R": {
+          "degrees": 1.74674862963595,
+          "phase": 0.604166666666667,
+          "travel_m": 0.0064808065071702
+        },
+        "back_power": {
+          "degrees": 1.74674862963595,
+          "phase": 0.604166666666667,
+          "travel_m": 0.0064808065071702
+        },
+        "bridge_L_0": {
+          "degrees": 1.79624050052698,
+          "phase": 0.5875,
+          "travel_m": 0.00837541650980711
+        },
+        "bridge_L_1": {
+          "degrees": 1.79624050052698,
+          "phase": 0.5875,
+          "travel_m": 0.00795923918485641
+        },
+        "bridge_L_2": {
+          "degrees": 1.79624050052698,
+          "phase": 0.5875,
+          "travel_m": 0.00774242868646979
+        },
+        "bridge_L_3": {
+          "degrees": 1.79624050052698,
+          "phase": 0.5875,
+          "travel_m": 0.00774172367528081
+        },
+        "bridge_L_4": {
+          "degrees": 1.79624050052698,
+          "phase": 0.5875,
+          "travel_m": 0.00795724429190159
+        },
+        "bridge_L_5": {
+          "degrees": 1.79624050052698,
+          "phase": 0.5875,
+          "travel_m": 0.00837229378521442
+        },
+        "bridge_L_6": {
+          "degrees": 1.79624050052698,
+          "phase": 0.5875,
+          "travel_m": 0.00895917229354382
+        },
+        "bridge_R_0": {
+          "degrees": 1.7008836959159,
+          "phase": 0.625,
+          "travel_m": 0.00796893704682589
+        },
+        "bridge_R_1": {
+          "degrees": 1.7008836959159,
+          "phase": 0.625,
+          "travel_m": 0.00747775891795754
+        },
+        "bridge_R_2": {
+          "degrees": 1.7008836959159,
+          "phase": 0.625,
+          "travel_m": 0.00719414511695504
+        },
+        "bridge_R_3": {
+          "degrees": 1.7008836959159,
+          "phase": 0.625,
+          "travel_m": 0.0071428450755775
+        },
+        "bridge_R_4": {
+          "degrees": 1.7008836959159,
+          "phase": 0.625,
+          "travel_m": 0.00732874497771263
+        },
+        "bridge_R_5": {
+          "degrees": 1.7008836959159,
+          "phase": 0.625,
+          "travel_m": 0.00773474806919694
+        },
+        "bridge_R_6": {
+          "degrees": 1.7008836959159,
+          "phase": 0.625,
+          "travel_m": 0.00832871906459332
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 2.0850648679779,
+          "phase": 0.0708333333333333,
+          "travel_m": 0.00761540327221155
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 2.29063669996577,
+          "phase": 0.141666666666667,
+          "travel_m": 0.0162244141101837
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 2.0850648679779,
+          "phase": 0.0708333333333333,
+          "travel_m": 0.00369385443627834
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 2.29063669996577,
+          "phase": 0.141666666666667,
+          "travel_m": 0.0167010389268398
+        },
+        "elbow_L": {
+          "degrees": 1.47617997045429,
+          "phase": 0.620833333333333,
+          "travel_m": 0.008128572255373
+        },
+        "elbow_R": {
+          "degrees": 1.34987707281777,
+          "phase": 0.591666666666667,
+          "travel_m": 0.00847311038523912
+        },
+        "forearm_L": {
+          "degrees": 1.47617997045429,
+          "phase": 0.620833333333333,
+          "travel_m": 0.008128572255373
+        },
+        "forearm_R": {
+          "degrees": 1.34987707281777,
+          "phase": 0.591666666666667,
+          "travel_m": 0.00847311038523912
+        },
+        "knee_L": {
+          "degrees": 2.0850648679779,
+          "phase": 0.0708333333333333,
+          "travel_m": 0.00691504636779428
+        },
+        "knee_R": {
+          "degrees": 2.29029497706386,
+          "phase": 0.141666666666667,
+          "travel_m": 0.0219808872789145
+        },
+        "mount_L": {
+          "degrees": 1.74630039847167,
+          "phase": 0.6,
+          "travel_m": 0.00513430498540401
+        },
+        "mount_R": {
+          "degrees": 1.74630039847167,
+          "phase": 0.6,
+          "travel_m": 0.00484340684488416
+        },
+        "shin_L": {
+          "degrees": 2.0850648679779,
+          "phase": 0.0708333333333333,
+          "travel_m": 0.00691504636779428
+        },
+        "shin_R": {
+          "degrees": 2.29029497706386,
+          "phase": 0.141666666666667,
+          "travel_m": 0.0219808872789145
+        },
+        "shoulder_L": {
+          "degrees": 1.7494354553007,
+          "phase": 0.625,
+          "travel_m": 0.0104567147791386
+        },
+        "shoulder_R": {
+          "degrees": 1.69304167825337,
+          "phase": 0.5875,
+          "travel_m": 0.00988391973078251
+        },
+        "upper_L": {
+          "degrees": 1.28206898245029,
+          "phase": 0.625,
+          "travel_m": 0.0104567147791386
+        },
+        "upper_R": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00988391973078251
+        },
+        "upper_dist_L": {
+          "degrees": 1.28206898245029,
+          "phase": 0.625,
+          "travel_m": 0.00974751822650433
+        },
+        "upper_dist_R": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00872705318033695
+        },
+        "upper_prox_L": {
+          "degrees": 1.28206898245029,
+          "phase": 0.625,
+          "travel_m": 0.0104567147791386
+        },
+        "upper_prox_R": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00988391973078251
+        },
+        "upper_slide_L_0": {
+          "degrees": 1.28145832084981,
+          "phase": 0.625,
+          "travel_m": 0.0101166311651468
+        },
+        "upper_slide_L_1": {
+          "degrees": 1.28145832084981,
+          "phase": 0.625,
+          "travel_m": 0.00986835919320583
+        },
+        "upper_slide_L_2": {
+          "degrees": 1.28145832084981,
+          "phase": 0.625,
+          "travel_m": 0.00962312426418066
+        },
+        "upper_slide_L_3": {
+          "degrees": 1.28145832084981,
+          "phase": 0.625,
+          "travel_m": 0.00938134174793959
+        },
+        "upper_slide_L_4": {
+          "degrees": 1.28145832084981,
+          "phase": 0.625,
+          "travel_m": 0.00914319511502981
+        },
+        "upper_slide_L_5": {
+          "degrees": 1.28145832084981,
+          "phase": 0.625,
+          "travel_m": 0.00890892744064331
+        },
+        "upper_slide_L_6": {
+          "degrees": 1.28145832084981,
+          "phase": 0.625,
+          "travel_m": 0.00867890939116478
+        },
+        "upper_slide_L_7": {
+          "degrees": 1.28145832084981,
+          "phase": 0.625,
+          "travel_m": 0.00845351349562407
+        },
+        "upper_slide_R_0": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00961583573371172
+        },
+        "upper_slide_R_1": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00935786403715611
+        },
+        "upper_slide_R_2": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00911743007600307
+        },
+        "upper_slide_R_3": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00889595132321119
+        },
+        "upper_slide_R_4": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00869484711438417
+        },
+        "upper_slide_R_5": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.0085156075656414
+        },
+        "upper_slide_R_6": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00835964549332857
+        },
+        "upper_slide_R_7": {
+          "degrees": 1.23098770519506,
+          "phase": 0.5875,
+          "travel_m": 0.00822822656482458
+        },
+        "wrist_L": {
+          "degrees": 1.47617997045429,
+          "phase": 0.620833333333333,
+          "travel_m": 0.008128572255373
+        },
+        "wrist_R": {
+          "degrees": 1.34987707281777,
+          "phase": 0.591666666666667,
+          "travel_m": 0.00847311038523912
+        }
+      },
+      "minimum_bend_cross_length": 0.860459506511688,
+      "motion": "run"
+    },
+    {
+      "frames": 241,
+      "loop_seam": {
+
+      },
+      "maximum_steps": {
+        "back_link_L": {
+          "degrees": 3.17841465644368,
+          "phase": 0.395833333333333,
+          "travel_m": 0.00926345214247704
+        },
+        "back_link_R": {
+          "degrees": 3.17841465644368,
+          "phase": 0.395833333333333,
+          "travel_m": 0.00926345214247704
+        },
+        "back_power": {
+          "degrees": 3.17841465644368,
+          "phase": 0.395833333333333,
+          "travel_m": 0.00926345214247704
+        },
+        "bridge_L_0": {
+          "degrees": 3.71478194144538,
+          "phase": 0.358333333333333,
+          "travel_m": 0.00962909683585167
+        },
+        "bridge_L_1": {
+          "degrees": 3.71478194144538,
+          "phase": 0.358333333333333,
+          "travel_m": 0.00900489371269941
+        },
+        "bridge_L_2": {
+          "degrees": 3.71478194144538,
+          "phase": 0.358333333333333,
+          "travel_m": 0.00946580432355404
+        },
+        "bridge_L_3": {
+          "degrees": 3.71478194144538,
+          "phase": 0.358333333333333,
+          "travel_m": 0.0108748050406575
+        },
+        "bridge_L_4": {
+          "degrees": 3.71478194144538,
+          "phase": 0.358333333333333,
+          "travel_m": 0.012925298884511
+        },
+        "bridge_L_5": {
+          "degrees": 3.71478194144538,
+          "phase": 0.358333333333333,
+          "travel_m": 0.015362748876214
+        },
+        "bridge_L_6": {
+          "degrees": 3.71478194144538,
+          "phase": 0.358333333333333,
+          "travel_m": 0.0180307775735855
+        },
+        "bridge_R_0": {
+          "degrees": 3.68918196554935,
+          "phase": 0.375,
+          "travel_m": 0.0104459710419178
+        },
+        "bridge_R_1": {
+          "degrees": 3.68918196554935,
+          "phase": 0.375,
+          "travel_m": 0.0101063493639231
+        },
+        "bridge_R_2": {
+          "degrees": 3.68918196554935,
+          "phase": 0.375,
+          "travel_m": 0.0104990703985095
+        },
+        "bridge_R_3": {
+          "degrees": 3.68918196554935,
+          "phase": 0.375,
+          "travel_m": 0.0115495920181274
+        },
+        "bridge_R_4": {
+          "degrees": 3.68918196554935,
+          "phase": 0.375,
+          "travel_m": 0.0131007069721818
+        },
+        "bridge_R_5": {
+          "degrees": 3.68918196554935,
+          "phase": 0.375,
+          "travel_m": 0.0149978268891573
+        },
+        "bridge_R_6": {
+          "degrees": 3.68918196554935,
+          "phase": 0.375,
+          "travel_m": 0.0171263962984085
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 0.875810077669876,
+          "phase": 0.7125,
+          "travel_m": 0.0017654012190178
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 0.338041269867005,
+          "phase": 0.775,
+          "travel_m": 0.000917261117137969
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 0.875810077669876,
+          "phase": 0.7125,
+          "travel_m": 0.00114226271398366
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 0.338041269867005,
+          "phase": 0.775,
+          "travel_m": 0.0016525947721675
+        },
+        "elbow_L": {
+          "degrees": 11.8593317342004,
+          "phase": 0.733333333333333,
+          "travel_m": 0.0417036265134811
+        },
+        "elbow_R": {
+          "degrees": 5.53335780088853,
+          "phase": 0.4,
+          "travel_m": 0.0298661589622498
+        },
+        "forearm_L": {
+          "degrees": 11.8593317342004,
+          "phase": 0.733333333333333,
+          "travel_m": 0.0417036265134811
+        },
+        "forearm_R": {
+          "degrees": 5.53335780088853,
+          "phase": 0.4,
+          "travel_m": 0.0298661589622498
+        },
+        "knee_L": {
+          "degrees": 0.874915909857987,
+          "phase": 0.7125,
+          "travel_m": 0.00171695125754923
+        },
+        "knee_R": {
+          "degrees": 0.338041269867005,
+          "phase": 0.775,
+          "travel_m": 0.00218910188414156
+        },
+        "mount_L": {
+          "degrees": 3.17841465644368,
+          "phase": 0.395833333333333,
+          "travel_m": 0.00594498030841351
+        },
+        "mount_R": {
+          "degrees": 3.17841465644368,
+          "phase": 0.395833333333333,
+          "travel_m": 0.00773904426023364
+        },
+        "shin_L": {
+          "degrees": 0.874915909857987,
+          "phase": 0.7125,
+          "travel_m": 0.00171695125754923
+        },
+        "shin_R": {
+          "degrees": 0.338041269867005,
+          "phase": 0.775,
+          "travel_m": 0.00218910188414156
+        },
+        "shoulder_L": {
+          "degrees": 4.76238483039771,
+          "phase": 0.375,
+          "travel_m": 0.0204507801681757
+        },
+        "shoulder_R": {
+          "degrees": 3.77729823603168,
+          "phase": 0.779166666666667,
+          "travel_m": 0.018029635772109
+        },
+        "upper_L": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0123017532750964
+        },
+        "upper_R": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0184564925730228
+        },
+        "upper_dist_L": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0196481626480818
+        },
+        "upper_dist_R": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0178116802126169
+        },
+        "upper_prox_L": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0123017532750964
+        },
+        "upper_prox_R": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0184564925730228
+        },
+        "upper_slide_L_0": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0150027433410287
+        },
+        "upper_slide_L_1": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0172134898602962
+        },
+        "upper_slide_L_2": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0194260776042938
+        },
+        "upper_slide_L_3": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0216399896889925
+        },
+        "upper_slide_L_4": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0238548051565886
+        },
+        "upper_slide_L_5": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.026070361956954
+        },
+        "upper_slide_L_6": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.0282864067703485
+        },
+        "upper_slide_L_7": {
+          "degrees": 12.1110173749262,
+          "phase": 0.725,
+          "travel_m": 0.030502887442708
+        },
+        "upper_slide_R_0": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.020388301461935
+        },
+        "upper_slide_R_1": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0211716946214437
+        },
+        "upper_slide_R_2": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0219755861908197
+        },
+        "upper_slide_R_3": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0227978341281414
+        },
+        "upper_slide_R_4": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0236365422606468
+        },
+        "upper_slide_R_5": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0244898982346058
+        },
+        "upper_slide_R_6": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0253565832972527
+        },
+        "upper_slide_R_7": {
+          "degrees": 6.14458844150521,
+          "phase": 0.4,
+          "travel_m": 0.0262352060526609
+        },
+        "wrist_L": {
+          "degrees": 11.8593317342004,
+          "phase": 0.733333333333333,
+          "travel_m": 0.0417036265134811
+        },
+        "wrist_R": {
+          "degrees": 5.53335780088853,
+          "phase": 0.4,
+          "travel_m": 0.0298661589622498
+        }
+      },
+      "minimum_bend_cross_length": 0.438241511583328,
+      "motion": "attack"
+    },
+    {
+      "frames": 241,
+      "loop_seam": {
+
+      },
+      "maximum_steps": {
+        "back_link_L": {
+          "degrees": 2.01867884433996,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0135288946330547
+        },
+        "back_link_R": {
+          "degrees": 2.01867884433996,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0135288946330547
+        },
+        "back_power": {
+          "degrees": 2.01867884433996,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0135288946330547
+        },
+        "bridge_L_0": {
+          "degrees": 2.45877632053762,
+          "phase": 0.4375,
+          "travel_m": 0.0179493520408869
+        },
+        "bridge_L_1": {
+          "degrees": 2.45877632053762,
+          "phase": 0.4375,
+          "travel_m": 0.0184453781694174
+        },
+        "bridge_L_2": {
+          "degrees": 2.45877632053762,
+          "phase": 0.4375,
+          "travel_m": 0.0190929360687733
+        },
+        "bridge_L_3": {
+          "degrees": 2.45877632053762,
+          "phase": 0.4375,
+          "travel_m": 0.0198772214353085
+        },
+        "bridge_L_4": {
+          "degrees": 2.45877632053762,
+          "phase": 0.4375,
+          "travel_m": 0.0207827426493168
+        },
+        "bridge_L_5": {
+          "degrees": 2.45877632053762,
+          "phase": 0.4375,
+          "travel_m": 0.0217944215983152
+        },
+        "bridge_L_6": {
+          "degrees": 2.45877632053762,
+          "phase": 0.4375,
+          "travel_m": 0.022898156195879
+        },
+        "bridge_R_0": {
+          "degrees": 2.33498063593502,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0111972559243441
+        },
+        "bridge_R_1": {
+          "degrees": 2.33498063593502,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0100274914875627
+        },
+        "bridge_R_2": {
+          "degrees": 2.33498063593502,
+          "phase": 0.420833333333333,
+          "travel_m": 0.00897306762635708
+        },
+        "bridge_R_3": {
+          "degrees": 2.33498063593502,
+          "phase": 0.420833333333333,
+          "travel_m": 0.00807925313711166
+        },
+        "bridge_R_4": {
+          "degrees": 2.33498063593502,
+          "phase": 0.420833333333333,
+          "travel_m": 0.00740442704409361
+        },
+        "bridge_R_5": {
+          "degrees": 2.33498063593502,
+          "phase": 0.420833333333333,
+          "travel_m": 0.00701220985502005
+        },
+        "bridge_R_6": {
+          "degrees": 2.33498063593502,
+          "phase": 0.420833333333333,
+          "travel_m": 0.00695035280659795
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 1.1155733030343,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00299657648429275
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 1.79624050052698,
+          "phase": 0.441666666666667,
+          "travel_m": 0.0151272621005774
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 1.1155733030343,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00542631279677153
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 1.79624050052698,
+          "phase": 0.441666666666667,
+          "travel_m": 0.0112143745645881
+        },
+        "elbow_L": {
+          "degrees": 8.49188113374941,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0330296047031879
+        },
+        "elbow_R": {
+          "degrees": 4.55560853723839,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00940747186541557
+        },
+        "forearm_L": {
+          "degrees": 8.49188113374941,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0330296047031879
+        },
+        "forearm_R": {
+          "degrees": 4.55560853723839,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00940747186541557
+        },
+        "knee_L": {
+          "degrees": 1.11487139437538,
+          "phase": 0.408333333333333,
+          "travel_m": 0.00722760055214167
+        },
+        "knee_R": {
+          "degrees": 1.79580443563715,
+          "phase": 0.441666666666667,
+          "travel_m": 0.00989051628857851
+        },
+        "mount_L": {
+          "degrees": 2.01906667101877,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0149206407368183
+        },
+        "mount_R": {
+          "degrees": 2.01906667101877,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0109592145308852
+        },
+        "shin_L": {
+          "degrees": 1.11487139437538,
+          "phase": 0.408333333333333,
+          "travel_m": 0.00722760055214167
+        },
+        "shin_R": {
+          "degrees": 1.79580443563715,
+          "phase": 0.441666666666667,
+          "travel_m": 0.00989051628857851
+        },
+        "shoulder_L": {
+          "degrees": 4.72298018841544,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.00992756336927414
+        },
+        "shoulder_R": {
+          "degrees": 2.2575877624496,
+          "phase": 0.4625,
+          "travel_m": 0.00689220242202282
+        },
+        "upper_L": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.00992756336927414
+        },
+        "upper_R": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00507717719301581
+        },
+        "upper_dist_L": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0109141701832414
+        },
+        "upper_dist_R": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00333632878027856
+        },
+        "upper_prox_L": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.00992756336927414
+        },
+        "upper_prox_R": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00507717719301581
+        },
+        "upper_slide_L_0": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0132651990279555
+        },
+        "upper_slide_L_1": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0150283388793468
+        },
+        "upper_slide_L_2": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0168720204383135
+        },
+        "upper_slide_L_3": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0187729336321354
+        },
+        "upper_slide_L_4": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0207151584327221
+        },
+        "upper_slide_L_5": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0226879715919495
+        },
+        "upper_slide_L_6": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.024684127420187
+        },
+        "upper_slide_L_7": {
+          "degrees": 8.89143268604317,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0266985036432743
+        },
+        "upper_slide_R_0": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00564660551026464
+        },
+        "upper_slide_R_1": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00567781087011099
+        },
+        "upper_slide_R_2": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00581074086949229
+        },
+        "upper_slide_R_3": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00603895261883736
+        },
+        "upper_slide_R_4": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00635198410600424
+        },
+        "upper_slide_R_5": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00673811510205269
+        },
+        "upper_slide_R_6": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00718553923070431
+        },
+        "upper_slide_R_7": {
+          "degrees": 3.85163118476893,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00768358306959271
+        },
+        "wrist_L": {
+          "degrees": 8.49188113374941,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.0330296047031879
+        },
+        "wrist_R": {
+          "degrees": 4.55560853723839,
+          "phase": 0.416666666666667,
+          "travel_m": 0.00940747186541557
+        }
+      },
+      "minimum_bend_cross_length": 0.79551088809967,
+      "motion": "attack_thrust"
+    },
+    {
+      "frames": 241,
+      "loop_seam": {
+
+      },
+      "maximum_steps": {
+        "back_link_L": {
+          "degrees": 2.97637723390788,
+          "phase": 0.316666666666667,
+          "travel_m": 0.00971658062189817
+        },
+        "back_link_R": {
+          "degrees": 2.97637723390788,
+          "phase": 0.316666666666667,
+          "travel_m": 0.00971658062189817
+        },
+        "back_power": {
+          "degrees": 2.97637723390788,
+          "phase": 0.316666666666667,
+          "travel_m": 0.00971658062189817
+        },
+        "bridge_L_0": {
+          "degrees": 3.28085895625741,
+          "phase": 0.341666666666667,
+          "travel_m": 0.0129670547321439
+        },
+        "bridge_L_1": {
+          "degrees": 3.28085895625741,
+          "phase": 0.341666666666667,
+          "travel_m": 0.0116848815232515
+        },
+        "bridge_L_2": {
+          "degrees": 3.28085895625741,
+          "phase": 0.341666666666667,
+          "travel_m": 0.0106488550081849
+        },
+        "bridge_L_3": {
+          "degrees": 3.28085895625741,
+          "phase": 0.341666666666667,
+          "travel_m": 0.0099363112822175
+        },
+        "bridge_L_4": {
+          "degrees": 3.28085895625741,
+          "phase": 0.341666666666667,
+          "travel_m": 0.00961938221007586
+        },
+        "bridge_L_5": {
+          "degrees": 3.28085895625741,
+          "phase": 0.341666666666667,
+          "travel_m": 0.00973677914589643
+        },
+        "bridge_L_6": {
+          "degrees": 3.28085895625741,
+          "phase": 0.341666666666667,
+          "travel_m": 0.0102736409753561
+        },
+        "bridge_R_0": {
+          "degrees": 3.46757839891899,
+          "phase": 0.316666666666667,
+          "travel_m": 0.012837435118854
+        },
+        "bridge_R_1": {
+          "degrees": 3.46757839891899,
+          "phase": 0.316666666666667,
+          "travel_m": 0.0119398785755038
+        },
+        "bridge_R_2": {
+          "degrees": 3.46757839891899,
+          "phase": 0.316666666666667,
+          "travel_m": 0.0113274995237589
+        },
+        "bridge_R_3": {
+          "degrees": 3.46757839891899,
+          "phase": 0.316666666666667,
+          "travel_m": 0.011047737672925
+        },
+        "bridge_R_4": {
+          "degrees": 3.46757839891899,
+          "phase": 0.316666666666667,
+          "travel_m": 0.0111257564276457
+        },
+        "bridge_R_5": {
+          "degrees": 3.46757839891899,
+          "phase": 0.316666666666667,
+          "travel_m": 0.011554341763258
+        },
+        "bridge_R_6": {
+          "degrees": 3.46757839891899,
+          "phase": 0.316666666666667,
+          "travel_m": 0.0122968591749668
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 0.189745630010503,
+          "phase": 0.195833333333333,
+          "travel_m": 0.000506780983414501
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 0.247081559616682,
+          "phase": 0.704166666666667,
+          "travel_m": 0.000661647936794907
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 0.189745630010503,
+          "phase": 0.195833333333333,
+          "travel_m": 0.00090825418010354
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 0.247081559616682,
+          "phase": 0.704166666666667,
+          "travel_m": 0.00119384448044002
+        },
+        "elbow_L": {
+          "degrees": 6.71808015252345,
+          "phase": 0.375,
+          "travel_m": 0.0380134396255016
+        },
+        "elbow_R": {
+          "degrees": 7.37251302030093,
+          "phase": 0.1875,
+          "travel_m": 0.0176799818873405
+        },
+        "forearm_L": {
+          "degrees": 6.71808015252345,
+          "phase": 0.375,
+          "travel_m": 0.0380134396255016
+        },
+        "forearm_R": {
+          "degrees": 7.37251302030093,
+          "phase": 0.1875,
+          "travel_m": 0.0176799818873405
+        },
+        "knee_L": {
+          "degrees": 0.189745630010503,
+          "phase": 0.2,
+          "travel_m": 0.0011939296964556
+        },
+        "knee_R": {
+          "degrees": 0.247081559616682,
+          "phase": 0.695833333333333,
+          "travel_m": 0.00157639035023749
+        },
+        "mount_L": {
+          "degrees": 2.97585109589838,
+          "phase": 0.316666666666667,
+          "travel_m": 0.00724871177226305
+        },
+        "mount_R": {
+          "degrees": 2.97585109589838,
+          "phase": 0.316666666666667,
+          "travel_m": 0.00711964955553412
+        },
+        "shin_L": {
+          "degrees": 0.189745630010503,
+          "phase": 0.2,
+          "travel_m": 0.0011939296964556
+        },
+        "shin_R": {
+          "degrees": 0.247081559616682,
+          "phase": 0.695833333333333,
+          "travel_m": 0.00157639035023749
+        },
+        "shoulder_L": {
+          "degrees": 4.85534754698299,
+          "phase": 0.35,
+          "travel_m": 0.00776212755590677
+        },
+        "shoulder_R": {
+          "degrees": 4.72480470269748,
+          "phase": 0.4125,
+          "travel_m": 0.00623239576816559
+        },
+        "upper_L": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0110390624031425
+        },
+        "upper_R": {
+          "degrees": 7.89192585479195,
+          "phase": 0.429166666666667,
+          "travel_m": 0.00845565646886826
+        },
+        "upper_dist_L": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0110851535573602
+        },
+        "upper_dist_R": {
+          "degrees": 7.89192585479195,
+          "phase": 0.429166666666667,
+          "travel_m": 0.004861771594733
+        },
+        "upper_prox_L": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0110390624031425
+        },
+        "upper_prox_R": {
+          "degrees": 7.89192585479195,
+          "phase": 0.429166666666667,
+          "travel_m": 0.00845565646886826
+        },
+        "upper_slide_L_0": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0155303301289678
+        },
+        "upper_slide_L_1": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0174885541200638
+        },
+        "upper_slide_L_2": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0195396635681391
+        },
+        "upper_slide_L_3": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0216573309153318
+        },
+        "upper_slide_L_4": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.023823780938983
+        },
+        "upper_slide_L_5": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0260268487036228
+        },
+        "upper_slide_L_6": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0282579883933067
+        },
+        "upper_slide_L_7": {
+          "degrees": 7.99566276790611,
+          "phase": 0.375,
+          "travel_m": 0.0305110197514296
+        },
+        "upper_slide_R_0": {
+          "degrees": 7.89182681704899,
+          "phase": 0.429166666666667,
+          "travel_m": 0.013238737359643
+        },
+        "upper_slide_R_1": {
+          "degrees": 7.89182681704899,
+          "phase": 0.429166666666667,
+          "travel_m": 0.0150011610239744
+        },
+        "upper_slide_R_2": {
+          "degrees": 7.89182681704899,
+          "phase": 0.429166666666667,
+          "travel_m": 0.0168438106775284
+        },
+        "upper_slide_R_3": {
+          "degrees": 7.89182681704899,
+          "phase": 0.429166666666667,
+          "travel_m": 0.0187430400401354
+        },
+        "upper_slide_R_4": {
+          "degrees": 7.89182681704899,
+          "phase": 0.429166666666667,
+          "travel_m": 0.0206832867115736
+        },
+        "upper_slide_R_5": {
+          "degrees": 7.89182681704899,
+          "phase": 0.429166666666667,
+          "travel_m": 0.0226540174335241
+        },
+        "upper_slide_R_6": {
+          "degrees": 7.89182681704899,
+          "phase": 0.429166666666667,
+          "travel_m": 0.0246479120105505
+        },
+        "upper_slide_R_7": {
+          "degrees": 7.89182681704899,
+          "phase": 0.429166666666667,
+          "travel_m": 0.0266597233712673
+        },
+        "wrist_L": {
+          "degrees": 6.71808015252345,
+          "phase": 0.375,
+          "travel_m": 0.0380134396255016
+        },
+        "wrist_R": {
+          "degrees": 7.37251302030093,
+          "phase": 0.1875,
+          "travel_m": 0.0176799818873405
+        }
+      },
+      "minimum_bend_cross_length": 0.674822151660919,
+      "motion": "cast"
+    },
+    {
+      "frames": 241,
+      "loop_seam": {
+
+      },
+      "maximum_steps": {
+        "back_link_L": {
+          "degrees": 0.51737711795324,
+          "phase": 0.0583333333333333,
+          "travel_m": 0.00241929409094155
+        },
+        "back_link_R": {
+          "degrees": 0.51737711795324,
+          "phase": 0.0583333333333333,
+          "travel_m": 0.00241929409094155
+        },
+        "back_power": {
+          "degrees": 0.51737711795324,
+          "phase": 0.0583333333333333,
+          "travel_m": 0.00241929409094155
+        },
+        "bridge_L_0": {
+          "degrees": 0.48456787738826,
+          "phase": 0.145833333333333,
+          "travel_m": 0.00273666530847549
+        },
+        "bridge_L_1": {
+          "degrees": 0.48456787738826,
+          "phase": 0.145833333333333,
+          "travel_m": 0.00258451304398477
+        },
+        "bridge_L_2": {
+          "degrees": 0.48456787738826,
+          "phase": 0.145833333333333,
+          "travel_m": 0.0024445285089314
+        },
+        "bridge_L_3": {
+          "degrees": 0.48456787738826,
+          "phase": 0.145833333333333,
+          "travel_m": 0.00231865211389959
+        },
+        "bridge_L_4": {
+          "degrees": 0.48456787738826,
+          "phase": 0.145833333333333,
+          "travel_m": 0.00220935046672821
+        },
+        "bridge_L_5": {
+          "degrees": 0.48456787738826,
+          "phase": 0.145833333333333,
+          "travel_m": 0.0021194857545197
+        },
+        "bridge_L_6": {
+          "degrees": 0.48456787738826,
+          "phase": 0.145833333333333,
+          "travel_m": 0.00205131154507399
+        },
+        "bridge_R_0": {
+          "degrees": 0.497321921641937,
+          "phase": 0.0958333333333333,
+          "travel_m": 0.00274523883126676
+        },
+        "bridge_R_1": {
+          "degrees": 0.497321921641937,
+          "phase": 0.0958333333333333,
+          "travel_m": 0.00255895010195673
+        },
+        "bridge_R_2": {
+          "degrees": 0.497321921641937,
+          "phase": 0.0958333333333333,
+          "travel_m": 0.00238323700614274
+        },
+        "bridge_R_3": {
+          "degrees": 0.497321921641937,
+          "phase": 0.0958333333333333,
+          "travel_m": 0.0022208543960005
+        },
+        "bridge_R_4": {
+          "degrees": 0.497321921641937,
+          "phase": 0.0958333333333333,
+          "travel_m": 0.00207480485551059
+        },
+        "bridge_R_5": {
+          "degrees": 0.497321921641937,
+          "phase": 0.0958333333333333,
+          "travel_m": 0.00194864370860159
+        },
+        "bridge_R_6": {
+          "degrees": 0.497321921641937,
+          "phase": 0.0958333333333333,
+          "travel_m": 0.00184670567978173
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 0.153233399718958,
+          "phase": 0.0375,
+          "travel_m": 0.000399326789192855
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 0.153233399718958,
+          "phase": 0.0166666666666667,
+          "travel_m": 0.000400234712287784
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 0.153233399718958,
+          "phase": 0.0375,
+          "travel_m": 0.000720056879799813
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 0.153233399718958,
+          "phase": 0.0166666666666667,
+          "travel_m": 0.000720657641068101
+        },
+        "elbow_L": {
+          "degrees": 0.48456787738826,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.00133095507044345
+        },
+        "elbow_R": {
+          "degrees": 0.543926490143902,
+          "phase": 0.075,
+          "travel_m": 0.00147025659680367
+        },
+        "forearm_L": {
+          "degrees": 0.48456787738826,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.00133095507044345
+        },
+        "forearm_R": {
+          "degrees": 0.543926490143902,
+          "phase": 0.075,
+          "travel_m": 0.00147025659680367
+        },
+        "knee_L": {
+          "degrees": 0.153233399718958,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.000963062688242644
+        },
+        "knee_R": {
+          "degrees": 0.153233399718958,
+          "phase": 0.0541666666666667,
+          "travel_m": 0.000953082751948386
+        },
+        "mount_L": {
+          "degrees": 0.51737711795324,
+          "phase": 0.0416666666666667,
+          "travel_m": 0.00190667877905071
+        },
+        "mount_R": {
+          "degrees": 0.51737711795324,
+          "phase": 0.0416666666666667,
+          "travel_m": 0.00190667877905071
+        },
+        "shin_L": {
+          "degrees": 0.153233399718958,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.000963062688242644
+        },
+        "shin_R": {
+          "degrees": 0.153233399718958,
+          "phase": 0.0541666666666667,
+          "travel_m": 0.000953082751948386
+        },
+        "shoulder_L": {
+          "degrees": 0.506676772844769,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00199840217828751
+        },
+        "shoulder_R": {
+          "degrees": 0.536683394694221,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.00166055758018047
+        },
+        "upper_L": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00199840217828751
+        },
+        "upper_R": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00165982858743519
+        },
+        "upper_dist_L": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00187389401253313
+        },
+        "upper_dist_R": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00147384381853044
+        },
+        "upper_prox_L": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00199840217828751
+        },
+        "upper_prox_R": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00165982858743519
+        },
+        "upper_slide_L_0": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00173499516677111
+        },
+        "upper_slide_L_1": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00161578226834536
+        },
+        "upper_slide_L_2": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00150771741755307
+        },
+        "upper_slide_L_3": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00141322542913258
+        },
+        "upper_slide_L_4": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00133527186699212
+        },
+        "upper_slide_L_5": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00127688271459192
+        },
+        "upper_slide_L_6": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00124078965745866
+        },
+        "upper_slide_L_7": {
+          "degrees": 0.494164239811275,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00122897769324481
+        },
+        "upper_slide_R_0": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00133933499455452
+        },
+        "upper_slide_R_1": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.0011941121192649
+        },
+        "upper_slide_R_2": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.00106852455064654
+        },
+        "upper_slide_R_3": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.000970215769484639
+        },
+        "upper_slide_R_4": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.000908144982531667
+        },
+        "upper_slide_R_5": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.000889872841071337
+        },
+        "upper_slide_R_6": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.000918081903364509
+        },
+        "upper_slide_R_7": {
+          "degrees": 0.530817809661914,
+          "phase": 0.00833333333333333,
+          "travel_m": 0.000988630577921867
+        },
+        "wrist_L": {
+          "degrees": 0.48456787738826,
+          "phase": 0.00416666666666667,
+          "travel_m": 0.00133095507044345
+        },
+        "wrist_R": {
+          "degrees": 0.543926490143902,
+          "phase": 0.075,
+          "travel_m": 0.00147025659680367
+        }
+      },
+      "minimum_bend_cross_length": 0.914788663387299,
+      "motion": "hit_react"
+    },
+    {
+      "frames": 241,
+      "loop_seam": {
+
+      },
+      "maximum_steps": {
+        "back_link_L": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.00697101140394807
+        },
+        "back_link_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.00697101140394807
+        },
+        "back_power": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.00697101140394807
+        },
+        "bridge_L_0": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.00691349804401398
+        },
+        "bridge_L_1": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.00748110329732299
+        },
+        "bridge_L_2": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.00806639064103365
+        },
+        "bridge_L_3": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.00866605155169964
+        },
+        "bridge_L_4": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.00927710067480803
+        },
+        "bridge_L_5": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.0098974946886301
+        },
+        "bridge_L_6": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.0105255469679832
+        },
+        "bridge_R_0": {
+          "degrees": 1.48516711201986,
+          "phase": 0.9,
+          "travel_m": 0.006668153218925
+        },
+        "bridge_R_1": {
+          "degrees": 1.48516711201986,
+          "phase": 0.9,
+          "travel_m": 0.00721099320799112
+        },
+        "bridge_R_2": {
+          "degrees": 1.48516711201986,
+          "phase": 0.9,
+          "travel_m": 0.00781816150993109
+        },
+        "bridge_R_3": {
+          "degrees": 1.48516711201986,
+          "phase": 0.9,
+          "travel_m": 0.00847601238638163
+        },
+        "bridge_R_4": {
+          "degrees": 1.48516711201986,
+          "phase": 0.9,
+          "travel_m": 0.00917356833815575
+        },
+        "bridge_R_5": {
+          "degrees": 1.48516711201986,
+          "phase": 0.9,
+          "travel_m": 0.0099023412913084
+        },
+        "bridge_R_6": {
+          "degrees": 1.48516711201986,
+          "phase": 0.9,
+          "travel_m": 0.0106561295688152
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 3.03602612970325,
+          "phase": 0.754166666666667,
+          "travel_m": 0.0149770444259048
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 3.38864937320056,
+          "phase": 0.754166666666667,
+          "travel_m": 0.0174891874194145
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 3.03602612970325,
+          "phase": 0.754166666666667,
+          "travel_m": 0.020922627300024
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 3.38864937320056,
+          "phase": 0.754166666666667,
+          "travel_m": 0.0243968088179827
+        },
+        "elbow_L": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.0144508667290211
+        },
+        "elbow_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9125,
+          "travel_m": 0.0166147761046886
+        },
+        "forearm_L": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.0144508667290211
+        },
+        "forearm_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9125,
+          "travel_m": 0.0166147761046886
+        },
+        "knee_L": {
+          "degrees": 3.03602612970325,
+          "phase": 0.754166666666667,
+          "travel_m": 0.0265828184783459
+        },
+        "knee_R": {
+          "degrees": 3.38864937320056,
+          "phase": 0.754166666666667,
+          "travel_m": 0.0306487008929253
+        },
+        "mount_L": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.00798218976706266
+        },
+        "mount_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.00809020549058914
+        },
+        "shin_L": {
+          "degrees": 3.03602612970325,
+          "phase": 0.754166666666667,
+          "travel_m": 0.0265828184783459
+        },
+        "shin_R": {
+          "degrees": 3.38864937320056,
+          "phase": 0.754166666666667,
+          "travel_m": 0.0306487008929253
+        },
+        "shoulder_L": {
+          "degrees": 1.48516711201986,
+          "phase": 0.9,
+          "travel_m": 0.0115964189171791
+        },
+        "shoulder_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.908333333333333,
+          "travel_m": 0.0118347629904747
+        },
+        "upper_L": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.011353793554008
+        },
+        "upper_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0118909738957882
+        },
+        "upper_dist_L": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.0114959785714746
+        },
+        "upper_dist_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0121560785919428
+        },
+        "upper_prox_L": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.011353793554008
+        },
+        "upper_prox_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0118909738957882
+        },
+        "upper_slide_L_0": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.0116409072652459
+        },
+        "upper_slide_L_1": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.0118248797953129
+        },
+        "upper_slide_L_2": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.01203260011971
+        },
+        "upper_slide_L_3": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.0122630624100566
+        },
+        "upper_slide_L_4": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.0125149162486196
+        },
+        "upper_slide_L_5": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.012786902487278
+        },
+        "upper_slide_L_6": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.0130776511505246
+        },
+        "upper_slide_L_7": {
+          "degrees": 1.48622088214274,
+          "phase": 0.908333333333333,
+          "travel_m": 0.0133861405774951
+        },
+        "upper_slide_R_0": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0125337094068527
+        },
+        "upper_slide_R_1": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0128750149160624
+        },
+        "upper_slide_R_2": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0132305165752769
+        },
+        "upper_slide_R_3": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0135991154238582
+        },
+        "upper_slide_R_4": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0139799918979406
+        },
+        "upper_slide_R_5": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0143717303872108
+        },
+        "upper_slide_R_6": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.014773678034544
+        },
+        "upper_slide_R_7": {
+          "degrees": 1.48569410380301,
+          "phase": 0.904166666666667,
+          "travel_m": 0.0151850320398808
+        },
+        "wrist_L": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9,
+          "travel_m": 0.0144508667290211
+        },
+        "wrist_R": {
+          "degrees": 1.48569410380301,
+          "phase": 0.9125,
+          "travel_m": 0.0166147761046886
+        }
+      },
+      "minimum_bend_cross_length": 0.956786394119263,
+      "motion": "spring_jump"
+    },
+    {
+      "frames": 241,
+      "loop_seam": {
+
+      },
+      "maximum_steps": {
+        "back_link_L": {
+          "degrees": 4.13431734659013,
+          "phase": 0.425,
+          "travel_m": 0.0309345033019781
+        },
+        "back_link_R": {
+          "degrees": 4.13431734659013,
+          "phase": 0.425,
+          "travel_m": 0.0309345033019781
+        },
+        "back_power": {
+          "degrees": 4.13431734659013,
+          "phase": 0.425,
+          "travel_m": 0.0309345033019781
+        },
+        "bridge_L_0": {
+          "degrees": 6.29818360112634,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0329872742295265
+        },
+        "bridge_L_1": {
+          "degrees": 6.29818360112634,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0309283100068569
+        },
+        "bridge_L_2": {
+          "degrees": 6.29818360112634,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0293649639934301
+        },
+        "bridge_L_3": {
+          "degrees": 6.29818360112634,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0283792819827795
+        },
+        "bridge_L_4": {
+          "degrees": 6.29818360112634,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0280321780592203
+        },
+        "bridge_L_5": {
+          "degrees": 6.29818360112634,
+          "phase": 0.420833333333333,
+          "travel_m": 0.02834727242589
+        },
+        "bridge_L_6": {
+          "degrees": 6.29818360112634,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0293031241744757
+        },
+        "bridge_R_0": {
+          "degrees": 6.02558135984102,
+          "phase": 0.483333333333333,
+          "travel_m": 0.00554167665541172
+        },
+        "bridge_R_1": {
+          "degrees": 6.02558135984102,
+          "phase": 0.483333333333333,
+          "travel_m": 0.00503500225022435
+        },
+        "bridge_R_2": {
+          "degrees": 6.02558135984102,
+          "phase": 0.483333333333333,
+          "travel_m": 0.00587219325825572
+        },
+        "bridge_R_3": {
+          "degrees": 6.02558135984102,
+          "phase": 0.483333333333333,
+          "travel_m": 0.00762271136045456
+        },
+        "bridge_R_4": {
+          "degrees": 6.02558135984102,
+          "phase": 0.483333333333333,
+          "travel_m": 0.00980916246771812
+        },
+        "bridge_R_5": {
+          "degrees": 6.02558135984102,
+          "phase": 0.483333333333333,
+          "travel_m": 0.0121993608772755
+        },
+        "bridge_R_6": {
+          "degrees": 6.02558135984102,
+          "phase": 0.483333333333333,
+          "travel_m": 0.0146942399442196
+        },
+        "calf_cuff_lower_L": {
+          "degrees": 5.84311499059825,
+          "phase": 0.358333333333333,
+          "travel_m": 0.00803575571626425
+        },
+        "calf_cuff_lower_R": {
+          "degrees": 5.26596357884535,
+          "phase": 0.379166666666667,
+          "travel_m": 0.00990980304777622
+        },
+        "calf_cuff_upper_L": {
+          "degrees": 5.84311499059825,
+          "phase": 0.358333333333333,
+          "travel_m": 0.0142989316955209
+        },
+        "calf_cuff_upper_R": {
+          "degrees": 5.26596357884535,
+          "phase": 0.379166666666667,
+          "travel_m": 0.0146566992625594
+        },
+        "elbow_L": {
+          "degrees": 6.62951223578225,
+          "phase": 0.4,
+          "travel_m": 0.0368476174771786
+        },
+        "elbow_R": {
+          "degrees": 26.103606724671,
+          "phase": 0.166666666666667,
+          "travel_m": 0.0868054777383804
+        },
+        "forearm_L": {
+          "degrees": 6.62951223578225,
+          "phase": 0.4,
+          "travel_m": 0.0368476174771786
+        },
+        "forearm_R": {
+          "degrees": 26.103606724671,
+          "phase": 0.166666666666667,
+          "travel_m": 0.0868054777383804
+        },
+        "knee_L": {
+          "degrees": 5.84298094813579,
+          "phase": 0.358333333333333,
+          "travel_m": 0.0276852883398533
+        },
+        "knee_R": {
+          "degrees": 5.26596357884535,
+          "phase": 0.379166666666667,
+          "travel_m": 0.0131950760260224
+        },
+        "mount_L": {
+          "degrees": 4.13431734659013,
+          "phase": 0.425,
+          "travel_m": 0.0265560112893581
+        },
+        "mount_R": {
+          "degrees": 4.13431734659013,
+          "phase": 0.425,
+          "travel_m": 0.0271940734237432
+        },
+        "shin_L": {
+          "degrees": 5.84298094813579,
+          "phase": 0.358333333333333,
+          "travel_m": 0.0276852883398533
+        },
+        "shin_R": {
+          "degrees": 5.26596357884535,
+          "phase": 0.379166666666667,
+          "travel_m": 0.0131950760260224
+        },
+        "shoulder_L": {
+          "degrees": 4.40086291762894,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0315083712339401
+        },
+        "shoulder_R": {
+          "degrees": 11.5385194564322,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0265104155987501
+        },
+        "upper_L": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0315083712339401
+        },
+        "upper_R": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0265104155987501
+        },
+        "upper_dist_L": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0309403613209724
+        },
+        "upper_dist_R": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0395579040050507
+        },
+        "upper_prox_L": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0315083712339401
+        },
+        "upper_prox_R": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0265104155987501
+        },
+        "upper_slide_L_0": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0318469814956188
+        },
+        "upper_slide_L_1": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.031969603151083
+        },
+        "upper_slide_L_2": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0321447551250458
+        },
+        "upper_slide_L_3": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0323715955018997
+        },
+        "upper_slide_L_4": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0326490327715874
+        },
+        "upper_slide_L_5": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0329758115112782
+        },
+        "upper_slide_L_6": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0333505012094975
+        },
+        "upper_slide_L_7": {
+          "degrees": 5.96942866712706,
+          "phase": 0.420833333333333,
+          "travel_m": 0.0337714366614819
+        },
+        "upper_slide_R_0": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0287173185497522
+        },
+        "upper_slide_R_1": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0320708677172661
+        },
+        "upper_slide_R_2": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0356673710048199
+        },
+        "upper_slide_R_3": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0394402667880058
+        },
+        "upper_slide_R_4": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0433435551822186
+        },
+        "upper_slide_R_5": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0473450347781181
+        },
+        "upper_slide_R_6": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0514218620955944
+        },
+        "upper_slide_R_7": {
+          "degrees": 24.5967235597936,
+          "phase": 0.170833333333333,
+          "travel_m": 0.0555572807788849
+        },
+        "wrist_L": {
+          "degrees": 6.62951223578225,
+          "phase": 0.4,
+          "travel_m": 0.0368476174771786
+        },
+        "wrist_R": {
+          "degrees": 26.103606724671,
+          "phase": 0.166666666666667,
+          "travel_m": 0.0868054777383804
+        }
+      },
+      "minimum_bend_cross_length": 0.27093043923378,
+      "motion": "collapse"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

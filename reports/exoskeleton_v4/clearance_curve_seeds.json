@@ -1,0 +1,62 @@
+[
+  {
+    "motion": "attack",
+    "phase": 0.5,
+    "side": "L",
+    "shift": [
+      0,
+      0,
+      0
+    ],
+    "angle": -30,
+    "crossings": 0
+  },
+  {
+    "motion": "attack",
+    "phase": 0.542,
+    "side": "L",
+    "shift": [
+      0,
+      0,
+      0
+    ],
+    "angle": -60,
+    "crossings": 0
+  },
+  {
+    "motion": "attack",
+    "phase": 0.583,
+    "side": "L",
+    "shift": [
+      0,
+      0,
+      0
+    ],
+    "angle": -90,
+    "crossings": 0
+  },
+  {
+    "motion": "attack",
+    "phase": 0.583,
+    "side": "R",
+    "shift": [
+      -0.025,
+      0.05,
+      0
+    ],
+    "angle": -15,
+    "crossings": 0
+  },
+  {
+    "motion": "attack",
+    "phase": 0.625,
+    "side": "L",
+    "shift": [
+      0,
+      0,
+      0
+    ],
+    "angle": -90,
+    "crossings": 0
+  }
+]

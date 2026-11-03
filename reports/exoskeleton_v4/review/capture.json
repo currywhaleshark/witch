@@ -1,0 +1,264 @@
+{
+  "captures": 1572,
+  "passed": true,
+  "probe": false,
+  "scope": "Current player, both forms, 8 clips with auxiliary rigid equipment. No active skill.",
+  "sequences": [
+    {
+      "form": "civilian",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "civilian_idle_front",
+      "motion": "idle",
+      "view": "front"
+    },
+    {
+      "form": "civilian",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "civilian_idle_back",
+      "motion": "idle",
+      "view": "back"
+    },
+    {
+      "form": "civilian",
+      "fps": 12.0,
+      "frames": 49,
+      "id": "civilian_run_front",
+      "motion": "run",
+      "view": "front"
+    },
+    {
+      "form": "civilian",
+      "fps": 12.0,
+      "frames": 49,
+      "id": "civilian_run_back",
+      "motion": "run",
+      "view": "back"
+    },
+    {
+      "form": "civilian",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "civilian_attack_front",
+      "motion": "attack",
+      "view": "front"
+    },
+    {
+      "form": "civilian",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "civilian_attack_back",
+      "motion": "attack",
+      "view": "back"
+    },
+    {
+      "form": "civilian",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "civilian_attack_thrust_front",
+      "motion": "attack_thrust",
+      "view": "front"
+    },
+    {
+      "form": "civilian",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "civilian_attack_thrust_back",
+      "motion": "attack_thrust",
+      "view": "back"
+    },
+    {
+      "form": "civilian",
+      "fps": 35.9999989271164,
+      "frames": 49,
+      "id": "civilian_cast_front",
+      "motion": "cast",
+      "view": "front"
+    },
+    {
+      "form": "civilian",
+      "fps": 35.9999989271164,
+      "frames": 49,
+      "id": "civilian_cast_back",
+      "motion": "cast",
+      "view": "back"
+    },
+    {
+      "form": "civilian",
+      "fps": 96.0,
+      "frames": 49,
+      "id": "civilian_hit_react_front",
+      "motion": "hit_react",
+      "view": "front"
+    },
+    {
+      "form": "civilian",
+      "fps": 96.0,
+      "frames": 49,
+      "id": "civilian_hit_react_back",
+      "motion": "hit_react",
+      "view": "back"
+    },
+    {
+      "form": "civilian",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "civilian_spring_jump_front",
+      "motion": "spring_jump",
+      "view": "front"
+    },
+    {
+      "form": "civilian",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "civilian_spring_jump_back",
+      "motion": "spring_jump",
+      "view": "back"
+    },
+    {
+      "form": "civilian",
+      "fps": 19.8620683123467,
+      "frames": 49,
+      "id": "civilian_collapse_front",
+      "motion": "collapse",
+      "view": "front"
+    },
+    {
+      "form": "civilian",
+      "fps": 19.8620683123467,
+      "frames": 49,
+      "id": "civilian_collapse_back",
+      "motion": "collapse",
+      "view": "back"
+    },
+    {
+      "form": "transformed",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "transformed_idle_front",
+      "motion": "idle",
+      "view": "front"
+    },
+    {
+      "form": "transformed",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "transformed_idle_back",
+      "motion": "idle",
+      "view": "back"
+    },
+    {
+      "form": "transformed",
+      "fps": 12.0,
+      "frames": 49,
+      "id": "transformed_run_front",
+      "motion": "run",
+      "view": "front"
+    },
+    {
+      "form": "transformed",
+      "fps": 12.0,
+      "frames": 49,
+      "id": "transformed_run_back",
+      "motion": "run",
+      "view": "back"
+    },
+    {
+      "form": "transformed",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "transformed_attack_front",
+      "motion": "attack",
+      "view": "front"
+    },
+    {
+      "form": "transformed",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "transformed_attack_back",
+      "motion": "attack",
+      "view": "back"
+    },
+    {
+      "form": "transformed",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "transformed_attack_thrust_front",
+      "motion": "attack_thrust",
+      "view": "front"
+    },
+    {
+      "form": "transformed",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "transformed_attack_thrust_back",
+      "motion": "attack_thrust",
+      "view": "back"
+    },
+    {
+      "form": "transformed",
+      "fps": 35.9999989271164,
+      "frames": 49,
+      "id": "transformed_cast_front",
+      "motion": "cast",
+      "view": "front"
+    },
+    {
+      "form": "transformed",
+      "fps": 35.9999989271164,
+      "frames": 49,
+      "id": "transformed_cast_back",
+      "motion": "cast",
+      "view": "back"
+    },
+    {
+      "form": "transformed",
+      "fps": 96.0,
+      "frames": 49,
+      "id": "transformed_hit_react_front",
+      "motion": "hit_react",
+      "view": "front"
+    },
+    {
+      "form": "transformed",
+      "fps": 96.0,
+      "frames": 49,
+      "id": "transformed_hit_react_back",
+      "motion": "hit_react",
+      "view": "back"
+    },
+    {
+      "form": "transformed",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "transformed_spring_jump_front",
+      "motion": "spring_jump",
+      "view": "front"
+    },
+    {
+      "form": "transformed",
+      "fps": 24.0,
+      "frames": 49,
+      "id": "transformed_spring_jump_back",
+      "motion": "spring_jump",
+      "view": "back"
+    },
+    {
+      "form": "transformed",
+      "fps": 19.8620683123467,
+      "frames": 49,
+      "id": "transformed_collapse_front",
+      "motion": "collapse",
+      "view": "front"
+    },
+    {
+      "form": "transformed",
+      "fps": 19.8620683123467,
+      "frames": 49,
+      "id": "transformed_collapse_back",
+      "motion": "collapse",
+      "view": "back"
+    }
+  ]
+}

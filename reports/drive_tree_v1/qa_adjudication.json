@@ -1,0 +1,21 @@
+{
+  "geometry_errors": 0,
+  "intentional_uv_overlap": "Planar charts reuse the eight authored trim tiles. No unique texture bake is claimed.",
+  "planar_ngons": "Flat hard-surface caps remain editable; exported mesh uses exact Blender loop triangles.",
+  "seam_duplicates": "glTF split normals/UVs produce duplicate positions on reimport; source topology is retained.",
+  "raised_origins": "Body equipment and staff head retain their attachment coordinate frame, not a ground pivot.",
+  "enclosed_column_collars": "Two rear collars per press/executor are internal mounting pieces; not loose external parts.",
+  "hidden_back_faces": "Blade/runner contacts and hydraulic tube seam faces are retained for independently assembled parts.",
+  "group_scope": "Equipment source/reimport QA is grouped by attachment bone; detached body-mounted components are intentional.",
+  "equipment_contact": {
+    "poses": 208,
+    "poses_with_garment_crossings": 26,
+    "clear_motion_samples": [
+      "idle",
+      "run",
+      "hit_react"
+    ],
+    "remaining": "Mostly thrust; also swing, cast, transformed jump and collapse.",
+    "excluded": "Hair, bare body, arbitrary poses and continuous collision."
+  }
+}

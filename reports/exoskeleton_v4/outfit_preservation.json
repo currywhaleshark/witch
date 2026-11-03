@@ -1,0 +1,23 @@
+{
+  "civilian": {
+    "source": "game\\assets\\characters\\player\\model_refinement_v28\\outfit_civilian_v28.glb",
+    "source_sha256": "eae8d60852a03f7133b03c9ef40bc68dc372109cba9020d118128f07fa5ecbc4",
+    "only_position_normal_bytes_changed": true,
+    "nodes_skins_identical": true,
+    "file_byte_identical": false,
+    "meshes": {
+      "SourceOutfit_Cardigan_v11": {
+        "changed_vertices": 3534,
+        "max_displacement_m": 0.022000000000000002
+      }
+    }
+  },
+  "transformed": {
+    "source": "game\\assets\\characters\\player\\transformation_v25\\outfit_transformed_v4.glb",
+    "source_sha256": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13",
+    "only_position_normal_bytes_changed": true,
+    "nodes_skins_identical": true,
+    "file_byte_identical": true,
+    "meshes": {}
+  }
+}

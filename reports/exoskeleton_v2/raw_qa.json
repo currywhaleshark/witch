@@ -1,0 +1,56 @@
+{
+  "ok": true,
+  "pass": false,
+  "errors": [
+    "ExoskeletonV2_RawMesh: 6 zero-area UV faces",
+    "z-fighting: ExoskeletonV2_RawMesh (4 overlapping coplanar tri pairs)"
+  ],
+  "warnings": [
+    "ExoskeletonV2_RawMesh: duplicate verts=6639 loose verts=0",
+    "hidden back-to-back faces: ExoskeletonV2_RawMesh (1 pairs) - delete to save tris"
+  ],
+  "ground_z": 0.0,
+  "zfighting": [
+    {
+      "where": "ExoskeletonV2_RawMesh",
+      "tri_pairs": 4
+    }
+  ],
+  "floating": [],
+  "back_to_back": [
+    {
+      "where": "ExoskeletonV2_RawMesh",
+      "tri_pairs": 1
+    }
+  ],
+  "enclosed": [],
+  "objects": {
+    "ExoskeletonV2_RawMesh": {
+      "verts": 46141,
+      "faces": 78478,
+      "tris": 78478,
+      "ngons": 0,
+      "boundary_edges": 13630,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 6639,
+      "islands": 254,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 6,
+      "uv_overlap_pct": 1.22,
+      "uv_coverage_pct": 30.6
+    }
+  }
+}

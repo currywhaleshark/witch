@@ -1,0 +1,100 @@
+{
+  "assets": {
+    "guillotine": {
+      "name": "낙하 단두대",
+      "model": "res://assets/weapons/drive_tree_v1/guillotine.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/guillotine.json",
+      "scene": "DriveV1_guillotine",
+      "status": "prepared_asset",
+      "parts": 25,
+      "triangles": 3516,
+      "mechanism": "가이드레일을 따라 떨어지는 칼날"
+    },
+    "guillotine_saw": {
+      "name": "단두대 · 회전 톱날",
+      "model": "res://assets/weapons/drive_tree_v1/guillotine_saw.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/guillotine_saw.json",
+      "scene": "DriveV1_guillotine_saw",
+      "status": "prepared_asset",
+      "parts": 25,
+      "triangles": 6316,
+      "mechanism": "천천히 내려오는 회전 톱날"
+    },
+    "guillotine_lock": {
+      "name": "단두대 · 고정",
+      "model": "res://assets/weapons/drive_tree_v1/guillotine_lock.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/guillotine_lock.json",
+      "scene": "DriveV1_guillotine_lock",
+      "status": "prepared_asset",
+      "parts": 29,
+      "triangles": 4004,
+      "mechanism": "양쪽 고정턱이 닫힌 뒤 칼날 낙하"
+    },
+    "restraint_winch": {
+      "name": "구속 윈치",
+      "model": "res://assets/weapons/drive_tree_v1/restraint_winch.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/restraint_winch.json",
+      "scene": "DriveV1_restraint_winch",
+      "status": "prepared_asset",
+      "parts": 29,
+      "triangles": 5920,
+      "mechanism": "단일 갈고리 / 여러 줄 끌기 / 여러 줄 구속"
+    },
+    "hydraulic_press": {
+      "name": "유압 압착기",
+      "model": "res://assets/weapons/drive_tree_v1/hydraulic_press.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/hydraulic_press.json",
+      "scene": "DriveV1_hydraulic_press",
+      "status": "prepared_asset",
+      "parts": 33,
+      "triangles": 7036,
+      "mechanism": "넓은 압착판과 2단 피스톤"
+    },
+    "compound_executor": {
+      "name": "복합 집행기",
+      "model": "res://assets/weapons/drive_tree_v1/compound_executor.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/compound_executor.json",
+      "scene": "DriveV1_compound_executor",
+      "status": "prepared_asset",
+      "parts": 54,
+      "triangles": 13784,
+      "mechanism": "문 닫기 → 압착 → 양쪽 회전 톱팔"
+    },
+    "shock_frame": {
+      "name": "충격 흡수 프레임",
+      "model": "res://assets/weapons/drive_tree_v1/shock_frame.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/shock_frame.json",
+      "scene": "DriveV1_shock_frame",
+      "status": "prepared_asset",
+      "parts": 12,
+      "triangles": 2416,
+      "mechanism": "등·어깨·정강이에 붙는 가벼운 완충 장치"
+    },
+    "exoskeleton": {
+      "name": "외골격",
+      "model": "res://assets/weapons/drive_tree_v1/exoskeleton.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/exoskeleton.json",
+      "scene": "DriveV1_exoskeleton",
+      "status": "prepared_asset",
+      "parts": 26,
+      "triangles": 5336,
+      "mechanism": "등·팔·정강이 보조 프레임, 손·허벅지는 비움"
+    },
+    "broad_cutter": {
+      "name": "광역 볼트커터",
+      "model": "res://assets/weapons/drive_tree_v1/broad_cutter.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/broad_cutter.json",
+      "scene": "DriveV1_broad_cutter",
+      "status": "prepared_asset",
+      "parts": 11,
+      "triangles": 1876,
+      "mechanism": "별도 대형 날과 강체 링크, 벌어짐 → 빠른 닫힘"
+    }
+  },
+  "existing_reuse": {
+    "staff_tools": "res://assets/weapons/staff_material_v3/",
+    "shield": "res://assets/props/folding_shield_v1/",
+    "spring_dash": "res://assets/props/spring_dash_v1/"
+  },
+  "scope": "Prepared models and review-only mechanisms; no new active skills."
+}

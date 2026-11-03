@@ -1,0 +1,5204 @@
+{
+  "rows": [
+    {
+      "motion": "idle",
+      "phase": 0.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.0416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.0416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.0833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.0833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.125,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.125,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.166666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.166666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.208333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.208333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.25,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.25,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.291666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.291666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.333333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.333333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.375,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.375,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.458333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.458333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.5,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.5,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.541666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.541666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.625,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.625,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.708333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.708333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.75,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.75,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.791666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.791666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.875,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.875,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.916666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.916666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.958333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 0.958333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 1.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "idle",
+      "phase": 1.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.0416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.0416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.0833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.0833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.125,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.125,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.166666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.166666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.208333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.208333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.25,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.25,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.291666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.291666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.333333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.333333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.375,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.375,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.458333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.458333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.5,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.5,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.541666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.541666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.625,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.625,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.708333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.708333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.75,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.75,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.791666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.791666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.875,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.875,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.916666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.916666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.958333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 0.958333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 1.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "run",
+      "phase": 1.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.0416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.0416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.0833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.0833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.125,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.125,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.166666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.166666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.208333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.208333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.25,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.25,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.291666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.291666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.333333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.333333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.375,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.375,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.458333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.458333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.5,
+      "side": "L",
+      "before": 102,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": -30,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.5,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.541666666666667,
+      "side": "L",
+      "before": 1776,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": -60,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.541666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "side": "L",
+      "before": 1629,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": -120,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "side": "R",
+      "before": 1070,
+      "shift": [
+        0,
+        0.025,
+        0
+      ],
+      "angle": -30,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.625,
+      "side": "L",
+      "before": 1500,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": -120,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.625,
+      "side": "R",
+      "before": 1773,
+      "shift": [
+        0,
+        0.05,
+        0
+      ],
+      "angle": -30,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "side": "L",
+      "before": 1205,
+      "shift": [
+        0,
+        0.025,
+        0
+      ],
+      "angle": -120,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "side": "R",
+      "before": 1723,
+      "shift": [
+        0,
+        0.05,
+        0
+      ],
+      "angle": -30,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.708333333333333,
+      "side": "L",
+      "before": 1049,
+      "shift": [
+        0,
+        0.025,
+        0.025
+      ],
+      "angle": -120,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.708333333333333,
+      "side": "R",
+      "before": 958,
+      "shift": [
+        0,
+        0.07500000000000001,
+        0
+      ],
+      "angle": -30,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.75,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.75,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.791666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.791666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.875,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.875,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.916666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.916666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.958333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 0.958333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 1.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "phase": 1.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.0416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.0416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.0833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.0833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.125,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.125,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.166666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.166666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.208333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.208333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "side": "L",
+      "before": 33,
+      "shift": [
+        0,
+        0,
+        0.025
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.291666666666667,
+      "side": "L",
+      "before": 37,
+      "shift": [
+        0,
+        0,
+        0.025
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.291666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.333333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.333333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.375,
+      "side": "L",
+      "before": 74,
+      "shift": [
+        0,
+        0,
+        0.025
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.375,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "side": "L",
+      "before": 196,
+      "shift": [
+        0.025,
+        0.05,
+        0.1
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.458333333333333,
+      "side": "L",
+      "before": 438,
+      "shift": [
+        0.025,
+        0.025,
+        0.1
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.458333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "side": "L",
+      "before": 173,
+      "shift": [
+        0.05,
+        0,
+        0
+      ],
+      "angle": -15,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.541666666666667,
+      "side": "L",
+      "before": 153,
+      "shift": [
+        0.05,
+        0,
+        0
+      ],
+      "angle": -15,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.541666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "side": "L",
+      "before": 88,
+      "shift": [
+        0.05,
+        0,
+        0
+      ],
+      "angle": -15,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.625,
+      "side": "L",
+      "before": 116,
+      "shift": [
+        0.05,
+        0,
+        0
+      ],
+      "angle": -15,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.625,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "side": "L",
+      "before": 335,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 30,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.708333333333333,
+      "side": "L",
+      "before": 291,
+      "shift": [
+        0,
+        0.05,
+        0
+      ],
+      "angle": 15,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.708333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "side": "L",
+      "before": 259,
+      "shift": [
+        0,
+        0.07500000000000001,
+        0
+      ],
+      "angle": 15,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.791666666666667,
+      "side": "L",
+      "before": 214,
+      "shift": [
+        0,
+        0.07500000000000001,
+        0
+      ],
+      "angle": 15,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.791666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.875,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.875,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.916666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.916666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.958333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 0.958333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.0416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.0416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.0833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.0833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.125,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.125,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.166666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.166666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.208333333333333,
+      "side": "L",
+      "before": 69,
+      "shift": [
+        0,
+        0.025,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.208333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.25,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.25,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.291666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.291666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.333333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.333333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.375,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.375,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.458333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.458333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.5,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.5,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.541666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.541666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.625,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.625,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.708333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.708333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.75,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.75,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.791666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.791666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.875,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.875,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.916666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.916666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.958333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 0.958333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 1.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "phase": 1.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.0416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.0416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.0833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.0833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.125,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.125,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.166666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.166666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.208333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.208333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.25,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.25,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.291666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.291666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.333333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.333333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.375,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.375,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.458333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.458333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.5,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.5,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.541666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.541666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.625,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.625,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.708333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.708333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.75,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.75,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.791666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.791666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.875,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.875,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.916666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.916666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.958333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 0.958333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 1.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "hit_react",
+      "phase": 1.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.0416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.0416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.0833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.0833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.125,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.125,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.166666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.166666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.208333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.208333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.291666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.291666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.333333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.333333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.375,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.375,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.458333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.458333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.541666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.541666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.625,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.625,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.708333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.708333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.791666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.791666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.875,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.875,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.916666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.916666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.958333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 0.958333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.0416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.0416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.0833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.0833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.125,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.125,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.166666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.166666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.208333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.208333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.25,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.25,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.291666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.291666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.333333333333333,
+      "side": "L",
+      "before": 63,
+      "shift": [
+        0,
+        0.025,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.333333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.375,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.375,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.458333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.458333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.5,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.5,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.541666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.541666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.625,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.625,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.708333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.708333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.75,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.75,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.791666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.791666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.833333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.833333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.875,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.875,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.916666666666667,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.916666666666667,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.958333333333333,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 0.958333333333333,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 1.0,
+      "side": "L",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    },
+    {
+      "motion": "collapse",
+      "phase": 1.0,
+      "side": "R",
+      "before": 0,
+      "shift": [
+        0,
+        0,
+        0
+      ],
+      "angle": 0,
+      "crossings": 0
+    }
+  ]
+}

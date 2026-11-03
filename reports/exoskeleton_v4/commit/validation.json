@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Seoul",
+  "base_commit": "9a5f620db7bc8037a63460978fe66ee7f6ac7683",
+  "scope": "Prepared drive-tree work through fitted exoskeleton v4; original source, authoring, runtime assets, tools, review evidence and handoff docs.",
+  "selected_file_count": 5377,
+  "artifact_hash_checks": [
+    {
+      "report": "drive_tree_v1",
+      "section": "source_and_outputs",
+      "matching_files": 75
+    },
+    {
+      "report": "drive_tree_v1",
+      "section": "unchanged_dependencies",
+      "matching_files": 52
+    },
+    {
+      "report": "drive_tree_v2",
+      "section": "source_outputs_and_evidence",
+      "matching_files": 57
+    },
+    {
+      "report": "drive_tree_v2",
+      "section": "unchanged_dependencies",
+      "matching_files": 42
+    },
+    {
+      "report": "exoskeleton_v3",
+      "section": "files_sha256",
+      "matching_files": 143
+    },
+    {
+      "report": "exoskeleton_v3",
+      "capture_hashes": 1577
+    },
+    {
+      "report": "exoskeleton_v4",
+      "section": "files_sha256",
+      "matching_files": 191
+    },
+    {
+      "report": "exoskeleton_v4",
+      "capture_hashes": 1577
+    }
+  ],
+  "v4_garment_crossings": {
+    "comparison": [
+      0,
+      400
+    ],
+    "dense": [
+      0,
+      800
+    ]
+  },
+  "excluded_tracked_changes": {
+    "docs/03_skills.md": "e6222618900a9979a469edf295f4531e534a4d4772d7f53c9e0c8c324be287ec",
+    "game/assets/actors/boss_trial_v1/door_v1_door_basecolor.png.import": "7299a940c930c81c02032b4fff91d4f19d4adc2ea9af33c118045d1081e6ddef",
+    "game/assets/actors/boss_trial_v1/door_v1_door_normal.png.import": "492c17e1b0a4fd2725cba31c41b03d9b782cd45cff0dc775e345a1d0743dd12c",
+    "game/assets/actors/boss_trial_v1/door_v1_door_rm.png.import": "931b03fa77558d624cb9eb1f06363a57293b4bd8d52ac98b147c062f8e54e338",
+    "game/assets/actors/shotgun_cast_v1/shotgun_parts_color.png.import": "a39074ba2712424d1dae2c59795e1e13f9df37c16c0473fd4d4602b58cdff266",
+    "game/assets/actors/shotgun_cast_v1/shotgun_parts_metal_rough.png.import": "3dec8ee3cbaa9cb61b5f39e7031a3197a9ac2fa7b8bc0efcd7718313791a70a3",
+    "game/assets/actors/shotgun_cast_v1/shotgun_parts_normal.png.import": "46547c34c2d2b7e937ad2f15e412716decdb8277c509bfa4ef420ce598cb6fcf",
+    "game/assets/weapons/firearm_material_v3/textures/firearm_color.png.import": "08977445683285855a0b7cf167277f23124ca5ec36f2862514b94a81dac91fc2",
+    "game/assets/weapons/firearm_material_v3/textures/firearm_emission.png.import": "a8b388feda62360b7cda52d2e90d23a696473a7e42ab517304315bca9fbd697d",
+    "game/assets/weapons/firearm_material_v3/textures/firearm_normal.png.import": "83cdfccd4be813501b614cd68d3e77a7aabbba7e4efc774ab6e3a3dbdc964fdb",
+    "game/assets/weapons/firearm_material_v3/textures/firearm_orm.png.import": "fed06d13ea56250c1e83f1cf66c9a11a1f6d1012e29b6d99b2eba9c57f85ac43",
+    "game/assets/weapons/firearm_material_v4/textures/firearm_color.png.import": "434f5d356c7b39994c6faa79108f798f16d656edaf98b6edc864b1d6e62cbda3",
+    "game/assets/weapons/firearm_material_v4/textures/firearm_emission.png.import": "2d4fcf305679f6bfa39ec4729e20796e842ed1a6ba1e816b2bd8af8a2f9fc3bb",
+    "game/assets/weapons/firearm_material_v4/textures/firearm_normal.png.import": "c5fe7b418d42eb6c5f0e20357effb90b9bebcf9bf951ef406f9c391b46f05cd4",
+    "game/assets/weapons/firearm_material_v4/textures/firearm_orm.png.import": "568859e2ebe1b3bb5814fd0ec3781159b657bac515e5afe3e3240873d5d925fe",
+    "reports/godot_bleed_growth_report.json": "f179291270c9ab257084a27a73a3e7d4e8b3ecdd47db28b070a52261394cb2f5",
+    "reports/run_arm_v21/integration/gameplay/player_visual_validation.json": "f2b2d2b4bd2dda7331239d3508f4015fa40ad2b47ac38e5e88521038e1f580e8"
+  },
+  "local_preservation_references_not_committed": [
+    "game/assets/characters/player/combat_motion_v18/body_standard_v18.glb",
+    "game/assets/characters/player/combat_motion_v18/eyes_neutral_v18.glb",
+    "game/assets/characters/player/combat_motion_v18/hair_semilong_v18.glb",
+    "game/assets/characters/player/combat_motion_v18/outfit_civilian_v18.glb"
+  ],
+  "excluded_probe_folders": [
+    "accidental_probe",
+    "corrective_probe",
+    "fit_preview",
+    "probe",
+    "refit_probe"
+  ],
+  "notes": [
+    "No implementation changed during commit preparation; verified the delivered artifact hashes.",
+    "The user selected the current v4 prototype in approval.json; historical delivery snapshots retain their pre-selection wording.",
+    "Original Blender backup files and experimental capture folders remain local.",
+    "The four historical v18 character archives occur only in preservation baselines; they are not dependencies introduced by this art work."
+  ],
+  "staged_whitespace_check": {
+    "result": "pass_except_existing_extra_EOF_blank_lines",
+    "findings": [
+      "tools/bake_exoskeleton_v4_preview.py:120: new blank line at EOF.",
+      "tools/build_drive_tree_v1.py:354: new blank line at EOF.",
+      "tools/exoskeleton_v4_geometry.py:49: new blank line at EOF.",
+      "tools/qa_exoskeleton_v4.py:45: new blank line at EOF.",
+      "tools/render_exoskeleton_v4_inspection.py:43: new blank line at EOF.",
+      "tools/retain_exoskeleton_v4_transformed_sleeves.py:11: new blank line at EOF.",
+      "tools/seat_exoskeleton_v4_calf_mounts.py:18: new blank line at EOF.",
+      "tools/validate_exoskeleton_v4_saved_preview.py:31: new blank line at EOF."
+    ],
+    "note": "Retained validated source bytes; no other whitespace errors."
+  }
+}

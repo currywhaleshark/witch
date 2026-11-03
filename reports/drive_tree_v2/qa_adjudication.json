@@ -1,0 +1,56 @@
+{
+  "drive_geometry_errors": 0,
+  "accepted_warnings": {
+    "trim_uv_overlap": "All derived parts reuse the existing planar trim atlas; not a unique bake.",
+    "planar_caps": "Nondeforming flat hard-surface caps are triangulated on export.",
+    "hidden_joining_faces": "Retained on independently assembled closed foot/anvil and blade/runner pieces.",
+    "glb_duplicate_vertices": "UV and normal boundary splits, not double rendered faces."
+  },
+  "visual_inspection": {
+    "live_blender": "All three v2 guillotines: material plus wireframe from multiple angles. New exoskeleton raw/working: front/back/oblique material and front/side wireframe.",
+    "game_captures_reviewed": [
+      "compare_guillotine/063.jpg",
+      "compare_guillotine_lock/014.jpg",
+      "compare_guillotine_lock/024.jpg",
+      "compare_compound_executor/055.jpg"
+    ],
+    "screen_orientation": "LEFT v2 / RIGHT v1; corrected camera-side metadata without altering rendered frames."
+  },
+  "exoskeleton": {
+    "raw_qa_passed": false,
+    "working_source_qa_passed": true,
+    "working_glb_reimport_qa_passed": true,
+    "uv_fixed": "12 actual faces (six in sampled checker); maximum 0.25 texel movement at 2K.",
+    "overlap_repair": [
+      {
+        "original_polygon": 52552,
+        "area_m2": 1.0305397069032551e-07
+      },
+      {
+        "original_polygon": 65577,
+        "area_m2": 1.4431452655117027e-07
+      },
+      {
+        "original_polygon": 78463,
+        "area_m2": 9.843358128591717e-08
+      },
+      {
+        "original_polygon": 78476,
+        "area_m2": 1.2737187660150084e-07
+      }
+    ],
+    "retained_data": {
+      "all_retained_vertex_positions_exact": true,
+      "all_retained_face_connectivity_exact": true,
+      "max_retained_corner_normal_vector_difference": 0.0005098527137260249,
+      "uv_faces_changed": 12,
+      "max_uv_difference_texels_at_2048": 0.25002908537473234
+    },
+    "remaining_warnings": [
+      "ExoskeletonV2_WorkingMesh: duplicate verts=6637 loose verts=0",
+      "hidden back-to-back faces: ExoskeletonV2_WorkingMesh (1 pairs) - delete to save tris"
+    ],
+    "welded_proxy_not_saved": "Pre-cleanup diagnostic only: 31 inconsistent edge windings and 30 nonmanifold edges after blanket welding. Two separate shin modules are intentional.",
+    "remaining": "Not semantic segmentation, watertight production retopology or wearable/game-ready QA."
+  }
+}

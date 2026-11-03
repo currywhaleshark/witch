@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "export_runtime_identical": {
+    "exoskeleton_v4.glb": true,
+    "outfit_civilian_fit_v4.glb": true,
+    "outfit_transformed_fit_v4.glb": true
+  },
+  "body_outfit_nodes_and_skins_identical": true,
+  "transformed_outfit_byte_identical": true,
+  "retained_source_uv_exact": true,
+  "original_images_byte_identical": true,
+  "protected_files": 107
+}

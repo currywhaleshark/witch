@@ -1,0 +1,234 @@
+{
+  "passed": true,
+  "cleanup": {
+    "uv_faces_repaired": [
+      {
+        "polygon": 5415,
+        "loop": 16247,
+        "offset": [
+          5.459150270326063e-05,
+          0.00010918300540652126
+        ]
+      },
+      {
+        "polygon": 5416,
+        "loop": 16248,
+        "offset": [
+          -8.63167442730628e-05,
+          -8.63167442730628e-05
+        ]
+      },
+      {
+        "polygon": 13410,
+        "loop": 40232,
+        "offset": [
+          -0.0,
+          0.0001220703125
+        ]
+      },
+      {
+        "polygon": 16108,
+        "loop": 48326,
+        "offset": [
+          -6.771242624381557e-05,
+          -0.00010156864300370216
+        ]
+      },
+      {
+        "polygon": 16109,
+        "loop": 48327,
+        "offset": [
+          -0.00011580606224015355,
+          -3.860202195937745e-05
+        ]
+      },
+      {
+        "polygon": 16111,
+        "loop": 48335,
+        "offset": [
+          6.771242624381557e-05,
+          0.00010156864300370216
+        ]
+      },
+      {
+        "polygon": 16112,
+        "loop": 48336,
+        "offset": [
+          -0.00011580606224015355,
+          -3.860202195937745e-05
+        ]
+      },
+      {
+        "polygon": 26701,
+        "loop": 80104,
+        "offset": [
+          -0.00010918300540652126,
+          -5.459150270326063e-05
+        ]
+      },
+      {
+        "polygon": 35876,
+        "loop": 107628,
+        "offset": [
+          -0.0001220703125,
+          0.0
+        ]
+      },
+      {
+        "polygon": 43614,
+        "loop": 130844,
+        "offset": [
+          -0.00010918300540652126,
+          5.459150270326063e-05
+        ]
+      },
+      {
+        "polygon": 43615,
+        "loop": 130845,
+        "offset": [
+          -0.0001220703125,
+          0.0
+        ]
+      },
+      {
+        "polygon": 63469,
+        "loop": 190407,
+        "offset": [
+          -0.0,
+          -0.0001220703125
+        ]
+      }
+    ],
+    "geometry_changed": true,
+    "max_uv_offset_texels_at_2048": 0.25,
+    "removed_overlap_slivers": [
+      {
+        "original_polygon": 52552,
+        "area_m2": 1.0305397069032551e-07
+      },
+      {
+        "original_polygon": 65577,
+        "area_m2": 1.4431452655117027e-07
+      },
+      {
+        "original_polygon": 78463,
+        "area_m2": 9.843358128591717e-08
+      },
+      {
+        "original_polygon": 78476,
+        "area_m2": 1.2737187660150084e-07
+      }
+    ],
+    "retained_vertex_positions_unchanged": true,
+    "triangles_after": 78474
+  },
+  "preservation": {
+    "all_retained_vertex_positions_exact": true,
+    "all_retained_face_connectivity_exact": true,
+    "max_retained_corner_normal_vector_difference": 0.0005098527137260249,
+    "uv_faces_changed": 12,
+    "max_uv_difference_texels_at_2048": 0.25002908537473234
+  },
+  "source": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "ExoskeletonV2_WorkingMesh: duplicate verts=6637 loose verts=0",
+      "hidden back-to-back faces: ExoskeletonV2_WorkingMesh (1 pairs) - delete to save tris"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [
+      {
+        "where": "ExoskeletonV2_WorkingMesh",
+        "tri_pairs": 1
+      }
+    ],
+    "enclosed": [],
+    "objects": {
+      "ExoskeletonV2_WorkingMesh": {
+        "verts": 46139,
+        "faces": 78474,
+        "tris": 78474,
+        "ngons": 0,
+        "boundary_edges": 13634,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 6637,
+        "islands": 254,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 1.32,
+        "uv_coverage_pct": 30.5
+      }
+    }
+  },
+  "reimport": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "ExoskeletonV2_WorkingMesh.001: duplicate verts=6671 loose verts=0",
+      "hidden back-to-back faces: ExoskeletonV2_WorkingMesh.001 (1 pairs) - delete to save tris"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [
+      {
+        "where": "ExoskeletonV2_WorkingMesh.001",
+        "tri_pairs": 1
+      }
+    ],
+    "enclosed": [],
+    "objects": {
+      "ExoskeletonV2_WorkingMesh.001": {
+        "verts": 46186,
+        "faces": 78474,
+        "tris": 78474,
+        "ngons": 0,
+        "boundary_edges": 13672,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 6671,
+        "islands": 267,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 1.32,
+        "uv_coverage_pct": 30.5
+      }
+    }
+  },
+  "pre_cleanup_evidence": "pre_cleanup_qa.json",
+  "limits": [
+    "12 UV faces repaired and four overlap slivers removed; source GLB unchanged.",
+    "UV seams and tiny open repair boundaries retained in this source-stage candidate; not watertight retopology.",
+    "No fitting, joint segmentation, rig or runtime integration."
+  ]
+}

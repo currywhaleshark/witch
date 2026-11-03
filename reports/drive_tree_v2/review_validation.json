@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "static_links": 15,
+  "dynamic_capture_files": 388,
+  "local_missing": [],
+  "orientation": "Left v2 / right v1",
+  "browser_open": "Provide local review link; prior local-file browser navigation was blocked."
+}

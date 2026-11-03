@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Seoul",
+  "user_request": "좋아 외골격 수정한 것까지 커밋하자",
+  "status": "selected_for_prototype",
+  "scope": "The current v4 exoskeleton appearance, sleeve/cape fitting, rigid arm mechanisms, calf bands/mounts and existing-motion corrective keys for both clothing forms.",
+  "review": "reports/exoskeleton_v4/review.html",
+  "validation": "reports/exoskeleton_v4/delivery_manifest.json",
+  "supersedes": "Pending user-art-selection wording in the v4 delivery and production snapshot; their validation scope and remaining limits still apply.",
+  "commit_scope": "Completed prepared drive-tree assets and mechanisms, Tripo exoskeleton source/rig lineage through v4, related tools, reviews and handoff documentation.",
+  "does_not_imply": "New active skill integration, live cloth/hair/body/inter-part collision, arbitrary/blended/interrupted-pose clearance, exact wrist contact or final performance approval."
+}

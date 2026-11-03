@@ -1,0 +1,431 @@
+{
+  "id": "exoskeleton",
+  "parts": [
+    {
+      "name": "exoskeleton__back_core",
+      "role": "back_core",
+      "group": "body",
+      "delay": 0.45,
+      "surface": "core",
+      "origin": [
+        0.0,
+        1.16,
+        -0.285
+      ],
+      "triangles": 204,
+      "attach_bone": "DEF-chest"
+    },
+    {
+      "name": "exoskeleton__back_damper_1",
+      "role": "back_damper_1",
+      "group": "body",
+      "delay": 0.19,
+      "surface": "brass",
+      "origin": [
+        0.067,
+        1.14,
+        -0.28
+      ],
+      "triangles": 204,
+      "attach_bone": "DEF-chest"
+    },
+    {
+      "name": "exoskeleton__back_damper_neg1",
+      "role": "back_damper_-1",
+      "group": "body",
+      "delay": 0.19,
+      "surface": "brass",
+      "origin": [
+        -0.067,
+        1.14,
+        -0.28
+      ],
+      "triangles": 204,
+      "attach_bone": "DEF-chest"
+    },
+    {
+      "name": "exoskeleton__backplate",
+      "role": "backplate",
+      "group": "body",
+      "delay": 0.08,
+      "surface": "navy",
+      "origin": [
+        0.0,
+        1.14,
+        -0.24
+      ],
+      "triangles": 108,
+      "attach_bone": "DEF-chest"
+    },
+    {
+      "name": "exoskeleton__elbow_L",
+      "role": "elbow_L",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "navy",
+      "origin": [
+        0.393058,
+        1.043928,
+        -0.044955
+      ],
+      "triangles": 188,
+      "attach_bone": "DEF-forearm.L"
+    },
+    {
+      "name": "exoskeleton__elbow_R",
+      "role": "elbow_R",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "navy",
+      "origin": [
+        -0.393058,
+        1.043928,
+        -0.044955
+      ],
+      "triangles": 188,
+      "attach_bone": "DEF-forearm.R"
+    },
+    {
+      "name": "exoskeleton__forearm_plate_L",
+      "role": "forearm_plate_L",
+      "group": "body",
+      "delay": 0.39,
+      "surface": "navy",
+      "origin": [
+        0.411797,
+        0.948136,
+        -0.019641
+      ],
+      "triangles": 220,
+      "attach_bone": "DEF-forearm.L"
+    },
+    {
+      "name": "exoskeleton__forearm_plate_R",
+      "role": "forearm_plate_R",
+      "group": "body",
+      "delay": 0.39,
+      "surface": "navy",
+      "origin": [
+        -0.411797,
+        0.948136,
+        -0.019641
+      ],
+      "triangles": 220,
+      "attach_bone": "DEF-forearm.R"
+    },
+    {
+      "name": "exoskeleton__forearm_rail_L",
+      "role": "forearm_rail_L",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "brass",
+      "origin": [
+        0.411797,
+        0.948136,
+        -0.019641
+      ],
+      "triangles": 220,
+      "attach_bone": "DEF-forearm.L"
+    },
+    {
+      "name": "exoskeleton__forearm_rail_R",
+      "role": "forearm_rail_R",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "brass",
+      "origin": [
+        -0.411797,
+        0.948136,
+        -0.019641
+      ],
+      "triangles": 220,
+      "attach_bone": "DEF-forearm.R"
+    },
+    {
+      "name": "exoskeleton__knee_L",
+      "role": "knee_L",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "brass",
+      "origin": [
+        0.153,
+        0.455,
+        0.133
+      ],
+      "triangles": 204,
+      "attach_bone": "DEF-shin.L.001"
+    },
+    {
+      "name": "exoskeleton__knee_R",
+      "role": "knee_R",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "brass",
+      "origin": [
+        -0.153,
+        0.455,
+        0.133
+      ],
+      "triangles": 204,
+      "attach_bone": "DEF-shin.R.001"
+    },
+    {
+      "name": "exoskeleton__shin_guard_L",
+      "role": "shin_guard_L",
+      "group": "body",
+      "delay": 0.4,
+      "surface": "navy",
+      "origin": [
+        0.151236,
+        0.3065,
+        0.10495
+      ],
+      "triangles": 156,
+      "attach_bone": "DEF-shin.L.001"
+    },
+    {
+      "name": "exoskeleton__shin_guard_R",
+      "role": "shin_guard_R",
+      "group": "body",
+      "delay": 0.4,
+      "surface": "navy",
+      "origin": [
+        -0.151236,
+        0.3065,
+        0.10495
+      ],
+      "triangles": 156,
+      "attach_bone": "DEF-shin.R.001"
+    },
+    {
+      "name": "exoskeleton__shin_rail_L",
+      "role": "shin_rail_L",
+      "group": "body",
+      "delay": 0.35,
+      "surface": "brass",
+      "origin": [
+        0.1515,
+        0.32,
+        0.107611
+      ],
+      "triangles": 188,
+      "attach_bone": "DEF-shin.L.001"
+    },
+    {
+      "name": "exoskeleton__shin_rail_R",
+      "role": "shin_rail_R",
+      "group": "body",
+      "delay": 0.35,
+      "surface": "brass",
+      "origin": [
+        -0.1515,
+        0.32,
+        0.107611
+      ],
+      "triangles": 188,
+      "attach_bone": "DEF-shin.R.001"
+    },
+    {
+      "name": "exoskeleton__shoulder_L",
+      "role": "shoulder_L",
+      "group": "body",
+      "delay": 0.2,
+      "surface": "navy",
+      "origin": [
+        0.315,
+        1.284,
+        -0.035
+      ],
+      "triangles": 188,
+      "attach_bone": "DEF-upper_arm.L.002"
+    },
+    {
+      "name": "exoskeleton__shoulder_R",
+      "role": "shoulder_R",
+      "group": "body",
+      "delay": 0.2,
+      "surface": "navy",
+      "origin": [
+        -0.315,
+        1.284,
+        -0.035
+      ],
+      "triangles": 188,
+      "attach_bone": "DEF-upper_arm.R.001"
+    },
+    {
+      "name": "exoskeleton__shoulder_pin_L",
+      "role": "shoulder_pin_L",
+      "group": "body",
+      "delay": 0.31,
+      "surface": "brass",
+      "origin": [
+        0.357,
+        1.284,
+        -0.035
+      ],
+      "triangles": 268,
+      "attach_bone": "DEF-upper_arm.L.002"
+    },
+    {
+      "name": "exoskeleton__shoulder_pin_R",
+      "role": "shoulder_pin_R",
+      "group": "body",
+      "delay": 0.31,
+      "surface": "brass",
+      "origin": [
+        -0.357,
+        1.284,
+        -0.035
+      ],
+      "triangles": 268,
+      "attach_bone": "DEF-upper_arm.R.001"
+    },
+    {
+      "name": "exoskeleton__upper_damper_L",
+      "role": "upper_damper_L",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "navy",
+      "origin": [
+        0.344322,
+        1.172366,
+        -0.019629
+      ],
+      "triangles": 236,
+      "attach_bone": "DEF-upper_arm.L.002"
+    },
+    {
+      "name": "exoskeleton__upper_damper_R",
+      "role": "upper_damper_R",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "navy",
+      "origin": [
+        -0.344322,
+        1.172366,
+        -0.019629
+      ],
+      "triangles": 236,
+      "attach_bone": "DEF-upper_arm.R.001"
+    },
+    {
+      "name": "exoskeleton__upper_rail_L",
+      "role": "upper_rail_L",
+      "group": "body",
+      "delay": 0.27,
+      "surface": "brass",
+      "origin": [
+        0.346529,
+        1.163964,
+        -0.039978
+      ],
+      "triangles": 236,
+      "attach_bone": "DEF-upper_arm.L.002"
+    },
+    {
+      "name": "exoskeleton__upper_rail_R",
+      "role": "upper_rail_R",
+      "group": "body",
+      "delay": 0.27,
+      "surface": "brass",
+      "origin": [
+        -0.346529,
+        1.163964,
+        -0.039978
+      ],
+      "triangles": 236,
+      "attach_bone": "DEF-upper_arm.R.001"
+    },
+    {
+      "name": "exoskeleton__wrist_cuff_L",
+      "role": "wrist_cuff_L",
+      "group": "body",
+      "delay": 0.43,
+      "surface": "brass",
+      "origin": [
+        0.392227,
+        0.901996,
+        0.021018
+      ],
+      "triangles": 204,
+      "attach_bone": "DEF-forearm.L.001"
+    },
+    {
+      "name": "exoskeleton__wrist_cuff_R",
+      "role": "wrist_cuff_R",
+      "group": "body",
+      "delay": 0.43,
+      "surface": "brass",
+      "origin": [
+        -0.392227,
+        0.901996,
+        0.021018
+      ],
+      "triangles": 204,
+      "attach_bone": "DEF-forearm.R"
+    }
+  ],
+  "sockets": {
+    "Socket_body_origin": {
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_back_anchor": {
+      "position": [
+        0.0,
+        1.14,
+        -0.24
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    }
+  },
+  "units": "metres",
+  "runtime_status": "prepared_asset",
+  "triangles": 5336,
+  "part_count": 26,
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.449434,
+      0.180648,
+      -0.308
+    ],
+    "max": [
+      0.449434,
+      1.329,
+      0.160259
+    ]
+  },
+  "dimensions": [
+    0.89887,
+    1.14835,
+    0.46826
+  ],
+  "materials": [
+    "M_DriveV1_Surface",
+    "M_DriveV1_Glow"
+  ],
+  "texture_set": "drive_tree_v1 shared trim"
+}

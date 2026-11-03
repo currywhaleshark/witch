@@ -1,0 +1,3640 @@
+{
+  "poses": [
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 14,
+        "wrist_L": 60,
+        "wrist_R": 28
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 15
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 19
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 96
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 40
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {
+        "forearm_L": 11,
+        "forearm_R": 21,
+        "wrist_L": 69,
+        "wrist_R": 28
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 19
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 27
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 103
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 42
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 14,
+        "wrist_L": 60,
+        "wrist_R": 28
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 15
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 19
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 94
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 40
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 72,
+        "forearm_R": 67,
+        "wrist_L": 23,
+        "wrist_R": 8
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 102
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 99
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 36
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 10
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_L": 74,
+        "forearm_R": 58,
+        "wrist_L": 17,
+        "wrist_R": 9
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 106
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 98
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 28
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 11
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {
+        "forearm_L": 75,
+        "forearm_R": 57,
+        "wrist_L": 17,
+        "wrist_R": 11
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 108
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 94
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 28
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 13
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 72,
+        "forearm_R": 64,
+        "wrist_L": 23,
+        "wrist_R": 11
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 102
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 97
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 36
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 13
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 72,
+        "forearm_R": 67,
+        "wrist_L": 23,
+        "wrist_R": 8
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 102
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 99
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 36
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 10
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {
+        "shoulder_L": 514,
+        "upper_L": 21
+      },
+      "cloth": {
+        "shoulder_L": {
+          "SourceOutfit_Cardigan_v11": 105,
+          "SourceOutfit_Inner_v11": 750
+        },
+        "upper_L": {
+          "SourceOutfit_Inner_v11": 37
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_L": 43,
+        "forearm_R": 85,
+        "wrist_L": 257,
+        "wrist_R": 14
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 54
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 114
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 313
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 19
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {
+        "wrist_L": 33
+      },
+      "cloth": {
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 37
+        }
+      }
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {
+        "wrist_L": 33
+      },
+      "cloth": {
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 37
+        }
+      }
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {
+        "wrist_L": 33
+      },
+      "cloth": {
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 37
+        }
+      }
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "elbow_L": 69,
+        "forearm_L": 253,
+        "forearm_R": 86,
+        "shin_L": 95,
+        "wrist_L": 17,
+        "wrist_R": 8
+      },
+      "cloth": {
+        "elbow_L": {
+          "SourceOutfit_Cardigan_v11": 100
+        },
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 393
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 114
+        },
+        "shin_L": {
+          "Outfit_Shoes_v7": 146
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 19
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 12
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "elbow_L": 73,
+        "forearm_L": 100
+      },
+      "cloth": {
+        "elbow_L": {
+          "SourceOutfit_Cardigan_v11": 101
+        },
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 146
+        }
+      }
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "elbow_L": 73,
+        "forearm_L": 100
+      },
+      "cloth": {
+        "elbow_L": {
+          "SourceOutfit_Cardigan_v11": 101
+        },
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 146
+        }
+      }
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "elbow_L": 73,
+        "forearm_L": 100
+      },
+      "cloth": {
+        "elbow_L": {
+          "SourceOutfit_Cardigan_v11": 101
+        },
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 146
+        }
+      }
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 160,
+        "forearm_R": 80,
+        "shin_L": 59,
+        "wrist_L": 61,
+        "wrist_R": 10
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 198
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 111
+        },
+        "shin_L": {
+          "Outfit_Shoes_v7": 85
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 90
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 15
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 100,
+        "wrist_L": 159
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 135
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 262
+        }
+      }
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 100,
+        "wrist_L": 159
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 135
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 262
+        }
+      }
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 100,
+        "wrist_L": 159
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 135
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 262
+        }
+      }
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_R": 78,
+        "shoulder_L": 87,
+        "wrist_L": 84,
+        "wrist_R": 10
+      },
+      "cloth": {
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 103
+        },
+        "shoulder_L": {
+          "SourceOutfit_Inner_v11": 147
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 131
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 12
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_R": 61,
+        "wrist_L": 57,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 82
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 102
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 44
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_L": 30,
+        "forearm_R": 42,
+        "wrist_L": 54,
+        "wrist_R": 25
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 47
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 60
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 83
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 34
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {
+        "forearm_L": 33,
+        "forearm_R": 29,
+        "wrist_L": 57,
+        "wrist_R": 25
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 58
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 36
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 88
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 35
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 13,
+        "forearm_R": 21,
+        "wrist_L": 57,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 33
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 25
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 89
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 8,
+        "forearm_R": 13,
+        "wrist_L": 62,
+        "wrist_R": 29
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 17
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 18
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 93
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 41
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_L": 2,
+        "wrist_L": 55,
+        "wrist_R": 61
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 3
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 87
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 110
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {
+        "forearm_R": 45,
+        "wrist_L": 59,
+        "wrist_R": 7
+      },
+      "cloth": {
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 56
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 98
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 7
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 1,
+        "forearm_R": 49,
+        "wrist_L": 55,
+        "wrist_R": 4
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 1
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 69
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 87
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 4
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "shoulder_R": 124,
+        "upper_L": 43
+      },
+      "cloth": {
+        "shoulder_R": {
+          "SourceOutfit_Cardigan_v11": 149
+        },
+        "upper_L": {
+          "SourceOutfit_Cardigan_v11": 79
+        }
+      }
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 2,
+        "forearm_R": 49,
+        "wrist_L": 56,
+        "wrist_R": 4
+      },
+      "cloth": {
+        "forearm_L": {
+          "SourceOutfit_Cardigan_v11": 3
+        },
+        "forearm_R": {
+          "SourceOutfit_Cardigan_v11": 69
+        },
+        "wrist_L": {
+          "SourceOutfit_Cardigan_v11": 90
+        },
+        "wrist_R": {
+          "SourceOutfit_Cardigan_v11": 4
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "shoulder_R": 127,
+        "upper_L": 43
+      },
+      "cloth": {
+        "shoulder_R": {
+          "SourceOutfit_Cardigan_v11": 155
+        },
+        "upper_L": {
+          "SourceOutfit_Cardigan_v11": 79
+        }
+      }
+    },
+    {
+      "variant": "swing_075",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {
+        "forearm_L": 57
+      },
+      "cloth": {
+        "forearm_L": {
+          "TF_sleeve_L_v4": 93
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_L": 58
+      },
+      "cloth": {
+        "forearm_L": {
+          "TF_sleeve_L_v4": 98
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {
+        "forearm_L": 58
+      },
+      "cloth": {
+        "forearm_L": {
+          "TF_sleeve_L_v4": 98
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 57
+      },
+      "cloth": {
+        "forearm_L": {
+          "TF_sleeve_L_v4": 93
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {
+        "forearm_L": 57
+      },
+      "cloth": {
+        "forearm_L": {
+          "TF_sleeve_L_v4": 93
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {
+        "shin_R": 41,
+        "shoulder_L": 1671,
+        "upper_L": 39
+      },
+      "cloth": {
+        "shin_R": {
+          "TF_boots_v4": 57
+        },
+        "shoulder_L": {
+          "TF_blouse_v4": 552,
+          "TF_cape_v4": 117,
+          "TF_under_torso_v4": 186,
+          "TF_waist_v4": 4633
+        },
+        "upper_L": {
+          "TF_blouse_v4": 63
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {
+        "upper_L": 143
+      },
+      "cloth": {
+        "upper_L": {
+          "TF_cape_v4": 332,
+          "TF_under_sleeves_v4": 37
+        }
+      }
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {
+        "upper_L": 149
+      },
+      "cloth": {
+        "upper_L": {
+          "TF_cape_v4": 323,
+          "TF_under_sleeves_v4": 39
+        }
+      }
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {
+        "upper_L": 139
+      },
+      "cloth": {
+        "upper_L": {
+          "TF_cape_v4": 308,
+          "TF_under_sleeves_v4": 33
+        }
+      }
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {
+        "forearm_L": 50,
+        "wrist_R": 39
+      },
+      "cloth": {
+        "forearm_L": {
+          "TF_sleeve_L_v4": 84
+        },
+        "wrist_R": {
+          "TF_skirt_v4": 73
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "forearm_L": 29,
+        "shin_L": 149
+      },
+      "cloth": {
+        "forearm_L": {
+          "TF_sleeve_L_v4": 59
+        },
+        "shin_L": {
+          "TF_boots_v4": 220
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "forearm_L": 44,
+        "shin_L": 79
+      },
+      "cloth": {
+        "forearm_L": {
+          "TF_sleeve_L_v4": 74
+        },
+        "shin_L": {
+          "TF_boots_v4": 135
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "shoulder_L": 64
+      },
+      "cloth": {
+        "shoulder_L": {
+          "TF_blouse_v4": 90,
+          "TF_cape_v4": 18
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {
+        "wrist_L": 97
+      },
+      "cloth": {
+        "wrist_L": {
+          "TF_sleeve_L_v4": 267
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {
+        "wrist_L": 41
+      },
+      "cloth": {
+        "wrist_L": {
+          "TF_sleeve_L_v4": 91
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {
+        "shin_L": 54,
+        "wrist_L": 45
+      },
+      "cloth": {
+        "shin_L": {
+          "TF_boots_v4": 113
+        },
+        "wrist_L": {
+          "TF_sleeve_L_v4": 108
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {
+        "shoulder_R": 48,
+        "wrist_R": 21
+      },
+      "cloth": {
+        "shoulder_R": {
+          "TF_cape_v4": 90
+        },
+        "wrist_R": {
+          "TF_sleeve_R_v4": 37
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {},
+      "cloth": {}
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "shoulder_L": 28,
+        "shoulder_R": 50,
+        "wrist_L": 58,
+        "wrist_R": 26
+      },
+      "cloth": {
+        "shoulder_L": {
+          "TF_cape_v4": 39
+        },
+        "shoulder_R": {
+          "TF_cape_v4": 85
+        },
+        "wrist_L": {
+          "TF_sleeve_L_v4": 145
+        },
+        "wrist_R": {
+          "TF_sleeve_R_v4": 44
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "shoulder_L": 1,
+        "shoulder_R": 131,
+        "upper_L": 56
+      },
+      "cloth": {
+        "shoulder_L": {
+          "TF_sleeve_L_v4": 1
+        },
+        "shoulder_R": {
+          "TF_under_sleeves_v4": 172
+        },
+        "upper_L": {
+          "TF_cape_v4": 35,
+          "TF_sleeve_L_v4": 58,
+          "TF_under_sleeves_v4": 68
+        }
+      }
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "upper_L": 69
+      },
+      "cloth": {
+        "upper_L": {
+          "TF_cape_v4": 204,
+          "TF_sleeve_L_v4": 30,
+          "TF_under_sleeves_v4": 61
+        }
+      }
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "upper_L": 62
+      },
+      "cloth": {
+        "upper_L": {
+          "TF_cape_v4": 198,
+          "TF_sleeve_L_v4": 39,
+          "TF_under_sleeves_v4": 11
+        }
+      }
+    },
+    {
+      "variant": "v3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "shoulder_L": 26,
+        "shoulder_R": 49,
+        "wrist_L": 63,
+        "wrist_R": 26
+      },
+      "cloth": {
+        "shoulder_L": {
+          "TF_cape_v4": 36
+        },
+        "shoulder_R": {
+          "TF_cape_v4": 82
+        },
+        "wrist_L": {
+          "TF_sleeve_L_v4": 149
+        },
+        "wrist_R": {
+          "TF_sleeve_R_v4": 43
+        }
+      }
+    },
+    {
+      "variant": "swing_050",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "shoulder_L": 3,
+        "shoulder_R": 133,
+        "upper_L": 56
+      },
+      "cloth": {
+        "shoulder_L": {
+          "TF_sleeve_L_v4": 3
+        },
+        "shoulder_R": {
+          "TF_under_sleeves_v4": 174
+        },
+        "upper_L": {
+          "TF_cape_v4": 34,
+          "TF_sleeve_L_v4": 58,
+          "TF_under_sleeves_v4": 68
+        }
+      }
+    },
+    {
+      "variant": "swing_075",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "upper_L": 69
+      },
+      "cloth": {
+        "upper_L": {
+          "TF_cape_v4": 206,
+          "TF_sleeve_L_v4": 28,
+          "TF_under_sleeves_v4": 61
+        }
+      }
+    },
+    {
+      "variant": "swing_100",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "upper_L": 61
+      },
+      "cloth": {
+        "upper_L": {
+          "TF_cape_v4": 201,
+          "TF_sleeve_L_v4": 35,
+          "TF_under_sleeves_v4": 11
+        }
+      }
+    }
+  ],
+  "summary": {
+    "v3": {
+      "poses_with_crossings": 53,
+      "sum_crossed_faces": 9195,
+      "by_part": {
+        "elbow_L": 69,
+        "elbow_R": 0,
+        "forearm_L": 1467,
+        "forearm_R": 1195,
+        "knee_L": 0,
+        "knee_R": 0,
+        "shin_L": 436,
+        "shin_R": 41,
+        "shoulder_L": 2390,
+        "shoulder_R": 147,
+        "upper_L": 60,
+        "upper_R": 0,
+        "wrist_L": 2457,
+        "wrist_R": 933
+      }
+    },
+    "swing_050": {
+      "poses_with_crossings": 8,
+      "sum_crossed_faces": 1325,
+      "by_part": {
+        "elbow_L": 73,
+        "elbow_R": 0,
+        "forearm_L": 200,
+        "forearm_R": 0,
+        "knee_L": 0,
+        "knee_R": 0,
+        "shin_L": 0,
+        "shin_R": 0,
+        "shoulder_L": 4,
+        "shoulder_R": 515,
+        "upper_L": 341,
+        "upper_R": 0,
+        "wrist_L": 192,
+        "wrist_R": 0
+      }
+    },
+    "swing_075": {
+      "poses_with_crossings": 6,
+      "sum_crossed_faces": 752,
+      "by_part": {
+        "elbow_L": 73,
+        "elbow_R": 0,
+        "forearm_L": 200,
+        "forearm_R": 0,
+        "knee_L": 0,
+        "knee_R": 0,
+        "shin_L": 0,
+        "shin_R": 0,
+        "shoulder_L": 0,
+        "shoulder_R": 0,
+        "upper_L": 287,
+        "upper_R": 0,
+        "wrist_L": 192,
+        "wrist_R": 0
+      }
+    },
+    "swing_100": {
+      "poses_with_crossings": 6,
+      "sum_crossed_faces": 727,
+      "by_part": {
+        "elbow_L": 73,
+        "elbow_R": 0,
+        "forearm_L": 200,
+        "forearm_R": 0,
+        "knee_L": 0,
+        "knee_R": 0,
+        "shin_L": 0,
+        "shin_R": 0,
+        "shoulder_L": 0,
+        "shoulder_R": 0,
+        "upper_L": 262,
+        "upper_R": 0,
+        "wrist_L": 192,
+        "wrist_R": 0
+      }
+    }
+  }
+}

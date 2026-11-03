@@ -1,0 +1,2670 @@
+{
+  "pose_count": 208,
+  "poses_with_crossings": 206,
+  "maximum_by_part": {
+    "elbow_L": 68,
+    "forearm_rail_L": 85,
+    "forearm_plate_L": 53,
+    "wrist_cuff_L": 196,
+    "elbow_R": 70,
+    "forearm_rail_R": 77,
+    "forearm_plate_R": 62,
+    "wrist_cuff_R": 155,
+    "upper_damper_R": 30,
+    "upper_damper_L": 49,
+    "shoulder_R": 20,
+    "shoulder_L": 50,
+    "upper_rail_L": 35,
+    "upper_rail_R": 52
+  },
+  "poses": [
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 16,
+        "elbow_R": 12,
+        "forearm_rail_R": 8,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 16,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 12,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 12,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 8,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 10,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 21,
+        "wrist_cuff_L": 18,
+        "upper_damper_R": 18,
+        "elbow_R": 33,
+        "forearm_rail_R": 24,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 21,
+        "wrist_cuff_L": 19,
+        "elbow_R": 35,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "upper_damper_L": 10,
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 25,
+        "wrist_cuff_L": 20,
+        "elbow_R": 34,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossing_faces": {
+        "upper_damper_L": 28,
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 25,
+        "elbow_R": 25,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "upper_damper_L": 28,
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 24,
+        "wrist_cuff_L": 25,
+        "elbow_R": 23,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "upper_damper_L": 28,
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 24,
+        "wrist_cuff_L": 25,
+        "elbow_R": 23,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossing_faces": {
+        "upper_damper_L": 28,
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 25,
+        "elbow_R": 23,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "upper_damper_L": 10,
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 25,
+        "wrist_cuff_L": 20,
+        "elbow_R": 23,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 22,
+        "wrist_cuff_L": 19,
+        "elbow_R": 34,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 30
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 21,
+        "wrist_cuff_L": 19,
+        "elbow_R": 33,
+        "forearm_rail_R": 12,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 21,
+        "wrist_cuff_L": 39,
+        "upper_damper_R": 12,
+        "elbow_R": 33,
+        "forearm_rail_R": 24,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 21,
+        "wrist_cuff_L": 36,
+        "upper_damper_R": 18,
+        "elbow_R": 33,
+        "forearm_rail_R": 24,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 21,
+        "wrist_cuff_L": 18,
+        "upper_damper_R": 18,
+        "elbow_R": 33,
+        "forearm_rail_R": 24,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "forearm_rail_L": 10,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 15,
+        "elbow_R": 18,
+        "forearm_rail_R": 13,
+        "forearm_plate_R": 12,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 18,
+        "elbow_R": 18,
+        "forearm_rail_R": 13,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossing_faces": {
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 16,
+        "elbow_R": 18,
+        "forearm_rail_R": 8,
+        "forearm_plate_R": 12,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 12,
+        "forearm_plate_L": 14,
+        "wrist_cuff_L": 17,
+        "elbow_R": 18,
+        "forearm_rail_R": 13,
+        "forearm_plate_R": 10,
+        "wrist_cuff_R": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 16,
+        "elbow_R": 15,
+        "forearm_rail_R": 14,
+        "forearm_plate_R": 9,
+        "wrist_cuff_R": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 12,
+        "wrist_cuff_L": 17,
+        "elbow_R": 39,
+        "forearm_rail_R": 14,
+        "forearm_plate_R": 12,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 18,
+        "shoulder_R": 14,
+        "elbow_R": 14,
+        "forearm_rail_R": 48,
+        "forearm_plate_R": 46,
+        "wrist_cuff_R": 69
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 74,
+        "shoulder_R": 20,
+        "elbow_R": 18,
+        "forearm_rail_R": 48,
+        "forearm_plate_R": 30,
+        "wrist_cuff_R": 70
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 35,
+        "elbow_R": 27,
+        "forearm_rail_R": 8,
+        "forearm_plate_R": 41,
+        "wrist_cuff_R": 43
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 61,
+        "elbow_R": 6,
+        "forearm_rail_R": 8,
+        "forearm_plate_R": 11,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 17,
+        "elbow_R": 15,
+        "forearm_rail_R": 6,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 15
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "upper_damper_L": 28,
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 17,
+        "wrist_cuff_L": 79,
+        "elbow_R": 33,
+        "forearm_rail_R": 22,
+        "forearm_plate_R": 5,
+        "wrist_cuff_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "upper_damper_L": 30,
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 88,
+        "upper_damper_R": 12,
+        "elbow_R": 31,
+        "forearm_rail_R": 24,
+        "forearm_plate_R": 15,
+        "wrist_cuff_R": 57
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossing_faces": {
+        "shoulder_L": 21,
+        "upper_damper_L": 26,
+        "forearm_rail_L": 6,
+        "forearm_plate_L": 12,
+        "wrist_cuff_L": 67,
+        "elbow_R": 51,
+        "forearm_rail_R": 31,
+        "forearm_plate_R": 48,
+        "wrist_cuff_R": 127
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "shoulder_L": 21,
+        "upper_damper_L": 26,
+        "forearm_rail_L": 6,
+        "forearm_plate_L": 12,
+        "wrist_cuff_L": 66,
+        "upper_damper_R": 12,
+        "elbow_R": 47,
+        "forearm_rail_R": 33,
+        "forearm_plate_R": 52,
+        "wrist_cuff_R": 132
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "shoulder_L": 36,
+        "upper_damper_L": 27,
+        "forearm_rail_L": 61,
+        "forearm_plate_L": 41,
+        "wrist_cuff_L": 93,
+        "elbow_R": 38,
+        "forearm_rail_R": 19,
+        "forearm_plate_R": 29,
+        "wrist_cuff_R": 42
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossing_faces": {
+        "upper_rail_L": 34,
+        "upper_damper_L": 49,
+        "elbow_L": 34,
+        "forearm_rail_L": 5,
+        "forearm_plate_L": 40,
+        "wrist_cuff_L": 75,
+        "forearm_plate_R": 6,
+        "wrist_cuff_R": 31
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "upper_rail_L": 32,
+        "upper_damper_L": 48,
+        "elbow_L": 37,
+        "forearm_plate_L": 40,
+        "wrist_cuff_L": 70,
+        "forearm_plate_R": 6,
+        "wrist_cuff_R": 32
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "upper_rail_L": 22,
+        "upper_damper_L": 44,
+        "elbow_L": 34,
+        "forearm_plate_L": 19,
+        "wrist_cuff_L": 121,
+        "elbow_R": 14,
+        "forearm_plate_R": 6,
+        "wrist_cuff_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossing_faces": {
+        "upper_damper_L": 28,
+        "elbow_L": 14,
+        "forearm_rail_L": 61,
+        "forearm_plate_L": 50,
+        "wrist_cuff_L": 76,
+        "elbow_R": 35,
+        "forearm_plate_R": 6,
+        "wrist_cuff_R": 26
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "upper_damper_L": 21,
+        "forearm_rail_L": 15,
+        "forearm_plate_L": 31,
+        "wrist_cuff_L": 129,
+        "elbow_R": 19,
+        "forearm_plate_R": 6,
+        "wrist_cuff_R": 24
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "upper_damper_L": 12,
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 14,
+        "wrist_cuff_L": 19,
+        "elbow_R": 23,
+        "forearm_plate_R": 6,
+        "wrist_cuff_R": 27
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 10,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 18,
+        "elbow_R": 18,
+        "forearm_rail_R": 13,
+        "forearm_plate_R": 12,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 7,
+        "wrist_cuff_L": 57,
+        "elbow_R": 18,
+        "forearm_rail_R": 15,
+        "forearm_plate_R": 16,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossing_faces": {
+        "forearm_plate_L": 2,
+        "wrist_cuff_L": 1,
+        "elbow_R": 8,
+        "forearm_rail_R": 8,
+        "forearm_plate_R": 7,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7,
+        "forearm_plate_R": 6,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 27,
+        "wrist_cuff_L": 27,
+        "elbow_R": 18,
+        "forearm_rail_R": 14,
+        "forearm_plate_R": 16,
+        "wrist_cuff_R": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 29,
+        "elbow_R": 18,
+        "forearm_rail_R": 15,
+        "forearm_plate_R": 11,
+        "wrist_cuff_R": 19
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 13,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 24,
+        "wrist_cuff_L": 19,
+        "elbow_R": 16,
+        "forearm_rail_R": 13,
+        "forearm_plate_R": 8,
+        "wrist_cuff_R": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 20,
+        "elbow_R": 18,
+        "forearm_rail_R": 15,
+        "forearm_plate_R": 8,
+        "wrist_cuff_R": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 21,
+        "wrist_cuff_L": 21,
+        "elbow_R": 18,
+        "forearm_rail_R": 14,
+        "forearm_plate_R": 14,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 17,
+        "elbow_R": 19,
+        "forearm_rail_R": 14,
+        "forearm_plate_R": 14,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "elbow_L": 10,
+        "forearm_rail_L": 12,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 19,
+        "elbow_R": 18,
+        "forearm_rail_R": 13,
+        "forearm_plate_R": 12,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 10,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 10,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 17
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 10,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 10,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 10,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 10,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 16,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 16,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 16,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 9,
+        "wrist_cuff_L": 16,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 16,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 61,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 17,
+        "elbow_R": 12,
+        "forearm_rail_R": 9,
+        "forearm_plate_R": 13,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 22,
+        "wrist_cuff_L": 23,
+        "elbow_R": 18,
+        "forearm_rail_R": 13,
+        "forearm_plate_R": 16,
+        "wrist_cuff_R": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "elbow_L": 8,
+        "forearm_plate_L": 24,
+        "wrist_cuff_L": 23,
+        "elbow_R": 18,
+        "forearm_rail_R": 15,
+        "forearm_plate_R": 24,
+        "wrist_cuff_R": 22
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossing_faces": {
+        "elbow_L": 12,
+        "forearm_rail_L": 5,
+        "forearm_plate_L": 20,
+        "wrist_cuff_L": 21,
+        "elbow_R": 18,
+        "forearm_rail_R": 14,
+        "forearm_plate_R": 29,
+        "wrist_cuff_R": 28
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "elbow_L": 13,
+        "forearm_rail_L": 10,
+        "forearm_plate_L": 22,
+        "wrist_cuff_L": 83,
+        "elbow_R": 37,
+        "forearm_rail_R": 14,
+        "forearm_plate_R": 47,
+        "wrist_cuff_R": 91
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 30,
+        "elbow_R": 6,
+        "forearm_rail_R": 14,
+        "forearm_plate_R": 8,
+        "wrist_cuff_R": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 16,
+        "forearm_rail_L": 14,
+        "forearm_plate_L": 27,
+        "wrist_cuff_L": 23,
+        "forearm_plate_R": 4,
+        "wrist_cuff_R": 2
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "upper_rail_L": 32,
+        "upper_damper_L": 46,
+        "elbow_L": 13,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 21,
+        "wrist_cuff_R": 2
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "upper_rail_L": 32,
+        "upper_damper_L": 40,
+        "elbow_L": 13,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 21,
+        "wrist_cuff_R": 2
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossing_faces": {
+        "upper_rail_L": 32,
+        "upper_damper_L": 40,
+        "elbow_L": 13,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 22,
+        "wrist_cuff_R": 2
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "upper_rail_L": 32,
+        "upper_damper_L": 40,
+        "elbow_L": 13,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 22,
+        "wrist_cuff_R": 2
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "upper_rail_L": 32,
+        "upper_damper_L": 40,
+        "elbow_L": 13,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 22,
+        "wrist_cuff_R": 2
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossing_faces": {
+        "upper_rail_L": 32,
+        "upper_damper_L": 40,
+        "elbow_L": 13,
+        "forearm_rail_L": 13,
+        "forearm_plate_L": 26,
+        "wrist_cuff_L": 22,
+        "wrist_cuff_R": 2
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 8,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 6,
+        "elbow_R": 49,
+        "forearm_rail_R": 49
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 8,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 6,
+        "elbow_R": 44,
+        "forearm_rail_R": 51
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 7,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 14,
+        "elbow_R": 39,
+        "forearm_rail_R": 24
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossing_faces": {
+        "upper_rail_L": 35,
+        "upper_damper_L": 17,
+        "elbow_L": 47,
+        "forearm_rail_L": 9,
+        "forearm_plate_L": 27,
+        "wrist_cuff_L": 73,
+        "elbow_R": 44,
+        "forearm_rail_R": 12
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "upper_rail_L": 27,
+        "upper_damper_L": 16,
+        "elbow_L": 35,
+        "forearm_rail_L": 9,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 85,
+        "elbow_R": 44
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "upper_damper_L": 14,
+        "elbow_L": 14,
+        "forearm_rail_L": 9,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 42,
+        "elbow_R": 39
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossing_faces": {
+        "upper_damper_L": 17,
+        "elbow_L": 14,
+        "forearm_rail_L": 9,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 5,
+        "elbow_R": 37
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 7,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 7,
+        "elbow_R": 37
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 8,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 24,
+        "elbow_R": 43,
+        "forearm_rail_R": 36
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 8,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 16,
+        "elbow_R": 51,
+        "forearm_rail_R": 45
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 8,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 6,
+        "elbow_R": 41,
+        "forearm_rail_R": 52
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 8,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 6,
+        "elbow_R": 47,
+        "forearm_rail_R": 51
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 8,
+        "forearm_plate_L": 3,
+        "wrist_cuff_L": 6,
+        "elbow_R": 49,
+        "forearm_rail_R": 49
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 5,
+        "wrist_cuff_L": 6
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 5,
+        "wrist_cuff_L": 6
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 50
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "forearm_rail_L": 2,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 10,
+        "forearm_rail_L": 7,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 14,
+        "elbow_R": 43,
+        "forearm_rail_R": 6,
+        "forearm_plate_R": 39
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 9,
+        "forearm_rail_L": 7,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 134,
+        "upper_rail_R": 36,
+        "upper_damper_R": 28,
+        "elbow_R": 9,
+        "forearm_rail_R": 58,
+        "forearm_plate_R": 34,
+        "wrist_cuff_R": 155
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 164,
+        "upper_rail_R": 52,
+        "upper_damper_R": 30,
+        "forearm_rail_R": 21,
+        "forearm_plate_R": 15,
+        "wrist_cuff_R": 144
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 9,
+        "forearm_rail_L": 5,
+        "forearm_plate_L": 5,
+        "wrist_cuff_L": 157,
+        "elbow_R": 70,
+        "forearm_rail_R": 77,
+        "forearm_plate_R": 62,
+        "wrist_cuff_R": 126
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7,
+        "elbow_R": 51,
+        "forearm_rail_R": 38,
+        "forearm_plate_R": 8
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "forearm_rail_L": 2,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 10
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_rail_L": 7,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 18,
+        "elbow_R": 45,
+        "forearm_rail_R": 38
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "upper_damper_L": 15,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 53,
+        "elbow_R": 44,
+        "forearm_rail_R": 44,
+        "forearm_plate_R": 2,
+        "wrist_cuff_R": 62
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossing_faces": {
+        "shoulder_L": 50,
+        "wrist_cuff_L": 6,
+        "elbow_R": 37,
+        "forearm_rail_R": 17,
+        "forearm_plate_R": 43,
+        "wrist_cuff_R": 114
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "shoulder_L": 37,
+        "wrist_cuff_L": 6,
+        "elbow_R": 41,
+        "forearm_rail_R": 20,
+        "forearm_plate_R": 31,
+        "wrist_cuff_R": 154
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "shoulder_L": 44,
+        "upper_damper_L": 10,
+        "forearm_rail_L": 61,
+        "forearm_plate_L": 40,
+        "wrist_cuff_L": 74,
+        "elbow_R": 43,
+        "forearm_plate_R": 1,
+        "wrist_cuff_R": 102
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossing_faces": {
+        "upper_damper_L": 7,
+        "elbow_L": 60,
+        "forearm_rail_L": 61,
+        "forearm_plate_L": 53,
+        "wrist_cuff_L": 171
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 68,
+        "forearm_rail_L": 48,
+        "forearm_plate_L": 51,
+        "wrist_cuff_L": 151
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "upper_damper_L": 13,
+        "elbow_L": 35,
+        "forearm_rail_L": 59,
+        "forearm_plate_L": 46,
+        "wrist_cuff_L": 196,
+        "elbow_R": 16
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossing_faces": {
+        "upper_damper_L": 7,
+        "forearm_rail_L": 61,
+        "forearm_plate_L": 36,
+        "wrist_cuff_L": 97,
+        "elbow_R": 40
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 43,
+        "elbow_R": 19
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "elbow_L": 12,
+        "forearm_rail_L": 7,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 14,
+        "elbow_R": 41
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 5,
+        "wrist_cuff_L": 6
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "forearm_rail_L": 85,
+        "wrist_cuff_L": 56
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "elbow_L": 11,
+        "forearm_rail_L": 6,
+        "forearm_plate_L": 7,
+        "wrist_cuff_L": 9
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 12
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_L": 7,
+        "forearm_plate_L": 13,
+        "wrist_cuff_L": 27
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_plate_L": 10,
+        "wrist_cuff_L": 11
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossing_faces": {
+        "elbow_L": 9,
+        "forearm_rail_L": 11,
+        "forearm_plate_L": 12,
+        "wrist_cuff_L": 3
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "elbow_L": 9,
+        "forearm_rail_L": 5,
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 14
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 5,
+        "wrist_cuff_L": 6
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 15
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 25,
+        "elbow_R": 11
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 96,
+        "elbow_R": 19
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossing_faces": {
+        "forearm_plate_L": 4,
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {
+        "elbow_L": 9,
+        "forearm_rail_L": 12,
+        "forearm_plate_L": 11,
+        "wrist_cuff_L": 3
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "wrist_cuff_L": 64
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossing_faces": {
+        "elbow_L": 7,
+        "wrist_cuff_L": 67,
+        "wrist_cuff_R": 101
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "elbow_L": 8,
+        "forearm_rail_L": 29,
+        "forearm_plate_L": 51,
+        "wrist_cuff_L": 157,
+        "elbow_R": 32,
+        "forearm_rail_R": 25,
+        "forearm_plate_R": 7,
+        "wrist_cuff_R": 21
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "elbow_L": 14,
+        "forearm_plate_L": 8,
+        "wrist_cuff_L": 4
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossing_faces": {
+        "elbow_L": 8,
+        "forearm_rail_L": 7,
+        "forearm_plate_L": 13,
+        "wrist_cuff_L": 4
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "upper_rail_L": 5,
+        "upper_damper_L": 28,
+        "elbow_L": 8,
+        "forearm_plate_L": 16,
+        "wrist_cuff_L": 11,
+        "shoulder_R": 14
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "upper_rail_L": 5,
+        "upper_damper_L": 24,
+        "elbow_L": 8,
+        "forearm_plate_L": 15,
+        "wrist_cuff_L": 11,
+        "shoulder_R": 14
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossing_faces": {
+        "upper_rail_L": 3,
+        "upper_damper_L": 24,
+        "elbow_L": 8,
+        "forearm_plate_L": 27,
+        "wrist_cuff_L": 12,
+        "shoulder_R": 14
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "upper_rail_L": 3,
+        "upper_damper_L": 24,
+        "elbow_L": 8,
+        "forearm_plate_L": 28,
+        "wrist_cuff_L": 13,
+        "shoulder_R": 14
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.916666666666667,
+      "crossing_faces": {
+        "upper_rail_L": 3,
+        "upper_damper_L": 24,
+        "elbow_L": 8,
+        "forearm_plate_L": 28,
+        "wrist_cuff_L": 13,
+        "shoulder_R": 14
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossing_faces": {
+        "upper_rail_L": 3,
+        "upper_damper_L": 24,
+        "elbow_L": 8,
+        "forearm_plate_L": 28,
+        "wrist_cuff_L": 13,
+        "shoulder_R": 14
+      }
+    }
+  ],
+  "scope": "Strict non-coplanar garment/frame crossings in 13 actual engine samples per clip/form. Excludes hair, body and continuous collision."
+}

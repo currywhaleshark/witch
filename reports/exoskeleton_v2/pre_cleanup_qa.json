@@ -1,0 +1,269 @@
+{
+  "geometry_topology_and_normals_unchanged": true,
+  "cleanup": {
+    "uv_faces_repaired": [
+      {
+        "polygon": 5415,
+        "loop": 16247,
+        "offset": [
+          5.459150270326063e-05,
+          0.00010918300540652126
+        ]
+      },
+      {
+        "polygon": 5416,
+        "loop": 16248,
+        "offset": [
+          -8.63167442730628e-05,
+          -8.63167442730628e-05
+        ]
+      },
+      {
+        "polygon": 13410,
+        "loop": 40232,
+        "offset": [
+          -0.0,
+          0.0001220703125
+        ]
+      },
+      {
+        "polygon": 16108,
+        "loop": 48326,
+        "offset": [
+          -6.771242624381557e-05,
+          -0.00010156864300370216
+        ]
+      },
+      {
+        "polygon": 16109,
+        "loop": 48327,
+        "offset": [
+          -0.00011580606224015355,
+          -3.860202195937745e-05
+        ]
+      },
+      {
+        "polygon": 16111,
+        "loop": 48335,
+        "offset": [
+          6.771242624381557e-05,
+          0.00010156864300370216
+        ]
+      },
+      {
+        "polygon": 16112,
+        "loop": 48336,
+        "offset": [
+          -0.00011580606224015355,
+          -3.860202195937745e-05
+        ]
+      },
+      {
+        "polygon": 26701,
+        "loop": 80104,
+        "offset": [
+          -0.00010918300540652126,
+          -5.459150270326063e-05
+        ]
+      },
+      {
+        "polygon": 35876,
+        "loop": 107628,
+        "offset": [
+          -0.0001220703125,
+          0.0
+        ]
+      },
+      {
+        "polygon": 43614,
+        "loop": 130844,
+        "offset": [
+          -0.00010918300540652126,
+          5.459150270326063e-05
+        ]
+      },
+      {
+        "polygon": 43615,
+        "loop": 130845,
+        "offset": [
+          -0.0001220703125,
+          0.0
+        ]
+      },
+      {
+        "polygon": 63469,
+        "loop": 190407,
+        "offset": [
+          -0.0,
+          -0.0001220703125
+        ]
+      }
+    ],
+    "geometry_changed": false,
+    "max_uv_offset_texels_at_2048": 0.25
+  },
+  "unwelded": {
+    "ok": true,
+    "pass": false,
+    "errors": [
+      "z-fighting: ExoskeletonV2_WorkingMesh (4 overlapping coplanar tri pairs)"
+    ],
+    "warnings": [
+      "ExoskeletonV2_WorkingMesh: duplicate verts=6639 loose verts=0",
+      "hidden back-to-back faces: ExoskeletonV2_WorkingMesh (1 pairs) - delete to save tris"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [
+      {
+        "where": "ExoskeletonV2_WorkingMesh",
+        "tri_pairs": 4
+      }
+    ],
+    "floating": [],
+    "back_to_back": [
+      {
+        "where": "ExoskeletonV2_WorkingMesh",
+        "tri_pairs": 1
+      }
+    ],
+    "enclosed": [],
+    "objects": {
+      "ExoskeletonV2_WorkingMesh": {
+        "verts": 46141,
+        "faces": 78478,
+        "tris": 78478,
+        "ngons": 0,
+        "boundary_edges": 13630,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 6639,
+        "islands": 254,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 1.22,
+        "uv_coverage_pct": 30.6
+      }
+    }
+  },
+  "seam_pair_adjacency": [
+    {
+      "triangle_indices": [
+        51762,
+        78476
+      ],
+      "shared_position_count_at_1e_7m": 2,
+      "projected_overlap_area_m2": 8.92468960955739e-08
+    },
+    {
+      "triangle_indices": [
+        52550,
+        52552
+      ],
+      "shared_position_count_at_1e_7m": 1,
+      "projected_overlap_area_m2": 2.3444254810926768e-08
+    },
+    {
+      "triangle_indices": [
+        65577,
+        65579
+      ],
+      "shared_position_count_at_1e_7m": 1,
+      "projected_overlap_area_m2": 2.7015805245667046e-08
+    },
+    {
+      "triangle_indices": [
+        78460,
+        78463
+      ],
+      "shared_position_count_at_1e_7m": 2,
+      "projected_overlap_area_m2": 9.12696123123169e-08
+    }
+  ],
+  "diagnostic_weld": {
+    "distance_m": 1e-07,
+    "before_vertices": 46141,
+    "after_vertices": 39160,
+    "faces": 78452,
+    "saved_to_asset": false
+  },
+  "welded": {
+    "ok": true,
+    "pass": false,
+    "errors": [
+      "QA_ExoV2_SeamsWelded: 31 edges with inconsistent face winding",
+      "floating/detached part in QA_ExoV2_SeamsWelded (5246 verts at [0.109, 0.001, 0.17])",
+      "floating/detached part in QA_ExoV2_SeamsWelded (5491 verts at [-0.106, 0.002, 0.171])"
+    ],
+    "warnings": [
+      "QA_ExoV2_SeamsWelded: non-manifold edges=30 wire=0",
+      "QA_ExoV2_SeamsWelded: duplicate verts=3 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [
+      {
+        "object": "QA_ExoV2_SeamsWelded",
+        "island_verts": 5246,
+        "center": [
+          0.109,
+          0.001,
+          0.17
+        ]
+      },
+      {
+        "object": "QA_ExoV2_SeamsWelded",
+        "island_verts": 5491,
+        "center": [
+          -0.106,
+          0.002,
+          0.171
+        ]
+      }
+    ],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "QA_ExoV2_SeamsWelded": {
+        "verts": 39160,
+        "faces": 78452,
+        "tris": 78452,
+        "ngons": 0,
+        "boundary_edges": 30,
+        "nonmanifold_edges": 30,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 31,
+        "duplicate_verts": 3,
+        "islands": 3,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 1.22,
+        "uv_coverage_pct": 30.6
+      }
+    }
+  },
+  "seam_adjudication_valid": false,
+  "adjudicated_passed": false
+}

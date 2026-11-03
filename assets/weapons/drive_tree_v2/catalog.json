@@ -1,0 +1,32 @@
+{
+  "status": "prepared assets / review motion only",
+  "assets": {
+    "guillotine": {
+      "name": "낙하 단두대",
+      "model": "res://assets/weapons/drive_tree_v2/guillotine.glb",
+      "metadata": "res://assets/weapons/drive_tree_v2/guillotine.json",
+      "review_helper": "res://tests/helpers/drive_tree_v2_demo.gd"
+    },
+    "guillotine_saw": {
+      "name": "회전 톱날형",
+      "model": "res://assets/weapons/drive_tree_v2/guillotine_saw.glb",
+      "metadata": "res://assets/weapons/drive_tree_v2/guillotine_saw.json",
+      "review_helper": "res://tests/helpers/drive_tree_v2_demo.gd"
+    },
+    "guillotine_lock": {
+      "name": "고정 단두대",
+      "model": "res://assets/weapons/drive_tree_v2/guillotine_lock.glb",
+      "metadata": "res://assets/weapons/drive_tree_v2/guillotine_lock.json",
+      "review_helper": "res://tests/helpers/drive_tree_v2_demo.gd"
+    },
+    "compound_executor": {
+      "name": "복합 집행기",
+      "model": "res://assets/weapons/drive_tree_v1/compound_executor.glb",
+      "metadata": "res://assets/weapons/drive_tree_v1/compound_executor.json",
+      "review_helper": "res://tests/helpers/drive_tree_v2_demo.gd"
+    }
+  },
+  "new_exoskeleton_source": "assets/equipment/exoskeleton_v2/production.json",
+  "remaining_prepared_assets": "assets/weapons/drive_tree_v1/catalog.json",
+  "exoskeleton_note": "v1 exoskeleton is historical; v2 is a new raw candidate, not an attachable replacement."
+}

@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "models": {
+    "broad_cutter": {
+      "parts": 11,
+      "triangles": 1876,
+      "materials": 2,
+      "bytes": 203308,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    },
+    "compound_executor": {
+      "parts": 54,
+      "triangles": 13784,
+      "materials": 2,
+      "bytes": 1451096,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    },
+    "exoskeleton": {
+      "parts": 26,
+      "triangles": 5336,
+      "materials": 2,
+      "bytes": 561316,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    },
+    "guillotine": {
+      "parts": 25,
+      "triangles": 3516,
+      "materials": 2,
+      "bytes": 385984,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    },
+    "guillotine_lock": {
+      "parts": 29,
+      "triangles": 4004,
+      "materials": 2,
+      "bytes": 441640,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    },
+    "guillotine_saw": {
+      "parts": 25,
+      "triangles": 6316,
+      "materials": 2,
+      "bytes": 660544,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    },
+    "hydraulic_press": {
+      "parts": 33,
+      "triangles": 7036,
+      "materials": 2,
+      "bytes": 754720,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    },
+    "restraint_winch": {
+      "parts": 29,
+      "triangles": 5920,
+      "materials": 2,
+      "bytes": 623556,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    },
+    "shock_frame": {
+      "parts": 12,
+      "triangles": 2416,
+      "materials": 2,
+      "bytes": 255096,
+      "images": [
+        "textures/drive_normal.png",
+        "textures/drive_orm.png",
+        "textures/drive_color.png",
+        "textures/drive_emission.png"
+      ]
+    }
+  },
+  "textures": {
+    "drive_normal.png": "8a6f0e801809624da6072d8c8cfd217ec382c19b516245e40afa93d654584e8c",
+    "drive_orm.png": "e9cc8b70acacb49caf41fd8a56ceeaaa71ad6fcbe60b22f6eec8e337a9ea119f",
+    "drive_color.png": "54803577e1c951ea6c8ec367108ec31e1c7f2c541b64b20af38d0bb81240de2e",
+    "drive_emission.png": "48bbb87d9080d113f30ac8e233589d0da19bc7e03971cffb785df50ca88d7539"
+  }
+}

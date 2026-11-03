@@ -1,0 +1,1345 @@
+{
+  "pose_count": 208,
+  "poses_with_crossings": 26,
+  "maximum_by_part": {
+    "elbow_R": 38,
+    "wrist_cuff_R": 57,
+    "forearm_plate_R": 52,
+    "forearm_rail_L": 59,
+    "forearm_plate_L": 46,
+    "wrist_cuff_L": 43,
+    "upper_rail_L": 38,
+    "upper_damper_L": 36,
+    "upper_rail_R": 34,
+    "forearm_rail_R": 71
+  },
+  "poses": [
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "elbow_R": 30,
+        "wrist_cuff_R": 8
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "elbow_R": 27,
+        "forearm_plate_R": 2,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "wrist_cuff_R": 20
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossing_faces": {
+        "forearm_rail_L": 50,
+        "wrist_cuff_R": 16
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "forearm_rail_L": 32,
+        "wrist_cuff_R": 29
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "forearm_rail_L": 59,
+        "forearm_plate_L": 44,
+        "wrist_cuff_L": 34
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossing_faces": {
+        "upper_rail_L": 38,
+        "upper_damper_L": 32
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "upper_rail_L": 35,
+        "upper_damper_L": 26
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "upper_rail_L": 25,
+        "upper_damper_L": 36,
+        "wrist_cuff_L": 43
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossing_faces": {
+        "forearm_rail_L": 38,
+        "forearm_plate_L": 33,
+        "wrist_cuff_L": 26
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "wrist_cuff_L": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "wrist_cuff_L": 18
+      }
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "upper_rail_R": 24,
+        "elbow_R": 34,
+        "forearm_rail_R": 33,
+        "forearm_plate_R": 52,
+        "wrist_cuff_R": 45
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "forearm_rail_L": 57,
+        "forearm_plate_L": 46,
+        "wrist_cuff_L": 41,
+        "upper_rail_R": 34,
+        "elbow_R": 38,
+        "forearm_rail_R": 71,
+        "forearm_plate_R": 44,
+        "wrist_cuff_R": 57
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "wrist_cuff_R": 33
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossing_faces": {
+        "wrist_cuff_R": 37
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "wrist_cuff_R": 55
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossing_faces": {
+        "wrist_cuff_L": 30,
+        "wrist_cuff_R": 11
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossing_faces": {
+        "wrist_cuff_L": 29
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossing_faces": {
+        "wrist_cuff_L": 22
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossing_faces": {
+        "wrist_cuff_L": 18
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossing_faces": {
+        "wrist_cuff_L": 16
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "wrist_cuff_L": 16
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.166666666666667,
+      "crossing_faces": {
+        "wrist_cuff_L": 16
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.333333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.833333333333333,
+      "crossing_faces": {
+        "wrist_cuff_L": 7
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.166666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.333333333333333,
+      "crossing_faces": {
+        "forearm_plate_L": 16,
+        "wrist_cuff_L": 33
+      }
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.833333333333333,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.916666666666667,
+      "crossing_faces": {}
+    },
+    {
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossing_faces": {}
+    }
+  ],
+  "scope": "Strict non-coplanar garment/frame crossings in 13 actual engine samples per clip/form. Excludes hair, body and continuous collision."
+}

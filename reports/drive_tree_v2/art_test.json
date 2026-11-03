@@ -1,0 +1,15 @@
+{
+  "checks": 107791,
+  "measurements": {
+    "guillotine": {
+      "minimum_cutting_tip_y": 0.00200006365776062
+    },
+    "guillotine_lock": {
+      "minimum_cutting_tip_y": 0.00200006365776062
+    },
+    "guillotine_saw": {
+      "minimum_cutting_tip_y": 0.00200697779655457
+    }
+  },
+  "passed": true
+}

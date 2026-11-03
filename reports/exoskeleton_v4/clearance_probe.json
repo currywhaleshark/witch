@@ -1,0 +1,5017 @@
+{
+  "summary": {
+    "base": {
+      "poses": 13,
+      "faces": 6896
+    },
+    "safe_0.7": {
+      "poses": 18,
+      "faces": 5106
+    },
+    "safe_1.0": {
+      "poses": 20,
+      "faces": 5283
+    },
+    "safe_1.3": {
+      "poses": 20,
+      "faces": 6503
+    },
+    "safe_1.6": {
+      "poses": 21,
+      "faces": 6598
+    }
+  },
+  "poses": [
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 5
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_elbow_L": 181,
+        "ExoV4_forearm_L": 57,
+        "ExoV4_upper_dist_L": 11,
+        "ExoV4_upper_slide_L_2": 35,
+        "ExoV4_upper_slide_L_3": 46,
+        "ExoV4_upper_slide_L_5": 47,
+        "ExoV4_upper_slide_L_6": 45,
+        "ExoV4_upper_slide_L_7": 24,
+        "ExoV4_wrist_L": 353
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 80,
+        "ExoV4_upper_dist_L": 72,
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 34,
+        "ExoV4_upper_slide_L_4": 32,
+        "ExoV4_upper_slide_L_5": 44,
+        "ExoV4_upper_slide_L_6": 27,
+        "ExoV4_upper_slide_L_7": 24
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_wrist_L": 71
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_wrist_L": 33
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 97,
+        "ExoV4_wrist_L": 21
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 97,
+        "ExoV4_wrist_L": 21
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 97,
+        "ExoV4_wrist_L": 21
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 97,
+        "ExoV4_wrist_L": 21
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 97,
+        "ExoV4_wrist_L": 21
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_elbow_L": 73,
+        "ExoV4_forearm_L": 100
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_elbow_L": 73,
+        "ExoV4_forearm_L": 100
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_elbow_L": 73,
+        "ExoV4_forearm_L": 100
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_elbow_L": 73,
+        "ExoV4_forearm_L": 100
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_elbow_L": 73,
+        "ExoV4_forearm_L": 100
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_forearm_L": 88
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_forearm_L": 88
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_forearm_L": 88
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_forearm_L": 88
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_forearm_L": 88
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 299,
+        "ExoV4_wrist_L": 36
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 299,
+        "ExoV4_wrist_L": 36
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 299,
+        "ExoV4_wrist_L": 36
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 299,
+        "ExoV4_wrist_L": 36
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_forearm_L": 299,
+        "ExoV4_wrist_L": 36
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_forearm_L": 100,
+        "ExoV4_wrist_L": 159
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_forearm_L": 100,
+        "ExoV4_wrist_L": 159
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_forearm_L": 100,
+        "ExoV4_wrist_L": 159
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_forearm_L": 100,
+        "ExoV4_wrist_L": 159
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_forearm_L": 100,
+        "ExoV4_wrist_L": 159
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_upper_slide_L_4": 4
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 22,
+        "ExoV4_upper_slide_L_4": 20,
+        "ExoV4_upper_slide_L_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 24,
+        "ExoV4_upper_slide_L_5": 38,
+        "ExoV4_upper_slide_R_4": 14,
+        "ExoV4_upper_slide_R_5": 17
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 8,
+        "ExoV4_upper_slide_L_4": 10,
+        "ExoV4_upper_slide_L_5": 5,
+        "ExoV4_upper_slide_R_4": 24,
+        "ExoV4_upper_slide_R_5": 24,
+        "ExoV4_upper_slide_R_6": 24
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 11,
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 20,
+        "ExoV4_upper_slide_L_3": 48,
+        "ExoV4_upper_slide_L_5": 48
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 11,
+        "ExoV4_upper_slide_L_3": 48,
+        "ExoV4_upper_slide_L_4": 8,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_R_3": 3
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 21,
+        "ExoV4_upper_slide_L_4": 31,
+        "ExoV4_upper_slide_L_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 16,
+        "ExoV4_upper_slide_L_5": 47,
+        "ExoV4_upper_slide_L_6": 24,
+        "ExoV4_upper_slide_R_3": 10,
+        "ExoV4_upper_slide_R_4": 9
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 48,
+        "ExoV4_upper_slide_L_4": 14,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_L_6": 22,
+        "ExoV4_upper_slide_R_1": 11,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 11,
+        "ExoV4_upper_slide_R_4": 24,
+        "ExoV4_upper_slide_R_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_L_6": 24,
+        "ExoV4_upper_slide_R_1": 12,
+        "ExoV4_upper_slide_R_2": 44,
+        "ExoV4_upper_slide_R_3": 26,
+        "ExoV4_upper_slide_R_4": 24,
+        "ExoV4_upper_slide_R_5": 45
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 21,
+        "ExoV4_upper_slide_L_4": 31,
+        "ExoV4_upper_slide_L_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 19,
+        "ExoV4_upper_slide_L_5": 47,
+        "ExoV4_upper_slide_L_6": 24,
+        "ExoV4_upper_slide_R_2": 14,
+        "ExoV4_upper_slide_R_3": 18,
+        "ExoV4_upper_slide_R_4": 16
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 48,
+        "ExoV4_upper_slide_L_4": 16,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_L_6": 25,
+        "ExoV4_upper_slide_R_1": 11,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 14,
+        "ExoV4_upper_slide_R_4": 24,
+        "ExoV4_upper_slide_R_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_L_6": 24,
+        "ExoV4_upper_slide_R_1": 6,
+        "ExoV4_upper_slide_R_2": 35,
+        "ExoV4_upper_slide_R_3": 22,
+        "ExoV4_upper_slide_R_4": 24,
+        "ExoV4_upper_slide_R_5": 38
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 21,
+        "ExoV4_upper_slide_L_4": 31,
+        "ExoV4_upper_slide_L_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 19,
+        "ExoV4_upper_slide_L_5": 47,
+        "ExoV4_upper_slide_L_6": 24,
+        "ExoV4_upper_slide_R_2": 14,
+        "ExoV4_upper_slide_R_3": 19,
+        "ExoV4_upper_slide_R_4": 18
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 48,
+        "ExoV4_upper_slide_L_4": 8,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_L_6": 23,
+        "ExoV4_upper_slide_R_1": 14,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 5,
+        "ExoV4_upper_slide_R_4": 24,
+        "ExoV4_upper_slide_R_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_L_6": 24,
+        "ExoV4_upper_slide_R_1": 8,
+        "ExoV4_upper_slide_R_2": 41,
+        "ExoV4_upper_slide_R_3": 27,
+        "ExoV4_upper_slide_R_4": 27,
+        "ExoV4_upper_slide_R_5": 44
+      }
+    },
+    {
+      "variant": "base",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 21,
+        "ExoV4_upper_slide_L_4": 30,
+        "ExoV4_upper_slide_L_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 18,
+        "ExoV4_upper_slide_L_5": 47,
+        "ExoV4_upper_slide_L_6": 24,
+        "ExoV4_upper_slide_R_2": 14,
+        "ExoV4_upper_slide_R_3": 19,
+        "ExoV4_upper_slide_R_4": 18
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 48,
+        "ExoV4_upper_slide_L_4": 8,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_L_6": 23,
+        "ExoV4_upper_slide_R_1": 14,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 5,
+        "ExoV4_upper_slide_R_4": 24,
+        "ExoV4_upper_slide_R_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "civilian",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_L_6": 24,
+        "ExoV4_upper_slide_R_1": 8,
+        "ExoV4_upper_slide_R_2": 41,
+        "ExoV4_upper_slide_R_3": 27,
+        "ExoV4_upper_slide_R_4": 27,
+        "ExoV4_upper_slide_R_5": 44
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "idle",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "run",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_upper_slide_L_1": 8,
+        "ExoV4_upper_slide_L_2": 28,
+        "ExoV4_upper_slide_L_3": 37,
+        "ExoV4_upper_slide_L_4": 29
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_elbow_L": 281,
+        "ExoV4_elbow_R": 203,
+        "ExoV4_forearm_L": 173,
+        "ExoV4_forearm_R": 601,
+        "ExoV4_upper_dist_R": 45,
+        "ExoV4_upper_slide_L_1": 25,
+        "ExoV4_upper_slide_L_2": 54,
+        "ExoV4_upper_slide_L_3": 55,
+        "ExoV4_upper_slide_L_4": 55,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_L_6": 11,
+        "ExoV4_upper_slide_L_7": 10,
+        "ExoV4_wrist_L": 239,
+        "ExoV4_wrist_R": 221
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_elbow_R": 203,
+        "ExoV4_forearm_R": 601,
+        "ExoV4_upper_dist_R": 45,
+        "ExoV4_wrist_L": 43,
+        "ExoV4_wrist_R": 221
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_elbow_R": 203,
+        "ExoV4_forearm_R": 601,
+        "ExoV4_upper_dist_R": 45,
+        "ExoV4_wrist_R": 221
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_elbow_R": 203,
+        "ExoV4_forearm_R": 601,
+        "ExoV4_upper_dist_R": 45,
+        "ExoV4_wrist_R": 221
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_elbow_R": 203,
+        "ExoV4_forearm_R": 601,
+        "ExoV4_upper_dist_R": 45,
+        "ExoV4_wrist_R": 221
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_elbow_L": 291,
+        "ExoV4_elbow_R": 297,
+        "ExoV4_forearm_L": 150,
+        "ExoV4_forearm_R": 988,
+        "ExoV4_upper_dist_R": 76,
+        "ExoV4_upper_slide_L_1": 17,
+        "ExoV4_upper_slide_L_2": 58,
+        "ExoV4_upper_slide_L_3": 63,
+        "ExoV4_upper_slide_L_4": 51,
+        "ExoV4_upper_slide_L_5": 32,
+        "ExoV4_upper_slide_L_7": 28,
+        "ExoV4_upper_slide_R_7": 16,
+        "ExoV4_wrist_L": 209,
+        "ExoV4_wrist_R": 346
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_elbow_R": 297,
+        "ExoV4_forearm_L": 83,
+        "ExoV4_forearm_R": 988,
+        "ExoV4_upper_dist_R": 76,
+        "ExoV4_upper_slide_R_7": 16,
+        "ExoV4_wrist_L": 681,
+        "ExoV4_wrist_R": 346
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_elbow_R": 297,
+        "ExoV4_forearm_R": 988,
+        "ExoV4_upper_dist_R": 76,
+        "ExoV4_upper_slide_R_7": 16,
+        "ExoV4_wrist_L": 43,
+        "ExoV4_wrist_R": 346
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_elbow_R": 297,
+        "ExoV4_forearm_R": 988,
+        "ExoV4_upper_dist_R": 76,
+        "ExoV4_upper_slide_R_7": 16,
+        "ExoV4_wrist_R": 346
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_elbow_R": 297,
+        "ExoV4_forearm_R": 988,
+        "ExoV4_upper_dist_R": 76,
+        "ExoV4_upper_slide_R_7": 16,
+        "ExoV4_wrist_R": 346
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_wrist_L": 18
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_wrist_L": 4
+      }
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_wrist_L": 4
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_wrist_L": 4
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_wrist_L": 4
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.416666666666667,
+      "crossings": {
+        "ExoV4_wrist_L": 4
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "attack_thrust",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 17,
+        "ExoV4_upper_slide_L_4": 2
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 28,
+        "ExoV4_upper_slide_L_4": 34,
+        "ExoV4_upper_slide_L_5": 18
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.25,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 11,
+        "ExoV4_upper_slide_L_4": 28,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_R_4": 30,
+        "ExoV4_upper_slide_R_5": 31
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "cast",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "hit_react",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "spring_jump",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.0,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.25,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.416666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 2,
+        "ExoV4_upper_slide_L_3": 29,
+        "ExoV4_upper_slide_L_4": 25,
+        "ExoV4_upper_slide_L_5": 30
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 35,
+        "ExoV4_upper_slide_L_4": 32,
+        "ExoV4_upper_slide_L_5": 48
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.5,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 44,
+        "ExoV4_upper_slide_L_3": 55,
+        "ExoV4_upper_slide_L_4": 42,
+        "ExoV4_upper_slide_L_5": 54,
+        "ExoV4_upper_slide_L_6": 21
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 21,
+        "ExoV4_upper_slide_L_4": 17
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 30,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_L_6": 23
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 58,
+        "ExoV4_upper_slide_L_4": 60,
+        "ExoV4_upper_slide_L_5": 56,
+        "ExoV4_upper_slide_L_6": 30,
+        "ExoV4_upper_slide_R_1": 21,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 30,
+        "ExoV4_upper_slide_R_4": 29,
+        "ExoV4_upper_slide_R_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.583333333333333,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 48,
+        "ExoV4_upper_slide_L_3": 47,
+        "ExoV4_upper_slide_L_4": 20,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_R_1": 23,
+        "ExoV4_upper_slide_R_2": 29,
+        "ExoV4_upper_slide_R_3": 40,
+        "ExoV4_upper_slide_R_4": 38,
+        "ExoV4_upper_slide_R_5": 22,
+        "ExoV4_upper_slide_R_6": 24
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 22,
+        "ExoV4_upper_slide_L_4": 17
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 31,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_L_6": 21,
+        "ExoV4_upper_slide_R_1": 5,
+        "ExoV4_upper_slide_R_2": 15,
+        "ExoV4_upper_slide_R_3": 13,
+        "ExoV4_upper_slide_R_4": 5
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 56,
+        "ExoV4_upper_slide_L_4": 56,
+        "ExoV4_upper_slide_L_5": 56,
+        "ExoV4_upper_slide_L_6": 28,
+        "ExoV4_upper_slide_R_1": 21,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 30,
+        "ExoV4_upper_slide_R_4": 24,
+        "ExoV4_upper_slide_R_5": 20
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.666666666666667,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 48,
+        "ExoV4_upper_slide_L_3": 48,
+        "ExoV4_upper_slide_L_4": 23,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_R_1": 24,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 34,
+        "ExoV4_upper_slide_R_4": 29,
+        "ExoV4_upper_slide_R_5": 31,
+        "ExoV4_upper_slide_R_6": 24
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 21,
+        "ExoV4_upper_slide_L_4": 17
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 28,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_L_6": 21,
+        "ExoV4_upper_slide_R_1": 8,
+        "ExoV4_upper_slide_R_2": 16,
+        "ExoV4_upper_slide_R_3": 13,
+        "ExoV4_upper_slide_R_4": 8
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 56,
+        "ExoV4_upper_slide_L_4": 56,
+        "ExoV4_upper_slide_L_5": 57,
+        "ExoV4_upper_slide_L_6": 27,
+        "ExoV4_upper_slide_R_1": 21,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 29,
+        "ExoV4_upper_slide_R_4": 26,
+        "ExoV4_upper_slide_R_5": 22
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 0.75,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 48,
+        "ExoV4_upper_slide_L_3": 49,
+        "ExoV4_upper_slide_L_4": 23,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_R_1": 25,
+        "ExoV4_upper_slide_R_2": 33,
+        "ExoV4_upper_slide_R_3": 40,
+        "ExoV4_upper_slide_R_4": 38,
+        "ExoV4_upper_slide_R_5": 35,
+        "ExoV4_upper_slide_R_6": 24
+      }
+    },
+    {
+      "variant": "base",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {}
+    },
+    {
+      "variant": "safe_0.7",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "ExoV4_upper_slide_L_3": 20,
+        "ExoV4_upper_slide_L_4": 16
+      }
+    },
+    {
+      "variant": "safe_1.0",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 24,
+        "ExoV4_upper_slide_L_4": 28,
+        "ExoV4_upper_slide_L_5": 24,
+        "ExoV4_upper_slide_L_6": 21,
+        "ExoV4_upper_slide_R_1": 8,
+        "ExoV4_upper_slide_R_2": 16,
+        "ExoV4_upper_slide_R_3": 13,
+        "ExoV4_upper_slide_R_4": 8
+      }
+    },
+    {
+      "variant": "safe_1.3",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 24,
+        "ExoV4_upper_slide_L_3": 57,
+        "ExoV4_upper_slide_L_4": 57,
+        "ExoV4_upper_slide_L_5": 58,
+        "ExoV4_upper_slide_L_6": 27,
+        "ExoV4_upper_slide_R_1": 22,
+        "ExoV4_upper_slide_R_2": 24,
+        "ExoV4_upper_slide_R_3": 28,
+        "ExoV4_upper_slide_R_4": 27,
+        "ExoV4_upper_slide_R_5": 24
+      }
+    },
+    {
+      "variant": "safe_1.6",
+      "form": "transformed",
+      "motion": "collapse",
+      "phase": 1.0,
+      "crossings": {
+        "ExoV4_upper_slide_L_2": 48,
+        "ExoV4_upper_slide_L_3": 48,
+        "ExoV4_upper_slide_L_4": 23,
+        "ExoV4_upper_slide_L_5": 48,
+        "ExoV4_upper_slide_R_1": 25,
+        "ExoV4_upper_slide_R_2": 34,
+        "ExoV4_upper_slide_R_3": 40,
+        "ExoV4_upper_slide_R_4": 39,
+        "ExoV4_upper_slide_R_5": 35,
+        "ExoV4_upper_slide_R_6": 24
+      }
+    }
+  ]
+}

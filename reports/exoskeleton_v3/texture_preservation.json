@@ -1,0 +1,49 @@
+{
+  "v2": {
+    "materials": 1,
+    "images": [
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_2",
+        "sha256": "e248dd12b594ed5c3d17039f242adcc588d3dbc36e65db12576aa7a03be314e1",
+        "bytes": 2242002
+      },
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_0",
+        "sha256": "208788ddfe7f9925eddf8293acbd381b33dfcb6f340a484563464d4f30604848",
+        "bytes": 1208293
+      },
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_1",
+        "sha256": "18f1e6a122162d1f20ea5c2d528a77d0c7a95cbd2cc2f394bd00b558d77271ff",
+        "bytes": 810057
+      }
+    ],
+    "mesh_count": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  "v3": {
+    "materials": 3,
+    "images": [
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_2",
+        "sha256": "e248dd12b594ed5c3d17039f242adcc588d3dbc36e65db12576aa7a03be314e1",
+        "bytes": 2242002
+      },
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_0",
+        "sha256": "208788ddfe7f9925eddf8293acbd381b33dfcb6f340a484563464d4f30604848",
+        "bytes": 1208293
+      },
+      {
+        "name": "tripo_image_d12ce0c7-30cc-4d27-b069-7c0fccc0c436_1",
+        "sha256": "18f1e6a122162d1f20ea5c2d528a77d0c7a95cbd2cc2f394bd00b558d77271ff",
+        "bytes": 810057
+      }
+    ],
+    "mesh_count": 33,
+    "skins": 1,
+    "animations": 0
+  },
+  "original_images_byte_identical": true
+}

@@ -1,0 +1,65 @@
+{
+  "inserted": [
+    {
+      "motion": "attack_thrust",
+      "side": "L",
+      "phase": 0.395833333333333,
+      "angle": 0.0,
+      "shift": [
+        0.017499999999999686,
+        0.02499999999999937,
+        0.062499999999999056
+      ],
+      "crossings": 0
+    },
+    {
+      "motion": "cast",
+      "side": "L",
+      "phase": 0.212121212121212,
+      "angle": 0.0,
+      "shift": [
+        0.005,
+        0.02272727272727263,
+        0.0
+      ],
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "side": "R",
+      "phase": 0.5625,
+      "angle": -15.0,
+      "shift": [
+        0.0,
+        0.0175,
+        0.0
+      ],
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "side": "L",
+      "phase": 0.645833333333333,
+      "angle": -120.0,
+      "shift": [
+        0.0,
+        0.017499999999999735,
+        0.0
+      ],
+      "crossings": 0
+    },
+    {
+      "motion": "attack",
+      "side": "L",
+      "phase": 0.6875,
+      "angle": -120.0,
+      "shift": [
+        0.005,
+        0.025,
+        0.0125
+      ],
+      "crossings": 0
+    }
+  ],
+  "old_keys_preserved": true
+}

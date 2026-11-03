@@ -1,0 +1,202 @@
+"""Package actual v1/v2 mechanism captures plus the new generated exoskeleton."""
+from pathlib import Path
+import hashlib
+import json
+import re
+import struct
+from html.parser import HTMLParser
+from urllib.parse import unquote, urlsplit
+
+ROOT = Path(__file__).resolve().parents[1]
+R = ROOT / 'reports/drive_tree_v2'
+S = ROOT / 'assets/weapons/drive_tree_v2'
+G = ROOT / 'game/assets/weapons/drive_tree_v2'
+E = ROOT / 'assets/equipment/exoskeleton_v2'
+ER = ROOT / 'reports/exoskeleton_v2'
+REF = ROOT / 'assets/reference/equipment/exoskeleton_v2'
+LABELS = {'guillotine': '낙하 단두대', 'guillotine_saw': '회전 톱날형',
+          'guillotine_lock': '고정 단두대', 'compound_executor': '복합 집행기'}
+
+
+def read(p): return json.loads(p.read_text(encoding='utf-8-sig'))
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def rel(p): return p.relative_to(ROOT).as_posix()
+def write(p, data): p.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+
+
+def glb_info(p):
+    raw = p.read_bytes()
+    magic, version, size = struct.unpack_from('<III', raw)
+    assert (magic, version, size) == (0x46546c67, 2, len(raw))
+    length, kind = struct.unpack_from('<II', raw, 12)
+    assert kind == 0x4e4f534a
+    gltf = json.loads(raw[20:20+length])
+    primitives = [pr for mesh in gltf['meshes'] for pr in mesh['primitives']]
+    return {'meshes': len(gltf['meshes']), 'scenes': len(gltf.get('scenes', [])),
+            'triangles': sum(gltf['accessors'][pr['indices']]['count']//3 for pr in primitives),
+            'materials': len(gltf.get('materials', [])), 'images': len(gltf.get('images', [])),
+            'skins': len(gltf.get('skins', [])), 'animations': len(gltf.get('animations', [])),
+            'bytes': len(raw), 'sha256': sha(p)}
+
+
+def main():
+    cap = read(R/'review/capture.json'); tests = read(R/'art_test.json'); qa = read(R/'asset_qa.json')
+    models = read(S/'models.json'); raw = read(ER/'raw_inventory.json'); working = read(ER/'working_qa.json')
+    assert cap['passed'] and tests['passed'] and read(R/'export_validation.json')['passed']
+    assert cap['left'] == 'v2' and cap['right'] == 'v1'
+    assert all(stage['passed'] for asset in qa.values() for stage in asset.values())
+    assert working['passed'], working
+    baseline = read(R/'baseline.json')
+    changed = [p for p,h in baseline.items() if not (ROOT/p).exists() or sha(ROOT/p) != h]
+    previous = read(ROOT/'reports/drive_tree_v1/delivery_manifest.json')['source_and_outputs']
+    prior_assets = {p:h for p,h in previous.items() if p.startswith(('assets/weapons/drive_tree_v1/', 'game/assets/weapons/drive_tree_v1/'))}
+    prior_changed = [p for p,h in prior_assets.items() if sha(ROOT/p) != h]
+    write(R/'preservation.json', {'passed': not changed and not prior_changed, 'baseline_files': len(baseline),
+                                'baseline_changed': changed, 'v1_asset_files': len(prior_assets), 'v1_changed': prior_changed})
+    assert not changed and not prior_changed, (changed, prior_changed)
+    export = glb_info(E/'exports/exoskeleton_v2_working.glb')
+    assert export['meshes'] == 1 and export['scenes'] == 1 and export['triangles'] == 78474
+    assert export['materials'] == 1 and export['images'] == 3 and export['skins'] == export['animations'] == 0
+    write(ER/'working_export.json', {'passed': True, 'model': export})
+    production = {
+        'date': '2026-11-03', 'status': 'new generated concept/model candidate; fitting and rigging pending',
+        'image_generation': {'mode': 'built-in image_gen', 'concept': rel(REF/'concept_sheet_v1.png'),
+            'concept_prompt': rel(REF/'generation_prompt.txt'), 'tripo_input': rel(REF/'tripo_front_v1.png'),
+            'tripo_input_prompt': rel(REF/'tripo_input_prompt.txt'),
+            'references': ['assets/reference/character/outfits/transformed_v1/concept_2026-10-27.jpg',
+                           'assets/reference/character/modeling/middle_school_v1/semilong_front_apose_v1.png']},
+        'tripo': {'url': 'https://studio.tripo3d.ai/ko/workspace/generate/503ac1bc-485d-4fe3-a819-e74690f810b5',
+            'model': 'H3.1', 'mode': 'HD', 'target_polygons': 80000, 'topology': 'triangles',
+            'textures': '2K PBR', 'private': True, 'part_generation': False, 'paid_segmentation': False,
+            'credits_used': 30, 'credit_balance_before': 2485, 'credit_balance_after': 2455,
+            'ui_counts': {'faces': 78480, 'vertices': 45855}, 'ui_count_note': 'File counts below are authoritative; UI differs.'},
+        'raw_inventory': raw, 'working_export': export,
+        'working_cleanup': {'retained_positions_and_connectivity_unchanged': True, 'uv_faces_repaired': 12,
+            'overlap_slivers_removed': 4, 'max_uv_offset_texels_at_2048': .25, 'raw_source_untouched': True,
+            'retained_normal_vector_max_difference': working['preservation']['max_retained_corner_normal_vector_difference']},
+        'limits': ['No character fitting or garment/hair/body clearance tests.',
+            'No semantic joint segmentation, armature, bone attachment, animations or game replacement.',
+            'Welded diagnostic shows topology issues; do not apply blanket welding to the textured asset.',
+            'Dense generated source, not approved final runtime budget.'],
+        'files': {rel(p): sha(p) for p in sorted(set(list(REF.glob('*'))+[E/'source/exoskeleton_tripo_h31_raw.glb',
+            E/'exoskeleton_v2_source.blend', E/'exoskeleton_v2_working.blend', E/'exports/exoskeleton_v2_working.glb', ER/'tripo_generated.png'])) if p.is_file()},
+    }
+    write(E/'production.json', production)
+    write(S/'catalog.json', {'status': 'prepared assets / review motion only', 'assets': {
+        a: {'name': label, 'model': 'res://assets/weapons/'+('drive_tree_v2/' if a in models else 'drive_tree_v1/')+a+'.glb',
+            'metadata': 'res://assets/weapons/'+('drive_tree_v2/' if a in models else 'drive_tree_v1/')+a+'.json',
+            'review_helper': 'res://tests/helpers/drive_tree_v2_demo.gd'} for a,label in LABELS.items()},
+        'new_exoskeleton_source': 'assets/equipment/exoskeleton_v2/production.json',
+        'remaining_prepared_assets': 'assets/weapons/drive_tree_v1/catalog.json',
+        'exoskeleton_note': 'v1 exoskeleton is historical; v2 is a new raw candidate, not an attachable replacement.'})
+    write(R/'qa_adjudication.json', {
+        'drive_geometry_errors': 0, 'accepted_warnings': {
+            'trim_uv_overlap': 'All derived parts reuse the existing planar trim atlas; not a unique bake.',
+            'planar_caps': 'Nondeforming flat hard-surface caps are triangulated on export.',
+            'hidden_joining_faces': 'Retained on independently assembled closed foot/anvil and blade/runner pieces.',
+            'glb_duplicate_vertices': 'UV and normal boundary splits, not double rendered faces.'},
+        'visual_inspection': {'live_blender': 'All three v2 guillotines: material plus wireframe from multiple angles. New exoskeleton raw/working: front/back/oblique material and front/side wireframe.',
+            'game_captures_reviewed': ['compare_guillotine/063.jpg', 'compare_guillotine_lock/014.jpg',
+                'compare_guillotine_lock/024.jpg', 'compare_compound_executor/055.jpg'],
+            'screen_orientation': 'LEFT v2 / RIGHT v1; corrected camera-side metadata without altering rendered frames.'},
+        'exoskeleton': {'raw_qa_passed': False, 'working_source_qa_passed': working['source']['pass'],
+            'working_glb_reimport_qa_passed': working['reimport']['pass'],
+            'uv_fixed': '12 actual faces (six in sampled checker); maximum 0.25 texel movement at 2K.',
+            'overlap_repair': working['cleanup']['removed_overlap_slivers'],
+            'retained_data': working['preservation'],
+            'remaining_warnings': working['source']['warnings'],
+            'welded_proxy_not_saved': 'Pre-cleanup diagnostic only: 31 inconsistent edge windings and 30 nonmanifold edges after blanket welding. Two separate shin modules are intentional.',
+            'remaining': 'Not semantic segmentation, watertight production retopology or wearable/game-ready QA.'}})
+
+    options = ''.join(f'<option value="{a}"'+(' selected' if a=='guillotine_lock' else '')+f'>{t}</option>' for a,t in LABELS.items())
+    page = '''<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>구동 장치 v2 · 작동 순서와 새 외골격</title>
+<style>
+:root{color-scheme:dark;font:16px/1.7 "Malgun Gothic",sans-serif;background:#111b24;color:#e3eded}body{margin:auto;max-width:1440px;padding:30px}h1{font-size:34px;line-height:1.35}h2{font-size:23px}h3{font-size:18px;margin:0 0 10px}p{color:#b9ccd0}a{color:#9be2d4}header{margin-bottom:26px}.eyebrow{color:#98d7c7;letter-spacing:.13em;font-size:13px}.panel,article,details{background:#1a2a36;border:1px solid #354b59;border-radius:12px;padding:20px;margin-bottom:22px}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}button,select{font:inherit;color:#eff7f6;background:#263f4c;border:1px solid #526771;border-radius:6px;padding:7px 14px;cursor:pointer}button:hover,select:hover{background:#345767}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #c3ecde;outline-offset:3px}.compare{position:relative;margin-top:16px;background:#10181f}.compare img{display:block;width:100%;height:auto}.badge{position:absolute;top:12px;padding:5px 12px;border-radius:5px;background:#112e33dd;font-weight:bold}.new{left:13px;color:#bbf5df}.old{right:13px;color:#e3e7e9;background:#2d353ddd}input[type=range]{width:100%;accent-color:#91d8c3;margin:16px 0 6px}.clock{margin-left:auto;font-variant-numeric:tabular-nums}#stage{margin:8px 0 14px;min-height:28px;color:#d5eddf}#moments{margin:15px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid article{margin:0}.grid img,.wide{max-width:100%;height:auto;display:block;border-radius:7px}.concept{background:#111920}.note{font-size:14px;color:#9bb1bb}.status{border-left:3px solid #a7cfbd;padding-left:14px}summary{cursor:pointer;font-weight:bold}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:9px;border-bottom:1px solid #354b59}footer{padding:18px 0 30px;color:#9bb1bb}@media(max-width:700px){body{padding:14px}.grid{grid-template-columns:1fr}h1{font-size:28px}.badge{font-size:12px;top:6px;padding:2px 6px}.clock{margin-left:0}}
+</style></head><body>
+<header><div class="eyebrow">WITCH / DRIVE TREE / 2026.11.03</div><h1>끝까지 내려치는 칼날,<br>잡고 조립하는 장치</h1><p>단두대의 바닥 도달과 고정 순서, 집행기의 압착 뒤 톱 진입을 수정했습니다. 새 외골격은 원화에서 Tripo 모델로 생성했습니다.</p></header>
+<section class="panel" aria-labelledby="motion-title"><h2 id="motion-title">이전 동작과 비교</h2>
+<div class="toolbar"><label for="asset">장치</label><select id="asset">__OPTIONS__</select><span class="note">실제 Godot 캡처 · 24fps</span></div>
+<div class="compare"><img id="motion-image" src="review/compare_guillotine_lock/014.jpg" alt="고정 단두대 비교. 왼쪽 수정본은 구속구만 먼저 잠깁니다."><span class="badge new">수정 v2</span><span class="badge old">이전 v1</span></div>
+<label for="frame" class="note">동작 시점</label><input id="frame" type="range" min="0" max="95" value="14" step="1">
+<div class="toolbar"><button id="play" type="button">재생</button><button id="restart" type="button">처음부터</button><label for="speed">속도</label><select id="speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option></select><span id="clock" class="clock"></span></div>
+<p id="stage" aria-live="polite"></p><div id="moments" class="toolbar"></div>
+<p class="note">왼쪽이 수정본, 오른쪽이 이전본입니다. 고정형의 적 한 마리는 순서를 보여 주는 정지 참고 모델입니다. 동작 시각과 구속 표현은 모델 검토용이며 신규 스킬의 전투 판정은 아직 본편에 연결하지 않았습니다.</p></section>
+<div class="grid"><article><h3>단두대 · 바닥까지</h3><p>받침에 날이 통과할 틈을 만들고 낙하 거리를 늘렸습니다. 칼날 끝은 바닥 위 약 2mm에 멈추며, 회전 톱날형도 바닥까지 내려옵니다.</p></article><article><h3>고정형 · 먼저 붙잡기</h3><p>구속구 생성 → 적 한 마리를 고정 → 나머지 프레임과 칼날 조립 → 낙하. 본체가 조립되는 동안 구속구는 닫힌 위치를 유지합니다.</p></article></div>
+<article style="margin-top:18px"><h3>복합 집행기 · 압착 뒤 톱 진입</h3><p>압착한 뒤 프레스가 다시 들립니다. 톱날은 프레스와 간격이 확보되는 시점부터 안으로 회전하며 들어가도록 바꿨습니다.</p></article>
+<section id="exoskeleton" class="panel"><div class="eyebrow">NEW EQUIPMENT CONCEPT</div><h2>새 외골격</h2><p>남색 장갑판, 황동 곡선 링크와 원형 관절, 등 동력부와 청록 코어. 손과 허벅지를 비우고 정강이 장치를 분리한 형태입니다.</p>
+<a href="../../assets/reference/equipment/exoskeleton_v2/concept_sheet_v1.png"><img class="wide concept" src="../../assets/reference/equipment/exoskeleton_v2/concept_sheet_v1.png" alt="외골격 새 컨셉 시트: 착용 모습, 장치 전후면, 관절 디테일" loading="lazy"></a>
+<div class="grid" style="margin-top:18px"><article><h3>생성용 정면</h3><a href="../../assets/reference/equipment/exoskeleton_v2/tripo_front_v1.png"><img src="../../assets/reference/equipment/exoskeleton_v2/tripo_front_v1.png" alt="사람과 옷을 제외한 외골격 단독 정면 입력" loading="lazy"></a></article>
+<article><h3>실제 Tripo 생성 결과</h3><a href="../exoskeleton_v2/tripo_generated.png"><img src="../exoskeleton_v2/tripo_generated.png" alt="Tripo H3.1에서 생성한 외골격 3D 모델 화면" loading="lazy"></a><p>H3.1 · 2K PBR · GLB 실측 78,478 삼각형. 생성본을 내려받아 Blender에 반입하고 텍스처를 함께 저장했습니다.</p><p class="status">현재는 새 디자인과 생성 모델을 확인하는 단계입니다. 캐릭터에 맞추기, 관절별 부품 분할과 리깅은 다음 작업입니다.</p><p><a href="../../assets/equipment/exoskeleton_v2/exoskeleton_v2_working.blend">Blender 작업본</a> · <a href="../../assets/equipment/exoskeleton_v2/exports/exoskeleton_v2_working.glb">작업 GLB</a> · <a href="https://studio.tripo3d.ai/ko/workspace/generate/503ac1bc-485d-4fe3-a819-e74690f810b5">Tripo 작업</a></p></article></div>
+<p class="note">원화는 내장 image_gen으로 생성했습니다. <a href="../../assets/reference/equipment/exoskeleton_v2/generation_prompt.txt">원화 전체 프롬프트</a> · <a href="../../assets/reference/equipment/exoskeleton_v2/tripo_input_prompt.txt">입력 이미지 전체 프롬프트</a>. 착용 일러스트는 디자인 설명용이며 게임 캐릭터 변경본이 아닙니다.</p></section>
+<details><summary>검사 결과와 남은 범위</summary><p>구동 장치는 저장 Blender/GLB 반입 검사를 통과했고, 동작 검사 107,791개와 GPU 캡처 388장을 기록했습니다. 반복 트림 UV·평면 캡·숨은 부품 접합면·GLB 경계 정점은 보존한 경고 사항입니다.</p><p>외골격은 원본을 보관하고 별도 작업본의 작은 UV 오류 12면과 실제로 겹친 미세 삼각형 4개를 정리했습니다. 작업본은 78,474 삼각형이며 저장본과 GLB 재반입 검사를 통과했습니다. UV 경계 정점·숨은 접합면·작은 수선 경계는 남겨 두었습니다. 장착 여유, 의상과의 간섭, 관절 분할·리깅·경량화는 아직 진행 전입니다.</p><p>지형·벽·적 신체와의 실제 접촉, 신규 스킬 규칙, 최종 성능과 아트 승인은 이번 검토 범위에 포함되지 않습니다.</p></details>
+<footer><a href="../../assets/weapons/drive_tree_v2/README.md">장치 원본·동작 안내</a> · <a href="../../assets/equipment/exoskeleton_v2/README.md">외골격 제작 기록</a> · <a href="delivery_manifest.json">전달 명세</a> · <a href="../drive_tree_v1/review.html">이전 v1 리뷰</a></footer>
+<script>
+const LABELS=__LABELS__;
+const EVENTS={guillotine:[[0,'처음'],[.67,'조립 완료'],[1.12,'낙하'],[1.3,'바닥 도달']],guillotine_saw:[[0,'처음'],[.67,'조립 완료'],[1.7,'톱날 하강'],[2.6,'바닥 도달']],guillotine_lock:[[.25,'구속구만 생성'],[.58,'고정 완료'],[.92,'본체 조립'],[1.3,'조립 완료'],[1.7,'낙하 완료']],compound_executor:[[.9,'문 닫기'],[1.5,'압착'],[1.8,'프레스 상승'],[2.05,'톱 진입 시작'],[2.6,'톱 진입 완료']]};
+const asset=document.querySelector('#asset'),frame=document.querySelector('#frame'),pic=document.querySelector('#motion-image'),play=document.querySelector('#play'),speed=document.querySelector('#speed'),clock=document.querySelector('#clock'),stage=document.querySelector('#stage'),moments=document.querySelector('#moments');
+let running=false,elapsed=0,last=0;
+function phase(id,t){if(t>3.35)return '소멸 완료';if(t>2.85)return '부품 소멸';if(id==='guillotine_lock'){if(t<.28)return '구속구만 생성';if(t<.56)return '구속구 닫힘';if(t<.60)return '고정 완료 · 본체는 아직 없음';if(t<1.25)return '고정 유지 · 나머지 본체 조립';if(t<1.4)return '조립 완료';if(t<1.64)return '칼날 낙하';return '칼날 바닥 도달';}if(id==='compound_executor'){if(t<.65)return '부품 조립';if(t<1.05)return '문 닫힘';if(t<1.45)return '프레스 압착';if(t<1.55)return '압착 유지';if(t<1.92)return '프레스 상승 · 톱 대기';if(t<2.1)return '프레스 상승 중 톱 진입';if(t<2.45)return '프레스 복귀 · 톱 진입';return '톱 진입 완료';}if(t<.65)return '부품 조립';if(t<1)return '작동 대기';if(id==='guillotine_saw')return t<2.5?'회전 톱날 하강':'톱날 바닥 도달';return t<1.24?'칼날 낙하':'칼날 바닥 도달';}
+function draw(){const n=Number(frame.value),t=n/24;pic.src=`review/compare_${asset.value}/${String(n).padStart(3,'0')}.jpg`;pic.alt=`${LABELS[asset.value]}: 왼쪽 수정 v2, 오른쪽 이전 v1, ${t.toFixed(2)}초`;clock.textContent=`${t.toFixed(2)}초 / 3.96초`;stage.textContent=phase(asset.value,t);}
+function stop(){running=false;play.textContent='재생';elapsed=0;}
+function jump(t){stop();frame.value=Math.round(t*24);draw();}
+function choose(){stop();frame.value=0;moments.replaceChildren();for(const [t,label] of EVENTS[asset.value]){const b=document.createElement('button');b.type='button';b.textContent=label;b.onclick=()=>jump(t);moments.append(b);}draw();}
+asset.onchange=choose;frame.oninput=()=>{stop();draw();};play.onclick=()=>{running=!running;play.textContent=running?'일시정지':'재생';};document.querySelector('#restart').onclick=()=>jump(0);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+function tick(now){if(running){elapsed+=Math.min(.1,(now-last)/1000)*Number(speed.value);const steps=Math.floor(elapsed*24);if(steps){elapsed-=steps/24;frame.value=(Number(frame.value)+steps)%96;draw();}}last=now;requestAnimationFrame(tick);}
+choose();jump(14/24);requestAnimationFrame(tick);
+</script></body></html>
+'''.replace('__OPTIONS__',options).replace('__LABELS__',json.dumps(LABELS,ensure_ascii=False))
+    (R/'review.html').write_text(page, encoding='utf-8')
+    script = re.search(r'<script>(.*?)</script>',page,re.S).group(1)
+    (R/'review_syntax.js').write_text(script, encoding='utf-8')
+    captures = {rel(p): sha(p) for p in sorted((R/'review').rglob('*.jpg'))}
+    assert len(captures) == cap['captures'] == 388
+    for seq in cap['sequences']:
+        assert all((R/f"review/{seq['id']}/{n:03}.jpg").exists() for n in range(seq['frames']))
+    write(R/'capture_inventory.json',captures)
+    class Links(HTMLParser):
+        def __init__(self): super().__init__(); self.paths=[]
+        def handle_starttag(self,tag,attrs):
+            self.paths += [v for k,v in attrs if k in ['href','src'] and v]
+    links = Links(); links.feed(page)
+    local = [unquote(urlsplit(p).path) for p in links.paths if not urlsplit(p).scheme and urlsplit(p).path]
+    # Manifest is produced just below; all other static and dynamic image paths must exist.
+    missing = [p for p in local if p != 'delivery_manifest.json' and not (R/p).is_file()]
+    assert not missing, missing
+    write(R/'review_validation.json', {'passed':True,'static_links':len(local), 'dynamic_capture_files':len(captures),
+        'local_missing':missing, 'orientation':'Left v2 / right v1', 'browser_open':'Provide local review link; prior local-file browser navigation was blocked.'})
+    deliverables = [p for directory in [S,G,E,REF] for p in directory.rglob('*') if p.is_file() and p.suffix not in ['.blend1']]
+    deliverables += [ROOT/p for p in ['tools/build_drive_tree_v2.py','tools/package_drive_assets_v2.py','tools/qa_drive_tree_v2.py',
+        'tools/package_drive_review_v2.py','tools/audit_exoskeleton_v2.py','tools/prepare_exoskeleton_v2.py','tools/repair_exoskeleton_v2.py','tools/qa_exoskeleton_v2.py',
+        'game/tests/helpers/drive_tree_v2_demo.gd','game/tests/drive_tree_v2_art.gd','game/tests/review_drive_tree_v2.gd']]
+    evidence = [p for directory in [R,ER] for p in directory.glob('*.json') if p.name != 'delivery_manifest.json']
+    evidence += [R/'review/capture.json', R/'review.html', ER/'tripo_generated.png']
+    deps = [p for p in (ROOT/'game/assets/weapons/drive_tree_v1').rglob('*') if p.is_file()]
+    deps += [ROOT/p for p in ['game/tests/helpers/drive_tree_demo.gd','game/tests/review_drive_tree_v1.gd',
+        'game/tests/review_firearm_tree_v1.gd','game/tests/helpers/firearm_review_world.gd',
+        'game/scripts/summon_assembly.gd','game/scripts/actor_visual.gd','game/assets/actors/combat_set_v1/rag_v1.glb'] if (ROOT/p).is_file()]
+    manifest = {'version':'drive_tree_v2','date':'2026-11-03','status':'Prepared mechanism revisions and new generated exoskeleton candidate; user selection pending.',
+        'tools':{'blender':'5.1.1 / live MCP 1.8 protocol 15','godot':'4.6.2 Compatibility / RTX 2060',
+                 'imagegen':'built-in image_gen','tripo':'Edge UI / H3.1 / 2K PBR / 30 existing credits'},
+        'new_drive_parts':sum(v['part_count'] for v in models.values()),'new_drive_triangles':sum(v['triangles'] for v in models.values()),
+        'mechanism_assertions':tests['checks'],'gpu_captures':cap['captures'],'exoskeleton_raw_triangles':raw['raw_triangles'],
+        'baseline_preserved_files':len(baseline),'v1_preserved_assets':len(prior_assets),
+        'screen_layout':'LEFT revised v2 / RIGHT previous v1',
+        'source_outputs_and_evidence':{rel(p):sha(p) for p in sorted(set(deliverables+evidence))},
+        'unchanged_dependencies':{rel(p):sha(p) for p in sorted(set(deps))},
+        'diagnostics':['Godot user shader cache unavailable; rendering completed.',
+            'Godot editor could not save settings in environment.',
+            'Background Blender Tripo addon logs WebSocket shutdown timeout after successful work.',
+            'Blender exporter reports shared texture-node sampler warning; GLB retains one material and three images.'],
+        'limits':['Review-only mechanisms, no new active skill rules or combat binding.',
+            'Single frozen rag reference, not enemy restraint gameplay.',
+            'No arbitrary terrain/wall/body clearance, live physics or final performance approval.',
+            'New exoskeleton is generated source plus UV repair; fitting, segmentation, rigging and runtime budget pending.',
+            'UV seams, hidden joining face and tiny repair boundaries retained; not watertight production retopology.']}
+    write(R/'delivery_manifest.json',manifest)
+    print('DRIVE_V2_PACKAGED',json.dumps({k:manifest[k] for k in ['new_drive_parts','new_drive_triangles','mechanism_assertions','gpu_captures','baseline_preserved_files','v1_preserved_assets']}))
+
+
+if __name__ == '__main__': main()

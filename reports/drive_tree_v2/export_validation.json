@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "models": {
+    "guillotine": {
+      "triangles": 3732,
+      "parts": 27,
+      "sha256": "b2d9d234c2a87f8d5abfc66aafc103d51d7352d9533ccd88ee60e76c345ba6dc"
+    },
+    "guillotine_lock": {
+      "triangles": 4220,
+      "parts": 31,
+      "sha256": "91700a411a9a673796717fb88885db5e550d289da070dd3211c75db54ce0cc4b"
+    },
+    "guillotine_saw": {
+      "triangles": 6532,
+      "parts": 27,
+      "sha256": "40463266c024d22a7adf3a7e88c99e44c2af438cdcd39bc7ee472b94c20174a1"
+    }
+  }
+}
