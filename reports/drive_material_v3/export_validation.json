@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "models": {
+    "guillotine": {
+      "source": "game/assets/weapons/drive_tree_v2/guillotine.glb",
+      "parts": 27,
+      "triangles": 3732,
+      "materials": 2,
+      "surfaces": 27,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "6f22b40c269bfc77f6775efcebcb15e05201868fb945aee6103c56b109fa411e"
+    },
+    "guillotine_saw": {
+      "source": "game/assets/weapons/drive_tree_v2/guillotine_saw.glb",
+      "parts": 27,
+      "triangles": 6532,
+      "materials": 2,
+      "surfaces": 27,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "a7b41a844d09f80b4247727987b0d026204e6fc4208f1389008368211db0bb67"
+    },
+    "guillotine_lock": {
+      "source": "game/assets/weapons/drive_tree_v2/guillotine_lock.glb",
+      "parts": 31,
+      "triangles": 4220,
+      "materials": 2,
+      "surfaces": 31,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "79d1be2bceec60aa4c9c5304a39ea0bd1d472a77f027ed669ef1b21ea7c7b5fc"
+    },
+    "restraint_winch": {
+      "source": "game/assets/weapons/drive_tree_v1/restraint_winch.glb",
+      "parts": 29,
+      "triangles": 5920,
+      "materials": 2,
+      "surfaces": 29,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "edcb60512897c28a7b274de702e78da8e0363c85e74189d95573aa9676b4f3a5"
+    },
+    "hydraulic_press": {
+      "source": "game/assets/weapons/drive_tree_v1/hydraulic_press.glb",
+      "parts": 33,
+      "triangles": 7036,
+      "materials": 2,
+      "surfaces": 33,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "6128190887d150a9462a5c87da3031acb1c7d0c3a6f0e6ce52f45697304321d5"
+    },
+    "compound_executor": {
+      "source": "game/assets/weapons/drive_tree_v1/compound_executor.glb",
+      "parts": 54,
+      "triangles": 13784,
+      "materials": 2,
+      "surfaces": 54,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "38aea7117aa508933030685cf237e6dd3761c772b93317cdfad58c44e7f31690"
+    },
+    "shock_frame": {
+      "source": "game/assets/weapons/drive_tree_v1/shock_frame.glb",
+      "parts": 12,
+      "triangles": 2416,
+      "materials": 2,
+      "surfaces": 12,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "e409a9c33b891adf7d0b19a4516eb48651ad3965f214a6447e887a63314b773b"
+    },
+    "broad_cutter": {
+      "source": "game/assets/weapons/drive_tree_v1/broad_cutter.glb",
+      "parts": 11,
+      "triangles": 1876,
+      "materials": 2,
+      "surfaces": 11,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "020625ee3634543cc328c51c42eba0c887b70ccaa730572a389dda196b000d7e"
+    }
+  },
+  "parts": 224,
+  "triangles": 45516
+}

@@ -1,0 +1,88 @@
+{
+  "captures": 886,
+  "left": "material_v3",
+  "lighting": "Existing studio plus the same neutral reflection sky on both models; game lighting untouched",
+  "native_camera": "1280x800, selected 1.75x",
+  "passed": true,
+  "right": "previous_v1_v2",
+  "same_lighting": true,
+  "sequences": [
+    {
+      "asset": "guillotine",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_guillotine_base",
+      "variant": "base"
+    },
+    {
+      "asset": "guillotine_saw",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_guillotine_saw_base",
+      "variant": "base"
+    },
+    {
+      "asset": "guillotine_lock",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_guillotine_lock_base",
+      "variant": "base"
+    },
+    {
+      "asset": "restraint_winch",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_restraint_winch_single",
+      "variant": "single"
+    },
+    {
+      "asset": "restraint_winch",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_restraint_winch_pull",
+      "variant": "pull"
+    },
+    {
+      "asset": "restraint_winch",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_restraint_winch_bind",
+      "variant": "bind"
+    },
+    {
+      "asset": "hydraulic_press",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_hydraulic_press_base",
+      "variant": "base"
+    },
+    {
+      "asset": "compound_executor",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_compound_executor_base",
+      "variant": "base"
+    },
+    {
+      "asset": "broad_cutter",
+      "fps": 24,
+      "frames": 84,
+      "id": "motion_broad_cutter_base",
+      "variant": "base"
+    },
+    {
+      "asset": "shock_frame",
+      "fps": 24,
+      "frames": 49,
+      "id": "shock_frame_civilian_run",
+      "variant": "civilian"
+    },
+    {
+      "asset": "shock_frame",
+      "fps": 24,
+      "frames": 49,
+      "id": "shock_frame_transformed_run",
+      "variant": "transformed"
+    }
+  ]
+}

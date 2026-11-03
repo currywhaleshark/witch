@@ -1,0 +1,54 @@
+{
+  "status": "prepared assets / reviewed material derivative",
+  "assets": {
+    "guillotine": {
+      "name": "낙하 단두대",
+      "model": "res://assets/weapons/drive_material_v3/guillotine.glb",
+      "metadata": "res://assets/weapons/drive_material_v3/guillotine.json",
+      "review_helper": "res://tests/helpers/drive_material_v3_demo.gd"
+    },
+    "guillotine_saw": {
+      "name": "단두대 · 회전 톱날",
+      "model": "res://assets/weapons/drive_material_v3/guillotine_saw.glb",
+      "metadata": "res://assets/weapons/drive_material_v3/guillotine_saw.json",
+      "review_helper": "res://tests/helpers/drive_material_v3_demo.gd"
+    },
+    "guillotine_lock": {
+      "name": "단두대 · 고정",
+      "model": "res://assets/weapons/drive_material_v3/guillotine_lock.glb",
+      "metadata": "res://assets/weapons/drive_material_v3/guillotine_lock.json",
+      "review_helper": "res://tests/helpers/drive_material_v3_demo.gd"
+    },
+    "restraint_winch": {
+      "name": "구속 윈치",
+      "model": "res://assets/weapons/drive_material_v3/restraint_winch.glb",
+      "metadata": "res://assets/weapons/drive_material_v3/restraint_winch.json",
+      "review_helper": "res://tests/helpers/drive_material_v3_demo.gd"
+    },
+    "hydraulic_press": {
+      "name": "유압 압착기",
+      "model": "res://assets/weapons/drive_material_v3/hydraulic_press.glb",
+      "metadata": "res://assets/weapons/drive_material_v3/hydraulic_press.json",
+      "review_helper": "res://tests/helpers/drive_material_v3_demo.gd"
+    },
+    "compound_executor": {
+      "name": "복합 집행기",
+      "model": "res://assets/weapons/drive_material_v3/compound_executor.glb",
+      "metadata": "res://assets/weapons/drive_material_v3/compound_executor.json",
+      "review_helper": "res://tests/helpers/drive_material_v3_demo.gd"
+    },
+    "shock_frame": {
+      "name": "충격 흡수 프레임",
+      "model": "res://assets/weapons/drive_material_v3/shock_frame.glb",
+      "metadata": "res://assets/weapons/drive_material_v3/shock_frame.json",
+      "review_helper": "res://tests/helpers/drive_material_v3_demo.gd"
+    },
+    "broad_cutter": {
+      "name": "광역 볼트커터",
+      "model": "res://assets/weapons/drive_material_v3/broad_cutter.glb",
+      "metadata": "res://assets/weapons/drive_material_v3/broad_cutter.json",
+      "review_helper": "res://tests/helpers/drive_material_v3_demo.gd"
+    }
+  },
+  "exoskeleton": "Unchanged selected v4 under assets/equipment/exoskeleton_v4; outside this material task."
+}

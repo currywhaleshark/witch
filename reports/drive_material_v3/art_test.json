@@ -1,0 +1,44 @@
+{
+  "checks": 22226,
+  "failures": [],
+  "models": {
+    "broad_cutter": {
+      "motion_samples": 20,
+      "parts": 11
+    },
+    "compound_executor": {
+      "motion_samples": 20,
+      "parts": 54
+    },
+    "guillotine": {
+      "motion_samples": 20,
+      "parts": 27
+    },
+    "guillotine_lock": {
+      "motion_samples": 20,
+      "parts": 31
+    },
+    "guillotine_saw": {
+      "motion_samples": 20,
+      "parts": 27
+    },
+    "hydraulic_press": {
+      "motion_samples": 20,
+      "parts": 33
+    },
+    "restraint_winch": {
+      "motion_samples": 60,
+      "parts": 29
+    },
+    "shock_frame": {
+      "motion_samples": 20,
+      "parts": 12
+    }
+  },
+  "passed": true,
+  "shared_surface_textures": [
+    "res://assets/weapons/drive_material_v3/textures/drive_v3_color.png",
+    "res://assets/weapons/drive_material_v3/textures/drive_v3_normal.png",
+    "res://assets/weapons/drive_material_v3/textures/drive_v3_orm.png"
+  ]
+}

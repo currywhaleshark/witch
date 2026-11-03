@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-04",
+  "base_commit": "cf4c88a4584a4aad5602caf0f7ee88de44fc2304",
+  "scope": "Eight prepared drive-tree material v3 assets, authoring, runtime examples, reviews, validation and handoff docs.",
+  "selected_file_count": 977,
+  "verified_delivery_hashes": 73,
+  "verified_capture_hashes": 886,
+  "verified_baseline_files": 128,
+  "recorded_delivery_checks": {
+    "full_asset_qa": true,
+    "final_saved_source": true,
+    "runtime_assertions": 22226,
+    "gpu_captures": 886,
+    "preserved_files": 128,
+    "native_image_dimensions": [
+      1280,
+      800
+    ]
+  },
+  "excluded_tracked_changes": {
+    "docs/03_skills.md": "831d9c77586b7dfeeefedc7c14256c5c3d79b816b769b19ad7aa32aef64a5a23",
+    "game/assets/actors/boss_trial_v1/door_v1_door_basecolor.png.import": "7299a940c930c81c02032b4fff91d4f19d4adc2ea9af33c118045d1081e6ddef",
+    "game/assets/actors/boss_trial_v1/door_v1_door_normal.png.import": "492c17e1b0a4fd2725cba31c41b03d9b782cd45cff0dc775e345a1d0743dd12c",
+    "game/assets/actors/boss_trial_v1/door_v1_door_rm.png.import": "931b03fa77558d624cb9eb1f06363a57293b4bd8d52ac98b147c062f8e54e338",
+    "game/assets/actors/shotgun_cast_v1/shotgun_parts_color.png.import": "a39074ba2712424d1dae2c59795e1e13f9df37c16c0473fd4d4602b58cdff266",
+    "game/assets/actors/shotgun_cast_v1/shotgun_parts_metal_rough.png.import": "3dec8ee3cbaa9cb61b5f39e7031a3197a9ac2fa7b8bc0efcd7718313791a70a3",
+    "game/assets/actors/shotgun_cast_v1/shotgun_parts_normal.png.import": "46547c34c2d2b7e937ad2f15e412716decdb8277c509bfa4ef420ce598cb6fcf",
+    "game/assets/weapons/firearm_material_v3/textures/firearm_color.png.import": "08977445683285855a0b7cf167277f23124ca5ec36f2862514b94a81dac91fc2",
+    "game/assets/weapons/firearm_material_v3/textures/firearm_emission.png.import": "a8b388feda62360b7cda52d2e90d23a696473a7e42ab517304315bca9fbd697d",
+    "game/assets/weapons/firearm_material_v3/textures/firearm_normal.png.import": "83cdfccd4be813501b614cd68d3e77a7aabbba7e4efc774ab6e3a3dbdc964fdb",
+    "game/assets/weapons/firearm_material_v3/textures/firearm_orm.png.import": "fed06d13ea56250c1e83f1cf66c9a11a1f6d1012e29b6d99b2eba9c57f85ac43",
+    "game/assets/weapons/firearm_material_v4/textures/firearm_color.png.import": "434f5d356c7b39994c6faa79108f798f16d656edaf98b6edc864b1d6e62cbda3",
+    "game/assets/weapons/firearm_material_v4/textures/firearm_emission.png.import": "2d4fcf305679f6bfa39ec4729e20796e842ed1a6ba1e816b2bd8af8a2f9fc3bb",
+    "game/assets/weapons/firearm_material_v4/textures/firearm_normal.png.import": "c5fe7b418d42eb6c5f0e20357effb90b9bebcf9bf951ef406f9c391b46f05cd4",
+    "game/assets/weapons/firearm_material_v4/textures/firearm_orm.png.import": "568859e2ebe1b3bb5814fd0ec3781159b657bac515e5afe3e3240873d5d925fe",
+    "reports/godot_bleed_growth_report.json": "f179291270c9ab257084a27a73a3e7d4e8b3ecdd47db28b070a52261394cb2f5",
+    "reports/run_arm_v21/integration/gameplay/player_visual_validation.json": "f2b2d2b4bd2dda7331239d3508f4015fa40ad2b47ac38e5e88521038e1f580e8"
+  },
+  "notes": [
+    "No asset implementation changed during commit preparation; prior validation inputs and outputs match.",
+    "Prototype selection is recorded separately in approval.json; historical pre-selection snapshots are retained.",
+    "Live-authoring backup, Blender backups, scratch previews and diagnostic logs remain local."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "materials": 8,
+  "maps": {
+    "color": 1024,
+    "normal": 1024,
+    "orm": 512,
+    "emission": 256
+  },
+  "source_meshes_preserved": 224,
+  "bake": "Cycles self-bake of editable planar trim source materials; no lighting/AO multiplied into basecolor",
+  "uv": "Existing 4 x 2 trim atlas and existing mesh UVs are unchanged",
+  "orm": "R=1 (no new AO bake), G=roughness, B=metallic",
+  "device": "GPU"
+}

@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "preserved_meshes": 224,
+  "preserved_object_matrices": 448,
+  "source_triangles": 45516,
+  "runtime_materials": {
+    "M_DriveV3_Surface": {
+      "color": {
+        "size": [
+          1024,
+          1024
+        ],
+        "space": "sRGB",
+        "packed": true
+      },
+      "normal": {
+        "size": [
+          1024,
+          1024
+        ],
+        "space": "Non-Color",
+        "packed": true
+      },
+      "orm": {
+        "size": [
+          512,
+          512
+        ],
+        "space": "Non-Color",
+        "packed": true
+      }
+    },
+    "M_DriveV3_Glow": {
+      "color": {
+        "size": [
+          1024,
+          1024
+        ],
+        "space": "sRGB",
+        "packed": true
+      },
+      "normal": {
+        "size": [
+          1024,
+          1024
+        ],
+        "space": "Non-Color",
+        "packed": true
+      },
+      "orm": {
+        "size": [
+          512,
+          512
+        ],
+        "space": "Non-Color",
+        "packed": true
+      },
+      "emission": {
+        "size": [
+          256,
+          256
+        ],
+        "space": "sRGB",
+        "packed": true
+      }
+    }
+  },
+  "editable_source_materials": 8,
+  "note": "Final reopened geometry/UV/normals/transforms match the complete source/reimport QA inputs. Only wear width and roughness changed after the full QA started; final map wiring, color spaces and packed data are rechecked here.",
+  "blend_sha256": "cb5a2b8ea8ca6b43833c13d69310c70f889943b7019e475a2881b85185e22ffe"
+}

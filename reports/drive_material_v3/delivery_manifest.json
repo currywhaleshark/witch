@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-04",
+  "status": "prepared material derivative, user review pending",
+  "checks": {
+    "full_asset_qa": true,
+    "final_saved_source": true,
+    "runtime_assertions": 22226,
+    "gpu_captures": 886,
+    "preserved_files": 128,
+    "native_image_dimensions": [
+      1280,
+      800
+    ]
+  },
+  "models": {
+    "guillotine": {
+      "source": "game/assets/weapons/drive_tree_v2/guillotine.glb",
+      "parts": 27,
+      "triangles": 3732,
+      "materials": 2,
+      "surfaces": 27,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "6f22b40c269bfc77f6775efcebcb15e05201868fb945aee6103c56b109fa411e"
+    },
+    "guillotine_saw": {
+      "source": "game/assets/weapons/drive_tree_v2/guillotine_saw.glb",
+      "parts": 27,
+      "triangles": 6532,
+      "materials": 2,
+      "surfaces": 27,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "a7b41a844d09f80b4247727987b0d026204e6fc4208f1389008368211db0bb67"
+    },
+    "guillotine_lock": {
+      "source": "game/assets/weapons/drive_tree_v2/guillotine_lock.glb",
+      "parts": 31,
+      "triangles": 4220,
+      "materials": 2,
+      "surfaces": 31,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "79d1be2bceec60aa4c9c5304a39ea0bd1d472a77f027ed669ef1b21ea7c7b5fc"
+    },
+    "restraint_winch": {
+      "source": "game/assets/weapons/drive_tree_v1/restraint_winch.glb",
+      "parts": 29,
+      "triangles": 5920,
+      "materials": 2,
+      "surfaces": 29,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "edcb60512897c28a7b274de702e78da8e0363c85e74189d95573aa9676b4f3a5"
+    },
+    "hydraulic_press": {
+      "source": "game/assets/weapons/drive_tree_v1/hydraulic_press.glb",
+      "parts": 33,
+      "triangles": 7036,
+      "materials": 2,
+      "surfaces": 33,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "6128190887d150a9462a5c87da3031acb1c7d0c3a6f0e6ce52f45697304321d5"
+    },
+    "compound_executor": {
+      "source": "game/assets/weapons/drive_tree_v1/compound_executor.glb",
+      "parts": 54,
+      "triangles": 13784,
+      "materials": 2,
+      "surfaces": 54,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "38aea7117aa508933030685cf237e6dd3761c772b93317cdfad58c44e7f31690"
+    },
+    "shock_frame": {
+      "source": "game/assets/weapons/drive_tree_v1/shock_frame.glb",
+      "parts": 12,
+      "triangles": 2416,
+      "materials": 2,
+      "surfaces": 12,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "e409a9c33b891adf7d0b19a4516eb48651ad3965f214a6447e887a63314b773b"
+    },
+    "broad_cutter": {
+      "source": "game/assets/weapons/drive_tree_v1/broad_cutter.glb",
+      "parts": 11,
+      "triangles": 1876,
+      "materials": 2,
+      "surfaces": 11,
+      "geometry_binary_unchanged": true,
+      "nodes_accessors_uv_normals_tangents_unchanged": true,
+      "mechanism_metadata_unchanged": true,
+      "sha256": "020625ee3634543cc328c51c42eba0c887b70ccaa730572a389dda196b000d7e"
+    }
+  },
+  "textures": {
+    "color": {
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 298751,
+      "color_space": "sRGB"
+    },
+    "normal": {
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 563702,
+      "color_space": "Non-Color"
+    },
+    "orm": {
+      "size": [
+        512,
+        512
+      ],
+      "bytes": 173111,
+      "color_space": "Non-Color"
+    },
+    "emission": {
+      "size": [
+        256,
+        256
+      ],
+      "bytes": 1958,
+      "color_space": "sRGB"
+    }
+  },
+  "source_and_outputs": {
+    "assets/weapons/drive_material_v3/catalog.json": "382c2a1a6e300f51f4de831dcc4511aa731173357030e59da24aff3302919709",
+    "assets/weapons/drive_material_v3/drive_material_v3.blend": "cb5a2b8ea8ca6b43833c13d69310c70f889943b7019e475a2881b85185e22ffe",
+    "assets/weapons/drive_material_v3/exports/broad_cutter.glb": "36532c6c03b8c48a84a7d27b39eedc42a8883784a10bf51052c57987dbba6c4c",
+    "assets/weapons/drive_material_v3/exports/compound_executor.glb": "1d57842717d3892c76acf7508415cbccdf98effdd313b727cd3b36cbbac8a4d3",
+    "assets/weapons/drive_material_v3/exports/guillotine.glb": "6470c3352112037e509728fec416fdb02148193ac75b1909debb14867a6eb875",
+    "assets/weapons/drive_material_v3/exports/guillotine_lock.glb": "a23b33aa32f3ed007b924f90568ec4152c95dbddab6e2cc27ce013a8bb806a80",
+    "assets/weapons/drive_material_v3/exports/guillotine_saw.glb": "ead1e779b361919860efd21fb5ced99a021ea7ce9c4fe22352017b04c61d20b0",
+    "assets/weapons/drive_material_v3/exports/hydraulic_press.glb": "486f552125c95460c4424b3ef9a38096920354ee5a9fc62100c95fe79b1758f0",
+    "assets/weapons/drive_material_v3/exports/restraint_winch.glb": "983969775c7c8222d864db8a8c7a774cf60584871e6b900e0f538f88a292b85d",
+    "assets/weapons/drive_material_v3/exports/shock_frame.glb": "9ce6d9a2472206f9ea6003234296bacaaeb10027cb467abba30d97db1bec597c",
+    "assets/weapons/drive_material_v3/models.json": "eaecde7c32cfc74293ba40d676480c3aac46f34e2d041e4092b85f910508c243",
+    "assets/weapons/drive_material_v3/production.json": "4a7c0a2b174137180a2bc9289650db1c128dbf228c70f5b9be038321c5f7b2c9",
+    "assets/weapons/drive_material_v3/README.md": "53b5b0c4b9109ef72bce6464afcefce457d23850083aa90c47ac0fa4ab26ebbb",
+    "assets/weapons/drive_material_v3/textures/drive_v3_color.png": "81c8e375b105c3f7e4782e65c30298916f97e6e041244ff46456a78ca303b276",
+    "assets/weapons/drive_material_v3/textures/drive_v3_emission.png": "dbaf2c7b7f55fded87918da27d14e55dafce39c80218d3a4e4e9d7099530c00e",
+    "assets/weapons/drive_material_v3/textures/drive_v3_metallic.png": "03a1223799a124ecd53d0c4ca1cf8c7d37ca9170466d52536f319e72ec69625f",
+    "assets/weapons/drive_material_v3/textures/drive_v3_normal.png": "1f8ec01ac5d5fcd7c113f5e5899dc682cde119aa29fc0119c5e5d1485819308e",
+    "assets/weapons/drive_material_v3/textures/drive_v3_orm.png": "54f7904f3487757605f15e817f549976d1d2a7c70cf72151e1e092dcb4e95d78",
+    "assets/weapons/drive_material_v3/textures/drive_v3_roughness.png": "48edf081a87ada0a9ae74c6bb422e4d883a1f237bf2a53ffa87ca16d28094d47",
+    "game/assets/weapons/drive_material_v3/broad_cutter.glb": "020625ee3634543cc328c51c42eba0c887b70ccaa730572a389dda196b000d7e",
+    "game/assets/weapons/drive_material_v3/broad_cutter.glb.import": "013db846306ccf77d2c1b1005fe2af15434127373b2a1805386281cbc241e50a",
+    "game/assets/weapons/drive_material_v3/broad_cutter.json": "1875c709d7d6d4570330096598a58a80f04bdec0c135a617395efafe453858dc",
+    "game/assets/weapons/drive_material_v3/compound_executor.glb": "38aea7117aa508933030685cf237e6dd3761c772b93317cdfad58c44e7f31690",
+    "game/assets/weapons/drive_material_v3/compound_executor.glb.import": "9b1ca5f572a152f40c78930ab31636b7db3b90e98e8bc36d77151abf849adf84",
+    "game/assets/weapons/drive_material_v3/compound_executor.json": "18c2db56bb90763eb8918b818d88eca3e5abf5c93604ba3381406ab27a9351eb",
+    "game/assets/weapons/drive_material_v3/guillotine.glb": "6f22b40c269bfc77f6775efcebcb15e05201868fb945aee6103c56b109fa411e",
+    "game/assets/weapons/drive_material_v3/guillotine.glb.import": "36ca9ec2707db6e6593570de397eedfc62422be466d7f57565d16113412568d6",
+    "game/assets/weapons/drive_material_v3/guillotine.json": "eb0dd1daaf2297605f5107cf8dd016117f02d0770e61c92df4f7e5421d7679a9",
+    "game/assets/weapons/drive_material_v3/guillotine_lock.glb": "79d1be2bceec60aa4c9c5304a39ea0bd1d472a77f027ed669ef1b21ea7c7b5fc",
+    "game/assets/weapons/drive_material_v3/guillotine_lock.glb.import": "811c441479831b96d24719ad7cc455fb48df691227da3cada30eb246d4398856",
+    "game/assets/weapons/drive_material_v3/guillotine_lock.json": "a35097902e4b194d89beae2f43695e9125bac62f1135ed66012abbca2e1dc3dd",
+    "game/assets/weapons/drive_material_v3/guillotine_saw.glb": "a7b41a844d09f80b4247727987b0d026204e6fc4208f1389008368211db0bb67",
+    "game/assets/weapons/drive_material_v3/guillotine_saw.glb.import": "140466cc702955453fab37ff24c4780ac8b885d1c4a5cc9eb25ec345fe5cf1e0",
+    "game/assets/weapons/drive_material_v3/guillotine_saw.json": "ec9fb2aa3b3d36af5aa45f3632481aba51022f4ff093a9254ec83b8172ce4e80",
+    "game/assets/weapons/drive_material_v3/hydraulic_press.glb": "6128190887d150a9462a5c87da3031acb1c7d0c3a6f0e6ce52f45697304321d5",
+    "game/assets/weapons/drive_material_v3/hydraulic_press.glb.import": "f2042d0e02845849e3380a321f8eadfd11bdf87d7fb926370b9197fd1e3ec56f",
+    "game/assets/weapons/drive_material_v3/hydraulic_press.json": "bae580b70bc6521be9313f9cf24e55418efe01ac5e195e5633b9d4e8de79a298",
+    "game/assets/weapons/drive_material_v3/restraint_winch.glb": "edcb60512897c28a7b274de702e78da8e0363c85e74189d95573aa9676b4f3a5",
+    "game/assets/weapons/drive_material_v3/restraint_winch.glb.import": "b391200453947e54112149e9471ac2449c745e7e0807a8fcbf2cc0b9f8fec02c",
+    "game/assets/weapons/drive_material_v3/restraint_winch.json": "027531669045eeaf971cbd98040858fc83f1e9880035fcb57d992e6e54b7fd24",
+    "game/assets/weapons/drive_material_v3/shock_frame.glb": "e409a9c33b891adf7d0b19a4516eb48651ad3965f214a6447e887a63314b773b",
+    "game/assets/weapons/drive_material_v3/shock_frame.glb.import": "d16628d8aa2fc4edb3ea989cdac1c50bdfa0c290517a870a46cac56adc636b1d",
+    "game/assets/weapons/drive_material_v3/shock_frame.json": "10a9ac140d44da0c13bc830c1c1a66defe006b7eef577986a9a8b412bb3fead5",
+    "game/assets/weapons/drive_material_v3/textures/drive_v3_color.png": "81c8e375b105c3f7e4782e65c30298916f97e6e041244ff46456a78ca303b276",
+    "game/assets/weapons/drive_material_v3/textures/drive_v3_color.png.import": "72863e4734be00edd1230921df6c89ac4184499e79ace2b0ee6d75642c9aabbd",
+    "game/assets/weapons/drive_material_v3/textures/drive_v3_emission.png": "dbaf2c7b7f55fded87918da27d14e55dafce39c80218d3a4e4e9d7099530c00e",
+    "game/assets/weapons/drive_material_v3/textures/drive_v3_emission.png.import": "97d3a1d45ac3c99f8cb94f75022c1583cef8f4ff34728093f961e44ae5f4ec60",
+    "game/assets/weapons/drive_material_v3/textures/drive_v3_normal.png": "1f8ec01ac5d5fcd7c113f5e5899dc682cde119aa29fc0119c5e5d1485819308e",
+    "game/assets/weapons/drive_material_v3/textures/drive_v3_normal.png.import": "b04beb3e0078935c83dbd4094a2065e9f337bfe3c8dd62ba33a778b2146327ff",
+    "game/assets/weapons/drive_material_v3/textures/drive_v3_orm.png": "54f7904f3487757605f15e817f549976d1d2a7c70cf72151e1e092dcb4e95d78",
+    "game/assets/weapons/drive_material_v3/textures/drive_v3_orm.png.import": "880f0a636cdf73c6ef58b7437b4fb67464411660a1428f3e058ec181a84ed267",
+    "game/tests/drive_material_v3_art.gd": "e99add13f7a6ee5259a7306f463be313d479c25694ed0ccd9fde52b16b1fc8f0",
+    "game/tests/helpers/drive_material_v3_demo.gd": "e38cf4e7eef5ebb4456e3739780b494c07d19c053d25eec0be9a7d983002053a",
+    "game/tests/review_drive_material_v3.gd": "70c9a277f1a9678dded1f603cbbf01fd08b1c7cd7fa70d1a6fe487fec0027c87",
+    "reports/drive_material_v3/art_test.json": "55c45a267c1fd4dca38c4cf01e191ce5d170b223636e5d0d985c249ecea15298",
+    "reports/drive_material_v3/asset_qa.json": "64baf64c8504cd2f091d6a02df3a397bd4c641621f48dd54dc513cea79acc81c",
+    "reports/drive_material_v3/bake.json": "21d244eb761363d66691f0f21719590ff2d1ad9523fd524f4b36b7f5f17b1d89",
+    "reports/drive_material_v3/baseline.json": "5fd4e380b76234b88299ea56d8deaf2f938f819b916e74feacc2973166b07296",
+    "reports/drive_material_v3/capture_hashes.json": "871558568a2e28c866cd996cbf8ed9aa83d83240de23f9aa2c2fb1b583d3fd7f",
+    "reports/drive_material_v3/export_validation.json": "5b9c7ebf7e53f41960e37021f19c5f00c341c23aa00d7a28504c17abacf21219",
+    "reports/drive_material_v3/preservation.json": "953977a9a97146017081a738252984b3a829e9e4ee6f51df392b386ab6f1f29a",
+    "reports/drive_material_v3/qa_adjudication.json": "6ef3e1ce71d8b35560e21e8ced3e3397718ff033e500d46a454d5261fe4ec0a2",
+    "reports/drive_material_v3/review/capture.json": "a7102d7019d7d320e26fc8708862933c3ae2d7bd70891d60cdac551f9a2d8aeb",
+    "reports/drive_material_v3/review.html": "a3a58954be83031f7b797e9585b0aef63042acf483e38c8e9f55a2e928047c54",
+    "reports/drive_material_v3/saved_source_validation.json": "6d79175473bae2bf8e8a3c30c06b729adb64fcd70d78d5e9eeced6937feb3eda",
+    "reports/drive_material_v3/source_preservation.json": "5534612a6e9770515a0e6c4c913bddf24659b1946f86e2e7655da2ddcc0e114f",
+    "tools/author_drive_material_v3.py": "7fec99e7c2359bd827524807e362913961510e56dd21c778c5201f4a9036f78d",
+    "tools/bake_drive_material_v3.py": "acab9fac86b7dcd0cb8b62b8a285eca678b6cbe7a070a3006e8af20111a7f304",
+    "tools/finish_drive_material_v3.py": "74d86e3277770a018a2da99a743a2530ee484c1229465c29fc039110d4428e62",
+    "tools/package_drive_material_review_v3.py": "5eb0fc5c8bc63c6489ee787d34ee28a498468ead355e5a8de0c92e053bf0e747",
+    "tools/package_drive_material_v3.py": "dbcbad1384ed11e6f6b4a2621dfa4ae54b546c07e951b5366a3b59bf74ced6b3",
+    "tools/qa_drive_material_v3.py": "1f69177b1df1108216a579c042462305cb569c5da077b4c2af50e4504560d71c",
+    "tools/validate_drive_material_v3_saved.py": "09257100780a782628f5ff466e14aedb67ed883b437bc00afaf6a9bbb88a62a3"
+  },
+  "geometry_scope": "Final reopened geometry/UV/normals/transforms match the complete source/reimport QA inputs. Only wear width and roughness changed after the full QA started; final map wiring, color spaces and packed data are rechecked here.",
+  "rendering": "Existing studio plus the same neutral reflection sky on both models; game lighting untouched",
+  "limits": [
+    "Prepared review assets, no new active-skill integration.",
+    "Exoskeleton v4 and existing equipment fitting unchanged.",
+    "Shared trim detail, no per-object unique damage maps.",
+    "No new live collision or final performance approval."
+  ]
+}

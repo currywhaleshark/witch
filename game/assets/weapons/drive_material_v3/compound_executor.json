@@ -1,0 +1,895 @@
+{
+  "id": "compound_executor",
+  "parts": [
+    {
+      "name": "compound_executor__arm_motor_1",
+      "role": "arm_motor_1",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "navy",
+      "origin": [
+        0.94,
+        0.76,
+        0.1
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__arm_motor_neg1",
+      "role": "arm_motor_-1",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "navy",
+      "origin": [
+        -0.94,
+        0.76,
+        0.1
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__cage_bar_0",
+      "role": "cage_bar_0",
+      "group": "body",
+      "delay": 0.22,
+      "surface": "brass",
+      "origin": [
+        0.69,
+        0.64,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__cage_bar_1",
+      "role": "cage_bar_1",
+      "group": "body",
+      "delay": 0.22,
+      "surface": "brass",
+      "origin": [
+        0.487904,
+        0.64,
+        0.374767
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__cage_bar_2",
+      "role": "cage_bar_2",
+      "group": "body",
+      "delay": 0.22,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        0.64,
+        0.53
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__cage_bar_3",
+      "role": "cage_bar_3",
+      "group": "body",
+      "delay": 0.22,
+      "surface": "brass",
+      "origin": [
+        -0.487904,
+        0.64,
+        0.374767
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__cage_bar_4",
+      "role": "cage_bar_4",
+      "group": "body",
+      "delay": 0.22,
+      "surface": "brass",
+      "origin": [
+        -0.69,
+        0.64,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__column_0",
+      "role": "column_0",
+      "group": "body",
+      "delay": 0.09,
+      "surface": "steel",
+      "origin": [
+        -0.688,
+        1.13,
+        -0.4896
+      ],
+      "triangles": 236,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__column_1",
+      "role": "column_1",
+      "group": "body",
+      "delay": 0.09,
+      "surface": "steel",
+      "origin": [
+        0.688,
+        1.13,
+        -0.4896
+      ],
+      "triangles": 236,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__column_2",
+      "role": "column_2",
+      "group": "body",
+      "delay": 0.09,
+      "surface": "steel",
+      "origin": [
+        -0.688,
+        1.13,
+        0.4896
+      ],
+      "triangles": 236,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__column_3",
+      "role": "column_3",
+      "group": "body",
+      "delay": 0.09,
+      "surface": "steel",
+      "origin": [
+        0.688,
+        1.13,
+        0.4896
+      ],
+      "triangles": 236,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__column_collar_0",
+      "role": "column_collar_0",
+      "group": "body",
+      "delay": 0.2,
+      "surface": "brass",
+      "origin": [
+        -0.688,
+        0.26,
+        -0.489524
+      ],
+      "triangles": 480,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__column_collar_1",
+      "role": "column_collar_1",
+      "group": "body",
+      "delay": 0.2,
+      "surface": "brass",
+      "origin": [
+        0.688,
+        0.26,
+        -0.489524
+      ],
+      "triangles": 480,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__column_collar_2",
+      "role": "column_collar_2",
+      "group": "body",
+      "delay": 0.2,
+      "surface": "brass",
+      "origin": [
+        -0.688,
+        0.26,
+        0.489524
+      ],
+      "triangles": 480,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__column_collar_3",
+      "role": "column_collar_3",
+      "group": "body",
+      "delay": 0.2,
+      "surface": "brass",
+      "origin": [
+        0.688,
+        0.26,
+        0.489524
+      ],
+      "triangles": 480,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__core",
+      "role": "core",
+      "group": "body",
+      "delay": 0.48,
+      "surface": "core",
+      "origin": [
+        0.0,
+        2.12,
+        -0.728
+      ],
+      "triangles": 268,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__crown",
+      "role": "crown",
+      "group": "body",
+      "delay": 0.16,
+      "surface": "navy",
+      "origin": [
+        0.0,
+        2.12,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__execution_saw_1",
+      "role": "execution_saw_1",
+      "group": "saw_1",
+      "delay": 0.42,
+      "surface": "silver",
+      "origin": [
+        0.95,
+        0.76,
+        -0.4
+      ],
+      "triangles": 1916,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__execution_saw_1_hub",
+      "role": "execution_saw_1_hub",
+      "group": "saw_1",
+      "delay": 0.48,
+      "surface": "brass",
+      "origin": [
+        0.95,
+        0.76,
+        -0.4
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__execution_saw_neg1",
+      "role": "execution_saw_-1",
+      "group": "saw_-1",
+      "delay": 0.42,
+      "surface": "silver",
+      "origin": [
+        -0.95,
+        0.76,
+        -0.4
+      ],
+      "triangles": 1916,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__execution_saw_neg1_hub",
+      "role": "execution_saw_-1_hub",
+      "group": "saw_-1",
+      "delay": 0.48,
+      "surface": "brass",
+      "origin": [
+        -0.95,
+        0.76,
+        -0.4
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__foot_1",
+      "role": "foot_1",
+      "group": "body",
+      "delay": 0.05,
+      "surface": "navy",
+      "origin": [
+        0.72,
+        0.115,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__foot_neg1",
+      "role": "foot_-1",
+      "group": "body",
+      "delay": 0.05,
+      "surface": "navy",
+      "origin": [
+        -0.72,
+        0.115,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__foot_trim_1",
+      "role": "foot_trim_1",
+      "group": "body",
+      "delay": 0.18,
+      "surface": "brass",
+      "origin": [
+        0.72,
+        0.18,
+        -0.4032
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__foot_trim_neg1",
+      "role": "foot_trim_-1",
+      "group": "body",
+      "delay": 0.18,
+      "surface": "brass",
+      "origin": [
+        -0.72,
+        0.18,
+        -0.4032
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gate_bar_1_0",
+      "role": "gate_bar_1_0",
+      "group": "gate_1",
+      "delay": 0.31,
+      "surface": "navy",
+      "origin": [
+        0.14,
+        0.7,
+        -0.49
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gate_bar_1_1",
+      "role": "gate_bar_1_1",
+      "group": "gate_1",
+      "delay": 0.31,
+      "surface": "navy",
+      "origin": [
+        0.37,
+        0.7,
+        -0.49
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gate_bar_neg1_0",
+      "role": "gate_bar_-1_0",
+      "group": "gate_-1",
+      "delay": 0.31,
+      "surface": "navy",
+      "origin": [
+        -0.14,
+        0.7,
+        -0.49
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gate_bar_neg1_1",
+      "role": "gate_bar_-1_1",
+      "group": "gate_-1",
+      "delay": 0.31,
+      "surface": "navy",
+      "origin": [
+        -0.37,
+        0.7,
+        -0.49
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gate_hinge_1",
+      "role": "gate_hinge_1",
+      "group": "gate_1",
+      "delay": 0.32,
+      "surface": "brass",
+      "origin": [
+        0.69,
+        0.7,
+        -0.49
+      ],
+      "triangles": 236,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gate_hinge_neg1",
+      "role": "gate_hinge_-1",
+      "group": "gate_-1",
+      "delay": 0.32,
+      "surface": "brass",
+      "origin": [
+        -0.69,
+        0.7,
+        -0.49
+      ],
+      "triangles": 236,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gate_rail_1",
+      "role": "gate_rail_1",
+      "group": "gate_1",
+      "delay": 0.28,
+      "surface": "brass",
+      "origin": [
+        0.35,
+        0.71,
+        -0.49
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gate_rail_neg1",
+      "role": "gate_rail_-1",
+      "group": "gate_-1",
+      "delay": 0.28,
+      "surface": "brass",
+      "origin": [
+        -0.35,
+        0.71,
+        -0.49
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gland_0",
+      "role": "gland_0",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "brass",
+      "origin": [
+        -0.42,
+        1.7,
+        -0.0
+      ],
+      "triangles": 384,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__gland_1",
+      "role": "gland_1",
+      "group": "body",
+      "delay": 0.32,
+      "surface": "brass",
+      "origin": [
+        0.42,
+        1.7,
+        -0.0
+      ],
+      "triangles": 384,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__ground_foundation",
+      "role": "ground_foundation",
+      "group": "body",
+      "delay": 0.01,
+      "surface": "steel",
+      "origin": [
+        0.0,
+        0.065,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__hydraulic_barrel_0",
+      "role": "hydraulic_barrel_0",
+      "group": "body",
+      "delay": 0.23,
+      "surface": "navy",
+      "origin": [
+        -0.42,
+        1.91,
+        -0.0
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__hydraulic_barrel_1",
+      "role": "hydraulic_barrel_1",
+      "group": "body",
+      "delay": 0.23,
+      "surface": "navy",
+      "origin": [
+        0.42,
+        1.91,
+        -0.0
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__hydraulic_line_0",
+      "role": "hydraulic_line_0",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "black",
+      "origin": [
+        -0.42,
+        1.954354,
+        0.216888
+      ],
+      "triangles": 60,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__hydraulic_line_1",
+      "role": "hydraulic_line_1",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "black",
+      "origin": [
+        0.42,
+        1.954354,
+        0.216888
+      ],
+      "triangles": 60,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__piston_rod_0",
+      "role": "piston_rod_0",
+      "group": "platen",
+      "delay": 0.34,
+      "surface": "silver",
+      "origin": [
+        -0.42,
+        1.57,
+        -0.0
+      ],
+      "triangles": 172,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__piston_rod_1",
+      "role": "piston_rod_1",
+      "group": "platen",
+      "delay": 0.34,
+      "surface": "silver",
+      "origin": [
+        0.42,
+        1.57,
+        -0.0
+      ],
+      "triangles": 172,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__platen",
+      "role": "platen",
+      "group": "platen",
+      "delay": 0.35,
+      "surface": "steel",
+      "origin": [
+        0.0,
+        1.28,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__platen_band",
+      "role": "platen_band",
+      "group": "platen",
+      "delay": 0.42,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        1.37,
+        -0.5616
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__press_rib_0",
+      "role": "press_rib_0",
+      "group": "platen",
+      "delay": 0.42,
+      "surface": "silver",
+      "origin": [
+        -0.4472,
+        1.17,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__press_rib_1",
+      "role": "press_rib_1",
+      "group": "platen",
+      "delay": 0.42,
+      "surface": "silver",
+      "origin": [
+        -0.2236,
+        1.17,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__press_rib_2",
+      "role": "press_rib_2",
+      "group": "platen",
+      "delay": 0.42,
+      "surface": "silver",
+      "origin": [
+        0.0,
+        1.17,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__press_rib_3",
+      "role": "press_rib_3",
+      "group": "platen",
+      "delay": 0.42,
+      "surface": "silver",
+      "origin": [
+        0.2236,
+        1.17,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__press_rib_4",
+      "role": "press_rib_4",
+      "group": "platen",
+      "delay": 0.42,
+      "surface": "silver",
+      "origin": [
+        0.4472,
+        1.17,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__pressure_gauge",
+      "role": "pressure_gauge",
+      "group": "body",
+      "delay": 0.45,
+      "surface": "brass",
+      "origin": [
+        0.6708,
+        2.13,
+        -0.745
+      ],
+      "triangles": 188,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__saw_arm_1",
+      "role": "saw_arm_1",
+      "group": "arm_1",
+      "delay": 0.38,
+      "surface": "brass",
+      "origin": [
+        0.944886,
+        0.76,
+        -0.15
+      ],
+      "triangles": 220,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__saw_arm_neg1",
+      "role": "saw_arm_-1",
+      "group": "arm_-1",
+      "delay": 0.38,
+      "surface": "brass",
+      "origin": [
+        -0.944886,
+        0.76,
+        -0.15
+      ],
+      "triangles": 220,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__telescopic_stage_0",
+      "role": "telescopic_stage_0",
+      "group": "platen_stage",
+      "delay": 0.31,
+      "surface": "silver",
+      "origin": [
+        -0.42,
+        1.73,
+        -0.0
+      ],
+      "triangles": 384,
+      "attach_bone": ""
+    },
+    {
+      "name": "compound_executor__telescopic_stage_1",
+      "role": "telescopic_stage_1",
+      "group": "platen_stage",
+      "delay": 0.31,
+      "surface": "silver",
+      "origin": [
+        0.42,
+        1.73,
+        -0.0
+      ],
+      "triangles": 384,
+      "attach_bone": ""
+    }
+  ],
+  "sockets": {
+    "Socket_impact": {
+      "position": [
+        0.0,
+        0.22,
+        -0.0
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_press_axis": {
+      "position": [
+        0.0,
+        1.28,
+        -0.0
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ]
+    },
+    "Socket_gate_-1": {
+      "position": [
+        -0.69,
+        0.7,
+        -0.49
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ]
+    },
+    "Socket_arm_-1": {
+      "position": [
+        -0.94,
+        0.76,
+        0.1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ]
+    },
+    "Socket_saw_-1": {
+      "position": [
+        -0.95,
+        0.76,
+        -0.4
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    },
+    "Socket_gate_1": {
+      "position": [
+        0.69,
+        0.7,
+        -0.49
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ]
+    },
+    "Socket_arm_1": {
+      "position": [
+        0.94,
+        0.76,
+        0.1
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ]
+    },
+    "Socket_saw_1": {
+      "position": [
+        0.95,
+        0.76,
+        -0.4
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "units": "metres",
+  "runtime_status": "prepared_asset",
+  "triangles": 13784,
+  "part_count": 54,
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "aabb_godot": {
+    "min": [
+      -1.21819,
+      0.0,
+      -0.82
+    ],
+    "max": [
+      1.21819,
+      2.22,
+      0.82
+    ]
+  },
+  "dimensions": [
+    2.43638,
+    2.22,
+    1.64
+  ],
+  "materials": [
+    "M_DriveV3_Surface",
+    "M_DriveV3_Glow"
+  ],
+  "texture_set": "drive_material_v3 shared trim"
+}

@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-04",
+  "status": "material-complete prototype review candidate",
+  "source": "Blender-authored procedural materials and Cycles self-baked trim atlas; no new AI generation",
+  "scope": [
+    "guillotine",
+    "guillotine_saw",
+    "guillotine_lock",
+    "restraint_winch",
+    "hydraulic_press",
+    "compound_executor",
+    "shock_frame",
+    "broad_cutter"
+  ],
+  "exoskeleton_changed": false,
+  "parts": 224,
+  "triangles": 45516,
+  "runtime_materials": 2,
+  "surfaces": 224,
+  "editable_source_materials": 8,
+  "textures": {
+    "color": {
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 298751,
+      "color_space": "sRGB"
+    },
+    "normal": {
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 563702,
+      "color_space": "Non-Color"
+    },
+    "orm": {
+      "size": [
+        512,
+        512
+      ],
+      "bytes": 173111,
+      "color_space": "Non-Color"
+    },
+    "emission": {
+      "size": [
+        256,
+        256
+      ],
+      "bytes": 1958,
+      "color_space": "sRGB"
+    }
+  },
+  "blender": "5.1.1",
+  "mcp": "1.8 / protocol 15",
+  "godot": "4.6.2 / OpenGL compatibility",
+  "selected_shape_preserved": true,
+  "mechanism_metadata_preserved": true,
+  "active_skill_integration": false,
+  "user_material_approval": false,
+  "review": "reports/drive_material_v3/review.html",
+  "approx_rgba8_full_mips_mib": 12.33,
+  "memory_note": "Texture estimate only, not measured peak memory or performance approval."
+}

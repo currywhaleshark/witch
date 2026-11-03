@@ -1,0 +1,32 @@
+{
+  "geometry_errors": 0,
+  "accepted_warning_classes": {
+    "UV overlap": "Intentional reusable planar trim charts. Bake target is eight disjoint rectangles, not the repeated mesh UVs.",
+    "n-gons": "Unchanged flat rigid caps; canonical GLB triangles are byte-identical to accepted v1/v2.",
+    "duplicate verts": "Unchanged UV and normal seam splits in the canonical GLBs.",
+    "fully enclosed": "Existing hidden hydraulic column collars, retained to preserve independently assembled pieces.",
+    "hidden back-to-back faces": "Existing hidden mating faces on independent closed parts and hose caps; no newly added geometry.",
+    "asset lowest point": "Staff-mounted cutter and character-mounted shock modules retain their attachment origins."
+  },
+  "warning_counts": {
+    "UV overlap": 448,
+    "n-gons": 102,
+    "duplicate verts": 224,
+    "fully enclosed": 2,
+    "hidden back-to-back faces": 22,
+    "asset lowest point": 4
+  },
+  "visual_review": [
+    "All eight assets in live Blender material and wireframe multi-angle views",
+    "Same-light Godot before/after, rear, close and selected 1.75x scale",
+    "Assembly/mechanisms, winch three branches and both outfits running with shock frame"
+  ],
+  "remaining": [
+    "The existing shock-frame attachment spacing is retained; this is not a new equipment-fitting pass.",
+    "No new gameplay skill integration, live collision/cloth or final performance claim."
+  ],
+  "environment_diagnostics": [
+    "Read-only user thumbnail/cache/editor-settings locations emitted warnings; source saves, all requested images and validations completed.",
+    "Initial Godot default-log startup failed; explicit workspace log paths completed normally."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Seoul",
+  "user_request": "커밋",
+  "status": "selected_for_prototype",
+  "scope": "The current v3 materials of the eight prepared drive-tree devices, with their preserved shapes and existing review mechanisms.",
+  "assets": ["guillotine", "guillotine_saw", "guillotine_lock", "restraint_winch", "hydraulic_press", "compound_executor", "shock_frame", "broad_cutter"],
+  "review": "reports/drive_material_v3/review.html",
+  "validation": "reports/drive_material_v3/delivery_manifest.json",
+  "supersedes": "Pending user-material-selection wording in the historical v3 production and delivery snapshots; their recorded validation scope and remaining limits still apply.",
+  "preserved": "Selected exoskeleton v4, existing device geometry and mechanisms, character assets and main-game rules.",
+  "does_not_imply": "New active-skill integration, a new equipment fit/contact pass, live collision or final performance approval."
+}

@@ -1,0 +1,512 @@
+{
+  "id": "guillotine_lock",
+  "revision": "drive_tree_v2",
+  "parts": [
+    {
+      "name": "v2_guillotine_lock__anvil_front",
+      "role": "anvil_front",
+      "group": "body",
+      "delay": 0.12,
+      "surface": "silver",
+      "origin": [
+        0.0,
+        0.22,
+        -0.215
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__anvil_rear",
+      "role": "anvil_rear",
+      "group": "body",
+      "delay": 0.12,
+      "surface": "silver",
+      "origin": [
+        0.0,
+        0.22,
+        0.045
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__blade_fastener_0p43",
+      "role": "blade_fastener_0.43",
+      "group": "drop",
+      "delay": 0.34,
+      "surface": "silver",
+      "origin": [
+        0.43,
+        1.79,
+        -0.143
+      ],
+      "triangles": 164,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__blade_fastener_neg0p43",
+      "role": "blade_fastener_-0.43",
+      "group": "drop",
+      "delay": 0.34,
+      "surface": "silver",
+      "origin": [
+        -0.43,
+        1.79,
+        -0.143
+      ],
+      "triangles": 164,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__carriage",
+      "role": "carriage",
+      "group": "drop",
+      "delay": 0.33,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        1.9,
+        -0.095
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__clamp_jaw_1",
+      "role": "clamp_jaw_1",
+      "group": "clamp_1",
+      "delay": 0.4,
+      "surface": "navy",
+      "origin": [
+        0.414423,
+        0.550013,
+        0.1
+      ],
+      "triangles": 136,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__clamp_jaw_neg1",
+      "role": "clamp_jaw_-1",
+      "group": "clamp_-1",
+      "delay": 0.4,
+      "surface": "navy",
+      "origin": [
+        -0.414423,
+        0.550013,
+        0.1
+      ],
+      "triangles": 136,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__clamp_slide_1",
+      "role": "clamp_slide_1",
+      "group": "clamp_1",
+      "delay": 0.34,
+      "surface": "brass",
+      "origin": [
+        0.49,
+        0.47,
+        0.13
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__clamp_slide_neg1",
+      "role": "clamp_slide_-1",
+      "group": "clamp_-1",
+      "delay": 0.34,
+      "surface": "brass",
+      "origin": [
+        -0.49,
+        0.47,
+        0.13
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__clock_seal",
+      "role": "clock_seal",
+      "group": "body",
+      "delay": 0.42,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        2.23,
+        -0.165
+      ],
+      "triangles": 236,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__column_1",
+      "role": "column_1",
+      "group": "body",
+      "delay": 0.07,
+      "surface": "navy",
+      "origin": [
+        0.61,
+        1.22,
+        0.015
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__column_neg1",
+      "role": "column_-1",
+      "group": "body",
+      "delay": 0.07,
+      "surface": "navy",
+      "origin": [
+        -0.61,
+        1.22,
+        0.015
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__core",
+      "role": "core",
+      "group": "body",
+      "delay": 0.49,
+      "surface": "core",
+      "origin": [
+        0.0,
+        2.23,
+        -0.189
+      ],
+      "triangles": 268,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__crown",
+      "role": "crown",
+      "group": "body",
+      "delay": 0.14,
+      "surface": "navy",
+      "origin": [
+        0.0,
+        2.25,
+        0.015
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__crown_trim",
+      "role": "crown_trim",
+      "group": "body",
+      "delay": 0.26,
+      "surface": "brass",
+      "origin": [
+        0.0,
+        2.31,
+        -0.152
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__falling_blade",
+      "role": "falling_blade",
+      "group": "drop",
+      "delay": 0.4,
+      "surface": "steel",
+      "origin": [
+        0.0,
+        1.570345,
+        -0.1
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__foot_1",
+      "role": "foot_1",
+      "group": "body",
+      "delay": 0.05,
+      "surface": "navy",
+      "origin": [
+        0.69,
+        0.115,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__foot_neg1",
+      "role": "foot_-1",
+      "group": "body",
+      "delay": 0.05,
+      "surface": "navy",
+      "origin": [
+        -0.69,
+        0.115,
+        -0.0
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__foot_trim_1",
+      "role": "foot_trim_1",
+      "group": "body",
+      "delay": 0.18,
+      "surface": "brass",
+      "origin": [
+        0.69,
+        0.18,
+        -0.1848
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__foot_trim_neg1",
+      "role": "foot_trim_-1",
+      "group": "body",
+      "delay": 0.18,
+      "surface": "brass",
+      "origin": [
+        -0.69,
+        0.18,
+        -0.1848
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__ground_front",
+      "role": "ground_front",
+      "group": "body",
+      "delay": 0.01,
+      "surface": "steel",
+      "origin": [
+        0.0,
+        0.065,
+        -0.24
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__ground_rear",
+      "role": "ground_rear",
+      "group": "body",
+      "delay": 0.01,
+      "surface": "steel",
+      "origin": [
+        0.0,
+        0.065,
+        0.14
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__guide_1",
+      "role": "guide_1",
+      "group": "body",
+      "delay": 0.23,
+      "surface": "silver",
+      "origin": [
+        0.61,
+        1.22,
+        -0.115
+      ],
+      "triangles": 204,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__guide_neg1",
+      "role": "guide_-1",
+      "group": "body",
+      "delay": 0.23,
+      "surface": "silver",
+      "origin": [
+        -0.61,
+        1.22,
+        -0.115
+      ],
+      "triangles": 204,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__honed_edge",
+      "role": "honed_edge",
+      "group": "drop",
+      "delay": 0.43,
+      "surface": "silver",
+      "origin": [
+        0.0,
+        1.46,
+        -0.134
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__rail_cap_1_0p34",
+      "role": "rail_cap_1_0.34",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "silver",
+      "origin": [
+        0.61,
+        0.34,
+        -0.132
+      ],
+      "triangles": 164,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__rail_cap_1_2p13",
+      "role": "rail_cap_1_2.13",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "silver",
+      "origin": [
+        0.61,
+        2.13,
+        -0.132
+      ],
+      "triangles": 164,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__rail_cap_neg1_0p34",
+      "role": "rail_cap_-1_0.34",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "silver",
+      "origin": [
+        -0.61,
+        0.34,
+        -0.132
+      ],
+      "triangles": 164,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__rail_cap_neg1_2p13",
+      "role": "rail_cap_-1_2.13",
+      "group": "body",
+      "delay": 0.34,
+      "surface": "silver",
+      "origin": [
+        -0.61,
+        2.13,
+        -0.132
+      ],
+      "triangles": 164,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__runner_1",
+      "role": "runner_1",
+      "group": "drop",
+      "delay": 0.35,
+      "surface": "brass",
+      "origin": [
+        0.61,
+        1.88,
+        -0.12
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    },
+    {
+      "name": "v2_guillotine_lock__runner_neg1",
+      "role": "runner_-1",
+      "group": "drop",
+      "delay": 0.35,
+      "surface": "brass",
+      "origin": [
+        -0.61,
+        1.88,
+        -0.12
+      ],
+      "triangles": 108,
+      "attach_bone": ""
+    }
+  ],
+  "sockets": {
+    "Socket_impact": {
+      "position": [
+        0.0,
+        0.002,
+        -0.1
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "Socket_drop_axis": {
+      "position": [
+        0.0,
+        1.9,
+        -0.095
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ]
+    }
+  },
+  "units": "metres",
+  "runtime_status": "prepared_asset",
+  "triangles": 4220,
+  "part_count": 31,
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "aabb_godot": {
+    "min": [
+      -0.84,
+      0.0,
+      -0.43
+    ],
+    "max": [
+      0.84,
+      2.365,
+      0.43
+    ]
+  },
+  "dimensions": [
+    1.68,
+    2.365,
+    0.86
+  ],
+  "mechanism": {
+    "drop_distance": 1.29869,
+    "ground_clearance": 0.002,
+    "blade_slot_z": [
+      -0.15,
+      -0.05
+    ],
+    "lock_first": true,
+    "review_timing_only": true
+  },
+  "materials": [
+    "M_DriveV3_Surface",
+    "M_DriveV3_Glow"
+  ],
+  "texture_set": "drive_material_v3 shared trim"
+}

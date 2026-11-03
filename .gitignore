@@ -22,6 +22,9 @@ assets/weapons/drive_tree_v2/*.blend1
 assets/equipment/exoskeleton_v2/*.blend1
 assets/equipment/exoskeleton_v3/*.blend1
 assets/equipment/exoskeleton_v4/*.blend1
+assets/weapons/drive_material_v3/*.blend1
+assets/weapons/drive_material_v3/drive_material_v3_live_authoring.blend
+reports/drive_material_v3/preview/
 
 # Local secrets such as the ElevenLabs API key written by its CLI.
 .env.local

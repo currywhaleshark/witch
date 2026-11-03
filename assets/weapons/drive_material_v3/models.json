@@ -1,0 +1,3923 @@
+{
+  "guillotine": {
+    "id": "guillotine",
+    "revision": "drive_tree_v2",
+    "parts": [
+      {
+        "name": "v2_guillotine__anvil_front",
+        "role": "anvil_front",
+        "group": "body",
+        "delay": 0.12,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          0.22,
+          -0.215
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__anvil_rear",
+        "role": "anvil_rear",
+        "group": "body",
+        "delay": 0.12,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          0.22,
+          0.045
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__blade_fastener_0p43",
+        "role": "blade_fastener_0.43",
+        "group": "drop",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.43,
+          1.79,
+          -0.143
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__blade_fastener_neg0p43",
+        "role": "blade_fastener_-0.43",
+        "group": "drop",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.43,
+          1.79,
+          -0.143
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__carriage",
+        "role": "carriage",
+        "group": "drop",
+        "delay": 0.33,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          1.9,
+          -0.095
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__clock_seal",
+        "role": "clock_seal",
+        "group": "body",
+        "delay": 0.42,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          2.23,
+          -0.165
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__column_1",
+        "role": "column_1",
+        "group": "body",
+        "delay": 0.07,
+        "surface": "navy",
+        "origin": [
+          0.61,
+          1.22,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__column_neg1",
+        "role": "column_-1",
+        "group": "body",
+        "delay": 0.07,
+        "surface": "navy",
+        "origin": [
+          -0.61,
+          1.22,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__core",
+        "role": "core",
+        "group": "body",
+        "delay": 0.49,
+        "surface": "core",
+        "origin": [
+          0.0,
+          2.23,
+          -0.189
+        ],
+        "triangles": 268,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__crown",
+        "role": "crown",
+        "group": "body",
+        "delay": 0.14,
+        "surface": "navy",
+        "origin": [
+          0.0,
+          2.25,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__crown_trim",
+        "role": "crown_trim",
+        "group": "body",
+        "delay": 0.26,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          2.31,
+          -0.152
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__falling_blade",
+        "role": "falling_blade",
+        "group": "drop",
+        "delay": 0.4,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          1.570345,
+          -0.1
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__foot_1",
+        "role": "foot_1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          0.69,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__foot_neg1",
+        "role": "foot_-1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          -0.69,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__foot_trim_1",
+        "role": "foot_trim_1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          0.69,
+          0.18,
+          -0.1848
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__foot_trim_neg1",
+        "role": "foot_trim_-1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          -0.69,
+          0.18,
+          -0.1848
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__ground_front",
+        "role": "ground_front",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          -0.24
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__ground_rear",
+        "role": "ground_rear",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          0.14
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__guide_1",
+        "role": "guide_1",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          1.22,
+          -0.115
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__guide_neg1",
+        "role": "guide_-1",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          1.22,
+          -0.115
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__honed_edge",
+        "role": "honed_edge",
+        "group": "drop",
+        "delay": 0.43,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          1.46,
+          -0.134
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__rail_cap_1_0p34",
+        "role": "rail_cap_1_0.34",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          0.34,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__rail_cap_1_2p13",
+        "role": "rail_cap_1_2.13",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          2.13,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__rail_cap_neg1_0p34",
+        "role": "rail_cap_-1_0.34",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          0.34,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__rail_cap_neg1_2p13",
+        "role": "rail_cap_-1_2.13",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          2.13,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__runner_1",
+        "role": "runner_1",
+        "group": "drop",
+        "delay": 0.35,
+        "surface": "brass",
+        "origin": [
+          0.61,
+          1.88,
+          -0.12
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine__runner_neg1",
+        "role": "runner_-1",
+        "group": "drop",
+        "delay": 0.35,
+        "surface": "brass",
+        "origin": [
+          -0.61,
+          1.88,
+          -0.12
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      }
+    ],
+    "sockets": {
+      "Socket_impact": {
+        "position": [
+          0.0,
+          0.002,
+          -0.1
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_drop_axis": {
+        "position": [
+          0.0,
+          1.9,
+          -0.095
+        ],
+        "direction": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    "units": "metres",
+    "runtime_status": "prepared_asset",
+    "triangles": 3732,
+    "part_count": 27,
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.84,
+        0.0,
+        -0.43
+      ],
+      "max": [
+        0.84,
+        2.365,
+        0.43
+      ]
+    },
+    "dimensions": [
+      1.68,
+      2.365,
+      0.86
+    ],
+    "mechanism": {
+      "drop_distance": 1.29869,
+      "ground_clearance": 0.002,
+      "blade_slot_z": [
+        -0.15,
+        -0.05
+      ],
+      "lock_first": false,
+      "review_timing_only": true
+    },
+    "materials": [
+      "M_DriveV3_Surface",
+      "M_DriveV3_Glow"
+    ],
+    "texture_set": "drive_material_v3 shared trim"
+  },
+  "guillotine_saw": {
+    "id": "guillotine_saw",
+    "revision": "drive_tree_v2",
+    "parts": [
+      {
+        "name": "v2_guillotine_saw__anvil_front",
+        "role": "anvil_front",
+        "group": "body",
+        "delay": 0.12,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          0.22,
+          -0.215
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__anvil_rear",
+        "role": "anvil_rear",
+        "group": "body",
+        "delay": 0.12,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          0.22,
+          0.045
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__carriage",
+        "role": "carriage",
+        "group": "drop",
+        "delay": 0.33,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          1.9,
+          -0.095
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__clock_seal",
+        "role": "clock_seal",
+        "group": "body",
+        "delay": 0.42,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          2.23,
+          -0.165
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__column_1",
+        "role": "column_1",
+        "group": "body",
+        "delay": 0.07,
+        "surface": "navy",
+        "origin": [
+          0.61,
+          1.22,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__column_neg1",
+        "role": "column_-1",
+        "group": "body",
+        "delay": 0.07,
+        "surface": "navy",
+        "origin": [
+          -0.61,
+          1.22,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__core",
+        "role": "core",
+        "group": "body",
+        "delay": 0.49,
+        "surface": "core",
+        "origin": [
+          0.0,
+          2.23,
+          -0.189
+        ],
+        "triangles": 268,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__crown",
+        "role": "crown",
+        "group": "body",
+        "delay": 0.14,
+        "surface": "navy",
+        "origin": [
+          0.0,
+          2.25,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__crown_trim",
+        "role": "crown_trim",
+        "group": "body",
+        "delay": 0.26,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          2.31,
+          -0.152
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__descending_saw",
+        "role": "descending_saw",
+        "group": "saw",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          1.52,
+          -0.11
+        ],
+        "triangles": 2684,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__descending_saw_hub",
+        "role": "descending_saw_hub",
+        "group": "saw",
+        "delay": 0.48,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          1.52,
+          -0.11
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__foot_1",
+        "role": "foot_1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          0.69,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__foot_neg1",
+        "role": "foot_-1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          -0.69,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__foot_trim_1",
+        "role": "foot_trim_1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          0.69,
+          0.18,
+          -0.1848
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__foot_trim_neg1",
+        "role": "foot_trim_-1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          -0.69,
+          0.18,
+          -0.1848
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__ground_front",
+        "role": "ground_front",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          -0.24
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__ground_rear",
+        "role": "ground_rear",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          0.14
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__guide_1",
+        "role": "guide_1",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          1.22,
+          -0.115
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__guide_neg1",
+        "role": "guide_-1",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          1.22,
+          -0.115
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__rail_cap_1_0p34",
+        "role": "rail_cap_1_0.34",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          0.34,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__rail_cap_1_2p13",
+        "role": "rail_cap_1_2.13",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          2.13,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__rail_cap_neg1_0p34",
+        "role": "rail_cap_-1_0.34",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          0.34,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__rail_cap_neg1_2p13",
+        "role": "rail_cap_-1_2.13",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          2.13,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__runner_1",
+        "role": "runner_1",
+        "group": "drop",
+        "delay": 0.35,
+        "surface": "brass",
+        "origin": [
+          0.61,
+          1.88,
+          -0.12
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__runner_neg1",
+        "role": "runner_-1",
+        "group": "drop",
+        "delay": 0.35,
+        "surface": "brass",
+        "origin": [
+          -0.61,
+          1.88,
+          -0.12
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__saw_fork_L",
+        "role": "saw_fork_L",
+        "group": "drop",
+        "delay": 0.2,
+        "surface": "navy",
+        "origin": [
+          -0.16,
+          1.7,
+          -0.1
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_saw__saw_fork_R",
+        "role": "saw_fork_R",
+        "group": "drop",
+        "delay": 0.2,
+        "surface": "navy",
+        "origin": [
+          0.16,
+          1.7,
+          -0.1
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      }
+    ],
+    "sockets": {
+      "Socket_saw_axis": {
+        "position": [
+          0.0,
+          1.52,
+          -0.11
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      },
+      "Socket_impact": {
+        "position": [
+          0.0,
+          0.002,
+          -0.1
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_drop_axis": {
+        "position": [
+          0.0,
+          1.9,
+          -0.095
+        ],
+        "direction": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    "units": "metres",
+    "runtime_status": "prepared_asset",
+    "triangles": 6532,
+    "part_count": 27,
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.84,
+        0.0,
+        -0.43
+      ],
+      "max": [
+        0.84,
+        2.365,
+        0.43
+      ]
+    },
+    "dimensions": [
+      1.68,
+      2.365,
+      0.86
+    ],
+    "mechanism": {
+      "drop_distance": 1.019203,
+      "ground_clearance": 0.002,
+      "blade_slot_z": [
+        -0.15,
+        -0.05
+      ],
+      "lock_first": false,
+      "review_timing_only": true
+    },
+    "materials": [
+      "M_DriveV3_Surface",
+      "M_DriveV3_Glow"
+    ],
+    "texture_set": "drive_material_v3 shared trim"
+  },
+  "guillotine_lock": {
+    "id": "guillotine_lock",
+    "revision": "drive_tree_v2",
+    "parts": [
+      {
+        "name": "v2_guillotine_lock__anvil_front",
+        "role": "anvil_front",
+        "group": "body",
+        "delay": 0.12,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          0.22,
+          -0.215
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__anvil_rear",
+        "role": "anvil_rear",
+        "group": "body",
+        "delay": 0.12,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          0.22,
+          0.045
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__blade_fastener_0p43",
+        "role": "blade_fastener_0.43",
+        "group": "drop",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.43,
+          1.79,
+          -0.143
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__blade_fastener_neg0p43",
+        "role": "blade_fastener_-0.43",
+        "group": "drop",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.43,
+          1.79,
+          -0.143
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__carriage",
+        "role": "carriage",
+        "group": "drop",
+        "delay": 0.33,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          1.9,
+          -0.095
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__clamp_jaw_1",
+        "role": "clamp_jaw_1",
+        "group": "clamp_1",
+        "delay": 0.4,
+        "surface": "navy",
+        "origin": [
+          0.414423,
+          0.550013,
+          0.1
+        ],
+        "triangles": 136,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__clamp_jaw_neg1",
+        "role": "clamp_jaw_-1",
+        "group": "clamp_-1",
+        "delay": 0.4,
+        "surface": "navy",
+        "origin": [
+          -0.414423,
+          0.550013,
+          0.1
+        ],
+        "triangles": 136,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__clamp_slide_1",
+        "role": "clamp_slide_1",
+        "group": "clamp_1",
+        "delay": 0.34,
+        "surface": "brass",
+        "origin": [
+          0.49,
+          0.47,
+          0.13
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__clamp_slide_neg1",
+        "role": "clamp_slide_-1",
+        "group": "clamp_-1",
+        "delay": 0.34,
+        "surface": "brass",
+        "origin": [
+          -0.49,
+          0.47,
+          0.13
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__clock_seal",
+        "role": "clock_seal",
+        "group": "body",
+        "delay": 0.42,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          2.23,
+          -0.165
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__column_1",
+        "role": "column_1",
+        "group": "body",
+        "delay": 0.07,
+        "surface": "navy",
+        "origin": [
+          0.61,
+          1.22,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__column_neg1",
+        "role": "column_-1",
+        "group": "body",
+        "delay": 0.07,
+        "surface": "navy",
+        "origin": [
+          -0.61,
+          1.22,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__core",
+        "role": "core",
+        "group": "body",
+        "delay": 0.49,
+        "surface": "core",
+        "origin": [
+          0.0,
+          2.23,
+          -0.189
+        ],
+        "triangles": 268,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__crown",
+        "role": "crown",
+        "group": "body",
+        "delay": 0.14,
+        "surface": "navy",
+        "origin": [
+          0.0,
+          2.25,
+          0.015
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__crown_trim",
+        "role": "crown_trim",
+        "group": "body",
+        "delay": 0.26,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          2.31,
+          -0.152
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__falling_blade",
+        "role": "falling_blade",
+        "group": "drop",
+        "delay": 0.4,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          1.570345,
+          -0.1
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__foot_1",
+        "role": "foot_1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          0.69,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__foot_neg1",
+        "role": "foot_-1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          -0.69,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__foot_trim_1",
+        "role": "foot_trim_1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          0.69,
+          0.18,
+          -0.1848
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__foot_trim_neg1",
+        "role": "foot_trim_-1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          -0.69,
+          0.18,
+          -0.1848
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__ground_front",
+        "role": "ground_front",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          -0.24
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__ground_rear",
+        "role": "ground_rear",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          0.14
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__guide_1",
+        "role": "guide_1",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          1.22,
+          -0.115
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__guide_neg1",
+        "role": "guide_-1",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          1.22,
+          -0.115
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__honed_edge",
+        "role": "honed_edge",
+        "group": "drop",
+        "delay": 0.43,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          1.46,
+          -0.134
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__rail_cap_1_0p34",
+        "role": "rail_cap_1_0.34",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          0.34,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__rail_cap_1_2p13",
+        "role": "rail_cap_1_2.13",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.61,
+          2.13,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__rail_cap_neg1_0p34",
+        "role": "rail_cap_-1_0.34",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          0.34,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__rail_cap_neg1_2p13",
+        "role": "rail_cap_-1_2.13",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.61,
+          2.13,
+          -0.132
+        ],
+        "triangles": 164,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__runner_1",
+        "role": "runner_1",
+        "group": "drop",
+        "delay": 0.35,
+        "surface": "brass",
+        "origin": [
+          0.61,
+          1.88,
+          -0.12
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "v2_guillotine_lock__runner_neg1",
+        "role": "runner_-1",
+        "group": "drop",
+        "delay": 0.35,
+        "surface": "brass",
+        "origin": [
+          -0.61,
+          1.88,
+          -0.12
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      }
+    ],
+    "sockets": {
+      "Socket_impact": {
+        "position": [
+          0.0,
+          0.002,
+          -0.1
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_drop_axis": {
+        "position": [
+          0.0,
+          1.9,
+          -0.095
+        ],
+        "direction": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    "units": "metres",
+    "runtime_status": "prepared_asset",
+    "triangles": 4220,
+    "part_count": 31,
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.84,
+        0.0,
+        -0.43
+      ],
+      "max": [
+        0.84,
+        2.365,
+        0.43
+      ]
+    },
+    "dimensions": [
+      1.68,
+      2.365,
+      0.86
+    ],
+    "mechanism": {
+      "drop_distance": 1.29869,
+      "ground_clearance": 0.002,
+      "blade_slot_z": [
+        -0.15,
+        -0.05
+      ],
+      "lock_first": true,
+      "review_timing_only": true
+    },
+    "materials": [
+      "M_DriveV3_Surface",
+      "M_DriveV3_Glow"
+    ],
+    "texture_set": "drive_material_v3 shared trim"
+  },
+  "restraint_winch": {
+    "id": "restraint_winch",
+    "parts": [
+      {
+        "name": "restraint_winch__axle_1",
+        "role": "axle_1",
+        "group": "body",
+        "delay": 0.25,
+        "surface": "brass",
+        "origin": [
+          0.34,
+          0.41,
+          0.025
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__axle_neg1",
+        "role": "axle_-1",
+        "group": "body",
+        "delay": 0.25,
+        "surface": "brass",
+        "origin": [
+          -0.34,
+          0.41,
+          0.025
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__cable_0",
+        "role": "cable_0",
+        "group": "cable_0",
+        "delay": 0.38,
+        "surface": "black",
+        "origin": [
+          0.0,
+          0.4,
+          -0.515
+        ],
+        "triangles": 28,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__cable_1",
+        "role": "cable_1",
+        "group": "cable_1",
+        "delay": 0.38,
+        "surface": "black",
+        "origin": [
+          -0.2,
+          0.4,
+          -0.515
+        ],
+        "triangles": 28,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__cable_2",
+        "role": "cable_2",
+        "group": "cable_2",
+        "delay": 0.38,
+        "surface": "black",
+        "origin": [
+          0.2,
+          0.4,
+          -0.515
+        ],
+        "triangles": 28,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__cheek_1",
+        "role": "cheek_1",
+        "group": "body",
+        "delay": 0.13,
+        "surface": "navy",
+        "origin": [
+          0.285,
+          0.39,
+          0.04
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__cheek_neg1",
+        "role": "cheek_-1",
+        "group": "body",
+        "delay": 0.13,
+        "surface": "navy",
+        "origin": [
+          -0.285,
+          0.39,
+          0.04
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__core",
+        "role": "core",
+        "group": "body",
+        "delay": 0.46,
+        "surface": "core",
+        "origin": [
+          0.41,
+          0.42,
+          0.19
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__fairlead_0",
+        "role": "fairlead_0",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          0.4,
+          -0.24
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__fairlead_1",
+        "role": "fairlead_1",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          -0.2,
+          0.4,
+          -0.24
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__fairlead_2",
+        "role": "fairlead_2",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          0.2,
+          0.4,
+          -0.24
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__foot_1",
+        "role": "foot_1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          0.25,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__foot_neg1",
+        "role": "foot_-1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          -0.25,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__foot_trim_1",
+        "role": "foot_trim_1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          0.25,
+          0.18,
+          -0.1736
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__foot_trim_neg1",
+        "role": "foot_trim_-1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          -0.25,
+          0.18,
+          -0.1736
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__gearbox",
+        "role": "gearbox",
+        "group": "body",
+        "delay": 0.24,
+        "surface": "brass",
+        "origin": [
+          0.32,
+          0.4,
+          0.19
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__ground_foundation",
+        "role": "ground_foundation",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__hook_0",
+        "role": "hook_0",
+        "group": "hook_0",
+        "delay": 0.43,
+        "surface": "silver",
+        "origin": [
+          0.074978,
+          0.4,
+          -0.849771
+        ],
+        "triangles": 76,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__hook_1",
+        "role": "hook_1",
+        "group": "hook_1",
+        "delay": 0.43,
+        "surface": "silver",
+        "origin": [
+          -0.125022,
+          0.4,
+          -0.849771
+        ],
+        "triangles": 76,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__hook_2",
+        "role": "hook_2",
+        "group": "hook_2",
+        "delay": 0.43,
+        "surface": "silver",
+        "origin": [
+          0.274978,
+          0.4,
+          -0.849771
+        ],
+        "triangles": 76,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__hook_ferrule_0",
+        "role": "hook_ferrule_0",
+        "group": "hook_0",
+        "delay": 0.44,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          0.4,
+          -0.75
+        ],
+        "triangles": 268,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__hook_ferrule_1",
+        "role": "hook_ferrule_1",
+        "group": "hook_1",
+        "delay": 0.44,
+        "surface": "brass",
+        "origin": [
+          -0.2,
+          0.4,
+          -0.75
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__hook_ferrule_2",
+        "role": "hook_ferrule_2",
+        "group": "hook_2",
+        "delay": 0.44,
+        "surface": "brass",
+        "origin": [
+          0.2,
+          0.4,
+          -0.75
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__reel_groove_0",
+        "role": "reel_groove_0",
+        "group": "drum",
+        "delay": 0.3,
+        "surface": "brass",
+        "origin": [
+          -0.22,
+          0.41,
+          0.025
+        ],
+        "triangles": 576,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__reel_groove_1",
+        "role": "reel_groove_1",
+        "group": "drum",
+        "delay": 0.3,
+        "surface": "brass",
+        "origin": [
+          -0.11,
+          0.41,
+          0.025
+        ],
+        "triangles": 576,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__reel_groove_2",
+        "role": "reel_groove_2",
+        "group": "drum",
+        "delay": 0.3,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          0.41,
+          0.025
+        ],
+        "triangles": 576,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__reel_groove_3",
+        "role": "reel_groove_3",
+        "group": "drum",
+        "delay": 0.3,
+        "surface": "brass",
+        "origin": [
+          0.11,
+          0.41,
+          0.025
+        ],
+        "triangles": 576,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__reel_groove_4",
+        "role": "reel_groove_4",
+        "group": "drum",
+        "delay": 0.3,
+        "surface": "brass",
+        "origin": [
+          0.22,
+          0.41,
+          0.025
+        ],
+        "triangles": 576,
+        "attach_bone": ""
+      },
+      {
+        "name": "restraint_winch__spool",
+        "role": "spool",
+        "group": "drum",
+        "delay": 0.22,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.41,
+          0.025
+        ],
+        "triangles": 284,
+        "attach_bone": ""
+      }
+    ],
+    "sockets": {
+      "Socket_cable_0": {
+        "position": [
+          0.0,
+          0.4,
+          -0.28
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_hook_0": {
+        "position": [
+          0.0,
+          0.4,
+          -0.75
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_cable_1": {
+        "position": [
+          -0.2,
+          0.4,
+          -0.28
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_hook_1": {
+        "position": [
+          -0.2,
+          0.4,
+          -0.75
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_cable_2": {
+        "position": [
+          0.2,
+          0.4,
+          -0.28
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_hook_2": {
+        "position": [
+          0.2,
+          0.4,
+          -0.75
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_drum_axis": {
+        "position": [
+          0.0,
+          0.41,
+          0.025
+        ],
+        "direction": [
+          1,
+          0,
+          0
+        ]
+      },
+      "Socket_target": {
+        "position": [
+          0.0,
+          0.4,
+          -2.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    "units": "metres",
+    "runtime_status": "prepared_asset",
+    "triangles": 5920,
+    "part_count": 29,
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.39,
+        0.0,
+        -0.979542
+      ],
+      "max": [
+        0.423,
+        0.6,
+        0.41
+      ]
+    },
+    "dimensions": [
+      0.813,
+      0.6,
+      1.38954
+    ],
+    "materials": [
+      "M_DriveV3_Surface",
+      "M_DriveV3_Glow"
+    ],
+    "texture_set": "drive_material_v3 shared trim"
+  },
+  "hydraulic_press": {
+    "id": "hydraulic_press",
+    "parts": [
+      {
+        "name": "hydraulic_press__column_0",
+        "role": "column_0",
+        "group": "body",
+        "delay": 0.09,
+        "surface": "steel",
+        "origin": [
+          -0.768,
+          1.13,
+          -0.425
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__column_1",
+        "role": "column_1",
+        "group": "body",
+        "delay": 0.09,
+        "surface": "steel",
+        "origin": [
+          0.768,
+          1.13,
+          -0.425
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__column_2",
+        "role": "column_2",
+        "group": "body",
+        "delay": 0.09,
+        "surface": "steel",
+        "origin": [
+          -0.768,
+          1.13,
+          0.425
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__column_3",
+        "role": "column_3",
+        "group": "body",
+        "delay": 0.09,
+        "surface": "steel",
+        "origin": [
+          0.768,
+          1.13,
+          0.425
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__column_collar_0",
+        "role": "column_collar_0",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "brass",
+        "origin": [
+          -0.768,
+          0.26,
+          -0.424924
+        ],
+        "triangles": 464,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__column_collar_1",
+        "role": "column_collar_1",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "brass",
+        "origin": [
+          0.768,
+          0.26,
+          -0.424924
+        ],
+        "triangles": 464,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__column_collar_2",
+        "role": "column_collar_2",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "brass",
+        "origin": [
+          -0.768,
+          0.26,
+          0.424924
+        ],
+        "triangles": 464,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__column_collar_3",
+        "role": "column_collar_3",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "brass",
+        "origin": [
+          0.768,
+          0.26,
+          0.424924
+        ],
+        "triangles": 464,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__core",
+        "role": "core",
+        "group": "body",
+        "delay": 0.48,
+        "surface": "core",
+        "origin": [
+          0.0,
+          2.12,
+          -0.633
+        ],
+        "triangles": 268,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__crown",
+        "role": "crown",
+        "group": "body",
+        "delay": 0.16,
+        "surface": "navy",
+        "origin": [
+          0.0,
+          2.12,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__foot_1",
+        "role": "foot_1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          0.82,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__foot_neg1",
+        "role": "foot_-1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          -0.82,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__foot_trim_1",
+        "role": "foot_trim_1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          0.82,
+          0.18,
+          -0.35
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__foot_trim_neg1",
+        "role": "foot_trim_-1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          -0.82,
+          0.18,
+          -0.35
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__gland_0",
+        "role": "gland_0",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          -0.42,
+          1.7,
+          -0.0
+        ],
+        "triangles": 384,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__gland_1",
+        "role": "gland_1",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          0.42,
+          1.7,
+          -0.0
+        ],
+        "triangles": 384,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__ground_foundation",
+        "role": "ground_foundation",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__hydraulic_barrel_0",
+        "role": "hydraulic_barrel_0",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "navy",
+        "origin": [
+          -0.42,
+          1.91,
+          -0.0
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__hydraulic_barrel_1",
+        "role": "hydraulic_barrel_1",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "navy",
+        "origin": [
+          0.42,
+          1.91,
+          -0.0
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__hydraulic_line_0",
+        "role": "hydraulic_line_0",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "black",
+        "origin": [
+          -0.42,
+          1.954354,
+          0.216888
+        ],
+        "triangles": 60,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__hydraulic_line_1",
+        "role": "hydraulic_line_1",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "black",
+        "origin": [
+          0.42,
+          1.954354,
+          0.216888
+        ],
+        "triangles": 60,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__piston_rod_0",
+        "role": "piston_rod_0",
+        "group": "platen",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.42,
+          1.57,
+          -0.0
+        ],
+        "triangles": 172,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__piston_rod_1",
+        "role": "piston_rod_1",
+        "group": "platen",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.42,
+          1.57,
+          -0.0
+        ],
+        "triangles": 172,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__platen",
+        "role": "platen",
+        "group": "platen",
+        "delay": 0.35,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          1.28,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__platen_band",
+        "role": "platen_band",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          1.37,
+          -0.4875
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__press_rib_0",
+        "role": "press_rib_0",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          -0.4992,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__press_rib_1",
+        "role": "press_rib_1",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          -0.2496,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__press_rib_2",
+        "role": "press_rib_2",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__press_rib_3",
+        "role": "press_rib_3",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          0.2496,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__press_rib_4",
+        "role": "press_rib_4",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          0.4992,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__pressure_gauge",
+        "role": "pressure_gauge",
+        "group": "body",
+        "delay": 0.45,
+        "surface": "brass",
+        "origin": [
+          0.7488,
+          2.13,
+          -0.65
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__telescopic_stage_0",
+        "role": "telescopic_stage_0",
+        "group": "platen_stage",
+        "delay": 0.31,
+        "surface": "silver",
+        "origin": [
+          -0.42,
+          1.73,
+          -0.0
+        ],
+        "triangles": 384,
+        "attach_bone": ""
+      },
+      {
+        "name": "hydraulic_press__telescopic_stage_1",
+        "role": "telescopic_stage_1",
+        "group": "platen_stage",
+        "delay": 0.31,
+        "surface": "silver",
+        "origin": [
+          0.42,
+          1.73,
+          -0.0
+        ],
+        "triangles": 384,
+        "attach_bone": ""
+      }
+    ],
+    "sockets": {
+      "Socket_impact": {
+        "position": [
+          0.0,
+          0.22,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_press_axis": {
+        "position": [
+          0.0,
+          1.28,
+          -0.0
+        ],
+        "direction": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    "units": "metres",
+    "runtime_status": "prepared_asset",
+    "triangles": 7036,
+    "part_count": 33,
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.96,
+        0.0,
+        -0.725
+      ],
+      "max": [
+        0.96,
+        2.22,
+        0.725
+      ]
+    },
+    "dimensions": [
+      1.92,
+      2.22,
+      1.45
+    ],
+    "materials": [
+      "M_DriveV3_Surface",
+      "M_DriveV3_Glow"
+    ],
+    "texture_set": "drive_material_v3 shared trim"
+  },
+  "compound_executor": {
+    "id": "compound_executor",
+    "parts": [
+      {
+        "name": "compound_executor__arm_motor_1",
+        "role": "arm_motor_1",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "navy",
+        "origin": [
+          0.94,
+          0.76,
+          0.1
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__arm_motor_neg1",
+        "role": "arm_motor_-1",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "navy",
+        "origin": [
+          -0.94,
+          0.76,
+          0.1
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__cage_bar_0",
+        "role": "cage_bar_0",
+        "group": "body",
+        "delay": 0.22,
+        "surface": "brass",
+        "origin": [
+          0.69,
+          0.64,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__cage_bar_1",
+        "role": "cage_bar_1",
+        "group": "body",
+        "delay": 0.22,
+        "surface": "brass",
+        "origin": [
+          0.487904,
+          0.64,
+          0.374767
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__cage_bar_2",
+        "role": "cage_bar_2",
+        "group": "body",
+        "delay": 0.22,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          0.64,
+          0.53
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__cage_bar_3",
+        "role": "cage_bar_3",
+        "group": "body",
+        "delay": 0.22,
+        "surface": "brass",
+        "origin": [
+          -0.487904,
+          0.64,
+          0.374767
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__cage_bar_4",
+        "role": "cage_bar_4",
+        "group": "body",
+        "delay": 0.22,
+        "surface": "brass",
+        "origin": [
+          -0.69,
+          0.64,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__column_0",
+        "role": "column_0",
+        "group": "body",
+        "delay": 0.09,
+        "surface": "steel",
+        "origin": [
+          -0.688,
+          1.13,
+          -0.4896
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__column_1",
+        "role": "column_1",
+        "group": "body",
+        "delay": 0.09,
+        "surface": "steel",
+        "origin": [
+          0.688,
+          1.13,
+          -0.4896
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__column_2",
+        "role": "column_2",
+        "group": "body",
+        "delay": 0.09,
+        "surface": "steel",
+        "origin": [
+          -0.688,
+          1.13,
+          0.4896
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__column_3",
+        "role": "column_3",
+        "group": "body",
+        "delay": 0.09,
+        "surface": "steel",
+        "origin": [
+          0.688,
+          1.13,
+          0.4896
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__column_collar_0",
+        "role": "column_collar_0",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "brass",
+        "origin": [
+          -0.688,
+          0.26,
+          -0.489524
+        ],
+        "triangles": 480,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__column_collar_1",
+        "role": "column_collar_1",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "brass",
+        "origin": [
+          0.688,
+          0.26,
+          -0.489524
+        ],
+        "triangles": 480,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__column_collar_2",
+        "role": "column_collar_2",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "brass",
+        "origin": [
+          -0.688,
+          0.26,
+          0.489524
+        ],
+        "triangles": 480,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__column_collar_3",
+        "role": "column_collar_3",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "brass",
+        "origin": [
+          0.688,
+          0.26,
+          0.489524
+        ],
+        "triangles": 480,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__core",
+        "role": "core",
+        "group": "body",
+        "delay": 0.48,
+        "surface": "core",
+        "origin": [
+          0.0,
+          2.12,
+          -0.728
+        ],
+        "triangles": 268,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__crown",
+        "role": "crown",
+        "group": "body",
+        "delay": 0.16,
+        "surface": "navy",
+        "origin": [
+          0.0,
+          2.12,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__execution_saw_1",
+        "role": "execution_saw_1",
+        "group": "saw_1",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          0.95,
+          0.76,
+          -0.4
+        ],
+        "triangles": 1916,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__execution_saw_1_hub",
+        "role": "execution_saw_1_hub",
+        "group": "saw_1",
+        "delay": 0.48,
+        "surface": "brass",
+        "origin": [
+          0.95,
+          0.76,
+          -0.4
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__execution_saw_neg1",
+        "role": "execution_saw_-1",
+        "group": "saw_-1",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          -0.95,
+          0.76,
+          -0.4
+        ],
+        "triangles": 1916,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__execution_saw_neg1_hub",
+        "role": "execution_saw_-1_hub",
+        "group": "saw_-1",
+        "delay": 0.48,
+        "surface": "brass",
+        "origin": [
+          -0.95,
+          0.76,
+          -0.4
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__foot_1",
+        "role": "foot_1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          0.72,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__foot_neg1",
+        "role": "foot_-1",
+        "group": "body",
+        "delay": 0.05,
+        "surface": "navy",
+        "origin": [
+          -0.72,
+          0.115,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__foot_trim_1",
+        "role": "foot_trim_1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          0.72,
+          0.18,
+          -0.4032
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__foot_trim_neg1",
+        "role": "foot_trim_-1",
+        "group": "body",
+        "delay": 0.18,
+        "surface": "brass",
+        "origin": [
+          -0.72,
+          0.18,
+          -0.4032
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gate_bar_1_0",
+        "role": "gate_bar_1_0",
+        "group": "gate_1",
+        "delay": 0.31,
+        "surface": "navy",
+        "origin": [
+          0.14,
+          0.7,
+          -0.49
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gate_bar_1_1",
+        "role": "gate_bar_1_1",
+        "group": "gate_1",
+        "delay": 0.31,
+        "surface": "navy",
+        "origin": [
+          0.37,
+          0.7,
+          -0.49
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gate_bar_neg1_0",
+        "role": "gate_bar_-1_0",
+        "group": "gate_-1",
+        "delay": 0.31,
+        "surface": "navy",
+        "origin": [
+          -0.14,
+          0.7,
+          -0.49
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gate_bar_neg1_1",
+        "role": "gate_bar_-1_1",
+        "group": "gate_-1",
+        "delay": 0.31,
+        "surface": "navy",
+        "origin": [
+          -0.37,
+          0.7,
+          -0.49
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gate_hinge_1",
+        "role": "gate_hinge_1",
+        "group": "gate_1",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          0.69,
+          0.7,
+          -0.49
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gate_hinge_neg1",
+        "role": "gate_hinge_-1",
+        "group": "gate_-1",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          -0.69,
+          0.7,
+          -0.49
+        ],
+        "triangles": 236,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gate_rail_1",
+        "role": "gate_rail_1",
+        "group": "gate_1",
+        "delay": 0.28,
+        "surface": "brass",
+        "origin": [
+          0.35,
+          0.71,
+          -0.49
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gate_rail_neg1",
+        "role": "gate_rail_-1",
+        "group": "gate_-1",
+        "delay": 0.28,
+        "surface": "brass",
+        "origin": [
+          -0.35,
+          0.71,
+          -0.49
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gland_0",
+        "role": "gland_0",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          -0.42,
+          1.7,
+          -0.0
+        ],
+        "triangles": 384,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__gland_1",
+        "role": "gland_1",
+        "group": "body",
+        "delay": 0.32,
+        "surface": "brass",
+        "origin": [
+          0.42,
+          1.7,
+          -0.0
+        ],
+        "triangles": 384,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__ground_foundation",
+        "role": "ground_foundation",
+        "group": "body",
+        "delay": 0.01,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          0.065,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__hydraulic_barrel_0",
+        "role": "hydraulic_barrel_0",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "navy",
+        "origin": [
+          -0.42,
+          1.91,
+          -0.0
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__hydraulic_barrel_1",
+        "role": "hydraulic_barrel_1",
+        "group": "body",
+        "delay": 0.23,
+        "surface": "navy",
+        "origin": [
+          0.42,
+          1.91,
+          -0.0
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__hydraulic_line_0",
+        "role": "hydraulic_line_0",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "black",
+        "origin": [
+          -0.42,
+          1.954354,
+          0.216888
+        ],
+        "triangles": 60,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__hydraulic_line_1",
+        "role": "hydraulic_line_1",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "black",
+        "origin": [
+          0.42,
+          1.954354,
+          0.216888
+        ],
+        "triangles": 60,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__piston_rod_0",
+        "role": "piston_rod_0",
+        "group": "platen",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          -0.42,
+          1.57,
+          -0.0
+        ],
+        "triangles": 172,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__piston_rod_1",
+        "role": "piston_rod_1",
+        "group": "platen",
+        "delay": 0.34,
+        "surface": "silver",
+        "origin": [
+          0.42,
+          1.57,
+          -0.0
+        ],
+        "triangles": 172,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__platen",
+        "role": "platen",
+        "group": "platen",
+        "delay": 0.35,
+        "surface": "steel",
+        "origin": [
+          0.0,
+          1.28,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__platen_band",
+        "role": "platen_band",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          1.37,
+          -0.5616
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__press_rib_0",
+        "role": "press_rib_0",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          -0.4472,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__press_rib_1",
+        "role": "press_rib_1",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          -0.2236,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__press_rib_2",
+        "role": "press_rib_2",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          0.0,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__press_rib_3",
+        "role": "press_rib_3",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          0.2236,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__press_rib_4",
+        "role": "press_rib_4",
+        "group": "platen",
+        "delay": 0.42,
+        "surface": "silver",
+        "origin": [
+          0.4472,
+          1.17,
+          -0.0
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__pressure_gauge",
+        "role": "pressure_gauge",
+        "group": "body",
+        "delay": 0.45,
+        "surface": "brass",
+        "origin": [
+          0.6708,
+          2.13,
+          -0.745
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__saw_arm_1",
+        "role": "saw_arm_1",
+        "group": "arm_1",
+        "delay": 0.38,
+        "surface": "brass",
+        "origin": [
+          0.944886,
+          0.76,
+          -0.15
+        ],
+        "triangles": 220,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__saw_arm_neg1",
+        "role": "saw_arm_-1",
+        "group": "arm_-1",
+        "delay": 0.38,
+        "surface": "brass",
+        "origin": [
+          -0.944886,
+          0.76,
+          -0.15
+        ],
+        "triangles": 220,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__telescopic_stage_0",
+        "role": "telescopic_stage_0",
+        "group": "platen_stage",
+        "delay": 0.31,
+        "surface": "silver",
+        "origin": [
+          -0.42,
+          1.73,
+          -0.0
+        ],
+        "triangles": 384,
+        "attach_bone": ""
+      },
+      {
+        "name": "compound_executor__telescopic_stage_1",
+        "role": "telescopic_stage_1",
+        "group": "platen_stage",
+        "delay": 0.31,
+        "surface": "silver",
+        "origin": [
+          0.42,
+          1.73,
+          -0.0
+        ],
+        "triangles": 384,
+        "attach_bone": ""
+      }
+    ],
+    "sockets": {
+      "Socket_impact": {
+        "position": [
+          0.0,
+          0.22,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_press_axis": {
+        "position": [
+          0.0,
+          1.28,
+          -0.0
+        ],
+        "direction": [
+          0,
+          -1,
+          0
+        ]
+      },
+      "Socket_gate_-1": {
+        "position": [
+          -0.69,
+          0.7,
+          -0.49
+        ],
+        "direction": [
+          0,
+          1,
+          0
+        ]
+      },
+      "Socket_arm_-1": {
+        "position": [
+          -0.94,
+          0.76,
+          0.1
+        ],
+        "direction": [
+          0,
+          1,
+          0
+        ]
+      },
+      "Socket_saw_-1": {
+        "position": [
+          -0.95,
+          0.76,
+          -0.4
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      },
+      "Socket_gate_1": {
+        "position": [
+          0.69,
+          0.7,
+          -0.49
+        ],
+        "direction": [
+          0,
+          1,
+          0
+        ]
+      },
+      "Socket_arm_1": {
+        "position": [
+          0.94,
+          0.76,
+          0.1
+        ],
+        "direction": [
+          0,
+          1,
+          0
+        ]
+      },
+      "Socket_saw_1": {
+        "position": [
+          0.95,
+          0.76,
+          -0.4
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "units": "metres",
+    "runtime_status": "prepared_asset",
+    "triangles": 13784,
+    "part_count": 54,
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "aabb_godot": {
+      "min": [
+        -1.21819,
+        0.0,
+        -0.82
+      ],
+      "max": [
+        1.21819,
+        2.22,
+        0.82
+      ]
+    },
+    "dimensions": [
+      2.43638,
+      2.22,
+      1.64
+    ],
+    "materials": [
+      "M_DriveV3_Surface",
+      "M_DriveV3_Glow"
+    ],
+    "texture_set": "drive_material_v3 shared trim"
+  },
+  "shock_frame": {
+    "id": "shock_frame",
+    "parts": [
+      {
+        "name": "shock_frame__back_core",
+        "role": "back_core",
+        "group": "body",
+        "delay": 0.45,
+        "surface": "core",
+        "origin": [
+          0.0,
+          1.16,
+          -0.285
+        ],
+        "triangles": 204,
+        "attach_bone": "DEF-chest"
+      },
+      {
+        "name": "shock_frame__back_damper_1",
+        "role": "back_damper_1",
+        "group": "body",
+        "delay": 0.19,
+        "surface": "brass",
+        "origin": [
+          0.067,
+          1.14,
+          -0.28
+        ],
+        "triangles": 204,
+        "attach_bone": "DEF-chest"
+      },
+      {
+        "name": "shock_frame__back_damper_neg1",
+        "role": "back_damper_-1",
+        "group": "body",
+        "delay": 0.19,
+        "surface": "brass",
+        "origin": [
+          -0.067,
+          1.14,
+          -0.28
+        ],
+        "triangles": 204,
+        "attach_bone": "DEF-chest"
+      },
+      {
+        "name": "shock_frame__backplate",
+        "role": "backplate",
+        "group": "body",
+        "delay": 0.08,
+        "surface": "navy",
+        "origin": [
+          0.0,
+          1.14,
+          -0.24
+        ],
+        "triangles": 108,
+        "attach_bone": "DEF-chest"
+      },
+      {
+        "name": "shock_frame__knee_L",
+        "role": "knee_L",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "brass",
+        "origin": [
+          0.153,
+          0.455,
+          0.133
+        ],
+        "triangles": 204,
+        "attach_bone": "DEF-shin.L.001"
+      },
+      {
+        "name": "shock_frame__knee_R",
+        "role": "knee_R",
+        "group": "body",
+        "delay": 0.34,
+        "surface": "brass",
+        "origin": [
+          -0.153,
+          0.455,
+          0.133
+        ],
+        "triangles": 204,
+        "attach_bone": "DEF-shin.R.001"
+      },
+      {
+        "name": "shock_frame__shin_rail_L",
+        "role": "shin_rail_L",
+        "group": "body",
+        "delay": 0.35,
+        "surface": "brass",
+        "origin": [
+          0.1515,
+          0.32,
+          0.107611
+        ],
+        "triangles": 188,
+        "attach_bone": "DEF-shin.L.001"
+      },
+      {
+        "name": "shock_frame__shin_rail_R",
+        "role": "shin_rail_R",
+        "group": "body",
+        "delay": 0.35,
+        "surface": "brass",
+        "origin": [
+          -0.1515,
+          0.32,
+          0.107611
+        ],
+        "triangles": 188,
+        "attach_bone": "DEF-shin.R.001"
+      },
+      {
+        "name": "shock_frame__shoulder_L",
+        "role": "shoulder_L",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "navy",
+        "origin": [
+          0.315,
+          1.284,
+          -0.035
+        ],
+        "triangles": 188,
+        "attach_bone": "DEF-upper_arm.L.002"
+      },
+      {
+        "name": "shock_frame__shoulder_R",
+        "role": "shoulder_R",
+        "group": "body",
+        "delay": 0.2,
+        "surface": "navy",
+        "origin": [
+          -0.315,
+          1.284,
+          -0.035
+        ],
+        "triangles": 188,
+        "attach_bone": "DEF-upper_arm.R.001"
+      },
+      {
+        "name": "shock_frame__shoulder_pin_L",
+        "role": "shoulder_pin_L",
+        "group": "body",
+        "delay": 0.31,
+        "surface": "brass",
+        "origin": [
+          0.357,
+          1.284,
+          -0.035
+        ],
+        "triangles": 268,
+        "attach_bone": "DEF-upper_arm.L.002"
+      },
+      {
+        "name": "shock_frame__shoulder_pin_R",
+        "role": "shoulder_pin_R",
+        "group": "body",
+        "delay": 0.31,
+        "surface": "brass",
+        "origin": [
+          -0.357,
+          1.284,
+          -0.035
+        ],
+        "triangles": 268,
+        "attach_bone": "DEF-upper_arm.R.001"
+      }
+    ],
+    "sockets": {
+      "Socket_body_origin": {
+        "position": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_back_anchor": {
+        "position": [
+          0.0,
+          1.14,
+          -0.24
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    "units": "metres",
+    "runtime_status": "prepared_asset",
+    "triangles": 2416,
+    "part_count": 12,
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.366,
+        0.180648,
+        -0.308
+      ],
+      "max": [
+        0.366,
+        1.329,
+        0.157287
+      ]
+    },
+    "dimensions": [
+      0.732,
+      1.14835,
+      0.46529
+    ],
+    "materials": [
+      "M_DriveV3_Surface",
+      "M_DriveV3_Glow"
+    ],
+    "texture_set": "drive_material_v3 shared trim"
+  },
+  "broad_cutter": {
+    "id": "broad_cutter",
+    "parts": [
+      {
+        "name": "broad_cutter__core",
+        "role": "core",
+        "group": "body",
+        "delay": 0.42,
+        "surface": "core",
+        "origin": [
+          0.0,
+          0.78,
+          -0.055
+        ],
+        "triangles": 204,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__drive_link_1",
+        "role": "drive_link_1",
+        "group": "link_1",
+        "delay": 0.24,
+        "surface": "brass",
+        "origin": [
+          0.109956,
+          0.880058,
+          -0.09
+        ],
+        "triangles": 220,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__drive_link_neg1",
+        "role": "drive_link_-1",
+        "group": "link_-1",
+        "delay": 0.24,
+        "surface": "brass",
+        "origin": [
+          -0.109956,
+          0.880058,
+          -0.09
+        ],
+        "triangles": 220,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__forged_jaw_1",
+        "role": "forged_jaw_1",
+        "group": "jaw_1",
+        "delay": 0.3,
+        "surface": "steel",
+        "origin": [
+          0.15795,
+          1.369679,
+          -0.0
+        ],
+        "triangles": 160,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__forged_jaw_neg1",
+        "role": "forged_jaw_-1",
+        "group": "jaw_-1",
+        "delay": 0.3,
+        "surface": "steel",
+        "origin": [
+          -0.15795,
+          1.369679,
+          -0.0
+        ],
+        "triangles": 160,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__honed_edge_1",
+        "role": "honed_edge_1",
+        "group": "jaw_1",
+        "delay": 0.37,
+        "surface": "silver",
+        "origin": [
+          0.062591,
+          1.469826,
+          -0.044
+        ],
+        "triangles": 120,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__honed_edge_neg1",
+        "role": "honed_edge_-1",
+        "group": "jaw_-1",
+        "delay": 0.37,
+        "surface": "silver",
+        "origin": [
+          -0.062591,
+          1.469826,
+          -0.044
+        ],
+        "triangles": 120,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__jaw_axle_1",
+        "role": "jaw_axle_1",
+        "group": "body",
+        "delay": 0.25,
+        "surface": "brass",
+        "origin": [
+          0.105,
+          0.94,
+          -0.0
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__jaw_axle_neg1",
+        "role": "jaw_axle_-1",
+        "group": "body",
+        "delay": 0.25,
+        "surface": "brass",
+        "origin": [
+          -0.105,
+          0.94,
+          -0.0
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__power_collar",
+        "role": "power_collar",
+        "group": "body",
+        "delay": 0.15,
+        "surface": "brass",
+        "origin": [
+          0.0,
+          0.68,
+          -0.0
+        ],
+        "triangles": 188,
+        "attach_bone": ""
+      },
+      {
+        "name": "broad_cutter__saddle",
+        "role": "saddle",
+        "group": "body",
+        "delay": 0.08,
+        "surface": "navy",
+        "origin": [
+          0.0,
+          0.76,
+          0.03
+        ],
+        "triangles": 108,
+        "attach_bone": ""
+      }
+    ],
+    "sockets": {
+      "Socket_jaw_-1": {
+        "position": [
+          -0.105,
+          0.94,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      },
+      "Socket_jaw_pin_-1": {
+        "position": [
+          -0.18,
+          0.99,
+          -0.09
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_jaw_1": {
+        "position": [
+          0.105,
+          0.94,
+          -0.0
+        ],
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      },
+      "Socket_jaw_pin_1": {
+        "position": [
+          0.18,
+          0.99,
+          -0.09
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      },
+      "Socket_mount": {
+        "position": [
+          0.0,
+          0.65,
+          -0.0
+        ],
+        "direction": [
+          0,
+          1,
+          0
+        ]
+      },
+      "Socket_cut": {
+        "position": [
+          0.0,
+          1.5,
+          -0.0
+        ],
+        "direction": [
+          0,
+          1,
+          0
+        ]
+      },
+      "Socket_slider": {
+        "position": [
+          0.0,
+          0.77,
+          -0.09
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    "units": "metres",
+    "runtime_status": "prepared_asset",
+    "triangles": 1876,
+    "part_count": 11,
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "aabb_godot": {
+      "min": [
+        -0.3099,
+        0.615,
+        -0.115
+      ],
+      "max": [
+        0.3099,
+        1.858658,
+        0.105
+      ]
+    },
+    "dimensions": [
+      0.6198,
+      1.24366,
+      0.22
+    ],
+    "materials": [
+      "M_DriveV3_Surface",
+      "M_DriveV3_Glow"
+    ],
+    "texture_set": "drive_material_v3 shared trim"
+  }
+}
