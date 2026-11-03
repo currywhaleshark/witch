@@ -17,11 +17,17 @@ const TurretAssembly = preload("res://scripts/turret_assembly.gd")
 const ShotgunCast = preload("res://scripts/shotgun_cast.gd")
 const ShotgunGeometry = preload("res://scripts/shotgun_geometry.gd")
 const FloatingGun = preload("res://scripts/floating_gun.gd")
+const PowderKeg = preload("res://scripts/powder_keg.gd")
+const GatlingGun = preload("res://scripts/gatling_gun.gd")
+const SmokeLauncher = preload("res://scripts/smoke_launcher.gd")
+const SmokeCloud = preload("res://scripts/smoke_cloud.gd")
+const IncomingShell = preload("res://scripts/incoming_shell.gd")
+const FirePatch = preload("res://scripts/fire_patch.gd")
 const ShieldVisual = preload("res://scripts/shield_visual.gd")
 const CastCircle = preload("res://scripts/cast_circle.gd")
 const SpringPlate = preload("res://scripts/spring_plate.gd")
 # Which skill tree draws the casting circle; the basic attack draws none.
-const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "rifle": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
+const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "rifle": "firearm", "powder_keg": "firearm", "gatling": "firearm", "smoke_launcher": "firearm", "recoil_leap": "firearm", "artillery": "firearm", "naval_gun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
 	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const AssetWarmup = preload("res://scripts/asset_warmup.gd")
@@ -95,6 +101,7 @@ var enemy_level_linked := true
 var scrap := 0
 var pieces: Dictionary = {}
 var base_mana_costs: Dictionary = {}
+var shotgun_cooldown := 0.0
 # C10: potions bought or dropped wait in the stash; the four quickslots are refilled by hand
 # from it (04 §8.2: no automatic refill). The stash persists; a restart still restocks the loadout.
 var potion_stash: Dictionary = {}
@@ -125,7 +132,28 @@ var gun: Dictionary = {}
 var gun_assembly: Node3D
 var basic_range: float
 var spring_plate: Node3D
+# Powder kegs: one assembles during the cast, then each rolls on its own until it bursts
+# ({visual, position, direction, left, total, rolled}).
+var keg_assembly: Node3D
+var kegs: Array = []
+var last_keg: Dictionary = {}
+# The rotary cannon assembles during its spin-up, then streams rounds while its key stays held
+# ({skill, slot, visual, fire_left, shots, aim, direction, focus, focus_hits}).
+var gatling_assembly: Node3D
+var channel: Dictionary = {}
+var last_burst: Dictionary = {}
+# Smoke zones: enemies inside one, or looking through one, cannot see the witch
+# ({center, radius, wait, left, total, cloud}; wait counts down the canisters' flight).
+var smoke_assembly: Node3D
+var smokes: Array = []
+# Offscreen shells on their way in ({visual, trail, start, end, left, flight, at, impact}) and the
+# burning ground some of them leave ({center, radius, left, total, damage, source, patch}).
+var shells: Array = []
+var fires: Array = []
+var burn_clock := 0.0
+var last_impact: Dictionary = {}
 var last_shotgun: Dictionary = {}
+var last_recoil: Dictionary = {}
 var last_shot: Dictionary = {}
 var hold: Dictionary = {}
 # A held ground click keeps steering on its own, so skill presses never replace it.
@@ -210,6 +238,7 @@ func _ready() -> void:
 	config = JSON.parse_string(FileAccess.get_file_as_string("res://data/trial.json"))
 	rules = Rules.new(config)
 	automaton_cost = {"mana_cost": rules.skills.automaton.mana_cost, "cooldown_seconds": rules.skills.automaton.cooldown_seconds}
+	shotgun_cooldown = float(rules.skills.shotgun.cooldown_seconds)
 	basic_range = float(rules.skills.basic_attack.range)
 	items = Items.new()
 	loot_rng.randomize()
@@ -352,7 +381,20 @@ func reset_arena() -> void:
 	gun_assembly = null
 	gun = {}
 	sync_gun()
+	keg_assembly = null
+	kegs.clear()
+	last_keg.clear()
+	gatling_assembly = null
+	channel.clear()
+	last_burst.clear()
+	smoke_assembly = null
+	smokes.clear()
+	shells.clear()
+	fires.clear()
+	burn_clock = 0.0
+	last_impact.clear()
 	last_shotgun.clear()
+	last_recoil.clear()
 	spring_plate = null
 	for id in enemies:
 		enemies[id].body.free()
@@ -770,7 +812,7 @@ func set_a5_mode(enabled: bool) -> void:
 	reset_arena()
 	show_message("A5 마나 시험 시작 · 연속 교전" if enabled else "A5 마나 시험 종료")
 
-func bind_slot(slot: String, skill_id: String) -> void:
+func bind_slot(slot: String, skill_id) -> void:
 	# The skill tree window's loadout: any skill on RMB/Q/W/E/R, kept across restarts.
 	cancel_pending_cast()
 	split_build_log()
@@ -781,6 +823,16 @@ func bind_slot(slot: String, skill_id: String) -> void:
 		state.active_tool = null
 	if not gun.is_empty() and not state.bindings.values().has(gun.id):
 		dismiss_gun()
+
+func drop_unlearned_bindings() -> void:
+	# A reset that unlearns a skill takes it off its key.
+	if state.is_empty() or build == null:
+		return
+	for slot in rules.SLOTS:
+		var id = state.bindings[slot]
+		if id != null and not build.learned(id):
+			config.bindings[slot] = null
+			state = rules.bind(state, slot, null)
 
 func split_build_log() -> void:
 	# Called before a C/S window change: the running A5 segment is saved with the build it was
@@ -1427,6 +1479,8 @@ func sync_automaton_cost() -> void:
 	# A gun is assembled loaded: its cost is a full magazine at its per-round price.
 	for id in GUNS:
 		rules.skills[id].mana_cost = gun_magazine(id) * round_cost(id)
+	# Recoil control steadies the shotgun's repeat as it does every gun's.
+	rules.skills.shotgun.cooldown_seconds = shotgun_cooldown * fire_interval_factor()
 	sync_gun()
 
 func round_cost(id: String) -> float:
@@ -1435,6 +1489,17 @@ func round_cost(id: String) -> float:
 
 func reload_level() -> float:
 	return float(config.passive_levels.get("reload", 0))
+
+func recoil_level() -> float:
+	return float(config.passive_levels.get("recoil_control", 0))
+
+func fire_interval_factor() -> float:
+	# Recoil control (firearm passive): every firearm fires again sooner, by a share per level.
+	return maxf(0.1, 1.0 - float(config.passives.recoil_control.fire_interval_cut_per_level) * recoil_level())
+
+func leap_speed_factor() -> float:
+	# It also lands the recoil leap and the spring dash's jump faster: the same distance in less time.
+	return 1.0 + float(config.passives.recoil_control.leap_speed_per_level) * recoil_level()
 
 func turret_fire_rate() -> float:
 	# The reload mechanism's feed also speeds up the turret, which feeds rounds the same way (03 §2.1).
@@ -1573,11 +1638,20 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		return
 	if slot not in rules.SLOTS:
 		return
+	if not channel.is_empty():
+		# Channeling holds her in place: her own key and ground clicks do nothing, while any other
+		# skill or an attack on an enemy ends the stream first.
+		if slot == channel.slot or (slot == "lmb" and cursor.get("enemy_id") == null):
+			return
+		stop_channel()
 	if action_time > 0:
 		# An attack motion finishes first; the latest input runs right after it.
 		queued_input = {"slot": slot, "cursor": cursor.duplicate(true), "shift": shift}
 		return
 	var bound = state.bindings[slot]
+	if bound != null and not build.learned(bound):
+		show_message("배우지 않은 기술입니다")
+		return
 	if bound != null and bound in GUNS and gun.get("id") == bound:
 		# Pressing the gun's key again takes it apart, free, like switching a tool off.
 		cancel_pending_cast()
@@ -1658,12 +1732,31 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		world.add_child(turret_assembly)
 		turret_assembly.position = map.grounded(point(snapshot.ground))
 		turret_assembly.initialize(self)
-	elif cast.skill == "shotgun":
+	elif cast.skill in ["shotgun", "recoil_leap"]:
 		windup.visual_duration = windup.release
 		begin_shotgun_visual(cast_target(cast), aims_at_enemy(cast))
 	elif cast.skill == "spring_dash":
 		windup.visual_duration = windup.release
 		begin_spring_plate(cast_direction(cast))
+	elif cast.skill == "powder_keg":
+		windup.visual_duration = windup.release
+		begin_keg_visual(cast_direction(cast))
+	elif cast.skill == "smoke_launcher":
+		windup.visual_duration = windup.release
+		var facing: Vector3 = cast_direction(cast)
+		smoke_assembly = SmokeLauncher.new()
+		world.add_child(smoke_assembly)
+		smoke_assembly.position = map.grounded(player.position + facing.cross(Vector3.UP) * 0.75)
+		smoke_assembly.look_at(smoke_assembly.global_position + facing, Vector3.UP)
+		smoke_assembly.initialize(self)
+	elif cast.skill == "gatling":
+		windup.visual_duration = windup.release
+		if is_instance_valid(gatling_assembly):
+			gatling_assembly.dismiss()
+		gatling_assembly = GatlingGun.new()
+		world.add_child(gatling_assembly)
+		gatling_assembly.initialize(self)
+		gatling_assembly.aim_at(cast_target(cast) + Vector3.UP)
 	elif cast.skill in GUNS:
 		windup.visual_duration = windup.release
 		if is_instance_valid(gun_assembly):
@@ -1673,7 +1766,7 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		world.add_child(gun_assembly)
 		gun_assembly.initialize(self)
 	player_model.look_at(player.position + cast_direction(cast))
-	player_visual.begin_motion("attack" if cast.skill == rules.basic_id and not shooting else ("spring_jump" if cast.skill == "spring_dash" else "cast"), seconds, release_ratio)
+	player_visual.begin_motion("attack" if cast.skill == rules.basic_id and not shooting else ("spring_jump" if cast.skill in ["spring_dash", "recoil_leap"] else "cast"), seconds, release_ratio)
 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
 
 func tick_windup(dt: float) -> void:
@@ -1697,6 +1790,12 @@ func tick_windup(dt: float) -> void:
 		var aim := {"target_enemy":windup.cursor.get("enemy_id"),"position":windup.cursor.get("ground")}
 		shotgun_assembly.global_transform = ShotgunGeometry.frame(self,cast_target(aim),aims_at_enemy(aim))
 		shotgun_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if is_instance_valid(smoke_assembly):
+		smoke_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if is_instance_valid(gatling_assembly):
+		gatling_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if is_instance_valid(keg_assembly):
+		keg_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(spring_plate):
 		spring_plate.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(gun_assembly):
@@ -1790,6 +1889,15 @@ func cancel_summon_assemblies(reason: String) -> void:
 	if is_instance_valid(spring_plate):
 		spring_plate.cancel(reason)
 	spring_plate = null
+	if is_instance_valid(keg_assembly):
+		keg_assembly.cancel(reason)
+	keg_assembly = null
+	if is_instance_valid(gatling_assembly):
+		gatling_assembly.dismiss()
+	gatling_assembly = null
+	if is_instance_valid(smoke_assembly):
+		smoke_assembly.cancel(reason)
+	smoke_assembly = null
 
 func begin_spring_plate(direction: Vector3) -> void:
 	spring_plate = SpringPlate.new()
@@ -1797,6 +1905,444 @@ func begin_spring_plate(direction: Vector3) -> void:
 	spring_plate.position = map.grounded(player.position - direction * 0.16)
 	spring_plate.look_at(spring_plate.global_position + direction, Vector3.UP)
 	spring_plate.initialize(self)
+
+func keg_start(direction: Vector3) -> Vector3:
+	# The keg assembles on the floor just in front of her, where it will start rolling.
+	return map.grounded(player.position + direction * float(rules.skills.powder_keg.start_offset))
+
+func begin_keg_visual(direction: Vector3) -> void:
+	keg_assembly = PowderKeg.new()
+	world.add_child(keg_assembly)
+	keg_assembly.position = keg_start(direction)
+	keg_assembly.look_at(keg_assembly.global_position + direction, Vector3.UP)
+	keg_assembly.initialize(self)
+
+func roll_keg(target: Vector3, direction: Vector3) -> void:
+	# Powder keg (03 §3, firearm area I): it rolls along the floor toward the aim and bursts on the
+	# first enemy it touches, at a wall, or where she aimed (at least min_roll, at most its range).
+	var skill: Dictionary = rules.skills.powder_keg
+	if not is_instance_valid(keg_assembly):
+		begin_keg_visual(direction)
+	var visual: Node3D = keg_assembly
+	keg_assembly = null
+	visual.launch()
+	var flat: Vector3 = target - player.position
+	flat.y = 0.0
+	var reach: float = clampf(flat.length(), float(skill.min_roll), float(skill.range)) - float(skill.start_offset)
+	kegs.append({"visual": visual, "position": visual.global_position, "direction": direction, "left": reach, "total": reach, "rolled": 0.0})
+	play_sfx("summon_arrive", 0.8)
+
+func keg_contact(at: Vector3) -> String:
+	# The first enemy whose body the rolling drum runs into.
+	var reach: float = float(rules.skills.powder_keg.contact_radius)
+	for id in enemies:
+		var pos: Vector3 = enemies[id].body.position
+		if Vector2(pos.x - at.x, pos.z - at.z).length() <= reach + 0.4 * float(enemies[id].size):
+			return id
+	return ""
+
+func tick_kegs(dt: float) -> void:
+	var speed: float = float(rules.skills.powder_keg.roll_speed)
+	for keg in kegs.duplicate():
+		var travel: float = minf(speed * dt, float(keg.left))
+		var next: Vector3 = keg.position + keg.direction * travel
+		var reason := ""
+		if map.walkable(next):
+			keg.position = map.grounded(next)
+			keg.left -= travel
+			keg.rolled += travel
+		else:
+			reason = "wall"
+		if is_instance_valid(keg.visual):
+			keg.visual.roll_to(keg.position, keg.rolled, keg.left / maxf(0.0001, keg.total))
+		if keg_contact(keg.position) != "":
+			reason = "enemy"
+		elif reason == "" and keg.left <= 0.0001:
+			reason = "end"
+		if reason != "":
+			burst_keg(keg, reason)
+
+func burst_keg(keg: Dictionary, reason: String) -> void:
+	# The blast catches every enemy in its radius that open floor connects it to; no hit roll.
+	kegs.erase(keg)
+	var skill: Dictionary = rules.skills.powder_keg
+	var at: Vector3 = keg.position
+	var radius: float = float(skill.blast_radius)
+	var struck: Array = []
+	for id in enemies.keys():
+		var pos: Vector3 = enemies[id].body.position
+		if Vector2(pos.x - at.x, pos.z - at.z).length() <= radius and map.sees(at, pos):
+			struck.append(id)
+			strike(id, float(skill.blast_damage), false, "witch", "powder_keg")
+	if is_instance_valid(keg.visual):
+		keg.visual.burst()
+	spawn_vfx().blast(at, radius, map.ground_y(at), false)
+	shake_time = maxf(shake_time, 0.12)
+	play_sfx("automaton_explode", 0.7)
+	last_keg = {"at": at, "reason": reason, "rolled": keg.rolled, "struck": struck}
+
+func clear_kegs() -> void:
+	for keg in kegs:
+		if is_instance_valid(keg.visual):
+			keg.visual.dismiss()
+	kegs.clear()
+
+func strike_point(target: Vector3, direction: Vector3, reach: float) -> Vector3:
+	# Where an offscreen gun aims: the cursor, at most its range away, on open floor.
+	var flat: Vector3 = target - player.position
+	flat.y = 0.0
+	var center: Vector3 = player.position + direction * minf(flat.length(), reach)
+	if not map.walkable(center):
+		center = map.snap(center)
+	return map.grounded(center)
+
+func witch_amount(amount: float, source: String) -> float:
+	# Her damage before any roll: power, gear and skill level, as strike() applies them.
+	return amount * build.power_factor() * (1.0 + gear_total("damage_pct") / 100.0) * skill_level_factor(source)
+
+func mark_target(center: Vector3, radius: float, seconds: float) -> void:
+	# A gold ring where her own barrage will land, gone when the last shell is down.
+	var ring: MeshInstance3D = Shape.ring(world, center + Vector3(0, 0.05, 0), radius, Color(0.85, 0.72, 0.48, 0.8), 0.05)
+	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	effects.append({"node": ring, "life": seconds, "grow": false})
+
+func send_shell(kind: String, at: Vector3, delay: float, flight: float, impact: Dictionary, burst_height: float = 0.0) -> void:
+	# The shell comes in from far up and off to the side, beyond the screen, and lands after delay.
+	var end: Vector3 = at + Vector3.UP * burst_height
+	var start: Vector3 = end + Vector3(-9.0, 24.0, -6.0)
+	var visual: Node3D = null
+	var trail: Node3D = null
+	if kind != "":
+		visual = IncomingShell.new()
+		world.add_child(visual)
+		visual.initialize(kind, start, end)
+		trail = spawn_vfx()
+	shells.append({"visual": visual, "trail": trail, "start": start, "end": end, "left": delay, "flight": flight, "at": at, "impact": impact})
+
+func call_artillery(target: Vector3, direction: Vector3) -> void:
+	# Rocket barrage (03 §3, firearm IV): after a short wait the shells come in one by one, at
+	# uneven moments, scattered over a wide circle. The node picks the shell: high explosive,
+	# cluster (bursts overhead into bomblets over a wider spread) or white phosphorus (sets fires).
+	var skill: Dictionary = rules.skills.artillery
+	var shell: Dictionary = skill.nodes[config.artillery_node]
+	var center := strike_point(target, direction, float(skill.range))
+	var count: int = int(skill.shells)
+	var spread: float = float(shell.get("spread_radius", skill.spread_radius))
+	var last := 0.0
+	for i in count:
+		# A fixed scatter (not the combat RNG): golden-angle spokes, uneven landing times.
+		var angle: float = i * 2.39996 + 0.7
+		var spot: Vector3 = center + Vector3(cos(angle), 0, sin(angle)) * spread * sqrt((i + 0.5) / count)
+		spot = map.grounded(spot) if map.walkable(spot) else center
+		var delay: float = float(skill.first_delay) + float(skill.barrage_seconds) * clampf((i + 0.45 * sin(i * 12.9898)) / count, 0.0, 1.0)
+		last = maxf(last, delay)
+		var impact := {"kind": "cluster" if shell.has("bomblets") else "blast", "radius": float(shell.blast_radius), "damage": witch_amount(float(shell.shot_damage), "artillery"), "source": "artillery", "shell": shell}
+		send_shell("artillery", spot, delay, float(skill.flight_seconds), impact, float(shell.get("airburst_height", 0.0)))
+	mark_target(center, spread + float(shell.get("bomblet_spread", shell.blast_radius)), last)
+	last_impact = {"skill": "artillery", "center": center, "shells": count}
+	play_sfx("shotgun_fire", 0.45, -8.0)
+
+func call_naval_gun(target: Vector3, direction: Vector3) -> void:
+	# Heavy naval gun (03 §3, firearm IV): one slow, heavy shell from far off, telegraphed by its
+	# ring. Its node trades area for weight: a wide burst that leaves the ground burning, or a
+	# narrow piercing round for one strong enemy.
+	var skill: Dictionary = rules.skills.naval_gun
+	var shell: Dictionary = skill.nodes[config.naval_gun_node]
+	var center := strike_point(target, direction, float(skill.range))
+	var impact := {"kind": "blast", "radius": float(shell.blast_radius), "damage": witch_amount(float(shell.shot_damage), "naval_gun"), "source": "naval_gun", "shell": shell, "heavy": true}
+	send_shell("naval", center, float(skill.delay), float(skill.flight_seconds), impact)
+	mark_target(center, float(shell.blast_radius), float(skill.delay))
+	last_impact = {"skill": "naval_gun", "center": center}
+	play_sfx("shotgun_fire", 0.4, -6.0)
+
+func tick_shells(dt: float) -> void:
+	for shell in shells.duplicate():
+		shell.left = float(shell.left) - dt
+		if is_instance_valid(shell.visual) and shell.left <= shell.flight:
+			var before: Vector3 = shell.visual.global_position if shell.visual.visible else shell.start
+			shell.visual.place(1.0 - maxf(0.0, shell.left) / float(shell.flight))
+			if is_instance_valid(shell.trail):
+				shell.trail.streak(before, shell.visual.global_position, 0.06, Color(1.0, 0.85, 0.6, 0.8), 0.2)
+				shell.trail.puff(before, Vector3.ZERO, 0.18, 0.6, Color(0.55, 0.55, 0.52, 0.35), 0.6, 0.1)
+		if shell.left > 0:
+			continue
+		shells.erase(shell)
+		if is_instance_valid(shell.visual):
+			shell.visual.queue_free()
+		land_shell(shell)
+
+func land_shell(shell: Dictionary) -> void:
+	var impact: Dictionary = shell.impact
+	var at: Vector3 = shell.at
+	if impact.kind == "cluster":
+		# Bursts overhead: bomblets rain over a wider patch, each a small blast.
+		var burst: Vector3 = shell.end
+		var fx := spawn_vfx()
+		fx.flash(burst, 1.2, Color(1.0, 0.75, 0.4), 0.18, 1.0)
+		fx.sparks(burst, Vector3.DOWN, 18, 6.0, 1.2, Color(1.0, 0.8, 0.45), 0.4, 0.02, map.ground_y(at))
+		var bomblets: int = int(impact.shell.bomblets)
+		for i in bomblets:
+			var angle: float = TAU * i / bomblets + float(shell.end.x) * 1.7
+			var spot: Vector3 = at + Vector3(cos(angle), 0, sin(angle)) * float(impact.shell.bomblet_spread) * (0.45 + 0.55 * fposmod(i * 0.618, 1.0))
+			spot = map.grounded(spot) if map.walkable(spot) else at
+			fx.streak(burst, spot, 0.04, Color(1.0, 0.7, 0.35, 0.7), 0.25)
+			send_shell("", spot, 0.22 + 0.03 * i, 0.0, {"kind": "blast", "radius": impact.radius, "damage": impact.damage, "source": impact.source, "shell": {}, "small": true})
+		play_sfx("shotgun_fire", 0.7, -4.0)
+		return
+	var struck: Array = []
+	for id in enemies.keys():
+		var pos: Vector3 = enemies[id].body.position
+		if Vector2(pos.x - at.x, pos.z - at.z).length() <= float(impact.radius) + 0.3 * float(enemies[id].size) and map.sees(at, pos):
+			struck.append(id)
+			strike_amount(id, float(impact.damage), impact.source)
+	var heavy: bool = impact.get("heavy", false)
+	spawn_vfx().blast(at, float(impact.radius), map.ground_y(at), heavy)
+	shake_time = maxf(shake_time, 0.3 if heavy else (0.05 if impact.get("small", false) else 0.12))
+	play_sfx("automaton_explode", 0.5 if heavy else (1.1 if impact.get("small", false) else 0.75))
+	if impact.shell.has("fire_radius"):
+		start_fire(at, impact.shell, impact.source)
+	last_impact = {"at": at, "struck": struck, "source": impact.source, "radius": impact.radius}
+
+func strike_amount(id: String, amount: float, source: String) -> void:
+	# A blast already scaled by her power, gear and skill level: no hit roll, its own crit roll.
+	if not enemies.has(id):
+		return
+	var crit: bool = force_rolls.get("crit", combat_rng.randf() < crit_chance("witch"))
+	var dealt: float = damage_enemy(id, amount * passive_factor(source) * (config.crit_multiplier if crit else 1.0))
+	probe.strike(source, "crit" if crit else "hit", dealt)
+
+func start_fire(at: Vector3, shell: Dictionary, source: String) -> void:
+	var patch: Node3D = FirePatch.new()
+	world.add_child(patch)
+	patch.initialize(at, float(shell.fire_radius))
+	fires.append({"center": at, "radius": float(shell.fire_radius), "left": float(shell.fire_seconds), "total": float(shell.fire_seconds),
+		"damage": witch_amount(float(shell.fire_damage), source), "tick": float(shell.fire_tick), "patch": patch})
+
+func tick_fires(dt: float) -> void:
+	# Each enemy standing in fire burns once per tick, from the strongest fire it stands in. Burning
+	# is not a direct hit: no roll, no crit, no flinch, like bleed.
+	for fire in fires.duplicate():
+		fire.left = float(fire.left) - dt
+		if is_instance_valid(fire.patch):
+			fire.patch.advance(dt)
+			fire.patch.show_state(maxf(0.0, fire.left), fire.total)
+		if fire.left <= 0:
+			if is_instance_valid(fire.patch):
+				fire.patch.queue_free()
+			fires.erase(fire)
+	if fires.is_empty():
+		burn_clock = 0.0
+		return
+	burn_clock += dt
+	var tick: float = float(fires[0].tick)
+	if burn_clock < tick:
+		return
+	burn_clock -= tick
+	for id in enemies.keys():
+		if not enemies.has(id):
+			continue
+		var pos: Vector3 = enemies[id].body.position
+		var amount := 0.0
+		for fire in fires:
+			if Vector2(pos.x - fire.center.x, pos.z - fire.center.z).length() <= float(fire.radius):
+				amount = maxf(amount, float(fire.damage))
+		if amount > 0:
+			probe.burn(damage_enemy(id, amount, false))
+
+func clear_barrage() -> void:
+	for shell in shells:
+		if is_instance_valid(shell.visual):
+			shell.visual.queue_free()
+	shells.clear()
+	for fire in fires:
+		if is_instance_valid(fire.patch):
+			fire.patch.queue_free()
+	fires.clear()
+
+func smoke_seconds() -> float:
+	var skill: Dictionary = rules.skills.smoke_launcher
+	return float(skill.smoke_seconds) + float(skill.seconds_per_level) * (float(config.smoke_launcher_level) - 1.0)
+
+func launch_smoke(target: Vector3, direction: Vector3) -> void:
+	# Smoke launcher (03 §3, firearm III): six canisters land around the aimed point (its range at
+	# most) and raise a cloud once they are down. Her own shots and her summons see through it.
+	var skill: Dictionary = rules.skills.smoke_launcher
+	var flat: Vector3 = target - player.position
+	flat.y = 0.0
+	var center: Vector3 = player.position + direction * minf(flat.length(), float(skill.range))
+	if not map.walkable(center):
+		center = map.snap(center)
+	center = map.grounded(center)
+	var landings: Array[Vector3] = []
+	for i in 6:
+		var spot: Vector3 = center + Vector3(cos(TAU * i / 6.0), 0, sin(TAU * i / 6.0)) * float(skill.canister_spread)
+		landings.append(map.grounded(spot) if map.walkable(spot) else center)
+	if not is_instance_valid(smoke_assembly):
+		smoke_assembly = SmokeLauncher.new()
+		world.add_child(smoke_assembly)
+		smoke_assembly.position = map.grounded(player.position + direction.cross(Vector3.UP) * 0.75)
+		smoke_assembly.look_at(smoke_assembly.global_position + direction, Vector3.UP)
+		smoke_assembly.initialize(self)
+	var seconds := smoke_seconds()
+	smoke_assembly.fire(landings, float(skill.flight_seconds), seconds)
+	smoke_assembly = null
+	var cloud: Node3D = SmokeCloud.new()
+	world.add_child(cloud)
+	cloud.initialize(center, float(skill.smoke_radius))
+	smokes.append({"center": center, "radius": float(skill.smoke_radius), "wait": float(skill.flight_seconds), "left": seconds, "total": seconds, "cloud": cloud})
+	play_sfx("shotgun_fire", 0.55, -4.0)
+
+func tick_smokes(dt: float) -> void:
+	for smoke in smokes.duplicate():
+		if smoke.wait > 0:
+			smoke.wait = maxf(0.0, float(smoke.wait) - dt)
+		else:
+			smoke.left = float(smoke.left) - dt
+		if is_instance_valid(smoke.cloud):
+			smoke.cloud.advance(dt)
+			smoke.cloud.show_state(smoke.wait, maxf(0.0, smoke.left), smoke.total)
+		if smoke.left <= 0:
+			if is_instance_valid(smoke.cloud):
+				smoke.cloud.queue_free()
+			smokes.erase(smoke)
+
+func hidden_between(a: Vector3, b: Vector3) -> bool:
+	# True when a standing cloud covers either end or the line between them (on the floor plan).
+	for smoke in smokes:
+		if smoke.wait > 0 or smoke.left <= 0:
+			continue
+		var c := Vector2(smoke.center.x, smoke.center.z)
+		var from := Vector2(a.x, a.z)
+		var to := Vector2(b.x, b.z)
+		var line: Vector2 = to - from
+		var along: float = clampf((c - from).dot(line) / maxf(line.length_squared(), 0.0001), 0.0, 1.0)
+		if c.distance_to(from + line * along) <= float(smoke.radius):
+			return true
+	return false
+
+func blinded(enemy: Dictionary) -> bool:
+	# Bosses keep their own patterns and see through the smoke.
+	return hp > 0 and not config.enemy_types[enemy.kind].has("boss") and hidden_between(enemy.body.position, player.position)
+
+func gatling_round() -> Dictionary:
+	return rules.skills.gatling.nodes[config.gatling_node]
+
+func gatling_interval() -> float:
+	# Rounds follow attack speed: the stream is her basic fire, the spin-up cast is the machine.
+	var base: float = float(rules.skills.gatling.fire_seconds)
+	return motion_seconds(base, base * config.min_cast_ratio, config.attack_speed_k, config.attack_speed_score) * fire_interval_factor()
+
+func start_channel(target: Vector3, direction: Vector3) -> void:
+	# Rotary cannon (03 §3, firearm III): after the spin-up cast it fires for as long as its key is
+	# held, turning after the cursor, while she stands still. Mana drains by the second.
+	var visual: Node3D = gatling_assembly
+	gatling_assembly = null
+	if not is_instance_valid(visual):
+		visual = GatlingGun.new()
+		world.add_child(visual)
+		visual.initialize(self)
+	visual.ready_to_fire()
+	moving = false
+	move_marker.visible = false
+	var slot: String = hold.get("slot", "")
+	if state.bindings.get(slot) != "gatling":
+		slot = ""
+		for key in rules.SLOTS:
+			if state.bindings[key] == "gatling" and slot == "":
+				slot = key
+	channel = {"skill": "gatling", "slot": slot, "visual": visual, "fire_left": 0.0, "shots": 0,
+		"aim": target, "direction": direction, "focus": "", "focus_hits": 0}
+
+func channel_held() -> bool:
+	return not channel.is_empty() and hold.get("slot") == channel.slot and state.bindings.get(channel.slot) == channel.skill
+
+func stop_channel() -> void:
+	if channel.is_empty():
+		return
+	if is_instance_valid(channel.visual):
+		channel.visual.dismiss()
+	channel.clear()
+
+func tick_channel(dt: float) -> void:
+	if channel.is_empty():
+		return
+	if not channel_held():
+		stop_channel()
+		return
+	var skill: Dictionary = rules.skills.gatling
+	var cost: float = float(skill.channel_mana_per_second) * dt
+	if state.mana + rules.EPS < cost:
+		stop_channel()
+		show_message("마나 부족 · 사격 중지")
+		return
+	state.mana = maxf(0.0, state.mana - cost)
+	probe.record([{"type": "tool_upkeep", "tool": "gatling", "amount": cost}])
+	# The stream follows the cursor: an enemy under it, else the floor point.
+	var cursor := field_cursor()
+	if cursor.get("enemy_id") != null and enemies.has(cursor.enemy_id):
+		channel.aim = enemies[cursor.enemy_id].body.position
+	elif cursor.get("ground") != null:
+		channel.aim = map.grounded(point(cursor.ground))
+	var flat: Vector3 = channel.aim - player.position
+	flat.y = 0.0
+	if flat.length() > 0.05:
+		channel.direction = flat.normalized()
+	var direction: Vector3 = channel.direction
+	player_model.look_at(player.position + direction)
+	if is_instance_valid(channel.visual):
+		channel.visual.aim_at(player.position + direction * float(skill.range) + Vector3.UP)
+	channel.fire_left = float(channel.fire_left) - dt
+	while not channel.is_empty() and channel.fire_left <= 0:
+		fire_gatling(direction)
+		channel.fire_left = float(channel.fire_left) + gatling_interval()
+
+func fire_gatling(direction: Vector3) -> void:
+	# One round, woven across the node's spread (a fixed pattern, so the stream covers it evenly),
+	# strikes the nearest enemy in sight on its line. Each round rolls to hit like other shots.
+	var skill: Dictionary = rules.skills.gatling
+	var shell := gatling_round()
+	var spread: float = deg_to_rad(float(shell.spread_degrees)) * sin(float(channel.shots) * 2.39996)
+	channel.shots = int(channel.shots) + 1
+	var line: Vector3 = direction.rotated(Vector3.UP, spread)
+	var reach: float = float(skill.range)
+	var best := ""
+	var nearest := INF
+	for id in enemies:
+		var delta: Vector3 = enemies[id].body.position - player.position
+		delta.y = 0.0
+		var along: float = delta.dot(line)
+		if along > 0 and along <= reach and along < nearest and (delta - line * along).length() <= float(skill.hit_width) * float(enemies[id].size) and map.sees(player.position, enemies[id].body.position):
+			best = id
+			nearest = along
+	var origin: Vector3 = player.position + Vector3.UP
+	if is_instance_valid(channel.visual):
+		origin = channel.visual.muzzle()
+	var end: Vector3 = player.position + line * reach + Vector3.UP
+	var hit := "miss"
+	if best != "":
+		end = enemies[best].body.position + Vector3.UP * 0.8 * float(enemies[best].size)
+		var damage: float = float(shell.shot_damage)
+		if shell.has("focus_per_hit"):
+			# Converging fire: steady hits on one enemy build up; a new target starts over.
+			if channel.focus != best:
+				channel.focus = best
+				channel.focus_hits = 0
+			damage *= 1.0 + minf(float(shell.focus_max), float(shell.focus_per_hit) * float(channel.focus_hits))
+		hit = strike(best, damage, true, "witch", "gatling")
+		if hit != "miss" and shell.has("focus_per_hit"):
+			channel.focus_hits = int(channel.focus_hits) + 1
+		if hit != "miss" and shell.has("stagger_hits") and enemies.has(best):
+			# Suppressing fire: every few hits on one enemy stagger it hard, past the usual guard.
+			var enemy: Dictionary = enemies[best]
+			enemy.suppressed = int(enemy.get("suppressed", 0)) + 1
+			if enemy.suppressed >= int(shell.stagger_hits):
+				enemy.suppressed = 0
+				flinch(enemy, float(shell.stagger_factor), true)
+	if is_instance_valid(channel.visual):
+		channel.visual.shoot(end)
+	spawn_vfx().muzzle(origin, [end], [best == ""], map.ground_y(origin))
+	play_sfx("shotgun_fire", 1.8 if hit != "miss" else 2.0, -6.0)
+	last_burst = {"target": best, "result": hit, "origin": origin, "end": end, "line": line, "shots": channel.shots}
 
 func begin_shotgun_visual(target: Vector3, at_enemy: bool = false) -> void:
 	shotgun_assembly=ShotgunCast.new()
@@ -1859,6 +2405,9 @@ func tick_move_hold() -> void:
 		set_destination(point(cursor.ground))
 
 func tick_hold() -> void:
+	if not channel.is_empty():
+		# The held key is the channel itself; ground steering waits until it ends.
+		return
 	tick_move_hold()
 	if hold.is_empty():
 		return
@@ -1888,7 +2437,8 @@ func motion_seconds(base: float, minimum: float, k: float, score: float) -> floa
 func attack_seconds(tool = null) -> float:
 	# Each tool swaps in its own attack motion; null is the bare staff.
 	var base: float = rules.skills[tool].attack_seconds if tool != null else config.basic_attack_seconds
-	return motion_seconds(base, config.min_attack_seconds, config.attack_speed_k, config.attack_speed_score)
+	var seconds := motion_seconds(base, config.min_attack_seconds, config.attack_speed_k, config.attack_speed_score)
+	return seconds * fire_interval_factor() if tool in GUNS else seconds
 
 func cast_seconds(skill: Dictionary) -> float:
 	# The cast motion is the stop time; cast rate (FCR) is its own axis, apart from attack speed.
@@ -2044,11 +2594,51 @@ func start_dash(target: Vector3, direction: Vector3, at_enemy: bool) -> void:
 		length += 0.2
 	moving = false
 	move_marker.visible = false
-	dash = {"direction": direction, "left": length, "speed": length / float(skill.dash_seconds), "visual_distance":length}
-	player_visual.launch_spring_jump(float(skill.dash_seconds))
+	var seconds: float = float(skill.dash_seconds) / leap_speed_factor()
+	dash = {"direction": direction, "left": length, "speed": length / seconds, "visual_distance":length}
+	player_visual.launch_spring_jump(seconds)
 	if not is_instance_valid(spring_plate):begin_spring_plate(direction)
 	spring_plate.launch(direction)
 	spring_plate = null
+
+func recoil_leap(target: Vector3, direction: Vector3, at_enemy: bool) -> void:
+	# Recoil leap (03 §3, firearm III, learned after the shotgun): a short wide blast shoves the
+	# enemies in front away, and its kick throws her straight back. She keeps facing the aim, and
+	# hits cannot stagger her mid-leap, as in the spring dash.
+	var skill: Dictionary = rules.skills.recoil_leap
+	var shot: Transform3D = ShotgunGeometry.frame(self, target, at_enemy)
+	if not is_instance_valid(shotgun_assembly):
+		begin_shotgun_visual(target, at_enemy)
+	shotgun_assembly.fire(shot)
+	shotgun_assembly = null
+	var struck: Array = []
+	for id in enemies.keys():
+		var delta: Vector3 = enemies[id].body.position - player.position
+		delta.y = 0.0
+		var close: bool = delta.length() <= float(skill.range) + 0.4 * float(enemies[id].size)
+		if close and (delta.length() < 0.3 or delta.normalized().dot(direction) >= float(skill.blast_dot)) and map.sees(player.position, enemies[id].body.position):
+			struck.append(id)
+			if strike(id, float(skill.shot_damage), false, "witch", "recoil_leap") != "miss":
+				push_back(id, float(skill.knockback_distance), float(skill.knockback_seconds))
+	var ends: Array[Vector3] = []
+	var blocked: Array[bool] = []
+	for step in range(-3, 4):
+		ends.append(shot.origin + direction.rotated(Vector3.UP, acos(float(skill.blast_dot)) * step / 3.0) * float(skill.range))
+		blocked.append(false)
+	spawn_vfx().muzzle(shot.origin, ends, blocked, map.ground_y(shot.origin))
+	play_sfx("shotgun_fire", 0.55)
+	shake_time = maxf(shake_time, 0.1)
+	# The kick carries her back as far as open floor allows.
+	var back: Vector3 = -direction
+	var length := 0.0
+	while length + 0.2 <= float(skill.leap_distance) and map.walkable(player.position + back * (length + 0.2)):
+		length += 0.2
+	moving = false
+	move_marker.visible = false
+	var seconds: float = float(skill.leap_seconds) / leap_speed_factor()
+	dash = {"direction": back, "left": length, "speed": length / seconds, "visual_distance": length}
+	player_visual.launch_spring_jump(seconds)
+	last_recoil = {"struck": struck, "back": back, "leap": length, "origin": shot.origin}
 
 func tick_dash(dt: float) -> void:
 	var travel: float = minf(dash.speed * dt, dash.left)
@@ -2119,8 +2709,20 @@ func execute_cast(event: Dictionary) -> void:
 			fire_shotgun(target, aims_at_enemy(event))
 		"matchlock", "rifle":
 			equip_gun(event.skill)
+		"powder_keg":
+			roll_keg(target, direction)
+		"gatling":
+			start_channel(target, direction)
+		"smoke_launcher":
+			launch_smoke(target, direction)
 		"spring_dash":
 			start_dash(target, direction, aims_at_enemy(event))
+		"recoil_leap":
+			recoil_leap(target, direction, aims_at_enemy(event))
+		"artillery":
+			call_artillery(target, direction)
+		"naval_gun":
+			call_naval_gun(target, direction)
 		"bolt_cutter", "grinder", "chainsaw": pass  # the staff itself transforms; no ground ring
 		"shield":
 			shield_time = shield_duration()
@@ -2269,15 +2871,16 @@ func flinch_seconds(enemy: Dictionary) -> float:
 	var factor: float = clampf(1.0 + float(plan.level_step) * gap, float(plan.min_factor), float(plan.max_factor))
 	return float(plan.seconds.get(enemy.grade, 0.0)) * factor
 
-func flinch(enemy: Dictionary) -> void:
+func flinch(enemy: Dictionary, scale: float = 1.0, forced: bool = false) -> void:
 	# A direct hit (any source, not bleed) makes the enemy flinch: it stops where it is and loses
 	# the attack it was winding up. A short guard afterwards keeps fast hits from pinning it.
 	# A telegraphed brute charge, once its line is on the ground, is not broken off.
-	if float(enemy.flinch_guard) > 0 or float(enemy.get("charging", 0.0)) > 0:
+	# forced (a suppressing barrage's stagger) cuts through the guard, not through a charge.
+	if (float(enemy.flinch_guard) > 0 and not forced) or float(enemy.get("charging", 0.0)) > 0:
 		return
 	if enemy.windup > 0 and enemy.attack == "charge":
 		return
-	var seconds := flinch_seconds(enemy)
+	var seconds := flinch_seconds(enemy) * scale
 	if seconds <= 0:
 		return
 	enemy.flinch = seconds
@@ -2602,8 +3205,10 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		stun_time = hit_recovery_seconds()
 		action_time = stun_time
 		player_visual.hit_react(stun_time)
+		stop_channel()
 	if hp == 0:
 		cancel_summon_assemblies("death")
+		stop_channel()
 		probe.counts.deaths += 1
 		save_mana_log("death")
 		cancel_pending_cast()
@@ -2736,6 +3341,9 @@ func _physics_process(dt: float) -> void:
 	sync_automaton_cost()
 	if not paused and field_cleared():
 		cancel_summon_assemblies("field_cleared")
+		clear_kegs()
+		stop_channel()
+		clear_barrage()
 	var visual_start_position := player.position
 	var collecting_after_clear := field_cleared() and not loot_target.is_empty()
 	if not paused and hp > 0 and collecting_after_clear:
@@ -2767,6 +3375,11 @@ func _physics_process(dt: float) -> void:
 		tick_boss_trigger()
 		tick_windup(dt)
 		tick_gun_reload(dt)
+		tick_kegs(dt)
+		tick_channel(dt)
+		tick_smokes(dt)
+		tick_shells(dt)
+		tick_fires(dt)
 		if action_time > 0:
 			action_time = maxf(0, action_time - dt)
 			if action_time == 0 and not queued_input.is_empty():
@@ -2778,7 +3391,7 @@ func _physics_process(dt: float) -> void:
 		# The witch stands still for the attack motion; held steering resumes afterwards.
 		if not dash.is_empty():
 			tick_dash(dt)
-		elif moving and action_time <= 0:
+		elif moving and action_time <= 0 and channel.is_empty():
 			walk_to_destination(dt)
 		# Feet follow the floor: bodies only collide with walls, so steps lift them here.
 		player.position.y = map.ground_y(player.position)
@@ -2860,7 +3473,8 @@ func foe_position(target: String) -> Vector3:
 func aggro_distance(enemy: Dictionary, target: String) -> float:
 	# The witch counts a little closer than she is, so summons don't soak every hit.
 	if target == "":
-		return INF if hp <= 0 else enemy.body.position.distance_to(player.position) - config.aggro_witch_bias
+		# Smoke hides her altogether: summons in sight draw the enemy instead.
+		return INF if hp <= 0 or blinded(enemy) else enemy.body.position.distance_to(player.position) - config.aggro_witch_bias
 	var ally: Dictionary = ally_by_id(target)
 	return INF if ally.is_empty() else enemy.body.position.distance_to(ally.node.position)
 
@@ -2983,6 +3597,15 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 						hit_foe(enemy.target, type.damage * power, enemy.grade)
 		return
 	enemy.cooldown = maxf(0, enemy.cooldown - dt)
+	var hidden := blinded(enemy)
+	if not hidden:
+		enemy.last_seen = player.position
+	elif enemy.target == "":
+		# She vanished into smoke: a summon in sight draws it at once.
+		enemy.target = nearest_foe(enemy)
+		enemy.retarget = config.aggro_retarget_seconds
+		aim = foe_position(enemy.target)
+		delta = aim - enemy.body.position
 	# Pick a target only between attacks; a wound-up attack keeps the one it started on.
 	enemy.retarget = maxf(0, enemy.retarget - dt)
 	if enemy.retarget <= 0:
@@ -2990,6 +3613,19 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 		enemy.retarget = config.aggro_retarget_seconds
 		aim = foe_position(enemy.target)
 		delta = aim - enemy.body.position
+	if enemy.target == "" and hidden:
+		# Lost in the smoke: it gropes slowly toward where it last saw her and starts nothing.
+		var seen: Vector3 = enemy.get("last_seen", enemy.body.position)
+		var toward: Vector3 = seen - enemy.body.position
+		toward.y = 0.0
+		enemy.body.velocity = Vector3.ZERO
+		if toward.length() > 0.5:
+			var grope: Vector3 = follow(enemy.route, enemy.body.position, seen, 0.35, dt) - enemy.body.position
+			grope.y = 0.0
+			enemy.body.velocity = grope.normalized() * pace * float(rules.skills.smoke_launcher.blind_speed)
+			enemy.model.look_at(Vector3(seen.x, enemy.body.global_position.y, seen.z))
+		enemy.body.move_and_slide()
+		return
 	var distance: float = delta.length()
 	if distance > 11:
 		return

@@ -1,22 +1,22 @@
 {
-  "status": "temporary skill tree layout: the candidate lists and understanding links of docs/03 §3-§5, tiers I-IV in rows; links are related study, not prerequisites",
+  "status": "temporary skill tree layout: the candidate lists and understanding links of docs/03 §3-§5, tiers I-IV in rows; links are related study, except into a skill whose build entry requires the other (recoil leap needs the shotgun)",
   "columns": 7,
   "trees": [
     {"tree": "firearm", "nodes": [
       {"name": "화승총", "tier": 1, "col": 2, "id": "matchlock"},
-      {"name": "화약통", "tier": 1, "col": 5},
+      {"name": "화약통", "tier": 1, "col": 5, "id": "powder_keg"},
       {"name": "산탄포", "tier": 2, "col": 1, "id": "shotgun"},
       {"name": "강선 장총", "tier": 2, "col": 3, "id": "rifle"},
-      {"name": "반동 도약", "tier": 2, "col": 6},
-      {"name": "회전 기관포", "tier": 3, "col": 2},
-      {"name": "연막 발사기", "tier": 3, "col": 6},
-      {"name": "다연장 포격", "tier": 4, "col": 1},
-      {"name": "중장 함포", "tier": 4, "col": 3}],
+      {"name": "회전 기관포", "tier": 3, "col": 2, "id": "gatling"},
+      {"name": "반동 도약", "tier": 3, "col": 0, "id": "recoil_leap"},
+      {"name": "연막 발사기", "tier": 3, "col": 6, "id": "smoke_launcher"},
+      {"name": "다연장 포격", "tier": 4, "col": 1, "id": "artillery"},
+      {"name": "중장 함포", "tier": 4, "col": 3, "id": "naval_gun"}],
      "passives": [
       {"name": "탄도 계산", "id": "ballistics"},
       {"name": "재장전 기구 개선", "id": "reload"},
-      {"name": "반동 제어"}],
-     "links": [["화승총", "산탄포"], ["화승총", "강선 장총"], ["화승총", "회전 기관포"], ["회전 기관포", "다연장 포격"], ["회전 기관포", "중장 함포"]]},
+      {"name": "반동 제어", "id": "recoil_control"}],
+     "links": [["화승총", "산탄포"], ["산탄포", "반동 도약"], ["화승총", "강선 장총"], ["화승총", "회전 기관포"], ["회전 기관포", "다연장 포격"], ["회전 기관포", "중장 함포"]]},
     {"tree": "drive", "nodes": [
       {"name": "낙하 단두대", "tier": 1, "col": 0},
       {"name": "볼트 커터", "tier": 1, "col": 2, "id": "bolt_cutter"},

@@ -60,6 +60,9 @@ func _draw() -> void:
 		status = "%s  ·  탄 %d/%d  ·  같은 키로 해제" % [arena.rules.skills[gun.id].name, gun.ammo, arena.gun_magazine(gun.id)]
 		if int(gun.ammo) < arena.gun_magazine(gun.id):
 			status = "%s  ·  탄 %d/%d  ·  장전 %.1f초" % [arena.rules.skills[gun.id].name, gun.ammo, arena.gun_magazine(gun.id), maxf(0.0, float(gun.reload_left))]
+	if not arena.channel.is_empty():
+		active = true
+		status = "%s 사격  ·  MP −%s/s  ·  떼면 중지" % [arena.rules.skills.gatling.name, str(arena.rules.skills.gatling.channel_mana_per_second)]
 	panel(Rect2(24, 115, 300, 38), INK, GOLD if active else EDGE)
 	draw_circle(Vector2(44, 134), 5, GOLD if active else MUTED)
 	label_at(Vector2(61, 140), status, 14, GOLD if active else MUTED)
@@ -154,10 +157,16 @@ func _draw() -> void:
 	var sx = start + 196
 	for i in 6:
 		var slot: String = arena.rules.SLOTS[i]
+		if arena.state.bindings[slot] == null:
+			# A key emptied when its skill was unlearned.
+			var empty = Rect2(sx + i * 100, h - 131, 91, 107)
+			panel(empty, PANEL, EDGE)
+			label_at(empty.position + Vector2(8, 17), KEYS[i], 11, MUTED, true)
+			continue
 		var skill: Dictionary = arena.rules.skills[arena.state.bindings[slot]]
 		var cooldown: float = arena.state.cooldowns.get(skill.id, 0)
 		var insufficient: bool = arena.state.mana < skill.mana_cost
-		var running: bool = (skill.kind == "tool" and tool == skill.id) or arena.gun.get("id") == skill.id
+		var running: bool = (skill.kind == "tool" and tool == skill.id) or arena.gun.get("id") == skill.id or arena.channel.get("skill") == skill.id
 		var color = GOLD if running else (Color("72888c") if insufficient else TEAL)
 		if i == 0 and arena.fallback_time > 0:
 			color = GOLD
@@ -179,6 +188,8 @@ func _draw() -> void:
 			detail = "탄 %d/%d · %.2f초" % [gun.ammo, arena.gun_magazine(gun.id), arena.attack_seconds(gun.id)]
 		elif skill.id == "basic_attack":
 			detail = "동작 %.2f초" % arena.attack_seconds(tool)
+		elif skill.id == "gatling":
+			detail = "MP %d · −%s/s" % [skill.mana_cost, str(skill.channel_mana_per_second)]
 		elif skill.id in arena.GUNS:
 			detail = "탄 %d/%d" % [gun.ammo, arena.gun_magazine(skill.id)] if gun.get("id") == skill.id else "MP %d · %d발" % [skill.mana_cost, arena.gun_magazine(skill.id)]
 

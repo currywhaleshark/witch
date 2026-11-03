@@ -14,6 +14,10 @@ const OutfitReveal = preload("res://scripts/outfit_reveal.gd")
 const GroundLootVisual = preload("res://scripts/ground_loot_visual.gd")
 const Shape = preload("res://scripts/shapes.gd")
 const FloatingGun = preload("res://scripts/floating_gun.gd")
+const PowderKeg = preload("res://scripts/powder_keg.gd")
+const GatlingGun = preload("res://scripts/gatling_gun.gd")
+const SmokeLauncher = preload("res://scripts/smoke_launcher.gd")
+const IncomingShell = preload("res://scripts/incoming_shell.gd")
 const STAFF := "res://assets/weapons/staff_material_v3/staff_parts.glb"
 const PART_SCRIPTS := ["res://scripts/automaton_assembly.gd", "res://scripts/turret_assembly.gd",
 	"res://scripts/shotgun_cast.gd", "res://scripts/spring_plate.gd", "res://scripts/shield_visual.gd"]
@@ -95,6 +99,10 @@ func _stage(camera: Camera3D) -> void:
 	global_position = camera.global_position - camera.global_basis.z * 30.0
 	var scenes: Array = [held.get(FieldEntry.OUTFIT), held.get(STAFF)]
 	scenes.append_array(FloatingGun.MODELS.values())
+	scenes.append(PowderKeg.MODEL)
+	scenes.append(GatlingGun.MODEL)
+	scenes.append(SmokeLauncher.MODEL)
+	scenes.append_array(IncomingShell.MODELS.values())
 	for path in ActorVisual.FILES.values():
 		scenes.append(held.get(path))
 	for path in PART_SCRIPTS:

@@ -4,7 +4,7 @@ extends RefCounted
 ## own (03 candidates not built yet) get a plain gear.
 const GOLD = Color("d8b77b")
 const KINDS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8, "spring_dash": 9,
-	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12, "matchlock": 14, "reload": 15, "rifle": 16}
+	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12, "matchlock": 14, "reload": 15, "rifle": 16, "powder_keg": 17, "gatling": 18, "smoke_launcher": 19, "recoil_leap": 20, "artillery": 21, "naval_gun": 22, "recoil_control": 23}
 const PLAIN = 13
 
 static func draw(canvas: CanvasItem, p: Vector2, id: String, color: Color, scale: float = 1.0) -> void:
@@ -105,6 +105,51 @@ static func shape(canvas: CanvasItem, p: Vector2, kind: int, color: Color) -> vo
 			for k in 3:
 				var at: Vector2 = p + Vector2(6 + k * 4, -3 - k * 2)
 				canvas.draw_line(at, at + Vector2(1, 3), GOLD, 1.5)
+		23:
+			# Recoil control: a barrel braced by a spring.
+			canvas.draw_line(p + Vector2(-16, -6), p + Vector2(12, -6), color, 3)
+			canvas.draw_polyline(PackedVector2Array([p + Vector2(-10, 0), p + Vector2(-6, 8), p + Vector2(-2, 0), p + Vector2(2, 8), p + Vector2(6, 0), p + Vector2(10, 8)]), GOLD, 2)
+			canvas.draw_line(p + Vector2(-14, 12), p + Vector2(14, 12), color, 2)
+		21:
+			# Rocket barrage: several shells falling onto a ring.
+			canvas.draw_arc(p + Vector2(0, 10), 13, 0, TAU, 18, color, 2)
+			for k in 3:
+				var top: Vector2 = p + Vector2(-12 + k * 9, -16 + (k % 2) * 5)
+				canvas.draw_line(top, top + Vector2(5, 12), color, 2)
+				canvas.draw_circle(top + Vector2(5, 12), 2.5, GOLD)
+		22:
+			# Heavy naval gun: one large shell over a burst.
+			canvas.draw_line(p + Vector2(-12, -16), p + Vector2(2, 2), color, 5)
+			canvas.draw_circle(p + Vector2(4, 4), 3.5, GOLD)
+			for a in 6:
+				var ray: Vector2 = Vector2(1, 0).rotated(TAU * a / 6.0)
+				canvas.draw_line(p + Vector2(6, 8) + ray * 6, p + Vector2(6, 8) + ray * 11, color, 2)
+		20:
+			# Recoil leap: a blast to the right, the witch's arc thrown back to the left.
+			for a in [-0.45, 0, 0.45]:
+				canvas.draw_line(p + Vector2(4, 4), p + Vector2(4, 4) + Vector2(13, 0).rotated(a), GOLD, 2)
+			canvas.draw_arc(p + Vector2(-6, 8), 10, PI, TAU, 12, color, 2)
+			canvas.draw_polyline(PackedVector2Array([p + Vector2(-13, 4), p + Vector2(-16, 9), p + Vector2(-11, 9)]), color, 2)
+		19:
+			# Smoke launcher: a short tube bank lobbing a canister into a cloud.
+			canvas.draw_rect(Rect2(p + Vector2(-17, 4), Vector2(14, 10)), color, false, 2)
+			canvas.draw_line(p + Vector2(-12, 4), p + Vector2(-6, -4), color, 2)
+			for c in [Vector2(6, -6), Vector2(12, -9), Vector2(14, -2), Vector2(8, 1)]:
+				canvas.draw_circle(p + c, 5, Color(color, 0.35))
+				canvas.draw_arc(p + c, 5, 0, TAU, 12, color, 1.5)
+		18:
+			# Rotary cannon: a cluster of barrels around a hub, with a spin arc.
+			for k in 3:
+				canvas.draw_line(p + Vector2(-16, -5 + k * 5), p + Vector2(12, -5 + k * 5), color, 2)
+			canvas.draw_rect(Rect2(p + Vector2(10, -9), Vector2(6, 18)), color, false, 2)
+			canvas.draw_arc(p + Vector2(-16, 0), 9, 1.9, 4.4, 10, GOLD, 2)
+		17:
+			# Powder keg: a hooped drum on its side with a lit fuse.
+			canvas.draw_rect(Rect2(p + Vector2(-14, -7), Vector2(22, 18)), color, false, 2)
+			for x in [-8, 2]:
+				canvas.draw_line(p + Vector2(x, -7), p + Vector2(x, 11), color, 2)
+			canvas.draw_polyline(PackedVector2Array([p + Vector2(8, -3), p + Vector2(12, -9), p + Vector2(15, -12)]), color, 2)
+			canvas.draw_circle(p + Vector2(16, -13), 2.5, GOLD)
 		15:
 			# Reload mechanism: rounds feeding into a gear.
 			canvas.draw_arc(p + Vector2(5, 3), 8, 0, TAU, 18, color, 2)

@@ -11,9 +11,10 @@ const GOLD = Color("d8b77b")
 const TREE_NAMES = {"firearm": "화기", "drive": "구동", "automation": "자동화"}
 const SLOT_NAMES = {"rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r": "R"}
 # Every skill a slot can carry, grouped by tree; the basic attack stays on the left button.
-const LOADOUT = ["matchlock", "rifle", "shotgun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash", "automaton", "turret", "relay"]
+const LOADOUT = ["matchlock", "rifle", "powder_keg", "gatling", "smoke_launcher", "shotgun", "recoil_leap", "artillery", "naval_gun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash", "automaton", "turret", "relay"]
 
-# Skill tree layout: candidates from 03 in tier rows, links of related study (not prerequisites).
+# Skill tree layout: candidates from 03 in tier rows, links of related study. A link into a skill
+# that requires the other (build entry "requires") is a prerequisite: it is learned for a point after.
 # Each skill is an icon; its name and effect are in the hover tip. Skills are put on keys by
 # dragging an icon from the tree (or another key) onto a key box.
 const NODE = Vector2(46, 46)
@@ -207,6 +208,23 @@ func _skills() -> void:
 			pick.tooltip_text = "강선 장총 탄 · %d점" % build.rules.node_cost
 			rounds.append(pick)
 		body.add_child(row(rounds))
+		var barrages: Array = []
+		for choice in Build.GATLING_NODE_NAMES:
+			var pick := button(("● " if build.gatling_node == choice else "") + Build.GATLING_NODE_NAMES[choice], func(): build.set_gatling_node(choice),
+				build.gatling_node != choice and (choice == "base" or build.gatling_node != "base" or build.skill_points() >= int(build.rules.node_cost)))
+			pick.tooltip_text = "회전 기관포 특화 · %d점" % build.rules.node_cost
+			barrages.append(pick)
+		body.add_child(row(barrages))
+		for skill in Build.SKILL_NODE_NAMES:
+			var picks: Array = []
+			var names: Dictionary = Build.SKILL_NODE_NAMES[skill]
+			for choice in names:
+				var current: String = build.skill_nodes[skill]
+				var pick := button(("● " if current == choice else "") + names[choice], func(): build.set_skill_node(skill, choice),
+					current != choice and (choice == "base" or current != "base" or build.skill_points() >= int(build.rules.node_cost)))
+				pick.tooltip_text = "%s 특화 · %d점" % [arena.rules.skills[skill].name, build.rules.node_cost]
+				picks.append(pick)
+			body.add_child(row(picks))
 	var slots := HBoxContainer.new()
 	slots.add_theme_constant_override("separation", 8)
 	for slot in SLOT_NAMES:
@@ -286,7 +304,9 @@ func draw_node(box: Control, node: Dictionary, state: String) -> void:
 	# The skill's picture, its level in the corner where points go; grey boxes are not built yet.
 	var font: Font = get_theme_default_font()
 	var id: String = node.get("id", "")
-	SkillIcon.draw(box, NODE / 2, id, Color(MUTED, 0.35) if missing else PAPER, 0.78)
+	# Not learned yet: the picture stays dim until a point goes in.
+	var unlearned: bool = state == "levels" and node_level(id) < 1
+	SkillIcon.draw(box, NODE / 2, id, Color(MUTED, 0.35) if missing else (Color(MUTED, 0.7) if unlearned else PAPER), 0.78)
 	if state == "levels":
 		var level := str(node_level(id))
 		var badge := Rect2(NODE - Vector2(8 + 7 * level.length(), 16), Vector2(8 + 7 * level.length(), 16))
@@ -327,7 +347,13 @@ func node_info(node: Dictionary) -> PackedStringArray:
 		return lines
 	var id: String = node.id
 	if state == "levels":
-		lines.append("Lv %d/%d" % [node_level(id), int(arena.build.rules.skill_max_level)])
+		var needs: String = arena.build.requires.get(id, "")
+		if needs != "":
+			lines.append("선행: %s%s" % [arena.rules.skills[needs].name, "" if arena.build.learned(needs) else " (미습득)"])
+		if node_level(id) < 1:
+			lines.append("미습득 · 클릭해 배우기 (1점)")
+		else:
+			lines.append("Lv %d/%d" % [node_level(id), int(arena.build.rules.skill_max_level)])
 		lines.append(effect_note(id))
 	else:
 		lines.append("레벨 효과 없음")
@@ -351,17 +377,23 @@ func slot_box(slot: String) -> Control:
 	box.custom_minimum_size = Vector2(NODE.x + 8, NODE.y + 8)
 	box.mouse_filter = Control.MOUSE_FILTER_STOP
 	box.draw.connect(func(): draw_slot(box, slot))
-	box.mouse_entered.connect(func(): show_detail(arena.state.bindings[slot]))
+	box.mouse_entered.connect(func(): show_detail(slot_skill(slot)))
 	box.mouse_exited.connect(func(): tip.visible = false)
-	box.set_drag_forwarding(func(_at): return start_drag(arena.state.bindings[slot], slot),
+	box.set_drag_forwarding(func(_at): return start_drag(slot_skill(slot), slot),
 		func(_at, data): return can_take(data), func(_at, data): drop_skill(slot, data))
 	return box
+
+func slot_skill(slot: String) -> String:
+	# "" for a key left empty when its skill was unlearned.
+	var id = arena.state.bindings[slot]
+	return "" if id == null else id
 
 func draw_slot(box: Control, slot: String) -> void:
 	var rect := Rect2(Vector2.ZERO, box.custom_minimum_size)
 	box.draw_rect(rect, Color("213a45"))
 	box.draw_rect(rect, GOLD, false, 1.5)
-	SkillIcon.draw(box, rect.get_center() + Vector2(0, 3), arena.state.bindings[slot], PAPER, 0.8)
+	if slot_skill(slot) != "":
+		SkillIcon.draw(box, rect.get_center() + Vector2(0, 3), slot_skill(slot), PAPER, 0.8)
 	box.draw_string(get_theme_default_font(), Vector2(4, 12), SLOT_NAMES[slot], HORIZONTAL_ALIGNMENT_LEFT, -1, 10, GOLD)
 
 func start_drag(id: String, from: String):
@@ -377,7 +409,7 @@ func start_drag(id: String, from: String):
 	return data
 
 func drag_data(id: String, from: String):
-	return {"skill": id, "from": from} if id in LOADOUT else null
+	return {"skill": id, "from": from} if id in LOADOUT and arena.build.learned(id) else null
 
 func can_take(data) -> bool:
 	return data is Dictionary and data.has("skill")
@@ -385,7 +417,7 @@ func can_take(data) -> bool:
 func drop_skill(slot: String, data: Dictionary) -> void:
 	# A skill already on another key swaps places with the one it lands on.
 	var id: String = data.skill
-	var old: String = arena.state.bindings[slot]
+	var old = arena.state.bindings[slot]
 	if id == old:
 		return
 	for other in SLOT_NAMES:
@@ -410,8 +442,34 @@ func effect_note(id: String) -> String:
 			var shell: Dictionary = arena.rules.skills.rifle.nodes[config.rifle_node]
 			var kind: String = {"base": "넉백", "explosive": "폭발 %.1fm" % float(shell.get("blast_radius", 0.0)), "piercing": "관통"}[config.rifle_node]
 			return "%s · 피해 %d · %s · 장탄 %d발 · 발당 MP %s" % [Build.RIFLE_NODE_NAMES[config.rifle_node], roundi(float(shell.shot_damage) * arena.skill_level_factor("rifle")), kind, arena.gun_magazine("rifle"), str(snappedf(arena.round_cost("rifle"), 0.1))]
+		"powder_keg":
+			var keg: Dictionary = arena.rules.skills.powder_keg
+			return "피해 %d · 폭발 %.1fm · 사거리 %dm" % [roundi(float(keg.blast_damage) * arena.skill_level_factor("powder_keg")), float(keg.blast_radius), int(keg.range)]
+		"artillery":
+			var barrage: Dictionary = arena.rules.skills.artillery
+			var shell: Dictionary = barrage.nodes[config.artillery_node]
+			var kind: String = {"base": "발당 피해 %d · 폭발 %.1fm" % [roundi(float(shell.shot_damage) * arena.skill_level_factor("artillery")), float(shell.blast_radius)],
+				"cluster": "공중 폭발 · 자탄 %d개 × 피해 %d" % [int(shell.get("bomblets", 0)), roundi(float(shell.shot_damage) * arena.skill_level_factor("artillery"))],
+				"phosphorus": "화재 %.1fm · %.0f초 · 0.5초마다 %d" % [float(shell.get("fire_radius", 0)), float(shell.get("fire_seconds", 0)), roundi(float(shell.get("fire_damage", 0)) * arena.skill_level_factor("artillery"))]}[config.artillery_node]
+			return "%s · %d발 · %s" % [Build.SKILL_NODE_NAMES.artillery[config.artillery_node], int(barrage.shells), kind]
+		"naval_gun":
+			var shell: Dictionary = arena.rules.skills.naval_gun.nodes[config.naval_gun_node]
+			return "%s · 피해 %d · 폭발 %.1fm%s · %.1f초 뒤 착탄" % [Build.SKILL_NODE_NAMES.naval_gun[config.naval_gun_node], roundi(float(shell.shot_damage) * arena.skill_level_factor("naval_gun")), float(shell.blast_radius),
+				" · 화재 %.0f초" % float(shell.fire_seconds) if shell.has("fire_seconds") else "", float(arena.rules.skills.naval_gun.delay)]
+		"recoil_leap":
+			var leap: Dictionary = arena.rules.skills.recoil_leap
+			return "앞 %dm 피해 %d · 넉백 %.1fm · 뒤로 %.1fm 도약" % [int(leap.range), roundi(float(leap.shot_damage) * maxf(1.0, arena.skill_level_factor("recoil_leap"))), float(leap.knockback_distance), float(leap.leap_distance)]
+		"smoke_launcher":
+			var smoke: Dictionary = arena.rules.skills.smoke_launcher
+			return "연막 %.1f초 · 반경 %.1fm · 연막 속·너머의 적은 마녀를 못 봄" % [arena.smoke_seconds(), float(smoke.smoke_radius)]
+		"gatling":
+			var stream: Dictionary = arena.rules.skills.gatling.nodes[config.gatling_node]
+			var extra: String = {"base": "", "suppress": " · %d발마다 강한 경직" % int(stream.get("stagger_hits", 0)), "converge": " · 같은 적 연속 명중 최대 +%d%%" % roundi(100 * float(stream.get("focus_max", 0)))}[config.gatling_node]
+			return "%s · 발당 %s · 초당 %.1f발 · 산포 ±%d° · MP −%s/s%s" % [Build.GATLING_NODE_NAMES[config.gatling_node], str(snappedf(float(stream.shot_damage) * arena.skill_level_factor("gatling"), 0.1)), 1.0 / arena.gatling_interval(), int(stream.spread_degrees), str(arena.rules.skills.gatling.channel_mana_per_second), extra]
 		"reload":
 			return "장탄 +%d발 · 장전 시간 −%s%% · 포탑 연사 +%d%%" % [int(config.passives.reload.magazine_per_level) * int(arena.reload_level()), str(snappedf(100 * float(config.passives.reload.reload_time_cut_per_level) * arena.reload_level(), 0.1)), roundi(100 * (arena.turret_fire_rate() - 1.0))]
+		"recoil_control":
+			return "화기 사격 간격·산탄 대기 −%s%% · 도약 속도 +%d%%" % [str(snappedf(100 * (1.0 - arena.fire_interval_factor()), 0.1)), roundi(100 * (arena.leap_speed_factor() - 1.0))]
 		"automaton", "turret":
 			return "체력 ×%.2f · 피해 ×%.2f · 명중 %d%% · 치명 %d%%" % [arena.summon_growth("hp", id), arena.summon_growth("damage", id),
 				roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[id + "_level"] - 1), config.hit_min, config.hit_cap)), roundi(100 * arena.crit_chance(id))]

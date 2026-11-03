@@ -33,6 +33,11 @@ func strike(source: String, result: String, dealt: float) -> void:
 			counts.hits += 1
 	row.damage += dealt
 
+func burn(dealt: float) -> void:
+	# Burning ground counts as damage under its own source, never as hits or misses.
+	var row: Dictionary = sources.get_or_add("burn", {"hits": 0, "misses": 0, "crits": 0, "damage": 0.0})
+	row.damage += dealt
+
 func bleed(dealt: float) -> void:
 	# Bleed ticks count as damage under their own source, never as hits or misses.
 	var row: Dictionary = sources.get_or_add("bleed", {"hits": 0, "misses": 0, "crits": 0, "damage": 0.0})

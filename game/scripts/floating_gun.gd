@@ -9,6 +9,8 @@ const MODELS = {
 const SIDE := 0.5
 const HEIGHT := 1.3
 const FORWARD := 0.45
+# Where the muzzle floats: right of her, up, ahead. Longer guns may sit further forward.
+var mount := Vector3(SIDE, HEIGHT, FORWARD)
 var gun_id := ""
 var _flash: MeshInstance3D
 var _kick := 0.0
@@ -52,7 +54,7 @@ func follow(dt: float) -> void:
 	facing = facing.normalized() if facing.length() > 0.01 else Vector3.FORWARD
 	var right := facing.cross(Vector3.UP).normalized()
 	_bob += dt
-	var origin: Vector3 = player.position + Vector3.UP * (HEIGHT + 0.03 * sin(_bob * 2.4)) + right * SIDE + facing * FORWARD
+	var origin: Vector3 = player.position + Vector3.UP * (mount.y + 0.03 * sin(_bob * 2.4)) + right * mount.x + facing * mount.z
 	var target: Vector3 = _aim if _aim != Vector3.ZERO else origin + facing
 	var axis: Vector3 = target - origin
 	axis.y = clampf(axis.y, -0.3 * axis.length(), 0.3 * axis.length())

@@ -6,6 +6,12 @@ const STATS = ["power", "dexterity", "vitality", "will"]
 const STAT_NAMES = {"power": "위력", "dexterity": "기교", "vitality": "활력", "will": "의지"}
 const NODE_NAMES = {"base": "노드 없음", "A": "A 자폭 특화", "B": "B 지속공격 특화"}
 const RIFLE_NODE_NAMES = {"base": "일반탄", "explosive": "폭발탄", "piercing": "천공탄"}
+const GATLING_NODE_NAMES = {"base": "기본 연사", "suppress": "제압 화망", "converge": "수렴 사격"}
+# Node choices of the offscreen guns, one per skill: config.<skill>_node holds the pick.
+const SKILL_NODE_NAMES = {
+	"artillery": {"base": "고폭탄", "cluster": "집속탄", "phosphorus": "백린탄"},
+	"naval_gun": {"base": "기본 포탄", "burst": "폭렬 포격", "pierce": "관통 포격"},
+}
 
 var arena: Node
 var rules: Dictionary
@@ -15,6 +21,11 @@ var skills: Dictionary = {}
 var passives: Dictionary = {}
 var node: String
 var rifle_node: String
+var gatling_node: String
+# A skill whose tree entry names a prerequisite starts unlearned (Lv0) and is learned with a point
+# once that skill is learned; the others start at Lv1 for free.
+var requires: Dictionary = {}
+var skill_nodes: Dictionary = {}
 var base_hp: float
 var base_mana: float
 
@@ -25,12 +36,19 @@ func _init(owner: Node) -> void:
 	level = int(rules.level)
 	for id in STATS:
 		stats[id] = 0
+	for tree in rules.skill_tree:
+		for entry in tree.entries:
+			if entry.has("requires"):
+				requires[entry.id] = entry.requires
 	for id in skill_ids():
 		skills[id] = int(config[id + "_level"])
 	for id in config.passives:
 		passives[id] = int(config.passive_levels[id])
 	node = config.automaton_node
 	rifle_node = config.rifle_node
+	gatling_node = config.gatling_node
+	for id in SKILL_NODE_NAMES:
+		skill_nodes[id] = config[id + "_node"]
 	base_hp = float(config.max_hp)
 	base_mana = float(config.max_mana)
 
@@ -42,6 +60,16 @@ func skill_ids() -> Array:
 				result.append(entry.id)
 	return result
 
+func floor_level(id: String) -> int:
+	return 0 if requires.has(id) else 1
+
+func learned(id: String) -> bool:
+	# Skills outside the build (the basic attack, the relay) are always at hand.
+	return int(skills.get(id, 1)) >= 1
+
+func can_learn(id: String) -> bool:
+	return not requires.has(id) or learned(requires[id])
+
 func stat_points() -> int:
 	var spent := 0
 	for id in STATS:
@@ -49,16 +77,22 @@ func stat_points() -> int:
 	return level * int(rules.stat_points_per_level) - spent
 
 func skill_points() -> int:
-	# Skills start at Lv1 for free; every level above it, every passive level and a node cost points.
+	# Skills start at Lv1 for free; every level above it, every passive level and a node cost points,
+	# as does learning a skill that has a prerequisite.
 	var spent := 0
 	for id in skills:
-		spent += skills[id] - 1
+		spent += skills[id] - floor_level(id)
 	for id in passives:
 		spent += passives[id]
 	if node != "base":
 		spent += int(rules.node_cost)
 	if rifle_node != "base":
 		spent += int(rules.node_cost)
+	if gatling_node != "base":
+		spent += int(rules.node_cost)
+	for id in skill_nodes:
+		if skill_nodes[id] != "base":
+			spent += int(rules.node_cost)
 	return level * int(rules.skill_points_per_level) - spent
 
 func set_level(value: int) -> void:
@@ -90,10 +124,17 @@ func change_stat(id: String, delta: int) -> bool:
 
 func change_skill(id: String, delta: int) -> bool:
 	var pool: Dictionary = skills if skills.has(id) else passives
-	var floor_level: int = 1 if pool == skills else 0
+	var lowest: int = floor_level(id) if pool == skills else 0
 	var value: int = pool[id] + delta
-	if value < floor_level or value > int(rules.skill_max_level) or (delta > 0 and skill_points() < delta):
+	if value < lowest or value > int(rules.skill_max_level) or (delta > 0 and skill_points() < delta):
 		return false
+	if pool == skills and value >= 1 and not can_learn(id):
+		return false
+	if pool == skills and value < 1:
+		# Unlearning a prerequisite would strand what was learned on it.
+		for other in requires:
+			if requires[other] == id and learned(other):
+				return false
 	arena.split_build_log()
 	pool[id] = value
 	apply()
@@ -121,6 +162,28 @@ func set_rifle_node(value: String) -> bool:
 	apply()
 	return true
 
+func set_gatling_node(value: String) -> bool:
+	# The rotary cannon's specialization: a wide suppressing barrage or a narrow converging stream.
+	var cost: int = int(rules.node_cost)
+	var extra: int = (cost if value != "base" else 0) - (cost if gatling_node != "base" else 0)
+	if extra > 0 and skill_points() < extra:
+		return false
+	arena.split_build_log()
+	gatling_node = value
+	apply()
+	return true
+
+func set_skill_node(skill: String, value: String) -> bool:
+	# The same one-point pick for the artillery's shells and the naval gun's rounds.
+	var cost: int = int(rules.node_cost)
+	var extra: int = (cost if value != "base" else 0) - (cost if skill_nodes[skill] != "base" else 0)
+	if extra > 0 and skill_points() < extra:
+		return false
+	arena.split_build_log()
+	skill_nodes[skill] = value
+	apply()
+	return true
+
 func stat(id: String) -> float:
 	# Allocated points only; items carry no base stat options in this trial.
 	return float(stats[id])
@@ -139,11 +202,14 @@ func reset_stats() -> void:
 func reset_skills() -> void:
 	arena.split_build_log()
 	for id in skills:
-		skills[id] = 1
+		skills[id] = floor_level(id)
 	for id in passives:
 		passives[id] = 0
 	node = "base"
 	rifle_node = "base"
+	gatling_node = "base"
+	for id in skill_nodes:
+		skill_nodes[id] = "base"
 	apply()
 
 func apply() -> void:
@@ -161,6 +227,10 @@ func apply() -> void:
 		config.passive_levels[id] = float(passives[id])
 	config.automaton_node = node
 	config.rifle_node = rifle_node
+	config.gatling_node = gatling_node
+	for id in skill_nodes:
+		config[id + "_node"] = skill_nodes[id]
+	arena.drop_unlearned_bindings()
 	arena.sync_automaton_cost()
 	arena.sync_tool_upkeep()
 	# Level, vitality and will move the maximums; current HP and mana follow a rise and are clipped by a fall.
@@ -178,5 +248,5 @@ func power_factor() -> float:
 	return 1.0 + float(rules.stat_effects.power) * stat("power")
 
 func snapshot() -> Dictionary:
-	return {"level": level, "stats": stats.duplicate(), "skills": skills.duplicate(), "passives": passives.duplicate(), "node": node, "rifle_node": rifle_node, "equipment": arena.equipment_summary(),
+	return {"level": level, "stats": stats.duplicate(), "skills": skills.duplicate(), "passives": passives.duplicate(), "node": node, "rifle_node": rifle_node, "gatling_node": gatling_node, "skill_nodes": skill_nodes.duplicate(), "equipment": arena.equipment_summary(),
 		"stat_points_left": stat_points(), "skill_points_left": skill_points(), "enemy_level": arena.enemy_level}
