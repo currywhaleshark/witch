@@ -113,7 +113,7 @@ func run() -> void:
 	full = arena.enemies.t0.hp
 	arena.request_slot("lmb", {"enemy_id": "t0"})
 	release()
-	check(is_equal_approx(full - arena.enemies.t0.hp, arena.config.basic_damage * arena.config.crit_multiplier) and arena.probe.counts.crits == 1 and arena.shake_time > 0, "a crit multiplies damage and shakes the view")
+	check(is_equal_approx(full - arena.enemies.t0.hp, arena.config.basic_damage * arena.config.crit_multiplier * arena.attack_factor(arena.attack_range().y)) and arena.probe.counts.crits == 1 and arena.shake_time > 0, "a crit multiplies damage and shakes the view")
 
 	await fresh([Vector3(3, 0, -0.4), Vector3(3, 0, 0.4)])
 	arena.force_rolls = {}

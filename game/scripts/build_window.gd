@@ -161,6 +161,9 @@ func _character() -> void:
 	for id in Build.STATS:
 		body.add_child(stepper(Build.STAT_NAMES[id], str(build.stats[id]), func(): return build.change_stat(id, -1), func(): return build.change_stat(id, 1),
 			build.stats[id] > 0, build.stat_points() > 0, notes[id]))
+	var attack: Vector2 = arena.attack_range()
+	body.add_child(text("공격력 %d~%d (평균 굴림 %d%% 지점) · 방어력 %d (Lv%d 적 피해 −%d%%)" % [attack.x, attack.y, roundi(100 * arena.attack_median()),
+		roundi(arena.armor()), arena.enemy_level, roundi(100 * arena.armor_reduction())], GOLD, 13))
 	var cast_speed: Dictionary = build.cast_speed_parts()
 	body.add_child(text("시전 속도 %d (장비 %d + 생산 효율 %d) · 태엽인형 %.2f초 · 산탄 %.2f초 · 장비는 I 창" % [arena.config.cast_speed_score, cast_speed.gear, cast_speed.passive,
 		arena.cast_seconds(arena.rules.skills.automaton), arena.cast_seconds(arena.rules.skills.shotgun)], GOLD, 13))

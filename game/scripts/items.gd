@@ -129,6 +129,11 @@ func describe(item: Dictionary) -> PackedStringArray:
 		kind.append(base.name)
 	kind.append_array([data.slot_names[item.slot], "아이템 레벨 %d" % item.level])
 	lines.append(" · ".join(kind))
+	var stats := base_stats(item)
+	if stats.has("attack_min"):
+		lines.append("공격력 %d~%d" % [stats.attack_min, stats.attack_max])
+	if stats.has("armor"):
+		lines.append("방어력 %d" % stats.armor)
 	for key in base.get("implicit", {}):
 		if item.options.has(key) and item.rarity != "unique":
 			lines.append("기본: " + option_text(key, base.implicit[key][tier_for(item.level)]))
@@ -187,10 +192,27 @@ func reroll_affix(rng: RandomNumberGenerator, item: Dictionary, index: int) -> v
 	if item.rarity == "magic":
 		item.name = name_for(rng, item, bases[item.base])
 
+func base_stats(item: Dictionary) -> Dictionary:
+	# A medium's attack range or worn armour's defence, set by the item level alone (rarity adds
+	# options, not base stats), so a higher-level normal item can outdo a low-level rare one.
+	var spec: Dictionary = data.base_stats.get(item.slot, {})
+	if spec.is_empty():
+		return {}
+	var base: Dictionary = bases[item.base]
+	var scale: float = float(base.get("base_scale", 1.0)) * float(data.base_stats.family_scale.get(base.get("family", ""), 1.0))
+	var stats := {}
+	for key in spec:
+		var line: Array = spec[key]
+		stats[key] = maxi(1, roundi((float(line[0]) + float(line[1]) * (int(item.level) - 1)) * scale))
+	return stats
+
 func totals(equipped: Array) -> Dictionary:
 	# Everything the worn items add, keyed as the options are; a unique adds "rule:<id>" too.
 	var sum := {}
 	for item in equipped:
+		var stats := base_stats(item)
+		for key in stats:
+			sum[key] = float(sum.get(key, 0.0)) + float(stats[key])
 		for key in item.options:
 			sum[key] = float(sum.get(key, 0.0)) + float(item.options[key])
 		if item.has("rule"):

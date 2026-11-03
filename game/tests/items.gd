@@ -210,7 +210,8 @@ func run() -> void:
 	check(is_equal_approx(arena.state.max_mana, 80.0 + float(arena.build.rules.mana_per_level) * (arena.build.level - 1)), "max mana options raise the pool")
 	var hp: float = arena.hp
 	arena.damage_player(20.0)
-	check(is_equal_approx(hp - arena.hp, 19.0), "damage reduction trims a hit by its points")
+	# Worn gloves also carry armour, which cuts the hit before the reduction option does.
+	check(is_equal_approx(hp - arena.hp, 20.0 * (1.0 - arena.armor_reduction()) * 0.95), "damage reduction trims a hit by its points")
 	var attack: float = arena.attack_seconds()
 	var recovery: float = arena.hit_recovery_seconds()
 	wear("ring", {"cast_speed": 20, "life": 30, "mana_regen_pct": 50})
@@ -241,10 +242,13 @@ func run() -> void:
 	check(arena.config.chainsaw_level == 3 and arena.build.skill_points() == arena.build.level, "a blueprint adds skill levels without spending points")
 	arena.unequip("medium")
 	wear("medium", {"skill:shotgun": 2}, "blueprint")
-	check(is_equal_approx(struck("shotgun"), 10.0 * (1.0 + 2 * float(data.skill_level_damage.shotgun))), "shotgun levels from its blueprint raise its damage")
+	# A worn medium also adds its attack range: her middle roll rises with it.
+	var middle: float = arena.attack_factor((arena.attack_range().x + arena.attack_range().y) / 2.0)
+	check(is_equal_approx(struck("shotgun"), 10.0 * (1.0 + 2 * float(data.skill_level_damage.shotgun)) * middle), "shotgun levels from its blueprint raise its damage")
 	arena.unequip("medium")
 	wear("medium", {"tag:cutting": 15}, "part")
-	check(is_equal_approx(struck("chainsaw"), 11.5) and is_equal_approx(struck("shotgun"), 10.0), "a part strengthens its own principle's attacks only")
+	middle = arena.attack_factor((arena.attack_range().x + arena.attack_range().y) / 2.0)
+	check(is_equal_approx(struck("chainsaw"), 11.5 * middle) and is_equal_approx(struck("shotgun"), 10.0 * middle), "a part strengthens its own principle's attacks only")
 
 	# Uniques.
 	await fresh(Vector3(1.5, 0, 0))

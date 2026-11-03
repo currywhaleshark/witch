@@ -1997,7 +1997,8 @@ func strike_point(target: Vector3, direction: Vector3, reach: float) -> Vector3:
 	return map.grounded(center)
 
 func witch_amount(amount: float, source: String) -> float:
-	# Her damage before any roll: power, gear and skill level, as strike() applies them.
+	# Her damage before any roll: power, gear and skill level, as strike() applies them. The attack
+	# roll comes on impact (strike_amount); burning ground takes the middle of her range.
 	return amount * build.power_factor() * (1.0 + gear_total("damage_pct") / 100.0) * skill_level_factor(source)
 
 func mark_target(center: Vector3, radius: float, seconds: float) -> void:
@@ -2118,7 +2119,7 @@ func strike_amount(id: String, amount: float, source: String) -> void:
 	if not enemies.has(id):
 		return
 	var crit: bool = force_rolls.get("crit", combat_rng.randf() < crit_chance("witch"))
-	var dealt: float = damage_enemy(id, amount * passive_factor(source) * (config.crit_multiplier if crit else 1.0))
+	var dealt: float = damage_enemy(id, amount * attack_factor(roll_attack(crit)) * passive_factor(source) * (config.crit_multiplier if crit else 1.0))
 	probe.strike(source, "crit" if crit else "hit", dealt)
 
 func start_fire(at: Vector3, shell: Dictionary, source: String) -> void:
@@ -2126,7 +2127,7 @@ func start_fire(at: Vector3, shell: Dictionary, source: String) -> void:
 	world.add_child(patch)
 	patch.initialize(at, float(shell.fire_radius))
 	fires.append({"center": at, "radius": float(shell.fire_radius), "left": float(shell.fire_seconds), "total": float(shell.fire_seconds),
-		"damage": witch_amount(float(shell.fire_damage), source), "tick": float(shell.fire_tick), "patch": patch})
+		"damage": witch_amount(float(shell.fire_damage), source) * attack_factor((attack_range().x + attack_range().y) / 2.0), "tick": float(shell.fire_tick), "patch": patch})
 
 func tick_fires(dt: float) -> void:
 	# Each enemy standing in fire burns once per tick, from the strongest fire it stands in. Burning
@@ -2812,7 +2813,8 @@ func link_enemy_level() -> void:
 func summon_growth(kind: String, roller: String) -> float:
 	# Summons grow with their own skill level (blueprints included), not with the witch's power
 	# or damage gear (07 §2.1), so a level 30 build's summons can stand against level 30 enemies.
-	return 1.0 + float(config["summon_%s_per_level" % kind]) * (float(config[roller + "_level"]) - 1.0)
+	# Summon options on gear (summon damage / summon life +%) keep late summons in step with gear.
+	return (1.0 + float(config["summon_%s_per_level" % kind]) * (float(config[roller + "_level"]) - 1.0)) * (1.0 + gear_total("summon_%s_pct" % kind) / 100.0)
 
 func summon_level(roller: String) -> int:
 	return int(config[roller + "_level"])
@@ -2830,6 +2832,55 @@ func crit_chance(roller: String = "witch") -> float:
 		return minf(config.crit_cap, config.summon_crit_base + config.summon_crit_per_level * (summon_level(roller) - 1))
 	return minf(config.crit_cap, config.crit_base + config.crit_per_dexterity * config.dexterity + gear_total("crit_pct") / 100.0)
 
+func attack_range() -> Vector2:
+	# Her attack power: the character's own base plus the worn medium's (07 §2.1). Summons do not
+	# use it; their strength comes from their skill level.
+	var base: Array = config.build.base_attack
+	return Vector2(float(base[0]) + gear_total("attack_min"), float(base[1]) + gear_total("attack_max"))
+
+func attack_skew() -> float:
+	# Dexterity leans each roll toward the top of the range, never all the way.
+	return minf(float(config.build.attack_max_skew), 1.0 + float(config.build.attack_dex_skew) * float(config.dexterity))
+
+func attack_median() -> float:
+	# Where the middle roll falls in the range: 0.5 at no dexterity, at most about 0.84.
+	return pow(0.5, 1.0 / attack_skew())
+
+func roll_attack(crit: bool) -> float:
+	# A crit hits with the top of the range; other hits roll inside it. Scripted checks that force
+	# the hit/crit rolls also pin this one (spread, 0.5 by default = the range's middle).
+	var span := attack_range()
+	if crit:
+		return span.y
+	var spot: float = float(force_rolls.get("spread", 0.5)) if not force_rolls.is_empty() else pow(combat_rng.randf(), 1.0 / attack_skew())
+	return lerpf(span.x, span.y, spot)
+
+func attack_factor(attack: float) -> float:
+	# A skill's listed damage is its damage at the reference attack (the bare character's middle
+	# roll); attack_share of it grows with attack, the rest is fixed: shotgun 30 = attack x 210% + 9.
+	var share: float = float(config.build.attack_share)
+	return share * attack / float(config.build.attack_reference) + (1.0 - share)
+
+func spread_factor(width: float) -> float:
+	# Enemy and summon hits vary by +-width around their value; forced rolls keep the value.
+	return 1.0 if not force_rolls.is_empty() else 1.0 + width * (2.0 * combat_rng.randf() - 1.0)
+
+func armor() -> float:
+	# Worn defence, plus the shield's while it is up.
+	var total: float = gear_total("armor")
+	if shield_time > 0:
+		var shield: Dictionary = rules.skills.shield
+		total += float(shield.armor_base) + float(shield.armor_per_level) * (float(config.shield_level) - 1.0)
+	return total
+
+func armor_reduction(level: int = -1) -> float:
+	# Defence against an attacker's level: the same armour turns away less from stronger enemies,
+	# so old armour falls behind as the enemies' levels rise (07 §2.4).
+	var attacker: int = enemy_level if level < 0 else level
+	var k: Array = config.build.armor_k
+	var value := armor()
+	return minf(float(config.build.armor_cap), value / maxf(0.001, value + float(k[0]) + float(k[1]) * attacker))
+
 func strike(id: String, amount: float, accuracy_roll: bool, roller: String, source: String, look: String = "") -> String:
 	# roller is "witch" or the summon skill ("automaton", "turret") whose level drives the rolls.
 	# One direct damage event: optional hit roll, then its own crit roll (area attacks call this per enemy).
@@ -2842,6 +2893,7 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 		probe.strike(source, "miss", 0.0)
 		return "miss"
 	var crit: bool = force_rolls.get("crit", combat_rng.randf() < crit_chance(roller))
+	amount *= attack_factor(roll_attack(crit)) if roller == "witch" else spread_factor(float(config.build.summon_spread))
 	var at: Vector3 = enemies[id].body.position
 	var size: float = enemies[id].size
 	var dealt: float = damage_enemy(id, amount * (config.crit_multiplier if crit else 1.0))
@@ -3195,7 +3247,9 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		play_sfx("block", 2.2)
 		probe.witch_hit(by_grade, 0.0, false, true)
 		return
-	# Damage reduction options shave every unblocked hit, at most by half.
+	# Enemy hits vary a little; her armour turns away a share by the attacker's level, then damage
+	# reduction options shave the rest, at most by half.
+	amount *= spread_factor(float(config.build.enemy_spread)) * (1.0 - armor_reduction())
 	amount *= 1.0 - minf(0.5, gear_total("damage_reduction") / 100.0)
 	# Only a heavy enough hit that leaves her standing stuns.
 	var stunned: bool = hp - amount > 0 and amount >= config.max_hp * config.hit_stun_min_ratio and dash.is_empty()
@@ -3512,6 +3566,7 @@ func hit_foe(target: String, amount: float, grade: String) -> void:
 		damage_ally(ally, amount, grade)
 
 func damage_ally(ally: Dictionary, amount: float, grade: String) -> void:
+	amount *= spread_factor(float(config.build.enemy_spread))
 	ally.hp -= amount
 	probe.ally_hit(grade, minf(amount, maxf(ally.hp + amount, 0.0)), ally.hp <= 0)
 	var floor_y: float = map.ground_y(ally.node.position)

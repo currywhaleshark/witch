@@ -11,7 +11,7 @@
   "pickup_radius": 1.1,
   "bases": [
     {"id": "glass_orb", "name": "유리구슬 매개체", "slot": "medium", "family": "common", "min_level": 1, "socket_max": 1},
-    {"id": "crystal_core", "name": "결정 매개체", "slot": "medium", "family": "common", "min_level": 24, "socket_max": 2},
+    {"id": "crystal_core", "name": "결정 매개체", "slot": "medium", "family": "common", "min_level": 24, "socket_max": 2, "base_scale": 1.15},
     {"id": "bp_shotgun", "name": "산탄포 설계도", "slot": "medium", "family": "blueprint", "min_level": 1, "socket_max": 0, "implicit": {"skill:shotgun": [1, 1, 2]}},
     {"id": "bp_chainsaw", "name": "전기톱 설계도", "slot": "medium", "family": "blueprint", "min_level": 1, "socket_max": 0, "implicit": {"skill:chainsaw": [1, 1, 2]}},
     {"id": "bp_automaton", "name": "태엽인형 설계도", "slot": "medium", "family": "blueprint", "min_level": 1, "socket_max": 0, "implicit": {"skill:automaton": [1, 1, 2]}},
@@ -21,16 +21,19 @@
     {"id": "ribbon_tie", "name": "리본 머리끈", "slot": "head", "min_level": 1, "socket_max": 1},
     {"id": "star_pin", "name": "별장식 머리핀", "slot": "head", "min_level": 24, "socket_max": 2},
     {"id": "cotton_coat", "name": "무명 덧옷", "slot": "outfit", "min_level": 1, "socket_max": 1},
-    {"id": "quilted_cape", "name": "누빈 망토", "slot": "outfit", "min_level": 24, "socket_max": 2},
+    {"id": "quilted_cape", "name": "누빈 망토", "slot": "outfit", "min_level": 24, "socket_max": 2, "base_scale": 1.15},
     {"id": "cotton_gloves", "name": "면장갑", "slot": "gloves", "min_level": 1, "socket_max": 1},
-    {"id": "work_gloves", "name": "가죽 작업장갑", "slot": "gloves", "min_level": 24, "socket_max": 2},
+    {"id": "work_gloves", "name": "가죽 작업장갑", "slot": "gloves", "min_level": 24, "socket_max": 2, "base_scale": 1.15},
     {"id": "sneakers", "name": "운동화", "slot": "shoes", "min_level": 1, "socket_max": 1},
-    {"id": "leather_boots", "name": "가죽 장화", "slot": "shoes", "min_level": 24, "socket_max": 2},
+    {"id": "leather_boots", "name": "가죽 장화", "slot": "shoes", "min_level": 24, "socket_max": 2, "base_scale": 1.15},
     {"id": "brass_brooch", "name": "놋쇠 브로치", "slot": "brooch", "min_level": 1, "socket_max": 1},
     {"id": "silver_brooch", "name": "은 세공 브로치", "slot": "brooch", "min_level": 24, "socket_max": 2},
     {"id": "copper_ring", "name": "구리 반지", "slot": "ring", "min_level": 1, "socket_max": 1},
     {"id": "silver_ring", "name": "은반지", "slot": "ring", "min_level": 24, "socket_max": 2}
   ],
+  "base_stats_note": "Base attack (medium) and armour (outfit, gloves, shoes) by item level: value = a + b * (level - 1), times the base's base_scale and its family's scale; rarity does not change it.",
+  "base_stats": {"medium": {"attack_min": [2, 0.6], "attack_max": [4, 0.9]}, "outfit": {"armor": [6, 1.2]}, "gloves": {"armor": [3, 0.6]}, "shoes": {"armor": [3, 0.6]},
+    "family_scale": {"blueprint": 0.6, "part": 0.6}},
   "affixes": [
     {"id": "damage_pct", "kind": "prefix", "label": "피해 +%d%%", "slots": ["medium", "gloves", "ring"], "tiers": [[5, 10], [11, 20], [21, 30]], "words": ["예리한", "날선", "무참한"]},
     {"id": "crit_pct", "kind": "prefix", "label": "치명타 확률 +%d%%p", "slots": ["medium", "gloves", "brooch"], "tiers": [[1, 2], [3, 4], [5, 6]], "words": ["매서운", "날카로운", "치명적인"]},
@@ -45,7 +48,9 @@
     {"id": "cast_speed", "kind": "suffix", "label": "시전 속도 +%d", "slots": ["medium", "gloves", "brooch", "ring"], "tiers": [[5, 10], [11, 20], [21, 30]], "words": ["손재주의", "숙련의", "장인의"]},
     {"id": "attack_speed", "kind": "suffix", "label": "공격 속도 +%d", "slots": ["medium", "gloves"], "tiers": [[5, 10], [11, 20], [21, 30]], "words": ["재빠름의", "날렵함의", "번개손의"]},
     {"id": "hit_recovery", "kind": "suffix", "label": "타격 회복 +%d", "slots": ["outfit", "head", "shoes"], "tiers": [[5, 10], [11, 20], [21, 30]], "words": ["오뚝이의", "버팀의", "꿋꿋함의"]},
-    {"id": "move_speed", "kind": "suffix", "label": "이동 속도 +%d%%", "slots": ["shoes"], "tiers": [[5, 8], [9, 12], [13, 16]], "words": ["산들바람의", "질풍의", "폭풍의"]}
+    {"id": "move_speed", "kind": "suffix", "label": "이동 속도 +%d%%", "slots": ["shoes"], "tiers": [[5, 8], [9, 12], [13, 16]], "words": ["산들바람의", "질풍의", "폭풍의"]},
+    {"id": "summon_damage_pct", "kind": "prefix", "label": "소환체 피해 +%d%%", "slots": ["medium", "brooch", "ring"], "tiers": [[5, 10], [11, 20], [21, 30]], "words": ["태엽 감은", "조율된", "명장의"]},
+    {"id": "summon_hp_pct", "kind": "suffix", "label": "소환체 생명력 +%d%%", "slots": ["outfit", "brooch", "ring"], "tiers": [[5, 10], [11, 20], [21, 35]], "words": ["보강의", "리벳의", "강철 골조의"]}
   ],
   "implicit_labels": {"life_on_kill": "처치 시 생명력 +%d", "potion_pct": "물약 회복 효율 +%d%%", "mana_cost_pct": "스킬 마나 소모 −%d%%",
     "skill:shotgun": "산탄 레벨 +%d", "skill:chainsaw": "전기톱 레벨 +%d", "skill:automaton": "태엽인형 레벨 +%d",
