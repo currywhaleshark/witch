@@ -13,6 +13,8 @@ const SKILL_NODE_NAMES = {
 	"naval_gun": {"base": "기본 포탄", "burst": "폭렬 포격", "pierce": "관통 포격"},
 	"guillotine": {"base": "기본 칼날", "saw": "회전 톱날", "lock": "고정"},
 	"restraint_winch": {"base": "한 가닥", "multi_pull": "범위 끌기", "multi_bind": "범위 구속"},
+	"focus_attack": {"base": "기본", "power": "집중 피해", "debuff": "디버프 강화"},
+	"area_attack": {"base": "기본", "power": "광역 피해", "debuff": "디버프 확산"},
 }
 
 var arena: Node

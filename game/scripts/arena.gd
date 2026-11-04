@@ -33,6 +33,7 @@ const DEVICES = ["guillotine", "hydraulic_press", "compound_executor"]
 # Which skill tree draws the casting circle; the basic attack draws none.
 const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "rifle": "firearm", "powder_keg": "firearm", "gatling": "firearm", "smoke_launcher": "firearm", "recoil_leap": "firearm", "artillery": "firearm", "naval_gun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
 	"guillotine": "drive", "hydraulic_press": "drive", "compound_executor": "drive", "restraint_winch": "drive", "exoskeleton": "drive",
+	"focus_attack": "drive", "area_attack": "drive",
 	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const AssetWarmup = preload("res://scripts/asset_warmup.gd")
@@ -147,6 +148,12 @@ var last_keg: Dictionary = {}
 var gatling_assembly: Node3D
 var channel: Dictionary = {}
 var last_burst: Dictionary = {}
+# Tool attacks (03 §2, drive II): the focus attack is a held channel in `channel`
+# ({skill, tool, slot, direction, time, period, loop, fire_left, hits}); an area sweep runs here
+# while its motion plays ({tool, plan, direction, phase, total, reach, struck}).
+const TOOL_ATTACKS = ["focus_attack", "area_attack"]
+var sweep: Dictionary = {}
+var last_tool_attack: Dictionary = {}
 # Smoke zones: enemies inside one, or looking through one, cannot see the witch
 # ({center, radius, wait, left, total, cloud}; wait counts down the canisters' flight).
 var smoke_assembly: Node3D
@@ -401,6 +408,8 @@ func reset_arena() -> void:
 	gatling_assembly = null
 	channel.clear()
 	last_burst.clear()
+	sweep.clear()
+	last_tool_attack.clear()
 	smoke_assembly = null
 	smokes.clear()
 	device_assembly = null
@@ -1665,7 +1674,7 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		# skill or an attack on an enemy ends the stream first.
 		if slot == channel.slot or (slot == "lmb" and cursor.get("enemy_id") == null):
 			return
-		stop_channel()
+		stop_channel(true)
 	if action_time > 0:
 		# An attack motion finishes first; the latest input runs right after it.
 		queued_input = {"slot": slot, "cursor": cursor.duplicate(true), "shift": shift}
@@ -1673,6 +1682,10 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 	var bound = state.bindings[slot]
 	if bound != null and not build.learned(bound):
 		show_message("배우지 않은 기술입니다")
+		return
+	if bound in TOOL_ATTACKS and state.active_tool == null:
+		# Tool attacks work only through a transformed tool, never the bare staff (03 §2).
+		show_message("공구를 전개해야 쓸 수 있습니다")
 		return
 	if bound != null and bound in GUNS and gun.get("id") == bound:
 		# Pressing the gun's key again takes it apart, free, like switching a tool off.
@@ -1715,6 +1728,8 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	var seconds = 0.0
 	if cast.get("skill") == rules.basic_id:
 		seconds = attack_seconds(gun.id if not gun.is_empty() else cast.active_tool)
+	elif cast.get("skill") in TOOL_ATTACKS:
+		seconds = tool_attack_seconds(cast.skill, cast.active_tool)
 	elif not skill.is_empty() and not skill.get("while_moving", false):
 		seconds = cast_seconds(skill)
 	if seconds <= 0:
@@ -1736,9 +1751,13 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	# and it fires at the gun's own point of the motion.
 	var shooting: bool = cast.skill == rules.basic_id and not gun.is_empty()
 	var release_ratio: float = float(rules.skills[gun.id].shot_release_ratio) if shooting else float(skill.get("release_ratio", 1.0))
+	if cast.skill in TOOL_ATTACKS:
+		# The focus attack's enter motion runs to its end before the loop; the area attack cuts
+		# from its tool's own point of the motion.
+		release_ratio = 1.0 if cast.skill == "focus_attack" else float(tool_attack_plan(cast.skill, cast.active_tool).release_ratio)
 	windup = {"slot": slot, "binding": state.bindings[slot], "cursor": snapshot, "shift": shift, "stationary": stationary,
-		"skill": cast.skill, "release": seconds * release_ratio}
-	if SKILL_TREES.has(cast.skill):
+		"skill": cast.skill, "release": seconds * release_ratio, "tool": cast.get("active_tool")}
+	if SKILL_TREES.has(cast.skill) and cast.skill not in TOOL_ATTACKS:
 		windup.circle_total = windup.release
 		charging_circle = spawn_cast_circle(SKILL_TREES[cast.skill], false)
 	if cast.skill == "automaton":
@@ -1791,7 +1810,11 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		world.add_child(gun_assembly)
 		gun_assembly.initialize(self)
 	player_model.look_at(player.position + cast_direction(cast))
-	player_visual.begin_motion("attack" if cast.skill == rules.basic_id and not shooting else ("spring_jump" if cast.skill in ["spring_dash", "recoil_leap"] else "cast"), seconds, release_ratio)
+	if cast.skill in TOOL_ATTACKS:
+		var plan := tool_attack_plan(cast.skill, cast.active_tool)
+		player_visual.begin_tool_motion("focus_enter" if cast.skill == "focus_attack" else "area", cast.active_tool, seconds, release_ratio, float(plan.get("blade_scale", 1.0)))
+	else:
+		player_visual.begin_motion("attack" if cast.skill == rules.basic_id and not shooting else ("spring_jump" if cast.skill in ["spring_dash", "recoil_leap"] else "cast"), seconds, release_ratio)
 	last_events = [{"type": "windup_started", "slot": slot, "skill": cast.skill}]
 
 func tick_windup(dt: float) -> void:
@@ -1834,6 +1857,9 @@ func tick_windup(dt: float) -> void:
 	player_visual.mark_release()
 	if state.bindings[started.slot] != started.binding:
 		cancel_summon_assemblies("binding_changed")
+		return
+	if started.skill in TOOL_ATTACKS and state.active_tool != started.get("tool"):
+		show_message("공구가 바뀌어 공격이 취소되었습니다")
 		return
 	var cursor: Dictionary = started.cursor
 	if cursor.get("enemy_id") != null and not enemies.has(cursor.enemy_id):
@@ -2614,6 +2640,208 @@ func gatling_interval() -> float:
 	var base: float = float(rules.skills.gatling.fire_seconds)
 	return motion_seconds(base, base * config.min_cast_ratio, config.attack_speed_k, config.attack_speed_score) * fire_interval_factor()
 
+func tool_speed(base: float) -> float:
+	# Tool attacks are attacks: their motions and hit intervals follow attack speed.
+	return motion_seconds(base, base * config.min_cast_ratio, config.attack_speed_k, config.attack_speed_score)
+
+func tool_attack_plan(skill_id: String, tool) -> Dictionary:
+	# The tool's own numbers for this attack, with the chosen node's factors on top.
+	var skill: Dictionary = rules.skills[skill_id]
+	var plan: Dictionary = (skill.tools.get(tool, {}) as Dictionary).duplicate(true)
+	plan.merge(skill.nodes[config[skill_id + "_node"]], true)
+	return plan
+
+func tool_attack_seconds(skill_id: String, tool) -> float:
+	var skill: Dictionary = rules.skills[skill_id]
+	return tool_speed(float(skill.enter_seconds) if skill_id == "focus_attack" else float(tool_attack_plan(skill_id, tool).seconds))
+
+func tool_hit_damage(skill_id: String, plan: Dictionary) -> float:
+	# The exoskeleton drives every tool attack harder; the skill's level and damage node add on.
+	return float(plan.damage) * float(plan.get("damage_factor", 1.0)) * exo_tool_factor() * skill_level_factor(skill_id)
+
+func tool_strike(id: String, tool: String, damage: float, plan: Dictionary) -> String:
+	# One tool hit rolls to hit like the basic attack and, on a hit, leaves the tool's own mark:
+	# slow (bolt cutter), shred (grinder) or bleed (chainsaw). The debuff node lengthens slow and
+	# shred and adds bleed stacks.
+	var result := "miss"
+	if tool == "chainsaw":
+		result = strike(id, damage, true, "witch", tool)
+		if result != "miss":
+			for i in int(plan.get("bleed_stacks", 1)):
+				if enemies.has(id):
+					add_bleed(id)
+		return result
+	var debuff: String = rules.skills[tool].debuff
+	var before: float = enemies[id][debuff]
+	enemies[id][debuff] = maxf(before, float(rules.skills[tool].debuff_seconds) * float(plan.get("debuff_factor", 1.0)))
+	result = strike(id, damage, true, "witch", tool)
+	if result == "miss" and enemies.has(id):
+		enemies[id][debuff] = before
+	return result
+
+func tool_hit_sound(tool: String) -> void:
+	match tool:
+		"bolt_cutter": play_sfx("bolt_cutter_cut", 0.8)
+		"grinder": play_sfx("grinder_hit", 1.55)
+		"chainsaw": play_sfx("chainsaw_cut", 1.05)
+
+func channel_slot(skill_id: String) -> String:
+	# The key that holds the channel: the one pressed, else the first bound to it.
+	var slot: String = hold.get("slot", "")
+	if state.bindings.get(slot) != skill_id:
+		slot = ""
+		for key in rules.SLOTS:
+			if state.bindings[key] == skill_id and slot == "":
+				slot = key
+	return slot
+
+func start_tool_channel(tool, direction: Vector3) -> void:
+	# Focus attack (03 §2): while its key is held she stands and strikes faster than her attack
+	# speed, piling the tool's mark onto one enemy in front. The bolt cutter thrusts once per loop,
+	# at the jaws' snap; the grinder and chainsaw hold the blade in and cut on their own clock.
+	if tool == null:
+		return
+	var plan := tool_attack_plan("focus_attack", tool)
+	var period: float = tool_speed(float(plan.interval))
+	var loop: float = period if plan.has("hit_phase") else tool_speed(float(plan.loop_seconds))
+	moving = false
+	move_marker.visible = false
+	channel = {"skill": "focus_attack", "tool": tool, "slot": channel_slot("focus_attack"), "direction": direction,
+		"time": 0.0, "period": period, "loop": loop, "fire_left": period * float(plan.get("hit_phase", 0.5)), "hits": 0, "plan": plan}
+	player_visual.begin_focus_loop(tool, loop)
+
+func tick_tool_channel(dt: float) -> void:
+	var skill: Dictionary = rules.skills.focus_attack
+	if state.active_tool != channel.tool:
+		# Switching or losing the tool ends the stream.
+		stop_channel(true)
+		return
+	var cost: float = float(skill.channel_mana_per_second) * dt
+	if state.mana + rules.EPS < cost:
+		stop_channel(true)
+		show_message("마나 부족 · 공격 중지")
+		return
+	state.mana = maxf(0.0, state.mana - cost)
+	probe.record([{"type": "tool_upkeep", "tool": "focus_attack", "amount": cost}])
+	var cursor := field_cursor()
+	var aim = null
+	if cursor.get("enemy_id") != null and enemies.has(cursor.enemy_id):
+		aim = enemies[cursor.enemy_id].body.position
+	elif cursor.get("ground") != null:
+		aim = map.grounded(point(cursor.ground))
+	if aim != null:
+		var flat: Vector3 = aim - player.position
+		flat.y = 0.0
+		if flat.length() > 0.05:
+			var wanted: Vector3 = flat.normalized()
+			var plan: Dictionary = channel.plan
+			if plan.has("turn_degrees_per_second"):
+				# The chainsaw cuts slowly: she turns the blade after the cursor at a limited rate.
+				var current: Vector3 = channel.direction
+				var turn: float = current.signed_angle_to(wanted, Vector3.UP)
+				var step: float = deg_to_rad(float(plan.turn_degrees_per_second)) * dt
+				channel.direction = current.rotated(Vector3.UP, clampf(turn, -step, step)).normalized()
+			else:
+				channel.direction = wanted
+	var direction: Vector3 = channel.direction
+	player_model.look_at(player.position + direction)
+	channel.time = float(channel.time) + dt
+	player_visual.set_focus_loop_phase(float(channel.time) / float(channel.loop))
+	channel.fire_left = float(channel.fire_left) - dt
+	while not channel.is_empty() and channel.fire_left <= 0:
+		focus_hit(direction)
+		channel.fire_left = float(channel.fire_left) + float(channel.period)
+
+func focus_hit(direction: Vector3) -> void:
+	# The nearest enemy in front, in sight and in reach, takes the hit; an empty swing is silent.
+	var tool: String = channel.tool
+	var best: String = nearest_enemy(player.position, float(rules.skills.focus_attack.range), direction, 0.2, false, true)
+	channel.hits = int(channel.hits) + 1
+	if best == "":
+		last_tool_attack = {"skill": "focus_attack", "tool": tool, "target": "", "result": "miss", "hits": channel.hits}
+		return
+	var result := tool_strike(best, tool, tool_hit_damage("focus_attack", channel.plan), channel.plan)
+	if result != "miss":
+		tool_hit_sound(tool)
+	last_tool_attack = {"skill": "focus_attack", "tool": tool, "target": best, "result": result, "hits": channel.hits}
+
+func tool_area(tool, direction: Vector3) -> void:
+	# Area attack (03 §2): the bolt cutter's enlarged blade cuts a long, narrow fan at once; the
+	# grinder's half circle and the chainsaw's full turn strike each enemy as the blade passes it.
+	if tool == null:
+		return
+	var plan := tool_attack_plan("area_attack", tool)
+	var reach: float = float(plan.reach) * float(plan.get("reach_factor", 1.0))
+	play_sfx("staff_swing", 0.8)
+	if plan.has("sweep"):
+		sweep = {"tool": tool, "plan": plan, "direction": direction, "phase": float(plan.release_ratio),
+			"total": tool_attack_seconds("area_attack", tool), "reach": reach, "struck": []}
+		last_tool_attack = {"skill": "area_attack", "tool": tool, "struck": [], "results": {}}
+		tick_sweep(0.0)
+		return
+	var half: float = deg_to_rad(float(plan.half_angle_degrees))
+	var struck: Array = []
+	for id in enemies.keys():
+		var delta: Vector3 = enemies[id].body.position - player.position
+		delta.y = 0.0
+		if delta.length() <= reach + 0.3 * float(enemies[id].size) and absf(direction.signed_angle_to(delta, Vector3.UP)) <= half and map.sees(player.position, enemies[id].body.position):
+			struck.append(id)
+	var results := {}
+	var damage := tool_hit_damage("area_attack", plan)
+	for id in struck:
+		if enemies.has(id):
+			results[id] = tool_strike(id, tool, damage, plan)
+	if results.values().has("hit") or results.values().has("crit"):
+		tool_hit_sound(tool)
+	spawn_vfx().fan_slash(player.position, direction, reach, rad_to_deg(half) * 2.0, map.ground_y(player.position))
+	last_tool_attack = {"skill": "area_attack", "tool": tool, "struck": struck, "results": results}
+
+func sweep_angle(keys: Array, phase: float) -> float:
+	# Staff-tip bearing of the playing clip (degrees, right positive), sampled from the v32 motion.
+	if phase <= float(keys[0][0]):
+		return float(keys[0][1])
+	for i in range(1, keys.size()):
+		if phase <= float(keys[i][0]):
+			var a: Array = keys[i - 1]
+			var b: Array = keys[i]
+			return lerpf(float(a[1]), float(b[1]), (phase - float(a[0])) / maxf(float(b[0]) - float(a[0]), 0.000001))
+	return float(keys[-1][1])
+
+func tick_sweep(dt: float) -> void:
+	if sweep.is_empty():
+		return
+	var keys: Array = sweep.plan.sweep
+	var before := sweep_angle(keys, float(sweep.phase))
+	sweep.phase = float(sweep.phase) + dt / maxf(float(sweep.total), 0.000001)
+	var now := sweep_angle(keys, float(sweep.phase))
+	var facing: Vector3 = sweep.direction
+	var right: Vector3 = facing.cross(Vector3.UP)
+	var damage := tool_hit_damage("area_attack", sweep.plan)
+	var cut := false
+	for id in enemies.keys():
+		if id in sweep.struck:
+			continue
+		var delta: Vector3 = enemies[id].body.position - player.position
+		delta.y = 0.0
+		if delta.length() > float(sweep.reach) + 0.3 * float(enemies[id].size):
+			continue
+		var bearing := rad_to_deg(atan2(delta.dot(right), delta.dot(facing)))
+		var passed := false
+		for turn in range(-2, 3):
+			var angle := bearing + 360.0 * turn
+			if angle >= now - 0.001 and angle <= before + 0.001:
+				passed = true
+		if passed and map.sees(player.position, enemies[id].body.position):
+			sweep.struck.append(id)
+			var result := tool_strike(id, sweep.tool, damage, sweep.plan)
+			last_tool_attack.struck.append(id)
+			last_tool_attack.results[id] = result
+			cut = cut or result != "miss"
+	if cut:
+		tool_hit_sound(sweep.tool)
+	if float(sweep.phase) >= float(keys[-1][0]):
+		sweep.clear()
+
 func start_channel(target: Vector3, direction: Vector3) -> void:
 	# Rotary cannon (03 §3, firearm III): after the spin-up cast it fires for as long as its key is
 	# held, turning after the cursor, while she stands still. Mana drains by the second.
@@ -2626,22 +2854,25 @@ func start_channel(target: Vector3, direction: Vector3) -> void:
 	visual.ready_to_fire()
 	moving = false
 	move_marker.visible = false
-	var slot: String = hold.get("slot", "")
-	if state.bindings.get(slot) != "gatling":
-		slot = ""
-		for key in rules.SLOTS:
-			if state.bindings[key] == "gatling" and slot == "":
-				slot = key
+	var slot: String = channel_slot("gatling")
 	channel = {"skill": "gatling", "slot": slot, "visual": visual, "fire_left": 0.0, "shots": 0,
 		"aim": target, "direction": direction, "focus": "", "focus_hits": 0}
 
 func channel_held() -> bool:
 	return not channel.is_empty() and hold.get("slot") == channel.slot and state.bindings.get(channel.slot) == channel.skill
 
-func stop_channel() -> void:
+func stop_channel(exit: bool = false) -> void:
+	# exit: the focus attack lets go with its exit motion (a short recovery); interrupts, death
+	# and field clear end it without one.
 	if channel.is_empty():
 		return
-	if is_instance_valid(channel.visual):
+	if channel.skill == "focus_attack":
+		player_visual.end_focus_loop()
+		if exit and hp > 0 and not field_cleared():
+			var seconds: float = tool_speed(float(rules.skills.focus_attack.exit_seconds))
+			action_time = maxf(action_time, seconds)
+			player_visual.begin_tool_motion("focus_exit", channel.tool, seconds, 1.0)
+	elif is_instance_valid(channel.visual):
 		channel.visual.dismiss()
 	channel.clear()
 
@@ -2649,7 +2880,10 @@ func tick_channel(dt: float) -> void:
 	if channel.is_empty():
 		return
 	if not channel_held():
-		stop_channel()
+		stop_channel(true)
+		return
+	if channel.skill == "focus_attack":
+		tick_tool_channel(dt)
 		return
 	var skill: Dictionary = rules.skills.gatling
 	var cost: float = float(skill.channel_mana_per_second) * dt
@@ -3037,7 +3271,7 @@ func tick_dash(dt: float) -> void:
 		player.velocity = Vector3.ZERO
 
 func execute_cast(event: Dictionary) -> void:
-	if SKILL_TREES.has(event.skill):
+	if SKILL_TREES.has(event.skill) and event.skill not in TOOL_ATTACKS:
 		if is_instance_valid(charging_circle) and charging_circle.charging:
 			charging_circle.flare()
 		else:
@@ -3115,6 +3349,10 @@ func execute_cast(event: Dictionary) -> void:
 			play_sfx("summon_assemble", 1.3)
 			show_exo_visual()
 		"bolt_cutter", "grinder", "chainsaw": pass  # the staff itself transforms; no ground ring
+		"focus_attack":
+			start_tool_channel(event.active_tool, direction)
+		"area_attack":
+			tool_area(event.active_tool, direction)
 		"shield":
 			shield_time = shield_duration()
 			# Recasting while the fan is up only refreshes the clock; otherwise a new one assembles.
@@ -3667,9 +3905,11 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		action_time = stun_time
 		player_visual.hit_react(stun_time)
 		stop_channel()
+		sweep.clear()
 	if hp == 0:
 		cancel_summon_assemblies("death")
 		stop_channel()
+		sweep.clear()
 		probe.counts.deaths += 1
 		save_mana_log("death")
 		cancel_pending_cast()
@@ -3805,6 +4045,7 @@ func _physics_process(dt: float) -> void:
 		clear_kegs()
 		clear_devices()
 		stop_channel()
+		sweep.clear()
 		clear_barrage()
 	var visual_start_position := player.position
 	var collecting_after_clear := field_cleared() and not loot_target.is_empty()
@@ -3839,6 +4080,7 @@ func _physics_process(dt: float) -> void:
 		tick_gun_reload(dt)
 		tick_kegs(dt)
 		tick_channel(dt)
+		tick_sweep(dt)
 		tick_smokes(dt)
 		tick_shells(dt)
 		tick_fires(dt)
@@ -4424,9 +4666,9 @@ func tick_staff_trail(dt: float) -> void:
 	if paused or not is_instance_valid(staff_trail):
 		return
 	var visual = player_visual
-	if visual.loaded_ok and visual._motion_kind == "attack" and is_instance_valid(visual.staff_root) and dt > 0:
+	if visual.loaded_ok and visual._motion_kind in ["attack", "area", "focus_loop"] and is_instance_valid(visual.staff_root) and dt > 0:
 		var tool = state.active_tool
-		var reach: float = {"bolt_cutter": 0.95, "grinder": 0.98, "chainsaw": 1.1}.get(tool, 0.82)
+		var reach: float = {"bolt_cutter": 0.62 + 0.33 * visual.blade_scale, "grinder": 0.98, "chainsaw": 1.1}.get(tool, 0.82)
 		var tip: Vector3 = visual.staff_root.to_global(Vector3(0, reach + 0.1, 0))
 		var base: Vector3 = visual.staff_root.to_global(Vector3(0, 0.36, 0))
 		if staff_tip_last != null:

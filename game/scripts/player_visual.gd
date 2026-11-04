@@ -11,6 +11,8 @@ const ENTRY_DIR := "res://assets/characters/player/transformation_v26/"
 const SPRING_JUMP_DIR := "res://assets/characters/player/spring_jump_v24/"
 const ASSET_DIR := "res://assets/characters/player/run_arm_v21/"
 const MODEL_DIR := "res://assets/characters/player/model_refinement_v28/"
+# v32 drive tool attacks: bolt thrust and sustained cut (enter/loop/exit), grinder sweep, chainsaw spin.
+const DRIVE_DIR := "res://assets/characters/player/drive_attack_v32/"
 # v29 replaces only the hand mesh of the v28 body (same rig, binds and clips); eyes/outfit stay v28.
 const BODY_PATH := "res://assets/characters/player/hand_rebuild_v29/body_standard_v29.glb"
 const PARTS := {
@@ -27,9 +29,20 @@ const CLIPS := {
 	"cast": "combat_cast_rh_v20", "hit_react": "combat_hit_rh_v20", "collapse": "combat_collapse_rh_v20",
 	"spring_jump": "combat_spring_jump_v24",
 	"entry": "combat_transform_entry_v26",
+	"bolt_enter": "drive_bolt_enter_v32", "bolt_loop": "drive_bolt_loop_v32", "bolt_exit": "drive_bolt_exit_v32",
+	"cut_enter": "drive_chainsaw_cut_enter_v32", "cut_loop": "drive_chainsaw_cut_loop_v32", "cut_exit": "drive_chainsaw_cut_exit_v32",
+	"grinder_sweep": "drive_grinder_sweep_v32", "chainsaw_spin": "drive_chainsaw_spin_v32",
 }
 # Clips authored after the v21 family, exported alone onto the same rig and added to its library.
-const EXTRA_CLIP_FILES := [ASSET_DIR + "combat_thrust_rh_v23.glb", SPRING_JUMP_DIR + "combat_spring_jump_v24.glb", ENTRY_DIR + "combat_transform_entry_v26.glb"]
+const EXTRA_CLIP_FILES := [ASSET_DIR + "combat_thrust_rh_v23.glb", SPRING_JUMP_DIR + "combat_spring_jump_v24.glb", ENTRY_DIR + "combat_transform_entry_v26.glb",
+	DRIVE_DIR + "drive_bolt_enter_v32.glb", DRIVE_DIR + "drive_bolt_loop_v32.glb", DRIVE_DIR + "drive_bolt_exit_v32.glb",
+	DRIVE_DIR + "drive_chainsaw_cut_enter_v32.glb", DRIVE_DIR + "drive_chainsaw_cut_loop_v32.glb", DRIVE_DIR + "drive_chainsaw_cut_exit_v32.glb",
+	DRIVE_DIR + "drive_grinder_sweep_v32.glb", DRIVE_DIR + "drive_chainsaw_spin_v32.glb"]
+# Tool attacks (03 §2): the focus attack enters, loops while held and exits; the area attack is one
+# motion per tool. The bolt cutter's area cut reuses the heavy swing with an enlarged blade.
+const AREA_CLIPS := {"bolt_cutter": "attack", "grinder": "grinder_sweep", "chainsaw": "chainsaw_spin"}
+# Where each area clip's hit starts: the heavy swing's impact, and where the sweeps begin to cut.
+const AREA_RELEASE := {"attack": 0.5, "grinder_sweep": 0.3125, "chainsaw_spin": 0.2917}
 # Authored release: swing 25/49, thrust 25/49, cast 17/33; normalized 0.5.
 const AUTHORED_RELEASE := {"attack": 0.5, "cast": 0.5, "spring_jump": 0.25}
 const STAFF_GRIP_OFFSET := Vector3(0.0074299751, 0.0480000079, 0.0158048961)
@@ -100,6 +113,14 @@ var _entry: FieldEntry
 var _hair_motion := HairMotion.new()
 var _entry_contract: Dictionary
 var _transformed_scene: PackedScene
+# Tool attack state: the focus clips' family ("bolt" or "cut"), the area clip, the held loop's
+# phase (driven by the arena's channel clock) and the bolt cutter's enlarged blade.
+var _tool_family := "bolt"
+var _area_clip := "attack"
+var _loop_phase := 0.0
+var _loop_rate := 1.0
+var giant_blade := 1.0
+var blade_scale := 1.0
 const COLLAPSE_BLEND_SECONDS := 0.18
 
 func _add_clips(path: String) -> bool:
@@ -171,6 +192,10 @@ func initialize() -> bool:
 		return _fail("missing_field_entry_contract")
 	_entry_contract = entry_data
 	_staff_slide_tracks.merge(entry_data.staff_slide_tracks)
+	var drive_data = JSON.parse_string(FileAccess.get_file_as_string(DRIVE_DIR + "runtime_contract.json"))
+	if not drive_data is Dictionary or not drive_data.get("staff_slide_tracks") is Dictionary:
+		return _fail("missing_drive_attack_contract")
+	_staff_slide_tracks.merge(drive_data.staff_slide_tracks)
 	for clip in CLIPS.values():
 		var slide_track = _staff_slide_tracks.get(clip)
 		if not slide_track is Array or slide_track.size() < 2:
@@ -274,8 +299,48 @@ func begin_motion(kind: String, duration: float, release_ratio: float) -> void:
 	authored_release_ratio = AUTHORED_RELEASE[kind]
 	_sample(kind, 0.0)
 
+func begin_tool_motion(kind: String, tool, duration: float, release_ratio: float, blade: float = 1.0) -> void:
+	# The arena picks the tool attack and its clock; the clip follows the tool it started with,
+	# so a later tool change never swaps the motion halfway.
+	if not loaded_ok or is_dead or kind not in ["focus_enter", "focus_exit", "area"]:
+		return
+	if kind == "area":
+		_area_clip = AREA_CLIPS.get(tool, "attack")
+	else:
+		_tool_family = "bolt" if tool == "bolt_cutter" else "cut"
+	_motion_kind = kind
+	_state = kind
+	motion_duration = maxf(duration, 0.000001)
+	motion_elapsed = 0.0
+	_release_pending = false
+	_release_elapsed = -1.0
+	gameplay_release_ratio = clampf(release_ratio, 0.0, 1.0)
+	authored_release_ratio = AREA_RELEASE[_area_clip] if kind == "area" else 1.0
+	giant_blade = blade if kind == "area" and _area_clip == "attack" else 1.0
+	_sample(kind, 0.0)
+
+func begin_focus_loop(tool, period: float) -> void:
+	# Held after the enter motion; set_focus_loop_phase follows the arena's channel clock.
+	if not loaded_ok or is_dead:
+		return
+	_tool_family = "bolt" if tool == "bolt_cutter" else "cut"
+	_motion_kind = "focus_loop"
+	_state = "focus_loop"
+	_release_pending = false
+	_release_elapsed = -1.0
+	_loop_phase = 0.0
+	_loop_rate = _length("focus_loop") / maxf(period, 0.000001)
+
+func set_focus_loop_phase(phase: float) -> void:
+	_loop_phase = fposmod(phase, 1.0)
+
+func end_focus_loop() -> void:
+	# Leaves an interrupt (hit react, collapse) or the exit motion that already replaced it.
+	if _motion_kind == "focus_loop":
+		_motion_kind = ""
+
 func mark_release() -> void:
-	if loaded_ok and _motion_kind in ["attack", "cast", "spring_jump"]:
+	if loaded_ok and _motion_kind in ["attack", "cast", "spring_jump", "focus_enter", "area"]:
 		if _motion_kind == "attack":
 			staff_visual.finish_assembly()
 		# The arena signals the real physics frame that crosses its release clock.
@@ -348,8 +413,15 @@ func sync_state(dt: float, moved: bool, action_remaining: float, paused: bool, d
 	_hair_motion.advance(dt, -1.0, _state == "dead" or cleared)
 	# Use the pose just sampled, including the real release latch. The former order
 	# drove the jaws with last frame's phase and reopened them on the impact frame.
-	staff_visual.advance(dt, is_dead or cleared,
-		clip_time / maxf(clip_length,.000001) if _motion_kind == "attack" else -1.0, staff_release)
+	var jaws := _motion_kind == "attack" or (_motion_kind == "area" and _area_clip == "attack") or (_motion_kind == "focus_loop" and _tool_family == "bolt")
+	staff_visual.advance(dt, is_dead or cleared, clip_time / maxf(clip_length,.000001) if jaws else -1.0, staff_release)
+	# The bolt cutter's area cut grows its blade for the swing and shrinks it back (rigid, uniform).
+	var grow := 1.0
+	if _motion_kind == "area" and giant_blade > 1.0:
+		var phase := clip_time / maxf(clip_length, .000001)
+		grow = lerpf(1.0, giant_blade, smoothstep(0.24, 0.42, phase) * (1.0 - smoothstep(0.64, 0.86, phase)))
+	blade_scale = move_toward(blade_scale, grow, maxf(dt, 0.0) * 6.0) if grow < blade_scale else grow
+	staff_visual.set_tool_scale("bolt_cutter", blade_scale)
 
 func _sync_pose(dt: float, moved: bool, action_remaining: float, cleared: bool, actual_speed: float) -> void:
 	_settle_turn(dt)
@@ -369,13 +441,16 @@ func _sync_pose(dt: float, moved: bool, action_remaining: float, cleared: bool, 
 		return
 	if _spring_jump.sample_pose(self):
 		return
+	if _motion_kind == "focus_loop":
+		_sample("focus_loop", _loop_phase * _length("focus_loop"))
+		return
 	if not _motion_kind.is_empty():
 		if action_remaining > 0 or _release_pending:
 			# Use the combat clock, including FCR/IAS/FHR and same-frame interrupts.
 			motion_elapsed = clampf(motion_duration - action_remaining, 0.0, motion_duration)
 			var progress := motion_elapsed / motion_duration
 			var normalized := progress
-			if _motion_kind in ["attack", "cast", "spring_jump"]:
+			if _motion_kind in ["attack", "cast", "spring_jump", "focus_enter", "area"]:
 				if _release_pending:
 					_release_pending = false
 					_release_elapsed = motion_elapsed
@@ -470,8 +545,15 @@ static func map_release_progress(progress: float, gameplay_ratio: float, authore
 		return a + (p - g) / (1.0 - g) * (1.0 - a)
 	return a
 
+func _clip_key(kind: String) -> String:
+	match kind:
+		"attack": return _attack_clip_kind
+		"focus_enter", "focus_loop", "focus_exit": return _tool_family + "_" + kind.trim_prefix("focus_")
+		"area": return _area_clip
+	return kind
+
 func _length(kind: String) -> float:
-	return runtime.animation_player.get_animation(_clips[_attack_clip_kind if kind == "attack" else kind]).length
+	return runtime.animation_player.get_animation(_clips[_clip_key(kind)]).length
 
 func _sample_staff_slide(clip: String, phase: float) -> float:
 	var values: Array = _staff_slide_tracks.get(clip, [0.0])
@@ -481,7 +563,7 @@ func _sample_staff_slide(clip: String, phase: float) -> float:
 
 func _sample(kind: String, time: float) -> void:
 	var animator: AnimationPlayer = runtime.animation_player
-	var next_clip: String = _clips[_attack_clip_kind if kind == "attack" else kind]
+	var next_clip: String = _clips[_clip_key(kind)]
 	clip_length = _length(kind)
 	clip_time = clampf(time, 0.0, clip_length)
 	# Explicit rest reset is a second guard against imported constant-track removal.
@@ -506,10 +588,10 @@ func _sample(kind: String, time: float) -> void:
 		staff_slide = lerpf(_collapse_grip_from, staff_slide, clampf(_collapse_elapsed / COLLAPSE_BLEND_SECONDS, 0.0, 1.0))
 	staff_root.position = STAFF_GRIP_OFFSET + STAFF_GRIP_BASIS.y * staff_slide
 	_hair_motion.sync_anchors()
-	playback_speed = _run_rate if kind == "run" else 1.0
-	if kind in ["attack", "cast", "hit_react"] or (kind == "spring_jump" and _motion_kind == "spring_jump"):
+	playback_speed = _run_rate if kind == "run" else (_loop_rate if kind == "focus_loop" else 1.0)
+	if kind in ["attack", "cast", "hit_react", "focus_enter", "focus_exit", "area"] or (kind == "spring_jump" and _motion_kind == "spring_jump"):
 		playback_speed = clip_length / motion_duration
-		if kind != "hit_react":
+		if kind not in ["hit_react", "focus_exit"]:
 			if _release_elapsed >= 0.0:
 				playback_speed = clip_length * (1.0 - authored_release_ratio) / maxf(motion_duration - _release_elapsed, 0.000001)
 			elif motion_elapsed / motion_duration < gameplay_release_ratio and gameplay_release_ratio > 0:

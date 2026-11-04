@@ -5,7 +5,7 @@ extends RefCounted
 const GOLD = Color("d8b77b")
 const KINDS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8, "spring_dash": 9,
 	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12, "matchlock": 14, "reload": 15, "rifle": 16, "powder_keg": 17, "gatling": 18, "smoke_launcher": 19, "recoil_leap": 20, "artillery": 21, "naval_gun": 22, "recoil_control": 23,
-	"guillotine": 24, "hydraulic_press": 25, "compound_executor": 26, "restraint_winch": 27, "exoskeleton": 28, "shock_frame": 29}
+	"guillotine": 24, "hydraulic_press": 25, "compound_executor": 26, "restraint_winch": 27, "exoskeleton": 28, "shock_frame": 29, "focus_attack": 30, "area_attack": 31}
 const PLAIN = 13
 
 static func draw(canvas: CanvasItem, p: Vector2, id: String, color: Color, scale: float = 1.0) -> void:
@@ -186,6 +186,17 @@ static func shape(canvas: CanvasItem, p: Vector2, kind: int, color: Color) -> vo
 			for sx in [-1, 1]:
 				canvas.draw_polyline(PackedVector2Array([p + Vector2(sx * 8, -12), p + Vector2(sx * 15, -2), p + Vector2(sx * 13, 10)]), GOLD, 2)
 				canvas.draw_circle(p + Vector2(sx * 15, -2), 2.5, GOLD)
+		30:
+			# Focus attack: a staff driving three quick strokes into one point.
+			canvas.draw_line(p + Vector2(-15, 13), p + Vector2(6, -8), color, 3)
+			for k in 3:
+				canvas.draw_line(p + Vector2(9 + k * 2, -11 - k * 2), p + Vector2(14 + k * 2, -16 - k * 2), GOLD, 2)
+			canvas.draw_circle(p + Vector2(10, -12), 3, GOLD)
+		31:
+			# Area attack: a wide arc swept around the witch.
+			canvas.draw_arc(p + Vector2(0, 6), 14, PI * 1.05, PI * 1.95, 14, GOLD, 3)
+			canvas.draw_arc(p + Vector2(0, 6), 8, PI * 1.15, PI * 1.85, 10, color, 2)
+			canvas.draw_line(p + Vector2(0, 14), p + Vector2(0, 0), color, 3)
 		29:
 			# Shock-absorbing frame: a coil spring between two plates.
 			canvas.draw_line(p + Vector2(-14, -14), p + Vector2(14, -14), color, 3)

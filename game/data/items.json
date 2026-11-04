@@ -71,7 +71,7 @@
     "boss": {"chance": 1.0, "guaranteed_unique": true, "weights": {"normal": 0, "magic": 40, "rare": 60}}
   },
   "grade_level_bonus": {"normal": 0, "champion": 0, "elite": 1, "boss": 2},
-  "skill_level_damage": {"shotgun": 0.03, "matchlock": 0.08, "rifle": 0.08, "powder_keg": 0.08, "gatling": 0.08, "recoil_leap": 0.08, "artillery": 0.08, "naval_gun": 0.08, "guillotine": 0.08, "hydraulic_press": 0.08, "compound_executor": 0.08, "restraint_winch": 0.05},
+  "skill_level_damage": {"shotgun": 0.03, "matchlock": 0.08, "rifle": 0.08, "powder_keg": 0.08, "gatling": 0.08, "recoil_leap": 0.08, "artillery": 0.08, "naval_gun": 0.08, "guillotine": 0.08, "hydraulic_press": 0.08, "compound_executor": 0.08, "restraint_winch": 0.05, "focus_attack": 0.05, "area_attack": 0.05},
   "slot_groups": {"medium": "medium", "head": "armor", "outfit": "armor", "gloves": "armor", "shoes": "armor", "brooch": "accessory", "ring": "accessory"},
   "slot_group_names": {"medium": "매개체", "armor": "착용구", "accessory": "장신구"},
   "pieces": {

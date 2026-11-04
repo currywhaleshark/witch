@@ -47,4 +47,6 @@ static func motion_for(player: Node3D) -> String:
 		"hit": return "hit_react"
 		"collapse", "dead": return "collapse"
 		"cast", "spring_jump", "run": return str(player._state)
+		# The v32 tool attacks have no fitted clearance keys; the bolt's area cut reuses the swing.
+		"area": return "attack" if str(player._area_clip) == "attack" else "idle"
 	return "idle"

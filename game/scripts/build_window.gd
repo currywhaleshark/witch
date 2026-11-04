@@ -11,7 +11,7 @@ const GOLD = Color("d8b77b")
 const TREE_NAMES = {"firearm": "화기", "drive": "구동", "automation": "자동화"}
 const SLOT_NAMES = {"rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r": "R"}
 # Every skill a slot can carry, grouped by tree; the basic attack stays on the left button.
-const LOADOUT = ["matchlock", "rifle", "powder_keg", "gatling", "smoke_launcher", "shotgun", "recoil_leap", "artillery", "naval_gun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash",
+const LOADOUT = ["matchlock", "rifle", "powder_keg", "gatling", "smoke_launcher", "shotgun", "recoil_leap", "artillery", "naval_gun", "bolt_cutter", "grinder", "chainsaw", "focus_attack", "area_attack", "shield", "spring_dash",
 	"guillotine", "restraint_winch", "hydraulic_press", "compound_executor", "exoskeleton", "automaton", "turret", "relay"]
 
 # Skill tree layout: candidates from 03 in tier rows, links of related study. A link into a skill
@@ -507,6 +507,19 @@ func effect_note(id: String) -> String:
 			var line: Dictionary = arena.device_plan("restraint_winch")
 			var bind: float = float(line.bind_seconds) + float(line.bind_per_level) * (config.restraint_winch_level - 1)
 			return "%s · 최대 %d명 · %s · 구속 %.1f초 · 보스는 둔화만" % [Build.SKILL_NODE_NAMES.restraint_winch[config.restraint_winch_node], int(line.targets), "앞으로 끌어옴" if line.pull else "제자리에 묶음", bind]
+		"focus_attack":
+			var parts: Array = []
+			for tool in ["bolt_cutter", "grinder", "chainsaw"]:
+				var plan: Dictionary = arena.tool_attack_plan("focus_attack", tool)
+				parts.append("%s %d/%.2f초" % [arena.rules.skills[tool].name, roundi(arena.tool_hit_damage("focus_attack", plan)), arena.tool_speed(float(plan.interval))])
+			return "%s · 누르는 동안 연타 · %s · 공구 디버프 · MP −%s/s" % [Build.SKILL_NODE_NAMES.focus_attack[config.focus_attack_node], " · ".join(parts), str(arena.rules.skills.focus_attack.channel_mana_per_second)]
+		"area_attack":
+			var shapes := {"bolt_cutter": "거대 날 부채꼴", "grinder": "전방 반원", "chainsaw": "한 바퀴"}
+			var parts: Array = []
+			for tool in ["bolt_cutter", "grinder", "chainsaw"]:
+				var plan: Dictionary = arena.tool_attack_plan("area_attack", tool)
+				parts.append("%s %s %d·%.1fm" % [arena.rules.skills[tool].name, shapes[tool], roundi(arena.tool_hit_damage("area_attack", plan)), float(plan.reach) * float(plan.get("reach_factor", 1.0))])
+			return "%s · %s · 공구 디버프" % [Build.SKILL_NODE_NAMES.area_attack[config.area_attack_node], " · ".join(parts)]
 		"exoskeleton":
 			var frame: Dictionary = arena.rules.skills.exoskeleton
 			var cut: int = roundi(100 * float(frame.stun_cut) * floorf(config.exoskeleton_level / float(frame.stun_cut_every)))

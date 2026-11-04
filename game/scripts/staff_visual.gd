@@ -21,6 +21,7 @@ var _transition_serial := 0
 var _departing_root: Node3D
 var _jaw_opening := deg_to_rad(8.0)
 var _entry_parts: Array = []
+var _tool_rest: Dictionary = {}
 
 func initialize() -> bool:
 	var data = JSON.parse_string(FileAccess.get_file_as_string(ASSET + "parts.json"))
@@ -76,6 +77,16 @@ func set_tool(tool) -> void:
 	_effect_age = 0.0
 	_transition_serial += 1
 	# Pose is deliberately untouched here: rapid switching reverses from current parts.
+
+func set_tool_scale(tool: String, amount: float) -> void:
+	# Uniform scale of a whole rigid tool around its mount on the shaft (never a stretch of one part).
+	if not tool_roots.has(tool):
+		return
+	var root: Node3D = tool_roots[tool]
+	if not _tool_rest.has(tool):
+		_tool_rest[tool] = root.transform
+	var mount := Vector3(0, 0.62, 0)
+	root.transform = (_tool_rest[tool] as Transform3D) * Transform3D(Basis.from_scale(Vector3.ONE * amount), mount * (1.0 - amount))
 
 func sample_entry_assembly(progress: float) -> void:
 	# Entry includes the common shaft/core and selected equipment ornaments. Tool

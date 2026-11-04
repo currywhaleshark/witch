@@ -159,8 +159,8 @@ func run() -> void:
 	var tree: Node = arena.skill_window.find_child("Tree", true, false)
 	var chainsaw: Control = tree.find_child("Node_chainsaw", false, false)
 	var states: Array = tree.get_children().map(func(box): return arena.skill_window.node_state(arena.skill_window.find_node(box.name.trim_prefix("Node_"))))
-	check(states.count("levels") == 9 and states.count("fixed") == 3 and states.count("missing") == 4,
-		"the drive tree lights its 9 levelled and 3 fixed implemented skills and greys the 4 unbuilt ones")
+	check(states.count("levels") == 11 and states.count("fixed") == 3 and states.count("missing") == 2,
+		"the drive tree lights its 11 levelled and 3 fixed implemented skills and greys the 2 unbuilt ones")
 	hold_key(KEY_CTRL, true)
 	tap(chainsaw, MOUSE_BUTTON_LEFT)
 	var ctrl_once: int = build.skills.chainsaw
@@ -170,7 +170,7 @@ func run() -> void:
 	check(build.skills.chainsaw == 10, "a multi-step click stops at the level cap")
 	tap(arena.skill_window.find_child("Node_chainsaw", true, false), MOUSE_BUTTON_RIGHT)
 	check(build.skills.chainsaw == 9, "a plain right-click lowers one step")
-	var unbuilt: Control = arena.skill_window.find_child("Node_집중 공격", true, false)
+	var unbuilt: Control = arena.skill_window.find_child("Node_구조 보강", true, false)
 	var spent: int = build.skill_points()
 	tap(unbuilt, MOUSE_BUTTON_LEFT)
 	check(build.skill_points() == spent, "an unbuilt skill takes no points")

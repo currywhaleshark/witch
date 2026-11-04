@@ -62,7 +62,8 @@ func _draw() -> void:
 			status = "%s  ·  탄 %d/%d  ·  장전 %.1f초" % [arena.rules.skills[gun.id].name, gun.ammo, arena.gun_magazine(gun.id), maxf(0.0, float(gun.reload_left))]
 	if not arena.channel.is_empty():
 		active = true
-		status = "%s 사격  ·  MP −%s/s  ·  떼면 중지" % [arena.rules.skills.gatling.name, str(arena.rules.skills.gatling.channel_mana_per_second)]
+		var stream: Dictionary = arena.rules.skills[arena.channel.skill]
+		status = "%s %s  ·  MP −%s/s  ·  떼면 중지" % [stream.name, "사격" if arena.channel.skill == "gatling" else "중", str(stream.channel_mana_per_second)]
 	panel(Rect2(24, 115, 300, 38), INK, GOLD if active else EDGE)
 	draw_circle(Vector2(44, 134), 5, GOLD if active else MUTED)
 	label_at(Vector2(61, 140), status, 14, GOLD if active else MUTED)
@@ -188,7 +189,7 @@ func _draw() -> void:
 			detail = "탄 %d/%d · %.2f초" % [gun.ammo, arena.gun_magazine(gun.id), arena.attack_seconds(gun.id)]
 		elif skill.id == "basic_attack":
 			detail = "동작 %.2f초" % arena.attack_seconds(tool)
-		elif skill.id == "gatling":
+		elif skill.id in ["gatling", "focus_attack"]:
 			detail = "MP %d · −%s/s" % [skill.mana_cost, str(skill.channel_mana_per_second)]
 		elif skill.id in arena.GUNS:
 			detail = "탄 %d/%d" % [gun.ammo, arena.gun_magazine(skill.id)] if gun.get("id") == skill.id else "MP %d · %d발" % [skill.mana_cost, arena.gun_magazine(skill.id)]
