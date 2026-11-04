@@ -26,8 +26,13 @@ const FirePatch = preload("res://scripts/fire_patch.gd")
 const ShieldVisual = preload("res://scripts/shield_visual.gd")
 const CastCircle = preload("res://scripts/cast_circle.gd")
 const SpringPlate = preload("res://scripts/spring_plate.gd")
+const DriveDevice = preload("res://scripts/drive_device.gd")
+const ExoVisual = preload("res://scripts/exoskeleton_visual.gd")
+# Drive executions set up on the ground and run on their own after the cast (03 §4).
+const DEVICES = ["guillotine", "hydraulic_press", "compound_executor"]
 # Which skill tree draws the casting circle; the basic attack draws none.
 const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "rifle": "firearm", "powder_keg": "firearm", "gatling": "firearm", "smoke_launcher": "firearm", "recoil_leap": "firearm", "artillery": "firearm", "naval_gun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
+	"guillotine": "drive", "hydraulic_press": "drive", "compound_executor": "drive", "restraint_winch": "drive", "exoskeleton": "drive",
 	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const AssetWarmup = preload("res://scripts/asset_warmup.gd")
@@ -152,6 +157,15 @@ var shells: Array = []
 var fires: Array = []
 var burn_clock := 0.0
 var last_impact: Dictionary = {}
+# Drive devices: one assembles at its spot during the cast, then each runs on its own clock
+# ({skill, model, visual, time, center, plan, fired, ticks, locked, caged}). Winch hooks in flight
+# ({visual, targets, spots, time, plan, fired, direction}) and the exoskeleton's clock sit beside them.
+var device_assembly: Node3D
+var devices: Array = []
+var winches: Array = []
+var last_device: Dictionary = {}
+var exo_time := 0.0
+var exo_visual: Node3D
 var last_shotgun: Dictionary = {}
 var last_recoil: Dictionary = {}
 var last_shot: Dictionary = {}
@@ -389,6 +403,10 @@ func reset_arena() -> void:
 	last_burst.clear()
 	smoke_assembly = null
 	smokes.clear()
+	device_assembly = null
+	devices.clear()
+	winches.clear()
+	last_device.clear()
 	shells.clear()
 	fires.clear()
 	burn_clock = 0.0
@@ -454,6 +472,8 @@ func reset_arena() -> void:
 	hit_time = 0
 	stun_time = 0
 	shield_time = 0
+	exo_time = 0.0
+	exo_visual = null
 	if is_instance_valid(shield_visual):
 		shield_visual.queue_free()
 	potion_slots = []
@@ -1421,12 +1441,14 @@ func spatial_check(skill: Dictionary, cursor: Dictionary):
 			return "invalid_ground"
 		if pos.distance_to(player.position) < 0.9:
 			return "invalid_ground"
-		for id in enemies:
-			if enemies[id].body.position.distance_to(pos) < 0.9:
-				return "invalid_ground"
-		for ally in allies:
-			if ally.node.position.distance_to(pos) < 0.9:
-				return "invalid_ground"
+		# Executions are set right over their victims; other placements need a free spot.
+		if not skill.get("over_enemies", false):
+			for id in enemies:
+				if enemies[id].body.position.distance_to(pos) < 0.9:
+					return "invalid_ground"
+			for ally in allies:
+				if ally.node.position.distance_to(pos) < 0.9:
+					return "invalid_ground"
 		return "out_of_range" if player.position.distance_to(pos) > float(skill.range) else null
 	if skill.get("targeting") == "direction":
 		# Direction skills fire toward the cursor at once; range only limits their reach.
@@ -1741,6 +1763,9 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 	elif cast.skill == "powder_keg":
 		windup.visual_duration = windup.release
 		begin_keg_visual(cast_direction(cast))
+	elif cast.skill in DEVICES or cast.skill == "restraint_winch":
+		windup.visual_duration = windup.release
+		device_assembly = begin_device_visual(cast.skill, cast_target(cast), cast_direction(cast))
 	elif cast.skill == "smoke_launcher":
 		windup.visual_duration = windup.release
 		var facing: Vector3 = cast_direction(cast)
@@ -1796,6 +1821,8 @@ func tick_windup(dt: float) -> void:
 		gatling_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(keg_assembly):
 		keg_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if is_instance_valid(device_assembly):
+		device_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(spring_plate):
 		spring_plate.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(gun_assembly):
@@ -1898,6 +1925,9 @@ func cancel_summon_assemblies(reason: String) -> void:
 	if is_instance_valid(smoke_assembly):
 		smoke_assembly.cancel(reason)
 	smoke_assembly = null
+	if is_instance_valid(device_assembly):
+		device_assembly.cancel(reason)
+	device_assembly = null
 
 func begin_spring_plate(direction: Vector3) -> void:
 	spring_plate = SpringPlate.new()
@@ -1916,6 +1946,347 @@ func begin_keg_visual(direction: Vector3) -> void:
 	keg_assembly.position = keg_start(direction)
 	keg_assembly.look_at(keg_assembly.global_position + direction, Vector3.UP)
 	keg_assembly.initialize(self)
+
+func device_plan(skill_id: String) -> Dictionary:
+	# A device's timings and numbers: its chosen node's when it has nodes.
+	var skill: Dictionary = rules.skills[skill_id]
+	if skill_id == "restraint_winch":
+		var plan: Dictionary = skill.duplicate()
+		plan.merge(skill.nodes[config.restraint_winch_node], true)
+		# Hooks reel home once the pull is done (or soon after they bite, when they only bind).
+		plan.release_at = float(plan.fly_seconds) + (float(plan.pull_seconds) if plan.pull else 0.35)
+		plan.end_at = float(plan.release_at) + 0.25
+		return plan
+	return skill.nodes[config[skill_id + "_node"]] if skill.has("nodes") else skill
+
+func device_model(skill_id: String) -> String:
+	if skill_id == "guillotine":
+		return {"base": "guillotine", "saw": "guillotine_saw", "lock": "guillotine_lock"}[config.guillotine_node]
+	return skill_id
+
+func begin_device_visual(skill_id: String, target: Vector3, direction: Vector3) -> Node3D:
+	# Executions assemble on the spot they will strike; the winch sets down just in front of her.
+	var plan := device_plan(skill_id)
+	var visual = DriveDevice.new()
+	visual.configure(device_model(skill_id), plan, float(plan.get("hit_radius", plan.get("trap_radius", 0.5))))
+	world.add_child(visual)
+	if skill_id == "restraint_winch":
+		visual.position = map.grounded(player.position + direction * float(plan.offset))
+	else:
+		visual.position = map.grounded(target)
+	visual.look_at(visual.global_position + direction, Vector3.UP)
+	visual.initialize(self)
+	return visual
+
+func place_device(skill_id: String, target: Vector3, direction: Vector3) -> void:
+	var visual = device_assembly
+	device_assembly = null
+	if not is_instance_valid(visual):
+		visual = begin_device_visual(skill_id, target, direction)
+	visual.activate()
+	var entry := {"skill": skill_id, "model": device_model(skill_id), "visual": visual, "time": 0.0, "center": visual.global_position,
+		"plan": device_plan(skill_id), "fired": {}, "ticks": 0, "locked": "", "caged": [], "marked": []}
+	devices.append(entry)
+	last_device = entry
+	play_sfx("summon_assemble", 1.6)
+
+func fire_once(entry: Dictionary, key: String, at_time: float) -> bool:
+	if entry.fired.has(key) or float(entry.time) < at_time:
+		return false
+	entry.fired[key] = true
+	return true
+
+func tick_devices(dt: float) -> void:
+	# Each device runs its mechanism; the hits land on the frames the mechanism reaches them.
+	for entry in devices.duplicate():
+		entry.time += dt
+		var t: float = entry.time
+		var plan: Dictionary = entry.plan
+		match entry.model:
+			"guillotine":
+				if fire_once(entry, "drop", float(plan.drop_at) + float(plan.drop_seconds)):
+					device_hits(entry, float(plan.hit_radius), float(plan.damage), "guillotine")
+					device_thud(entry, 0.6, "bolt_cutter_cut")
+			"guillotine_lock":
+				if fire_once(entry, "lock", 0.0):
+					entry.locked = lock_target(entry)
+					catch_marks(entry, [entry.locked])
+				if fire_once(entry, "drop", float(plan.drop_at) + float(plan.drop_seconds)):
+					device_hits(entry, float(plan.hit_radius), float(plan.damage), "guillotine", {entry.locked: float(plan.lock_bonus)})
+					release_hold([entry.locked])
+					device_thud(entry, 0.6, "bolt_cutter_cut")
+			"guillotine_saw":
+				while entry.ticks < int(plan.ticks) and t >= float(plan.tick_from) + float(plan.tick_every) * entry.ticks:
+					entry.ticks += 1
+					if not device_hits(entry, float(plan.hit_radius), float(plan.tick_damage), "guillotine").is_empty():
+						play_sfx("chainsaw_cut", 1.05)
+			"hydraulic_press":
+				if fire_once(entry, "press", float(plan.press_at) + float(plan.press_seconds)):
+					for id in device_hits(entry, float(plan.hit_radius), float(plan.damage), "hydraulic_press"):
+						restrain(id, "stun", press_stun_seconds(float(plan.stun_seconds)))
+					spawn_vfx().shockwave(entry.center, float(plan.hit_radius), map.ground_y(entry.center))
+					device_thud(entry, 0.5, "boss_slam")
+			"compound_executor":
+				if fire_once(entry, "cage", float(plan.gate_at) + float(plan.gate_seconds) * 0.5):
+					entry.caged = cage_enemies(entry)
+					catch_marks(entry, entry.caged)
+				if fire_once(entry, "press", float(plan.press_at) + float(plan.press_seconds)):
+					for id in device_hits(entry, float(plan.trap_radius), float(plan.press_damage) * executor_synergy("hydraulic_press"), "compound_executor"):
+						restrain(id, "stun", press_stun_seconds(float(plan.stun_seconds)))
+					device_thud(entry, 0.5, "boss_slam")
+				while entry.ticks < int(plan.saw_ticks) and t >= float(plan.saw_from) + float(plan.saw_every) * entry.ticks:
+					entry.ticks += 1
+					var sawn: Array = device_hits(entry, float(plan.trap_radius), float(plan.saw_damage) * executor_synergy("guillotine"), "compound_executor")
+					if entry.ticks == 1:
+						for id in sawn:
+							add_bleed(id)
+					if not sawn.is_empty():
+						play_sfx("chainsaw_cut", 1.05)
+				if fire_once(entry, "open", float(plan.end_at)):
+					release_hold(entry.caged)
+		entry.visual.work(t)
+		if entry.visual.finished(t):
+			release_hold(entry.caged + [entry.locked])
+			entry.visual.queue_free()
+			devices.erase(entry)
+
+func device_hits(entry: Dictionary, radius: float, amount: float, source: String, bonus: Dictionary = {}) -> Array:
+	# Everyone under the mechanism, plus whoever it holds, takes the hit with the execution bonus.
+	var struck: Array = []
+	for id in enemies.keys():
+		var gap: Vector3 = enemies[id].body.position - entry.center
+		gap.y = 0.0
+		if gap.length() <= radius + 0.2 * float(enemies[id].size) or id in entry.caged or id == entry.locked:
+			struck.append(id)
+	for id in struck:
+		if enemies.has(id):
+			strike(id, amount * execute_factor(id, id in entry.get("marked", [])) * float(bonus.get(id, 1.0)), false, "witch", source)
+	return struck.filter(func(id): return enemies.has(id))
+
+func device_thud(entry: Dictionary, shake: float, cue: String) -> void:
+	shake_time = maxf(shake_time, 0.12 * shake)
+	play_sfx(cue, 0.7)
+
+func execute_factor(id: String, marked: bool = false) -> float:
+	# Executions (03 §4) hit harder the more HP the enemy has lost, and once more if a tool has
+	# marked it (slow, shred or bleed: one is enough, since switching tools is costly) or the winch
+	# holds it. The devices' own stun and bind never count, so the bonus rewards setting it up first.
+	# marked: a caged or clamped enemy keeps the mark it had when it was caught.
+	var enemy: Dictionary = enemies[id]
+	var plan: Dictionary = config.execution
+	var lost: float = clampf(1.0 - float(enemy.hp) / maxf(1.0, float(enemy.max_hp)), 0.0, 1.0)
+	return 1.0 + float(plan.low_hp_bonus) * lost + (float(plan.debuff_bonus) if marked or tool_marked(enemy) else 0.0)
+
+func tool_marked(enemy: Dictionary) -> bool:
+	for key in config.execution.tool_debuffs:
+		if key == "bleed" and not enemy.bleeds.is_empty():
+			return true
+		if key != "bleed" and float(enemy.get(key, 0.0)) > 0:
+			return true
+	return false
+
+func catch_marks(entry: Dictionary, ids: Array) -> void:
+	# Remember who carried a tool mark when the device caught them, for the rest of its run.
+	for id in ids:
+		if enemies.has(id) and tool_marked(enemies[id]) and id not in entry.marked:
+			entry.marked.append(id)
+
+func restrain(id: String, kind: String, seconds: float) -> bool:
+	# Stun (press) or bind (winch, cage, lock): it stops, loses its windup and its charge.
+	# Bosses keep their patterns and are never held.
+	if not enemies.has(id):
+		return false
+	var enemy: Dictionary = enemies[id]
+	if config.enemy_types[enemy.kind].has("boss"):
+		return false
+	enemy[kind] = maxf(float(enemy.get(kind, 0.0)), seconds)
+	enemy.charging = 0.0
+	interrupt_attack(enemy)
+	return true
+
+func release_hold(ids: Array) -> void:
+	for id in ids:
+		if enemies.has(id):
+			enemies[id].bound = 0.0
+
+func haul(id: String, to: Vector3, seconds: float, share: float = 1.0) -> void:
+	# Drags the enemy along the floor toward a point (the knockback slide, pointed the other way).
+	var enemy: Dictionary = enemies[id]
+	var gap: Vector3 = to - enemy.body.position
+	gap.y = 0.0
+	var distance: float = gap.length() * share
+	if distance < 0.05:
+		return
+	enemy.knockback_dir = gap.normalized()
+	enemy.knockback_left = distance
+	enemy.knockback_speed = distance / maxf(0.05, seconds)
+
+func press_stun_seconds(base: float) -> float:
+	return base + float(rules.skills.hydraulic_press.stun_per_level) * (float(config.hydraulic_press_level) - 1.0)
+
+func executor_synergy(part: String) -> float:
+	# The executor's press and saw grow with the press and guillotine the witch has studied.
+	return 1.0 + float(rules.skills.compound_executor.synergy_per_level) * maxf(0.0, float(config[part + "_level"]) - 1.0)
+
+func lock_target(entry: Dictionary) -> String:
+	# The lock clamps close on the nearest enemy that can be held and drag it under the blade.
+	var plan: Dictionary = entry.plan
+	var best := ""
+	var near := float(plan.lock_radius)
+	for id in enemies:
+		var gap: Vector3 = enemies[id].body.position - entry.center
+		gap.y = 0.0
+		if gap.length() <= near and not config.enemy_types[enemies[id].kind].has("boss"):
+			near = gap.length()
+			best = id
+	if best != "":
+		restrain(best, "bound", float(plan.drop_at) + float(plan.drop_seconds) + 0.2)
+		haul(best, entry.center, float(plan.clamp_seconds))
+	return best
+
+func cage_enemies(entry: Dictionary) -> Array:
+	# The gates shut on everyone inside; each is held near the middle until the gates reopen.
+	var plan: Dictionary = entry.plan
+	var caged: Array = []
+	for id in enemies:
+		var gap: Vector3 = enemies[id].body.position - entry.center
+		gap.y = 0.0
+		if gap.length() <= float(plan.trap_radius) and restrain(id, "bound", float(plan.end_at)):
+			caged.append(id)
+			if gap.length() > float(plan.hold_radius):
+				haul(id, entry.center + gap.normalized() * float(plan.hold_radius), float(plan.gate_seconds))
+	return caged
+
+func fire_winch(event: Dictionary, direction: Vector3) -> void:
+	# Restraint winch (03 drive II): hooks bite the target (and, with the multi-strand nodes, those
+	# around it), then reel them in to her or bind them where they stand.
+	var plan := device_plan("restraint_winch")
+	var first = event.get("target_enemy")
+	if first == null or not enemies.has(first):
+		cancel_summon_assemblies("target_lost")
+		return
+	var targets: Array = [first]
+	if int(plan.targets) > 1:
+		var around_first: Vector3 = enemies[first].body.position
+		var others: Array = enemies.keys().filter(func(id): return id != first and enemies[id].body.position.distance_to(around_first) <= float(plan.gather_radius))
+		others.sort_custom(func(a, b): return enemies[a].body.position.distance_to(around_first) < enemies[b].body.position.distance_to(around_first))
+		targets.append_array(others.slice(0, int(plan.targets) - 1))
+	var visual = device_assembly
+	device_assembly = null
+	if not is_instance_valid(visual):
+		visual = begin_device_visual("restraint_winch", cast_target(event), direction)
+	visual.activate()
+	var spots := {}
+	for id in targets:
+		spots[id] = enemies[id].body.position
+	var entry := {"visual": visual, "targets": targets, "spots": spots, "time": 0.0, "plan": plan, "fired": {}, "direction": direction}
+	winches.append(entry)
+	last_device = entry
+	play_sfx("staff_swing", 0.8)
+
+func tick_winches(dt: float) -> void:
+	for entry in winches.duplicate():
+		entry.time += dt
+		var plan: Dictionary = entry.plan
+		if fire_once(entry, "hook", float(plan.fly_seconds)):
+			hook_targets(entry)
+		var points: Array = []
+		for id in entry.targets:
+			if enemies.has(id):
+				entry.spots[id] = enemies[id].body.position
+			points.append(entry.spots[id])
+		entry.visual.work(entry.time, points)
+		if entry.visual.finished(entry.time):
+			entry.visual.queue_free()
+			winches.erase(entry)
+
+func hook_targets(entry: Dictionary) -> void:
+	var plan: Dictionary = entry.plan
+	var bind: float = float(plan.bind_seconds) + float(plan.bind_per_level) * (float(config.restraint_winch_level) - 1.0)
+	var count: int = entry.targets.size()
+	var across: Vector3 = Vector3(entry.direction).cross(Vector3.UP)
+	for i in count:
+		var id: String = entry.targets[i]
+		if not enemies.has(id):
+			continue
+		strike(id, float(plan.hook_damage), false, "witch", "restraint_winch")
+		if not enemies.has(id):
+			continue
+		var enemy: Dictionary = enemies[id]
+		if config.enemy_types[enemy.kind].has("boss"):
+			# A boss is too heavy to drag or tie down; the line only slows it.
+			enemy.slow = maxf(float(enemy.slow), float(plan.boss_slow_seconds))
+			continue
+		if plan.pull:
+			restrain(id, "bound", float(plan.pull_seconds) + bind)
+			# The winch's bind is a setup for the executions, unlike the devices' own holds.
+			enemy.winched = float(plan.pull_seconds) + bind
+			var landing: Vector3 = player.position + Vector3(entry.direction) * float(plan.stop_distance) + across * (i - (count - 1) / 2.0) * 0.8
+			haul(id, landing, float(plan.pull_seconds), float(plan.heavy_pull) if enemy.heavy else 1.0)
+		else:
+			restrain(id, "bound", bind)
+			enemy.winched = bind
+	play_sfx("staff_hit", 0.8)
+
+func clear_devices() -> void:
+	for entry in devices:
+		release_hold(entry.caged + [entry.locked])
+		if is_instance_valid(entry.visual):
+			entry.visual.dismiss()
+	devices.clear()
+	for entry in winches:
+		if is_instance_valid(entry.visual):
+			entry.visual.dismiss()
+	winches.clear()
+
+func exo_level() -> float:
+	return float(config.exoskeleton_level)
+
+func exo_duration() -> float:
+	var frame: Dictionary = rules.skills.exoskeleton
+	return float(frame.duration_seconds) + float(frame.duration_per_level) * (exo_level() - 1.0)
+
+func exo_tool_factor() -> float:
+	if exo_time <= 0:
+		return 1.0
+	var frame: Dictionary = rules.skills.exoskeleton
+	return 1.0 + float(frame.tool_damage) + float(frame.tool_damage_per_level) * (exo_level() - 1.0)
+
+func exo_stun_factor() -> float:
+	# Every fifth exoskeleton level cuts the witch's hit stagger once more while it is worn, and
+	# the shock-absorbing frame passive cuts it a little per level on top.
+	if exo_time <= 0:
+		return 1.0
+	var frame: Dictionary = rules.skills.exoskeleton
+	var cut: float = float(frame.stun_cut) * floorf(exo_level() / float(frame.stun_cut_every)) + float(config.passives.shock_frame.exo_stagger_cut_per_level) * shock_level()
+	return maxf(0.2, 1.0 - cut)
+
+func show_exo_visual() -> void:
+	# The frame goes on (or a recast keeps the one already on) when the skill releases.
+	if not player_visual.loaded_ok:
+		return
+	if not is_instance_valid(exo_visual):
+		exo_visual = ExoVisual.new()
+		player_visual.runtime.skeleton.add_child(exo_visual)
+		if not exo_visual.initialize(player_visual.runtime.skeleton):
+			exo_visual.queue_free()
+			exo_visual = null
+			return
+		exo_visual.prepare()
+		exo_visual.wear(player_visual)
+
+func sync_exo_visual(dt: float) -> void:
+	# After the body pose: the frame fades with the skill's clock and follows the current motion.
+	if not is_instance_valid(exo_visual):
+		return
+	var target := 1.0 if exo_time > 0 and hp > 0 else 0.0
+	exo_visual.set_shown(move_toward(exo_visual.shown, target, dt / ExoVisual.FADE_SECONDS))
+	var phase: float = player_visual.clip_time / maxf(player_visual.clip_length, 0.000001)
+	exo_visual.sync_pose_for_motion(ExoVisual.motion_for(player_visual), phase)
+	if exo_visual.shown <= 0.0 and target <= 0.0:
+		exo_visual.take_off(player_visual)
+		exo_visual.queue_free()
+		exo_visual = null
 
 func roll_keg(target: Vector3, direction: Vector3) -> void:
 	# Powder keg (03 §3, firearm area I): it rolls along the floor toward the aim and bursts on the
@@ -2681,7 +3052,8 @@ func execute_cast(event: Dictionary) -> void:
 	match event.skill:
 		"basic_attack":
 			var tool = event.active_tool
-			var damage: float = rules.skills[tool].attack_damage if tool != null else config.basic_damage
+			# The exoskeleton drives the tool attacks harder, not the bare staff.
+			var damage: float = rules.skills[tool].attack_damage * exo_tool_factor() if tool != null else config.basic_damage
 			var best = nearest_enemy(player.position, rules.skills.basic_attack.range, direction, 0.2, false, true)
 			if event.get("target_enemy") != null and enemies.has(event.target_enemy):
 				best = event.target_enemy
@@ -2734,6 +3106,14 @@ func execute_cast(event: Dictionary) -> void:
 			call_artillery(target, direction)
 		"naval_gun":
 			call_naval_gun(target, direction)
+		"guillotine", "hydraulic_press", "compound_executor":
+			place_device(event.skill, target, direction)
+		"restraint_winch":
+			fire_winch(event, direction)
+		"exoskeleton":
+			exo_time = exo_duration()
+			play_sfx("summon_assemble", 1.3)
+			show_exo_visual()
 		"bolt_cutter", "grinder", "chainsaw": pass  # the staff itself transforms; no ground ring
 		"shield":
 			shield_time = shield_duration()
@@ -2868,10 +3248,22 @@ func spread_factor(width: float) -> float:
 func armor() -> float:
 	# Worn defence, plus the shield's while it is up.
 	var total: float = gear_total("armor")
+	# The shock-absorbing frame passive reinforces both the shield and the exoskeleton while up.
+	var absorb: Dictionary = config.passives.shock_frame
 	if shield_time > 0:
 		var shield: Dictionary = rules.skills.shield
-		total += float(shield.armor_base) + float(shield.armor_per_level) * (float(config.shield_level) - 1.0)
+		total += float(shield.armor_base) + float(shield.armor_per_level) * (float(config.shield_level) - 1.0) + float(absorb.shield_armor_per_level) * shock_level()
+	if exo_time > 0:
+		var frame: Dictionary = rules.skills.exoskeleton
+		total += float(frame.armor_base) + float(frame.armor_per_level) * (float(config.exoskeleton_level) - 1.0) + float(absorb.exo_armor_per_level) * shock_level()
 	return total
+
+func shock_level() -> float:
+	return float(config.passive_levels.get("shock_frame", 0))
+
+func summon_guard() -> float:
+	# Share of every hit the witch's summons shrug off, from the shock-absorbing frame passive.
+	return minf(0.5, float(config.passives.shock_frame.summon_guard_per_level) * shock_level())
 
 func armor_reduction(level: int = -1) -> float:
 	# Defence against an attacker's level: the same armour turns away less from stronger enemies,
@@ -2948,6 +3340,10 @@ func flinch(enemy: Dictionary, scale: float = 1.0, forced: bool = false) -> void
 	enemy.flinch = seconds
 	enemy.flinch_guard = seconds + float(config.enemy_flinch.guard_seconds)
 	probe.counts.enemy_flinches += 1
+	interrupt_attack(enemy)
+
+func interrupt_attack(enemy: Dictionary) -> void:
+	# It loses the attack it was winding up.
 	if enemy.windup > 0:
 		enemy.windup = 0.0
 		enemy.attack = ""
@@ -3231,7 +3627,8 @@ func block_chance() -> float:
 	return clampf(chance, 0.0, shield.block_cap)
 
 func hit_recovery_seconds() -> float:
-	return motion_seconds(config.hit_recovery_seconds, config.min_hit_recovery_seconds, config.hit_recovery_k, config.hit_recovery_score)
+	# The exoskeleton shortens the stagger once every few of its levels.
+	return motion_seconds(config.hit_recovery_seconds, config.min_hit_recovery_seconds, config.hit_recovery_k, config.hit_recovery_score) * exo_stun_factor()
 
 func damage_player(amount: float, by_grade: String = "unknown") -> void:
 	# by_grade names the attacker's grade for the A5 log; direct test calls leave it unknown.
@@ -3406,6 +3803,7 @@ func _physics_process(dt: float) -> void:
 	if not paused and field_cleared():
 		cancel_summon_assemblies("field_cleared")
 		clear_kegs()
+		clear_devices()
 		stop_channel()
 		clear_barrage()
 	var visual_start_position := player.position
@@ -3444,6 +3842,8 @@ func _physics_process(dt: float) -> void:
 		tick_smokes(dt)
 		tick_shells(dt)
 		tick_fires(dt)
+		tick_devices(dt)
+		tick_winches(dt)
 		if action_time > 0:
 			action_time = maxf(0, action_time - dt)
 			if action_time == 0 and not queued_input.is_empty():
@@ -3480,6 +3880,7 @@ func _physics_process(dt: float) -> void:
 		grinder_disk.rotate_object_local(Vector3.UP, dt * 18)
 	var visual_distance := player.position.distance_to(visual_start_position)
 	player_visual.sync_state(dt, visual_distance > 0.0001, 0.0 if collecting_after_clear else action_time, paused, hp <= 0, field_cleared() and not (collecting_after_clear and visual_distance > 0.0001), visual_distance / maxf(dt, 0.000001))
+	sync_exo_visual(0.0 if paused else dt)
 	tick_staff_trail(dt)
 	shield_ring.visible = false
 	place_camera(player.position)
@@ -3505,6 +3906,7 @@ func _physics_process(dt: float) -> void:
 		hit_time = maxf(0, hit_time - dt)
 		stun_time = maxf(0, stun_time - dt)
 		shield_time = maxf(0, shield_time - dt)
+		exo_time = maxf(0, exo_time - dt)
 		tick_cast_circles(dt)
 		if is_instance_valid(shield_visual):
 			shield_visual.sync(dt, player.position, player_model.global_rotation.y, shield_time > 0 and hp > 0)
@@ -3566,7 +3968,7 @@ func hit_foe(target: String, amount: float, grade: String) -> void:
 		damage_ally(ally, amount, grade)
 
 func damage_ally(ally: Dictionary, amount: float, grade: String) -> void:
-	amount *= spread_factor(float(config.build.enemy_spread))
+	amount *= spread_factor(float(config.build.enemy_spread)) * (1.0 - summon_guard())
 	ally.hp -= amount
 	probe.ally_hit(grade, minf(amount, maxf(ally.hp + amount, 0.0)), ally.hp <= 0)
 	var floor_y: float = map.ground_y(ally.node.position)
@@ -3605,6 +4007,9 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	enemy.flash = maxf(0, enemy.flash - dt)
 	enemy.model.scale = Vector3.ONE * enemy.size * (1.08 if enemy.flash > 0 else 1.0)
 	enemy.flinch_guard = maxf(0, float(enemy.get("flinch_guard", 0.0)) - dt)
+	enemy.stun = maxf(0, float(enemy.get("stun", 0.0)) - dt)
+	enemy.bound = maxf(0, float(enemy.get("bound", 0.0)) - dt)
+	enemy.winched = maxf(0, float(enemy.get("winched", 0.0)) - dt)
 	if float(enemy.get("flinch", 0.0)) > 0 and enemy.get("knockback_left", 0.0) <= 0.0:
 		# Flinching: it stands still and starts nothing until it recovers.
 		enemy.flinch = maxf(0, float(enemy.flinch) - dt)
@@ -3616,6 +4021,10 @@ func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 		enemy.body.velocity = enemy.knockback_dir * travel / dt
 		enemy.body.move_and_slide()
 		enemy.knockback_left -= travel
+		return
+	if enemy.stun > 0 or enemy.bound > 0:
+		# Stunned by a press or bound by the winch / a device: it stands still and starts nothing.
+		enemy.body.velocity = Vector3.ZERO
 		return
 	var type: Dictionary = config.enemy_types[enemy.kind]
 	var power: float = config.grades[enemy.grade].damage * enemy_level_factor("damage", enemy.level)

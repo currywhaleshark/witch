@@ -18,6 +18,8 @@ const PowderKeg = preload("res://scripts/powder_keg.gd")
 const GatlingGun = preload("res://scripts/gatling_gun.gd")
 const SmokeLauncher = preload("res://scripts/smoke_launcher.gd")
 const IncomingShell = preload("res://scripts/incoming_shell.gd")
+const DriveDevice = preload("res://scripts/drive_device.gd")
+const EXOSKELETON := "res://assets/equipment/exoskeleton_v4/exoskeleton_v4.glb"
 const STAFF := "res://assets/weapons/staff_material_v3/staff_parts.glb"
 const PART_SCRIPTS := ["res://scripts/automaton_assembly.gd", "res://scripts/turret_assembly.gd",
 	"res://scripts/shotgun_cast.gd", "res://scripts/spring_plate.gd", "res://scripts/shield_visual.gd"]
@@ -35,6 +37,9 @@ func run(camera: Camera3D) -> void:
 	paths.append_array(ActorVisual.FILES.values())
 	paths.append_array(loot_paths())
 	paths.append_array(SHADERS)
+	paths.append(EXOSKELETON)
+	for id in DriveDevice.IDS:
+		paths.append(DriveDevice.model_path(id))
 	var pending: Array = paths.filter(func(path): return not held.has(path) and ResourceLoader.exists(path))
 	for path in pending:
 		ResourceLoader.load_threaded_request(path)
@@ -103,6 +108,9 @@ func _stage(camera: Camera3D) -> void:
 	scenes.append(GatlingGun.MODEL)
 	scenes.append(SmokeLauncher.MODEL)
 	scenes.append_array(IncomingShell.MODELS.values())
+	scenes.append(held.get(EXOSKELETON))
+	for id in DriveDevice.IDS:
+		scenes.append(held.get(DriveDevice.model_path(id)))
 	for path in ActorVisual.FILES.values():
 		scenes.append(held.get(path))
 	for path in PART_SCRIPTS:

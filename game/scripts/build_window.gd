@@ -11,7 +11,8 @@ const GOLD = Color("d8b77b")
 const TREE_NAMES = {"firearm": "화기", "drive": "구동", "automation": "자동화"}
 const SLOT_NAMES = {"rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r": "R"}
 # Every skill a slot can carry, grouped by tree; the basic attack stays on the left button.
-const LOADOUT = ["matchlock", "rifle", "powder_keg", "gatling", "smoke_launcher", "shotgun", "recoil_leap", "artillery", "naval_gun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash", "automaton", "turret", "relay"]
+const LOADOUT = ["matchlock", "rifle", "powder_keg", "gatling", "smoke_launcher", "shotgun", "recoil_leap", "artillery", "naval_gun", "bolt_cutter", "grinder", "chainsaw", "shield", "spring_dash",
+	"guillotine", "restraint_winch", "hydraulic_press", "compound_executor", "exoskeleton", "automaton", "turret", "relay"]
 
 # Skill tree layout: candidates from 03 in tier rows, links of related study. A link into a skill
 # that requires the other (build entry "requires") is a prerequisite: it is learned for a point after.
@@ -218,7 +219,8 @@ func _skills() -> void:
 			pick.tooltip_text = "회전 기관포 특화 · %d점" % build.rules.node_cost
 			barrages.append(pick)
 		body.add_child(row(barrages))
-		for skill in Build.SKILL_NODE_NAMES:
+	for skill in Build.SKILL_NODE_NAMES:
+		if arena.SKILL_TREES.get(skill) == tree_tab:
 			var picks: Array = []
 			var names: Dictionary = Build.SKILL_NODE_NAMES[skill]
 			for choice in names:
@@ -429,6 +431,10 @@ func drop_skill(slot: String, data: Dictionary) -> void:
 	arena.bind_slot(slot, id)
 	arena.refresh_build_windows()
 
+func execution_note() -> String:
+	var plan: Dictionary = arena.config.execution
+	return "체력이 낮을수록 최대 +%d%% · 공구 디버프나 윈치 구속이 있으면 +%d%%" % [roundi(100 * float(plan.low_hp_bonus)), roundi(100 * float(plan.debuff_bonus))]
+
 func effect_note(id: String) -> String:
 	var config: Dictionary = arena.config
 	match id:
@@ -471,6 +477,11 @@ func effect_note(id: String) -> String:
 			return "%s · 발당 %s · 초당 %.1f발 · 산포 ±%d° · MP −%s/s%s" % [Build.GATLING_NODE_NAMES[config.gatling_node], str(snappedf(float(stream.shot_damage) * arena.skill_level_factor("gatling"), 0.1)), 1.0 / arena.gatling_interval(), int(stream.spread_degrees), str(arena.rules.skills.gatling.channel_mana_per_second), extra]
 		"reload":
 			return "장탄 +%d발 · 장전 시간 −%s%% · 포탑 연사 +%d%%" % [int(config.passives.reload.magazine_per_level) * int(arena.reload_level()), str(snappedf(100 * float(config.passives.reload.reload_time_cut_per_level) * arena.reload_level(), 0.1)), roundi(100 * (arena.turret_fire_rate() - 1.0))]
+		"shock_frame":
+			var absorb: Dictionary = config.passives.shock_frame
+			var level: float = arena.shock_level()
+			return "외골격 방어력 +%d · 경직 −%d%% · 방패 방어력 +%d · 소환체 받는 피해 −%s%%" % [roundi(float(absorb.exo_armor_per_level) * level), roundi(100 * float(absorb.exo_stagger_cut_per_level) * level),
+				roundi(float(absorb.shield_armor_per_level) * level), str(snappedf(100 * arena.summon_guard(), 0.1))]
 		"recoil_control":
 			return "화기 사격 간격·산탄 대기 −%s%% · 도약 속도 +%d%%" % [str(snappedf(100 * (1.0 - arena.fire_interval_factor()), 0.1)), roundi(100 * (arena.leap_speed_factor() - 1.0))]
 		"automaton", "turret":
@@ -478,6 +489,29 @@ func effect_note(id: String) -> String:
 				roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[id + "_level"] - 1), config.hit_min, config.hit_cap)), roundi(100 * arena.crit_chance(id))]
 		"production_efficiency":
 			return "시전 속도 +%d" % roundi(arena.build.cast_speed_parts().passive)
+		"guillotine":
+			var blade: Dictionary = arena.device_plan("guillotine")
+			var kind: String = {"base": "피해 %d" % roundi(float(blade.get("damage", 0)) * arena.skill_level_factor("guillotine")),
+				"saw": "%d회 × 피해 %d" % [int(blade.get("ticks", 0)), roundi(float(blade.get("tick_damage", 0)) * arena.skill_level_factor("guillotine"))],
+				"lock": "가장 가까운 적 고정 · 피해 %d (고정한 적 ×%.1f)" % [roundi(float(blade.get("damage", 0)) * arena.skill_level_factor("guillotine")), float(blade.get("lock_bonus", 1))]}[config.guillotine_node]
+			return "%s · %s · 반경 %.1fm · %s" % [Build.SKILL_NODE_NAMES.guillotine[config.guillotine_node], kind, float(blade.hit_radius), execution_note()]
+		"hydraulic_press":
+			var press: Dictionary = arena.rules.skills.hydraulic_press
+			return "피해 %d · 반경 %.1fm · 기절 %.1f초 · %s" % [roundi(float(press.damage) * arena.skill_level_factor("hydraulic_press")), float(press.hit_radius), arena.press_stun_seconds(float(press.stun_seconds)), execution_note()]
+		"compound_executor":
+			var cage: Dictionary = arena.rules.skills.compound_executor
+			return "가둠 %.1fm · 압착 %d(압착기 ×%.2f) · 톱 %d회 × %d(단두대 ×%.2f) · 출혈 · %s" % [float(cage.trap_radius),
+				roundi(float(cage.press_damage) * arena.skill_level_factor("compound_executor") * arena.executor_synergy("hydraulic_press")), arena.executor_synergy("hydraulic_press"),
+				int(cage.saw_ticks), roundi(float(cage.saw_damage) * arena.skill_level_factor("compound_executor") * arena.executor_synergy("guillotine")), arena.executor_synergy("guillotine"), execution_note()]
+		"restraint_winch":
+			var line: Dictionary = arena.device_plan("restraint_winch")
+			var bind: float = float(line.bind_seconds) + float(line.bind_per_level) * (config.restraint_winch_level - 1)
+			return "%s · 최대 %d명 · %s · 구속 %.1f초 · 보스는 둔화만" % [Build.SKILL_NODE_NAMES.restraint_winch[config.restraint_winch_node], int(line.targets), "앞으로 끌어옴" if line.pull else "제자리에 묶음", bind]
+		"exoskeleton":
+			var frame: Dictionary = arena.rules.skills.exoskeleton
+			var cut: int = roundi(100 * float(frame.stun_cut) * floorf(config.exoskeleton_level / float(frame.stun_cut_every)))
+			return "%.1f초 · 공구 피해 +%d%% · 방어력 +%d%s" % [arena.exo_duration(), roundi(100 * (float(frame.tool_damage) + float(frame.tool_damage_per_level) * (config.exoskeleton_level - 1))),
+				roundi(float(frame.armor_base) + float(frame.armor_per_level) * (config.exoskeleton_level - 1)), " · 경직 −%d%%" % cut if cut > 0 else " · Lv%d부터 경직 감소" % int(frame.stun_cut_every)]
 		_:
 			var passive: Dictionary = config.passives[id]
 			return "%s 피해 +%d%%" % [passive.tag_name, roundi(100 * float(passive.damage_per_level) * config.passive_levels[id])]

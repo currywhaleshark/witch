@@ -7,10 +7,12 @@ const STAT_NAMES = {"power": "위력", "dexterity": "기교", "vitality": "활�
 const NODE_NAMES = {"base": "노드 없음", "A": "A 자폭 특화", "B": "B 지속공격 특화"}
 const RIFLE_NODE_NAMES = {"base": "일반탄", "explosive": "폭발탄", "piercing": "천공탄"}
 const GATLING_NODE_NAMES = {"base": "기본 연사", "suppress": "제압 화망", "converge": "수렴 사격"}
-# Node choices of the offscreen guns, one per skill: config.<skill>_node holds the pick.
+# One-point node choices, one per skill: config.<skill>_node holds the pick.
 const SKILL_NODE_NAMES = {
 	"artillery": {"base": "고폭탄", "cluster": "집속탄", "phosphorus": "백린탄"},
 	"naval_gun": {"base": "기본 포탄", "burst": "폭렬 포격", "pierce": "관통 포격"},
+	"guillotine": {"base": "기본 칼날", "saw": "회전 톱날", "lock": "고정"},
+	"restraint_winch": {"base": "한 가닥", "multi_pull": "범위 끌기", "multi_bind": "범위 구속"},
 }
 
 var arena: Node
@@ -174,7 +176,7 @@ func set_gatling_node(value: String) -> bool:
 	return true
 
 func set_skill_node(skill: String, value: String) -> bool:
-	# The same one-point pick for the artillery's shells and the naval gun's rounds.
+	# The same one-point pick for the offscreen guns' shells, the guillotine's blade and the winch's lines.
 	var cost: int = int(rules.node_cost)
 	var extra: int = (cost if value != "base" else 0) - (cost if skill_nodes[skill] != "base" else 0)
 	if extra > 0 and skill_points() < extra:
