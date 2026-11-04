@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-04",
+  "status": "remote_review_checkpoint_not_final_art_approval",
+  "request": "일단 요거 커밋하고 푸쉬해줘봐 지금 다른 컴퓨터로 원격 접속중인데 여기서 좀 보고 고치게",
+  "scope": "v31 prepared motion source, exports, tools and offline review; v30 retained for comparison",
+  "main_game_promotion": false,
+  "packed_file_textures": 6,
+  "review": "reports/drive_attack_v31/review.html"
+}

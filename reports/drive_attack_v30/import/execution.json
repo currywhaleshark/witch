@@ -1,0 +1,5 @@
+{
+  "stderr": "ERROR: Could not open 'user://' directory: 'user://'.\r\n   at: _get_and_create_snapshot_storage_dir (modules/objectdb_profiler/editor/objectdb_profiler_panel.cpp:154)\r\n",
+  "exit_code": 0,
+  "completion_marker": true
+}

@@ -1,0 +1,459 @@
+{
+  "scope": "Whole hands vs actual runtime torso/pelvis and both outfits. Strict triangles and body ray-parity centroid containment probes. Distal means beyond 30mm bone-local wrist; cuff contacts are separately named, never excluded from whole-hand counts. Not swept collision or a watertight-volume certificate.",
+  "summary": {
+    "drive_grinder_sweep_v31": {
+      "samples": 9,
+      "body_crossing_or_inside_poses": 0
+    }
+  },
+  "poses": [
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 0.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 97,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 105,
+              "distal_hand_faces": 0
+            }
+          },
+          "SourceOutfit_Inner_v11": {
+            "R": {
+              "whole_hand_faces": 2,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 346,
+              "distal_hand_faces": 197
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 145,
+              "distal_hand_faces": 39
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 44,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 57,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 0.125,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 67,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 69,
+              "distal_hand_faces": 0
+            }
+          },
+          "SourceOutfit_Inner_v11": {
+            "L": {
+              "whole_hand_faces": 2,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 122,
+              "distal_hand_faces": 36
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 98,
+              "distal_hand_faces": 0
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 45,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 37,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 0.25,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 75,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 80,
+              "distal_hand_faces": 0
+            }
+          },
+          "SourceOutfit_Inner_v11": {
+            "L": {
+              "whole_hand_faces": 9,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 2,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "L": {
+              "whole_hand_faces": 53,
+              "distal_hand_faces": 0
+            }
+          },
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 86,
+              "distal_hand_faces": 0
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 135,
+              "distal_hand_faces": 7
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 40,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 46,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 0.375,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 96,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 84,
+              "distal_hand_faces": 0
+            }
+          },
+          "SourceOutfit_Inner_v11": {
+            "L": {
+              "whole_hand_faces": 2,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 5,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 91,
+              "distal_hand_faces": 2
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 19,
+              "distal_hand_faces": 0
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 47,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 40,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 0.5,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 81,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 83,
+              "distal_hand_faces": 0
+            }
+          },
+          "SourceOutfit_Inner_v11": {
+            "L": {
+              "whole_hand_faces": 1,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 4,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 104,
+              "distal_hand_faces": 7
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 37,
+              "distal_hand_faces": 0
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 42,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 48,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 0.625,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 75,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 83,
+              "distal_hand_faces": 0
+            }
+          },
+          "SourceOutfit_Inner_v11": {
+            "R": {
+              "whole_hand_faces": 4,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 92,
+              "distal_hand_faces": 1
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 50,
+              "distal_hand_faces": 0
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 51,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 43,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 0.75,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 78,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 83,
+              "distal_hand_faces": 0
+            }
+          },
+          "SourceOutfit_Inner_v11": {
+            "R": {
+              "whole_hand_faces": 2,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 74,
+              "distal_hand_faces": 0
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 72,
+              "distal_hand_faces": 10
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 50,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 44,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 0.875,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 67,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 70,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 89,
+              "distal_hand_faces": 0
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 108,
+              "distal_hand_faces": 1
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 41,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 37,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "clip": "drive_grinder_sweep_v31",
+      "phase": 1.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "L": {
+              "whole_hand_faces": 104,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 105,
+              "distal_hand_faces": 0
+            }
+          },
+          "SourceOutfit_Inner_v11": {
+            "L": {
+              "whole_hand_faces": 1,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 2,
+              "distal_hand_faces": 0
+            }
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "L": {
+              "whole_hand_faces": 342,
+              "distal_hand_faces": 195
+            }
+          },
+          "TF_sleeve_R_v4": {
+            "R": {
+              "whole_hand_faces": 145,
+              "distal_hand_faces": 39
+            }
+          },
+          "TF_under_sleeves_v4": {
+            "L": {
+              "whole_hand_faces": 39,
+              "distal_hand_faces": 0
+            },
+            "R": {
+              "whole_hand_faces": 57,
+              "distal_hand_faces": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

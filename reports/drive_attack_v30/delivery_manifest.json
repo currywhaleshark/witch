@@ -1,0 +1,308 @@
+{
+  "scope": "Prepared animation review; no main-game promotion",
+  "capture_count": 300,
+  "runtime": {
+    "captures": 0,
+    "checks": 252331,
+    "forms": [
+      "civilian",
+      "transformed"
+    ],
+    "maximum_export_pose_error_m": 3.66975882570841e-06,
+    "passed": true,
+    "scope": "isolated Godot art review; no damage events",
+    "sequences": [
+      {
+        "fps": 24,
+        "frames": 88,
+        "key": "bolt"
+      },
+      {
+        "fps": 24,
+        "frames": 52,
+        "key": "grinder_sweep"
+      },
+      {
+        "fps": 24,
+        "frames": 100,
+        "key": "chainsaw_cut"
+      },
+      {
+        "fps": 24,
+        "frames": 60,
+        "key": "chainsaw_spin"
+      }
+    ]
+  },
+  "source": {
+    "drive_bolt_enter_v30": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.0006472864639683715,
+      "maximum_local_half_frame_degrees": [
+        8.321331310174193,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 7.62939453125e-06,
+      "endpoint_head_difference_m": 0.2720567370066362,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_bolt_loop_v30": {
+      "samples": 193,
+      "maximum_secondary_grip_error_m": 0.0018495285363074872,
+      "maximum_local_half_frame_degrees": [
+        6.309844441586846,
+        "DEF-hand.L"
+      ],
+      "maximum_scale_error": 4.035234451293945e-05,
+      "endpoint_head_difference_m": 0.0,
+      "loop": true,
+      "loop_velocity_seam_m_per_author_second": 0.027785909036246836
+    },
+    "drive_bolt_exit_v30": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.0006472864639683715,
+      "maximum_local_half_frame_degrees": [
+        8.321331310174193,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 7.62939453125e-06,
+      "endpoint_head_difference_m": 0.2720567370066362,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_chainsaw_cut_enter_v30": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.0008310511839434174,
+      "maximum_local_half_frame_degrees": [
+        8.49767398793923,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 7.748603820800781e-06,
+      "endpoint_head_difference_m": 0.24745310796968367,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_chainsaw_cut_loop_v30": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.00017067863372725005,
+      "maximum_local_half_frame_degrees": [
+        1.1384780222508222,
+        "DEF-forearm.R"
+      ],
+      "maximum_scale_error": 7.867813110351562e-06,
+      "endpoint_head_difference_m": 0.0,
+      "loop": true,
+      "loop_velocity_seam_m_per_author_second": 0.07063101880413875
+    },
+    "drive_chainsaw_cut_exit_v30": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.0008310511839434174,
+      "maximum_local_half_frame_degrees": [
+        8.49767398793923,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 7.748603820800781e-06,
+      "endpoint_head_difference_m": 0.24745310796968367,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_grinder_sweep_v30": {
+      "samples": 289,
+      "maximum_secondary_grip_error_m": 0.0026146826367206984,
+      "maximum_local_half_frame_degrees": [
+        7.262709191656516,
+        "DEF-upper_arm.R"
+      ],
+      "maximum_scale_error": 7.2479248046875e-05,
+      "endpoint_head_difference_m": 1.55572690202453e-07,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_chainsaw_spin_v30": {
+      "samples": 145,
+      "maximum_secondary_grip_error_m": 0.002497630692025128,
+      "maximum_local_half_frame_degrees": [
+        15.560519891650124,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 1.5556812286376953e-05,
+      "endpoint_head_difference_m": 0.0,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "scope": "Saved authored samples and half-frame interpolation; joint/shaft proxies, not all triangle contacts."
+  },
+  "files": {
+    "reports/drive_attack_v30/review.html": "1d2e9e8aee1802dc3c8dc30473c4ad99b067ca3aab8e570c4ca242cbb77fe2ff",
+    "reports/drive_attack_v30/source_validation.json": "180b7a909789865bc4a2a425e6186a33a6e53b11eeb6bea6a64ef8e80f26f1df",
+    "reports/drive_attack_v30/export.json": "7f22e73ffd6243d419071bbac04c553302c7bbb6cd47c981a7aac214ae2a4cdc",
+    "reports/drive_attack_v30/bolt.mp4": "24b5cce10327979b748c9853f1ac6b917ef4dc844526b2b8204a8ceabf1df746",
+    "reports/drive_attack_v30/grinder_sweep.mp4": "4a1dcbd94f98d727e24f7f5c7106aa7b3821fc800a463fa3b25bc26e27c13592",
+    "reports/drive_attack_v30/chainsaw_cut.mp4": "34badd6670296c18b1ddee6d213a16f35b539c0309cd7c25ad0d20ff1d6b8196",
+    "reports/drive_attack_v30/chainsaw_spin.mp4": "ba0b35b7cec105bd8179cab6f14977cce1bfa3cb574d921852ec4b478a20e1af",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v30/drive_attack_v30.blend": "74c885daec8e0ebb739004f131233af960b91e5b009a308a6833b74d6e15d370",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v30/README.md": "8f255a61d0a0f7f02b2a5012331a7776f8600ed026c6d7beb9df7770dab13f9d",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v30/runtime_contract.json": "1efe7cd8a22e8a8e5922ae0d756c816596a816e8449004c9e4db9bf2905ba7aa",
+    "reports/drive_attack_v30/pose_reference.json": "80766b37e922515aab7582694d9e21ae07840d68679099281faa589040b0318c",
+    "reports/drive_attack_v30/final_preservation.json": "d6935e10b9e89af745df7b762bb30a27efbb6cb595fa0a1984b15c2f29ddff7d",
+    "reports/drive_attack_v30/reimport_asset_qa.json": "19e11d133c17b8e7c61b86cd9731168bc71c13909abedc019bc62ae2932bef18",
+    "reports/drive_attack_v30/midpoint_polish.json": "72a7bc85df8a3b9a4e496bc9fc6567e68c20ba140169e8aa52d41bd16b03c6c8",
+    "reports/drive_attack_v30/mixamo_downloads.json": "ee74fe1ae6ba9cb18f28306f9196e6080ec2e34bd34f1f20b4f6b75c3299d41f",
+    "reports/drive_attack_v30/review_project_inputs.json": "1986231ce78ae89ff99c34caf4265b5642ba80cc61d1bb2c62b3e97d1563ffbf",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_enter_v30.glb": "d142ac9413406fb98e39fb465d99ad01a54ceae76b4a408272717f84e7f7cc83",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_enter_v30.glb.import": "60842305046c55baf3dc245ac4094405da237c366962cd901e50db382daafe29",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_exit_v30.glb": "7fcf59b0e0b89e939db5f0f7b6f6188d95242aab5f0926a0c8b108f21921a2f7",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_exit_v30.glb.import": "8a06da53549496994fc1c55b9bce0b54e0a93b6e93ff2e7c9cd10a8e467457d9",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_loop_v30.glb": "ff1ec9dbab4936ec464c0814ce0c0feb7cfcba9f97cadb183907c808e6b473f5",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_loop_v30.glb.import": "b0ec3893e0ca9d326eb9b97c95cc3cf7e0039efa154e2b157d0939e41d1bedb5",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_enter_v30.glb": "f66c7a00aa443569ee6764bf2602331c66be232870c8b137b50cb110f465fdec",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_enter_v30.glb.import": "5034c3d85f8462c733ec4e3c35630040582cde83f1fa105117384494e714da24",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_exit_v30.glb": "ed76fbcb7103d436507d18e43eb213c71135c46c74b36c2fbe6d45045d93a740",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_exit_v30.glb.import": "a7520b556d0b4e2c953673a978f4ed198d6f5f153e8eee0457e2dd8a847beca2",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_loop_v30.glb": "d7b83b318062df370f73620a7e24a324bf9cf6caf206c46f614307cdde2fc3d9",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_loop_v30.glb.import": "2813d11f4fddc61a3a874306f6c201a0a28c9e686b9086e36fa493687a0aea78",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_spin_v30.glb": "a8a50b1465778002612c30ad1236b93a9a08fff0497ffdff3d4bbe00ee118244",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_spin_v30.glb.import": "330ddc8d14686e9173a721ea2356adc59fded711684e8dcf22fa23273e26a83b",
+    "game/assets/characters/player/drive_attack_v30/drive_grinder_sweep_v30.glb": "77af64099313509ae406075dbb40141a226a23a870d0383d085d12e32f622a3d",
+    "game/assets/characters/player/drive_attack_v30/drive_grinder_sweep_v30.glb.import": "01efb411e3386046345977aaf26949536d39167fc94c9a32a85ea93a7d0b5abb",
+    "game/assets/characters/player/drive_attack_v30/runtime_contract.json": "1efe7cd8a22e8a8e5922ae0d756c816596a816e8449004c9e4db9bf2905ba7aa",
+    "tools/build_drive_attack_v30.py": "a12f9c7989b348d5483f7f0cf87a2716ccadb7335cb5b0fc670de41857363dba",
+    "tools/check_drive_preservation_v30.py": "8afff614f6927b9a3bc80b3aff75aabfed83578c8d800c07d8c3829a13ba0961",
+    "tools/drive_animation_carrier_v30.py": "f60b9de4c545c4bc2176f9c9b3d2d96b261b4fbc64837c7b476b94ec5939cc52",
+    "tools/export_drive_attack_v30.py": "76d2a75bb098c9595517b7531b7c2de55248e798cf9654eabeb33608c522c743",
+    "tools/inspect_drive_motion_v30.py": "21b619713923464e47cf42b232c46a3fe5e675627ea0239d7c51ee7ee491f28b",
+    "tools/package_drive_attack_v30.py": "2093a14338b764fa8375f5b34066bfccc9dc18062010a755fb0e4f71afbc0e8b",
+    "tools/polish_drive_attack_v30.py": "9bc2099a54fa7b308f44f8c3ecb076930014290a65732563e46a5a97be7888d9",
+    "tools/prepare_drive_attack_v30.py": "b712eb0bcb0bd983b6c37fa38f7833865b5d0964a876f4fd52db13b85887e9b7",
+    "tools/reimport_drive_attack_v30.py": "7bb6a6d30f7133225c6edec74184c22f5c8df14534d22107355bde21209f5844",
+    "tools/run_drive_attack_v30.ps1": "7021a0946f7ab6dd92e13e129efcc184b0498a85ddc1eb82c45681fc3c7ca1c4",
+    "tools/validate_drive_attack_v30.py": "61b1a120655115d01e5e8f1f748f00ce394add4840b04d8997a3fd98657bb718",
+    "game/tests/review_drive_attack_v30.gd": "0a350a888934f851b1a4c42862fbda1bdfefd96effb91d4f3ac973c1e4902f09"
+  },
+  "preservation": {
+    "passed": true,
+    "protected_meshes": 34,
+    "protected_actions": 64,
+    "rest_bones": 107,
+    "new_actions": [
+      "drive_bolt_enter_v30",
+      "drive_bolt_exit_v30",
+      "drive_bolt_loop_v30",
+      "drive_chainsaw_cut_enter_v30",
+      "drive_chainsaw_cut_exit_v30",
+      "drive_chainsaw_cut_loop_v30",
+      "drive_chainsaw_spin_v30",
+      "drive_grinder_sweep_v30"
+    ],
+    "source_sha256": "74c885daec8e0ebb739004f131233af960b91e5b009a308a6833b74d6e15d370"
+  },
+  "roundtrip_qa_passed": true,
+  "carrier_qa": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 8,
+        "faces": 6,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.0,
+        "uv_coverage_pct": 37.5
+      }
+    }
+  },
+  "executions": {
+    "import": {
+      "stderr": "ERROR: Could not open 'user://' directory: 'user://'.\r\n   at: _get_and_create_snapshot_storage_dir (modules/objectdb_profiler/editor/objectdb_profiler_panel.cpp:154)\r\n",
+      "exit_code": 0,
+      "completion_marker": true
+    },
+    "validate": {
+      "stderr": null,
+      "exit_code": 0,
+      "completion_marker": true
+    },
+    "capture": {
+      "exit_code": 0,
+      "stderr": "ERROR: Can't create shader cache folder, no shader caching will happen: user://\r\n   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:335)\r\n",
+      "completion_marker": true
+    }
+  },
+  "repository_files": {
+    "reports/drive_attack_v30/review.html": "dcad5179d23d0c9d77afff92ef28fb05b295a0096364f3da06f79d32fdeefe2e",
+    "reports/drive_attack_v30/source_validation.json": "16e2022b5f4816e7ba8a26c76b86dab2ad79bf13d90666209e8bfe682b90628d",
+    "reports/drive_attack_v30/export.json": "d945ff4925af657afdd780f6455bc83bf922e452e30687408090f5637b440ac4",
+    "reports/drive_attack_v30/bolt.mp4": "24b5cce10327979b748c9853f1ac6b917ef4dc844526b2b8204a8ceabf1df746",
+    "reports/drive_attack_v30/grinder_sweep.mp4": "4a1dcbd94f98d727e24f7f5c7106aa7b3821fc800a463fa3b25bc26e27c13592",
+    "reports/drive_attack_v30/chainsaw_cut.mp4": "34badd6670296c18b1ddee6d213a16f35b539c0309cd7c25ad0d20ff1d6b8196",
+    "reports/drive_attack_v30/chainsaw_spin.mp4": "ba0b35b7cec105bd8179cab6f14977cce1bfa3cb574d921852ec4b478a20e1af",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v30/drive_attack_v30.blend": "74c885daec8e0ebb739004f131233af960b91e5b009a308a6833b74d6e15d370",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v30/README.md": "33bab0bc67ad4f2d6a715c49627b316a6daa27d0dbeb06602a84533a94801f7c",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v30/runtime_contract.json": "56d9308ab6e945caeb0fb54952b682ec2949195b222c8e2b38bec9b4716b7395",
+    "reports/drive_attack_v30/pose_reference.json": "80766b37e922515aab7582694d9e21ae07840d68679099281faa589040b0318c",
+    "reports/drive_attack_v30/final_preservation.json": "72adf03f655b8a6ee7ed677caace2af0f3887726b98f3325c098034bb2a9b29f",
+    "reports/drive_attack_v30/reimport_asset_qa.json": "8ff8bc649dadcc69d0c67644d2e0a3a6829fdad29fef4e59beb537f44fe2b89d",
+    "reports/drive_attack_v30/midpoint_polish.json": "18c6216b7db86edfac10faba37c77775c7d3ad8122fc5e23240d06784e8c68a3",
+    "reports/drive_attack_v30/mixamo_downloads.json": "6337786eab28befd56df536491c6973df47edac49a3a1eaa0283347818c33464",
+    "reports/drive_attack_v30/review_project_inputs.json": "745e8ca982ebee66aa3b13e2b66f11f13ec49c2d74df7405135dda0273cf38f2",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_enter_v30.glb": "d142ac9413406fb98e39fb465d99ad01a54ceae76b4a408272717f84e7f7cc83",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_enter_v30.glb.import": "60842305046c55baf3dc245ac4094405da237c366962cd901e50db382daafe29",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_exit_v30.glb": "7fcf59b0e0b89e939db5f0f7b6f6188d95242aab5f0926a0c8b108f21921a2f7",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_exit_v30.glb.import": "8a06da53549496994fc1c55b9bce0b54e0a93b6e93ff2e7c9cd10a8e467457d9",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_loop_v30.glb": "ff1ec9dbab4936ec464c0814ce0c0feb7cfcba9f97cadb183907c808e6b473f5",
+    "game/assets/characters/player/drive_attack_v30/drive_bolt_loop_v30.glb.import": "b0ec3893e0ca9d326eb9b97c95cc3cf7e0039efa154e2b157d0939e41d1bedb5",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_enter_v30.glb": "f66c7a00aa443569ee6764bf2602331c66be232870c8b137b50cb110f465fdec",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_enter_v30.glb.import": "5034c3d85f8462c733ec4e3c35630040582cde83f1fa105117384494e714da24",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_exit_v30.glb": "ed76fbcb7103d436507d18e43eb213c71135c46c74b36c2fbe6d45045d93a740",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_exit_v30.glb.import": "a7520b556d0b4e2c953673a978f4ed198d6f5f153e8eee0457e2dd8a847beca2",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_loop_v30.glb": "d7b83b318062df370f73620a7e24a324bf9cf6caf206c46f614307cdde2fc3d9",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_cut_loop_v30.glb.import": "2813d11f4fddc61a3a874306f6c201a0a28c9e686b9086e36fa493687a0aea78",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_spin_v30.glb": "a8a50b1465778002612c30ad1236b93a9a08fff0497ffdff3d4bbe00ee118244",
+    "game/assets/characters/player/drive_attack_v30/drive_chainsaw_spin_v30.glb.import": "330ddc8d14686e9173a721ea2356adc59fded711684e8dcf22fa23273e26a83b",
+    "game/assets/characters/player/drive_attack_v30/drive_grinder_sweep_v30.glb": "77af64099313509ae406075dbb40141a226a23a870d0383d085d12e32f622a3d",
+    "game/assets/characters/player/drive_attack_v30/drive_grinder_sweep_v30.glb.import": "01efb411e3386046345977aaf26949536d39167fc94c9a32a85ea93a7d0b5abb",
+    "game/assets/characters/player/drive_attack_v30/runtime_contract.json": "56d9308ab6e945caeb0fb54952b682ec2949195b222c8e2b38bec9b4716b7395",
+    "tools/build_drive_attack_v30.py": "a12f9c7989b348d5483f7f0cf87a2716ccadb7335cb5b0fc670de41857363dba",
+    "tools/check_drive_preservation_v30.py": "8afff614f6927b9a3bc80b3aff75aabfed83578c8d800c07d8c3829a13ba0961",
+    "tools/drive_animation_carrier_v30.py": "f60b9de4c545c4bc2176f9c9b3d2d96b261b4fbc64837c7b476b94ec5939cc52",
+    "tools/export_drive_attack_v30.py": "76d2a75bb098c9595517b7531b7c2de55248e798cf9654eabeb33608c522c743",
+    "tools/inspect_drive_motion_v30.py": "21b619713923464e47cf42b232c46a3fe5e675627ea0239d7c51ee7ee491f28b",
+    "tools/package_drive_attack_v30.py": "2093a14338b764fa8375f5b34066bfccc9dc18062010a755fb0e4f71afbc0e8b",
+    "tools/polish_drive_attack_v30.py": "9bc2099a54fa7b308f44f8c3ecb076930014290a65732563e46a5a97be7888d9",
+    "tools/prepare_drive_attack_v30.py": "b712eb0bcb0bd983b6c37fa38f7833865b5d0964a876f4fd52db13b85887e9b7",
+    "tools/reimport_drive_attack_v30.py": "7bb6a6d30f7133225c6edec74184c22f5c8df14534d22107355bde21209f5844",
+    "tools/run_drive_attack_v30.ps1": "7021a0946f7ab6dd92e13e129efcc184b0498a85ddc1eb82c45681fc3c7ca1c4",
+    "tools/validate_drive_attack_v30.py": "61b1a120655115d01e5e8f1f748f00ce394add4840b04d8997a3fd98657bb718",
+    "game/tests/review_drive_attack_v30.gd": "0a350a888934f851b1a4c42862fbda1bdfefd96effb91d4f3ac973c1e4902f09"
+  },
+  "transport_note": "files records validated authoring bytes; repository_files records Git blob bytes after configured LF/CRLF normalization. Binary blend/GLB/media bytes are identical. Text normalization changes no motion or code behavior."
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "protected_meshes": 34,
+  "protected_actions": 64,
+  "rest_bones": 107,
+  "new_actions": [
+    "drive_bolt_enter_v30",
+    "drive_bolt_exit_v30",
+    "drive_bolt_loop_v30",
+    "drive_chainsaw_cut_enter_v30",
+    "drive_chainsaw_cut_exit_v30",
+    "drive_chainsaw_cut_loop_v30",
+    "drive_chainsaw_spin_v30",
+    "drive_grinder_sweep_v30"
+  ],
+  "source_sha256": "74c885daec8e0ebb739004f131233af960b91e5b009a308a6833b74d6e15d370"
+}

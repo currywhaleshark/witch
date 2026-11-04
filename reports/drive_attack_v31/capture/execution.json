@@ -1,0 +1,5 @@
+{
+  "stderr": "ERROR: Can't create shader cache folder, no shader caching will happen: user://\r\n   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:335)\r\n",
+  "completion_marker": true,
+  "exit_code": 0
+}

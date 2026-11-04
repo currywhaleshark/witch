@@ -1,0 +1,9 @@
+{
+  "corrected_bones": {
+    "DEF-forearm.L.001": 120.00001699968256,
+    "DEF-forearm.L.002": 240.00000667860846
+  },
+  "maximum_head_change_m": 1.1032898640878659e-06,
+  "loop_endpoints": "exact entry end, including skirt supports",
+  "exit": "reversed entry; unchanged duration and grip slide endpoints"
+}

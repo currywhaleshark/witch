@@ -1,0 +1,70 @@
+{
+  "carrier": "AnimationSkinCarrier_v30",
+  "source_sha256": "622bb9e10347f2847e5725b1454b837ec9d9d6cfbe8b3e0e1ea61f99af94770a",
+  "clips": [
+    {
+      "name": "drive_bolt_enter_v31",
+      "bytes": 213328,
+      "sha256": "6a4f64660f92ae4d4a561e60957eb3765de14a13ef21e7da8549364f347490e5",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_bolt_loop_v31",
+      "bytes": 522308,
+      "sha256": "70108431e9453ccedd8032d1c748f7a2c282b2e60085c3b8058b102029772ec2",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_bolt_exit_v31",
+      "bytes": 213328,
+      "sha256": "3b2f2add779f896f9a0298fdc8ee3252c8ed766d52489232a815b112a9182398",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_chainsaw_cut_enter_v31",
+      "bytes": 213328,
+      "sha256": "f599693950a9200e1c02bfc806679bae39999a9972dd47aa34dc79e1e550ac70",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_chainsaw_cut_loop_v31",
+      "bytes": 316284,
+      "sha256": "0f7dbdf848185131d6e32ace3520ef48f8c2233b4820ed9140f0434a3a1b1f7b",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_chainsaw_cut_exit_v31",
+      "bytes": 213328,
+      "sha256": "ef38220d6471eaab40149fd940b9c798c42222cbe0d28999f42edba8e9db05f6",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_grinder_sweep_v31",
+      "bytes": 728284,
+      "sha256": "33b07b3677c6de4677169ee5bf07c05dfa3c19b5cd6c4ab4fd827a894f582d04",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_chainsaw_spin_v31",
+      "bytes": 522308,
+      "sha256": "ed01978014a98141928de69f5d9a080da504774d99e778b0d2538fc91ca93b6d",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    }
+  ]
+}

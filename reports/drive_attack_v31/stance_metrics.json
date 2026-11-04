@@ -1,0 +1,8 @@
+{
+  "right_shoulder_forward_lead_m": [
+    0.2093210369348526,
+    0.27720554545521736
+  ],
+  "sample_count": 193,
+  "measurement": "L upper-arm head Y minus R upper-arm head Y, Blender forward -Y; positive means right shoulder leads"
+}

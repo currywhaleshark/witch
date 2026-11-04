@@ -1,0 +1,314 @@
+{
+  "drive_bolt_enter_v31.glb": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "AnimationSkinCarrier_v30: duplicate verts=12 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 24,
+        "faces": 12,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 24,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 12,
+        "islands": 6,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0
+      }
+    }
+  },
+  "drive_bolt_exit_v31.glb": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "AnimationSkinCarrier_v30: duplicate verts=12 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 24,
+        "faces": 12,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 24,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 12,
+        "islands": 6,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0
+      }
+    }
+  },
+  "drive_bolt_loop_v31.glb": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "AnimationSkinCarrier_v30: duplicate verts=12 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 24,
+        "faces": 12,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 24,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 12,
+        "islands": 6,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0
+      }
+    }
+  },
+  "drive_chainsaw_cut_enter_v31.glb": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "AnimationSkinCarrier_v30: duplicate verts=12 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 24,
+        "faces": 12,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 24,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 12,
+        "islands": 6,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0
+      }
+    }
+  },
+  "drive_chainsaw_cut_exit_v31.glb": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "AnimationSkinCarrier_v30: duplicate verts=12 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 24,
+        "faces": 12,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 24,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 12,
+        "islands": 6,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0
+      }
+    }
+  },
+  "drive_chainsaw_cut_loop_v31.glb": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "AnimationSkinCarrier_v30: duplicate verts=12 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 24,
+        "faces": 12,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 24,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 12,
+        "islands": 6,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0
+      }
+    }
+  },
+  "drive_chainsaw_spin_v31.glb": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "AnimationSkinCarrier_v30: duplicate verts=12 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 24,
+        "faces": 12,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 24,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 12,
+        "islands": 6,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0
+      }
+    }
+  },
+  "drive_grinder_sweep_v31.glb": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "AnimationSkinCarrier_v30: duplicate verts=12 loose verts=0"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "AnimationSkinCarrier_v30": {
+        "verts": 24,
+        "faces": 12,
+        "tris": 12,
+        "ngons": 0,
+        "boundary_edges": 24,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 12,
+        "islands": 6,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "unweighted_verts": 0,
+        "verts_over_4_influences": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "drive_bolt_loop_v30": {
+    "original_frames": 49,
+    "frames": 97,
+    "solved_inserted_keys": 48,
+    "original_integer_poses_preserved": true
+  },
+  "drive_grinder_sweep_v30": {
+    "original_frames": 73,
+    "frames": 145,
+    "solved_inserted_keys": 72,
+    "original_integer_poses_preserved": true
+  }
+}

@@ -1,0 +1,2511 @@
+{
+  "scope": "Actual runtime left-hand triangles vs body torso/pelvis and both outfit GLBs, skinned by saved v30 poses. Strict non-coplanar crossings. Sleeve/cuff intersections are included and named. Not a full enclosed-volume or continuous collision certificate.",
+  "source_blend": "C:\\Users\\yurib\\Documents\\New project\\witch\\assets\\characters\\player\\3d\\source\\middle_school_v1\\drive_attack_v30\\drive_attack_v30.blend",
+  "left_hand_triangles": 3600,
+  "samples": 37,
+  "poses": [
+    {
+      "clip": "combat_idle_rh_v20",
+      "phase": 0.0,
+      "frame": 1.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 97,
+            "hand_local_vertex_count_in_crossing_faces": 99
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 346,
+            "hand_local_vertex_count_in_crossing_faces": 308
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 44,
+            "hand_local_vertex_count_in_crossing_faces": 51
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.5222581624984741,
+          -0.6102041006088257,
+          0.5957326292991638,
+          0.13875383138656616
+        ],
+        [
+          -0.8226538896560669,
+          -0.5445523858070374,
+          0.16341102123260498,
+          1.0924440622329712
+        ],
+        [
+          0.2246938943862915,
+          -0.5754245519638062,
+          -0.786383867263794,
+          0.326718807220459
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.08344226625749544,
+          1.041127978683301,
+          0.26324412414991377
+        ],
+        [
+          0.18805568189386776,
+          1.1147246600838852,
+          0.3389055318821133
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 0.0,
+      "frame": 1.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 153,
+            "hand_local_vertex_count_in_crossing_faces": 153
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 77,
+            "hand_local_vertex_count_in_crossing_faces": 78
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 34,
+            "hand_local_vertex_count_in_crossing_faces": 34
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 83,
+            "hand_local_vertex_count_in_crossing_faces": 74
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 112,
+            "hand_local_vertex_count_in_crossing_faces": 112
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.1277574896812439,
+          -0.9695037007331848,
+          0.20914196968078613,
+          0.00949880387634039
+        ],
+        [
+          -0.454362690448761,
+          0.24465219676494598,
+          0.8565628528594971,
+          1.0557780265808105
+        ],
+        [
+          -0.8816080093383789,
+          0.014406345784664154,
+          -0.47176235914230347,
+          0.1007976233959198
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.05132675459101071,
+          1.0181310712638216,
+          0.06580732449136995
+        ],
+        [
+          0.06372734955503911,
+          1.1057943936805557,
+          0.13459073731602403
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 0.125,
+      "frame": 13.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 257,
+            "hand_local_vertex_count_in_crossing_faces": 255
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 74,
+            "hand_local_vertex_count_in_crossing_faces": 76
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 152,
+            "hand_local_vertex_count_in_crossing_faces": 156
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 109,
+            "hand_local_vertex_count_in_crossing_faces": 101
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 155,
+            "hand_local_vertex_count_in_crossing_faces": 159
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.1740170270204544,
+          -0.934308648109436,
+          0.31110304594039917,
+          0.012148417532444
+        ],
+        [
+          -0.4397582709789276,
+          0.35640284419059753,
+          0.8243731260299683,
+          1.05207097530365
+        ],
+        [
+          -0.881097137928009,
+          0.006644800305366516,
+          -0.47288966178894043,
+          0.16751916706562042
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.045447481064475714,
+          1.0113039272362814,
+          0.12582689035094877
+        ],
+        [
+          0.06182302802555811,
+          1.107414991613577,
+          0.20112088070568118
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 0.25,
+      "frame": 25.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 83,
+            "hand_local_vertex_count_in_crossing_faces": 82
+          }
+        },
+        "transformed": {
+          "TF_skirt_v4": {
+            "hand_triangles_crossing": 18,
+            "hand_local_vertex_count_in_crossing_faces": 19
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 88,
+            "hand_local_vertex_count_in_crossing_faces": 86
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 52,
+            "hand_local_vertex_count_in_crossing_faces": 56
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 18,
+            "hand_local_vertex_count_in_crossing_faces": 18
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.15445855259895325,
+          -0.9509581923484802,
+          0.2679935097694397,
+          -0.007723413407802582
+        ],
+        [
+          -0.44666236639022827,
+          0.3091574013233185,
+          0.8395918607711792,
+          1.0649083852767944
+        ],
+        [
+          -0.8812692165374756,
+          0.009979099035263062,
+          -0.4725091755390167,
+          -0.014101645909249783
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.06664424382343345,
+          1.0252544581405842,
+          -0.04460441473444165
+        ],
+        [
+          0.04898487753562278,
+          1.1180443602508834,
+          0.019582302163006247
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 0.375,
+      "frame": 37.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 257,
+            "hand_local_vertex_count_in_crossing_faces": 256
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 76,
+            "hand_local_vertex_count_in_crossing_faces": 77
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 188,
+            "hand_local_vertex_count_in_crossing_faces": 188
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 97,
+            "hand_local_vertex_count_in_crossing_faces": 89
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 194,
+            "hand_local_vertex_count_in_crossing_faces": 198
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.16795682907104492,
+          -0.9397543668746948,
+          0.2977465093135834,
+          0.013601898215711117
+        ],
+        [
+          -0.4420154392719269,
+          0.34176477789878845,
+          0.8293488621711731,
+          1.0527284145355225
+        ],
+        [
+          -0.8811426162719727,
+          0.0076864976435899734,
+          -0.472787082195282,
+          0.15530523657798767
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.04442275365685142,
+          1.0119995731452656,
+          0.11605862044490928
+        ],
+        [
+          0.06481182575131253,
+          1.1073986543111278,
+          0.18893261751772608
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 0.5,
+      "frame": 49.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 257,
+            "hand_local_vertex_count_in_crossing_faces": 255
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 74,
+            "hand_local_vertex_count_in_crossing_faces": 76
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 152,
+            "hand_local_vertex_count_in_crossing_faces": 156
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 109,
+            "hand_local_vertex_count_in_crossing_faces": 101
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 155,
+            "hand_local_vertex_count_in_crossing_faces": 159
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.17404082417488098,
+          -0.9342867136001587,
+          0.3111560046672821,
+          0.012133574113249779
+        ],
+        [
+          -0.4397485852241516,
+          0.35646042227745056,
+          0.8243522047996521,
+          1.0520691871643066
+        ],
+        [
+          -0.881096363067627,
+          0.006640791893005371,
+          -0.4728900194168091,
+          0.16755956411361694
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.045460601881591865,
+          1.0113022715030708,
+          0.12585815920743046
+        ],
+        [
+          0.061801774684208444,
+          1.1074159126413856,
+          0.20116116007640933
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 0.625,
+      "frame": 61.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 262,
+            "hand_local_vertex_count_in_crossing_faces": 262
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 74,
+            "hand_local_vertex_count_in_crossing_faces": 76
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 181,
+            "hand_local_vertex_count_in_crossing_faces": 183
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 112,
+            "hand_local_vertex_count_in_crossing_faces": 99
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 49,
+            "hand_local_vertex_count_in_crossing_faces": 53
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 182,
+            "hand_local_vertex_count_in_crossing_faces": 185
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.164470374584198,
+          -0.9427696466445923,
+          0.2900608777999878,
+          0.010794123634696007
+        ],
+        [
+          -0.44326576590538025,
+          0.33334237337112427,
+          0.8321054577827454,
+          1.0529857873916626
+        ],
+        [
+          -0.8811735510826111,
+          0.008282456547021866,
+          -0.47272247076034546,
+          0.15528292953968048
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.04746972788727752,
+          1.0128134315841892,
+          0.11431012496120618
+        ],
+        [
+          0.06121050752396304,
+          1.107264086493125,
+          0.18892506494367692
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 0.75,
+      "frame": 73.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 160,
+            "hand_local_vertex_count_in_crossing_faces": 158
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 76,
+            "hand_local_vertex_count_in_crossing_faces": 77
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 40,
+            "hand_local_vertex_count_in_crossing_faces": 40
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 83,
+            "hand_local_vertex_count_in_crossing_faces": 73
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 49,
+            "hand_local_vertex_count_in_crossing_faces": 53
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 110,
+            "hand_local_vertex_count_in_crossing_faces": 110
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.1311100274324417,
+          -0.9674314856529236,
+          0.21653251349925995,
+          0.008790123276412487
+        ],
+        [
+          -0.45350146293640137,
+          0.25275278091430664,
+          0.8546649813652039,
+          1.0559751987457275
+        ],
+        [
+          -0.8815587162971497,
+          0.013857349753379822,
+          -0.4718703031539917,
+          0.10365235060453415
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.051792592745745526,
+          1.0180518843162543,
+          0.06811630060910394
+        ],
+        [
+          0.06266753841417713,
+          1.1063652816088856,
+          0.13743191957456988
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 0.875,
+      "frame": 85.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 153,
+            "hand_local_vertex_count_in_crossing_faces": 153
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 77,
+            "hand_local_vertex_count_in_crossing_faces": 78
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 34,
+            "hand_local_vertex_count_in_crossing_faces": 34
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 83,
+            "hand_local_vertex_count_in_crossing_faces": 74
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 112,
+            "hand_local_vertex_count_in_crossing_faces": 112
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.1277574896812439,
+          -0.9695037007331848,
+          0.20914196968078613,
+          0.00949880387634039
+        ],
+        [
+          -0.454362690448761,
+          0.24465219676494598,
+          0.8565628528594971,
+          1.0557780265808105
+        ],
+        [
+          -0.8816080093383789,
+          0.014406345784664154,
+          -0.47176235914230347,
+          0.1007976233959198
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.05132675459101071,
+          1.0181310712638216,
+          0.06580732449136995
+        ],
+        [
+          0.06372734955503911,
+          1.1057943936805557,
+          0.13459073731602403
+        ]
+      ]
+    },
+    {
+      "clip": "drive_bolt_loop_v30",
+      "phase": 1.0,
+      "frame": 97.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 153,
+            "hand_local_vertex_count_in_crossing_faces": 153
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 77,
+            "hand_local_vertex_count_in_crossing_faces": 78
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 34,
+            "hand_local_vertex_count_in_crossing_faces": 34
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 83,
+            "hand_local_vertex_count_in_crossing_faces": 74
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 112,
+            "hand_local_vertex_count_in_crossing_faces": 112
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.1277574896812439,
+          -0.9695037007331848,
+          0.20914196968078613,
+          0.00949880387634039
+        ],
+        [
+          -0.454362690448761,
+          0.24465219676494598,
+          0.8565628528594971,
+          1.0557780265808105
+        ],
+        [
+          -0.8816080093383789,
+          0.014406345784664154,
+          -0.47176235914230347,
+          0.1007976233959198
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.05132675459101071,
+          1.0181310712638216,
+          0.06580732449136995
+        ],
+        [
+          0.06372734955503911,
+          1.1057943936805557,
+          0.13459073731602403
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 0.0,
+      "frame": 1.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 97,
+            "hand_local_vertex_count_in_crossing_faces": 99
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 346,
+            "hand_local_vertex_count_in_crossing_faces": 308
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 44,
+            "hand_local_vertex_count_in_crossing_faces": 51
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.5222583413124084,
+          -0.6102041602134705,
+          0.5957324504852295,
+          0.13875390589237213
+        ],
+        [
+          -0.8226537108421326,
+          -0.5445525646209717,
+          0.16341078281402588,
+          1.0924441814422607
+        ],
+        [
+          0.22469446063041687,
+          -0.5754242539405823,
+          -0.786384105682373,
+          0.3267189860343933
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.08344233867469042,
+          1.0411280949529507,
+          0.2632442965387228
+        ],
+        [
+          0.18805574547060672,
+          1.1147247848757784,
+          0.33890570766676453
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 0.125,
+      "frame": 19.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 63,
+            "hand_local_vertex_count_in_crossing_faces": 67
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 5,
+            "hand_local_vertex_count_in_crossing_faces": 7
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 84,
+            "hand_local_vertex_count_in_crossing_faces": 72
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 39,
+            "hand_local_vertex_count_in_crossing_faces": 41
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.9917435646057129,
+          0.12489298731088638,
+          0.029088705778121948,
+          0.09393475204706192
+        ],
+        [
+          0.02049139142036438,
+          0.06957422196865082,
+          -0.9973666667938232,
+          1.1162962913513184
+        ],
+        [
+          -0.1265878826379776,
+          0.9897276759147644,
+          0.06644050776958466,
+          0.23265871405601501
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.061508539160944765,
+          1.0806672104782757,
+          0.18494564007909897
+        ],
+        [
+          0.1463310407396946,
+          1.1395907184147798,
+          0.3042815098271223
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 0.25,
+      "frame": 37.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 151,
+            "hand_local_vertex_count_in_crossing_faces": 149
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 38,
+            "hand_local_vertex_count_in_crossing_faces": 40
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 68,
+            "hand_local_vertex_count_in_crossing_faces": 68
+          },
+          "TF_cape_v4": {
+            "hand_triangles_crossing": 306,
+            "hand_local_vertex_count_in_crossing_faces": 278
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 41
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 34,
+            "hand_local_vertex_count_in_crossing_faces": 38
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.9426125288009644,
+          0.04596874117851257,
+          0.3307098150253296,
+          0.049322254955768585
+        ],
+        [
+          0.2792198359966278,
+          0.43457692861557007,
+          -0.8562597036361694,
+          1.1272892951965332
+        ],
+        [
+          -0.1830797791481018,
+          0.8994618058204651,
+          0.3968020975589752,
+          0.23875005543231964
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.01713332302857632,
+          1.0906737380977038,
+          0.181619385711645
+        ],
+        [
+          0.08177273337733668,
+          1.1573474622378561,
+          0.31286172198719764
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 0.375,
+      "frame": 55.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 81,
+            "hand_local_vertex_count_in_crossing_faces": 81
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 409,
+            "hand_local_vertex_count_in_crossing_faces": 405
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 140,
+            "hand_local_vertex_count_in_crossing_faces": 144
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 148,
+            "hand_local_vertex_count_in_crossing_faces": 146
+          },
+          "TF_cape_v4": {
+            "hand_triangles_crossing": 279,
+            "hand_local_vertex_count_in_crossing_faces": 241
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 84,
+            "hand_local_vertex_count_in_crossing_faces": 77
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 37,
+            "hand_local_vertex_count_in_crossing_faces": 40
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 34,
+            "hand_local_vertex_count_in_crossing_faces": 36
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 32,
+            "hand_local_vertex_count_in_crossing_faces": 34
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.7453652024269104,
+          0.42948466539382935,
+          0.5098769664764404,
+          0.02133581042289734
+        ],
+        [
+          0.2609414756298065,
+          0.5158469676971436,
+          -0.8159722685813904,
+          1.0946176052093506
+        ],
+        [
+          -0.6134663820266724,
+          0.741245687007904,
+          0.27242371439933777,
+          0.17418067157268524
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.001925165961526612,
+          1.0564613267623695,
+          0.12006252073856269
+        ],
+        [
+          0.07717486597797212,
+          1.128737499015175,
+          0.24895386459199112
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 0.5,
+      "frame": 73.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 210,
+            "hand_local_vertex_count_in_crossing_faces": 210
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 79,
+            "hand_local_vertex_count_in_crossing_faces": 80
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 159,
+            "hand_local_vertex_count_in_crossing_faces": 160
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 33,
+            "hand_local_vertex_count_in_crossing_faces": 35
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 114,
+            "hand_local_vertex_count_in_crossing_faces": 99
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 45,
+            "hand_local_vertex_count_in_crossing_faces": 50
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 80,
+            "hand_local_vertex_count_in_crossing_faces": 82
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 32,
+            "hand_local_vertex_count_in_crossing_faces": 34
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.1482432335615158,
+          -0.5481381416320801,
+          0.8231452703475952,
+          0.022454112768173218
+        ],
+        [
+          -0.32794368267059326,
+          0.8124924898147583,
+          0.4819835424423218,
+          1.0578454732894897
+        ],
+        [
+          -0.932993471622467,
+          -0.19849440455436707,
+          -0.3002052903175354,
+          0.14155319333076477
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.015101280729361373,
+          1.0179403493623287,
+          0.08452822425587248
+        ],
+        [
+          0.05813629519554635,
+          1.131016487456503,
+          0.16925776510675933
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 0.625,
+      "frame": 91.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 36,
+            "hand_local_vertex_count_in_crossing_faces": 36
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 386,
+            "hand_local_vertex_count_in_crossing_faces": 376
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 116,
+            "hand_local_vertex_count_in_crossing_faces": 113
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 14,
+            "hand_local_vertex_count_in_crossing_faces": 16
+          },
+          "TF_cape_v4": {
+            "hand_triangles_crossing": 144,
+            "hand_local_vertex_count_in_crossing_faces": 133
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 96,
+            "hand_local_vertex_count_in_crossing_faces": 88
+          },
+          "TF_sleeve_R_v4": {
+            "hand_triangles_crossing": 396,
+            "hand_local_vertex_count_in_crossing_faces": 395
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 169,
+            "hand_local_vertex_count_in_crossing_faces": 170
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 43,
+            "hand_local_vertex_count_in_crossing_faces": 45
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 78,
+            "hand_local_vertex_count_in_crossing_faces": 81
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.8448344469070435,
+          -0.4931589663028717,
+          -0.2074829339981079,
+          -0.02208011783659458
+        ],
+        [
+          -0.4553474485874176,
+          0.4591354429721832,
+          0.762793242931366,
+          1.0817004442214966
+        ],
+        [
+          -0.28091615438461304,
+          0.7389103174209595,
+          -0.6124521493911743,
+          0.18070746958255768
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.07526661692440509,
+          1.0445599134837271,
+          0.12484727995400992
+        ],
+        [
+          0.01971175591872118,
+          1.1419770582534503,
+          0.2374957247964516
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 0.75,
+      "frame": 109.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 81,
+            "hand_local_vertex_count_in_crossing_faces": 83
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 1,
+            "hand_local_vertex_count_in_crossing_faces": 3
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 103,
+            "hand_local_vertex_count_in_crossing_faces": 95
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 43,
+            "hand_local_vertex_count_in_crossing_faces": 47
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.8746744990348816,
+          -0.06405271589756012,
+          -0.48045897483825684,
+          -0.04558279365301132
+        ],
+        [
+          -0.4052267372608185,
+          0.6405181288719177,
+          0.6523240804672241,
+          1.095402717590332
+        ],
+        [
+          0.26595988869667053,
+          0.7652661800384521,
+          -0.5862008333206177,
+          0.264507919549942
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.08066094703645332,
+          1.0555093966602094,
+          0.21705478411479603
+        ],
+        [
+          0.0025636564928079864,
+          1.1633228312141093,
+          0.3122662151023393
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 0.875,
+      "frame": 127.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 95,
+            "hand_local_vertex_count_in_crossing_faces": 96
+          }
+        },
+        "transformed": {
+          "TF_skirt_v4": {
+            "hand_triangles_crossing": 137,
+            "hand_local_vertex_count_in_crossing_faces": 127
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 91,
+            "hand_local_vertex_count_in_crossing_faces": 87
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 48,
+            "hand_local_vertex_count_in_crossing_faces": 52
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.4116976857185364,
+          -0.5317524671554565,
+          -0.7400968074798584,
+          -0.043798062950372696
+        ],
+        [
+          -0.894619345664978,
+          0.39058834314346313,
+          0.21702073514461517,
+          0.9701591730117798
+        ],
+        [
+          0.17367145419120789,
+          0.7514514923095703,
+          -0.6365199089050293,
+          0.2460656464099884
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.10709640957662267,
+          0.9476240824517991,
+          0.20707881632513264
+        ],
+        [
+          0.012320376901736652,
+          1.0324778738363847,
+          0.29310350576046146
+        ]
+      ]
+    },
+    {
+      "clip": "drive_grinder_sweep_v30",
+      "phase": 1.0,
+      "frame": 145.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 97,
+            "hand_local_vertex_count_in_crossing_faces": 99
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 346,
+            "hand_local_vertex_count_in_crossing_faces": 308
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 44,
+            "hand_local_vertex_count_in_crossing_faces": 51
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.5222582817077637,
+          -0.61020427942276,
+          0.5957325100898743,
+          0.13875387609004974
+        ],
+        [
+          -0.8226537108421326,
+          -0.5445524454116821,
+          0.16341087222099304,
+          1.0924440622329712
+        ],
+        [
+          0.22469431161880493,
+          -0.5754242539405823,
+          -0.7863839864730835,
+          0.32671889662742615
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.08344229385416205,
+          1.0411279791403765,
+          0.2632442396604989
+        ],
+        [
+          0.18805571546334315,
+          1.1147246611267967,
+          0.3389056225573379
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 0.0,
+      "frame": 1.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 79,
+            "hand_local_vertex_count_in_crossing_faces": 78
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 1,
+            "hand_local_vertex_count_in_crossing_faces": 3
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 92,
+            "hand_local_vertex_count_in_crossing_faces": 83
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.20849749445915222,
+          -0.8633342981338501,
+          0.4595474898815155,
+          0.017627613618969917
+        ],
+        [
+          -0.3793483376502991,
+          0.504476010799408,
+          0.7756282091140747,
+          1.0812098979949951
+        ],
+        [
+          -0.9014565944671631,
+          -0.012612197548151016,
+          -0.4326856732368469,
+          0.13082750141620636
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.03550035425891131,
+          1.0352632916376103,
+          0.09404892088784356
+        ],
+        [
+          0.06789198673686775,
+          1.1431323943376674,
+          0.16401189257141896
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 0.125,
+      "frame": 4.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 45,
+            "hand_local_vertex_count_in_crossing_faces": 45
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 81,
+            "hand_local_vertex_count_in_crossing_faces": 79
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 1,
+            "hand_local_vertex_count_in_crossing_faces": 3
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 96,
+            "hand_local_vertex_count_in_crossing_faces": 87
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 6,
+            "hand_local_vertex_count_in_crossing_faces": 7
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.25006118416786194,
+          -0.8828487992286682,
+          0.3975519835948944,
+          0.01546231284737587
+        ],
+        [
+          -0.3994404673576355,
+          0.4680922329425812,
+          0.7882494330406189,
+          1.0712978839874268
+        ],
+        [
+          -0.8819961547851562,
+          0.038312170654535294,
+          -0.46969717741012573,
+          0.13974474370479584
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.039539198935036164,
+          1.0265230909191874,
+          0.10049960224586338
+        ],
+        [
+          0.06493194902941535,
+          1.1316434961948996,
+          0.1741109337717243
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 0.25,
+      "frame": 7.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 50
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 76,
+            "hand_local_vertex_count_in_crossing_faces": 77
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 87,
+            "hand_local_vertex_count_in_crossing_faces": 80
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 48,
+            "hand_local_vertex_count_in_crossing_faces": 52
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.2073393166065216,
+          -0.9482282996177673,
+          0.24056880176067352,
+          0.019922655075788498
+        ],
+        [
+          -0.4549367427825928,
+          0.31116440892219543,
+          0.8343912959098816,
+          1.050413966178894
+        ],
+        [
+          -0.8660498857498169,
+          0.06355863064527512,
+          -0.4959007501602173,
+          0.1300259232521057
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.03973807424555261,
+          1.0104358706851,
+          0.09000927601768427
+        ],
+        [
+          0.070973855054669,
+          1.1037189564439507,
+          0.16489600109118158
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 0.375,
+      "frame": 10.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 47,
+            "hand_local_vertex_count_in_crossing_faces": 46
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 76,
+            "hand_local_vertex_count_in_crossing_faces": 78
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 89,
+            "hand_local_vertex_count_in_crossing_faces": 79
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 48,
+            "hand_local_vertex_count_in_crossing_faces": 52
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.11945996433496475,
+          -0.9866853952407837,
+          0.11036930978298187,
+          0.026028545573353767
+        ],
+        [
+          -0.49804484844207764,
+          0.15572069585323334,
+          0.8530554175376892,
+          1.029966115951538
+        ],
+        [
+          -0.8588840365409851,
+          0.04693710058927536,
+          -0.5100155472755432,
+          0.12128067016601562
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.03785470884559241,
+          0.9951074455675037,
+          0.08213287991749238
+        ],
+        [
+          0.07914611799196258,
+          1.0759602131701835,
+          0.15571951570348544
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 0.5,
+      "frame": 13.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 239,
+            "hand_local_vertex_count_in_crossing_faces": 238
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 77,
+            "hand_local_vertex_count_in_crossing_faces": 79
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 132,
+            "hand_local_vertex_count_in_crossing_faces": 132
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 100,
+            "hand_local_vertex_count_in_crossing_faces": 92
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 48,
+            "hand_local_vertex_count_in_crossing_faces": 52
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 208,
+            "hand_local_vertex_count_in_crossing_faces": 208
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.04844820126891136,
+          -0.9931009411811829,
+          0.10678485780954361,
+          0.030620936304330826
+        ],
+        [
+          -0.5116690397262573,
+          0.11649347096681595,
+          0.8512483835220337,
+          1.0204488039016724
+        ],
+        [
+          -0.8578153252601624,
+          -0.013397058472037315,
+          -0.5137826800346375,
+          0.13409246504306793
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.03462872655560253,
+          0.9867349118870092,
+          0.09494812830728606
+        ],
+        [
+          0.08398670233404087,
+          1.0647769227784507,
+          0.16706205709113134
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 0.625,
+      "frame": 16.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 245,
+            "hand_local_vertex_count_in_crossing_faces": 244
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 75,
+            "hand_local_vertex_count_in_crossing_faces": 76
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 217,
+            "hand_local_vertex_count_in_crossing_faces": 217
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 109,
+            "hand_local_vertex_count_in_crossing_faces": 98
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 277,
+            "hand_local_vertex_count_in_crossing_faces": 267
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 25,
+            "hand_local_vertex_count_in_crossing_faces": 22
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.024744704365730286,
+          -0.9779284000396729,
+          0.20747120678424835,
+          0.032177746295928955
+        ],
+        [
+          -0.4953620433807373,
+          0.1922590583562851,
+          0.8471441864967346,
+          1.0283259153366089
+        ],
+        [
+          -0.8683344125747681,
+          -0.0818108469247818,
+          -0.4891856908798218,
+          0.14706113934516907
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.03139384996377609,
+          0.9920692912904863,
+          0.10824407850156491
+        ],
+        [
+          0.08505386995950745,
+          1.0760971035337845,
+          0.17831844913187495
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 0.75,
+      "frame": 19.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 166,
+            "hand_local_vertex_count_in_crossing_faces": 164
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 78,
+            "hand_local_vertex_count_in_crossing_faces": 79
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 88,
+            "hand_local_vertex_count_in_crossing_faces": 85
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 113,
+            "hand_local_vertex_count_in_crossing_faces": 100
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 129,
+            "hand_local_vertex_count_in_crossing_faces": 130
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 29,
+            "hand_local_vertex_count_in_crossing_faces": 27
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.05043318495154381,
+          -0.9434736967086792,
+          0.3275875747203827,
+          0.029983730986714363
+        ],
+        [
+          -0.45458608865737915,
+          0.313743531703949,
+          0.8336166739463806,
+          1.0503047704696655
+        ],
+        [
+          -0.8892737030982971,
+          -0.10687495768070221,
+          -0.44471317529678345,
+          0.13722515106201172
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.030019634877887877,
+          1.010470143613629,
+          0.1003616076363842
+        ],
+        [
+          0.08283742787913487,
+          1.1037324981144343,
+          0.16787978091091021
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 0.875,
+      "frame": 22.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 20,
+            "hand_local_vertex_count_in_crossing_faces": 19
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 81,
+            "hand_local_vertex_count_in_crossing_faces": 79
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 1,
+            "hand_local_vertex_count_in_crossing_faces": 3
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 94,
+            "hand_local_vertex_count_in_crossing_faces": 85
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.1203407421708107,
+          -0.9000464081764221,
+          0.4188497066497803,
+          0.02446107007563114
+        ],
+        [
+          -0.407454252243042,
+          0.42952120304107666,
+          0.8059110641479492,
+          1.0728107690811157
+        ],
+        [
+          -0.905261754989624,
+          -0.07367778569459915,
+          -0.4184163510799408,
+          0.12413698434829712
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.031076204118989894,
+          1.029386288941939,
+          0.08903698974676535
+        ],
+        [
+          0.07655852899529655,
+          1.1313151244759463,
+          0.15573039444139578
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_cut_loop_v30",
+      "phase": 1.0,
+      "frame": 25.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 79,
+            "hand_local_vertex_count_in_crossing_faces": 78
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 1,
+            "hand_local_vertex_count_in_crossing_faces": 3
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 92,
+            "hand_local_vertex_count_in_crossing_faces": 83
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 50,
+            "hand_local_vertex_count_in_crossing_faces": 54
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.20849749445915222,
+          -0.8633342981338501,
+          0.4595474898815155,
+          0.017627613618969917
+        ],
+        [
+          -0.3793483376502991,
+          0.504476010799408,
+          0.7756282091140747,
+          1.0812098979949951
+        ],
+        [
+          -0.9014565944671631,
+          -0.012612197548151016,
+          -0.4326856732368469,
+          0.13082750141620636
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.03550035425891131,
+          1.0352632916376103,
+          0.09404892088784356
+        ],
+        [
+          0.06789198673686775,
+          1.1431323943376674,
+          0.16401189257141896
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 0.0,
+      "frame": 1.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 97,
+            "hand_local_vertex_count_in_crossing_faces": 99
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 346,
+            "hand_local_vertex_count_in_crossing_faces": 308
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 44,
+            "hand_local_vertex_count_in_crossing_faces": 51
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.5222582817077637,
+          -0.61020427942276,
+          0.5957325100898743,
+          0.13875387609004974
+        ],
+        [
+          -0.8226537108421326,
+          -0.5445524454116821,
+          0.16341087222099304,
+          1.0924440622329712
+        ],
+        [
+          0.22469431161880493,
+          -0.5754242539405823,
+          -0.7863839864730835,
+          0.32671889662742615
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.08344229385416205,
+          1.0411279791403765,
+          0.2632442396604989
+        ],
+        [
+          0.18805571546334315,
+          1.1147246611267967,
+          0.3389056225573379
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 0.125,
+      "frame": 10.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 175,
+            "hand_local_vertex_count_in_crossing_faces": 169
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 19,
+            "hand_local_vertex_count_in_crossing_faces": 21
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 210,
+            "hand_local_vertex_count_in_crossing_faces": 209
+          },
+          "TF_cape_v4": {
+            "hand_triangles_crossing": 21,
+            "hand_local_vertex_count_in_crossing_faces": 19
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 142,
+            "hand_local_vertex_count_in_crossing_faces": 127
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 51,
+            "hand_local_vertex_count_in_crossing_faces": 55
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 62,
+            "hand_local_vertex_count_in_crossing_faces": 63
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.07768478989601135,
+          -0.9968739151954651,
+          -0.014357149600982666,
+          0.1540612429380417
+        ],
+        [
+          -0.7081303596496582,
+          0.045035168528556824,
+          0.7046434283256531,
+          1.0854878425598145
+        ],
+        [
+          -0.701793909072876,
+          0.0649074912071228,
+          -0.7094156742095947,
+          0.10699797421693802
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.08669355725147729,
+          1.0442042152047533,
+          0.054238313384344455
+        ],
+        [
+          0.1898919386566632,
+          1.1290530728786936,
+          0.14003143565653847
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 0.25,
+      "frame": 19.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 90,
+            "hand_local_vertex_count_in_crossing_faces": 89
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 81,
+            "hand_local_vertex_count_in_crossing_faces": 81
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 14,
+            "hand_local_vertex_count_in_crossing_faces": 16
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 98,
+            "hand_local_vertex_count_in_crossing_faces": 98
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 135,
+            "hand_local_vertex_count_in_crossing_faces": 111
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 55,
+            "hand_local_vertex_count_in_crossing_faces": 61
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 116,
+            "hand_local_vertex_count_in_crossing_faces": 116
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 33,
+            "hand_local_vertex_count_in_crossing_faces": 35
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.8726295828819275,
+          -0.444754034280777,
+          -0.20176969468593597,
+          0.13799366354942322
+        ],
+        [
+          -0.4430709481239319,
+          0.5471591949462891,
+          0.7101441025733948,
+          1.1006007194519043
+        ],
+        [
+          -0.20543918013572693,
+          0.7090911865234375,
+          -0.6745250225067139,
+          0.03137263283133507
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.08690041895644245,
+          1.0526924921262428,
+          -0.021593491710059087
+        ],
+        [
+          0.15781301241580944,
+          1.1648721258825714,
+          0.08469489162187518
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 0.375,
+      "frame": 28.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 83,
+            "hand_local_vertex_count_in_crossing_faces": 80
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 81,
+            "hand_local_vertex_count_in_crossing_faces": 83
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 15,
+            "hand_local_vertex_count_in_crossing_faces": 18
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 108,
+            "hand_local_vertex_count_in_crossing_faces": 110
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 131,
+            "hand_local_vertex_count_in_crossing_faces": 106
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 56,
+            "hand_local_vertex_count_in_crossing_faces": 62
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 98,
+            "hand_local_vertex_count_in_crossing_faces": 96
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 37,
+            "hand_local_vertex_count_in_crossing_faces": 39
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.8181979060173035,
+          0.08052586019039154,
+          -0.569270133972168,
+          0.12849417328834534
+        ],
+        [
+          -0.4462154805660248,
+          0.5354410409927368,
+          0.7170740365982056,
+          1.1010302305221558
+        ],
+        [
+          0.3625536262989044,
+          0.8407253623008728,
+          -0.4021642804145813,
+          -0.059543997049331665
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.08389011816247716,
+          1.0533608553080929,
+          -0.10234515875474526
+        ],
+        [
+          0.16335145070428583,
+          1.1648001813088062,
+          -0.004685748268898404
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 0.5,
+      "frame": 37.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 78,
+            "hand_local_vertex_count_in_crossing_faces": 78
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 87,
+            "hand_local_vertex_count_in_crossing_faces": 85
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 12,
+            "hand_local_vertex_count_in_crossing_faces": 14
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 149,
+            "hand_local_vertex_count_in_crossing_faces": 151
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 129,
+            "hand_local_vertex_count_in_crossing_faces": 106
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 57,
+            "hand_local_vertex_count_in_crossing_faces": 63
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 72,
+            "hand_local_vertex_count_in_crossing_faces": 72
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 34,
+            "hand_local_vertex_count_in_crossing_faces": 34
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.7495360970497131,
+          0.6497615575790405,
+          -0.1265127956867218,
+          -0.1125563234090805
+        ],
+        [
+          -0.422336220741272,
+          0.6165599822998047,
+          0.6644437909126282,
+          1.0981459617614746
+        ],
+        [
+          0.5097332000732422,
+          -0.44459372758865356,
+          0.736551821231842,
+          -0.08471090346574783
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.13955864598254855,
+          1.0479611908246607,
+          -0.13065361998909694
+        ],
+        [
+          -0.05680771750501712,
+          1.1652149152683,
+          -0.03352932916696133
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 0.625,
+      "frame": 46.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 115,
+            "hand_local_vertex_count_in_crossing_faces": 115
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 88,
+            "hand_local_vertex_count_in_crossing_faces": 83
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 45,
+            "hand_local_vertex_count_in_crossing_faces": 47
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 54,
+            "hand_local_vertex_count_in_crossing_faces": 52
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 132,
+            "hand_local_vertex_count_in_crossing_faces": 109
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 54,
+            "hand_local_vertex_count_in_crossing_faces": 60
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 22,
+            "hand_local_vertex_count_in_crossing_faces": 22
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 10,
+            "hand_local_vertex_count_in_crossing_faces": 12
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.10430596768856049,
+          -0.6913039684295654,
+          0.714995801448822,
+          -0.023346981033682823
+        ],
+        [
+          -0.42099595069885254,
+          0.6206393241882324,
+          0.6614903211593628,
+          1.0980067253112793
+        ],
+        [
+          -0.9010454416275024,
+          -0.37000781297683716,
+          -0.2262997329235077,
+          0.1388845592737198
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.07346377004227336,
+          1.048155178270259,
+          0.09100233673329
+        ],
+        [
+          0.02772252345604087,
+          1.1652303213342485,
+          0.16110510397120564
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 0.75,
+      "frame": 55.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 112,
+            "hand_local_vertex_count_in_crossing_faces": 111
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 88,
+            "hand_local_vertex_count_in_crossing_faces": 83
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 42,
+            "hand_local_vertex_count_in_crossing_faces": 44
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 66,
+            "hand_local_vertex_count_in_crossing_faces": 66
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 132,
+            "hand_local_vertex_count_in_crossing_faces": 109
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 54,
+            "hand_local_vertex_count_in_crossing_faces": 60
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 10,
+            "hand_local_vertex_count_in_crossing_faces": 10
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 29,
+            "hand_local_vertex_count_in_crossing_faces": 26
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.30365049839019775,
+          -0.8017330765724182,
+          0.5148017406463623,
+          0.04306826367974281
+        ],
+        [
+          -0.4284108281135559,
+          0.5975014567375183,
+          0.677832305431366,
+          1.0988041162490845
+        ],
+        [
+          -0.8510354161262512,
+          -0.014722257852554321,
+          -0.5249024629592896,
+          0.13431598246097565
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          -0.007299129337608839,
+          1.0495855659186937,
+          0.09187211172830864
+        ],
+        [
+          0.08736434399573634,
+          1.1651359878555545,
+          0.16720181819475888
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 0.875,
+      "frame": 64.0,
+      "contacts": {
+        "body": {
+          "Body_Torso_v7": {
+            "hand_triangles_crossing": 56,
+            "hand_local_vertex_count_in_crossing_faces": 55
+          }
+        },
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 132,
+            "hand_local_vertex_count_in_crossing_faces": 126
+          },
+          "SourceOutfit_Inner_v11": {
+            "hand_triangles_crossing": 59,
+            "hand_local_vertex_count_in_crossing_faces": 63
+          }
+        },
+        "transformed": {
+          "TF_blouse_v4": {
+            "hand_triangles_crossing": 144,
+            "hand_local_vertex_count_in_crossing_faces": 144
+          },
+          "TF_cape_v4": {
+            "hand_triangles_crossing": 21,
+            "hand_local_vertex_count_in_crossing_faces": 21
+          },
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 133,
+            "hand_local_vertex_count_in_crossing_faces": 110
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 48,
+            "hand_local_vertex_count_in_crossing_faces": 52
+          },
+          "TF_under_torso_v4": {
+            "hand_triangles_crossing": 28,
+            "hand_local_vertex_count_in_crossing_faces": 30
+          },
+          "TF_waist_v4": {
+            "hand_triangles_crossing": 39,
+            "hand_local_vertex_count_in_crossing_faces": 40
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          -0.5063301920890808,
+          -0.8495110273361206,
+          -0.14819228649139404,
+          0.16005221009254456
+        ],
+        [
+          -0.6347118616104126,
+          0.25080016255378723,
+          0.7309179306030273,
+          1.0882700681686401
+        ],
+        [
+          -0.5837559103965759,
+          0.4641452431678772,
+          -0.6661821007728577,
+          0.04803511127829552
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.0927217240357506,
+          1.0453184451155346,
+          -0.007638215875152288
+        ],
+        [
+          0.1834011004477411,
+          1.1407598372946577,
+          0.09654051836615093
+        ]
+      ]
+    },
+    {
+      "clip": "drive_chainsaw_spin_v30",
+      "phase": 1.0,
+      "frame": 73.0,
+      "contacts": {
+        "civilian": {
+          "SourceOutfit_Cardigan_v11": {
+            "hand_triangles_crossing": 97,
+            "hand_local_vertex_count_in_crossing_faces": 99
+          }
+        },
+        "transformed": {
+          "TF_sleeve_L_v4": {
+            "hand_triangles_crossing": 346,
+            "hand_local_vertex_count_in_crossing_faces": 308
+          },
+          "TF_under_sleeves_v4": {
+            "hand_triangles_crossing": 44,
+            "hand_local_vertex_count_in_crossing_faces": 51
+          }
+        }
+      },
+      "left_wrist_gltf": [
+        [
+          0.5222582817077637,
+          -0.61020427942276,
+          0.5957325100898743,
+          0.13875387609004974
+        ],
+        [
+          -0.8226537108421326,
+          -0.5445524454116821,
+          0.16341087222099304,
+          1.0924440622329712
+        ],
+        [
+          0.22469431161880493,
+          -0.5754242539405823,
+          -0.7863839864730835,
+          0.32671889662742615
+        ]
+      ],
+      "left_hand_aabb_gltf": [
+        [
+          0.08344229385416205,
+          1.0411279791403765,
+          0.2632442396604989
+        ],
+        [
+          0.18805571546334315,
+          1.1147246611267967,
+          0.3389056225573379
+        ]
+      ]
+    }
+  ]
+}

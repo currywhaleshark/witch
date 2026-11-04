@@ -1,0 +1,25 @@
+{
+  "downloaded": "2026-11-04",
+  "provider": "Adobe Mixamo",
+  "url": "https://www.mixamo.com/",
+  "settings": {
+    "skin": "Without Skin",
+    "fps": 30,
+    "format": "FBX Binary",
+    "reduction": "none",
+    "overdrive": 50,
+    "arm_space": 50
+  },
+  "clips": [
+    {
+      "file": "Great Sword Slash.fbx",
+      "sha256": "86c6adadeaf490352419b34eed9c85b57560ddfd07ea49c9fa30e8a4b634712f",
+      "description": "Great Sword Low Slash"
+    },
+    {
+      "file": "Great Sword High Spin Attack.fbx",
+      "sha256": "1a4667a22c9fd9f04b79592fe7d6a91f1cba7ca8eac5d407a205cdab7a7dd284",
+      "description": "Great Sword High Spin Attack From Run"
+    }
+  ]
+}

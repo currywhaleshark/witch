@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-04",
+  "scope": "Free motion research and local original-source previews only. No retarget, new action, runtime integration, purchase or source redistribution.",
+  "selected_direction": "Two hands, a heavy tool at the end of a staff; no kung-fu staff flourishes or one-handed spear style.",
+  "candidates": [
+    {
+      "skill": "bolt_cutter_channel",
+      "source": "Kevin Iglesias Human Melee Animations FREE",
+      "clip": "HumanF@AttackPolearm01",
+      "url": "https://kevdev.itch.io/human-melee-animatons-free",
+      "evidence": "Downloaded official free Godot/Unreal ZIP; original female action rendered front-oblique and side at every second frame (1–43, 30fps).",
+      "observed": "Two-handed pullback, forward thrust with a step, recovery to guard.",
+      "adaptation": "Reduce anticipation and foot excursion; create a repeatable thrust/retract segment and an interruptible exit; fit existing right-above-left grip.",
+      "status": "Strong source candidate, not yet a rapid channel loop."
+    },
+    {
+      "skill": "grinder_semicircle",
+      "source": "Adobe Mixamo",
+      "clip": "Great Sword Slash / Great Sword Low Slash",
+      "url": "https://www.mixamo.com/#/?page=1&query=Great%20Sword&type=Motion%2CMotionPack",
+      "official_preview": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122360901/animated.gif",
+      "evidence": "Official catalogue description and its 18-frame animated preview inspected.",
+      "adaptation": "Reduce crouch and shoulder-height windup; author the tool arc to the forward semicircle. Preserve two-hand grip.",
+      "status": "Preview-verified candidate; FBX not downloaded or retargeted."
+    },
+    {
+      "skill": "chainsaw_circle",
+      "source": "Adobe Mixamo",
+      "clip": "Great Sword High Spin Attack",
+      "url": "https://www.mixamo.com/#/?page=1&query=Great%20Sword&type=Motion%2CMotionPack",
+      "official_preview": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122550901/animated.gif",
+      "evidence": "Official catalogue description and its 18-frame animated preview inspected; two hands and a body turn.",
+      "adaptation": "Extract the rotation, remove run entry/travel, lower the tool path; keep foot pivots to avoid torso-only twisting.",
+      "status": "Preview-verified candidate; FBX not downloaded or retargeted."
+    },
+    {
+      "skill": "chainsaw_channel",
+      "source": "Existing project two-hand guard plus authored adaptation",
+      "clip": null,
+      "status": "No exact free sustained-contact clip verified.",
+      "adaptation": "Short entry into a braced forward hold, bounded cutting/weight-shift loop, and an interruptible recovery. Keep the tool in contact instead of repeating a full slash."
+    }
+  ],
+  "excluded": [
+    {
+      "source": "Previously proposed paid anime spear / Staff Warrior",
+      "reason": "User found the demonstrated styles unsuitable; not selected."
+    },
+    {
+      "source": "Quaternius Universal Animation Library 2 Standard",
+      "clips": [
+        "Sword_Heavy_Combo",
+        "Sword_Regular_Combo",
+        "TreeChopping_Loop"
+      ],
+      "evidence": "Downloaded official free Standard ZIP (CC0), rendered imported original GLB.",
+      "reason": "Observed one-hand motion or separated hands; not a direct match for fixed two-hand staff grip."
+    },
+    {
+      "source": "Kevin Iglesias Human Melee Animations FREE",
+      "clip": "HumanF@Attack2H01",
+      "reason": "A diagonal cut, not an exact forward semicircle. Retained only as an alternative body-weight reference."
+    }
+  ],
+  "source_integrity": {
+    "female_blend_equal_to_downloaded_archive": true,
+    "sha256": "4797d2d8a4222842b23e608b833e2bd8538cb022eaadc01b4ab9dff028f306aa"
+  },
+  "limits": [
+    "Source .blend prints two IK dependency-cycle warnings in Blender 5.1.1. These previews do not certify the source rig; use verified baked curves and recheck hand/weapon contact during retargeting.",
+    "Original source files stay under gitignored local/. No raw animation files are prepared for public redistribution.",
+    "No purchase, gameplay timing, attack-speed values or damage rules have been selected."
+  ]
+}
