@@ -1,0 +1,20 @@
+{
+  "game/scripts/player_visual.gd": "d4f7d4cafcd8e7ce4ebd1115ed8af15f4347300807e4d8f890b9d68d1310a779",
+  "game/scripts/staff_locomotion_blend.gd": "240b4d10d7b6c4aa2e94e4ab47fefba3983f64493b517fa942abbf2f6063be4d",
+  "game/project.godot": "1b745fe7b591c9d43b643fe693018f4b1838dbac823fa9f1b726ab0402b54d48",
+  "game/assets/characters/player/hand_rebuild_v29/body_standard_v29.glb": "b97927fcac15d76263a1971e4d6e8299558aa1e19611761fe55feb41f29b0857",
+  "game/assets/characters/player/model_refinement_v28/body_standard_v28.glb": "59a6ba3321928a27e229818404ff7628b6cb871f4a5b6453879c78ab202ae5f3",
+  "game/assets/characters/player/model_refinement_v28/eyes_neutral_v28.glb": "43f6358c7027870e125de69cacb15583dd1506bf214428beda0ee6d366830ff6",
+  "game/assets/characters/player/model_refinement_v28/outfit_civilian_v28.glb": "eae8d60852a03f7133b03c9ef40bc68dc372109cba9020d118128f07fa5ecbc4",
+  "game/assets/characters/player/transformation_v25/combat_transform_entry_v25.glb": "caa5393aecb62aeddd6f301d95e4d1d7a524da65bdcaceff1b5628b2964d05c9",
+  "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13",
+  "game/assets/characters/player/drive_attack_v31/drive_bolt_enter_v31.glb": "6a4f64660f92ae4d4a561e60957eb3765de14a13ef21e7da8549364f347490e5",
+  "game/assets/characters/player/drive_attack_v31/drive_bolt_exit_v31.glb": "3b2f2add779f896f9a0298fdc8ee3252c8ed766d52489232a815b112a9182398",
+  "game/assets/characters/player/drive_attack_v31/drive_bolt_loop_v31.glb": "70108431e9453ccedd8032d1c748f7a2c282b2e60085c3b8058b102029772ec2",
+  "game/assets/characters/player/drive_attack_v31/drive_chainsaw_cut_enter_v31.glb": "f599693950a9200e1c02bfc806679bae39999a9972dd47aa34dc79e1e550ac70",
+  "game/assets/characters/player/drive_attack_v31/drive_chainsaw_cut_exit_v31.glb": "ef38220d6471eaab40149fd940b9c798c42222cbe0d28999f42edba8e9db05f6",
+  "game/assets/characters/player/drive_attack_v31/drive_chainsaw_cut_loop_v31.glb": "0f7dbdf848185131d6e32ace3520ef48f8c2233b4820ed9140f0434a3a1b1f7b",
+  "game/assets/characters/player/drive_attack_v31/drive_chainsaw_spin_v31.glb": "ed01978014a98141928de69f5d9a080da504774d99e778b0d2538fc91ca93b6d",
+  "game/assets/characters/player/drive_attack_v31/drive_grinder_sweep_v31.glb": "33b07b3677c6de4677169ee5bf07c05dfa3c19b5cd6c4ab4fd827a894f582d04",
+  "assets/characters/player/3d/source/middle_school_v1/drive_attack_v31/drive_attack_v31.blend": "622bb9e10347f2847e5725b1454b837ec9d9d6cfbe8b3e0e1ea61f99af94770a"
+}

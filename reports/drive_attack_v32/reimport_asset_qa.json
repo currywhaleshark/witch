@@ -1,0 +1,82 @@
+{
+  "drive_bolt_enter_v32.glb": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC",
+    "bones": 107,
+    "carrier_triangles": 12,
+    "action_frame_range": [
+      0.0,
+      24.0
+    ]
+  },
+  "drive_bolt_exit_v32.glb": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC",
+    "bones": 107,
+    "carrier_triangles": 12,
+    "action_frame_range": [
+      0.0,
+      24.0
+    ]
+  },
+  "drive_bolt_loop_v32.glb": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC",
+    "bones": 107,
+    "carrier_triangles": 12,
+    "action_frame_range": [
+      0.0,
+      96.0
+    ]
+  },
+  "drive_chainsaw_cut_enter_v32.glb": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC",
+    "bones": 107,
+    "carrier_triangles": 12,
+    "action_frame_range": [
+      0.0,
+      24.0
+    ]
+  },
+  "drive_chainsaw_cut_exit_v32.glb": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC",
+    "bones": 107,
+    "carrier_triangles": 12,
+    "action_frame_range": [
+      0.0,
+      24.0
+    ]
+  },
+  "drive_chainsaw_cut_loop_v32.glb": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC",
+    "bones": 107,
+    "carrier_triangles": 12,
+    "action_frame_range": [
+      0.0,
+      48.0
+    ]
+  },
+  "drive_chainsaw_spin_v32.glb": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC",
+    "bones": 107,
+    "carrier_triangles": 12,
+    "action_frame_range": [
+      0.0,
+      96.0
+    ]
+  },
+  "drive_grinder_sweep_v32.glb": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC",
+    "bones": 107,
+    "carrier_triangles": 12,
+    "action_frame_range": [
+      0.0,
+      144.0
+    ]
+  }
+}

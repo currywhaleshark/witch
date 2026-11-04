@@ -1,0 +1,99 @@
+{
+  "drive_bolt_enter_v32": {
+    "samples": 49,
+    "maximum_secondary_grip_error_m": 0.0004705088856147634,
+    "maximum_local_half_frame_degrees": [
+      8.253272743963247,
+      "DEF-forearm.R.002"
+    ],
+    "maximum_scale_error": 1.722574234008789e-05,
+    "endpoint_head_difference_m": 0.46455729497834025,
+    "loop": false,
+    "loop_velocity_seam_m_per_author_second": null
+  },
+  "drive_bolt_loop_v32": {
+    "samples": 193,
+    "maximum_secondary_grip_error_m": 0.0003244830661211313,
+    "maximum_local_half_frame_degrees": [
+      4.483681949523102,
+      "DEF-forearm.L"
+    ],
+    "maximum_scale_error": 1.0609626770019531e-05,
+    "endpoint_head_difference_m": 0.0,
+    "loop": true,
+    "loop_velocity_seam_m_per_author_second": 0.017894263976158627
+  },
+  "drive_bolt_exit_v32": {
+    "samples": 49,
+    "maximum_secondary_grip_error_m": 0.0004705088856147634,
+    "maximum_local_half_frame_degrees": [
+      8.253272743963247,
+      "DEF-forearm.R.002"
+    ],
+    "maximum_scale_error": 1.722574234008789e-05,
+    "endpoint_head_difference_m": 0.46455729497834025,
+    "loop": false,
+    "loop_velocity_seam_m_per_author_second": null
+  },
+  "drive_grinder_sweep_v32": {
+    "samples": 289,
+    "maximum_secondary_grip_error_m": 0.002397574887107067,
+    "maximum_local_half_frame_degrees": [
+      9.466841972670895,
+      "DEF-hand.L"
+    ],
+    "maximum_scale_error": 3.0219554901123047e-05,
+    "endpoint_head_difference_m": 0.0,
+    "loop": false,
+    "loop_velocity_seam_m_per_author_second": null
+  },
+  "drive_chainsaw_cut_enter_v32": {
+    "samples": 49,
+    "maximum_secondary_grip_error_m": 0.002825830171723012,
+    "maximum_local_half_frame_degrees": [
+      8.29502483658589,
+      "DEF-forearm.R.002"
+    ],
+    "maximum_scale_error": 3.331899642944336e-05,
+    "endpoint_head_difference_m": 0.40859460766777045,
+    "loop": false,
+    "loop_velocity_seam_m_per_author_second": null
+  },
+  "drive_chainsaw_cut_loop_v32": {
+    "samples": 97,
+    "maximum_secondary_grip_error_m": 1.2099622745901796e-05,
+    "maximum_local_half_frame_degrees": [
+      0.7506883758729418,
+      "DEF-upper_arm.L"
+    ],
+    "maximum_scale_error": 1.055002212524414e-05,
+    "endpoint_head_difference_m": 0.0,
+    "loop": true,
+    "loop_velocity_seam_m_per_author_second": 0.03342822299186644
+  },
+  "drive_chainsaw_cut_exit_v32": {
+    "samples": 49,
+    "maximum_secondary_grip_error_m": 0.002825830171723012,
+    "maximum_local_half_frame_degrees": [
+      8.29502483658589,
+      "DEF-forearm.R.002"
+    ],
+    "maximum_scale_error": 3.331899642944336e-05,
+    "endpoint_head_difference_m": 0.40859460766777045,
+    "loop": false,
+    "loop_velocity_seam_m_per_author_second": null
+  },
+  "drive_chainsaw_spin_v32": {
+    "samples": 193,
+    "maximum_secondary_grip_error_m": 0.0021334783940213167,
+    "maximum_local_half_frame_degrees": [
+      14.271014554668682,
+      "DEF-forearm.R.002"
+    ],
+    "maximum_scale_error": 2.8908252716064453e-05,
+    "endpoint_head_difference_m": 0.0,
+    "loop": false,
+    "loop_velocity_seam_m_per_author_second": null
+  },
+  "scope": "Saved authored samples and half-frame interpolation; joint/shaft proxies, not all triangle contacts."
+}

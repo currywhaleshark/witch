@@ -1,0 +1,5 @@
+project_snapshot/
+pose_probe.json
+contact_pose_reference.json.gz
+capture/*.png
+*.log

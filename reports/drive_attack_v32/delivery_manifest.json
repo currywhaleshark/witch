@@ -1,0 +1,396 @@
+{
+  "scope": "Prepared animation review; no main-game promotion",
+  "capture_count": 300,
+  "runtime": {
+    "captures": 0,
+    "checks": 272971,
+    "forms": [
+      "civilian",
+      "transformed"
+    ],
+    "maximum_export_pose_error_m": 4.69336919195484e-06,
+    "passed": true,
+    "scope": "isolated Godot art review; no damage events",
+    "sequences": [
+      {
+        "fps": 24,
+        "frames": 88,
+        "key": "bolt"
+      },
+      {
+        "fps": 24,
+        "frames": 52,
+        "key": "grinder_sweep"
+      },
+      {
+        "fps": 24,
+        "frames": 100,
+        "key": "chainsaw_cut"
+      },
+      {
+        "fps": 24,
+        "frames": 60,
+        "key": "chainsaw_spin"
+      }
+    ]
+  },
+  "source": {
+    "drive_bolt_enter_v32": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.0004705088856147634,
+      "maximum_local_half_frame_degrees": [
+        8.253272743963247,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 1.722574234008789e-05,
+      "endpoint_head_difference_m": 0.46455729497834025,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_bolt_loop_v32": {
+      "samples": 193,
+      "maximum_secondary_grip_error_m": 0.0003244830661211313,
+      "maximum_local_half_frame_degrees": [
+        4.483681949523102,
+        "DEF-forearm.L"
+      ],
+      "maximum_scale_error": 1.0609626770019531e-05,
+      "endpoint_head_difference_m": 0.0,
+      "loop": true,
+      "loop_velocity_seam_m_per_author_second": 0.017894263976158627
+    },
+    "drive_bolt_exit_v32": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.0004705088856147634,
+      "maximum_local_half_frame_degrees": [
+        8.253272743963247,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 1.722574234008789e-05,
+      "endpoint_head_difference_m": 0.46455729497834025,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_grinder_sweep_v32": {
+      "samples": 289,
+      "maximum_secondary_grip_error_m": 0.002397574887107067,
+      "maximum_local_half_frame_degrees": [
+        9.466841972670895,
+        "DEF-hand.L"
+      ],
+      "maximum_scale_error": 3.0219554901123047e-05,
+      "endpoint_head_difference_m": 0.0,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_chainsaw_cut_enter_v32": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.002825830171723012,
+      "maximum_local_half_frame_degrees": [
+        8.29502483658589,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 3.331899642944336e-05,
+      "endpoint_head_difference_m": 0.40859460766777045,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_chainsaw_cut_loop_v32": {
+      "samples": 97,
+      "maximum_secondary_grip_error_m": 1.2099622745901796e-05,
+      "maximum_local_half_frame_degrees": [
+        0.7506883758729418,
+        "DEF-upper_arm.L"
+      ],
+      "maximum_scale_error": 1.055002212524414e-05,
+      "endpoint_head_difference_m": 0.0,
+      "loop": true,
+      "loop_velocity_seam_m_per_author_second": 0.03342822299186644
+    },
+    "drive_chainsaw_cut_exit_v32": {
+      "samples": 49,
+      "maximum_secondary_grip_error_m": 0.002825830171723012,
+      "maximum_local_half_frame_degrees": [
+        8.29502483658589,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 3.331899642944336e-05,
+      "endpoint_head_difference_m": 0.40859460766777045,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "drive_chainsaw_spin_v32": {
+      "samples": 193,
+      "maximum_secondary_grip_error_m": 0.0021334783940213167,
+      "maximum_local_half_frame_degrees": [
+        14.271014554668682,
+        "DEF-forearm.R.002"
+      ],
+      "maximum_scale_error": 2.8908252716064453e-05,
+      "endpoint_head_difference_m": 0.0,
+      "loop": false,
+      "loop_velocity_seam_m_per_author_second": null
+    },
+    "scope": "Saved authored samples and half-frame interpolation; joint/shaft proxies, not all triangle contacts."
+  },
+  "files": {
+    "reports/drive_attack_v32/review.html": "d0da44ffcb58ccc3ed4e0f51b935e35d2d916a671d1375d3675ad1c6e62916be",
+    "reports/drive_attack_v32/source_validation.json": "d9e7fbd66793dc486da31ce1d9f1f9ec1e6d732411aa9a22e2bdb73004d77853",
+    "reports/drive_attack_v32/export.json": "bcb87df6fed7aa45ad651e249f587128160b1e4bbd036f58f45b493a7dc83cbb",
+    "reports/drive_attack_v32/bolt.mp4": "065b943a4a06ab65a4899217cd3ca3a8639d2e9cf22ea4e0f228ea17ef2a17a4",
+    "reports/drive_attack_v32/grinder_sweep.mp4": "0cefd2e8555f4f481fde3a9b2eda7e0405418b5bced01ee87aaf538389e65e4d",
+    "reports/drive_attack_v32/chainsaw_cut.mp4": "bad770f1d66392a97c8f8fb1062cade593af56b16ee5eac1dc3203f55ad9807b",
+    "reports/drive_attack_v32/chainsaw_spin.mp4": "8cd452dd0b183600dd0356d984c32fb4f5243e5e2df7ef57156c8b9c4dd1b678",
+    "reports/drive_attack_v32/build_progress.json": "f4fb15bacee09727460f3745b28af9c58f2a1cefe0b7912bbd638f827f617dcb",
+    "reports/drive_attack_v32/build_validation.json": "636e0102b5eea55b4d86f70f255c55093d841e1e5f619873aebeac1815f301e7",
+    "reports/drive_attack_v32/carrier_asset_qa.json": "49954227857c60837876fc170450fb6cc5f65e41a43e265b530a21ec944a6623",
+    "reports/drive_attack_v32/final_preservation.json": "d75c46b9f0c1e9add408876f43977689712552b4d2cef231eeac0e34de993a0f",
+    "reports/drive_attack_v32/hand_contact_final.json": "65685fa2ffbfdf59fe5e900d8272bd392ad2048de3f8166b8e530c4237222f9e",
+    "reports/drive_attack_v32/pose_reference.json": "8bddedf3d9b2ee917e8081370b2ef1bd75da6e131640218791d0241722d26dbe",
+    "reports/drive_attack_v32/protected_baseline.json": "d11833c610d4fa80ebba6343c025a871b742b35883bf7521b33a387ceb7ebda6",
+    "reports/drive_attack_v32/reimport_asset_qa.json": "c23d03b0e7f6aecce4558ca652780c4b114c45f51ffb4b50bbbe45dcf4232f4d",
+    "reports/drive_attack_v32/review_project_inputs.json": "1bc4fc1ad058dd091f5f5160455e101fa93152ea9bcac0af234468b1449951e3",
+    "reports/drive_attack_v32/task_baseline.json": "d2a8b0e4f4839d38994cfba532803841ccf0db7067944708b2cf0c5f1dc125bb",
+    "reports/drive_attack_v32/contact_sheet.jpg": "d6d959f4924af362a35cf0013b7a7b0ceea6e22a9af78833ee4529fd788ea9a8",
+    "reports/drive_attack_v32/details/civilian_bolt_extend_front.png": "9832b77af9e2edda280ce85958af58e188017fbcb0b5933e4d16e7c54aea3f0a",
+    "reports/drive_attack_v32/details/civilian_bolt_extend_left.png": "1687134b731a4cb917a9778bb7a2db39f6fde55216c7179df9ae0b122ac87c8d",
+    "reports/drive_attack_v32/details/civilian_bolt_ready_front.png": "2e8c850988baf678e5735d6801e2f7f15f22ee0bb1b0e8cb57a1a6fae9e8b862",
+    "reports/drive_attack_v32/details/civilian_bolt_ready_left.png": "289aeba158bc7195e8fcf8ebf1b05ba88f14c17f6481cd701371c5ce0371452d",
+    "reports/drive_attack_v32/details/civilian_grinder_chamber_front.png": "fdabdb165c78d0f38b967c7a4fc72f9fae994e76c70873d54b34e2cb2e18c991",
+    "reports/drive_attack_v32/details/civilian_grinder_chamber_left.png": "cd46f170677277b381ec5accdf2bd584e40c0e1bdc2e330e82bbbd1af7574484",
+    "reports/drive_attack_v32/details/civilian_grinder_follow_front.png": "586fa68f887df028f8d20e2512c3cd1843692ee7030639a1e0dd0deb4b43d3a8",
+    "reports/drive_attack_v32/details/civilian_grinder_follow_left.png": "e1686d1bd8a0b1621c570b0bb65bb15afa6670d3b5cecbecb626343d2646167e",
+    "reports/drive_attack_v32/details/civilian_saw_hold_front.png": "c97de7b412df22eeba7f2e22eb943e4203390998b9bf675cb1fff4f993d3a077",
+    "reports/drive_attack_v32/details/civilian_saw_hold_left.png": "7cd59023fe8200a565d97ec1b2a4e8a7c0709fec8e75f574f89bae52033722af",
+    "reports/drive_attack_v32/details/civilian_spin_front.png": "e4fc0ee4bbb02376a65f093fff15ae1d258311e259ea7df5b33e5bf801df3d32",
+    "reports/drive_attack_v32/details/civilian_spin_left.png": "695728db03152d061bffb3bd2800470a12cc08cb2337276352f614ca6f453b8a",
+    "reports/drive_attack_v32/details/transformed_bolt_extend_front.png": "2858e3878a4d32dcb3d8480c07f2cbb46f64a8ee486adbf5dc422c970cb013f1",
+    "reports/drive_attack_v32/details/transformed_bolt_extend_left.png": "276fce5fab295ccf68027b9c07361555eafcba26a27b9819a08d99ad14f0987d",
+    "reports/drive_attack_v32/details/transformed_bolt_ready_front.png": "5b5c2f015e4be2b986a824624b7fae3be8191cf69802b5b2669e27e0a004ae62",
+    "reports/drive_attack_v32/details/transformed_bolt_ready_left.png": "6762b7d0f2705ec5940d9f9eff35df66f56a8b59d26da8f4f76d073a9e8d5932",
+    "reports/drive_attack_v32/details/transformed_grinder_chamber_front.png": "77c2510beba9e9cd9a48d564a496107feab2561ad2b4cf607b23ce19e89d63de",
+    "reports/drive_attack_v32/details/transformed_grinder_chamber_left.png": "206205d08ae543abc955e437b4aaa8f36d241200fbd5eb1942130e85d7285fe1",
+    "reports/drive_attack_v32/details/transformed_grinder_follow_front.png": "31f5f33469e771a629d08721c894474abb57a7d6a8921bb817286826831b64cb",
+    "reports/drive_attack_v32/details/transformed_grinder_follow_left.png": "346b1b7d648a767555c8869f42db8dc560c3bbfcc07690937b4e7ced476eedaa",
+    "reports/drive_attack_v32/details/transformed_saw_hold_front.png": "7a1a137ef5bf7d7583699b470714d8dcdc2064ccae5c8587f60c37397f286425",
+    "reports/drive_attack_v32/details/transformed_saw_hold_left.png": "6655f9bd7a4fdc1ffa4f8e038878ed70638380e7e1d707bb4a655aaeb6d45163",
+    "reports/drive_attack_v32/details/transformed_spin_front.png": "47e091da905513bf45840c70d5ca8c253c3e4212b07da9bcd1c6fc8317e8c960",
+    "reports/drive_attack_v32/details/transformed_spin_left.png": "95259b856cba59de044ea9eec3991410ecf5e0236322cc20f2165a7e2c75c91a",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v32/drive_attack_v32.blend": "dc9c96dbae33d8185d25c9ffee3a492b4129e965bebde66fc98515cde7b48014",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v32/runtime_contract.json": "fcefc7ef02cbd9497d541b21a1e79243e4051e5b410d8cf0a5d2bfbce42a879b",
+    "game/assets/characters/player/drive_attack_v32/drive_bolt_enter_v32.glb": "02a4644630b7d41df79c94d017ab637da4d8f7d0701fec8038caa53933689453",
+    "game/assets/characters/player/drive_attack_v32/drive_bolt_enter_v32.glb.import": "004d5f716a2077800aa6429f28602abc1e2ce197ec2f7e7691c9131ed07bd2e5",
+    "game/assets/characters/player/drive_attack_v32/drive_bolt_exit_v32.glb": "3a561fcc5f816fea02aa7ff63f7b69a2ebbc3081a8d6eb4c423c9f8a37536ab9",
+    "game/assets/characters/player/drive_attack_v32/drive_bolt_exit_v32.glb.import": "079b303b6976dfee68f4173eb322b6097bf762f78b9e4f53484cdafeb89c93d5",
+    "game/assets/characters/player/drive_attack_v32/drive_bolt_loop_v32.glb": "c38b6bdfb467b17321bdbfd612573eb1cc53e5529721d3c8fe0c949279cab393",
+    "game/assets/characters/player/drive_attack_v32/drive_bolt_loop_v32.glb.import": "6eef42d6fbb95d77287b364babfc265a6d48e2dad070dedf7de1a876cde25d8e",
+    "game/assets/characters/player/drive_attack_v32/drive_chainsaw_cut_enter_v32.glb": "12bc318495ea6ed1013fde7d8819eea91a0857715108ea020764168fe99773fd",
+    "game/assets/characters/player/drive_attack_v32/drive_chainsaw_cut_enter_v32.glb.import": "42e8bac06174160e42e63d0d46a7e415b5cf06655a83091ebb66c3f4adf9bb1b",
+    "game/assets/characters/player/drive_attack_v32/drive_chainsaw_cut_exit_v32.glb": "83362060d75ff0e5ce2fa8583620b5a194ad14909f5a7790ada01c14a3915fce",
+    "game/assets/characters/player/drive_attack_v32/drive_chainsaw_cut_exit_v32.glb.import": "3f0ffe189856e1a55d16138def0d5dcb5b0485f3b05df28c1f66901703566b90",
+    "game/assets/characters/player/drive_attack_v32/drive_chainsaw_cut_loop_v32.glb": "39f2991138f48684e2dfb8a0a1ba21cf20c5036d7e16526e37e4f65f56c8023a",
+    "game/assets/characters/player/drive_attack_v32/drive_chainsaw_cut_loop_v32.glb.import": "e5ef440b7e376fbfb2af3793cf12d6c9b60b0d7f7055ae8ae79241aabc80599e",
+    "game/assets/characters/player/drive_attack_v32/drive_chainsaw_spin_v32.glb": "d8b086e63d0b859e2242ea90be90b45302c7b648ea1544818c1ad41c318be2d0",
+    "game/assets/characters/player/drive_attack_v32/drive_chainsaw_spin_v32.glb.import": "bcf9c3a8949a22e6ddc539d17044b6e414fb66195b68544882c21b8b15370e6b",
+    "game/assets/characters/player/drive_attack_v32/drive_grinder_sweep_v32.glb": "a8fc1ad3d9c422b15603d713a03675431e837ee68c9cb71ab64022c96186145e",
+    "game/assets/characters/player/drive_attack_v32/drive_grinder_sweep_v32.glb.import": "b1a9f95a1c40565b344b59d97bb83aae7f687b3f6797ce08349ebde71ef2edbb",
+    "game/assets/characters/player/drive_attack_v32/runtime_contract.json": "fcefc7ef02cbd9497d541b21a1e79243e4051e5b410d8cf0a5d2bfbce42a879b",
+    "tools/build_drive_attack_v32.py": "0a1aeb4233cdec99dd3c771216873824b1464be96d0c0ad2ec18bedad0153fc4",
+    "tools/check_drive_preservation_v32.py": "e6d6b76af3b4845fd92fc3dd8ad17c96412063d3b59cdac23752d203d264d867",
+    "tools/drive_hand_contact_v32.py": "c6fa6685f9273866e99d205fcccd805b47b8a2a66f0965351800f0a556b0e542",
+    "tools/export_drive_attack_v32.py": "b9d8c927a77db1fde4f56254b616a6d8f0a052d05b0b0eef4eefe58cbbb1a9fd",
+    "tools/package_drive_attack_v32.py": "79aef7a34b7e81bd0772fe5406fb8f5f73355b22e90370fdee86a126374574c4",
+    "tools/prepare_drive_attack_v32.py": "45fe6cd35b4389d332f14ff1a1e013550a0b4028f8f4301b771befbdc2095948",
+    "tools/reimport_drive_attack_v32.py": "ceeff851ef8d8565488e43e52a3565577cc62dd44ca2a312391f16d66cd97378",
+    "tools/run_drive_attack_v32.ps1": "51e39648e63df6a94a482dff4029a9911ac8b770222bbd7c78806634d9e58e75",
+    "tools/validate_drive_attack_v32.py": "15d2661627c756edbc373884f1750f44a5f0f7009f72753a7e6cfb2c4611cc82",
+    "game/tests/review_drive_attack_v32.gd": "62c399e503ab1f50f2a2023bdf610e5cdadf640302735d6dcff1e2fc1ff9ee61",
+    "game/tests/review_drive_grip_details_v32.gd": "6fe40b7bc1aade5b99277636af515cb66ae2dec7415aaab2f9cb02de194783b5"
+  },
+  "hand_body_contact": {
+    "scope": "Whole hands vs actual runtime torso/pelvis and both outfits. Strict triangles and body ray-parity centroid containment probes. Distal means beyond 30mm bone-local wrist; cuff contacts are separately named, never excluded from whole-hand counts. Not swept collision or a watertight-volume certificate.",
+    "summary": {
+      "drive_bolt_enter_v32": {
+        "samples": 49,
+        "body_crossing_or_inside_poses": 0,
+        "hand_to_hand_crossing_poses": 0
+      },
+      "drive_bolt_loop_v32": {
+        "samples": 193,
+        "body_crossing_or_inside_poses": 0,
+        "hand_to_hand_crossing_poses": 0
+      },
+      "drive_bolt_exit_v32": {
+        "samples": 49,
+        "body_crossing_or_inside_poses": 0,
+        "hand_to_hand_crossing_poses": 0
+      },
+      "drive_grinder_sweep_v32": {
+        "samples": 289,
+        "body_crossing_or_inside_poses": 0,
+        "hand_to_hand_crossing_poses": 0
+      },
+      "drive_chainsaw_cut_enter_v32": {
+        "samples": 49,
+        "body_crossing_or_inside_poses": 0,
+        "hand_to_hand_crossing_poses": 0
+      },
+      "drive_chainsaw_cut_loop_v32": {
+        "samples": 97,
+        "body_crossing_or_inside_poses": 0,
+        "hand_to_hand_crossing_poses": 0
+      },
+      "drive_chainsaw_cut_exit_v32": {
+        "samples": 49,
+        "body_crossing_or_inside_poses": 0,
+        "hand_to_hand_crossing_poses": 0
+      },
+      "drive_chainsaw_spin_v32": {
+        "samples": 193,
+        "body_crossing_or_inside_poses": 0,
+        "hand_to_hand_crossing_poses": 0
+      }
+    },
+    "opposite_sleeve_contact_poses": 0
+  },
+  "remaining_contacts": "Whole-wrist/own-sleeve and inner sleeve coverage contacts remain, with some proximal wrist intersections at blouse/cape edges. No all-garment or exact finger/shaft clearance claim.",
+  "final_preservation.json": {
+    "passed": true,
+    "protected_meshes": 34,
+    "protected_actions": 64,
+    "rest_bones": 107,
+    "new_actions": [
+      "drive_bolt_enter_v32",
+      "drive_bolt_exit_v32",
+      "drive_bolt_loop_v32",
+      "drive_chainsaw_cut_enter_v32",
+      "drive_chainsaw_cut_exit_v32",
+      "drive_chainsaw_cut_loop_v32",
+      "drive_chainsaw_spin_v32",
+      "drive_grinder_sweep_v32"
+    ],
+    "source_sha256": "dc9c96dbae33d8185d25c9ffee3a492b4129e965bebde66fc98515cde7b48014"
+  },
+  "reimport_asset_qa.json": {
+    "drive_bolt_enter_v32.glb": {
+      "pass": null,
+      "skipped": "blender-asset-qa skill not installed on this PC",
+      "bones": 107,
+      "carrier_triangles": 12,
+      "action_frame_range": [
+        0.0,
+        24.0
+      ]
+    },
+    "drive_bolt_exit_v32.glb": {
+      "pass": null,
+      "skipped": "blender-asset-qa skill not installed on this PC",
+      "bones": 107,
+      "carrier_triangles": 12,
+      "action_frame_range": [
+        0.0,
+        24.0
+      ]
+    },
+    "drive_bolt_loop_v32.glb": {
+      "pass": null,
+      "skipped": "blender-asset-qa skill not installed on this PC",
+      "bones": 107,
+      "carrier_triangles": 12,
+      "action_frame_range": [
+        0.0,
+        96.0
+      ]
+    },
+    "drive_chainsaw_cut_enter_v32.glb": {
+      "pass": null,
+      "skipped": "blender-asset-qa skill not installed on this PC",
+      "bones": 107,
+      "carrier_triangles": 12,
+      "action_frame_range": [
+        0.0,
+        24.0
+      ]
+    },
+    "drive_chainsaw_cut_exit_v32.glb": {
+      "pass": null,
+      "skipped": "blender-asset-qa skill not installed on this PC",
+      "bones": 107,
+      "carrier_triangles": 12,
+      "action_frame_range": [
+        0.0,
+        24.0
+      ]
+    },
+    "drive_chainsaw_cut_loop_v32.glb": {
+      "pass": null,
+      "skipped": "blender-asset-qa skill not installed on this PC",
+      "bones": 107,
+      "carrier_triangles": 12,
+      "action_frame_range": [
+        0.0,
+        48.0
+      ]
+    },
+    "drive_chainsaw_spin_v32.glb": {
+      "pass": null,
+      "skipped": "blender-asset-qa skill not installed on this PC",
+      "bones": 107,
+      "carrier_triangles": 12,
+      "action_frame_range": [
+        0.0,
+        96.0
+      ]
+    },
+    "drive_grinder_sweep_v32.glb": {
+      "pass": null,
+      "skipped": "blender-asset-qa skill not installed on this PC",
+      "bones": 107,
+      "carrier_triangles": 12,
+      "action_frame_range": [
+        0.0,
+        144.0
+      ]
+    }
+  },
+  "carrier_asset_qa.json": {
+    "pass": null,
+    "skipped": "blender-asset-qa skill not installed on this PC; carrier module unchanged since v30",
+    "warnings": []
+  },
+  "details/validation.json": {
+    "captures": 24,
+    "checks": 1371,
+    "passed": true
+  },
+  "validate/execution.json": {
+    "stderr": {},
+    "completion_marker": true,
+    "exit_code": 0
+  },
+  "capture/execution.json": {
+    "stderr": {},
+    "completion_marker": true,
+    "exit_code": 0
+  },
+  "protected_task_inputs": {
+    "game/scripts/player_visual.gd": "d4f7d4cafcd8e7ce4ebd1115ed8af15f4347300807e4d8f890b9d68d1310a779",
+    "game/scripts/staff_locomotion_blend.gd": "240b4d10d7b6c4aa2e94e4ab47fefba3983f64493b517fa942abbf2f6063be4d",
+    "game/project.godot": "1b745fe7b591c9d43b643fe693018f4b1838dbac823fa9f1b726ab0402b54d48",
+    "game/assets/characters/player/hand_rebuild_v29/body_standard_v29.glb": "b97927fcac15d76263a1971e4d6e8299558aa1e19611761fe55feb41f29b0857",
+    "game/assets/characters/player/model_refinement_v28/body_standard_v28.glb": "59a6ba3321928a27e229818404ff7628b6cb871f4a5b6453879c78ab202ae5f3",
+    "game/assets/characters/player/model_refinement_v28/eyes_neutral_v28.glb": "43f6358c7027870e125de69cacb15583dd1506bf214428beda0ee6d366830ff6",
+    "game/assets/characters/player/model_refinement_v28/outfit_civilian_v28.glb": "eae8d60852a03f7133b03c9ef40bc68dc372109cba9020d118128f07fa5ecbc4",
+    "game/assets/characters/player/transformation_v25/combat_transform_entry_v25.glb": "caa5393aecb62aeddd6f301d95e4d1d7a524da65bdcaceff1b5628b2964d05c9",
+    "game/assets/characters/player/transformation_v25/outfit_transformed_v4.glb": "69234ac744f024d7d3d714f64ee3d81bd777337d204a98aaf4c855a6b14f1d13",
+    "game/assets/characters/player/drive_attack_v31/drive_bolt_enter_v31.glb": "6a4f64660f92ae4d4a561e60957eb3765de14a13ef21e7da8549364f347490e5",
+    "game/assets/characters/player/drive_attack_v31/drive_bolt_exit_v31.glb": "3b2f2add779f896f9a0298fdc8ee3252c8ed766d52489232a815b112a9182398",
+    "game/assets/characters/player/drive_attack_v31/drive_bolt_loop_v31.glb": "70108431e9453ccedd8032d1c748f7a2c282b2e60085c3b8058b102029772ec2",
+    "game/assets/characters/player/drive_attack_v31/drive_chainsaw_cut_enter_v31.glb": "f599693950a9200e1c02bfc806679bae39999a9972dd47aa34dc79e1e550ac70",
+    "game/assets/characters/player/drive_attack_v31/drive_chainsaw_cut_exit_v31.glb": "ef38220d6471eaab40149fd940b9c798c42222cbe0d28999f42edba8e9db05f6",
+    "game/assets/characters/player/drive_attack_v31/drive_chainsaw_cut_loop_v31.glb": "0f7dbdf848185131d6e32ace3520ef48f8c2233b4820ed9140f0434a3a1b1f7b",
+    "game/assets/characters/player/drive_attack_v31/drive_chainsaw_spin_v31.glb": "ed01978014a98141928de69f5d9a080da504774d99e778b0d2538fc91ca93b6d",
+    "game/assets/characters/player/drive_attack_v31/drive_grinder_sweep_v31.glb": "33b07b3677c6de4677169ee5bf07c05dfa3c19b5cd6c4ab4fd827a894f582d04",
+    "assets/characters/player/3d/source/middle_school_v1/drive_attack_v31/drive_attack_v31.blend": "622bb9e10347f2847e5725b1454b837ec9d9d6cfbe8b3e0e1ea61f99af94770a"
+  }
+}

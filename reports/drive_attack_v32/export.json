@@ -1,0 +1,70 @@
+{
+  "carrier": "AnimationSkinCarrier_v30",
+  "source_sha256": "dc9c96dbae33d8185d25c9ffee3a492b4129e965bebde66fc98515cde7b48014",
+  "clips": [
+    {
+      "name": "drive_bolt_enter_v32",
+      "bytes": 213328,
+      "sha256": "02a4644630b7d41df79c94d017ab637da4d8f7d0701fec8038caa53933689453",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_bolt_loop_v32",
+      "bytes": 522308,
+      "sha256": "c38b6bdfb467b17321bdbfd612573eb1cc53e5529721d3c8fe0c949279cab393",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_bolt_exit_v32",
+      "bytes": 213328,
+      "sha256": "3a561fcc5f816fea02aa7ff63f7b69a2ebbc3081a8d6eb4c423c9f8a37536ab9",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_grinder_sweep_v32",
+      "bytes": 728284,
+      "sha256": "a8fc1ad3d9c422b15603d713a03675431e837ee68c9cb71ab64022c96186145e",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_chainsaw_cut_enter_v32",
+      "bytes": 213328,
+      "sha256": "12bc318495ea6ed1013fde7d8819eea91a0857715108ea020764168fe99773fd",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_chainsaw_cut_loop_v32",
+      "bytes": 316284,
+      "sha256": "39f2991138f48684e2dfb8a0a1ba21cf20c5036d7e16526e37e4f65f56c8023a",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_chainsaw_cut_exit_v32",
+      "bytes": 213328,
+      "sha256": "83362060d75ff0e5ce2fa8583620b5a194ad14909f5a7790ada01c14a3915fce",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    },
+    {
+      "name": "drive_chainsaw_spin_v32",
+      "bytes": 522308,
+      "sha256": "d8b086e63d0b859e2242ea90be90b45302c7b648ea1544818c1ad41c318be2d0",
+      "channels": 321,
+      "bones": 107,
+      "inverse_bind_sha256": "b291acbff1d1623bb71d6d3f8aefb63c743226be3acf69efd2ae947dae1c9a12"
+    }
+  ]
+}

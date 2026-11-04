@@ -1,0 +1,33 @@
+{
+  "captures": 0,
+  "checks": 272971,
+  "forms": [
+    "civilian",
+    "transformed"
+  ],
+  "maximum_export_pose_error_m": 0.00000469336919195484,
+  "passed": true,
+  "scope": "isolated Godot art review; no damage events",
+  "sequences": [
+    {
+      "fps": 24,
+      "frames": 88,
+      "key": "bolt"
+    },
+    {
+      "fps": 24,
+      "frames": 52,
+      "key": "grinder_sweep"
+    },
+    {
+      "fps": 24,
+      "frames": 100,
+      "key": "chainsaw_cut"
+    },
+    {
+      "fps": 24,
+      "frames": 60,
+      "key": "chainsaw_spin"
+    }
+  ]
+}
