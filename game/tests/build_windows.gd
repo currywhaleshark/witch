@@ -159,8 +159,9 @@ func run() -> void:
 	var tree: Node = arena.skill_window.find_child("Tree", true, false)
 	var chainsaw: Control = tree.find_child("Node_chainsaw", false, false)
 	var states: Array = tree.get_children().map(func(box): return arena.skill_window.node_state(arena.skill_window.find_node(box.name.trim_prefix("Node_"))))
-	check(states.count("levels") == 11 and states.count("fixed") == 3 and states.count("missing") == 2,
-		"the drive tree lights its 11 levelled and 3 fixed implemented skills and greys the 2 unbuilt ones")
+	# The shock-absorbing frame became the exoskeleton's guard node (2026-11-05): ten levelled.
+	check(states.count("levels") == 10 and states.count("fixed") == 3 and states.count("missing") == 2,
+		"the drive tree lights its 10 levelled and 3 fixed implemented skills and greys the 2 unbuilt ones")
 	hold_key(KEY_CTRL, true)
 	tap(chainsaw, MOUSE_BUTTON_LEFT)
 	var ctrl_once: int = build.skills.chainsaw

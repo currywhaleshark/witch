@@ -1,7 +1,7 @@
 extends SceneTree
 ## Drive tree executions and control (03 §4): the guillotine (and its saw and lock nodes), the
-## hydraulic press, the compound executor, the restraint winch (and its multi-strand nodes) and the
-## exoskeleton. Devices assemble on their spot during the cast, run on their own afterwards, and hit
+## hydraulic press, the compound executor and the restraint winch (and its multi-strand nodes).
+## Devices assemble on their spot during the cast, run on their own afterwards, and hit
 ## harder on wounded or debuffed enemies. Writes no report.
 var arena: Node3D
 var failures: Array = []
@@ -72,7 +72,7 @@ func run() -> void:
 	await step(2)
 	arena.build.set_level(30)
 	var skills: Dictionary = arena.rules.skills
-	for id in ["guillotine", "hydraulic_press", "compound_executor", "restraint_winch", "exoskeleton"]:
+	for id in ["guillotine", "hydraulic_press", "compound_executor", "restraint_winch"]:
 		check(arena.SKILL_TREES.get(id) == "drive" and arena.build.learned(id), "%s is a learned drive skill" % id)
 
 	# --- the guillotine -----------------------------------------------------------------------
@@ -245,50 +245,8 @@ func run() -> void:
 	check(group[0].body.position.z > 6.0 and float(group[0].bound) > 2.5 and float(group[1].bound) > 2.5, "the bind node ties them down where they stand")
 	arena.build.set_skill_node("restraint_winch", "base")
 
-	# --- the exoskeleton ----------------------------------------------------------------------------
-	await fresh("exoskeleton")
-	var frame: Dictionary = skills.exoskeleton
-	var bare_armor: float = arena.armor()
-	var bare_stun: float = arena.hit_recovery_seconds()
-	arena.request_slot("q", {"ground": [0, 0, 2]})
-	await release("exoskeleton")
-	check(arena.exo_time > 7.0 and is_equal_approx(arena.armor() - bare_armor, float(frame.armor_base) + float(frame.armor_per_level) * (arena.config.exoskeleton_level - 1)), "the exoskeleton adds armour while worn")
-	check(is_equal_approx(arena.exo_tool_factor(), 1.0 + float(frame.tool_damage) + float(frame.tool_damage_per_level) * (arena.config.exoskeleton_level - 1)), "and drives the tool attacks harder")
-	check(is_equal_approx(arena.hit_recovery_seconds(), bare_stun), "its first levels leave the stagger alone")
-	arena.config.exoskeleton_level = 10
-	check(absf(arena.hit_recovery_seconds() - bare_stun * (1.0 - 2.0 * float(frame.stun_cut))) < 0.0001, "every fifth level cuts the stagger (Lv10 −%d%%)" % roundi(200 * float(frame.stun_cut)))
-	arena.config.exoskeleton_level = 1
-	await step(20)
-	check(is_instance_valid(arena.exo_visual) and arena.exo_visual.shown > 0.99 and arena.exo_visual.get_parent() == arena.player_visual.runtime.skeleton, "the fitted frame is worn on her skeleton")
-	arena.exo_time = 0.05
-	await step(30)
-	check(arena.exo_visual == null and is_equal_approx(arena.armor(), bare_armor), "and comes off when it runs out")
+	# The exoskeleton became a passive worn with a tool: tests/exoskeleton_passive.gd.
 
-	# --- the shock-absorbing frame passive -------------------------------------------------------
-	var absorb: Dictionary = arena.config.passives.shock_frame
-	arena.build.change_skill("shock_frame", 4)
-	check(arena.shock_level() == 4.0, "the shock-absorbing frame is a passive with levels")
-	arena.exo_time = 5.0
-	var exo_armor: float = arena.armor()
-	arena.config.passive_levels.shock_frame = 0
-	check(is_equal_approx(exo_armor - arena.armor(), 4.0 * float(absorb.exo_armor_per_level)), "it reinforces the exoskeleton's armour")
-	var plain_stagger: float = arena.hit_recovery_seconds()
-	arena.config.passive_levels.shock_frame = 4
-	check(absf(arena.hit_recovery_seconds() - plain_stagger * (1.0 - 4.0 * float(absorb.exo_stagger_cut_per_level))) < 0.0001, "and shortens the stagger while it is worn")
-	arena.exo_time = 0.0
-	arena.shield_time = 3.0
-	var shield_armor: float = arena.armor()
-	arena.config.passive_levels.shock_frame = 0
-	check(is_equal_approx(shield_armor - arena.armor(), 4.0 * float(absorb.shield_armor_per_level)), "the raised shield gains armour too")
-	arena.shield_time = 0.0
-	arena.config.passive_levels.shock_frame = 4
-	arena.force_rolls = {"hit": true, "crit": false}
-	arena.spawn_ally(Vector3(2, 0, 2), false, "")
-	var turret: Dictionary = arena.allies[-1]
-	var before: float = turret.hp
-	arena.damage_ally(turret, 10.0, "normal")
-	check(is_equal_approx(before - turret.hp, 10.0 * (1.0 - 4.0 * float(absorb.summon_guard_per_level))), "and the summons shrug off part of each hit (%.2f)" % (before - turret.hp))
-	arena.build.change_skill("shock_frame", -4)
 
 	# --- pause, field clear and reset -------------------------------------------------------------
 	await fresh("guillotine")

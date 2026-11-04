@@ -36,6 +36,7 @@ const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "rifle": "fir
 	"focus_attack": "drive", "area_attack": "drive",
 	"automaton": "automation", "turret": "automation", "relay": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
+const StatusFx = preload("res://scripts/status_fx.gd")
 const AssetWarmup = preload("res://scripts/asset_warmup.gd")
 const LoadingScreen = preload("res://scripts/loading_screen.gd")
 const WARNING_SHADER = preload("res://shaders/warning_zone.gdshader")
@@ -171,7 +172,6 @@ var device_assembly: Node3D
 var devices: Array = []
 var winches: Array = []
 var last_device: Dictionary = {}
-var exo_time := 0.0
 var exo_visual: Node3D
 var last_shotgun: Dictionary = {}
 var last_recoil: Dictionary = {}
@@ -481,7 +481,6 @@ func reset_arena() -> void:
 	hit_time = 0
 	stun_time = 0
 	shield_time = 0
-	exo_time = 0.0
 	exo_visual = null
 	if is_instance_valid(shield_visual):
 		shield_visual.queue_free()
@@ -842,7 +841,13 @@ func set_a5_mode(enabled: bool) -> void:
 	show_message("A5 마나 시험 시작 · 연속 교전" if enabled else "A5 마나 시험 종료")
 
 func bind_slot(slot: String, skill_id) -> void:
-	# The skill tree window's loadout: any skill on RMB/Q/W/E/R, kept across restarts.
+	# The skill tree window's loadout: any skill on LMB/RMB/Q/W/E/R, kept across restarts.
+	# The left button is never empty: clearing it (or swapping its basic attack onto another
+	# key) gives it back the basic attack, and the basic attack never sits on another key.
+	if slot == "lmb" and skill_id == null:
+		skill_id = rules.basic_id
+	elif slot != "lmb" and skill_id == rules.basic_id:
+		skill_id = null
 	cancel_pending_cast()
 	split_build_log()
 	config.bindings[slot] = skill_id
@@ -860,8 +865,9 @@ func drop_unlearned_bindings() -> void:
 	for slot in rules.SLOTS:
 		var id = state.bindings[slot]
 		if id != null and not build.learned(id):
-			config.bindings[slot] = null
-			state = rules.bind(state, slot, null)
+			var empty = rules.basic_id if slot == "lmb" else null
+			config.bindings[slot] = empty
+			state = rules.bind(state, slot, empty)
 
 func split_build_log() -> void:
 	# Called before a C/S window change: the running A5 segment is saved with the build it was
@@ -1299,9 +1305,10 @@ func tick_pickup() -> void:
 
 func sync_tool_upkeep() -> void:
 	# Upkeep options and the power part trim every tool's drain, never below a tenth.
+	# The exoskeleton's drive frame trims it further.
 	var cut: float = minf(0.9, gear_total("upkeep_pct") / 100.0)
 	for id in tool_upkeep:
-		rules.skills[id].upkeep_per_second = float(tool_upkeep[id]) * (1.0 - cut)
+		rules.skills[id].upkeep_per_second = float(tool_upkeep[id]) * (1.0 - cut) * (1.0 - exo_upkeep_cut())
 
 func skill_level_factor(source: String) -> float:
 	# Skills whose level raises their damage (the shotgun, for its blueprint) scale here.
@@ -1683,6 +1690,7 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 	if bound != null and not build.learned(bound):
 		show_message("배우지 않은 기술입니다")
 		return
+	cursor = device_cursor(bound, cursor)
 	if bound in TOOL_ATTACKS and state.active_tool == null:
 		# Tool attacks work only through a transformed tool, never the bare staff (03 §2).
 		show_message("공구를 전개해야 쓸 수 있습니다")
@@ -1692,7 +1700,7 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		cancel_pending_cast()
 		dismiss_gun()
 		return
-	if slot == "lmb" and not gun.is_empty() and int(gun.ammo) <= 0 and (shift or cursor.get("enemy_id") != null):
+	if slot == "lmb" and bound == rules.basic_id and not gun.is_empty() and int(gun.ammo) <= 0 and (shift or cursor.get("enemy_id") != null):
 		show_message("탄이 없습니다")
 		return
 	cancel_pending_cast()
@@ -1721,6 +1729,18 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		tick_pending_cast(0)
 		return
 	begin_cast(slot, cursor, shift, stationary, result)
+
+func device_cursor(bound, cursor: Dictionary) -> Dictionary:
+	# An execution device cast with the cursor on an enemy is set under that enemy, not on the
+	# floor point the cursor ray reaches behind a tall model; while she walks into range the spot
+	# keeps following it ("follow").
+	if bound == null or not rules.skills[bound].get("over_enemies", false) or cursor.get("enemy_id") == null or not enemies.has(cursor.enemy_id):
+		return cursor
+	var aimed := cursor.duplicate(true)
+	var at: Vector3 = enemies[cursor.enemy_id].body.position
+	aimed.ground = [at.x, 0, at.z]
+	aimed.follow = cursor.enemy_id
+	return aimed
 
 func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool, result: Dictionary) -> void:
 	var cast = cast_event(result)
@@ -2268,27 +2288,40 @@ func clear_devices() -> void:
 func exo_level() -> float:
 	return float(config.exoskeleton_level)
 
-func exo_duration() -> float:
+func exo_plan() -> Dictionary:
+	# The frame node (1 point, one of): guard doubles the defence and halves the damage bonus,
+	# drive doubles the damage bonus, trims tool upkeep and halves the defence.
+	return rules.skills.exoskeleton.nodes[config.exoskeleton_node]
+
+func exo_active() -> bool:
+	# A passive since 2026-11-05: once learned it is worn while a tool is transformed, never on
+	# the bare staff, and costs nothing beyond the tool's own upkeep.
+	return exo_level() >= 1 and not state.is_empty() and state.active_tool != null and hp > 0
+
+func exo_tool_bonus() -> float:
 	var frame: Dictionary = rules.skills.exoskeleton
-	return float(frame.duration_seconds) + float(frame.duration_per_level) * (exo_level() - 1.0)
+	return (float(frame.tool_damage) + float(frame.tool_damage_per_level) * (exo_level() - 1.0)) * float(exo_plan().get("damage_factor", 1.0))
+
+func exo_armor() -> float:
+	var frame: Dictionary = rules.skills.exoskeleton
+	return (float(frame.armor_base) + float(frame.armor_per_level) * (exo_level() - 1.0)) * float(exo_plan().get("armor_factor", 1.0))
+
+func exo_stun_cut() -> float:
+	# Every fifth level cuts the witch's hit stagger once more while it is worn.
+	var frame: Dictionary = rules.skills.exoskeleton
+	return float(frame.stun_cut) * floorf(exo_level() / float(frame.stun_cut_every)) * float(exo_plan().get("stun_cut_factor", 1.0))
+
+func exo_upkeep_cut() -> float:
+	return float(exo_plan().get("upkeep_cut", 0.0)) if exo_level() >= 1 else 0.0
 
 func exo_tool_factor() -> float:
-	if exo_time <= 0:
-		return 1.0
-	var frame: Dictionary = rules.skills.exoskeleton
-	return 1.0 + float(frame.tool_damage) + float(frame.tool_damage_per_level) * (exo_level() - 1.0)
+	return 1.0 + exo_tool_bonus() if exo_active() else 1.0
 
 func exo_stun_factor() -> float:
-	# Every fifth exoskeleton level cuts the witch's hit stagger once more while it is worn, and
-	# the shock-absorbing frame passive cuts it a little per level on top.
-	if exo_time <= 0:
-		return 1.0
-	var frame: Dictionary = rules.skills.exoskeleton
-	var cut: float = float(frame.stun_cut) * floorf(exo_level() / float(frame.stun_cut_every)) + float(config.passives.shock_frame.exo_stagger_cut_per_level) * shock_level()
-	return maxf(0.2, 1.0 - cut)
+	return maxf(0.2, 1.0 - exo_stun_cut()) if exo_active() else 1.0
 
 func show_exo_visual() -> void:
-	# The frame goes on (or a recast keeps the one already on) when the skill releases.
+	# The frame goes on with the tool and stays while it runs.
 	if not player_visual.loaded_ok:
 		return
 	if not is_instance_valid(exo_visual):
@@ -2302,10 +2335,13 @@ func show_exo_visual() -> void:
 		exo_visual.wear(player_visual)
 
 func sync_exo_visual(dt: float) -> void:
-	# After the body pose: the frame fades with the skill's clock and follows the current motion.
+	# After the body pose: the frame fades in with the tool, out when it is put away, and follows
+	# the current motion.
+	if exo_active() and not is_instance_valid(exo_visual):
+		show_exo_visual()
 	if not is_instance_valid(exo_visual):
 		return
-	var target := 1.0 if exo_time > 0 and hp > 0 else 0.0
+	var target := 1.0 if exo_active() else 0.0
 	exo_visual.set_shown(move_toward(exo_visual.shown, target, dt / ExoVisual.FADE_SECONDS))
 	var phase: float = player_visual.clip_time / maxf(player_visual.clip_length, 0.000001)
 	exo_visual.sync_pose_for_motion(ExoVisual.motion_for(player_visual), phase)
@@ -2659,13 +2695,15 @@ func tool_hit_damage(skill_id: String, plan: Dictionary) -> float:
 	# The exoskeleton drives every tool attack harder; the skill's level and damage node add on.
 	return float(plan.damage) * float(plan.get("damage_factor", 1.0)) * exo_tool_factor() * skill_level_factor(skill_id)
 
-func tool_strike(id: String, tool: String, damage: float, plan: Dictionary) -> String:
+func tool_strike(id: String, tool: String, damage: float, plan: Dictionary, skill_id: String) -> String:
 	# One tool hit rolls to hit like the basic attack and, on a hit, leaves the tool's own mark:
 	# slow (bolt cutter), shred (grinder) or bleed (chainsaw). The debuff node lengthens slow and
-	# shred and adds bleed stacks.
+	# shred and adds bleed stacks. The log keeps it apart from the tool's basic attacks under
+	# "<skill>:<tool>"; damage rules still treat the tool as its source.
 	var result := "miss"
+	var label := skill_id + ":" + tool
 	if tool == "chainsaw":
-		result = strike(id, damage, true, "witch", tool)
+		result = strike(id, damage, true, "witch", tool, "", label)
 		if result != "miss":
 			for i in int(plan.get("bleed_stacks", 1)):
 				if enemies.has(id):
@@ -2674,7 +2712,7 @@ func tool_strike(id: String, tool: String, damage: float, plan: Dictionary) -> S
 	var debuff: String = rules.skills[tool].debuff
 	var before: float = enemies[id][debuff]
 	enemies[id][debuff] = maxf(before, float(rules.skills[tool].debuff_seconds) * float(plan.get("debuff_factor", 1.0)))
-	result = strike(id, damage, true, "witch", tool)
+	result = strike(id, damage, true, "witch", tool, "", label)
 	if result == "miss" and enemies.has(id):
 		enemies[id][debuff] = before
 	return result
@@ -2708,6 +2746,7 @@ func start_tool_channel(tool, direction: Vector3) -> void:
 	move_marker.visible = false
 	channel = {"skill": "focus_attack", "tool": tool, "slot": channel_slot("focus_attack"), "direction": direction,
 		"time": 0.0, "period": period, "loop": loop, "fire_left": period * float(plan.get("hit_phase", 0.5)), "hits": 0, "plan": plan}
+	probe.channel_begin("focus_attack:" + str(tool))
 	player_visual.begin_focus_loop(tool, loop)
 
 func tick_tool_channel(dt: float) -> void:
@@ -2723,6 +2762,7 @@ func tick_tool_channel(dt: float) -> void:
 		return
 	state.mana = maxf(0.0, state.mana - cost)
 	probe.record([{"type": "tool_upkeep", "tool": "focus_attack", "amount": cost}])
+	probe.channel_time("focus_attack:" + str(channel.tool), dt, cost)
 	var cursor := field_cursor()
 	var aim = null
 	if cursor.get("enemy_id") != null and enemies.has(cursor.enemy_id):
@@ -2760,7 +2800,7 @@ func focus_hit(direction: Vector3) -> void:
 	if best == "":
 		last_tool_attack = {"skill": "focus_attack", "tool": tool, "target": "", "result": "miss", "hits": channel.hits}
 		return
-	var result := tool_strike(best, tool, tool_hit_damage("focus_attack", channel.plan), channel.plan)
+	var result := tool_strike(best, tool, tool_hit_damage("focus_attack", channel.plan), channel.plan, "focus_attack")
 	if result != "miss":
 		tool_hit_sound(tool)
 	last_tool_attack = {"skill": "focus_attack", "tool": tool, "target": best, "result": result, "hits": channel.hits}
@@ -2790,7 +2830,7 @@ func tool_area(tool, direction: Vector3) -> void:
 	var damage := tool_hit_damage("area_attack", plan)
 	for id in struck:
 		if enemies.has(id):
-			results[id] = tool_strike(id, tool, damage, plan)
+			results[id] = tool_strike(id, tool, damage, plan, "area_attack")
 	if results.values().has("hit") or results.values().has("crit"):
 		tool_hit_sound(tool)
 	spawn_vfx().fan_slash(player.position, direction, reach, rad_to_deg(half) * 2.0, map.ground_y(player.position))
@@ -2833,7 +2873,7 @@ func tick_sweep(dt: float) -> void:
 				passed = true
 		if passed and map.sees(player.position, enemies[id].body.position):
 			sweep.struck.append(id)
-			var result := tool_strike(id, sweep.tool, damage, sweep.plan)
+			var result := tool_strike(id, sweep.tool, damage, sweep.plan, "area_attack")
 			last_tool_attack.struck.append(id)
 			last_tool_attack.results[id] = result
 			cut = cut or result != "miss"
@@ -2857,6 +2897,7 @@ func start_channel(target: Vector3, direction: Vector3) -> void:
 	var slot: String = channel_slot("gatling")
 	channel = {"skill": "gatling", "slot": slot, "visual": visual, "fire_left": 0.0, "shots": 0,
 		"aim": target, "direction": direction, "focus": "", "focus_hits": 0}
+	probe.channel_begin("gatling")
 
 func channel_held() -> bool:
 	return not channel.is_empty() and hold.get("slot") == channel.slot and state.bindings.get(channel.slot) == channel.skill
@@ -2893,6 +2934,7 @@ func tick_channel(dt: float) -> void:
 		return
 	state.mana = maxf(0.0, state.mana - cost)
 	probe.record([{"type": "tool_upkeep", "tool": "gatling", "amount": cost}])
+	probe.channel_time("gatling", dt, cost)
 	# The stream follows the cursor: an enemy under it, else the floor point.
 	var cursor := field_cursor()
 	if cursor.get("enemy_id") != null and enemies.has(cursor.enemy_id):
@@ -3098,6 +3140,10 @@ func tick_pending_cast(dt: float) -> void:
 	if state.bindings[slot] != pending_cast.binding:
 		cancel_pending_cast()
 		return
+	if cursor.has("follow") and enemies.has(cursor.follow):
+		# A device aimed at an enemy goes where that enemy is now (its last spot if it died).
+		var at: Vector3 = enemies[cursor.follow].body.position
+		cursor.ground = [at.x, 0, at.z]
 	if cursor.get("enemy_id") != null and not enemies.has(cursor.enemy_id):
 		cancel_pending_cast()
 		show_message("대상이 사라졌습니다")
@@ -3344,10 +3390,6 @@ func execute_cast(event: Dictionary) -> void:
 			place_device(event.skill, target, direction)
 		"restraint_winch":
 			fire_winch(event, direction)
-		"exoskeleton":
-			exo_time = exo_duration()
-			play_sfx("summon_assemble", 1.3)
-			show_exo_visual()
 		"bolt_cutter", "grinder", "chainsaw": pass  # the staff itself transforms; no ground ring
 		"focus_attack":
 			start_tool_channel(event.active_tool, direction)
@@ -3486,22 +3528,21 @@ func spread_factor(width: float) -> float:
 func armor() -> float:
 	# Worn defence, plus the shield's while it is up.
 	var total: float = gear_total("armor")
-	# The shock-absorbing frame passive reinforces both the shield and the exoskeleton while up.
-	var absorb: Dictionary = config.passives.shock_frame
+	# The exoskeleton's guard frame also reinforces the shield, per exoskeleton level.
 	if shield_time > 0:
 		var shield: Dictionary = rules.skills.shield
-		total += float(shield.armor_base) + float(shield.armor_per_level) * (float(config.shield_level) - 1.0) + float(absorb.shield_armor_per_level) * shock_level()
-	if exo_time > 0:
-		var frame: Dictionary = rules.skills.exoskeleton
-		total += float(frame.armor_base) + float(frame.armor_per_level) * (float(config.exoskeleton_level) - 1.0) + float(absorb.exo_armor_per_level) * shock_level()
+		total += float(shield.armor_base) + float(shield.armor_per_level) * (float(config.shield_level) - 1.0) + shield_frame_armor()
+	if exo_active():
+		total += exo_armor()
 	return total
 
-func shock_level() -> float:
-	return float(config.passive_levels.get("shock_frame", 0))
+func shield_frame_armor() -> float:
+	return float(exo_plan().get("shield_armor_per_level", 0.0)) * exo_level()
 
 func summon_guard() -> float:
-	# Share of every hit the witch's summons shrug off, from the shock-absorbing frame passive.
-	return minf(0.5, float(config.passives.shock_frame.summon_guard_per_level) * shock_level())
+	# Share of every hit the witch's summons shrug off, from the exoskeleton's guard frame (it
+	# replaced the shock-absorbing frame passive; worn or not, it reinforces them).
+	return minf(0.5, float(exo_plan().get("summon_guard_per_level", 0.0)) * exo_level())
 
 func armor_reduction(level: int = -1) -> float:
 	# Defence against an attacker's level: the same armour turns away less from stronger enemies,
@@ -3511,23 +3552,24 @@ func armor_reduction(level: int = -1) -> float:
 	var value := armor()
 	return minf(float(config.build.armor_cap), value / maxf(0.001, value + float(k[0]) + float(k[1]) * attacker))
 
-func strike(id: String, amount: float, accuracy_roll: bool, roller: String, source: String, look: String = "") -> String:
+func strike(id: String, amount: float, accuracy_roll: bool, roller: String, source: String, look: String = "", label: String = "") -> String:
 	# roller is "witch" or the summon skill ("automaton", "turret") whose level drives the rolls.
 	# One direct damage event: optional hit roll, then its own crit roll (area attacks call this per enemy).
+	# label, if given, is the A5 log row in place of source.
 	if not enemies.has(id):
 		return "miss"
 	amount *= passive_factor(source + ("_" + look if look != "" else ""))
 	if roller == "witch":
 		amount *= build.power_factor() * (1.0 + gear_total("damage_pct") / 100.0) * skill_level_factor(source)
 	if accuracy_roll and not force_rolls.get("hit", combat_rng.randf() < hit_chance(id, roller)):
-		probe.strike(source, "miss", 0.0)
+		probe.strike(source if label == "" else label, "miss", 0.0)
 		return "miss"
 	var crit: bool = force_rolls.get("crit", combat_rng.randf() < crit_chance(roller))
 	amount *= attack_factor(roll_attack(crit)) if roller == "witch" else spread_factor(float(config.build.summon_spread))
 	var at: Vector3 = enemies[id].body.position
 	var size: float = enemies[id].size
 	var dealt: float = damage_enemy(id, amount * (config.crit_multiplier if crit else 1.0))
-	probe.strike(source, "crit" if crit else "hit", dealt)
+	probe.strike(source if label == "" else label, "crit" if crit else "hit", dealt)
 	# Burst on the near surface: toward the witch and the camera, never buried inside the model.
 	var toward: Vector3 = player.position - at
 	toward.y = 0
@@ -4107,6 +4149,8 @@ func _physics_process(dt: float) -> void:
 				enemies[id].body.position.y = map.ground_y(enemies[id].body.position)
 			if enemies.has(id) and enemies[id].model.has_method("sync_enemy"):
 				enemies[id].model.sync_enemy(enemies[id], dt)
+			if enemies.has(id):
+				sync_status_fx(enemies[id], dt)
 		_tick_allies(dt)
 		for ally in allies:
 			ally.node.position.y = map.ground_y(ally.node.position)
@@ -4148,7 +4192,6 @@ func _physics_process(dt: float) -> void:
 		hit_time = maxf(0, hit_time - dt)
 		stun_time = maxf(0, stun_time - dt)
 		shield_time = maxf(0, shield_time - dt)
-		exo_time = maxf(0, exo_time - dt)
 		tick_cast_circles(dt)
 		if is_instance_valid(shield_visual):
 			shield_visual.sync(dt, player.position, player_model.global_rotation.y, shield_time > 0 and hp > 0)
@@ -4237,6 +4280,21 @@ func foe_in_reach(at: Vector3, reach: float) -> String:
 		if flat.length() < reach:
 			return ally.id
 	return "none"
+
+func status_fx(enemy: Dictionary) -> Node3D:
+	return enemy.body.get_node_or_null("StatusFx")
+
+func sync_status_fx(enemy: Dictionary, dt: float) -> void:
+	# Debuff markers (presentation only): made the first time the enemy has one, then kept so
+	# they can fade out.
+	var fx := status_fx(enemy)
+	if fx == null:
+		if not (enemy.slow > 0 or enemy.shred > 0 or not enemy.bleeds.is_empty() or float(enemy.get("stun", 0.0)) > 0 or float(enemy.get("bound", 0.0)) > 0):
+			return
+		fx = StatusFx.new()
+		enemy.body.add_child(fx)
+		fx.setup(enemy)
+	fx.sync(enemy, dt)
 
 func _tick_enemy(enemy: Dictionary, dt: float) -> void:
 	if enemy.target != "" and ally_by_id(enemy.target).is_empty():

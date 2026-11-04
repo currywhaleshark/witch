@@ -9,15 +9,17 @@ const PAPER = Color("e3e9df")
 const MUTED = Color("9aadaf")
 const GOLD = Color("d8b77b")
 const TREE_NAMES = {"firearm": "화기", "drive": "구동", "automation": "자동화"}
-const SLOT_NAMES = {"rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r": "R"}
-# Every skill a slot can carry, grouped by tree; the basic attack stays on the left button.
+const SLOT_NAMES = {"lmb": "LMB", "rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r": "R"}
+# Every skill a slot can carry, grouped by tree. The left button takes one too; with none it
+# keeps the basic attack, which is never dragged.
 const LOADOUT = ["matchlock", "rifle", "powder_keg", "gatling", "smoke_launcher", "shotgun", "recoil_leap", "artillery", "naval_gun", "bolt_cutter", "grinder", "chainsaw", "focus_attack", "area_attack", "shield", "spring_dash",
-	"guillotine", "restraint_winch", "hydraulic_press", "compound_executor", "exoskeleton", "automaton", "turret", "relay"]
+	"guillotine", "restraint_winch", "hydraulic_press", "compound_executor", "automaton", "turret", "relay"]
 
 # Skill tree layout: candidates from 03 in tier rows, links of related study. A link into a skill
 # that requires the other (build entry "requires") is a prerequisite: it is learned for a point after.
 # Each skill is an icon; its name and effect are in the hover tip. Skills are put on keys by
-# dragging an icon from the tree (or another key) onto a key box.
+# dragging an icon from the tree (or another key) onto a key box; a key's icon dropped anywhere
+# but on a key comes off it (the left button goes back to the basic attack).
 const NODE = Vector2(46, 46)
 const PITCH = Vector2(58, 62)
 const TIER_LABEL = 24
@@ -29,6 +31,7 @@ var body: VBoxContainer
 var tree_tab := "firearm"
 var tip: PanelContainer
 var dragged := false
+var drag_slot := ""
 var tip_label: Label
 
 func setup(owner: Node, which: String) -> void:
@@ -382,16 +385,25 @@ func slot_box(slot: String) -> Control:
 	box.custom_minimum_size = Vector2(NODE.x + 8, NODE.y + 8)
 	box.mouse_filter = Control.MOUSE_FILTER_STOP
 	box.draw.connect(func(): draw_slot(box, slot))
-	box.mouse_entered.connect(func(): show_detail(slot_skill(slot)))
+	box.mouse_entered.connect(func(): slot_detail(slot))
 	box.mouse_exited.connect(func(): tip.visible = false)
 	box.set_drag_forwarding(func(_at): return start_drag(slot_skill(slot), slot),
 		func(_at, data): return can_take(data), func(_at, data): drop_skill(slot, data))
 	return box
 
 func slot_skill(slot: String) -> String:
-	# "" for a key left empty when its skill was unlearned.
+	# "" for an empty key, and for the left button while it only has the basic attack.
 	var id = arena.state.bindings[slot]
-	return "" if id == null else id
+	return "" if id == null or id == arena.rules.basic_id else id
+
+func slot_detail(slot: String) -> void:
+	if slot == "lmb" and slot_skill(slot) == "":
+		tip_label.text = "타격 (기본 공격)
+스킬을 끌어다 놓으면 좌클릭에 걸립니다
+좌클릭 칸의 스킬은 적 위 클릭·Shift+클릭으로 씀"
+		tip.visible = true
+		return
+	show_detail(slot_skill(slot))
 
 func draw_slot(box: Control, slot: String) -> void:
 	var rect := Rect2(Vector2.ZERO, box.custom_minimum_size)
@@ -399,6 +411,8 @@ func draw_slot(box: Control, slot: String) -> void:
 	box.draw_rect(rect, GOLD, false, 1.5)
 	if slot_skill(slot) != "":
 		SkillIcon.draw(box, rect.get_center() + Vector2(0, 3), slot_skill(slot), PAPER, 0.8)
+	elif slot == "lmb":
+		SkillIcon.draw(box, rect.get_center() + Vector2(0, 3), arena.rules.basic_id, MUTED, 0.8)
 	box.draw_string(get_theme_default_font(), Vector2(4, 12), SLOT_NAMES[slot], HORIZONTAL_ALIGNMENT_LEFT, -1, 10, GOLD)
 
 func start_drag(id: String, from: String):
@@ -407,6 +421,7 @@ func start_drag(id: String, from: String):
 	if data == null:
 		return null
 	dragged = true
+	drag_slot = from
 	tip.visible = false
 	var preview := Control.new()
 	preview.draw.connect(func(): SkillIcon.draw(preview, Vector2.ZERO, id, GOLD, 0.8))
@@ -415,6 +430,15 @@ func start_drag(id: String, from: String):
 
 func drag_data(id: String, from: String):
 	return {"skill": id, "from": from} if id in LOADOUT and arena.build.learned(id) else null
+
+func _notification(what: int) -> void:
+	# A key's icon let go anywhere but on a key takes the skill off that key.
+	if what == NOTIFICATION_DRAG_END and drag_slot != "":
+		var slot := drag_slot
+		drag_slot = ""
+		if not get_viewport().gui_is_drag_successful() and slot_skill(slot) != "":
+			arena.bind_slot(slot, null)
+			arena.refresh_build_windows()
 
 func can_take(data) -> bool:
 	return data is Dictionary and data.has("skill")
@@ -477,11 +501,6 @@ func effect_note(id: String) -> String:
 			return "%s · 발당 %s · 초당 %.1f발 · 산포 ±%d° · MP −%s/s%s" % [Build.GATLING_NODE_NAMES[config.gatling_node], str(snappedf(float(stream.shot_damage) * arena.skill_level_factor("gatling"), 0.1)), 1.0 / arena.gatling_interval(), int(stream.spread_degrees), str(arena.rules.skills.gatling.channel_mana_per_second), extra]
 		"reload":
 			return "장탄 +%d발 · 장전 시간 −%s%% · 포탑 연사 +%d%%" % [int(config.passives.reload.magazine_per_level) * int(arena.reload_level()), str(snappedf(100 * float(config.passives.reload.reload_time_cut_per_level) * arena.reload_level(), 0.1)), roundi(100 * (arena.turret_fire_rate() - 1.0))]
-		"shock_frame":
-			var absorb: Dictionary = config.passives.shock_frame
-			var level: float = arena.shock_level()
-			return "외골격 방어력 +%d · 경직 −%d%% · 방패 방어력 +%d · 소환체 받는 피해 −%s%%" % [roundi(float(absorb.exo_armor_per_level) * level), roundi(100 * float(absorb.exo_stagger_cut_per_level) * level),
-				roundi(float(absorb.shield_armor_per_level) * level), str(snappedf(100 * arena.summon_guard(), 0.1))]
 		"recoil_control":
 			return "화기 사격 간격·산탄 대기 −%s%% · 도약 속도 +%d%%" % [str(snappedf(100 * (1.0 - arena.fire_interval_factor()), 0.1)), roundi(100 * (arena.leap_speed_factor() - 1.0))]
 		"automaton", "turret":
@@ -521,10 +540,20 @@ func effect_note(id: String) -> String:
 				parts.append("%s %s %d·%.1fm" % [arena.rules.skills[tool].name, shapes[tool], roundi(arena.tool_hit_damage("area_attack", plan)), float(plan.reach) * float(plan.get("reach_factor", 1.0))])
 			return "%s · %s · 공구 디버프" % [Build.SKILL_NODE_NAMES.area_attack[config.area_attack_node], " · ".join(parts)]
 		"exoskeleton":
+			# Passive, worn while a tool is transformed; an unlearned one shows its Lv1 values.
 			var frame: Dictionary = arena.rules.skills.exoskeleton
-			var cut: int = roundi(100 * float(frame.stun_cut) * floorf(config.exoskeleton_level / float(frame.stun_cut_every)))
-			return "%.1f초 · 공구 피해 +%d%% · 방어력 +%d%s" % [arena.exo_duration(), roundi(100 * (float(frame.tool_damage) + float(frame.tool_damage_per_level) * (config.exoskeleton_level - 1))),
-				roundi(float(frame.armor_base) + float(frame.armor_per_level) * (config.exoskeleton_level - 1)), " · 경직 −%d%%" % cut if cut > 0 else " · Lv%d부터 경직 감소" % int(frame.stun_cut_every)]
+			var plan: Dictionary = arena.exo_plan()
+			var level: float = maxf(1.0, config.exoskeleton_level)
+			var damage: float = (float(frame.tool_damage) + float(frame.tool_damage_per_level) * (level - 1.0)) * float(plan.get("damage_factor", 1.0))
+			var guard: float = (float(frame.armor_base) + float(frame.armor_per_level) * (level - 1.0)) * float(plan.get("armor_factor", 1.0))
+			var cut: int = roundi(100 * float(frame.stun_cut) * floorf(level / float(frame.stun_cut_every)) * float(plan.get("stun_cut_factor", 1.0)))
+			var extra: String = ""
+			if plan.has("shield_armor_per_level"):
+				extra = " · 방패 방어력 +%d · 소환체 받는 피해 −%s%%" % [roundi(float(plan.shield_armor_per_level) * level), str(snappedf(100 * minf(0.5, float(plan.summon_guard_per_level) * level), 0.1))]
+			elif plan.has("upkeep_cut"):
+				extra = " · 공구 유지비 −%d%%" % roundi(100 * float(plan.upkeep_cut))
+			return "%s · 공구 전개 중 · 공구 피해 +%s%% · 방어력 +%s%s%s" % [Build.SKILL_NODE_NAMES.exoskeleton[config.exoskeleton_node], str(snappedf(100 * damage, 0.1)), str(snappedf(guard, 0.1)),
+				" · 경직 −%d%%" % cut if cut > 0 else " · Lv%d부터 경직 감소" % int(frame.stun_cut_every), extra]
 		_:
 			var passive: Dictionary = config.passives[id]
 			return "%s 피해 +%d%%" % [passive.tag_name, roundi(100 * float(passive.damage_per_level) * config.passive_levels[id])]

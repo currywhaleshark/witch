@@ -15,6 +15,7 @@ const SKILL_NODE_NAMES = {
 	"restraint_winch": {"base": "한 가닥", "multi_pull": "범위 끌기", "multi_bind": "범위 구속"},
 	"focus_attack": {"base": "기본", "power": "집중 피해", "debuff": "디버프 강화"},
 	"area_attack": {"base": "기본", "power": "광역 피해", "debuff": "디버프 확산"},
+	"exoskeleton": {"base": "기본 프레임", "guard": "방호 프레임", "drive": "집행 프레임"},
 }
 
 var arena: Node
