@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-05",
+  "status": "selected_for_prototype",
+  "user_art_selection": true,
+  "approval": "approval.json",
+  "icons": 6,
+  "new_models": 6,
+  "inventory_coverage": 41,
+  "ground_coverage": 45,
+  "new_model_triangles": 24776,
+  "validation": [
+    {
+      "name": "source_reimport",
+      "report": "asset_validation.json",
+      "checks": 86,
+      "failures": []
+    },
+    {
+      "name": "gpu_runtime",
+      "report": "runtime_validation.json",
+      "checks": 202,
+      "failures": []
+    },
+    {
+      "name": "ground_loot",
+      "report": "regressions/ground_loot/report.json",
+      "checks": 55,
+      "failures": []
+    },
+    {
+      "name": "loot_resources",
+      "report": "regressions/loot_resources/resources.json",
+      "checks": 26,
+      "failures": []
+    },
+    {
+      "name": "items",
+      "report": "regressions/items/result.json",
+      "checks": 62,
+      "failures": []
+    },
+    {
+      "name": "item_options",
+      "report": "regressions/item_options/result.json",
+      "checks": 37,
+      "failures": []
+    }
+  ],
+  "total_checks": 468,
+  "captures": [
+    "catalogue.png",
+    "inventory.png",
+    "drop_launch.png",
+    "drop_turn.png",
+    "native_ground.png",
+    "detail_ground.png",
+    "hidden_labels.png",
+    "hover_part_explosive.png",
+    "hover_twin_barrel_core.png",
+    "hover_bundled_fuse.png",
+    "hover_rusted_guillotine_hinge.png",
+    "hover_counter_hinge.png",
+    "hover_iron_cartilage.png"
+  ],
+  "preserved_inputs": "preservation.json",
+  "notes": [
+    "The first parallel legacy items GUI run failed its right-click assertion once; diagnostic and isolated rerun passed with unchanged game code. The existing items test was not altered.",
+    "Default user log path caused startup crashes. Final runs use explicit project log paths; editor-settings and shader-cache permission diagnostics remain.",
+    "Actual field lighting is unchanged. The catalogue uses a neutral reflection sky for inspection.",
+    "Closed source parts and reimport geometry checked; hidden static joining interfaces intentional. No arbitrary terrain/wall physics, character outfit replacement or final performance certification."
+  ],
+  "inputs_sha256": {
+    "game/assets/props/ground_loot_v3/part_explosive.glb": "fe96eec103f27e796a4d37ade7f2a2749ba683f0ec39c2abe8a0fc8c73377a9a",
+    "game/assets/ui/inventory_v2/twin_barrel_core.png": "a8837b7829a45ed84d8d8752b54bd615f40666cefb92df8e6314bcae0b65e98c",
+    "game/assets/props/ground_loot_v3/rusted_guillotine_hinge.glb": "02049f7ccb6eb0628ae343f389d561e348cc5a9f5d60668163ac3563a9d4859f",
+    "game/assets/props/ground_loot_v3/bundled_fuse.glb.import": "a47c41ad60ef26ded7913e4a361ce93a5c1f66dd9177112d4ae7fe163f516fd9",
+    "assets/ui/inventory_v2/generation_manifest.json": "ec88e28dc1b73aa74aa76c4eb8fbb2bb2a3a23fd9f1357fcfb5c402ba685ec3e",
+    "game/assets/ui/inventory_v2/part_explosive.png.import": "b9bd79f44725a472ac3d0c1a2366c3f0db410d4657ae5e9d4a6bd4e035b6af8b",
+    "game/assets/props/ground_loot_v3/twin_barrel_core.glb.import": "f9f9432ce5445be966268b76e3841334b45d2d88e041aa1029375791de92e1f0",
+    "game/tests/item_art_v2.gd": "409c03363d49da0f23bc1373b569369cf026139a4da6080bb74cff06783e34f7",
+    "game/assets/ui/inventory_v2/iron_cartilage.png": "3ef061db4cb61bc051f149b67766257651f14a4aef8182d0e48f432863505f4e",
+    "game/assets/props/ground_loot_v3/counter_hinge.glb": "e4dcda24c0bcae211307857918d7dfab949ead166a4a4f7890de7304f32d26ac",
+    "game/scripts/ground_loot.gd": "0b6c72bf4391eedb4d1336fa6b6e5cfa1fb3f135346f5757fac70d348da37951",
+    "game/scripts/ground_loot_visual.gd": "478b67a5f2c8e7c330e72c9dd79d0425e4c58958bafb58e250b66a369104ef83",
+    "tools/validate_ground_loot_v3.py": "52479966ef3232123d74eded97fc6aa2281eaf904b0cb21e3dae2c543850d987",
+    "game/scripts/item_icon.gd": "55f82cc1aa2e60d1893be12cb5a45995d6b94d5df7ea61234aa540a573cc3a2f",
+    "game/assets/ui/inventory_v2/bundled_fuse.png": "aa4f44e70da4cd0256f62ef75c26515b54f1bdeab434785cd930a9266b97892a",
+    "game/tests/prepare_item_art_v2.gd": "468283e648dc43bd5b8a9710a46576bfe9fe91420b311a532c7ce096456251d9",
+    "game/assets/props/ground_loot_v3/counter_hinge.glb.import": "d0e9e97dca9f78bdd3345de18d921282b43d505891dd331c791d1b81fc3b9ad5",
+    "game/assets/props/ground_loot_v3/twin_barrel_core.glb": "b52e4e76af10efb2a16ad2fa1c1b8936a60d3891f4739394f2f8580e948798d5",
+    "game/tests/ground_loot_art.gd": "66081c43a95c05071a1985575f4713ccd87adfff6fb6bd627683bf0e1adb2f56",
+    "assets/props/ground_loot_v3/ground_loot_v3.blend": "8b1e9b82d6430fa49aeee346cf67bc8b30e3d2093d4dbdbd415531e9d6415acc",
+    "game/assets/ui/inventory_v2/part_explosive.png": "f61a25eb443bac93a9ed50c16c67feacc425d9028218fd0026014e1f92549fad",
+    "game/assets/ui/inventory_v2/bundled_fuse.png.import": "f3e55d45c70372b28cb250633d74d6bd070831f0a97f64e9fbc30cd16e3a70d0",
+    "game/tests/item_options_v2.gd": "9e693b4582ff17e89ba0eb48c777e207fd7a0bbb26e483251babf44804c13839",
+    "game/assets/props/ground_loot_v3/models.json": "864c088b5e3b7c0e9b68c9d0b25be10c108d4d2e934c3945d1ce28b3519b10a7",
+    "game/assets/props/ground_loot_v3/iron_cartilage.glb.import": "9b64673b4b0864a84769359b5b62b3f0f97dae8b0c45664d1b6084f8eecee72b",
+    "game/assets/props/ground_loot_v3/iron_cartilage.glb": "c1a3bf80237a21622c84a65f877cb36f79cca8306a49aa7c83063ca6c0ce4b65",
+    "game/assets/ui/inventory_v2/counter_hinge.png": "cf880bb4afa38097870b601a76f1584d6b053284bdfbd088ee4ccd9cacb805fc",
+    "game/assets/ui/inventory_v2/counter_hinge.png.import": "48f4f061a4d690f6ed9b7c6d08d7f50dfc1fa044fc209f9ae7c86b3e9c605482",
+    "tools/build_ground_loot_v3.py": "c6f173d6f25b4ce9362fcfa908e37c9c2107d35a236dd22c5957886a50841dfd",
+    "game/assets/props/ground_loot_v3/bundled_fuse.glb": "8cae10d5f6286b2789a90cef59b0f75bb374c8b84d7771242354769c16ffd188",
+    "game/scripts/inventory_window.gd": "576ba6aef8da2670f9590b1cf4a579f14c5407e523cb60aad292ca91a26a9a30",
+    "game/data/trial.json": "2a372f702c4d9adfabc2ccd9a78e92f9cc77d7e079ddcfb547388ecd0bc85564",
+    "game/tests/ground_loot.gd": "842d7eb4c65af0f04370ddba985d106e11d6214face70c6b63e6a05851693f33",
+    "game/scripts/items.gd": "3d27b9f311c7fdf6b393f7d26574a90ea43c682438eabbb2362e75b331e5a951",
+    "game/assets/ui/inventory_v2/twin_barrel_core.png.import": "59753a91b710855a10d8187b7d83df21790d932f1f30259e24b887e84944a6c4",
+    "game/tests/loot_resources.gd": "dd06d518975f92ff0f923dd887c213d3799d128575bb670b89eb2f9ae97fdc90",
+    "game/assets/ui/inventory_v2/rusted_guillotine_hinge.png.import": "40861ede6595ceca1adf1f8dd5a05f7385e5fd76e7ce5add3263c926ef4b2e7e",
+    "game/scripts/arena.gd": "6b36359efc34f62bdcff11f8ed36a67162c5d3da35b33ddae4901353c410ff7f",
+    "game/tests/ground_loot_art_v2.gd": "472253f06a66fc470a0ec9216a8d647b51fc4532bee605b5ff30752c46198d81",
+    "game/assets/ui/inventory_v2/iron_cartilage.png.import": "620e54a21982d4239042eb5c39d48a30551f356558386cf57fc3a7d98ac6cbbe",
+    "game/tests/items.gd": "b247e31868e833ffede41442ab1253dd8c67866e1e04e2cdfece92974e3956bc",
+    "tools/run_item_art_v2.ps1": "f355cb40dfb05c83e3642a71e16810c4cf90e950367d10643e10a598fcb6e8e4",
+    "game/project.godot": "e94e469016761288523ed2eed72ae4f278250ae6b4dfb81eb5cdda69cff42030",
+    "game/assets/props/ground_loot_v3/part_explosive.glb.import": "0a4c63f503ccb83ee8d9958d84893dc1a3d3291f0b521e9f4fa4412661bc36c3",
+    "assets/props/ground_loot_v3/models.json": "e0b8affca9a156b11ab7ba79faf464455810ca194f2facac484eff3f71451cc4",
+    "game/data/items.json": "b0ca852cbac5f86af9aae980856fee0d5690a2613bf2c34df66f3bf02038a839",
+    "game/assets/props/ground_loot_v3/rusted_guillotine_hinge.glb.import": "e627a708b48d487ca34b753a220768517db567f84cfea4ad12034d74347cbe89",
+    "game/assets/ui/inventory_v2/rusted_guillotine_hinge.png": "5e24b174f6f37bce6d9b2bb3bbde622616cb3a5491e268c3ae4523e1c74728f1"
+  }
+}

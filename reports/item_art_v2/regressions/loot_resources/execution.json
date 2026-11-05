@@ -1,0 +1,16 @@
+{
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\USER\\Downloads\\Godot_v4.6.2-stable_win64.exe\\Godot_v4.6.2-stable_win64.exe",
+    "--path",
+    "C:\\Users\\USER\\Documents\\Projects\\witch\\game",
+    "--audio-driver",
+    "Dummy",
+    "--log-file",
+    "C:\\Users\\USER\\Documents\\Projects\\witch\\reports\\item_art_v2\\regressions\\loot_resources\\engine.log",
+    "--headless",
+    "--script",
+    "C:\\Users\\USER\\Documents\\Projects\\witch\\reports\\item_art_v2\\regression_scripts\\loot_resources.gd"
+  ],
+  "seconds": 3.3437969
+}

@@ -1,0 +1,32 @@
+{
+  "part_explosive": {
+    "errors": [],
+    "parts": 9,
+    "scope": "Closed individual parts and face area; intentional joining interfaces are not inter-part collision tested."
+  },
+  "twin_barrel_core": {
+    "errors": [],
+    "parts": 13,
+    "scope": "Closed individual parts and face area; intentional joining interfaces are not inter-part collision tested."
+  },
+  "bundled_fuse": {
+    "errors": [],
+    "parts": 24,
+    "scope": "Closed individual parts and face area; intentional joining interfaces are not inter-part collision tested."
+  },
+  "rusted_guillotine_hinge": {
+    "errors": [],
+    "parts": 20,
+    "scope": "Closed individual parts and face area; intentional joining interfaces are not inter-part collision tested."
+  },
+  "counter_hinge": {
+    "errors": [],
+    "parts": 33,
+    "scope": "Closed individual parts and face area; intentional joining interfaces are not inter-part collision tested."
+  },
+  "iron_cartilage": {
+    "errors": [],
+    "parts": 27,
+    "scope": "Closed individual parts and face area; intentional joining interfaces are not inter-part collision tested."
+  }
+}

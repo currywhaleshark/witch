@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-05",
+  "timezone": "Asia/Seoul",
+  "user_request": "커밋",
+  "status": "selected_for_prototype",
+  "scope": "Six dedicated inventory icons and matching ground loot models, with exact-ID integration and the existing drop, label, hover and pickup presentation.",
+  "ids": ["part_explosive", "twin_barrel_core", "bundled_fuse", "rusted_guillotine_hinge", "counter_hinge", "iron_cartilage"],
+  "review": "reports/item_art_v2/review.html",
+  "validation": "reports/item_art_v2/delivery_manifest.json",
+  "does_not_imply": "Character equipment mesh replacement, arbitrary terrain/wall physics or a final performance budget. Recorded validation limits still apply."
+}

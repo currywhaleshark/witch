@@ -1,0 +1,19 @@
+{
+  "exit_code": 0,
+  "command": [
+    "C:\\Users\\USER\\Downloads\\Godot_v4.6.2-stable_win64.exe\\Godot_v4.6.2-stable_win64.exe",
+    "--path",
+    "C:\\Users\\USER\\Documents\\Projects\\witch\\game",
+    "--audio-driver",
+    "Dummy",
+    "--log-file",
+    "C:\\Users\\USER\\Documents\\Projects\\witch\\reports\\item_art_v2\\runtime\\engine.log",
+    "--resolution",
+    "1280x800",
+    "--script",
+    "res://tests/item_art_v2.gd",
+    "--",
+    "--capture"
+  ],
+  "seconds": 23.2573126
+}

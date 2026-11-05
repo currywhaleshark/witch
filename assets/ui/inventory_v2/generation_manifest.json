@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-05",
+  "mode": "built-in image_gen",
+  "transparent_background": true,
+  "assets": [
+    {
+      "id": "part_explosive",
+      "prompt": "Use case: stylized-concept. Create ONE isolated inventory item icon for an isometric machinery-witch action RPG. Painterly realistic game item render, aged brass, blue-black steel, deep teal enamel; the established game uses warm edge highlights and restrained broad surface wear. Strong clean silhouette readable at 64 pixels, generous shapes, NO fine speckled noise, no excessive grunge, no text, no labels, no numbers, no border, no UI, no floor, no cast shadow outside object. A three-quarter view slightly from above; entire object centered with 8 percent transparent margin. Real transparent background. This is a fictional ornamental loot prop, not a diagram. A compact squat oxide-red sealed cylindrical alchemical cartridge standing slightly diagonally, chunky aged-brass top and bottom collars, two simple vertical brass side ribs, a small dark-teal diamond inset centered on its red body, one short dark metal capped top stud. No fuse, no wires, no fire. Its silhouette is a single red drum with brass bands, clearly different from a teal electrical motor.",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a19972-6d5f-7432-90dd-a955eb626809\\exec-d6c31ab2-1d54-4e97-8ddf-20f115544bd1.png",
+      "destination": "game/assets/ui/inventory_v2/part_explosive.png"
+    },
+    {
+      "id": "twin_barrel_core",
+      "prompt": "Use case: stylized-concept. Create ONE isolated inventory item icon for an isometric machinery-witch action RPG. Painterly realistic game item render, aged brass, blue-black steel, deep teal enamel; the established game uses warm edge highlights and restrained broad surface wear. Strong clean silhouette readable at 64 pixels, generous shapes, NO fine speckled noise, no excessive grunge, no text, no labels, no numbers, no border, no UI, no floor, no cast shadow outside object. A three-quarter view slightly from above; entire object centered with 8 percent transparent margin. Real transparent background. This is a fictional ornamental loot prop, not a diagram. A compact detached twin-barrel magical mechanism. Two short thick blue-black metal tubes side by side, two clearly visible dark circular open bores with heavy brass rims facing front-left, a single deep-teal rectangular rear housing linking them, one small turquoise circular inset on top and a brass bridge across the two tubes. No stock, no handle, no full-size gun; this is a palm-sized magical component.",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a19972-6d5f-7432-90dd-a955eb626809\\exec-07060680-d3ef-429f-b83c-0e83f8737c3f.png",
+      "destination": "game/assets/ui/inventory_v2/twin_barrel_core.png"
+    },
+    {
+      "id": "bundled_fuse",
+      "prompt": "Use case: stylized-concept. Create ONE isolated inventory item icon for an isometric machinery-witch action RPG. Painterly realistic game item render, aged brass, blue-black steel, deep teal enamel; the established game uses warm edge highlights and restrained broad surface wear. Strong clean silhouette readable at 64 pixels, generous shapes, NO fine speckled noise, no excessive grunge, no text, no labels, no numbers, no border, no UI, no floor, no cast shadow outside object. A three-quarter view slightly from above; entire object centered with 8 percent transparent margin. Real transparent background. This is a fictional ornamental loot prop, not a diagram. A thick coil and loose bundle of dark tan braided fantasy cord, secured by two aged-brass rectangular bands and a small red cloth tie. Three short upright cord tips on one side have glowing orange ember tips, one small restrained warm flame; no detached particles, no smoke cloud. The body of the icon is the substantial tied cord bundle. No explosive container or technical diagram.",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a19972-6d5f-7432-90dd-a955eb626809\\exec-4952d859-d669-4e95-8454-50197f69aa7f.png",
+      "destination": "game/assets/ui/inventory_v2/bundled_fuse.png"
+    },
+    {
+      "id": "rusted_guillotine_hinge",
+      "prompt": "Use case: stylized-concept. Create ONE isolated inventory item icon for an isometric machinery-witch action RPG. Painterly realistic game item render, aged brass, blue-black steel, deep teal enamel; the established game uses warm edge highlights and restrained broad surface wear. Strong clean silhouette readable at 64 pixels, generous shapes, NO fine speckled noise, no excessive grunge, no text, no labels, no numbers, no border, no UI, no floor, no cast shadow outside object. A three-quarter view slightly from above; entire object centered with 8 percent transparent margin. Real transparent background. This is a fictional ornamental loot prop, not a diagram. A heavy detached old mechanical hinge, two broad rectangular weathered blue-black iron leaves spread open in a shallow V, three alternating cylindrical knuckles along the central vertical pin, large bolts near four outer corners, warm reddish-brown rust concentrated at the edges, brass pin caps, a small teal jewel at the upper pivot. This is clearly a chunky hinge, no blade, no frame, no gore.",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a19972-6d5f-7432-90dd-a955eb626809\\exec-a74337f2-29a2-477c-af32-ea232d7081c5.png",
+      "destination": "game/assets/ui/inventory_v2/rusted_guillotine_hinge.png"
+    },
+    {
+      "id": "counter_hinge",
+      "prompt": "Use case: stylized-concept. Create ONE isolated inventory item icon for an isometric machinery-witch action RPG. Painterly realistic game item render, aged brass, blue-black steel, deep teal enamel; the established game uses warm edge highlights and restrained broad surface wear. Strong clean silhouette readable at 64 pixels, generous shapes, NO fine speckled noise, no excessive grunge, no text, no labels, no numbers, no border, no UI, no floor, no cast shadow outside object. A three-quarter view slightly from above; entire object centered with 8 percent transparent margin. Real transparent background. This is a fictional ornamental loot prop, not a diagram. A short ivory cotton coat with slate-blue collar and cuffs, no person or mannequin, three-quarter front view; distinctive symmetrical brass hinge armor plates attached over the two shoulders and on the outer forearms, each brass leaf joined by a dark cylindrical hinge. Brass front buttons, one small teal chest clasp, broad natural cloth folds. The coat is the main silhouette; mechanical reinforcements visibly distinguish this unique defensive outfit from a plain ivory coat. No separate floating pieces.",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a19972-6d5f-7432-90dd-a955eb626809\\exec-29ad36a7-97b2-4c57-b34b-40cbd5300abf.png",
+      "destination": "game/assets/ui/inventory_v2/counter_hinge.png"
+    },
+    {
+      "id": "iron_cartilage",
+      "prompt": "Use case: stylized-concept. Create ONE isolated inventory item icon for an isometric machinery-witch action RPG. Painterly realistic game item render, aged brass, blue-black steel, deep teal enamel; the established game uses warm edge highlights and restrained broad surface wear. Strong clean silhouette readable at 64 pixels, generous shapes, NO fine speckled noise, no excessive grunge, no text, no labels, no numbers, no border, no UI, no floor, no cast shadow outside object. A three-quarter view slightly from above; entire object centered with 8 percent transparent margin. Real transparent background. This is a fictional ornamental loot prop, not a diagram. A deep navy-teal short quilted cape, no person or mannequin, shown from the back in a three-quarter view. A distinctive short articulated blue-black iron spine of five broad overlapping vertebra plates runs down the middle, with curved iron rib straps extending onto the cape at three levels and small aged-brass pivot caps. Ivory folded collar, modest brass hem, broad cloth folds. This is wearable reinforced cape loot, no skeleton or biological body, no full suit, no glowing circuitry.",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a19972-6d5f-7432-90dd-a955eb626809\\exec-ba37a85c-f68b-42d4-8cb3-654f7d7ed12e.png",
+      "destination": "game/assets/ui/inventory_v2/iron_cartilage.png"
+    }
+  ]
+}

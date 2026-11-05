@@ -267,13 +267,13 @@ func run() -> void:
 	arena.config.exoskeleton_level = 0
 	arena.state.active_tool = null
 
-	# Loot models: new uniques show their base, the explosive part the power part.
+	# Dedicated loot art preserves the new unique/base identity.
 	var holder := Node3D.new()
 	root.add_child(holder)
 	var twin: Dictionary = LootVisual.create(holder, {"kind": "equipment", "item": items.make_unique(RandomNumberGenerator.new(), 30, "twin_barrel_core")})
 	var part: Dictionary = LootVisual.create(holder, {"kind": "equipment", "item": items.generate(RandomNumberGenerator.new(), 30, "normal", "medium").merged({"base": "part_explosive"}, true)})
-	check(not twin.is_empty() and twin.visual.get_meta("loot_model") == "bp_shotgun", "a new unique drops with its base model")
-	check(not part.is_empty() and part.visual.get_meta("loot_model") == "part_power", "the explosive part borrows the power part model")
+	check(not twin.is_empty() and twin.visual.get_meta("loot_model") == "twin_barrel_core", "the twin barrel unique drops with its own model")
+	check(not part.is_empty() and part.visual.get_meta("loot_model") == "part_explosive", "the explosive part drops with its own model")
 	holder.queue_free()
 
 	var result := {"passed": failures.is_empty(), "checks": checks.size(), "failures": failures}

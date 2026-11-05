@@ -1,0 +1,4 @@
+*.log
+**/*.log
+regression_scripts/
+baseline.json

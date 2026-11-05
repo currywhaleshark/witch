@@ -1,9 +1,7 @@
 extends RefCounted
-## Authored loot profiles retain the four v1 models and complete the existing item set.
+## Authored loot profiles retain v1/v2 models and cover the current item set.
 ## All geometry shares the existing drop transform and ownership path.
-const PROFILE_PATH = "res://assets/props/ground_loot_v2/models.json"
-# Definitions added after the authored set borrow a modelled base until they get their own.
-const SHARED_MODELS := {"part_explosive": "part_power"}
+const PROFILE_PATH = "res://assets/props/ground_loot_v3/models.json"
 static var scenes: Dictionary = {}
 static var profiles: Dictionary = {}
 
@@ -19,9 +17,8 @@ static func create(parent: Node3D, payload: Dictionary) -> Dictionary:
 	if profiles.is_empty():
 		profiles = JSON.parse_string(FileAccess.get_file_as_string(PROFILE_PATH))
 	if not profiles.has(id) and payload.kind == "equipment":
-		# A unique without its own artwork shows its base; a new base, the base it borrows.
+		# A future unique without its own artwork can still show its base.
 		id = payload.item.base
-	id = SHARED_MODELS.get(id, id)
 	if not profiles.has(id):
 		return {}
 	if not scenes.has(id):

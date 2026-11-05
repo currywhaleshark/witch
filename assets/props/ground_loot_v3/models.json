@@ -1,0 +1,84 @@
+{
+  "blender": "5.1.1",
+  "assets": [
+    {
+      "id": "part_explosive",
+      "source_parts": 9,
+      "triangles": 1988,
+      "dimensions_godot": [
+        0.23399999737739563,
+        0.29749999940395355,
+        0.23399999737739563
+      ],
+      "rest_height": 0.1607499922513962,
+      "radius": 0.12280370700519262,
+      "sha256": "fe96eec103f27e796a4d37ade7f2a2749ba683f0ec39c2abe8a0fc8c73377a9a"
+    },
+    {
+      "id": "twin_barrel_core",
+      "source_parts": 13,
+      "triangles": 2988,
+      "dimensions_godot": [
+        0.265999972820282,
+        0.1679999977350235,
+        0.31479422748088837
+      ],
+      "rest_height": 0.09599999886751175,
+      "radius": 0.20006524489538818,
+      "sha256": "b52e4e76af10efb2a16ad2fa1c1b8936a60d3891f4739394f2f8580e948798d5"
+    },
+    {
+      "id": "bundled_fuse",
+      "source_parts": 24,
+      "triangles": 8264,
+      "dimensions_godot": [
+        0.3422221541404724,
+        0.23459326475858688,
+        0.22789672017097473
+      ],
+      "rest_height": 0.12929663610458375,
+      "radius": 0.17252564128418416,
+      "sha256": "8cae10d5f6286b2789a90cef59b0f75bb374c8b84d7771242354769c16ffd188"
+    },
+    {
+      "id": "rusted_guillotine_hinge",
+      "source_parts": 20,
+      "triangles": 3152,
+      "dimensions_godot": [
+        0.3358165919780731,
+        0.09372818470001221,
+        0.27900001406669617
+      ],
+      "rest_height": 0.0588640923500061,
+      "radius": 0.20517637760197335,
+      "sha256": "02049f7ccb6eb0628ae343f389d561e348cc5a9f5d60668163ac3563a9d4859f"
+    },
+    {
+      "id": "counter_hinge",
+      "source_parts": 33,
+      "triangles": 4812,
+      "dimensions_godot": [
+        0.3905084729194641,
+        0.15000000596046448,
+        0.4000000059604645
+      ],
+      "rest_height": 0.08700000298023224,
+      "radius": 0.24583564574695027,
+      "sha256": "e4dcda24c0bcae211307857918d7dfab949ead166a4a4f7890de7304f32d26ac"
+    },
+    {
+      "id": "iron_cartilage",
+      "source_parts": 27,
+      "triangles": 3572,
+      "dimensions_godot": [
+        0.402763694524765,
+        0.12849999964237213,
+        0.38999998569488525
+      ],
+      "rest_height": 0.07624999982118606,
+      "radius": 0.2549658526786522,
+      "sha256": "c1a3bf80237a21622c84a65f877cb36f79cca8306a49aa7c83063ca6c0ce4b65"
+    }
+  ],
+  "total_triangles": 24776
+}

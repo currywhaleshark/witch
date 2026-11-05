@@ -60,12 +60,12 @@ func run() -> void:
 	for id in arena.config.potions:
 		ids.append(id)
 		names[id] = arena.config.potions[id].name
-	# Definitions added after the drawn set (2026-11-05 items) show a borrowed or base picture.
+	# Keep the historical v1 catalogue at 35 images. item_art_v2.gd covers all current IDs.
 	for id in ids.duplicate():
 		if not FileAccess.file_exists(ItemIcon.ART_PATH + id + ".png"):
 			ids.erase(id)
 			var shown: String = arena.items.uniques[id].base if arena.items.uniques.has(id) else id
-			check(not ItemIcon.art(shown).is_empty(), id + " shows an existing picture until it gets its own")
+			check(not ItemIcon.art(shown).is_empty(), id + " retains valid base artwork for fallback")
 	check(ids.size() == 35, "all twenty bases, two uniques and thirteen potions have explicit icon IDs")
 	for id in ids:
 		var asset := ItemIcon.art(id)

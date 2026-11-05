@@ -2,11 +2,11 @@ extends RefCounted
 ## Inventory artwork with live rarity/socket/count overlays. Simple shapes remain the fallback
 ## for new definitions and the silhouettes of empty equipment slots.
 const ART_PATH = "res://assets/ui/inventory_v1/"
+const NEW_ART_PATH = "res://assets/ui/inventory_v2/"
+const NEW_ART_IDS = ["part_explosive", "twin_barrel_core", "bundled_fuse", "rusted_guillotine_hinge", "counter_hinge", "iron_cartilage"]
 # Squat small bottles otherwise look larger than the narrow medium bottles.
 const ART_SCALES = {"health_s": 0.72, "mana_s": 0.72, "rejuv_s": 0.72}
 static var art_cache: Dictionary = {}
-# Bases added after the drawn set borrow an existing picture until they get their own.
-const SHARED_ART = {"part_explosive": "part_power"}
 # Alpha (0-255) above which an art pixel counts as part of the drawn object.
 const ALPHA_VISIBLE = 24
 const BRASS = Color("d8b77b")
@@ -21,9 +21,12 @@ const GLASS = Color("9fd6d2")
 const DARK = Color("10181c")
 const POTION_COLORS = {"hp": Color("e88e78"), "mp": Color("79c9dc"), "both": Color("bd94dc"), "speed": Color("a8d672")}
 
+static func art_path(id: String) -> String:
+	return (NEW_ART_PATH if id in NEW_ART_IDS else ART_PATH) + id + ".png"
+
 static func art(id: String) -> Dictionary:
 	if not art_cache.has(id):
-		var path: String = ART_PATH + str(SHARED_ART.get(id, id)) + ".png"
+		var path := art_path(id)
 		if not ResourceLoader.exists(path):
 			art_cache[id] = {}
 		else:
