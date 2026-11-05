@@ -174,6 +174,9 @@ var winches: Array = []
 var last_device: Dictionary = {}
 var exo_visual: Node3D
 var last_shotgun: Dictionary = {}
+# Unique-rule state: the twin core's second volleys and the counter hinge's push clock.
+var twin_shots: Array = []
+var block_push_left := 0.0
 var last_recoil: Dictionary = {}
 var last_spring_landing: Dictionary = {}
 var last_shot: Dictionary = {}
@@ -422,6 +425,8 @@ func reset_arena() -> void:
 	burn_clock = 0.0
 	last_impact.clear()
 	last_shotgun.clear()
+	twin_shots.clear()
+	block_push_left = 0.0
 	last_recoil.clear()
 	last_spring_landing.clear()
 	spring_plate = null
@@ -1546,8 +1551,8 @@ func turret_fire_rate() -> float:
 	return 1.0 + float(config.passives.reload.turret_rate_per_level) * reload_level()
 
 func gun_magazine(id: String) -> int:
-	# Reload mechanism levels add rounds to every gun's magazine.
-	return int(rules.skills[id].magazine) + int(config.passives.reload.magazine_per_level) * int(reload_level())
+	# Reload mechanism levels and magazine options add rounds to every gun's magazine.
+	return int(rules.skills[id].magazine) + int(config.passives.reload.magazine_per_level) * int(reload_level()) + int(gear_total("magazine"))
 
 func reload_seconds(id: String) -> float:
 	# One empty round loads back each interval; each reload mechanism level cuts a share of it.
@@ -1620,6 +1625,7 @@ func fire_gun(event: Dictionary, direction: Vector3) -> void:
 	var best := nearest_enemy(player.position, float(skill.range), direction, 0.2, false, true)
 	if event.get("target_enemy") != null and enemies.has(event.target_enemy):
 		best = event.target_enemy
+	var target_spot: Vector3 = enemies[best].body.position if best != "" else Vector3.ZERO
 	gun.ammo = maxi(0, int(gun.ammo) - 1)
 	var aim: Vector3 = player.position + direction * float(skill.range) + Vector3.UP * 1.2
 	if best != "":
@@ -1657,6 +1663,9 @@ func fire_gun(event: Dictionary, direction: Vector3) -> void:
 		hit = strike(best, damage, true, "witch", gun.id)
 		if shell.has("knockback_distance") and hit != "miss":
 			push_back(best, float(shell.knockback_distance), float(shell.knockback_seconds))
+		var flat: Vector3 = target_spot - player.position
+		flat.y = 0.0
+		struck.append_array(pierce_behind(best, target_spot, flat.normalized(), float(skill.range), 0.5, damage, gun.id))
 	if shell.has("blast_radius"):
 		# Explosive rounds burst where they land, hit or miss: everyone else nearby is caught too.
 		var at: Vector3 = Vector3(aim.x, map.ground_y(aim), aim.z)
@@ -1671,6 +1680,27 @@ func fire_gun(event: Dictionary, direction: Vector3) -> void:
 	last_shot = {"gun": gun.id, "target": best, "result": hit, "origin": origin, "aim": aim, "struck": struck}
 	if int(gun.ammo) == 0:
 		show_message("탄이 없습니다")
+
+func pierce_behind(first: String, spot: Vector3, line: Vector3, reach: float, width: float, damage: float, source: String) -> Array:
+	# Pierce options (04 §4.3): a single round carries on past the enemy it struck (at `spot`, which
+	# it may just have killed) into the next enemies on its line, each rolling to hit for full damage.
+	var count := int(gear_total("pierce"))
+	if count <= 0:
+		return []
+	var past: float = Vector3(spot.x - player.position.x, 0.0, spot.z - player.position.z).dot(line)
+	var behind: Array = []
+	for id in enemies:
+		var delta: Vector3 = enemies[id].body.position - player.position
+		delta.y = 0.0
+		var along: float = delta.dot(line)
+		if id != first and along > past and along <= reach and (delta - line * along).length() <= width * float(enemies[id].size) and map.sees(player.position, enemies[id].body.position):
+			behind.append({"along": along, "id": id})
+	behind.sort_custom(func(a, b): return a.along < b.along)
+	var hits: Array = []
+	for entry in behind.slice(0, count):
+		hits.append(entry.id)
+		strike(entry.id, damage, true, "witch", source)
+	return hits
 
 func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void:
 	sync_automaton_cost()
@@ -2108,8 +2138,29 @@ func device_hits(entry: Dictionary, radius: float, amount: float, source: String
 			struck.append(id)
 	for id in struck:
 		if enemies.has(id):
-			strike(id, amount * execute_factor(id, id in entry.get("marked", [])) * float(bonus.get(id, 1.0)), false, "witch", source)
+			var hit_amount: float = amount * execute_factor(id, id in entry.get("marked", [])) * float(bonus.get(id, 1.0))
+			if source == "guillotine" and gear_total("rule:guillotine_execute") > 0:
+				hit_amount *= hinge_execution(id)
+				if not enemies.has(id):
+					continue
+			strike(id, hit_amount, false, "witch", source)
 	return struck.filter(func(id): return enemies.has(id))
+
+func hinge_execution(id: String) -> float:
+	# Unique 녹슨 단두대 경첩: a falling blade beheads a weakened ordinary or champion enemy outright;
+	# elites and bosses that low only take a doubled cut. Returns the factor for the normal hit.
+	var rule: Dictionary = items.data.rule_values
+	var enemy: Dictionary = enemies[id]
+	if float(enemy.hp) > float(enemy.max_hp) * float(rule.execute_hp_ratio):
+		return 1.0
+	if enemy.grade not in rule.execute_grades or config.enemy_types[enemy.kind].has("boss"):
+		return float(rule.execute_tough_factor)
+	var at: Vector3 = enemy.body.position
+	var size: float = float(enemy.size)
+	probe.strike("guillotine", "crit", damage_enemy(id, float(enemy.hp) + 1.0))
+	spawn_vfx().impact(at + Vector3.UP * 0.85 * size, Vector3.UP, "guillotine", true, map.ground_y(at))
+	play_sfx("crit_hit", 0.55)
+	return 0.0
 
 func device_thud(entry: Dictionary, shake: float, cue: String) -> void:
 	shake_time = maxf(shake_time, 0.12 * shake)
@@ -2147,6 +2198,8 @@ func restrain(id: String, kind: String, seconds: float) -> bool:
 	var enemy: Dictionary = enemies[id]
 	if config.enemy_types[enemy.kind].has("boss"):
 		return false
+	# Stun and bind options lengthen every hold she sets (devices release their cages themselves).
+	seconds *= 1.0 + gear_total("control_pct") / 100.0
 	enemy[kind] = maxf(float(enemy.get(kind, 0.0)), seconds)
 	enemy.charging = 0.0
 	interrupt_attack(enemy)
@@ -2386,6 +2439,14 @@ func tick_kegs(dt: float) -> void:
 			keg.position = map.grounded(next)
 			keg.left -= travel
 			keg.rolled += travel
+			if gear_total("rule:fuse_trail") > 0:
+				# Unique 불붙은 심지 다발: the lit drum leaves a line of small fires behind it.
+				var rule: Dictionary = items.data.rule_values
+				keg.trail = float(keg.get("trail", 0.0)) + travel
+				while keg.trail >= float(rule.fuse_fire_every):
+					keg.trail -= float(rule.fuse_fire_every)
+					start_fire(keg.position, {"fire_radius": rule.fuse_fire_radius, "fire_seconds": rule.fuse_fire_seconds,
+						"fire_damage": rule.fuse_fire_damage, "fire_tick": rule.fuse_fire_tick}, "powder_keg")
 		else:
 			reason = "wall"
 		if is_instance_valid(keg.visual):
@@ -2403,12 +2464,15 @@ func burst_keg(keg: Dictionary, reason: String) -> void:
 	var skill: Dictionary = rules.skills.powder_keg
 	var at: Vector3 = keg.position
 	var radius: float = float(skill.blast_radius)
+	var damage: float = float(skill.blast_damage)
+	if gear_total("rule:fuse_trail") > 0:
+		damage *= float(items.data.rule_values.fuse_blast_factor)
 	var struck: Array = []
 	for id in enemies.keys():
 		var pos: Vector3 = enemies[id].body.position
 		if Vector2(pos.x - at.x, pos.z - at.z).length() <= radius and map.sees(at, pos):
 			struck.append(id)
-			strike(id, float(skill.blast_damage), false, "witch", "powder_keg")
+			strike(id, damage, false, "witch", "powder_keg")
 	if is_instance_valid(keg.visual):
 		keg.visual.burst()
 	spawn_vfx().blast(at, radius, map.ground_y(at), false)
@@ -2556,6 +2620,15 @@ func strike_amount(id: String, amount: float, source: String) -> void:
 	var crit: bool = force_rolls.get("crit", combat_rng.randf() < crit_chance("witch"))
 	var dealt: float = damage_enemy(id, amount * attack_factor(roll_attack(crit)) * passive_factor(source) * (config.crit_multiplier if crit else 1.0))
 	probe.strike(source, "crit" if crit else "hit", dealt)
+	leech(dealt)
+
+func leech(dealt: float) -> void:
+	# Life and mana leech (04 §4.3): a share of what her own direct hit actually removed. Bleed,
+	# burning ground and summon hits never pass here, and neither does a kill's overkill.
+	if hp <= 0 or dealt <= 0:
+		return
+	hp = minf(config.max_hp, hp + dealt * gear_total("life_leech_pct") / 100.0)
+	state.mana = minf(state.max_mana, state.mana + dealt * gear_total("mana_leech_pct") / 100.0)
 
 func start_fire(at: Vector3, shell: Dictionary, source: String) -> void:
 	var patch: Node3D = FirePatch.new()
@@ -2999,7 +3072,9 @@ func fire_gatling(direction: Vector3) -> void:
 				channel.focus = best
 				channel.focus_hits = 0
 			damage *= 1.0 + minf(float(shell.focus_max), float(shell.focus_per_hit) * float(channel.focus_hits))
+		var spot: Vector3 = enemies[best].body.position
 		hit = strike(best, damage, true, "witch", "gatling")
+		pierce_behind(best, spot, line, reach, float(skill.hit_width), damage, "gatling")
 		if hit != "miss" and shell.has("focus_per_hit"):
 			channel.focus_hits = int(channel.focus_hits) + 1
 		if hit != "miss" and shell.has("stagger_hits") and enemies.has(best):
@@ -3050,13 +3125,22 @@ func fire_shotgun(target: Vector3, at_enemy: bool = false) -> void:
 	if not is_instance_valid(shotgun_assembly): begin_shotgun_visual(target,at_enemy)
 	shotgun_assembly.fire(shot)
 	shotgun_assembly=null
+	if gear_total("rule:twin_barrels") > 0:
+		# Unique 쌍둥이 포열핵: two narrower volleys a beat apart, each at a reduced share.
+		var rule: Dictionary = items.data.rule_values
+		shotgun_volley(shot, float(rule.twin_factor), float(rule.twin_cone_dot))
+		twin_shots.append({"left": float(rule.twin_delay), "shot": shot, "factor": float(rule.twin_factor), "dot": float(rule.twin_cone_dot)})
+	else:
+		shotgun_volley(shot, 1.0, ShotgunGeometry.CONE_DOT)
+
+func shotgun_volley(shot: Transform3D, factor: float, dot: float) -> void:
 	var struck: Array[String]=[]
 	for id in enemies.keys():
-		if ShotgunGeometry.contains(self,shot,enemies[id].body):
+		if ShotgunGeometry.contains(self,shot,enemies[id].body,dot):
 			struck.append(id)
-			if strike(id,config.shot_damage,false,"witch","shotgun") != "miss":
+			if strike(id,config.shot_damage*factor,false,"witch","shotgun") != "miss":
 				knock_back(id)
-	var endpoints: Array[Vector3]=ShotgunGeometry.traces(self,shot)
+	var endpoints: Array[Vector3]=ShotgunGeometry.traces(self,shot,dot)
 	# Unblocked traces end on the 8m circle around the witch; shorter ones hit a wall or floor.
 	var blocked: Array[bool]=[]
 	for end in endpoints:
@@ -3065,6 +3149,13 @@ func fire_shotgun(target: Vector3, at_enemy: bool = false) -> void:
 	spawn_vfx().muzzle(shot.origin,endpoints,blocked,map.ground_y(shot.origin))
 	last_shotgun={"frame":shot,"origin":shot.origin,"direction":-shot.basis.z,"ends":endpoints,"struck":struck}
 	play_sfx("shotgun_fire", 0.65)
+
+func tick_twin_shots(dt: float) -> void:
+	for pending in twin_shots.duplicate():
+		pending.left = float(pending.left) - dt
+		if pending.left <= 0.0:
+			twin_shots.erase(pending)
+			shotgun_volley(pending.shot, float(pending.factor), float(pending.dot))
 
 func tick_move_hold() -> void:
 	# A held ground click steers movement; sweeping over enemies never starts an attack.
@@ -3613,6 +3704,8 @@ func strike(id: String, amount: float, accuracy_roll: bool, roller: String, sour
 	var size: float = enemies[id].size
 	var dealt: float = damage_enemy(id, amount * (config.crit_multiplier if crit else 1.0))
 	probe.strike(source if label == "" else label, "crit" if crit else "hit", dealt)
+	if roller == "witch":
+		leech(dealt)
 	# Burst on the near surface: toward the witch and the camera, never buried inside the model.
 	var toward: Vector3 = player.position - at
 	toward.y = 0
@@ -3683,7 +3776,9 @@ func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 	var enemy: Dictionary = enemies[id]
 	# Trial shred: no armour formula exists yet, so shredded enemies take more direct damage.
 	# Bleed ignores defence, so shred never raises it (07 §2.2).
-	var taken: float = amount * (config.shred_damage_taken if enemy.shred > 0 and direct else 1.0)
+	# Shred-strength options grow only the shred's extra share (1.25 -> 1.25 + 0.25 x option).
+	var shred: float = 1.0 + (float(config.shred_damage_taken) - 1.0) * (1.0 + gear_total("shred_pct") / 100.0)
+	var taken: float = amount * (shred if enemy.shred > 0 and direct else 1.0)
 	var dealt: float = minf(maxf(enemy.hp, 0.0), taken)
 	enemy.hp -= taken
 	if direct:
@@ -3700,9 +3795,11 @@ func damage_enemy(id: String, amount: float, direct: bool = true) -> float:
 		kills += 1
 		drop_loot(enemy.grade, enemy.body.position)
 		drop_spoils(enemy.grade, enemy.body.position)
-		# 「록」 in the medium: each kill mends a little.
-		if hp > 0 and gear_total("life_on_kill") > 0:
+		# 「록」 in the medium and on-kill options: each kill mends a little and refills some mana,
+		# whoever landed the killing blow (a summon or a bleed tick counts too).
+		if hp > 0:
 			hp = minf(config.max_hp, hp + gear_total("life_on_kill"))
+			state.mana = minf(state.max_mana, state.mana + gear_total("mana_on_kill"))
 		probe.counts.kills += 1
 		probe.grade(enemy.grade).kills += 1
 		# A test boss is a one-off; everything else keeps the A5 field topped up.
@@ -3966,6 +4063,8 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		spawn_vfx().block(guard, map.ground_y(player.position))
 		play_sfx("block", 2.2)
 		probe.witch_hit(by_grade, 0.0, false, true)
+		if gear_total("rule:block_counter") > 0:
+			counter_block()
 		return
 	# Enemy hits vary a little; her armour turns away a share by the attacker's level, then damage
 	# reduction options shave the rest, at most by half.
@@ -3974,6 +4073,9 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 	# Only a heavy enough hit that leaves her standing stuns.
 	var stunned: bool = hp - amount > 0 and amount >= config.max_hp * config.hit_stun_min_ratio and dash.is_empty()
 	probe.witch_hit(by_grade, minf(hp, amount), stunned, false)
+	if gear_total("rule:exo_mana") > 0 and exo_active():
+		# Unique 무쇠 연골: the worn exoskeleton turns a share of every blow into mana.
+		state.mana = minf(state.max_mana, state.mana + minf(hp, amount) * float(items.data.rule_values.exo_mana_share))
 	hp = maxf(0, hp - amount)
 	hit_time = 0.25
 	spawn_vfx().hurt(player.position + Vector3.UP * 0.85, map.ground_y(player.position))
@@ -4006,6 +4108,22 @@ func damage_player(amount: float, by_grade: String = "unknown") -> void:
 		state.active_tool = null
 		move_marker.visible = false
 		player_visual.freeze_for_death()
+
+func counter_block() -> void:
+	# Unique 반격 경첩: every block mends her a little and, at most once a second, the panels
+	# shove everything close away.
+	var rule: Dictionary = items.data.rule_values
+	hp = minf(config.max_hp, hp + float(rule.block_life))
+	state.mana = minf(state.max_mana, state.mana + float(rule.block_mana))
+	if block_push_left > 0.0:
+		return
+	block_push_left = float(rule.block_push_every)
+	for id in enemies.keys():
+		var gap: Vector3 = enemies[id].body.position - player.position
+		gap.y = 0.0
+		if gap.length() <= float(rule.block_push_radius) + 0.4 * float(enemies[id].size):
+			push_back(id, float(rule.block_push_distance), float(rule.block_push_seconds))
+	spawn_vfx().shockwave(player.position, float(rule.block_push_radius), map.ground_y(player.position))
 
 func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	var node = Node3D.new()
@@ -4164,6 +4282,8 @@ func _physics_process(dt: float) -> void:
 		tick_boss_trigger()
 		tick_windup(dt)
 		tick_gun_reload(dt)
+		tick_twin_shots(dt)
+		block_push_left = maxf(0.0, block_push_left - dt)
 		tick_kegs(dt)
 		tick_channel(dt)
 		tick_sweep(dt)

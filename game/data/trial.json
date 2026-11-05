@@ -132,6 +132,7 @@
       {"tree": "drive", "entries": [{"id": "chainsaw", "kind": "skill"}, {"id": "focus_attack", "kind": "skill", "nodes": true}, {"id": "area_attack", "kind": "skill", "nodes": true}, {"id": "shield", "kind": "skill"}, {"id": "guillotine", "kind": "skill", "nodes": true}, {"id": "restraint_winch", "kind": "skill", "nodes": true}, {"id": "hydraulic_press", "kind": "skill"}, {"id": "compound_executor", "kind": "skill"}, {"id": "exoskeleton", "kind": "skill", "requires": "shield", "nodes": true}, {"id": "cutting_precision", "kind": "passive"}]},
       {"tree": "automation", "entries": [{"id": "automaton", "kind": "skill", "nodes": true}, {"id": "turret", "kind": "skill"}, {"id": "production_efficiency", "kind": "passive"}]}]},
   "attack_tags": {"bolt_cutter": "cutting", "grinder": "cutting", "chainsaw": "cutting", "automaton_saw": "cutting", "guillotine": "cutting", "compound_executor": "cutting",
+    "powder_keg": "explosive",
     "shotgun": "projectile", "turret": "projectile", "matchlock": "projectile", "rifle": "projectile", "gatling": "projectile", "recoil_leap": "projectile", "artillery": "projectile", "naval_gun": "projectile"},
   "passives": {"cutting_precision": {"name": "절삭 정밀화", "tag": "cutting", "tag_name": "절삭", "damage_per_level": 0.05},
     "ballistics": {"name": "탄도 계산", "tag": "projectile", "tag_name": "발사체", "damage_per_level": 0.05},

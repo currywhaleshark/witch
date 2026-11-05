@@ -5,6 +5,8 @@ const ART_PATH = "res://assets/ui/inventory_v1/"
 # Squat small bottles otherwise look larger than the narrow medium bottles.
 const ART_SCALES = {"health_s": 0.72, "mana_s": 0.72, "rejuv_s": 0.72}
 static var art_cache: Dictionary = {}
+# Bases added after the drawn set borrow an existing picture until they get their own.
+const SHARED_ART = {"part_explosive": "part_power"}
 # Alpha (0-255) above which an art pixel counts as part of the drawn object.
 const ALPHA_VISIBLE = 24
 const BRASS = Color("d8b77b")
@@ -21,7 +23,7 @@ const POTION_COLORS = {"hp": Color("e88e78"), "mp": Color("79c9dc"), "both": Col
 
 static func art(id: String) -> Dictionary:
 	if not art_cache.has(id):
-		var path := ART_PATH + id + ".png"
+		var path: String = ART_PATH + str(SHARED_ART.get(id, id)) + ".png"
 		if not ResourceLoader.exists(path):
 			art_cache[id] = {}
 		else:
@@ -118,7 +120,8 @@ static func draw(canvas: CanvasItem, rect: Rect2, item: Dictionary, items) -> vo
 	canvas.draw_rect(rect.grow(-1), Color(rarity, 0.75), false, 1.0)
 	# The art nearly fills its cells, centred at its own aspect; sockets are drawn over it.
 	var box := rect.grow(-maxf(2.0, minf(rect.size.x, rect.size.y) * 0.05))
-	if draw_art(canvas, box, item.get("unique", item.base)):
+	# A unique without its own artwork shows its base's.
+	if draw_art(canvas, box, item.get("unique", item.base)) or draw_art(canvas, box, item.base):
 		sockets(canvas, rect, item, items)
 		return
 	match item.base:

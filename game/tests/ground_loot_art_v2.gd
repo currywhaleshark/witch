@@ -132,8 +132,17 @@ func run() -> void:
 	arena.help_visible = false
 	await physics_frame
 	await physics_frame
-	model_ids = arena.items.bases.keys() + arena.items.uniques.keys() + arena.config.potions.keys() + ["currency"] + arena.pieces.keys()
-	check(model_ids.size() == 39, "39 existing item/resource definitions covered")
+	var definitions: Array = arena.items.bases.keys() + arena.items.uniques.keys() + arena.config.potions.keys() + ["currency"] + arena.pieces.keys()
+	var authored: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(arena.GroundLootVisual.PROFILE_PATH))
+	model_ids = definitions.filter(func(id): return authored.has(id))
+	check(model_ids.size() == 39, "39 authored item/resource definitions covered")
+	# Definitions added after the authored set (2026-11-05 items) borrow an authored model.
+	for id in definitions:
+		if not authored.has(id):
+			clear_drops()
+			var borrowed := spawn(id, arena.player.position + Vector3(0, 0, -1))
+			check(authored.has(borrowed.visual.get_meta("loot_model", "")), id + " shows an authored model until it gets its own")
+	clear_drops()
 	var origin: Vector3 = arena.player.position + Vector3(0, 0, -1)
 	for id in model_ids:
 		await inspect(id, origin)

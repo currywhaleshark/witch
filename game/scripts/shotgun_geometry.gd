@@ -44,16 +44,16 @@ static func frame(arena: Node3D, target: Vector3, at_enemy: bool = false) -> Tra
 	if not at_enemy: aim=Vector3(target.x,fallback.y,target.z)
 	return Transform3D(Basis.looking_at((aim-fallback).normalized(),Vector3.UP),fallback)
 
-static func contains(arena: Node3D, shot: Transform3D, enemy: Node3D) -> bool:
+static func contains(arena: Node3D, shot: Transform3D, enemy: Node3D, dot: float = CONE_DOT) -> bool:
 	if enemy.position.distance_to(arena.player.position)>float(arena.rules.skills.shotgun.range): return false
 	var delta:=enemy.global_position-shot.origin; delta.y=0.0
 	var direction: Vector3=-shot.basis.z; direction.y=0.0
-	if delta.length()>0.001 and delta.normalized().dot(direction.normalized())<=CONE_DOT: return false
+	if delta.length()>0.001 and delta.normalized().dot(direction.normalized())<=dot: return false
 	return arena.map.clear(shot.origin,enemy.global_position+Vector3.UP*AIM_HEIGHT)
 
-static func traces(arena: Node3D, shot: Transform3D) -> Array[Vector3]:
+static func traces(arena: Node3D, shot: Transform3D, dot: float = CONE_DOT) -> Array[Vector3]:
 	var result: Array[Vector3]=[]
-	var spread:=acos(CONE_DOT)
+	var spread:=acos(dot)
 	var offset: Vector3=shot.origin-arena.player.global_position; offset.y=0.0
 	var radius: float=arena.rules.skills.shotgun.range
 	for step in range(-3,4):
