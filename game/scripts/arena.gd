@@ -1718,15 +1718,20 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		# An attack motion finishes first; the latest input runs right after it.
 		queued_input = {"slot": slot, "cursor": cursor.duplicate(true), "shift": shift}
 		return
-	var bound = state.bindings[slot]
+	# A plain left click on the floor walks there whatever LMB holds; the skill checks below
+	# belong to attacks (an enemy click or Shift) only.
+	var walking: bool = slot == "lmb" and not shift and cursor.get("enemy_id") == null
+	var bound = null if walking else state.bindings[slot]
 	if bound != null and not build.learned(bound):
 		show_message("배우지 않은 기술입니다")
 		return
 	cursor = device_cursor(bound, cursor)
 	if bound in TOOL_ATTACKS and state.active_tool == null:
-		# Tool attacks work only through a transformed tool, never the bare staff (03 §2).
+		# Tool attacks work only through a transformed tool, never the bare staff (03 §2). On LMB
+		# the staff's basic attack goes out instead (press_slot); other keys do nothing.
 		show_message("공구를 전개해야 쓸 수 있습니다")
-		return
+		if slot != "lmb":
+			return
 	if bound != null and bound in GUNS and gun.get("id") == bound:
 		# Pressing the gun's key again takes it apart, free, like switching a tool off.
 		cancel_pending_cast()
@@ -1742,11 +1747,11 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		player.velocity = Vector3.ZERO
 		move_marker.visible = false
 	var checker: Callable = stationary_spatial_check if stationary else spatial_check
-	var result: Dictionary = rules.press(state, slot, cursor, checker, shift)
+	var result: Dictionary = press_slot(slot, cursor, checker, shift)
 	var final_event: Dictionary = result.events[-1]
 	if not stationary and final_event.type == "cast_failed" and final_event.reason == "out_of_range":
 		# Dry-run availability/fallback checks; discard its resource/cooldown state.
-		var probe: Dictionary = rules.press(state, slot, cursor, spatial_without_range, shift)
+		var probe: Dictionary = press_slot(slot, cursor, spatial_without_range, shift)
 		var cast = cast_event(probe)
 		if cast.is_empty():
 			apply_transition(probe)
@@ -1761,6 +1766,17 @@ func request_slot(slot: String, cursor: Dictionary, shift: bool = false) -> void
 		tick_pending_cast(0)
 		return
 	begin_cast(slot, cursor, shift, stationary, result)
+
+func press_slot(slot: String, cursor: Dictionary, spatial: Callable, shift: bool) -> Dictionary:
+	# rules.press, except that a tool attack on LMB with no tool out answers with the staff's basic
+	# attack. The real bindings stay in the resulting state, so binding-change checks still hold.
+	if slot != "lmb" or state.bindings.lmb not in TOOL_ATTACKS or state.active_tool != null:
+		return rules.press(state, slot, cursor, spatial, shift)
+	var stand_in: Dictionary = state.duplicate(true)
+	stand_in.bindings.lmb = rules.basic_id
+	var result: Dictionary = rules.press(stand_in, slot, cursor, spatial, shift)
+	result.state.bindings = state.bindings.duplicate(true)
+	return result
 
 func device_cursor(bound, cursor: Dictionary) -> Dictionary:
 	# An execution device cast with the cursor on an enemy is set under that enemy, not on the
@@ -1922,7 +1938,7 @@ func tick_windup(dt: float) -> void:
 		cursor.erase("enemy_id")
 	# Everything is checked again at release; a failed release spends nothing.
 	var checker: Callable = stationary_spatial_check if started.stationary else spatial_check
-	var result: Dictionary = rules.press(state, started.slot, cursor, checker, started.shift)
+	var result: Dictionary = press_slot(started.slot, cursor, checker, started.shift)
 	if result.events[-1].get("reason") == "out_of_range":
 		# A whiff stays silent; the missing hit sound and effect tell it apart.
 		last_events = result.events
@@ -3188,7 +3204,7 @@ func tick_hold() -> void:
 	else:
 		return
 	# Repeat only when the cast is available now; cooldown or mana gaps wait silently.
-	var cast = cast_event(rules.press(state, slot, cursor, spatial_without_range, true))
+	var cast = cast_event(press_slot(slot, cursor, spatial_without_range, true))
 	if not cast.is_empty() and rules.skills[cast.skill].kind in REPEAT_KINDS:
 		request_slot(slot, cursor, hold.shift)
 
@@ -3255,7 +3271,7 @@ func tick_pending_cast(dt: float) -> void:
 	# Recheck resources and fallback range while tracking the original target.
 	# This is already a cast command, even when its captured ground target
 	# belongs to LMB. Do not reinterpret it as a new ground-move click.
-	var probe: Dictionary = rules.press(state, slot, cursor, spatial_without_range, true)
+	var probe: Dictionary = press_slot(slot, cursor, spatial_without_range, true)
 	var cast = cast_event(probe)
 	if cast.is_empty():
 		cancel_pending_cast()
@@ -3264,7 +3280,7 @@ func tick_pending_cast(dt: float) -> void:
 	var skill: Dictionary = rules.skills[cast.skill]
 	if spatial_check(skill, cursor) == null:
 		cancel_pending_cast()
-		begin_cast(slot, cursor, true, false, rules.press(state, slot, cursor, spatial_check, true))
+		begin_cast(slot, cursor, true, false, press_slot(slot, cursor, spatial_check, true))
 		return
 	var target: Vector3 = enemies[cursor.enemy_id].body.position if cursor.get("enemy_id") != null else point(cursor.ground)
 	# Walk the route toward the target; the cast fires as soon as range and sight line allow.

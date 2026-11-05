@@ -103,6 +103,28 @@ func run() -> void:
 	arena.request_slot("lmb", {"enemy_id": "t0", "ground": [0, 0, 1.2]})
 	check(arena.windup.get("skill") == basic, "without the mana LMB falls back to the basic attack")
 
+	# A tool attack on LMB with no tool out: floor clicks just walk, with no tool warning; clicking
+	# an enemy warns and swings the staff's basic attack instead.
+	await fresh()
+	arena.bind_slot("lmb", "focus_attack")
+	arena.message = ""
+	arena.request_slot("lmb", {"ground": [3, 0, 0]})
+	check(arena.windup.is_empty() and arena.moving and arena.message == "", "a floor click with a tool attack on LMB walks without the tool warning")
+	arena.request_slot("lmb", {"enemy_id": "t0", "ground": [0, 0, 1.2]})
+	check(arena.windup.get("skill") == basic and arena.message.contains("공구"), "an enemy click without a tool warns and swings the basic attack")
+	var before: float = arena.enemies.t0.hp
+	await step(60)
+	check(arena.enemies.t0.hp < before and arena.state.bindings.lmb == "focus_attack", "the basic attack lands and LMB keeps its tool attack")
+	await fresh()
+	arena.bind_slot("lmb", "focus_attack")
+	arena.request_slot("lmb", {"ground": [0, 0, 1.2]}, true)
+	check(arena.windup.get("skill") == basic, "Shift+click without a tool also swings the basic attack")
+	await fresh()
+	arena.bind_slot("q", "focus_attack")
+	arena.request_slot("q", {"enemy_id": "t0", "ground": [0, 0, 1.2]})
+	check(arena.windup.is_empty(), "on other keys a tool attack without a tool still does nothing")
+	arena.bind_slot("q", null)
+
 	# Clearing the left button gives back the basic attack; it never moves to another key.
 	await fresh()
 	arena.bind_slot("lmb", null)
