@@ -1,0 +1,65 @@
+{
+  "captures": 211,
+  "checks": 8645,
+  "failures": [],
+  "metrics": {
+    "bones": 21,
+    "exported_vertices": 6369,
+    "floors": {
+      "death": {
+        "minimum_y": 0.00400000810623169,
+        "paw_minimum_y": 0.00400000810623169,
+        "worst": {
+          "bone": "leg.C",
+          "bone_origin": "(-0.087, 0.322714, 0.1695)",
+          "point": "(-0.27921, 0.004, 0.376853)",
+          "time": 0.0
+        }
+      },
+      "deploy": {
+        "minimum_y": 0.00344538688659668,
+        "paw_minimum_y": 0.00344538688659668,
+        "worst": {
+          "bone": "leg.A",
+          "bone_origin": "(0.1635, 0.421719, -0.033)",
+          "point": "(0.321625, 0.003445, -0.102578)",
+          "time": 0.183333333333333
+        }
+      },
+      "hit": {
+        "minimum_y": 0.00400000810623169,
+        "paw_minimum_y": 0.00400000810623169,
+        "worst": {
+          "bone": "leg.C",
+          "bone_origin": "(-0.087, 0.322714, 0.1695)",
+          "point": "(-0.27921, 0.004, 0.376853)",
+          "time": 0.0
+        }
+      },
+      "pulse": {
+        "minimum_y": 0.00400000810623169,
+        "paw_minimum_y": 0.00400000810623169,
+        "worst": {
+          "bone": "leg.C",
+          "bone_origin": "(-0.087, 0.322714, 0.1695)",
+          "point": "(-0.27921, 0.004, 0.376853)",
+          "time": 0.0
+        }
+      },
+      "shutdown": {
+        "minimum_y": 0.00321987271308899,
+        "paw_minimum_y": 0.00321987271308899,
+        "worst": {
+          "bone": "leg.A",
+          "bone_origin": "(0.1635, 0.414175, -0.033)",
+          "point": "(0.338398, 0.00322, -0.105964)",
+          "time": 0.228571431977408
+        }
+      }
+    },
+    "surfaces": 2,
+    "triangles": 4237
+  },
+  "passed": true,
+  "scope": "prepared art and playback; no gameplay integration"
+}

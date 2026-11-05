@@ -1,0 +1,87 @@
+{
+  "source": "assets/actors/automation_batch2/hound_tripo_v1/source/hound_raw.glb",
+  "source_sha256": "94ea4061dc94b5e1365ab10a4d73b8fd37c2a4e36e753c31eb3119b6b70cc6e7",
+  "source_bytes": 5814424,
+  "status": "generated source; no game-ready rig, reduction or joint cleanup",
+  "blender": "5.1.1",
+  "mesh_count": 1,
+  "triangles": 76914,
+  "vertices": 44692,
+  "bounds_blender": [
+    [
+      -0.5000000596046448,
+      -0.1749420464038849,
+      0.0
+    ],
+    [
+      0.5000000596046448,
+      0.1749420464038849,
+      0.6339111328125
+    ]
+  ],
+  "dimensions_source_units": [
+    1.0000001192092896,
+    0.3498840928077698,
+    0.6339111328125
+  ],
+  "gltf": {
+    "meshes": 1,
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  "parts": [
+    {
+      "name": "tripo_node_a3a78725-202c-4c0a-8445-ee2449a39586",
+      "vertices": 44692,
+      "triangles": 76914,
+      "bounds_blender": [
+        [
+          -0.5000000596046448,
+          -0.1749420464038849,
+          0.0
+        ],
+        [
+          0.5000000596046448,
+          0.1749420464038849,
+          0.6339111328125
+        ]
+      ],
+      "center_blender": [
+        0.0,
+        0.0,
+        0.31695556640625
+      ],
+      "material_slots": [
+        "tripo_mat_a3a78725-202c-4c0a-8445-ee2449a39586"
+      ],
+      "geometry_uv_transform_sha256": "b9170d22a84233afc2d6d6a98698cef605f8fc76d3d1cf8bbc8907babafe7a72"
+    }
+  ],
+  "images": [
+    {
+      "name": "tripo_image_a3a78725-202c-4c0a-8445-ee2449a39586_0",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "sRGB"
+    },
+    {
+      "name": "tripo_image_a3a78725-202c-4c0a-8445-ee2449a39586_1",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "Non-Color"
+    },
+    {
+      "name": "tripo_image_a3a78725-202c-4c0a-8445-ee2449a39586_2",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "Non-Color"
+    }
+  ]
+}

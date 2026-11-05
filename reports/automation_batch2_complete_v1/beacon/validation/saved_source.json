@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "poses": 177,
+  "maximum_matrix_error": 6.631016731262207e-07,
+  "loops": {
+    "pulse": 2.384185791015625e-07
+  },
+  "floors": {
+    "deploy": {
+      "min_z": 0.0034450102061446275,
+      "worst": {
+        "time": 0.18333333333333332,
+        "part": "leg.A"
+      }
+    },
+    "pulse": {
+      "min_z": 0.004000005079433322,
+      "worst": {
+        "time": 0.0,
+        "part": "leg.C"
+      }
+    },
+    "hit": {
+      "min_z": 0.004000005079433322,
+      "worst": {
+        "time": 0.0,
+        "part": "leg.C"
+      }
+    },
+    "shutdown": {
+      "min_z": 0.003248202717595655,
+      "worst": {
+        "time": 0.23333333333333334,
+        "part": "leg.A"
+      }
+    },
+    "death": {
+      "min_z": 0.003999975277110934,
+      "worst": {
+        "time": 0.058333333333333334,
+        "part": "leg.C"
+      }
+    }
+  },
+  "triangles": 4237,
+  "parts": 16,
+  "bones": 21,
+  "warnings_adjudication": "Source shells retain open boundaries; seam/contact vertices, hidden opposing mating faces and intentionally enclosed joint bearings are retained. Positive rest clearance is intentional. No arbitrary inter-part/live collision claim."
+}

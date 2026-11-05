@@ -1,0 +1,56 @@
+{
+  "actor": "giant_armour",
+  "triangles": 1256,
+  "parts": 6,
+  "part_triangles": {
+    "shoulder.L": 224,
+    "forearm.L": 156,
+    "fist.L": 248,
+    "shoulder.R": 224,
+    "forearm.R": 156,
+    "fist.R": 248
+  },
+  "provenance": [],
+  "repairs": [
+    {
+      "group": "shoulder.L",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    },
+    {
+      "group": "forearm.L",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    },
+    {
+      "group": "fist.L",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    },
+    {
+      "group": "shoulder.R",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    },
+    {
+      "group": "forearm.R",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    },
+    {
+      "group": "fist.R",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    }
+  ],
+  "source_sha256": "c607378bc7821c97c56840f41b3d385bae030f37023d36859f68850f03449e10",
+  "source_unchanged": true,
+  "bake": "exploded semantic pairs, color/normal/ORM 1024, emission 128; ORM R=1 (no AO bake)",
+  "glow_groups": []
+}

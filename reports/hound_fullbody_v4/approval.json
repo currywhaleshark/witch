@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-06",
+  "user_message": "커밋",
+  "selected_scope": "Current hound whole-body gallop v4 and compatible heavy armour v3 for the prototype",
+  "commit_scope": "Completed automation-batch2 source/model/motion/review pipeline, including preceding prepared assets needed for preservation and comparison",
+  "not_implied": [
+    "main-game skill/AI integration",
+    "final performance or arbitrary collision/blend approval",
+    "new appearance approval for other prepared actors",
+    "remote push"
+  ],
+  "reviewed_artifacts": {
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4.glb": "bf0a077e7ce5eb70c8d38638d591c3bafeac9ec03acee311ec017d855066c6d3",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3.glb": "6be9552947211b2eb04db47e2be80b539f080ef0cd4713964ba579038011e58b",
+    "reports/hound_fullbody_v4/review.html": "713fe1b2702b9cdce32d1e959f48647c6a6c8a68f7b4dc4040a3781c8a466b41",
+    "reports/hound_fullbody_v4/delivery_manifest.json": "049c0c5db88db1bbb44015d8d0c2168508e7389cf8c968831932ad46e7f3d938"
+  },
+  "delivery_manifest_note": "Delivery hashes describe the prior reviewed snapshot; AGENTS.md adds only this user-selection handoff after review."
+}

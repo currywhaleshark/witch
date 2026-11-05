@@ -1,0 +1,5 @@
+local/
+**/local/
+comparison/*/
+**/geometry/*_??.png
+**/runtime/runtime_poses.json

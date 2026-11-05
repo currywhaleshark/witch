@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-05",
+  "stage": "prepared art, not main-game integration",
+  "coordinate_system": "metres, Y up, -Z forward; instance scale applies to whole base+armour wrapper",
+  "actors": {
+    "hound": {
+      "base": "res://assets/actors/automation_batch2/hound_v4/hound_v4.glb",
+      "parts": "res://assets/actors/automation_batch2/hound_v4/parts.json",
+      "variants": {
+        "base": {
+          "scale": 1.0,
+          "instances": 1
+        },
+        "pack": {
+          "scale": 0.8,
+          "instances": 3,
+          "new_mesh": false
+        },
+        "heavy": {
+          "scale": 1.2,
+          "armour": "res://assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3.glb"
+        }
+      },
+      "motion_review": "reports/hound_fullbody_v4/review.html",
+      "run": {
+        "clip_seconds": 0.5,
+        "cycle_distance_m": 2.7547715068852785,
+        "reference_speed_mps": 6.5,
+        "reference_playback_speed": 1.1797711686348384,
+        "instance_scale_affects_stride": true
+      }
+    },
+    "beacon": {
+      "base": "res://assets/actors/automation_batch2/beacon_v1/beacon_v1.glb",
+      "parts": "res://assets/actors/automation_batch2/beacon_v1/parts.json",
+      "variants": {
+        "base": {
+          "scale": 1.0,
+          "instances": 1
+        }
+      }
+    },
+    "giant": {
+      "base": "res://assets/actors/automation_batch2/giant_v2/giant_v2.glb",
+      "parts": "res://assets/actors/automation_batch2/giant_v2/parts.json",
+      "variants": {
+        "base": {
+          "scale": 1.0,
+          "instances": 1
+        },
+        "multiple": {
+          "scale": 0.75,
+          "instances": 3,
+          "new_mesh": false
+        },
+        "enhanced": {
+          "scale": 1.1,
+          "armour": "res://assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2.glb"
+        }
+      }
+    }
+  },
+  "presentation_helper": "res://tests/helpers/automation_batch2_visual.gd",
+  "motion_review": "reports/automation_motion_v2/review.html"
+}

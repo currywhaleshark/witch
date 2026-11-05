@@ -1,0 +1,6 @@
+{
+  "previous_source": "assets\\actors\\automation_batch2\\hound_armour_v2",
+  "armour_geometry_uv_normals_weights_materials_and_rest_unchanged": true,
+  "alive_clips_match_base": "hound_v4",
+  "independent_death_unchanged": true
+}

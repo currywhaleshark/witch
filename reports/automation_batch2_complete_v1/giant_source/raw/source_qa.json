@@ -1,0 +1,56 @@
+{
+  "ok": true,
+  "pass": false,
+  "errors": [
+    "tripo_node_5e95252c-0853-44f9-b699-71f36e7b1b77: 51 zero-area UV faces",
+    "z-fighting: tripo_node_5e95252c-0853-44f9-b699-71f36e7b1b77 (4 overlapping coplanar tri pairs)"
+  ],
+  "warnings": [
+    "tripo_node_5e95252c-0853-44f9-b699-71f36e7b1b77: duplicate verts=7680 loose verts=0",
+    "hidden back-to-back faces: tripo_node_5e95252c-0853-44f9-b699-71f36e7b1b77 (3 pairs) - delete to save tris"
+  ],
+  "ground_z": 0.0,
+  "zfighting": [
+    {
+      "where": "tripo_node_5e95252c-0853-44f9-b699-71f36e7b1b77",
+      "tri_pairs": 4
+    }
+  ],
+  "floating": [],
+  "back_to_back": [
+    {
+      "where": "tripo_node_5e95252c-0853-44f9-b699-71f36e7b1b77",
+      "tri_pairs": 3
+    }
+  ],
+  "enclosed": [],
+  "objects": {
+    "tripo_node_5e95252c-0853-44f9-b699-71f36e7b1b77": {
+      "verts": 46952,
+      "faces": 77870,
+      "tris": 77870,
+      "ngons": 0,
+      "boundary_edges": 15750,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 7680,
+      "islands": 326,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 51,
+      "uv_overlap_pct": 1.57,
+      "uv_coverage_pct": 29.2
+    }
+  }
+}

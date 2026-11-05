@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "checks": 29243,
+  "results": {
+    "giant": {
+      "topology_uv_weights_exact": true,
+      "other_vertices_exact": true,
+      "other_valid_normals_max_error": 0.0,
+      "previous_zero_auto_normals_repaired": 0,
+      "changed_rest_bones": [
+        "gear",
+        "key",
+        "core",
+        "Socket_core"
+      ],
+      "unchanged_deformation_max_matrix_error": 1.1920928955078125e-06,
+      "mechanisms": {
+        "gear": {
+          "axis_degrees_corrected": 17.781665288739294,
+          "max_shaft_center_error_m": 9.55774755080603e-07,
+          "max_axis_vector_error": 1.7943374184954607e-07,
+          "previous_full_turn_axis_wobble_degrees": 35.56332993267943
+        },
+        "key": {
+          "axis_degrees_corrected": 10.988356088872425,
+          "max_shaft_center_error_m": 9.654437678041557e-07,
+          "max_axis_vector_error": 1.8545249428011526e-07,
+          "previous_full_turn_axis_wobble_degrees": 21.976712513048184
+        }
+      }
+    },
+    "hound": {
+      "topology_uv_weights_exact": true,
+      "other_vertices_exact": true,
+      "other_valid_normals_max_error": 0.0,
+      "previous_zero_auto_normals_repaired": 0,
+      "changed_rest_bones": [],
+      "unchanged_deformation_max_matrix_error": 5.960464477539062e-07,
+      "stance_world_drift_xyz_m": {
+        "('fore.L', 0)": [
+          2.925097942352295e-05,
+          0.00035506486892700195,
+          0.0006357505917549133
+        ],
+        "('fore.R', 0)": [
+          4.713237285614014e-05,
+          0.00027573108673095703,
+          0.0006775259971618652
+        ],
+        "('hind.L', 0)": [
+          0.0004957765340805054,
+          0.002916574478149414,
+          0.0018265843391418457
+        ],
+        "('hind.R', 0)": [
+          5.59687614440918e-05,
+          0.00010854005813598633,
+          0.0005236081779003143
+        ],
+        "('fore.L', 1)": [
+          2.92360782623291e-05,
+          0.00035500526428222656,
+          0.0006358064711093903
+        ],
+        "('fore.R', 1)": [
+          4.713237285614014e-05,
+          0.0002760887145996094,
+          0.0006775707006454468
+        ],
+        "('hind.L', 1)": [
+          0.0004957467317581177,
+          0.002916574478149414,
+          0.0018265917897224426
+        ],
+        "('hind.R', 1)": [
+          5.5983662605285645e-05,
+          0.0001087188720703125,
+          0.000523637980222702
+        ]
+      },
+      "maximum_joint_endpoint_error_m": 1.6924465733171325e-07,
+      "pistons": {
+        "fore.R": {
+          "min_overlap_m": 0.0076500274376297,
+          "min_rear_clearance_m": 0.0030000090378249356,
+          "max_anchor_error_m": 1.0023731028343521e-07
+        },
+        "fore.L": {
+          "min_overlap_m": 0.009480068706980177,
+          "min_rear_clearance_m": 0.0029999961639252115,
+          "max_anchor_error_m": 1.2753339684474237e-07
+        },
+        "hind.R": {
+          "min_overlap_m": 0.00040150603677885366,
+          "min_rear_clearance_m": 0.0006000162845298113,
+          "max_anchor_error_m": 1.5269146510898468e-07
+        },
+        "hind.L": {
+          "min_overlap_m": 0.002896470079818206,
+          "min_rear_clearance_m": 0.0030000092955543706,
+          "max_anchor_error_m": 1.4975481660844222e-07
+        }
+      },
+      "samples_hz": 1920,
+      "cycles_per_half_second": 2,
+      "reference_speed_mps": 6.5
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "capture_fps": 60,
+  "captures": 721,
+  "checks": 722,
+  "failures": [],
+  "metrics": {
+    "native_camera": {
+      "pitch": -30,
+      "resolution": [
+        1280,
+        800
+      ],
+      "size": 10.0192031860352,
+      "yaw": 45
+    },
+    "travel": {
+      "distance_per_clip_m": 2.75477150688528,
+      "playback_speed": 1.17977116863484,
+      "speed_mps": 6.5
+    }
+  },
+  "passed": true,
+  "scope": "same phase before/after; latest armour; native camera; calibrated forward travel; prepared assets only"
+}

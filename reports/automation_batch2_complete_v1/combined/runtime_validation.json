@@ -1,0 +1,20 @@
+{
+  "captures": 150,
+  "checks": 162,
+  "failures": [],
+  "metrics": {
+    "native_camera": {
+      "model_height_m": 1.5,
+      "pitch": -30,
+      "resolution": [
+        1280,
+        800
+      ],
+      "size": 10.0192031860352,
+      "studio_lighting_only": true,
+      "yaw": 45
+    }
+  },
+  "passed": true,
+  "scope": "prepared art at actual game camera; no gameplay integration"
+}

@@ -1,0 +1,322 @@
+{
+  "passed": true,
+  "checks": 24559,
+  "results": {
+    "hound": {
+      "topology_uv_weights_materials_rest_exact": true,
+      "other_geometry_normals_exact": true,
+      "previous_nonrun_clips_max_matrix_error": 5.960464477539062e-07,
+      "source_fullbody_rotation_max_matrix_error": 8.344650268554688e-07,
+      "old_back_height_range_m": [
+        0.3930213451385498,
+        0.4301442503929138
+      ],
+      "new_back_height_range_m": [
+        0.42268450501025023,
+        0.519889390166796
+      ],
+      "old_elbow_above_back_max_m": 0.0015231072902679443,
+      "new_elbow_above_back_max_m": -0.11212654541501854,
+      "new_outer_elbow_above_back_max_m": -0.08540748089830352,
+      "minimum_floor_m": 0.004538922061565698,
+      "stance_world_drift_xyz_m": {
+        "('fore.L', 0)": [
+          8.38935375213623e-06,
+          2.3752450942993164e-05,
+          8.671730756759644e-05
+        ],
+        "('fore.R', 0)": [
+          2.1316111087799072e-05,
+          3.820657730102539e-05,
+          0.00011265277862548828
+        ],
+        "('hind.L', 0)": [
+          6.541609764099121e-06,
+          4.792213439941406e-05,
+          0.00012295693159103394
+        ],
+        "('hind.R', 0)": [
+          4.217028617858887e-06,
+          6.389617919921875e-05,
+          0.00016364455223083496
+        ],
+        "('fore.L', 1)": [
+          8.381903171539307e-06,
+          2.3603439331054688e-05,
+          8.670240640640259e-05
+        ],
+        "('fore.R', 1)": [
+          2.1319836378097534e-05,
+          3.838539123535156e-05,
+          0.00011265277862548828
+        ],
+        "('hind.L', 1)": [
+          6.541609764099121e-06,
+          4.792213439941406e-05,
+          0.0001229606568813324
+        ],
+        "('hind.R', 1)": [
+          4.217028617858887e-06,
+          6.389617919921875e-05,
+          0.00016367435455322266
+        ]
+      },
+      "max_joint_error_m": 1.228781230931777e-07,
+      "pistons": {
+        "fore.R": {
+          "min_overlap_m": 0.007685349261744107,
+          "min_rear_clearance_m": 0.009243646313136358,
+          "max_anchor_error_m": 1.0771179418862582e-07
+        },
+        "fore.L": {
+          "min_overlap_m": 0.009480019871532935,
+          "min_rear_clearance_m": 0.00819774668582865,
+          "max_anchor_error_m": 1.5526016044746866e-07
+        },
+        "hind.R": {
+          "min_overlap_m": 0.01610731569150338,
+          "min_rear_clearance_m": 0.0019535613940546703,
+          "max_anchor_error_m": 1.1944189326376765e-07
+        },
+        "hind.L": {
+          "min_overlap_m": 0.026941675409084334,
+          "min_rear_clearance_m": 0.010434667774614728,
+          "max_anchor_error_m": 1.2377834115800373e-07
+        }
+      },
+      "loop_velocity": {
+        "root": {
+          "velocity_jump_mps": 0.0,
+          "maximum_speed_mps": 0.0,
+          "ratio": 0.0
+        },
+        "chest": {
+          "velocity_jump_mps": 0.011969646090084654,
+          "maximum_speed_mps": 2.4199278186421673,
+          "ratio": 0.0049462822807669025
+        },
+        "pelvis": {
+          "velocity_jump_mps": 0.05524524573741544,
+          "maximum_speed_mps": 4.078241757339138,
+          "ratio": 0.01354633909036829
+        },
+        "tail_01": {
+          "velocity_jump_mps": 0.058513624575034034,
+          "maximum_speed_mps": 4.193954009405687,
+          "ratio": 0.01395189943518857
+        },
+        "tail_02": {
+          "velocity_jump_mps": 0.0655795452524628,
+          "maximum_speed_mps": 4.726153695109628,
+          "ratio": 0.013875880786594188
+        },
+        "tail_glow": {
+          "velocity_jump_mps": 0.1124694240901355,
+          "maximum_speed_mps": 5.911371337701085,
+          "ratio": 0.019025944686106376
+        },
+        "hind_upper.R": {
+          "velocity_jump_mps": 0.05520457768010972,
+          "maximum_speed_mps": 4.08136175446288,
+          "ratio": 0.013526019255642978
+        },
+        "hind_lower.R": {
+          "velocity_jump_mps": 0.3296504176127687,
+          "maximum_speed_mps": 11.057383186362253,
+          "ratio": 0.029812697277177364
+        },
+        "hind_hock.R": {
+          "velocity_jump_mps": 0.49847837601760087,
+          "maximum_speed_mps": 9.286592195675667,
+          "ratio": 0.05367721178170384
+        },
+        "hind_paw.R": {
+          "velocity_jump_mps": 0.6586645624741221,
+          "maximum_speed_mps": 9.813277917037183,
+          "ratio": 0.06711972982346612
+        },
+        "hind_piston_rod.R": {
+          "velocity_jump_mps": 0.32540546554640726,
+          "maximum_speed_mps": 10.064866578149065,
+          "ratio": 0.03233082753951911
+        },
+        "hind_piston_case.R": {
+          "velocity_jump_mps": 0.15689902284647275,
+          "maximum_speed_mps": 4.846267271934406,
+          "ratio": 0.03237523108869848
+        },
+        "hind_upper.L": {
+          "velocity_jump_mps": 0.055144976071292276,
+          "maximum_speed_mps": 4.07751508077424,
+          "ratio": 0.013524162382943617
+        },
+        "hind_lower.L": {
+          "velocity_jump_mps": 0.14010702803944616,
+          "maximum_speed_mps": 5.010544541213809,
+          "ratio": 0.027962435397391978
+        },
+        "hind_hock.L": {
+          "velocity_jump_mps": 0.18322093943676415,
+          "maximum_speed_mps": 5.159103692250976,
+          "ratio": 0.03551410290744181
+        },
+        "hind_paw.L": {
+          "velocity_jump_mps": 0.2331117554448452,
+          "maximum_speed_mps": 7.877599511525729,
+          "ratio": 0.029591724624205507
+        },
+        "hind_piston_rod.L": {
+          "velocity_jump_mps": 0.12798069448539742,
+          "maximum_speed_mps": 4.938701537899568,
+          "ratio": 0.025913834537939637
+        },
+        "hind_piston_case.L": {
+          "velocity_jump_mps": 0.07743653403336274,
+          "maximum_speed_mps": 3.3076122001574397,
+          "ratio": 0.023411612168342113
+        },
+        "neck": {
+          "velocity_jump_mps": 0.03129994104909318,
+          "maximum_speed_mps": 2.35686612972663,
+          "ratio": 0.013280321972603348
+        },
+        "head": {
+          "velocity_jump_mps": 0.06316571939197325,
+          "maximum_speed_mps": 2.656747285901072,
+          "ratio": 0.023775584425053717
+        },
+        "jaw": {
+          "velocity_jump_mps": 0.06312389935846043,
+          "maximum_speed_mps": 2.6693687481274253,
+          "ratio": 0.023647500706952585
+        },
+        "core": {
+          "velocity_jump_mps": 0.06177959393131553,
+          "maximum_speed_mps": 2.639171035001673,
+          "ratio": 0.023408711717418637
+        },
+        "core_glow": {
+          "velocity_jump_mps": 0.06177959393131553,
+          "maximum_speed_mps": 2.639171035001673,
+          "ratio": 0.023408711717418637
+        },
+        "Socket_attack": {
+          "velocity_jump_mps": 0.06049020973236776,
+          "maximum_speed_mps": 2.5968872682805224,
+          "ratio": 0.02329335218791386
+        },
+        "Socket_core": {
+          "velocity_jump_mps": 0.06177959393131553,
+          "maximum_speed_mps": 2.639171035001673,
+          "ratio": 0.023408711717418637
+        },
+        "key": {
+          "velocity_jump_mps": 0.03633978461955603,
+          "maximum_speed_mps": 3.079194270164201,
+          "ratio": 0.01180171870663366
+        },
+        "fore_upper.R": {
+          "velocity_jump_mps": 0.028889111051032736,
+          "maximum_speed_mps": 2.3228522975922203,
+          "ratio": 0.012436912618584522
+        },
+        "fore_lower.R": {
+          "velocity_jump_mps": 0.3184267697384632,
+          "maximum_speed_mps": 12.091766295158193,
+          "ratio": 0.026334181621254806
+        },
+        "fore_paw.R": {
+          "velocity_jump_mps": 0.2958802810664011,
+          "maximum_speed_mps": 12.44798671445452,
+          "ratio": 0.023769328153509902
+        },
+        "fore_piston_rod.R": {
+          "velocity_jump_mps": 0.3126195775669609,
+          "maximum_speed_mps": 11.694326158838306,
+          "ratio": 0.026732585813051754
+        },
+        "fore_piston_case.R": {
+          "velocity_jump_mps": 0.1444358413112283,
+          "maximum_speed_mps": 6.475306019773909,
+          "ratio": 0.02230563943544268
+        },
+        "fore_upper.L": {
+          "velocity_jump_mps": 0.03243674595784277,
+          "maximum_speed_mps": 2.3517500696143347,
+          "ratio": 0.013792599127322275
+        },
+        "fore_lower.L": {
+          "velocity_jump_mps": 0.8668041078155967,
+          "maximum_speed_mps": 14.637140663889971,
+          "ratio": 0.05921949701241954
+        },
+        "fore_paw.L": {
+          "velocity_jump_mps": 1.0355580006637652,
+          "maximum_speed_mps": 13.613285078400832,
+          "ratio": 0.07606966244369676
+        },
+        "fore_piston_rod.L": {
+          "velocity_jump_mps": 0.883706436638426,
+          "maximum_speed_mps": 14.43487205143718,
+          "ratio": 0.06122024729345914
+        },
+        "fore_piston_case.L": {
+          "velocity_jump_mps": 0.35185433482114115,
+          "maximum_speed_mps": 5.821510130510609,
+          "ratio": 0.06044038865054414
+        },
+        "Socket_bar": {
+          "velocity_jump_mps": 0.0,
+          "maximum_speed_mps": 0.0,
+          "ratio": 0.0
+        }
+      },
+      "dense_hz": 1920,
+      "distance_per_clip_m": 2.7547715068852785,
+      "reference_playback_speed": 1.1797711686348384
+    },
+    "hound_armour": {
+      "topology_uv_weights_materials_rest_exact": true,
+      "other_geometry_normals_exact": true,
+      "previous_nonrun_clips_max_matrix_error": 3.6954879760742188e-06
+    }
+  },
+  "previous_asset_files_preserved": 35,
+  "preserved_inputs": {
+    "assets\\actors\\automation_batch2\\hound_game_v3\\.gitignore": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87",
+    "assets\\actors\\automation_batch2\\hound_game_v3\\animation_samples.json.gz": "eb9545da5444771aeff804dd321d2efce5b875b21cba98b4876f8fc0e6d9898f",
+    "assets\\actors\\automation_batch2\\hound_game_v3\\geometry.json": "b98a9d8302a856e504b1c188d5857ddde44d2e7dfc527486aaf8a4c38ceb7444",
+    "assets\\actors\\automation_batch2\\hound_game_v3\\hound_game_v3.blend": "9f0432c50c6dc3ed8f7925769d7a0b2c74480c46d155259652a8608bfc61bb67",
+    "assets\\actors\\automation_batch2\\hound_game_v3\\hound_v3.glb": "72bef525c3b3cca1361ec8ceedfacb1ff0200a58f5191f00e29fb493b912bb42",
+    "assets\\actors\\automation_batch2\\hound_game_v3\\parts.json": "7073b3000941570c40849983e6ca8958182f3c00ebfc422ae23f729c84ae78a3",
+    "assets\\actors\\automation_batch2\\hound_game_v3\\preservation.json": "3b074d2b4a7200af965e17424034ef48e4fcdf29120e2f32496c24bf185706e3",
+    "assets\\actors\\automation_batch2\\hound_game_v3\\README.md": "b38af03a5f7e9156de35c32a38bee8adc2741ed448c467918d22e92900db9e10",
+    "assets\\actors\\automation_batch2\\hound_game_v3\\rig.json": "71055f4da9066ee41e42ba60f321ef039455872e2a5fcc8bb34d65bb23377cef",
+    "assets\\actors\\automation_batch2\\hound_armour_v2\\.gitignore": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87",
+    "assets\\actors\\automation_batch2\\hound_armour_v2\\animation_samples.json.gz": "493a1013321de9c9397463e96b103f9ef63bccb43a8e0c5d93356c10b1154f73",
+    "assets\\actors\\automation_batch2\\hound_armour_v2\\hound_armour_game_v2.blend": "5f336d41a1d71f126e4981bed97f6902c123421d14ac1a9c9d7b23b64bf60ccc",
+    "assets\\actors\\automation_batch2\\hound_armour_v2\\hound_armour_v2.glb": "a8a0baeb0607216803715b3ae8860b183e9f44e6e5020c4e6d78f51bf645ff8c",
+    "assets\\actors\\automation_batch2\\hound_armour_v2\\parts.json": "adb451381e0577ba863cb793d70e1986745e597ab902caf782ef2427f3e578fc",
+    "assets\\actors\\automation_batch2\\hound_armour_v2\\preservation.json": "c39404a13e3b35bf32c6d5beb39babd3dff6f6a3daa6bc59a7786e38610edd01",
+    "assets\\actors\\automation_batch2\\hound_armour_v2\\README.md": "981b124f483c3f11fea24881bb6d5d2a6d6db2dd14f26da12b0ef799fd145c43",
+    "assets\\actors\\automation_batch2\\hound_armour_v2\\rig.json": "045f3647f4dc0f39d4aa4752686643e1c8cd562fcb611b0703da8f2315f481e2",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\.gitignore": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\animation_samples.json.gz": "0f7e01b50d7f695c737d08f40b7f2be45a1e39a87e695102ddf17715029e41b7",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\geometry.json": "5869186dac7f1d0166633b8f8d27cbf1725ee0f42906fbd4484550728e302a42",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\giant_game_v2.blend": "f96780373736c79a7f7721e3dcf1bcf2a62be25b482cd1a4b51366f9b39afaef",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\giant_v2.glb": "e0863656a3911b3617f15cbd2af417de8f31aa55de97bf8c97a4799be0e075f5",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\mechanisms.json": "240f12a88800b727ac4850cbff00ffbed56ac8a19c32634205c4b444864ba5fd",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\parts.json": "8aaa37eaea42d6666ceedefb26932a7f2da129a1ecd3fd2e0ca4dc7148782b93",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\preservation.json": "d8a38337f854059af8a55ff618cdd19eec7ba1fe1ae92ba3d4f8c3c5cbee92af",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\README.md": "090e00468fd3109adce5801b313eaae9956f745d323bfb8fabc496eb9d192bb0",
+    "assets\\actors\\automation_batch2\\giant_game_v2\\rig.json": "94854ecf4daa24658f3c0d8e01aa11836cfb88e367b613929664c637f1b10be7",
+    "assets\\actors\\automation_batch2\\giant_armour_v2\\.gitignore": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87",
+    "assets\\actors\\automation_batch2\\giant_armour_v2\\animation_samples.json.gz": "cee454ee2289a139547c59537fd85ca164238e2440bf25c71a7c1d57157c2f5c",
+    "assets\\actors\\automation_batch2\\giant_armour_v2\\giant_armour_game_v2.blend": "fd409f445a426860fae771b94cffa6012835cd07d13ea2a2bba6fa70b21f6e35",
+    "assets\\actors\\automation_batch2\\giant_armour_v2\\giant_armour_v2.glb": "bb3e502b2d90dc561c66926f00eec4147544adb4a91ae88ae9a18fc29b79823e",
+    "assets\\actors\\automation_batch2\\giant_armour_v2\\parts.json": "ced6075e219ec3a362102b41bcfba15ce3dd772dcfe42cc4093945e000408e09",
+    "assets\\actors\\automation_batch2\\giant_armour_v2\\preservation.json": "6d1dcf0fe380c76498d756e5e459f808aafa49404a6dc43421e1939b99683145",
+    "assets\\actors\\automation_batch2\\giant_armour_v2\\README.md": "507cf5519d6cf90323c51a9f00544da257ca9b24eb5e642ac77ab26e88671f5f",
+    "assets\\actors\\automation_batch2\\giant_armour_v2\\rig.json": "323a09e0aefcceff1988dee3d1e5fb3c731e88fa8d31b734d8cdd76f9715209e"
+  }
+}

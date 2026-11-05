@@ -1,0 +1,86 @@
+{
+  "ok": true,
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    "giant_armour_Rigid_Surface: duplicate verts=1165 loose verts=0",
+    "giant_Rigid_Surface: duplicate verts=10294 loose verts=0",
+    "hidden back-to-back faces: giant_armour_Rigid_Surface (56 pairs) - delete to save tris",
+    "hidden back-to-back faces: giant_Rigid_Surface (38 pairs) - delete to save tris",
+    "asset lowest point z=0.0079 (not resting on ground plane z=0)"
+  ],
+  "ground_z": 0.0079,
+  "zfighting": [],
+  "floating": [],
+  "back_to_back": [
+    {
+      "where": "giant_armour_Rigid_Surface",
+      "tri_pairs": 56
+    },
+    {
+      "where": "giant_Rigid_Surface",
+      "tri_pairs": 38
+    }
+  ],
+  "enclosed": [],
+  "objects": {
+    "giant_armour_Rigid_Surface": {
+      "verts": 2330,
+      "faces": 1256,
+      "tris": 1256,
+      "ngons": 0,
+      "boundary_edges": 2330,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 1165,
+      "islands": 537,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "unweighted_verts": 0,
+      "verts_over_4_influences": 0,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 0,
+      "uv_overlap_pct": 0.0,
+      "uv_coverage_pct": 51.2
+    },
+    "giant_Rigid_Surface": {
+      "verts": 22173,
+      "faces": 15943,
+      "tris": 15943,
+      "ngons": 0,
+      "boundary_edges": 21235,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 10294,
+      "islands": 3644,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 2,
+      "unweighted_verts": 0,
+      "verts_over_4_influences": 0,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 0,
+      "uv_overlap_pct": 0.12,
+      "uv_coverage_pct": 4.9
+    }
+  }
+}

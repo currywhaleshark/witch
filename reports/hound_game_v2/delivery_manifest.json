@@ -1,0 +1,607 @@
+{
+  "date": "2026-11-05",
+  "passed": true,
+  "stage": "prepared base hound art/motion candidate; not main-game skill integration",
+  "production": "../../assets/actors/automation_batch2/hound_game_v2/production.json",
+  "source_hashes": {
+    "hound_raw.glb": "94ea4061dc94b5e1365ab10a4d73b8fd37c2a4e36e753c31eb3119b6b70cc6e7",
+    "hound_segmented.glb": "b40454295efee0baf0840b84c7a9aba43f8c6da449f8c45aba9e410eb6668a87"
+  },
+  "runtime_checks": 36509,
+  "gpu_captures": 312,
+  "scope_limits": [
+    "Base hound and shared 0.8x pack preview only; heavy tracker armour remains unbuilt.",
+    "No hound gameplay rules/targets/FX/node selection integration and no beacon/giant model generation in this pass.",
+    "Baked collapse starts from the authored idle pose; arbitrary interruptions and arbitrary blended poses are not contact-certified.",
+    "No live inter-part/debris/terrain collision, visual or performance approval.",
+    "Torso/source shell boundaries and intentional internal joint overlaps remain; source QA retains 22 seam/contact duplicate vertices and two hidden opposing-face pairs.",
+    "Piston length adjustment is a one-time rest-mesh fit. Mesh parts never scale during playback.",
+    "Native comparison uses the actual 1.75x camera settings and current assets with shared studio lighting; main game lighting is unchanged."
+  ],
+  "local_capture_frames": {
+    "not_required_for_offline_review": true,
+    "count": 306,
+    "sha256": {
+      "reports/hound_game_v2/runtime/motion_bite/000.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/001.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/002.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/003.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/004.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/005.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/006.jpg": "0e66b035aeeb3f760cffb3709142b34e55cf18feb613484639b02f23403867cb",
+      "reports/hound_game_v2/runtime/motion_bite/007.jpg": "af0b420277408234763ee8c6445d7ed2e8abab59418a1e849397dd9ef9cb1d1a",
+      "reports/hound_game_v2/runtime/motion_bite/008.jpg": "41e12e47f9ccf5bf656e40ca6200cd8da27f56572075ab974838469672825931",
+      "reports/hound_game_v2/runtime/motion_bite/009.jpg": "70262661bbbcc19b490cad895b6a5b26c2ae74aae648bd7b0bfd61d011b4047d",
+      "reports/hound_game_v2/runtime/motion_bite/010.jpg": "49a0dbbcff5fdf0e248e914d2bb094efb73e8623c9f5a5a38cbd647f543165bf",
+      "reports/hound_game_v2/runtime/motion_bite/011.jpg": "a8f56e3265aa1f58e21800cdc15b87124829560089aeaceadcc1f8630c6bf236",
+      "reports/hound_game_v2/runtime/motion_bite/012.jpg": "e88df0c2664fc447f5726379d9bc8ab31827a9bf95f1fb067c0570535bfa11d7",
+      "reports/hound_game_v2/runtime/motion_bite/013.jpg": "d255b7d6768b2f1ed7b11854e4139e06d4814f0d973334ac71ac43523a186cf5",
+      "reports/hound_game_v2/runtime/motion_bite/014.jpg": "dfd46e840c217f1e0593ab98123fba738d42c519556ee13f2aba3e78ecb413a0",
+      "reports/hound_game_v2/runtime/motion_bite/015.jpg": "213399b479dbe6e36722204fe31927da10f71c4b8e470ded57b96cb44cddc35a",
+      "reports/hound_game_v2/runtime/motion_bite/016.jpg": "9db416654c25af79f749e12b867dea961848a0b472200808a6bf8def10cc3769",
+      "reports/hound_game_v2/runtime/motion_bite/017.jpg": "f304c7c4572c669b90aa82b63da7203e94c10346f7e7b1e4ddfb8440d9e017fd",
+      "reports/hound_game_v2/runtime/motion_bite/018.jpg": "1248fb25e80fbcab7dbaf2d8eddfb2fb36d93009a69f686c48e3efbd22b487f4",
+      "reports/hound_game_v2/runtime/motion_bite/019.jpg": "f25c62e44537e36790e746c66ffb41abd736d5fa33498bf947eefb31e194419b",
+      "reports/hound_game_v2/runtime/motion_bite/020.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/021.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/022.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/023.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/024.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/025.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/026.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_bite/027.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_death/000.jpg": "dfc3628c3f0f8b95f508a0161efac504316b597ea5beaa0d33915646b3c7d527",
+      "reports/hound_game_v2/runtime/motion_death/001.jpg": "dfc3628c3f0f8b95f508a0161efac504316b597ea5beaa0d33915646b3c7d527",
+      "reports/hound_game_v2/runtime/motion_death/002.jpg": "dfc3628c3f0f8b95f508a0161efac504316b597ea5beaa0d33915646b3c7d527",
+      "reports/hound_game_v2/runtime/motion_death/003.jpg": "dfc3628c3f0f8b95f508a0161efac504316b597ea5beaa0d33915646b3c7d527",
+      "reports/hound_game_v2/runtime/motion_death/004.jpg": "dfc3628c3f0f8b95f508a0161efac504316b597ea5beaa0d33915646b3c7d527",
+      "reports/hound_game_v2/runtime/motion_death/005.jpg": "dfc3628c3f0f8b95f508a0161efac504316b597ea5beaa0d33915646b3c7d527",
+      "reports/hound_game_v2/runtime/motion_death/006.jpg": "f4a001b9a5419fcdb1ef45c0e3bac2b3c9ece6932953102653746583b5eb0742",
+      "reports/hound_game_v2/runtime/motion_death/007.jpg": "e34883aead4eb588798c31320d56702eb24503a5e22a49daffe2b000f7ce3cac",
+      "reports/hound_game_v2/runtime/motion_death/008.jpg": "5de60bb514e9d4fceaeeaa74d539a8c7f7fb6f9e18bb43b4abc6d71f6dc15bc6",
+      "reports/hound_game_v2/runtime/motion_death/009.jpg": "9da3d29d9c266fe9d253f7b9a24a5345c1b57a4d948cf16542be0209a202b6f5",
+      "reports/hound_game_v2/runtime/motion_death/010.jpg": "27f94577ecfd548b57e0455dbf394f7bce2e0e8c377533ef0a8f27386e75f382",
+      "reports/hound_game_v2/runtime/motion_death/011.jpg": "952e3e6536789104770f73847cecf8e5bf1b2f7cd47760bad3af4e9d57e5e842",
+      "reports/hound_game_v2/runtime/motion_death/012.jpg": "36e4eac594f4e0aa1f2b25fce6470afd8285211bd5cb355a609cf438d811624d",
+      "reports/hound_game_v2/runtime/motion_death/013.jpg": "64bf5a2744675071965d24c930e7ea14a76ecf8811e1b652efef9bdea9fea9de",
+      "reports/hound_game_v2/runtime/motion_death/014.jpg": "0972af739d6b68dc9c9ed483386fc1ae8f2da17920f24faed9b399e5fc6e710c",
+      "reports/hound_game_v2/runtime/motion_death/015.jpg": "f58e4cf740398f0ed9a8272914f0015406ca1b5fba7197c1a5b307bc063af7e1",
+      "reports/hound_game_v2/runtime/motion_death/016.jpg": "850bb1ee049e8380a7fed82a18f3ab0af44788bee2c649accc1ff26b65779c35",
+      "reports/hound_game_v2/runtime/motion_death/017.jpg": "457b8865186caa72febd10704c145e07fbb0184ceae1bbd9673c0de434f90952",
+      "reports/hound_game_v2/runtime/motion_death/018.jpg": "991b14ddc2899ff4b544e80e198838c1bafb577221db43a5e751a0af7550eea4",
+      "reports/hound_game_v2/runtime/motion_death/019.jpg": "576ad0d5048c7bfca42aca75bcaf36da55c1e76cba5112c839ffff9972770ff0",
+      "reports/hound_game_v2/runtime/motion_death/020.jpg": "983e498a68b42bdda66c7f7dedf37eb70cd03e727df802b416014cc817c1058b",
+      "reports/hound_game_v2/runtime/motion_death/021.jpg": "f295f3312c968dca10d72953f80c5ed16bba7b3e91d147abfd7967674df27f64",
+      "reports/hound_game_v2/runtime/motion_death/022.jpg": "13f06032ddf32fe823b90b7fc68a06fd1504e9395d3a214c32f81a4c6003ab0b",
+      "reports/hound_game_v2/runtime/motion_death/023.jpg": "f41a382074bc783cc97b84b06ff83a57c2a249ce4d85cb7a728f4fd2648a9a70",
+      "reports/hound_game_v2/runtime/motion_death/024.jpg": "519e42b9004069178b8d79142a9bc7dff25ff17fc85654b0408968e4a0f20e5e",
+      "reports/hound_game_v2/runtime/motion_death/025.jpg": "add8b4bee8d40fa801e582fdaecccba31d6b24ff3676402fb4fa3cc000030660",
+      "reports/hound_game_v2/runtime/motion_death/026.jpg": "e4775cc79578196823d1051a98f40d19d5b14c5988bac302dad40c49afba8e52",
+      "reports/hound_game_v2/runtime/motion_death/027.jpg": "c6c756932c64de8c8833adc44a3ea286a8920c673ef57b734725b9b77ffa1416",
+      "reports/hound_game_v2/runtime/motion_death/028.jpg": "cf5112724fce4bb1885c584d5d98bc96a14e1dcfe35461a854535c6a39041409",
+      "reports/hound_game_v2/runtime/motion_death/029.jpg": "4c0f3d29f353f36ae85c6015156c2c926c40c5d331f1a8914d908cd7d8315006",
+      "reports/hound_game_v2/runtime/motion_death/030.jpg": "5f0bcbd7752a8f42ef7f632f37d2bfb6086eec9da7449290c6f3c0411874cd15",
+      "reports/hound_game_v2/runtime/motion_death/031.jpg": "ae3034737855e7484b1575fb0f2fc8ef8a1efb856239887b4011ebd39f99422c",
+      "reports/hound_game_v2/runtime/motion_death/032.jpg": "539dcbd89925dd0afd7ec0b073bdd1a7108b060a8e49299c439b24de7bea8be1",
+      "reports/hound_game_v2/runtime/motion_death/033.jpg": "e13d6613efe18256218289bbba2ea5f97543974b66ac66b5ac63b9e7e7fbd406",
+      "reports/hound_game_v2/runtime/motion_death/034.jpg": "ea86d4fc8e9f11f997860417dbf345542c8a29ff4f462788af2537dfaef30c54",
+      "reports/hound_game_v2/runtime/motion_death/035.jpg": "ea86d4fc8e9f11f997860417dbf345542c8a29ff4f462788af2537dfaef30c54",
+      "reports/hound_game_v2/runtime/motion_death/036.jpg": "ea86d4fc8e9f11f997860417dbf345542c8a29ff4f462788af2537dfaef30c54",
+      "reports/hound_game_v2/runtime/motion_death/037.jpg": "ea86d4fc8e9f11f997860417dbf345542c8a29ff4f462788af2537dfaef30c54",
+      "reports/hound_game_v2/runtime/motion_death/038.jpg": "ea86d4fc8e9f11f997860417dbf345542c8a29ff4f462788af2537dfaef30c54",
+      "reports/hound_game_v2/runtime/motion_death/039.jpg": "ea86d4fc8e9f11f997860417dbf345542c8a29ff4f462788af2537dfaef30c54",
+      "reports/hound_game_v2/runtime/motion_death/040.jpg": "ea86d4fc8e9f11f997860417dbf345542c8a29ff4f462788af2537dfaef30c54",
+      "reports/hound_game_v2/runtime/motion_death/041.jpg": "ea86d4fc8e9f11f997860417dbf345542c8a29ff4f462788af2537dfaef30c54",
+      "reports/hound_game_v2/runtime/motion_hit/000.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/001.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/002.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/003.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/004.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/005.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/006.jpg": "d45ebfc8ee7120339666018e266e5548e8df5ee961002cb4717949866d6cf25b",
+      "reports/hound_game_v2/runtime/motion_hit/007.jpg": "240d737bdda35e5b2428af5e6f7e8b44215b1728f3037221d8674a625ec2c427",
+      "reports/hound_game_v2/runtime/motion_hit/008.jpg": "6d47a53352c6a81fcec7a4ef95c07fa5f050e52874b7b2e3fcbd03cc20e6dedd",
+      "reports/hound_game_v2/runtime/motion_hit/009.jpg": "d4f64699163eda3f32e43e4c393677ffc0d14f380a410e25146ee1e814265c16",
+      "reports/hound_game_v2/runtime/motion_hit/010.jpg": "e94c49c64262ef7182671b7cb87ba66b364a648c5b78c7decc6e1ebf04f68f7d",
+      "reports/hound_game_v2/runtime/motion_hit/011.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/012.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/013.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/014.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/015.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/016.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/017.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/018.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/019.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/020.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/021.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/022.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/023.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_hit/024.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_idle/000.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_idle/001.jpg": "22ee2d2b6e592f728a5be80afb38fd7cdfe79d2d7d6b92f1e2a81d72c5271906",
+      "reports/hound_game_v2/runtime/motion_idle/002.jpg": "16aa6ba315020d78d1a837db6c51471ba09f082cdb7b716c6242b7bf98c9e2d1",
+      "reports/hound_game_v2/runtime/motion_idle/003.jpg": "9f9236078be58e7baa204667a707580e5e8ba80234f74c08eb2167bded492feb",
+      "reports/hound_game_v2/runtime/motion_idle/004.jpg": "cc4c09ea6868bda2c2ae31bfa6521e5b9305cc7b61fbc1c697ae70264302db95",
+      "reports/hound_game_v2/runtime/motion_idle/005.jpg": "9df5388846075ccef0c4672906bb20e176abf87c2e84295e80163d734dccdd8f",
+      "reports/hound_game_v2/runtime/motion_idle/006.jpg": "183646d54d02242af64607b342ba79f35eed852df2093323ceeaea04aae111c3",
+      "reports/hound_game_v2/runtime/motion_idle/007.jpg": "94cdc1a3a067bcbbeaf35eab3e57cb3565214012fcf8560f5bb04b750f91a13e",
+      "reports/hound_game_v2/runtime/motion_idle/008.jpg": "9b99ac540b3751136bd71136f4f0acdcca7824872e2ee8fec362f2e3f6e6d239",
+      "reports/hound_game_v2/runtime/motion_idle/009.jpg": "de3bd2e96b7ab9fafed922bdb0ceca647472081244b9da44a559a28731345f66",
+      "reports/hound_game_v2/runtime/motion_idle/010.jpg": "dc934ac7a60e5bfd167b9782bd07ea965cc6e8ad2e79f3e3a60b8c98771ede72",
+      "reports/hound_game_v2/runtime/motion_idle/011.jpg": "05f6482d32736cd54a10bf1c75ea644e8bac1003c8ab3a90d6f627fe7b5142a4",
+      "reports/hound_game_v2/runtime/motion_idle/012.jpg": "1525f02dc5093efac876841c2db5861fd740be20f2a8e83c091759064b47d142",
+      "reports/hound_game_v2/runtime/motion_idle/013.jpg": "d3126906615f40f8108876b8717ddc70e638e1d586f92ac0655342d3d4dd337b",
+      "reports/hound_game_v2/runtime/motion_idle/014.jpg": "b8e87c885ff208751cf4089bda5d67239726dc6ba8366c8aeb35d06e9a0d7de0",
+      "reports/hound_game_v2/runtime/motion_idle/015.jpg": "be4114538088b8725326a9ca59c562507d337fcc40af7175c6ac3cc0b84bf464",
+      "reports/hound_game_v2/runtime/motion_idle/016.jpg": "01db6f21d93fa8044a65fac77c5761ab3a92de6e1ef0fc7513c3e856463b94ba",
+      "reports/hound_game_v2/runtime/motion_idle/017.jpg": "5605db3d02e736b6dfc769952a974d4d6beb57c617cc2b646c6050eb9fdd99f4",
+      "reports/hound_game_v2/runtime/motion_idle/018.jpg": "13a82551ac06ce37d009b8525bed54d095c0cca47955e4b5c35bdf4443ba6705",
+      "reports/hound_game_v2/runtime/motion_idle/019.jpg": "d50c8af8eaa36b18e70616a770860d79fdab3d73d8eaf631369f831513a6159a",
+      "reports/hound_game_v2/runtime/motion_idle/020.jpg": "90bf023ee6fa1e65162d2399d7d0583a1fffac70608413191a325df1f7e144f0",
+      "reports/hound_game_v2/runtime/motion_idle/021.jpg": "2528c024da6347affbb29aadccf8a4e2bcd4ff580d928861711ddd008a393acb",
+      "reports/hound_game_v2/runtime/motion_idle/022.jpg": "6cea1caf7597ed8a9ad86c92b25142d5602dae7ccc553a69b8e61099ac71df9f",
+      "reports/hound_game_v2/runtime/motion_idle/023.jpg": "63f55f1043f2cadb01b8f737d0050b70dd30f2bd51435647737ccf858e861fbc",
+      "reports/hound_game_v2/runtime/motion_idle/024.jpg": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f",
+      "reports/hound_game_v2/runtime/motion_idle/025.jpg": "22ee2d2b6e592f728a5be80afb38fd7cdfe79d2d7d6b92f1e2a81d72c5271906",
+      "reports/hound_game_v2/runtime/motion_idle/026.jpg": "16aa6ba315020d78d1a837db6c51471ba09f082cdb7b716c6242b7bf98c9e2d1",
+      "reports/hound_game_v2/runtime/motion_idle/027.jpg": "9f9236078be58e7baa204667a707580e5e8ba80234f74c08eb2167bded492feb",
+      "reports/hound_game_v2/runtime/motion_idle/028.jpg": "cc4c09ea6868bda2c2ae31bfa6521e5b9305cc7b61fbc1c697ae70264302db95",
+      "reports/hound_game_v2/runtime/motion_idle/029.jpg": "9df5388846075ccef0c4672906bb20e176abf87c2e84295e80163d734dccdd8f",
+      "reports/hound_game_v2/runtime/motion_idle/030.jpg": "183646d54d02242af64607b342ba79f35eed852df2093323ceeaea04aae111c3",
+      "reports/hound_game_v2/runtime/motion_idle/031.jpg": "94cdc1a3a067bcbbeaf35eab3e57cb3565214012fcf8560f5bb04b750f91a13e",
+      "reports/hound_game_v2/runtime/motion_idle/032.jpg": "9b99ac540b3751136bd71136f4f0acdcca7824872e2ee8fec362f2e3f6e6d239",
+      "reports/hound_game_v2/runtime/motion_idle/033.jpg": "de3bd2e96b7ab9fafed922bdb0ceca647472081244b9da44a559a28731345f66",
+      "reports/hound_game_v2/runtime/motion_idle/034.jpg": "dc934ac7a60e5bfd167b9782bd07ea965cc6e8ad2e79f3e3a60b8c98771ede72",
+      "reports/hound_game_v2/runtime/motion_idle/035.jpg": "05f6482d32736cd54a10bf1c75ea644e8bac1003c8ab3a90d6f627fe7b5142a4",
+      "reports/hound_game_v2/runtime/motion_idle/036.jpg": "1525f02dc5093efac876841c2db5861fd740be20f2a8e83c091759064b47d142",
+      "reports/hound_game_v2/runtime/motion_idle/037.jpg": "d3126906615f40f8108876b8717ddc70e638e1d586f92ac0655342d3d4dd337b",
+      "reports/hound_game_v2/runtime/motion_idle/038.jpg": "b8e87c885ff208751cf4089bda5d67239726dc6ba8366c8aeb35d06e9a0d7de0",
+      "reports/hound_game_v2/runtime/motion_idle/039.jpg": "be4114538088b8725326a9ca59c562507d337fcc40af7175c6ac3cc0b84bf464",
+      "reports/hound_game_v2/runtime/motion_idle/040.jpg": "01db6f21d93fa8044a65fac77c5761ab3a92de6e1ef0fc7513c3e856463b94ba",
+      "reports/hound_game_v2/runtime/motion_idle/041.jpg": "5605db3d02e736b6dfc769952a974d4d6beb57c617cc2b646c6050eb9fdd99f4",
+      "reports/hound_game_v2/runtime/motion_idle/042.jpg": "13a82551ac06ce37d009b8525bed54d095c0cca47955e4b5c35bdf4443ba6705",
+      "reports/hound_game_v2/runtime/motion_idle/043.jpg": "d50c8af8eaa36b18e70616a770860d79fdab3d73d8eaf631369f831513a6159a",
+      "reports/hound_game_v2/runtime/motion_idle/044.jpg": "90bf023ee6fa1e65162d2399d7d0583a1fffac70608413191a325df1f7e144f0",
+      "reports/hound_game_v2/runtime/motion_idle/045.jpg": "2528c024da6347affbb29aadccf8a4e2bcd4ff580d928861711ddd008a393acb",
+      "reports/hound_game_v2/runtime/motion_idle/046.jpg": "6cea1caf7597ed8a9ad86c92b25142d5602dae7ccc553a69b8e61099ac71df9f",
+      "reports/hound_game_v2/runtime/motion_idle/047.jpg": "63f55f1043f2cadb01b8f737d0050b70dd30f2bd51435647737ccf858e861fbc",
+      "reports/hound_game_v2/runtime/motion_run/000.jpg": "670412ca8aac1cbaa6bb3a30d075873cf234a9cd7343411cd5aa6797515c1477",
+      "reports/hound_game_v2/runtime/motion_run/001.jpg": "da7d29a3550d0c3c4db6456e83b3a615578b65dbf5fdf0f74640855c2670af99",
+      "reports/hound_game_v2/runtime/motion_run/002.jpg": "73d8d88c2c8c490f3e6c29eeb0aa8558df19ea1be621a22bd8c24b8a199c0d16",
+      "reports/hound_game_v2/runtime/motion_run/003.jpg": "24a7578f671804b4c588572f0bf1592a930b399b319c498cd0aa66fbb58f2fe7",
+      "reports/hound_game_v2/runtime/motion_run/004.jpg": "1f258a35cb3690a6b42321f720a55241d68fcc4f085523b9702c5608c3e85bdc",
+      "reports/hound_game_v2/runtime/motion_run/005.jpg": "d400e622de3991b61c0b39e8b6e558c77aaa64a281cdd07d9b52eaf7d78c8814",
+      "reports/hound_game_v2/runtime/motion_run/006.jpg": "cbc084768bd9acb716edb497b7ac15b3df05d900e5ae3b94ba38ba294a4b796e",
+      "reports/hound_game_v2/runtime/motion_run/007.jpg": "88cf21dec576a1b35b36ed25c38b8a2fad7a3d7045109a97a36fbf097ac32221",
+      "reports/hound_game_v2/runtime/motion_run/008.jpg": "53f0261c6ae1b0bf33ef65ad5311baa7dc1050ba7f610f1c81926455213601e7",
+      "reports/hound_game_v2/runtime/motion_run/009.jpg": "09de2901a11863dda3408149317ce774ab4847a4fbeafefb3b1b9c497b1eaae9",
+      "reports/hound_game_v2/runtime/motion_run/010.jpg": "e468fc899b54c50f9137d05f97e429acb3dfe67336be0556db4a2479946030d7",
+      "reports/hound_game_v2/runtime/motion_run/011.jpg": "7b082e5d85180969330461604022b01d0e1eebfb3effe7d745a666e967df54f2",
+      "reports/hound_game_v2/runtime/motion_run/012.jpg": "670412ca8aac1cbaa6bb3a30d075873cf234a9cd7343411cd5aa6797515c1477",
+      "reports/hound_game_v2/runtime/motion_run/013.jpg": "da7d29a3550d0c3c4db6456e83b3a615578b65dbf5fdf0f74640855c2670af99",
+      "reports/hound_game_v2/runtime/motion_run/014.jpg": "73d8d88c2c8c490f3e6c29eeb0aa8558df19ea1be621a22bd8c24b8a199c0d16",
+      "reports/hound_game_v2/runtime/motion_run/015.jpg": "24a7578f671804b4c588572f0bf1592a930b399b319c498cd0aa66fbb58f2fe7",
+      "reports/hound_game_v2/runtime/motion_run/016.jpg": "1f258a35cb3690a6b42321f720a55241d68fcc4f085523b9702c5608c3e85bdc",
+      "reports/hound_game_v2/runtime/motion_run/017.jpg": "d400e622de3991b61c0b39e8b6e558c77aaa64a281cdd07d9b52eaf7d78c8814",
+      "reports/hound_game_v2/runtime/motion_run/018.jpg": "cbc084768bd9acb716edb497b7ac15b3df05d900e5ae3b94ba38ba294a4b796e",
+      "reports/hound_game_v2/runtime/motion_run/019.jpg": "88cf21dec576a1b35b36ed25c38b8a2fad7a3d7045109a97a36fbf097ac32221",
+      "reports/hound_game_v2/runtime/motion_run/020.jpg": "53f0261c6ae1b0bf33ef65ad5311baa7dc1050ba7f610f1c81926455213601e7",
+      "reports/hound_game_v2/runtime/motion_run/021.jpg": "09de2901a11863dda3408149317ce774ab4847a4fbeafefb3b1b9c497b1eaae9",
+      "reports/hound_game_v2/runtime/motion_run/022.jpg": "e468fc899b54c50f9137d05f97e429acb3dfe67336be0556db4a2479946030d7",
+      "reports/hound_game_v2/runtime/motion_run/023.jpg": "7b082e5d85180969330461604022b01d0e1eebfb3effe7d745a666e967df54f2",
+      "reports/hound_game_v2/runtime/motion_run/024.jpg": "670412ca8aac1cbaa6bb3a30d075873cf234a9cd7343411cd5aa6797515c1477",
+      "reports/hound_game_v2/runtime/motion_run/025.jpg": "da7d29a3550d0c3c4db6456e83b3a615578b65dbf5fdf0f74640855c2670af99",
+      "reports/hound_game_v2/runtime/motion_run/026.jpg": "73d8d88c2c8c490f3e6c29eeb0aa8558df19ea1be621a22bd8c24b8a199c0d16",
+      "reports/hound_game_v2/runtime/motion_run/027.jpg": "24a7578f671804b4c588572f0bf1592a930b399b319c498cd0aa66fbb58f2fe7",
+      "reports/hound_game_v2/runtime/motion_run/028.jpg": "1f258a35cb3690a6b42321f720a55241d68fcc4f085523b9702c5608c3e85bdc",
+      "reports/hound_game_v2/runtime/motion_run/029.jpg": "d400e622de3991b61c0b39e8b6e558c77aaa64a281cdd07d9b52eaf7d78c8814",
+      "reports/hound_game_v2/runtime/motion_run/030.jpg": "cbc084768bd9acb716edb497b7ac15b3df05d900e5ae3b94ba38ba294a4b796e",
+      "reports/hound_game_v2/runtime/motion_run/031.jpg": "88cf21dec576a1b35b36ed25c38b8a2fad7a3d7045109a97a36fbf097ac32221",
+      "reports/hound_game_v2/runtime/motion_run/032.jpg": "53f0261c6ae1b0bf33ef65ad5311baa7dc1050ba7f610f1c81926455213601e7",
+      "reports/hound_game_v2/runtime/motion_run/033.jpg": "09de2901a11863dda3408149317ce774ab4847a4fbeafefb3b1b9c497b1eaae9",
+      "reports/hound_game_v2/runtime/motion_run/034.jpg": "e468fc899b54c50f9137d05f97e429acb3dfe67336be0556db4a2479946030d7",
+      "reports/hound_game_v2/runtime/motion_run/035.jpg": "7b082e5d85180969330461604022b01d0e1eebfb3effe7d745a666e967df54f2",
+      "reports/hound_game_v2/runtime/motion_run/036.jpg": "670412ca8aac1cbaa6bb3a30d075873cf234a9cd7343411cd5aa6797515c1477",
+      "reports/hound_game_v2/runtime/motion_run/037.jpg": "da7d29a3550d0c3c4db6456e83b3a615578b65dbf5fdf0f74640855c2670af99",
+      "reports/hound_game_v2/runtime/motion_run/038.jpg": "73d8d88c2c8c490f3e6c29eeb0aa8558df19ea1be621a22bd8c24b8a199c0d16",
+      "reports/hound_game_v2/runtime/motion_run/039.jpg": "24a7578f671804b4c588572f0bf1592a930b399b319c498cd0aa66fbb58f2fe7",
+      "reports/hound_game_v2/runtime/motion_run/040.jpg": "1f258a35cb3690a6b42321f720a55241d68fcc4f085523b9702c5608c3e85bdc",
+      "reports/hound_game_v2/runtime/motion_run/041.jpg": "d400e622de3991b61c0b39e8b6e558c77aaa64a281cdd07d9b52eaf7d78c8814",
+      "reports/hound_game_v2/runtime/motion_run/042.jpg": "cbc084768bd9acb716edb497b7ac15b3df05d900e5ae3b94ba38ba294a4b796e",
+      "reports/hound_game_v2/runtime/motion_run/043.jpg": "88cf21dec576a1b35b36ed25c38b8a2fad7a3d7045109a97a36fbf097ac32221",
+      "reports/hound_game_v2/runtime/motion_run/044.jpg": "53f0261c6ae1b0bf33ef65ad5311baa7dc1050ba7f610f1c81926455213601e7",
+      "reports/hound_game_v2/runtime/motion_run/045.jpg": "09de2901a11863dda3408149317ce774ab4847a4fbeafefb3b1b9c497b1eaae9",
+      "reports/hound_game_v2/runtime/motion_run/046.jpg": "e468fc899b54c50f9137d05f97e429acb3dfe67336be0556db4a2479946030d7",
+      "reports/hound_game_v2/runtime/motion_run/047.jpg": "7b082e5d85180969330461604022b01d0e1eebfb3effe7d745a666e967df54f2",
+      "reports/hound_game_v2/runtime/motion_spawn/000.jpg": "fd77976a218e550632c8a2e2dd09ed8bb2243ab9e9d2845ccb44c941e04354ec",
+      "reports/hound_game_v2/runtime/motion_spawn/001.jpg": "fd77976a218e550632c8a2e2dd09ed8bb2243ab9e9d2845ccb44c941e04354ec",
+      "reports/hound_game_v2/runtime/motion_spawn/002.jpg": "fd77976a218e550632c8a2e2dd09ed8bb2243ab9e9d2845ccb44c941e04354ec",
+      "reports/hound_game_v2/runtime/motion_spawn/003.jpg": "fd77976a218e550632c8a2e2dd09ed8bb2243ab9e9d2845ccb44c941e04354ec",
+      "reports/hound_game_v2/runtime/motion_spawn/004.jpg": "fd77976a218e550632c8a2e2dd09ed8bb2243ab9e9d2845ccb44c941e04354ec",
+      "reports/hound_game_v2/runtime/motion_spawn/005.jpg": "fd77976a218e550632c8a2e2dd09ed8bb2243ab9e9d2845ccb44c941e04354ec",
+      "reports/hound_game_v2/runtime/motion_spawn/006.jpg": "e11060d179225b5ba8777e93d799fe716ddca86bd9b1e6b6868061607d3c589f",
+      "reports/hound_game_v2/runtime/motion_spawn/007.jpg": "0cf58605406b765b1e81af900127a5bb2106bcd11ba183a372db21e9122bd05a",
+      "reports/hound_game_v2/runtime/motion_spawn/008.jpg": "4c72c2d672d00386e99210cddee0ff7fb35159dde08b3d211bdc9db9b7d2ba45",
+      "reports/hound_game_v2/runtime/motion_spawn/009.jpg": "fe32886149013cb31993aae5731a5c672246831e2ac884bd547bdac5ae19b7b3",
+      "reports/hound_game_v2/runtime/motion_spawn/010.jpg": "5b94c29ffe1422f9550cf1e726bce22a8e8dbbedfce65d42f71deda37f21e223",
+      "reports/hound_game_v2/runtime/motion_spawn/011.jpg": "04211efc06f4fa4c481360f2960677d801ac1fe13d8a811fc903efbaf4e16d30",
+      "reports/hound_game_v2/runtime/motion_spawn/012.jpg": "84a8e4b3f6621089ba1d77f46407110a7003378dcffddf21cddffb93cd96e044",
+      "reports/hound_game_v2/runtime/motion_spawn/013.jpg": "c3c0957c1c6264f8a3541002d51e5a1728096da0f8b7a33b9557d65e48e5c64d",
+      "reports/hound_game_v2/runtime/motion_spawn/014.jpg": "0e8178c6f869f66d0c52c264bf449b6b81c052f61d5f431e159917f2035b5a1d",
+      "reports/hound_game_v2/runtime/motion_spawn/015.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/016.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/017.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/018.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/019.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/020.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/021.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/022.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/023.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/motion_spawn/024.jpg": "8669d3ea1c62d07b87ccea9e8df12e1fc903cb752b64a823ada60690bcce6558",
+      "reports/hound_game_v2/runtime/native_run/000.jpg": "bc6f55b0bfc78748ec15aba56a22d42ce0dba72bd0ad92a6ed88956fd3eb5207",
+      "reports/hound_game_v2/runtime/native_run/001.jpg": "9b6a7bcf15c296b8c4ed3f43e26c550ada245c14347bdd9371310e9ea66f4471",
+      "reports/hound_game_v2/runtime/native_run/002.jpg": "7ad71e3b91ff4fe827f6f476ea14708fa6a1465c43c6bba2e21b9110ae7dcf33",
+      "reports/hound_game_v2/runtime/native_run/003.jpg": "a40da96e87b11decbb1cc2ad8f76aadaed4dbf8e5ce274641dd4e4745fd7a82b",
+      "reports/hound_game_v2/runtime/native_run/004.jpg": "e6e9dcdcf7e34afefea97353954c680f80f00e8216a978fccf11ab2e044f64f1",
+      "reports/hound_game_v2/runtime/native_run/005.jpg": "44e60282128ea9a6cb0b159bd29415c97ba51eca6167cfa66da4790108d94751",
+      "reports/hound_game_v2/runtime/native_run/006.jpg": "7076b209f40ea5c84a5b95a438347ee1bb59fbfe2fd6aaaae22315e468a69b50",
+      "reports/hound_game_v2/runtime/native_run/007.jpg": "b7002bafd31bf29eab67ddf89e706885d29c80df1c0b94bc7604bc419679bf4c",
+      "reports/hound_game_v2/runtime/native_run/008.jpg": "2b2c20f8c98162faf2070be9cd3f2b7fe442d785ac6ca5463f03f23d93be7ed9",
+      "reports/hound_game_v2/runtime/native_run/009.jpg": "a59c4675f2672218f44888458dd32dd966999ed115c967948dcefb74b50515db",
+      "reports/hound_game_v2/runtime/native_run/010.jpg": "761e92e90d7a3c69a32a5e6693566900c035a8044cabcaa5a75f335d5c9b6326",
+      "reports/hound_game_v2/runtime/native_run/011.jpg": "a746952d87cdf4e646adcb29bd7e3eccf11b2af219475c0dc38bed2f3dc4c516",
+      "reports/hound_game_v2/runtime/native_run/012.jpg": "bc6f55b0bfc78748ec15aba56a22d42ce0dba72bd0ad92a6ed88956fd3eb5207",
+      "reports/hound_game_v2/runtime/native_run/013.jpg": "9b6a7bcf15c296b8c4ed3f43e26c550ada245c14347bdd9371310e9ea66f4471",
+      "reports/hound_game_v2/runtime/native_run/014.jpg": "7ad71e3b91ff4fe827f6f476ea14708fa6a1465c43c6bba2e21b9110ae7dcf33",
+      "reports/hound_game_v2/runtime/native_run/015.jpg": "a40da96e87b11decbb1cc2ad8f76aadaed4dbf8e5ce274641dd4e4745fd7a82b",
+      "reports/hound_game_v2/runtime/native_run/016.jpg": "e6e9dcdcf7e34afefea97353954c680f80f00e8216a978fccf11ab2e044f64f1",
+      "reports/hound_game_v2/runtime/native_run/017.jpg": "44e60282128ea9a6cb0b159bd29415c97ba51eca6167cfa66da4790108d94751",
+      "reports/hound_game_v2/runtime/native_run/018.jpg": "7076b209f40ea5c84a5b95a438347ee1bb59fbfe2fd6aaaae22315e468a69b50",
+      "reports/hound_game_v2/runtime/native_run/019.jpg": "b7002bafd31bf29eab67ddf89e706885d29c80df1c0b94bc7604bc419679bf4c",
+      "reports/hound_game_v2/runtime/native_run/020.jpg": "2b2c20f8c98162faf2070be9cd3f2b7fe442d785ac6ca5463f03f23d93be7ed9",
+      "reports/hound_game_v2/runtime/native_run/021.jpg": "a59c4675f2672218f44888458dd32dd966999ed115c967948dcefb74b50515db",
+      "reports/hound_game_v2/runtime/native_run/022.jpg": "761e92e90d7a3c69a32a5e6693566900c035a8044cabcaa5a75f335d5c9b6326",
+      "reports/hound_game_v2/runtime/native_run/023.jpg": "a746952d87cdf4e646adcb29bd7e3eccf11b2af219475c0dc38bed2f3dc4c516",
+      "reports/hound_game_v2/runtime/native_run/024.jpg": "bc6f55b0bfc78748ec15aba56a22d42ce0dba72bd0ad92a6ed88956fd3eb5207",
+      "reports/hound_game_v2/runtime/native_run/025.jpg": "9b6a7bcf15c296b8c4ed3f43e26c550ada245c14347bdd9371310e9ea66f4471",
+      "reports/hound_game_v2/runtime/native_run/026.jpg": "7ad71e3b91ff4fe827f6f476ea14708fa6a1465c43c6bba2e21b9110ae7dcf33",
+      "reports/hound_game_v2/runtime/native_run/027.jpg": "a40da96e87b11decbb1cc2ad8f76aadaed4dbf8e5ce274641dd4e4745fd7a82b",
+      "reports/hound_game_v2/runtime/native_run/028.jpg": "e6e9dcdcf7e34afefea97353954c680f80f00e8216a978fccf11ab2e044f64f1",
+      "reports/hound_game_v2/runtime/native_run/029.jpg": "44e60282128ea9a6cb0b159bd29415c97ba51eca6167cfa66da4790108d94751",
+      "reports/hound_game_v2/runtime/native_run/030.jpg": "7076b209f40ea5c84a5b95a438347ee1bb59fbfe2fd6aaaae22315e468a69b50",
+      "reports/hound_game_v2/runtime/native_run/031.jpg": "b7002bafd31bf29eab67ddf89e706885d29c80df1c0b94bc7604bc419679bf4c",
+      "reports/hound_game_v2/runtime/native_run/032.jpg": "2b2c20f8c98162faf2070be9cd3f2b7fe442d785ac6ca5463f03f23d93be7ed9",
+      "reports/hound_game_v2/runtime/native_run/033.jpg": "a59c4675f2672218f44888458dd32dd966999ed115c967948dcefb74b50515db",
+      "reports/hound_game_v2/runtime/native_run/034.jpg": "761e92e90d7a3c69a32a5e6693566900c035a8044cabcaa5a75f335d5c9b6326",
+      "reports/hound_game_v2/runtime/native_run/035.jpg": "a746952d87cdf4e646adcb29bd7e3eccf11b2af219475c0dc38bed2f3dc4c516",
+      "reports/hound_game_v2/runtime/native_run/036.jpg": "bc6f55b0bfc78748ec15aba56a22d42ce0dba72bd0ad92a6ed88956fd3eb5207",
+      "reports/hound_game_v2/runtime/native_run/037.jpg": "9b6a7bcf15c296b8c4ed3f43e26c550ada245c14347bdd9371310e9ea66f4471",
+      "reports/hound_game_v2/runtime/native_run/038.jpg": "7ad71e3b91ff4fe827f6f476ea14708fa6a1465c43c6bba2e21b9110ae7dcf33",
+      "reports/hound_game_v2/runtime/native_run/039.jpg": "a40da96e87b11decbb1cc2ad8f76aadaed4dbf8e5ce274641dd4e4745fd7a82b",
+      "reports/hound_game_v2/runtime/native_run/040.jpg": "e6e9dcdcf7e34afefea97353954c680f80f00e8216a978fccf11ab2e044f64f1",
+      "reports/hound_game_v2/runtime/native_run/041.jpg": "44e60282128ea9a6cb0b159bd29415c97ba51eca6167cfa66da4790108d94751",
+      "reports/hound_game_v2/runtime/native_run/042.jpg": "7076b209f40ea5c84a5b95a438347ee1bb59fbfe2fd6aaaae22315e468a69b50",
+      "reports/hound_game_v2/runtime/native_run/043.jpg": "b7002bafd31bf29eab67ddf89e706885d29c80df1c0b94bc7604bc419679bf4c",
+      "reports/hound_game_v2/runtime/native_run/044.jpg": "2b2c20f8c98162faf2070be9cd3f2b7fe442d785ac6ca5463f03f23d93be7ed9",
+      "reports/hound_game_v2/runtime/native_run/045.jpg": "a59c4675f2672218f44888458dd32dd966999ed115c967948dcefb74b50515db",
+      "reports/hound_game_v2/runtime/native_run/046.jpg": "761e92e90d7a3c69a32a5e6693566900c035a8044cabcaa5a75f335d5c9b6326",
+      "reports/hound_game_v2/runtime/native_run/047.jpg": "a746952d87cdf4e646adcb29bd7e3eccf11b2af219475c0dc38bed2f3dc4c516",
+      "reports/hound_game_v2/runtime/poses_bite/00.jpg": "3ea07c1f49539bc17372cf8ce6f01dbfb509ef7ac3b8ea3448d7ce853a1e5a0a",
+      "reports/hound_game_v2/runtime/poses_bite/01.jpg": "ecb9c81e78ad14edf75e03c865254a4e446944be265c03aacf56321ffe9c323f",
+      "reports/hound_game_v2/runtime/poses_bite/02.jpg": "7e6f37372e9961519a052b7fe77c0bccb551f51ce2a6c2353d634e57099e2123",
+      "reports/hound_game_v2/runtime/poses_bite/03.jpg": "cc2dc3655cb70680c8ac8c8371363bf8a999907592b5a9cac34149aa33d06e54",
+      "reports/hound_game_v2/runtime/poses_bite/04.jpg": "0e9a576505fef6414307fd266ed2fba4b4b73a256e63564cdc88bbb8b9456d3e",
+      "reports/hound_game_v2/runtime/poses_bite/05.jpg": "ed4614f30a33147c1b640dc1974ef1bec90d2fddbb7664623fa1ec0d3e8b2518",
+      "reports/hound_game_v2/runtime/poses_bite/06.jpg": "3ea07c1f49539bc17372cf8ce6f01dbfb509ef7ac3b8ea3448d7ce853a1e5a0a",
+      "reports/hound_game_v2/runtime/poses_death/00.jpg": "3ea07c1f49539bc17372cf8ce6f01dbfb509ef7ac3b8ea3448d7ce853a1e5a0a",
+      "reports/hound_game_v2/runtime/poses_death/01.jpg": "786adf68cf9f32be408dfeb7b9245dac8d4ccdcdae8cc04b812681d19c2a980c",
+      "reports/hound_game_v2/runtime/poses_death/02.jpg": "4073ce37e0471f041885c4127422d1dae9f0d9b425b6b69805c4751c7fbf193c",
+      "reports/hound_game_v2/runtime/poses_death/03.jpg": "4632974c16799e60059e172ff7b985d80c6b02936658e5329ea529c82f723056",
+      "reports/hound_game_v2/runtime/poses_death/04.jpg": "54270907b4b32df70e4c9fe17252dffb5769719202fbadd0cd7de909eb69cce7",
+      "reports/hound_game_v2/runtime/poses_death/05.jpg": "a80ef344c60edea0178d65774832d0e2b2b3ea19ac9ec594404bc2cf056c3ab2",
+      "reports/hound_game_v2/runtime/poses_death/06.jpg": "306c2fc141fff86d45800acf1028ec277e695e9462823bddc00d07e7522cc24e",
+      "reports/hound_game_v2/runtime/poses_hit/00.jpg": "3ea07c1f49539bc17372cf8ce6f01dbfb509ef7ac3b8ea3448d7ce853a1e5a0a",
+      "reports/hound_game_v2/runtime/poses_hit/01.jpg": "bd9209c4af575ba17aa3eb37f8f331b85f98a55bd67c9fa1b7b1fbb58211ccf0",
+      "reports/hound_game_v2/runtime/poses_hit/02.jpg": "1a8b1f31de2b07bd50f6f97d97d92530d62383f0b615814a66c9212982c11339",
+      "reports/hound_game_v2/runtime/poses_hit/03.jpg": "f89175960544d5f74bc6d75da9134759d8ef91cfbf1e2268359868d7ccc6d66e",
+      "reports/hound_game_v2/runtime/poses_hit/04.jpg": "4febdb58260d74c9048daf755ca4b0f394ad397e44094818e6f9ac0ed514ca0f",
+      "reports/hound_game_v2/runtime/poses_hit/05.jpg": "3a0fa6163fcce09ed90f1befe2d6f5bd81cb9470a42b9fb9bf4e83dd080bbe29",
+      "reports/hound_game_v2/runtime/poses_hit/06.jpg": "3ea07c1f49539bc17372cf8ce6f01dbfb509ef7ac3b8ea3448d7ce853a1e5a0a",
+      "reports/hound_game_v2/runtime/poses_idle/00.jpg": "3ea07c1f49539bc17372cf8ce6f01dbfb509ef7ac3b8ea3448d7ce853a1e5a0a",
+      "reports/hound_game_v2/runtime/poses_idle/01.jpg": "2c2bc2bdf01219d97ac1520e25bb26561d52ada4c53e0ca7f3d16548148adcf8",
+      "reports/hound_game_v2/runtime/poses_idle/02.jpg": "149cee9f7db17fbde1107c7b1b678074e21670112d2a28478622a126a7679f39",
+      "reports/hound_game_v2/runtime/poses_idle/03.jpg": "c30ac996a54ae506e873fcbde945d40b52957575bb2d7a5ead8aa29fc54a282e",
+      "reports/hound_game_v2/runtime/poses_idle/04.jpg": "b4e6b3de1afc5c1177dac93608995b9e3cd365fb35ae4cd945dcc6e826cc00dc",
+      "reports/hound_game_v2/runtime/poses_idle/05.jpg": "fa666525bb2939fe9ed3c14ba64ed4f4b2b9e06d140826727312770b87bbd70a",
+      "reports/hound_game_v2/runtime/poses_idle/06.jpg": "3ea07c1f49539bc17372cf8ce6f01dbfb509ef7ac3b8ea3448d7ce853a1e5a0a",
+      "reports/hound_game_v2/runtime/poses_run/00.jpg": "c15aab03d478e5b030659a08c0f91e9c8e1cd6c7b0cd71e495141e68c9dccd01",
+      "reports/hound_game_v2/runtime/poses_run/01.jpg": "85bed012b39fe3f27c3984d0ea39b409a431799982425cc4ccf2c3808951ad17",
+      "reports/hound_game_v2/runtime/poses_run/02.jpg": "5952dd7cb848319a6ee2c1ea9a73cd6419971bb3e3acffb8d415bbb4eafca393",
+      "reports/hound_game_v2/runtime/poses_run/03.jpg": "069f4f4e858dfa6e1d3062ea2ae43e14ce6ecac07e4857854bf4d34262ec7589",
+      "reports/hound_game_v2/runtime/poses_run/04.jpg": "67959e8a6e0e7423978555309b9d09fe6d5ed07c12f71b165810c940a33f3a32",
+      "reports/hound_game_v2/runtime/poses_run/05.jpg": "1b5a3aa1f6bcbf2ea27aec1ddf4c21673e3f575c5f457fd95e23d3856ce94d83",
+      "reports/hound_game_v2/runtime/poses_run/06.jpg": "c15aab03d478e5b030659a08c0f91e9c8e1cd6c7b0cd71e495141e68c9dccd01",
+      "reports/hound_game_v2/runtime/poses_spawn/00.jpg": "f958a251861fd743d5601a3ce2fcb94c2bd0f3f49103a4cb5154cdffd1802b45",
+      "reports/hound_game_v2/runtime/poses_spawn/01.jpg": "39fb0c52f768b783d8db05ed15beb34ff55980d411b8b01242d48d4317e42c0a",
+      "reports/hound_game_v2/runtime/poses_spawn/02.jpg": "5d94b8c860e84a9243823c23017e6d3fd2a865f696780f8c64bc69ead547c0e7",
+      "reports/hound_game_v2/runtime/poses_spawn/03.jpg": "22cf48b30d85075a92c603cb838d0ddf19f066697b118d7cd6de1c3befbc1ec0",
+      "reports/hound_game_v2/runtime/poses_spawn/04.jpg": "4af05038ba66a08e444cd9c588f4cfaf83ce25960dbbad0df4b875ab29ee5bde",
+      "reports/hound_game_v2/runtime/poses_spawn/05.jpg": "e55dcbc9dd7b00dbd30d536c600a4688f794e26df4b5583500846d11d92ca5d9",
+      "reports/hound_game_v2/runtime/poses_spawn/06.jpg": "6435811cff4067a526fcfdd187c081330c2675f04507581db2be6769ad5b11c9"
+    }
+  },
+  "files": {
+    "assets/actors/automation_batch2/ART_REQUEST.md": {
+      "bytes": 9454,
+      "sha256": "316d2920281746ba1b41d36bacf31cce3a1a7e73f644a56f026546ebf8951acd"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/.gitignore": {
+      "bytes": 26,
+      "sha256": "e2e833604311c2f99de5eb0347f6066a976e8368a3de259febba5eba6856d633"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/geometry.json": {
+      "bytes": 20424,
+      "sha256": "b98a9d8302a856e504b1c188d5857ddde44d2e7dfc527486aaf8a4c38ceb7444"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/hound_game_v2.blend": {
+      "bytes": 3822204,
+      "sha256": "fa33cbe00ed49015d4b610a8e18593aa0b0a9e5e60ceddc2bf9d59f6bbb9924e"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/hound_geometry.blend": {
+      "bytes": 7780781,
+      "sha256": "b7c2ed356cef05bbea6a08ac6dda21da7bee7779390ca713700e18e3ceffcd4a"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/hound_v2.glb": {
+      "bytes": 4191136,
+      "sha256": "e250e2b82b414dcbcb9574a26b9039f8f14623555a4cd0b480c10aa7d84496dd"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/parts.json": {
+      "bytes": 20407,
+      "sha256": "f51a141d6d79200f290fb790cb24261934bd53fe02b5a7123a19d33049bd8003"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/production.json": {
+      "bytes": 19751,
+      "sha256": "a84b1b2b62569844e5409977cc4b1e5ce38e8526b599b1f0e92c6c2d92d6a203"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/README.md": {
+      "bytes": 7616,
+      "sha256": "9248b212215b1e9bcaf25f027980df43b76e88ee72e66f88f96e39b2bb318eef"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/rig.json": {
+      "bytes": 28980,
+      "sha256": "d933ef43ba0d126a72e36efc2ef5892133972580711944fe1c8e4d6259b449f3"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/textures/hound_color.png": {
+      "bytes": 1094259,
+      "sha256": "4a55b677c2bc3ff3cb6f9fd6d726db5eb3624797ff50fbf246cc15035b6c703b"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/textures/hound_emission.png": {
+      "bytes": 415,
+      "sha256": "6717d46aaab7f676886949ad76eec9188697a8e6aee05f4f1403a692e99e296b"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/textures/hound_normal.png": {
+      "bytes": 889568,
+      "sha256": "48692a6eb1deb1aef8380f67e71a790a4f4dff1c8afdfe055b7d7c63210190f7"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/textures/hound_orm.png": {
+      "bytes": 1072197,
+      "sha256": "2fc7debdf9b70ddfbdc4262b35875593530c99e13fd9b7f47af3c15bea23d2d2"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2.glb": {
+      "bytes": 4191136,
+      "sha256": "e250e2b82b414dcbcb9574a26b9039f8f14623555a4cd0b480c10aa7d84496dd"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2.glb.import": {
+      "bytes": 418058,
+      "sha256": "c218741a122e8163f16f16db732a63b77b35bdbd0bbd35e8be35852696646836"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_color.png": {
+      "bytes": 1094259,
+      "sha256": "4a55b677c2bc3ff3cb6f9fd6d726db5eb3624797ff50fbf246cc15035b6c703b"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_color.png.import": {
+      "bytes": 1071,
+      "sha256": "d95029c90b406505ef313e3f3a3edba71da3768a7a40f02eb9c1b5f0a252c587"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_emission.png": {
+      "bytes": 415,
+      "sha256": "6717d46aaab7f676886949ad76eec9188697a8e6aee05f4f1403a692e99e296b"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_emission.png.import": {
+      "bytes": 1080,
+      "sha256": "73d17e44776112bde973df1bd3420bd9c480697ccb79205a5e514aa95c03a087"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_normal.png": {
+      "bytes": 889568,
+      "sha256": "48692a6eb1deb1aef8380f67e71a790a4f4dff1c8afdfe055b7d7c63210190f7"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_normal.png.import": {
+      "bytes": 1074,
+      "sha256": "70c2bb0af414bb74e730894ded833d394cca2c48680ba8d347500faa1b1397ba"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_orm.png": {
+      "bytes": 1072197,
+      "sha256": "2fc7debdf9b70ddfbdc4262b35875593530c99e13fd9b7f47af3c15bea23d2d2"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_orm.png.import": {
+      "bytes": 1065,
+      "sha256": "d962829c08420086ce38f1e8333787fdbbcaa932bfb447b0cbc5b933eb8f7334"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/import_exact_animation.gd": {
+      "bytes": 3215,
+      "sha256": "5efe7220d8629d1d5e48a494ff18757ca7d8847ad4245cd0ae2baf764c3bf8e8"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/import_exact_animation.gd.uid": {
+      "bytes": 20,
+      "sha256": "651a17249071685e80468c98bda49b5efd5d2e96e4edc162b14f14ad8e0fa2b9"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/parts.json": {
+      "bytes": 20407,
+      "sha256": "f51a141d6d79200f290fb790cb24261934bd53fe02b5a7123a19d33049bd8003"
+    },
+    "game/tests/review_hound_game_v2.gd": {
+      "bytes": 11073,
+      "sha256": "fb09abe154e2f61126581065ca6403a84c086695f41317ec50fbd6687910da4a"
+    },
+    "reports/hound_game_v2/.gitignore": {
+      "bytes": 62,
+      "sha256": "cdfcfb28c34c50ce77b6601a24f9daa2e81a347766589b9a6b5207ff70aef749"
+    },
+    "reports/hound_game_v2/bite.mp4": {
+      "bytes": 160070,
+      "sha256": "fc5f8ccfdd2874b0848c0e72c3fac09659c0903c685d6ecad074478be040d41f"
+    },
+    "reports/hound_game_v2/bite_sheet.jpg": {
+      "bytes": 48222,
+      "sha256": "b3f7e590f99a3cee8a09c7343cc967e3174a415f3668419c472b60509bf56363"
+    },
+    "reports/hound_game_v2/death.mp4": {
+      "bytes": 163791,
+      "sha256": "d3dfbc482b2509e8445b06b1514606d509f162a00f7c6b6c866f8b053557049f"
+    },
+    "reports/hound_game_v2/death_sheet.jpg": {
+      "bytes": 41068,
+      "sha256": "8a4ba7ee6c35bdc95c7959ac17562af4c3c1067f790b28898f016d02ceb8cb17"
+    },
+    "reports/hound_game_v2/geometry/front.png": {
+      "bytes": 836748,
+      "sha256": "a821d32cd64d756989cbb375e12b1138b195b328b14ad70a0cc9197dde8ee05c"
+    },
+    "reports/hound_game_v2/geometry/parts.png": {
+      "bytes": 517416,
+      "sha256": "11c7c3149fc95dff3aaa96d599a73d605d7d7bcea3eadbaca9863fd09fc7b324"
+    },
+    "reports/hound_game_v2/geometry/profile.png": {
+      "bytes": 840860,
+      "sha256": "643d2b40d649b3cc9b7352d31063a11673685af6c7b0fa33a189d8ed433e65fc"
+    },
+    "reports/hound_game_v2/geometry/rear.png": {
+      "bytes": 842123,
+      "sha256": "a3def83022624a719dde8fb087d60c9edfe222c750e88e81f03e4ab2ccc04f2f"
+    },
+    "reports/hound_game_v2/geometry/source_qa.json": {
+      "bytes": 1077,
+      "sha256": "32bad2c5a4eba986f4bbed93e0bd41cf2a16d47a7c387b923df98c36e1b99bd4"
+    },
+    "reports/hound_game_v2/geometry/top.png": {
+      "bytes": 834200,
+      "sha256": "d149479bb6b99010865b8b5848c03e3d10cc398e3d35b830acb1c90833c2fd7d"
+    },
+    "reports/hound_game_v2/geometry/wire.png": {
+      "bytes": 517043,
+      "sha256": "a4f6fb6032a5aed71bcdbd71aea6a0972926267dea1882b2aa9c1f0e6c3ab023"
+    },
+    "reports/hound_game_v2/hit.mp4": {
+      "bytes": 63543,
+      "sha256": "d157e50387ab88d6748235507e1f4562b361c6c9cd71e3df371548a40ba2e2b8"
+    },
+    "reports/hound_game_v2/idle.mp4": {
+      "bytes": 217393,
+      "sha256": "0c62c1a11d6eeb35157ee6d644f4d8b85f0e7594d132e41314f55fbab5c07b26"
+    },
+    "reports/hound_game_v2/native_run.mp4": {
+      "bytes": 42797,
+      "sha256": "e03f396e8e5a61004158bc99392ae80fe6532908d463b7bcfbc478d652fc67b0"
+    },
+    "reports/hound_game_v2/review.html": {
+      "bytes": 7199,
+      "sha256": "8b7434d31d5bc5f0811dd7333939795b1264f2f09aec2c0a1db134c4f2fcf401"
+    },
+    "reports/hound_game_v2/run.mp4": {
+      "bytes": 382854,
+      "sha256": "d08064de080022018d34176bfd0e7a495ce51f212554ae7bdc2689a9a228c479"
+    },
+    "reports/hound_game_v2/run_sheet.jpg": {
+      "bytes": 45150,
+      "sha256": "2955e04bf3e44841b6bd066b56acbc6a2d2e55f1e9e84bba31ace223761c3e60"
+    },
+    "reports/hound_game_v2/runtime/front.jpg": {
+      "bytes": 38907,
+      "sha256": "1ac299aa83ca5e4aee59f215daea164ae46aff658ac0130f99e8ec5269fb170f"
+    },
+    "reports/hound_game_v2/runtime/native_lineup.jpg": {
+      "bytes": 44499,
+      "sha256": "c3337974c9573477960f36f069bea931423396b6ffe88e73c317f8970b5dcb2b"
+    },
+    "reports/hound_game_v2/runtime/pack.jpg": {
+      "bytes": 35581,
+      "sha256": "24e034d317faa6c4db20726a8f9a8f7d52ce5de2b1db3278c3be0d4b3400195a"
+    },
+    "reports/hound_game_v2/runtime/rear.jpg": {
+      "bytes": 35902,
+      "sha256": "c7149ff01fd24ab36e617faf924c2da0aa895d63a89ab9870e9d11be59fe15f2"
+    },
+    "reports/hound_game_v2/runtime/runtime_poses.json": {
+      "bytes": 372343,
+      "sha256": "768721e6f5e9c57848b3f488e47afd55debb090ff7dc3f9f4f1aede583dd12aa"
+    },
+    "reports/hound_game_v2/runtime/runtime_validation.json": {
+      "bytes": 2403,
+      "sha256": "b441f914ccaae1b7e5cdbadced4a63b64000cb3dda9c05997e5bcbb30e0dd133"
+    },
+    "reports/hound_game_v2/runtime/side.jpg": {
+      "bytes": 44863,
+      "sha256": "3ea07c1f49539bc17372cf8ce6f01dbfb509ef7ac3b8ea3448d7ce853a1e5a0a"
+    },
+    "reports/hound_game_v2/runtime/top.jpg": {
+      "bytes": 37084,
+      "sha256": "5ed16bd208944e317dc2d1adc3552de7c32889317f71524a40589107af3a3ecd"
+    },
+    "reports/hound_game_v2/spawn.mp4": {
+      "bytes": 106731,
+      "sha256": "97888b96bfb16d27d9defd2fb48e6dbf06a1daa99ce09838138136c367f95718"
+    },
+    "reports/hound_game_v2/validation/reimport.json": {
+      "bytes": 261,
+      "sha256": "1b22051e15965e238e3410a62cf0579b45d944ab1a6857903ab29d11b55b0051"
+    },
+    "reports/hound_game_v2/validation/reimport_qa.json": {
+      "bytes": 1222,
+      "sha256": "1251503798df6e6a58c72c50a68e146bcfabb1754e2cdf0861cdab5b3607b9e6"
+    },
+    "reports/hound_game_v2/validation/runtime_parity.json": {
+      "bytes": 161,
+      "sha256": "292e49ae6e0b74664145343bc115cffb46cc0dcef68828e6e642adc7d60f1562"
+    },
+    "reports/hound_game_v2/validation/saved_source.json": {
+      "bytes": 1620,
+      "sha256": "90ef6385985577ad78ca862c12c8e98c3392d51fd735a7be700998b787cdeaf9"
+    },
+    "reports/hound_game_v2/validation/source_qa.json": {
+      "bytes": 1210,
+      "sha256": "4812a80501a6136aa288d94b3cd2fd3b135ac13fac2f7ce6dee1018fd3f61e38"
+    },
+    "tools/animate_hound_game_v2.py": {
+      "bytes": 15834,
+      "sha256": "52d19cb2fe7ac4e59e1189dcc53ed93fc9b9364d728567112b800717d1caccb5"
+    },
+    "tools/build_hound_game_v2.py": {
+      "bytes": 20165,
+      "sha256": "a365bcc5c8202ecc67258c10279390b801b4f055bf586d28233c53721ee5ba13"
+    },
+    "tools/export_hound_game_v2.py": {
+      "bytes": 6909,
+      "sha256": "d9e495cd4893109f934f8f5a80e64ba31d3fac9e8f20a82b70992abfa6b660c4"
+    },
+    "tools/finish_hound_authoring_v2.py": {
+      "bytes": 3182,
+      "sha256": "9da581283dff483a9a99ee43824cd89c8cf6857e30f7d44e90c90ef62322aada"
+    },
+    "tools/inspect_hound_joints_v2.py": {
+      "bytes": 1924,
+      "sha256": "c984a890429ffee5c12e7ee956404cc9f49457f2a4e698bf0e97c06b19a02b96"
+    },
+    "tools/package_hound_game_v2.py": {
+      "bytes": 14814,
+      "sha256": "8e1babcf2a17af512c87eab3737c851b1eb2a4f24af93800bf17d534daac581d"
+    },
+    "tools/review_hound_geometry_v2.py": {
+      "bytes": 3199,
+      "sha256": "c6fad51feab26630d265dd904d59723d07e29d5f6d7b5e342d76d65bbb2c88d5"
+    },
+    "tools/validate_hound_game_v2.py": {
+      "bytes": 4856,
+      "sha256": "7745f4754f1af3c5762a7f3039e6f8207030acdbfb714571f92a71d1a5e1db59"
+    }
+  }
+}

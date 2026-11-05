@@ -1,0 +1,75 @@
+{
+  "captures": 256,
+  "checks": 31375,
+  "failures": [],
+  "metrics": {
+    "bones": 37,
+    "exported_vertices": 2773,
+    "floors": {
+      "bite": {
+        "minimum_y": 0.271082848310471,
+        "paw_minimum_y": 0.271082848310471,
+        "worst": {
+          "bone": "fore_upper.L",
+          "bone_origin": "(0.108746, 0.297504, -0.316651)",
+          "point": "(0.178205, 0.271083, -0.315121)",
+          "time": 0.328767136351703
+        }
+      },
+      "death": {
+        "minimum_y": 0.0119888484477997,
+        "paw_minimum_y": 0.0119888484477997,
+        "worst": {
+          "bone": "jaw",
+          "bone_origin": "(0.070104, 0.199718, -0.4548)",
+          "point": "(0.038449, 0.011989, -0.581235)",
+          "time": 0.546206918256036
+        }
+      },
+      "hit": {
+        "minimum_y": 0.280838489532471,
+        "paw_minimum_y": 0.280838489532471,
+        "worst": {
+          "bone": "fore_upper.L",
+          "bone_origin": "(0.108746, 0.30735, -0.225874)",
+          "point": "(0.178112, 0.280838, -0.222646)",
+          "time": 0.125
+        }
+      },
+      "idle": {
+        "minimum_y": 0.357878893613815,
+        "paw_minimum_y": 0.357878893613815,
+        "worst": {
+          "bone": "fore_upper.L",
+          "bone_origin": "(0.108746, 0.385658, -0.252711)",
+          "point": "(0.177625, 0.357879, -0.255701)",
+          "time": 0.75
+        }
+      },
+      "run": {
+        "minimum_y": 0.217690318822861,
+        "paw_minimum_y": 0.217690318822861,
+        "worst": {
+          "bone": "fore_upper.L",
+          "bone_origin": "(0.108746, 0.305933, -0.252868)",
+          "point": "(0.148368, 0.21769, -0.262751)",
+          "time": 0.225
+        }
+      },
+      "spawn": {
+        "minimum_y": 0.254359364509583,
+        "paw_minimum_y": 0.254359364509583,
+        "worst": {
+          "bone": "fore_upper.R",
+          "bone_origin": "(-0.088374, 0.284507, -0.252823)",
+          "point": "(-0.120047, 0.254359, -0.33967)",
+          "time": 0.0
+        }
+      }
+    },
+    "surfaces": 1,
+    "triangles": 1388
+  },
+  "passed": true,
+  "scope": "prepared art and playback; no gameplay integration"
+}

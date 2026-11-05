@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "actions": [
+    "assemble",
+    "death",
+    "hit",
+    "idle",
+    "slam",
+    "walk"
+  ],
+  "triangles": 15943,
+  "sha256": "1f11156269daf580c0c0281ec8ae0a0c4c8d84bad2c0e372a282eea6b8eab647"
+}

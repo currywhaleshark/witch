@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "triangles": 6795,
+  "bones": 37,
+  "actions": [
+    "bite",
+    "death",
+    "hit",
+    "idle",
+    "run",
+    "spawn"
+  ],
+  "bytes": 4191136,
+  "sha256": "e250e2b82b414dcbcb9574a26b9039f8f14623555a4cd0b480c10aa7d84496dd"
+}

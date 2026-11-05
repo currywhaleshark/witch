@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-05",
+  "stage": "prepared art review candidate",
+  "actor": "giant",
+  "triangles": 15943,
+  "rigid_groups": 27,
+  "bones": 33,
+  "surface_count": 2,
+  "clips": {
+    "assemble": {
+      "seconds": 1.2,
+      "loop": false
+    },
+    "idle": {
+      "seconds": 2.0,
+      "loop": true
+    },
+    "walk": {
+      "seconds": 1.2,
+      "loop": true
+    },
+    "slam": {
+      "seconds": 1.8,
+      "loop": false
+    },
+    "hit": {
+      "seconds": 0.3,
+      "loop": false
+    },
+    "death": {
+      "seconds": 1.8,
+      "loop": false
+    }
+  },
+  "runtime_checks": 34283,
+  "gpu_captures": 419,
+  "source_and_reimport_qa_pass": true,
+  "parity": {
+    "passed": true,
+    "compared_bone_origins": 13332,
+    "maximum_error_m": 4.2696442689329055e-07
+  },
+  "remaining_warnings": {
+    "source": [
+      "giant_Rigid_Surface: duplicate verts=94 loose verts=0",
+      "hidden back-to-back faces: giant_Rigid_Surface (17 pairs) - delete to save tris",
+      "1 parts fully enclosed, not touching (eyes/internals?): ['giant_Rigid_Surface']",
+      "asset lowest point z=0.0079 (not resting on ground plane z=0)"
+    ],
+    "reimport": [
+      "giant_Rigid_Surface: duplicate verts=10299 loose verts=0",
+      "hidden back-to-back faces: giant_Rigid_Surface (38 pairs) - delete to save tris",
+      "asset lowest point z=0.0079 (not resting on ground plane z=0)"
+    ]
+  },
+  "warning_adjudication": "UV/normal seams and rigid mating vertices stay separate; hidden opposing cap/panel faces and internal bearings are intentional. Source torso/shell boundaries remain open; no watertight or arbitrary contact claim. Rest support clearance is intentional.",
+  "textures": "shared 1024 color/OpenGL normal/ORM, R=1 without AO; 128 emission for base actors; armour has one opaque material and no runtime glow",
+  "source_blend": "giant_game_v1.blend",
+  "source_sha256": "ad29184da80848f26b0a130f01800982cf1aca6fcf555f7c64bff8ced37f7eaa",
+  "runtime_glb": "giant_v1.glb",
+  "runtime_sha256": "1f11156269daf580c0c0281ec8ae0a0c4c8d84bad2c0e372a282eea6b8eab647",
+  "limitations": [
+    "Prepared assets and review helpers only; no new targeting, damage, lifetime, resource or node-selection integration.",
+    "Baked destruction starts from its authored initial pose; arbitrary interruption/blend, inter-part/terrain collision and final performance are not certified.",
+    "Optional 1–3 number decals remain a future instance accessory; base meshes are reused without them.",
+    "Full compatible skeleton is duplicated for supplemental armour; further skeleton/instance optimization is deferred until gameplay integration."
+  ]
+}

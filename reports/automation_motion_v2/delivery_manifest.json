@@ -1,0 +1,920 @@
+{
+  "date": "2026-11-05",
+  "stage": "prepared motion correction review, not main-game integration/user art selection",
+  "source": "Quaternius Wolf Gallop, CC0 1.0",
+  "runtime_checks": 143501,
+  "motion_checks": 29243,
+  "gpu_checks": 962,
+  "gpu_captures": 961,
+  "saved_source_poses": 1365,
+  "godot_pose_parity": {
+    "hound": {
+      "passed": true,
+      "bone_origins": 8177,
+      "maximum_error_m": 4.962332789760952e-07
+    },
+    "giant": {
+      "passed": true,
+      "bone_origins": 13332,
+      "maximum_error_m": 5.066394785271117e-07
+    },
+    "hound_armour": {
+      "passed": true,
+      "bone_origins": 12432,
+      "maximum_error_m": 6.600396822791254e-07
+    },
+    "giant_armour": {
+      "passed": true,
+      "bone_origins": 13332,
+      "maximum_error_m": 7.623163767461904e-06
+    }
+  },
+  "preserved_previous_art_files": 62,
+  "qa_warnings": {
+    "hound/source_qa": [
+      "Hound_Rigid_Surface: duplicate verts=22 loose verts=0",
+      "hidden back-to-back faces: Hound_Rigid_Surface (2 pairs) - delete to save tris"
+    ],
+    "hound/reimport_qa": [
+      "Hound_Rigid_Surface: duplicate verts=4988 loose verts=0",
+      "hidden back-to-back faces: Hound_Rigid_Surface (7 pairs) - delete to save tris"
+    ],
+    "giant/source_qa": [
+      "giant_Rigid_Surface: duplicate verts=83 loose verts=0",
+      "hidden back-to-back faces: giant_Rigid_Surface (17 pairs) - delete to save tris",
+      "1 parts fully enclosed, not touching (eyes/internals?): ['giant_Rigid_Surface']",
+      "asset lowest point z=0.0079 (not resting on ground plane z=0)"
+    ],
+    "giant/reimport_qa": [
+      "giant_Rigid_Surface: duplicate verts=10294 loose verts=0",
+      "hidden back-to-back faces: giant_Rigid_Surface (38 pairs) - delete to save tris",
+      "asset lowest point z=0.0079 (not resting on ground plane z=0)"
+    ],
+    "hound_armour/source_qa": [
+      "Hound_Rigid_Surface: duplicate verts=22 loose verts=0",
+      "hound_armour_Rigid_Surface: duplicate verts=56 loose verts=0",
+      "hidden back-to-back faces: hound_armour_Rigid_Surface (60 pairs) - delete to save tris",
+      "hidden back-to-back faces: Hound_Rigid_Surface (2 pairs) - delete to save tris"
+    ],
+    "hound_armour/reimport_qa": [
+      "hound_armour_Rigid_Surface: duplicate verts=1386 loose verts=0",
+      "Hound_Rigid_Surface: duplicate verts=4988 loose verts=0",
+      "hidden back-to-back faces: hound_armour_Rigid_Surface (60 pairs) - delete to save tris",
+      "hidden back-to-back faces: Hound_Rigid_Surface (7 pairs) - delete to save tris"
+    ],
+    "giant_armour/source_qa": [
+      "giant_Rigid_Surface: duplicate verts=83 loose verts=0",
+      "giant_armour_Rigid_Surface: duplicate verts=56 loose verts=0",
+      "hidden back-to-back faces: giant_armour_Rigid_Surface (56 pairs) - delete to save tris",
+      "hidden back-to-back faces: giant_Rigid_Surface (17 pairs) - delete to save tris",
+      "1 parts fully enclosed, not touching (eyes/internals?): ['giant_Rigid_Surface']",
+      "asset lowest point z=0.0079 (not resting on ground plane z=0)"
+    ],
+    "giant_armour/reimport_qa": [
+      "giant_armour_Rigid_Surface: duplicate verts=1165 loose verts=0",
+      "giant_Rigid_Surface: duplicate verts=10294 loose verts=0",
+      "hidden back-to-back faces: giant_armour_Rigid_Surface (56 pairs) - delete to save tris",
+      "hidden back-to-back faces: giant_Rigid_Surface (38 pairs) - delete to save tris",
+      "asset lowest point z=0.0079 (not resting on ground plane z=0)"
+    ]
+  },
+  "warnings_adjudication": "UV/normal seam duplicates; hidden panel/cap mating faces and telescoping interiors; intentionally enclosed bearings; positive floor clearance. No arbitrary inter-part/armour/cancel/blend collision or live debris simulation.",
+  "environment_diagnostics": [
+    "MCP handshake unavailable; isolated Blender 5.1.1 CLI used.",
+    "Blender thumbnail write and Godot user shader-cache directory warnings retained in local logs; saved artifacts and rendering succeeded."
+  ],
+  "limits": [
+    "Source hound motions are proportion/reach/contact adapted, not a raw copy or claimed mocap.",
+    "Existing 0.5s / 3.25m hound contract uses two anatomical gallops; four strides per second.",
+    "Max sampled planted-paw drift 2.917mm; minimum rear-right piston overlap about .402mm.",
+    "No new game rules, FX, arbitrary-pose physical contact, performance approval or commit/push."
+  ],
+  "videos": {
+    "giant_gear": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "giant_key": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "giant_full": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "hound_side": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "hound_front": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "hound_armour": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "giant_armour": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "native": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    }
+  },
+  "files": {
+    "AGENTS.md": {
+      "bytes": 105119,
+      "sha256": "ad325398e879f50f9bc5b218025f80f788696d37b3fa0504bf7424cfd4f2d080"
+    },
+    "assets/actors/automation_batch2/catalog.json": {
+      "bytes": 1765,
+      "sha256": "d96106f938a1689db260e4345bc45f80306a50e05c5d184f52df49c8344e049a"
+    },
+    "assets/actors/automation_batch2/giant_armour_v2/.gitignore": {
+      "bytes": 24,
+      "sha256": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87"
+    },
+    "assets/actors/automation_batch2/giant_armour_v2/animation_samples.json.gz": {
+      "bytes": 820914,
+      "sha256": "cee454ee2289a139547c59537fd85ca164238e2440bf25c71a7c1d57157c2f5c"
+    },
+    "assets/actors/automation_batch2/giant_armour_v2/giant_armour_game_v2.blend": {
+      "bytes": 6459280,
+      "sha256": "fd409f445a426860fae771b94cffa6012835cd07d13ea2a2bba6fa70b21f6e35"
+    },
+    "assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2.glb": {
+      "bytes": 1871852,
+      "sha256": "bb3e502b2d90dc561c66926f00eec4147544adb4a91ae88ae9a18fc29b79823e"
+    },
+    "assets/actors/automation_batch2/giant_armour_v2/parts.json": {
+      "bytes": 15074,
+      "sha256": "ced6075e219ec3a362102b41bcfba15ce3dd772dcfe42cc4093945e000408e09"
+    },
+    "assets/actors/automation_batch2/giant_armour_v2/preservation.json": {
+      "bytes": 267,
+      "sha256": "6d1dcf0fe380c76498d756e5e459f808aafa49404a6dc43421e1939b99683145"
+    },
+    "assets/actors/automation_batch2/giant_armour_v2/README.md": {
+      "bytes": 1555,
+      "sha256": "507cf5519d6cf90323c51a9f00544da257ca9b24eb5e642ac77ab26e88671f5f"
+    },
+    "assets/actors/automation_batch2/giant_armour_v2/rig.json": {
+      "bytes": 25502,
+      "sha256": "323a09e0aefcceff1988dee3d1e5fb3c731e88fa8d31b734d8cdd76f9715209e"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/.gitignore": {
+      "bytes": 24,
+      "sha256": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/animation_samples.json.gz": {
+      "bytes": 914678,
+      "sha256": "0f7e01b50d7f695c737d08f40b7f2be45a1e39a87e695102ddf17715029e41b7"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/geometry.json": {
+      "bytes": 36967,
+      "sha256": "5869186dac7f1d0166633b8f8d27cbf1725ee0f42906fbd4484550728e302a42"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/giant_game_v2.blend": {
+      "bytes": 4392497,
+      "sha256": "f96780373736c79a7f7721e3dcf1bcf2a62be25b482cd1a4b51366f9b39afaef"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/giant_v2.glb": {
+      "bytes": 5905136,
+      "sha256": "e0863656a3911b3617f15cbd2af417de8f31aa55de97bf8c97a4799be0e075f5"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/mechanisms.json": {
+      "bytes": 1284,
+      "sha256": "240f12a88800b727ac4850cbff00ffbed56ac8a19c32634205c4b444864ba5fd"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/parts.json": {
+      "bytes": 23170,
+      "sha256": "8aaa37eaea42d6666ceedefb26932a7f2da129a1ecd3fd2e0ca4dc7148782b93"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/preservation.json": {
+      "bytes": 441,
+      "sha256": "d8a38337f854059af8a55ff618cdd19eec7ba1fe1ae92ba3d4f8c3c5cbee92af"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/README.md": {
+      "bytes": 2122,
+      "sha256": "090e00468fd3109adce5801b313eaae9956f745d323bfb8fabc496eb9d192bb0"
+    },
+    "assets/actors/automation_batch2/giant_game_v2/rig.json": {
+      "bytes": 31090,
+      "sha256": "94854ecf4daa24658f3c0d8e01aa11836cfb88e367b613929664c637f1b10be7"
+    },
+    "assets/actors/automation_batch2/hound_armour_v2/.gitignore": {
+      "bytes": 24,
+      "sha256": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87"
+    },
+    "assets/actors/automation_batch2/hound_armour_v2/animation_samples.json.gz": {
+      "bytes": 856604,
+      "sha256": "493a1013321de9c9397463e96b103f9ef63bccb43a8e0c5d93356c10b1154f73"
+    },
+    "assets/actors/automation_batch2/hound_armour_v2/hound_armour_game_v2.blend": {
+      "bytes": 5969172,
+      "sha256": "5f336d41a1d71f126e4981bed97f6902c123421d14ac1a9c9d7b23b64bf60ccc"
+    },
+    "assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2.glb": {
+      "bytes": 1868748,
+      "sha256": "a8a0baeb0607216803715b3ae8860b183e9f44e6e5020c4e6d78f51bf645ff8c"
+    },
+    "assets/actors/automation_batch2/hound_armour_v2/parts.json": {
+      "bytes": 13753,
+      "sha256": "adb451381e0577ba863cb793d70e1986745e597ab902caf782ef2427f3e578fc"
+    },
+    "assets/actors/automation_batch2/hound_armour_v2/preservation.json": {
+      "bytes": 267,
+      "sha256": "c39404a13e3b35bf32c6d5beb39babd3dff6f6a3daa6bc59a7786e38610edd01"
+    },
+    "assets/actors/automation_batch2/hound_armour_v2/README.md": {
+      "bytes": 1561,
+      "sha256": "981b124f483c3f11fea24881bb6d5d2a6d6db2dd14f26da12b0ef799fd145c43"
+    },
+    "assets/actors/automation_batch2/hound_armour_v2/rig.json": {
+      "bytes": 26296,
+      "sha256": "045f3647f4dc0f39d4aa4752686643e1c8cd562fcb611b0703da8f2315f481e2"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/.gitignore": {
+      "bytes": 24,
+      "sha256": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/animation_samples.json.gz": {
+      "bytes": 547776,
+      "sha256": "eb9545da5444771aeff804dd321d2efce5b875b21cba98b4876f8fc0e6d9898f"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/geometry.json": {
+      "bytes": 20424,
+      "sha256": "b98a9d8302a856e504b1c188d5857ddde44d2e7dfc527486aaf8a4c38ceb7444"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/hound_game_v3.blend": {
+      "bytes": 4004795,
+      "sha256": "9f0432c50c6dc3ed8f7925769d7a0b2c74480c46d155259652a8608bfc61bb67"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/hound_v3.glb": {
+      "bytes": 4308592,
+      "sha256": "72bef525c3b3cca1361ec8ceedfacb1ff0200a58f5191f00e29fb493b912bb42"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/parts.json": {
+      "bytes": 23158,
+      "sha256": "7073b3000941570c40849983e6ca8958182f3c00ebfc422ae23f729c84ae78a3"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/preservation.json": {
+      "bytes": 546,
+      "sha256": "3b074d2b4a7200af965e17424034ef48e4fcdf29120e2f32496c24bf185706e3"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/README.md": {
+      "bytes": 2516,
+      "sha256": "b38af03a5f7e9156de35c32a38bee8adc2741ed448c467918d22e92900db9e10"
+    },
+    "assets/actors/automation_batch2/hound_game_v3/rig.json": {
+      "bytes": 32169,
+      "sha256": "71055f4da9066ee41e42ba60f321ef039455872e2a5fcc8bb34d65bb23377cef"
+    },
+    "assets/actors/automation_batch2/motion_sources/quaternius/License.txt": {
+      "bytes": 351,
+      "sha256": "256bf3c521d10dd09071855b8784859b0131196d623ae3bc3239787e32a2703f"
+    },
+    "assets/actors/automation_batch2/motion_sources/quaternius/README.md": {
+      "bytes": 1623,
+      "sha256": "89547e82e73e645fc3dbf463790fdb8aeea489aecf2df09bc0e85a331f06f3b0"
+    },
+    "assets/actors/automation_batch2/motion_sources/quaternius/Wolf.blend": {
+      "bytes": 2571200,
+      "sha256": "fe31c3829dd2a8b9dfedb2e5cb656939a1d525ebd535a62434d2d25a4399cb9e"
+    },
+    "assets/actors/automation_batch2/motion_sources/quaternius/wolf_gallop_samples.json.gz": {
+      "bytes": 1520689,
+      "sha256": "bd23e51cbd32f35c57130d34bdcc1008accbbebc5408936e0381e78062e898aa"
+    },
+    "assets/actors/automation_batch2/README.md": {
+      "bytes": 6549,
+      "sha256": "0e07da60b803177802115e02f0e96335dc294156fbf75b646652a2dcf86e9989"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2.glb": {
+      "bytes": 1871852,
+      "sha256": "bb3e502b2d90dc561c66926f00eec4147544adb4a91ae88ae9a18fc29b79823e"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2.glb.import": {
+      "bytes": 418097,
+      "sha256": "6f4affacfa5954f0044a19a0aa8c670f751f2f39b1fe1faa51f465edec9a09f9"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2_giant_armour_color.png": {
+      "bytes": 726733,
+      "sha256": "9d29eca447c4591ffb88a5042d6193f77e7f16990909a390367ff567e7199976"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2_giant_armour_color.png.import": {
+      "bytes": 1120,
+      "sha256": "e0e430c1984e0b79508eb9035d0f9b2447ef424d0d4664e35d9a2a56b4389425"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2_giant_armour_normal.png": {
+      "bytes": 213450,
+      "sha256": "8d4f64f19c4b7cbf3018ae3b88c191386c3e5ae02441cea1d1d77bce0bafbcc8"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2_giant_armour_normal.png.import": {
+      "bytes": 1123,
+      "sha256": "a1a377bc56c88e7e778ef15d87ec5d2fb065c6b66a991d7f7cac5cc01e5f7af4"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2_giant_armour_orm.png": {
+      "bytes": 89621,
+      "sha256": "c70ac43de261f8e5ef9cabf9714f2b8260fe957ae2229cc6889c9669ff27c3e5"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/giant_armour_v2_giant_armour_orm.png.import": {
+      "bytes": 1114,
+      "sha256": "ed5179c2a10832905c1799bd32bbcf5835fa07b9114d8046b36fe2ccefc8eaf0"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/import_exact_animation.gd": {
+      "bytes": 3215,
+      "sha256": "5efe7220d8629d1d5e48a494ff18757ca7d8847ad4245cd0ae2baf764c3bf8e8"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/import_exact_animation.gd.uid": {
+      "bytes": 20,
+      "sha256": "caaa7ac2e55d6b5e6ce3bad63c8d3f942cc6d58b4411d4d278a0200e6d6eae2e"
+    },
+    "game/assets/actors/automation_batch2/giant_armour_v2/parts.json": {
+      "bytes": 15074,
+      "sha256": "ced6075e219ec3a362102b41bcfba15ce3dd772dcfe42cc4093945e000408e09"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2.glb": {
+      "bytes": 5905136,
+      "sha256": "e0863656a3911b3617f15cbd2af417de8f31aa55de97bf8c97a4799be0e075f5"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2.glb.import": {
+      "bytes": 418062,
+      "sha256": "d3baf9a4f0e0ca47d8f60cc435902f045fdd1b2b596e41d26aab4b2e70b5d954"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2_giant_color.png": {
+      "bytes": 934048,
+      "sha256": "e644260d4d57883a495177f298d74e94f5786e5186305f6d0affb12b05c50111"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2_giant_color.png.import": {
+      "bytes": 1071,
+      "sha256": "c93afc2df2907989d6677e36f6ce7e92f1ee9b21a6da41c72b33e34d59a962cf"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2_giant_emission.png": {
+      "bytes": 934048,
+      "sha256": "e644260d4d57883a495177f298d74e94f5786e5186305f6d0affb12b05c50111"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2_giant_emission.png.import": {
+      "bytes": 1080,
+      "sha256": "f4ec6708e5af03964be586e1a6eac6568337529608f0bdbc52a5963da1aa81cd"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2_giant_normal.png": {
+      "bytes": 805922,
+      "sha256": "33608e4cbde0621f3d35c7163db513c165a375a4dba63e87e95c906aae30ddfc"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2_giant_normal.png.import": {
+      "bytes": 1074,
+      "sha256": "463073f02c477f24aea65613c2b5b79667a3d84c53bcf3f3d12a334f55f69eaa"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2_giant_orm.png": {
+      "bytes": 949765,
+      "sha256": "90eb838c71efb75c992ae2403bd97fa4d0bea538bb52108d0332c16239ef66ec"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/giant_v2_giant_orm.png.import": {
+      "bytes": 1065,
+      "sha256": "c10596deb0758e61160a36912862dd27fec2b91d2d4ee40f4a3651f5360370de"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/import_exact_animation.gd": {
+      "bytes": 3215,
+      "sha256": "5efe7220d8629d1d5e48a494ff18757ca7d8847ad4245cd0ae2baf764c3bf8e8"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/import_exact_animation.gd.uid": {
+      "bytes": 20,
+      "sha256": "a404ac160a4f64f9ad874443dfa7cd0be5becd3219440b5acbc80f909eb49c49"
+    },
+    "game/assets/actors/automation_batch2/giant_v2/parts.json": {
+      "bytes": 23170,
+      "sha256": "8aaa37eaea42d6666ceedefb26932a7f2da129a1ecd3fd2e0ca4dc7148782b93"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2.glb": {
+      "bytes": 1868748,
+      "sha256": "a8a0baeb0607216803715b3ae8860b183e9f44e6e5020c4e6d78f51bf645ff8c"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2.glb.import": {
+      "bytes": 418092,
+      "sha256": "5db74ca767199b1bb624527ceb2ce81f7d4b8c5465767bad5eb39a41b786ef01"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2_hound_armour_color.png": {
+      "bytes": 639227,
+      "sha256": "5740ca4deb1e91a8d45ecc037fba12fa7dd0e67b86891ad91ddce52eaf371927"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2_hound_armour_color.png.import": {
+      "bytes": 1120,
+      "sha256": "2e5c88bf65a35c5b87230cbba812bdc30784aaa11384051e6825810eacd4a34e"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2_hound_armour_normal.png": {
+      "bytes": 274193,
+      "sha256": "d94e475500ffc0e292bb65118d899182736682398f0d7215bc536bfa90d63d56"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2_hound_armour_normal.png.import": {
+      "bytes": 1122,
+      "sha256": "f602d1eb9d10074f8575809e946127654cdbd0c4584c57becef53c6e6d33e165"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2_hound_armour_orm.png": {
+      "bytes": 101586,
+      "sha256": "b1c7a51175cc1f88205969795b9ae24d239b5e69020978077176bed9ca22d17f"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/hound_armour_v2_hound_armour_orm.png.import": {
+      "bytes": 1114,
+      "sha256": "708b11038e0d19ab84dfb02d631cee6a216641e433127b3b8af567daade44b6d"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/import_exact_animation.gd": {
+      "bytes": 3215,
+      "sha256": "5efe7220d8629d1d5e48a494ff18757ca7d8847ad4245cd0ae2baf764c3bf8e8"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/import_exact_animation.gd.uid": {
+      "bytes": 20,
+      "sha256": "0f9f6a277ab75b944f3868fe36599326549db2a194bae26276b0f9bb58525a2c"
+    },
+    "game/assets/actors/automation_batch2/hound_armour_v2/parts.json": {
+      "bytes": 13753,
+      "sha256": "adb451381e0577ba863cb793d70e1986745e597ab902caf782ef2427f3e578fc"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3.glb": {
+      "bytes": 4308592,
+      "sha256": "72bef525c3b3cca1361ec8ceedfacb1ff0200a58f5191f00e29fb493b912bb42"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3.glb.import": {
+      "bytes": 418058,
+      "sha256": "0e251e9f8cb1229822e46223e3ad985b87855626faf18076be4f1717e57215cd"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3_hound_color.png": {
+      "bytes": 1094259,
+      "sha256": "4a55b677c2bc3ff3cb6f9fd6d726db5eb3624797ff50fbf246cc15035b6c703b"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3_hound_color.png.import": {
+      "bytes": 1071,
+      "sha256": "6de82e8ee1f19eb17d3a2699d31b2e4b43c5bd2921f5b06b7382570345632d0d"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3_hound_emission.png": {
+      "bytes": 415,
+      "sha256": "6717d46aaab7f676886949ad76eec9188697a8e6aee05f4f1403a692e99e296b"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3_hound_emission.png.import": {
+      "bytes": 1079,
+      "sha256": "f1a0073466ab4d78d4803b2d00e2c01bdfd5ee46ad183b0814f2b80eaf3b6213"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3_hound_normal.png": {
+      "bytes": 889568,
+      "sha256": "48692a6eb1deb1aef8380f67e71a790a4f4dff1c8afdfe055b7d7c63210190f7"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3_hound_normal.png.import": {
+      "bytes": 1074,
+      "sha256": "74549934715f565da778729c38c892af805028cde39228432ed5eb255356706b"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3_hound_orm.png": {
+      "bytes": 1072197,
+      "sha256": "2fc7debdf9b70ddfbdc4262b35875593530c99e13fd9b7f47af3c15bea23d2d2"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/hound_v3_hound_orm.png.import": {
+      "bytes": 1065,
+      "sha256": "d8445ce348d23af9b80e0d1840a0c512cf4ec5e3082cf4957f741b5cdb2f5c70"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/import_exact_animation.gd": {
+      "bytes": 3215,
+      "sha256": "5efe7220d8629d1d5e48a494ff18757ca7d8847ad4245cd0ae2baf764c3bf8e8"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/import_exact_animation.gd.uid": {
+      "bytes": 19,
+      "sha256": "d4042fb08d0f2610c1866a3d7ab69a6c5eec249880e1cd6d3e67aabcdbf4f8e2"
+    },
+    "game/assets/actors/automation_batch2/hound_v3/parts.json": {
+      "bytes": 23158,
+      "sha256": "7073b3000941570c40849983e6ca8958182f3c00ebfc422ae23f729c84ae78a3"
+    },
+    "game/tests/review_automation_actor_v1.gd": {
+      "bytes": 11598,
+      "sha256": "1f7fa60ebb243d59d94281dadb3866c4a36268137069feec1094e64435b1dc09"
+    },
+    "game/tests/review_automation_motion_v2.gd": {
+      "bytes": 5032,
+      "sha256": "791091774cf5beeb5ac5f8df6ca8f0b966fa5bcfab74a10151073654f6522e2b"
+    },
+    "reports/automation_motion_v2/.gitignore": {
+      "bytes": 82,
+      "sha256": "f91a8826279fb4c6f968b4b41dda10b461b787a8a9c190f2ff9c54ef399ef8fa"
+    },
+    "reports/automation_motion_v2/comparison/giant_gear_sheet.jpg": {
+      "bytes": 151173,
+      "sha256": "abbe59789b797d6ad52e8aa30282bea5b92dbbbee2e233c053d102e568af4cf2"
+    },
+    "reports/automation_motion_v2/comparison/giant_key_sheet.jpg": {
+      "bytes": 107750,
+      "sha256": "f2c5c4bd7978788de0b3b98f1d114f932a5a8f0762e76c518f881426942e8341"
+    },
+    "reports/automation_motion_v2/comparison/hound_armour_sheet.jpg": {
+      "bytes": 39938,
+      "sha256": "ed4d2db6c0d87bc37c5f2355edb2daf755a7bdf2021e3e4105c877c2ff1a0847"
+    },
+    "reports/automation_motion_v2/comparison/hound_front_sheet.jpg": {
+      "bytes": 34885,
+      "sha256": "7b7eecd9fdd48406d5e26d90f0bf4fa46bf8d96e275b4781387d5ebf0f372cc6"
+    },
+    "reports/automation_motion_v2/comparison/hound_side_sheet.jpg": {
+      "bytes": 46255,
+      "sha256": "e23a93dbaa2f72a0b0c8a141ea748bee0c61be1738fbcf2dd8dfa1a4179bea3f"
+    },
+    "reports/automation_motion_v2/comparison/native_camera.jpg": {
+      "bytes": 67472,
+      "sha256": "d6814e605e65832a4ab8ea38c114a381115285687240a2611fcaa35292d0dde8"
+    },
+    "reports/automation_motion_v2/comparison/runtime_validation.json": {
+      "bytes": 362,
+      "sha256": "eee21fbd2601e0c5528fb9a8b24894e69ad4735cc11eb4eca706987cbc18b68b"
+    },
+    "reports/automation_motion_v2/giant/geometry/floor_diagnostic.json": {
+      "bytes": 658,
+      "sha256": "76d7662df350dab5c7f603b855788df0757401b26084b46d57d7d30d12654539"
+    },
+    "reports/automation_motion_v2/giant/geometry/front_sheet.jpg": {
+      "bytes": 57941,
+      "sha256": "0b04985dab6774e1a832533a96a35786abab909edd9df255b1e517f6137bb986"
+    },
+    "reports/automation_motion_v2/giant/geometry/parts.png": {
+      "bytes": 449229,
+      "sha256": "ab668622b21fa485a35874e28152dd1c0520078972d5f1b5b2c2c7a26a33bfa6"
+    },
+    "reports/automation_motion_v2/giant/geometry/side_sheet.jpg": {
+      "bytes": 40776,
+      "sha256": "550882cb6f15c7a55e3fb47e731b024b02edecf5388eb9106ed48ae7785ef1c1"
+    },
+    "reports/automation_motion_v2/giant/geometry/wire.png": {
+      "bytes": 450661,
+      "sha256": "7256101465e4657876cbd78bbf9c3420c22b5061616da0d6a77658dd63b295fe"
+    },
+    "reports/automation_motion_v2/giant/geometry_sheet.jpg": {
+      "bytes": 72227,
+      "sha256": "db1256cd772baf0cea4eb96e1e645ebb447c09a105c5d2fa039f00dfa4cb3479"
+    },
+    "reports/automation_motion_v2/giant/runtime/runtime_validation.json": {
+      "bytes": 2187,
+      "sha256": "4a31f1df212291469f2ad800c4e2840e3968e371b554f809d5d1352218bc2360"
+    },
+    "reports/automation_motion_v2/giant/validation/floors.json": {
+      "bytes": 818,
+      "sha256": "677b0ce961c3b92e47b65a849420b35553c3c248a3bb5ad8489a84b8ec5d29d0"
+    },
+    "reports/automation_motion_v2/giant/validation/godot_pose_parity.json": {
+      "bytes": 95,
+      "sha256": "542512b299e2323005c1ad568371a8239ea49bf0760fe92a1418aea8caa54820"
+    },
+    "reports/automation_motion_v2/giant/validation/matrix_diagnostic.json": {
+      "bytes": 1022,
+      "sha256": "bbfa344ed10c51e4d2d597773ee60e846a7b44118eede7aecf2022ab76c8f882"
+    },
+    "reports/automation_motion_v2/giant/validation/reimport.json": {
+      "bytes": 229,
+      "sha256": "6319dc9ffa0124300406fa56e5fa115ccc324b9e2ac6f32e897b68caca2ea98d"
+    },
+    "reports/automation_motion_v2/giant/validation/reimport_qa.json": {
+      "bytes": 1228,
+      "sha256": "bab7da8461983fbab0d24fea547f504e1d654b04ff52f7cbb4760038fd268ea7"
+    },
+    "reports/automation_motion_v2/giant/validation/saved_source.json": {
+      "bytes": 1419,
+      "sha256": "372046cc130c402c19dca98211ea4691b7ff0be5ec9fe9b83dd5a69c85071bf8"
+    },
+    "reports/automation_motion_v2/giant/validation/source_qa.json": {
+      "bytes": 1465,
+      "sha256": "dff5297d897175d6da5931405d82fa9962815ed243b1db340848de338378db8e"
+    },
+    "reports/automation_motion_v2/giant_armour/runtime/runtime_validation.json": {
+      "bytes": 2179,
+      "sha256": "4f7e0bc4191b51ba1c608a243bc3c3926523c7cfa1ee6034a3cc6f24978655aa"
+    },
+    "reports/automation_motion_v2/giant_armour/validation/floors.json": {
+      "bytes": 786,
+      "sha256": "f327ae07bf6acc33aa567b6065972ee018a6c13d8f8cbdfe647a6a6d16c6ad28"
+    },
+    "reports/automation_motion_v2/giant_armour/validation/godot_pose_parity.json": {
+      "bytes": 95,
+      "sha256": "3338246001664f963ff23363a7c96f6773dd777ef60dd57e0c58b2cc52ff634c"
+    },
+    "reports/automation_motion_v2/giant_armour/validation/matrix_diagnostic.json": {
+      "bytes": 1000,
+      "sha256": "5a77cc67b8f1dff5c6eccc6f346a5b04d7f1a928c2e8fbde13269381fa3e66a7"
+    },
+    "reports/automation_motion_v2/giant_armour/validation/reimport.json": {
+      "bytes": 335,
+      "sha256": "7bfe0c00b1de240a4712752d246e658b8e2285787e02eaf745fcfec47e5993ca"
+    },
+    "reports/automation_motion_v2/giant_armour/validation/reimport_qa.json": {
+      "bytes": 2205,
+      "sha256": "230982eef9065ac6da8f65e60915d6cca32f727568c4076236f3b28bcb630e86"
+    },
+    "reports/automation_motion_v2/giant_armour/validation/saved_source.json": {
+      "bytes": 1386,
+      "sha256": "0ce196b2b3d5de7c141c9969bdecbd016e12362e00aa51a3376ebc057878234e"
+    },
+    "reports/automation_motion_v2/giant_armour/validation/source_qa.json": {
+      "bytes": 2433,
+      "sha256": "5ddecf33893f86581d8ad9f33f8d35a382606d08adad4198296e3192c3d78b2c"
+    },
+    "reports/automation_motion_v2/giant_comparison.jpg": {
+      "bytes": 220560,
+      "sha256": "0d1c5bc6c3c6592a3d1486504849dac1c9f829154d6b1578fdff8858c94bd764"
+    },
+    "reports/automation_motion_v2/hound/geometry/floor_diagnostic.json": {
+      "bytes": 696,
+      "sha256": "24cbc4381a54b956508a678799d96fa68ddf147dc8b432cce7b7a647cfd0b65e"
+    },
+    "reports/automation_motion_v2/hound/geometry/front_sheet.jpg": {
+      "bytes": 44830,
+      "sha256": "af150dd559f1afae7da143e8621db040f383fea57a989e72d6a5b020d09774d3"
+    },
+    "reports/automation_motion_v2/hound/geometry/parts.png": {
+      "bytes": 422801,
+      "sha256": "25c48da510fdd5c18bc7b6925022acb2f8efc97a62613dd5d9c086d32342649f"
+    },
+    "reports/automation_motion_v2/hound/geometry/side_sheet.jpg": {
+      "bytes": 45428,
+      "sha256": "b90a625a6d9ad6f051de031b53df210ec60f5ba01f64f22ec0eacebeb80465ca"
+    },
+    "reports/automation_motion_v2/hound/geometry/wire.png": {
+      "bytes": 425451,
+      "sha256": "ee8172f3c911d275fcf4962546e896015bf63f8919382250f1ce75f6ddfb83d4"
+    },
+    "reports/automation_motion_v2/hound/geometry_sheet.jpg": {
+      "bytes": 58653,
+      "sha256": "d957c5862115d026702a343c75c1bb502cdd48ac63e47999b42ca0fe7277a8ec"
+    },
+    "reports/automation_motion_v2/hound/retarget_analysis.json": {
+      "bytes": 2473,
+      "sha256": "9f7b67865566f88ab51bff1b09b84a99d371738e57897bbf29b7d0116605a9ff"
+    },
+    "reports/automation_motion_v2/hound/runtime/runtime_validation.json": {
+      "bytes": 2195,
+      "sha256": "d4f66f3b82c8a6a9184e4896c3e446be39175416458419ec213cdf79d6500229"
+    },
+    "reports/automation_motion_v2/hound/validation/floors.json": {
+      "bytes": 816,
+      "sha256": "7594d401bb68af64eec4d1fd474c546932182984c9310c6b6472121d1d918361"
+    },
+    "reports/automation_motion_v2/hound/validation/godot_pose_parity.json": {
+      "bytes": 94,
+      "sha256": "8260d583db61d0ada3cc9e384de687a7c624494445860f0e2153d3d207235f10"
+    },
+    "reports/automation_motion_v2/hound/validation/matrix_diagnostic.json": {
+      "bytes": 924,
+      "sha256": "b1dbd2511122fafec0d181b016c60f6cb036dbf746d05e54edf06d15c46ad938"
+    },
+    "reports/automation_motion_v2/hound/validation/reimport.json": {
+      "bytes": 224,
+      "sha256": "4438cad5caae3247e98136978261df12cce5524abbea8d2a154c1ab58f045c86"
+    },
+    "reports/automation_motion_v2/hound/validation/reimport_qa.json": {
+      "bytes": 1152,
+      "sha256": "e98351cf1898bb343178112bc688218da0092e6a376416b02d69fd1ca582956e"
+    },
+    "reports/automation_motion_v2/hound/validation/saved_source.json": {
+      "bytes": 1411,
+      "sha256": "e8caa8b2a638432588115d7d1dfa86e6c43a7e64ac66f73f00a19ec8763d6b61"
+    },
+    "reports/automation_motion_v2/hound/validation/source_qa.json": {
+      "bytes": 1144,
+      "sha256": "9731ad868d967910b175ef729733ba5b791f1369f3df9657fd0c0816f6d38389"
+    },
+    "reports/automation_motion_v2/hound_armour/runtime/runtime_validation.json": {
+      "bytes": 2142,
+      "sha256": "26e11c729e006239ca4e1caeb5833a13af80cebc6b372d7e748e01c071c32753"
+    },
+    "reports/automation_motion_v2/hound_armour/validation/floors.json": {
+      "bytes": 774,
+      "sha256": "cee2e623e577b1d7b49703c0350bc2fb3acde59101343c6e4ca381e992174828"
+    },
+    "reports/automation_motion_v2/hound_armour/validation/godot_pose_parity.json": {
+      "bytes": 95,
+      "sha256": "8040f8996ec1c5146c78096a493ffbb7720cd3aa5d84fdd4a7cd225a6c327079"
+    },
+    "reports/automation_motion_v2/hound_armour/validation/matrix_diagnostic.json": {
+      "bytes": 1008,
+      "sha256": "3d4f059f294241f3bc97c40dabedba35501d3730169e4a876ebf5ddcd59b7d1f"
+    },
+    "reports/automation_motion_v2/hound_armour/validation/reimport.json": {
+      "bytes": 326,
+      "sha256": "9e8303de94628816a2256f65594e26d817b371d6ef2670780b37804515d63924"
+    },
+    "reports/automation_motion_v2/hound_armour/validation/reimport_qa.json": {
+      "bytes": 2129,
+      "sha256": "5f7035eceffc0c51c38ebf105ee5a60d776d5877615a60081d088f03650c0e19"
+    },
+    "reports/automation_motion_v2/hound_armour/validation/saved_source.json": {
+      "bytes": 1371,
+      "sha256": "b660cf52a7284accd7d2f601b666b2086013bd46b4aeab7b6036f721d83a0eb7"
+    },
+    "reports/automation_motion_v2/hound_armour/validation/source_qa.json": {
+      "bytes": 2112,
+      "sha256": "0a16187e17122c80589bcb28d03ac8cb4cd0767a57d351d55404e91b4c126eca"
+    },
+    "reports/automation_motion_v2/hound_comparison.jpg": {
+      "bytes": 70615,
+      "sha256": "9726e4053e4d9c680ab83fb7e59d07839a26b1501b098c3aa3cfb83fc95055e6"
+    },
+    "reports/automation_motion_v2/motion_validation.json": {
+      "bytes": 3494,
+      "sha256": "24ed396021b1ca73a196b5ab5f31ccac19124e828c7c4101c49caaab9a59fd55"
+    },
+    "reports/automation_motion_v2/previous_art_preservation.json": {
+      "bytes": 9298,
+      "sha256": "167b795bba7054e8f3d3f44d9ebc256a76a2e3129eb681c9d9c7faaa6a932f06"
+    },
+    "reports/automation_motion_v2/review.html": {
+      "bytes": 8163,
+      "sha256": "5a0fcb55a85017894201aa3ab8d402be4ef34d057169b7d5dfb6b229c9ead4d9"
+    },
+    "reports/automation_motion_v2/videos/giant_armour.jpg": {
+      "bytes": 110337,
+      "sha256": "4314b6f48738cfb0050e371c60f3fe890a33b40f2e472722ddcd884f0c364f1a"
+    },
+    "reports/automation_motion_v2/videos/giant_armour.mp4": {
+      "bytes": 625427,
+      "sha256": "ad0cd36cd1e12c113bdd80cbea9bef0e21ec0255a32a5ea73af39dc43bb44bcd"
+    },
+    "reports/automation_motion_v2/videos/giant_full.jpg": {
+      "bytes": 191888,
+      "sha256": "83e6419f2b934d2e24e9a6fe53678bce47d3ef22d51b9615edf3df63d31652aa"
+    },
+    "reports/automation_motion_v2/videos/giant_full.mp4": {
+      "bytes": 1167967,
+      "sha256": "43d1ebaf4f516188cc0b625ca2fbc4ecf046f6ace6f91be7f239f8a5e30e1ee1"
+    },
+    "reports/automation_motion_v2/videos/giant_gear.jpg": {
+      "bytes": 205156,
+      "sha256": "db8373277608e9dd0777c48c3077ccc7003998e52b5945fd7596c06bd428c1bb"
+    },
+    "reports/automation_motion_v2/videos/giant_gear.mp4": {
+      "bytes": 1709482,
+      "sha256": "e408f4489763af38289147b3e9beaf9505da9add2b4b835f5a96625f7ef3388b"
+    },
+    "reports/automation_motion_v2/videos/giant_key.jpg": {
+      "bytes": 150609,
+      "sha256": "1a8d07d96278e6ccf18fbdfab864369bcbeb9c9ad3d4ceb25158dc055ead237c"
+    },
+    "reports/automation_motion_v2/videos/giant_key.mp4": {
+      "bytes": 1361421,
+      "sha256": "84b2d2204dd128d4f8d3a5d3fbce8f6b94c904f7d275afc1c151db9869e54c7b"
+    },
+    "reports/automation_motion_v2/videos/hound_armour.jpg": {
+      "bytes": 64631,
+      "sha256": "203423b998bb4d97d03b51b2823dfeded4d1b60510c2b0a287ab8af66f9e7066"
+    },
+    "reports/automation_motion_v2/videos/hound_armour.mp4": {
+      "bytes": 1145237,
+      "sha256": "31d0213f535b0a0eb6ddbf2f7f3bff71322616b12d0bd996b96f6aff9488fb03"
+    },
+    "reports/automation_motion_v2/videos/hound_front.jpg": {
+      "bytes": 55840,
+      "sha256": "43cba32a4e951fd8cefabf5dd47edd5830de5d68dcbc319daad5cc279f67de6c"
+    },
+    "reports/automation_motion_v2/videos/hound_front.mp4": {
+      "bytes": 722679,
+      "sha256": "db01b2b0575cef2c6333ea8e729a347c0f395a8d72a4dd2c535ad7978bb16e73"
+    },
+    "reports/automation_motion_v2/videos/hound_side.jpg": {
+      "bytes": 69277,
+      "sha256": "ed91beb1a7be721b0902cb6f08c84091dfa48f979ee289b86338f34ec650dfe7"
+    },
+    "reports/automation_motion_v2/videos/hound_side.mp4": {
+      "bytes": 1046570,
+      "sha256": "9f125fe9ef9cf218d817ac6035a801bfae73d949b0830a729f24ddb6ef385fc9"
+    },
+    "reports/automation_motion_v2/videos/native.jpg": {
+      "bytes": 68406,
+      "sha256": "745f9f5493b6fe806a52e69baf8b699b8abc916a5243befcfd7f254aa17ebe4f"
+    },
+    "reports/automation_motion_v2/videos/native.mp4": {
+      "bytes": 459260,
+      "sha256": "559917674450339f1a93e109ad0af7fb428b6dc0b55c0fd33165c2df67aa00ce"
+    },
+    "reports/automation_motion_v2/wolf_source.jpg": {
+      "bytes": 38784,
+      "sha256": "2b2f95ac978bee04b999ed997ca7102d1f126dfad06f47f2bcab18cb98e59ba6"
+    },
+    "tools/build_automation_motion_v2.py": {
+      "bytes": 26789,
+      "sha256": "ceca4440f2d63377e6c49181019b576cfe190e6838faf91ec054ef845325029f"
+    },
+    "tools/export_automation_actor.py": {
+      "bytes": 7394,
+      "sha256": "bb7dc9d9c9a3b3e3eb19418dd8983222c1effd38595ab66ba8f40a5cd1b07d50"
+    },
+    "tools/inspect_automation_motion_v2.py": {
+      "bytes": 2371,
+      "sha256": "7b24d0d745a9c566976bb39583d0641e4e15ecb95256042edaabf16b7a527b43"
+    },
+    "tools/package_automation_motion_v2.py": {
+      "bytes": 20564,
+      "sha256": "d62890b64ac3bbe768532fac9d72755e5457b871886ca9298db064a68ab665d4"
+    },
+    "tools/review_automation_motion_v2.ps1": {
+      "bytes": 1722,
+      "sha256": "ae3875c09122b1713800b65c86bd53ace1f290ab62be9576133fdde6710f3ea4"
+    },
+    "tools/review_automation_motion_v2.py": {
+      "bytes": 3652,
+      "sha256": "7f3109de39e1046ef25c64c3241a800aa528da4064e553de00d5a7d97a610c41"
+    },
+    "tools/sample_quaternius_gallop.py": {
+      "bytes": 2458,
+      "sha256": "8b3ed914252860ec94e9dfe2ba93bb06c3eda813693a64125620e19af9d352ff"
+    },
+    "tools/validate_automation_actor.py": {
+      "bytes": 6291,
+      "sha256": "c7130ac425dd54969230e49d862553a316811735e038121adc220aca017dd246"
+    },
+    "tools/validate_automation_motion_v2.py": {
+      "bytes": 7664,
+      "sha256": "8fb673b92e3f3536cadf6c5c26c679c4e170831b59895bb05e9cc880f2671a8c"
+    }
+  }
+}

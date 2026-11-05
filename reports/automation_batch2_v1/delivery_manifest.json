@@ -1,0 +1,299 @@
+{
+  "date": "2026-11-05",
+  "scope": "three image_gen concepts; Tripo hound generation, segmentation, source inspection and minimal cleanup",
+  "status": "concept and generated source review; no user appearance approval",
+  "verification": {
+    "source_qa_pass": true,
+    "fresh_glb_qa_pass": true,
+    "saved_reopened_parts": 60,
+    "saved_reopened_triangles": 76862,
+    "packed_images": true,
+    "raw_files_unchanged": true,
+    "source_stage_only": true
+  },
+  "limits": [
+    "Source units/facing not fitted to the gameplay specification.",
+    "60 automatic pieces are not finalized rigid joints; interior caps/pistons/contact remain.",
+    "5k-7k triangles, 1K atlas, separate emission faces, rig, clips, sockets and node attachments pending.",
+    "Raw GLB QA: 2 errors. Raw segmented GLB QA: 8 errors. Working derivative: 0 errors.",
+    "60 seam-vertex warnings and four hidden mating-face warnings retained intentionally at source stage.",
+    "No game integration, gameplay tests, native-size comparison, performance approval or art selection.",
+    "Beacon and giant automaton have concepts only."
+  ],
+  "source_counts": {
+    "raw": {
+      "meshes": 1,
+      "triangles": 76914
+    },
+    "segmented": {
+      "meshes": 60,
+      "triangles": 76870
+    },
+    "working": {
+      "meshes": 60,
+      "triangles": 76862
+    }
+  },
+  "files": {
+    "assets/actors/automation_batch2/ART_REQUEST.md": {
+      "bytes": 9454,
+      "sha256": "316d2920281746ba1b41d36bacf31cce3a1a7e73f644a56f026546ebf8951acd"
+    },
+    "assets/actors/automation_batch2/concept_v1/giant_automaton_v1.png": {
+      "bytes": 2084458,
+      "sha256": "0bc28b5bb4fd5089396cf10108703672ce2b5e5ea21853d958e094b0c8fef797"
+    },
+    "assets/actors/automation_batch2/concept_v1/lure_beacon_v1.png": {
+      "bytes": 1349402,
+      "sha256": "59fec5a8db7f37bfb315c3c9e90b7cc569f1dfd0eb7747848abadbe151fca5b6"
+    },
+    "assets/actors/automation_batch2/concept_v1/mechanical_hound_v1.png": {
+      "bytes": 1455386,
+      "sha256": "522e3bff335b4e651a3b7ee8933007accf825ac9808772d814cc62f31499acd5"
+    },
+    "assets/actors/automation_batch2/concept_v1/prompts.json": {
+      "bytes": 6532,
+      "sha256": "2adbfcd4b3df277c87eaf446b6c63acaa82fa98b9fcc33fb3ef3ec3977a6095d"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/.gitignore": {
+      "bytes": 9,
+      "sha256": "b6c19e2969a38fe7b15f489f774b32dfa7dde3be8eaf2bbfadf9b0f075458367"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/exports/hound_working.glb": {
+      "bytes": 7116376,
+      "sha256": "65956f3cf9847dd241aaae47bcb0a40f7c284053454642d707e38939bd49fb82"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/hound_raw.blend": {
+      "bytes": 7052816,
+      "sha256": "5bcebedf7be9fa22892a34c20d125666b89b3c5e8eea41e15982c4528b3151aa"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/hound_segmented.blend": {
+      "bytes": 7599196,
+      "sha256": "3e87302e48517ee36779039268bf524d21572fb3a774c5712235146a0373d432"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/hound_working.blend": {
+      "bytes": 7599686,
+      "sha256": "27fb62563fa2e7b1e4f622e497dd27de8c29a8d80b1cf73cf5e7ad8b9459ec67"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/production.json": {
+      "bytes": 3463,
+      "sha256": "8536a040c4c81c5af5756c4984b9d349102acb27f898a0c6a0ae736bc4c673fa"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/README.md": {
+      "bytes": 4887,
+      "sha256": "a618b07ea91c692d4fa30d9b07532374e70f8a3a059d0f01efa5bbcfb7f2989a"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/source/hound_raw.glb": {
+      "bytes": 5814424,
+      "sha256": "94ea4061dc94b5e1365ab10a4d73b8fd37c2a4e36e753c31eb3119b6b70cc6e7"
+    },
+    "assets/actors/automation_batch2/hound_tripo_v1/source/hound_segmented.glb": {
+      "bytes": 7114232,
+      "sha256": "b40454295efee0baf0840b84c7a9aba43f8c6da449f8c45aba9e410eb6668a87"
+    },
+    "assets/actors/automation_batch2/README.md": {
+      "bytes": 1997,
+      "sha256": "e8cd6879cac0cb7146747acf13d86ebd28b066b3b92d30708ff3222a9cc90a6c"
+    },
+    "reports/automation_batch2_v1/.gitignore": {
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    "reports/automation_batch2_v1/raw/inventory.json": {
+      "bytes": 2010,
+      "sha256": "e9e59380e94f824af061728a585726557f8fa67625cd6014fde7e2ee2b344e46"
+    },
+    "reports/automation_batch2_v1/raw/opposite.png": {
+      "bytes": 1156827,
+      "sha256": "a3d6d2e84d22b79c85e54a19c5e3fe9e2f87c672e04f4e3b08c03b996abb11b2"
+    },
+    "reports/automation_batch2_v1/raw/preservation.json": {
+      "bytes": 345,
+      "sha256": "63b28298615bb5ed6b26b3d8f3193e40099fd8be298e9bbd11a10a9c18dbb0e5"
+    },
+    "reports/automation_batch2_v1/raw/side.png": {
+      "bytes": 1075752,
+      "sha256": "feccc8f5d03e771217210f4ade542ea7ace44ddeb8d986e8b6819d92d8b4efc9"
+    },
+    "reports/automation_batch2_v1/raw/source_qa.json": {
+      "bytes": 1488,
+      "sha256": "c50f69c1078c0c12538b20a88f29055ddf1b1f781e287597d2b493e18bc0aeb4"
+    },
+    "reports/automation_batch2_v1/raw/three_quarter.png": {
+      "bytes": 1166649,
+      "sha256": "277b88b8dfcebe5a1654fce3c48f12f7a421be627905791b294db36faa6435af"
+    },
+    "reports/automation_batch2_v1/raw/top.png": {
+      "bytes": 1111546,
+      "sha256": "69c5ab2ecdd3ccb6d93a8277d9e31487cb3c37e6ff418a85bf486c7e8aec34b3"
+    },
+    "reports/automation_batch2_v1/raw/wire.png": {
+      "bytes": 662731,
+      "sha256": "e2a7a12aedd9cbda69209ab38ebadb9227561c929b8e62dd8a328b1567e2ed19"
+    },
+    "reports/automation_batch2_v1/raw/wire_back.png": {
+      "bytes": 179867,
+      "sha256": "b5b96974a0114ba4d043619e44bd3237282c7e1d8669e1e8c6400fd2867b99fc"
+    },
+    "reports/automation_batch2_v1/raw/wire_front.png": {
+      "bytes": 180108,
+      "sha256": "97611fe65296b0b8c3bee9f5282203cd8622dff75799cd850f5d706571357fe6"
+    },
+    "reports/automation_batch2_v1/raw/wire_right.png": {
+      "bytes": 158813,
+      "sha256": "f030f2d4bd97e4d119d3c6c1a4eff334de537fe17d92b630a32d0ab832736512"
+    },
+    "reports/automation_batch2_v1/raw/wire_shots.json": {
+      "bytes": 687,
+      "sha256": "280bbdfc0e73ea989dc3ec05db47d7e167826287d91d53954439bb32dfeaa9d8"
+    },
+    "reports/automation_batch2_v1/raw/wire_three_quarter.png": {
+      "bytes": 175320,
+      "sha256": "b89061113e24b112b237465d7cb875f71599a979e64ca55ce146b39f3e7b2230"
+    },
+    "reports/automation_batch2_v1/review.html": {
+      "bytes": 8127,
+      "sha256": "2466bcc73ec572ee0b71881d084751765b430cc59d969dfdb433ea263f2bfdac"
+    },
+    "reports/automation_batch2_v1/segmented/inventory.json": {
+      "bytes": 40588,
+      "sha256": "9f1d8c555aeefdcddbf92f71fb7317e6c2de4590f1639287922141a148eab27d"
+    },
+    "reports/automation_batch2_v1/segmented/opposite.png": {
+      "bytes": 1158506,
+      "sha256": "0f7b389143628be9b0196c09fa3cc3b0ff009e27777857124bf598d9b9c7cb1e"
+    },
+    "reports/automation_batch2_v1/segmented/preservation.json": {
+      "bytes": 5612,
+      "sha256": "f185c57c42ef8b28a933be932ac03b16c7d553312e4a20d6144702183166fa4a"
+    },
+    "reports/automation_batch2_v1/segmented/random.png": {
+      "bytes": 682917,
+      "sha256": "d5487c50f6cf4d63bbbdecb207bdb30addcca8af6ca2362faa1f7d5dbed994e0"
+    },
+    "reports/automation_batch2_v1/segmented/random_back.png": {
+      "bytes": 185322,
+      "sha256": "c53ff44def2e4b64d415f8886e044176207d5e9cad356ea19a3642685b92bd43"
+    },
+    "reports/automation_batch2_v1/segmented/random_front.png": {
+      "bytes": 185819,
+      "sha256": "6902c9039bd4dc1ddaa5304f7e32656b5b3bcd56717d0d1cd3ce0c72438fff35"
+    },
+    "reports/automation_batch2_v1/segmented/random_right.png": {
+      "bytes": 160429,
+      "sha256": "c37ce72af2b3dab80cf26ffa7e530931ae532a451903bd9a5ecfe0cabc2cd031"
+    },
+    "reports/automation_batch2_v1/segmented/random_shots.json": {
+      "bytes": 727,
+      "sha256": "d62689f2eb3c513950caee9ea0af2734bbb0a8d346c033cee5f780243d4a4c70"
+    },
+    "reports/automation_batch2_v1/segmented/random_three_quarter.png": {
+      "bytes": 180657,
+      "sha256": "759980bc437027cfa7c10dc808d4bcc55b68cf9085cbefbf35924f14db6e3363"
+    },
+    "reports/automation_batch2_v1/segmented/side.png": {
+      "bytes": 1077991,
+      "sha256": "f33f7b325341662e0d3ea715714a42be4311f4d9cb262c0356b4812b7badd66a"
+    },
+    "reports/automation_batch2_v1/segmented/source_qa.json": {
+      "bytes": 43504,
+      "sha256": "3302ad7f0efe08963c6a570e7a76af806dacfd462cd5eda208b6e57352353f6f"
+    },
+    "reports/automation_batch2_v1/segmented/three_quarter.png": {
+      "bytes": 1168876,
+      "sha256": "45145cc9a6f88a3ea81e57fe0f181d366f39f97822e0b4d48bdcf6c0c77473f0"
+    },
+    "reports/automation_batch2_v1/segmented/top.png": {
+      "bytes": 1112060,
+      "sha256": "baf4907b46310477b413d824e159a7a4f1c3accc2c88c34fda6663c9232be7f9"
+    },
+    "reports/automation_batch2_v1/segmented/wire.png": {
+      "bytes": 660265,
+      "sha256": "7d9db0e130eea80d347028cf1d3996a3df8a862ddabe7f751e84bbff8c108270"
+    },
+    "reports/automation_batch2_v1/segmented/wire_back.png": {
+      "bytes": 179408,
+      "sha256": "3bd91642e78ad77a443e785ae3422474d9abefd3a544b75d0e5b583b1b63a784"
+    },
+    "reports/automation_batch2_v1/segmented/wire_front.png": {
+      "bytes": 179428,
+      "sha256": "89807b47e5d5bf582ab114355c6f54b0dcf3b8a6e4c34c66246f1e668108203d"
+    },
+    "reports/automation_batch2_v1/segmented/wire_right.png": {
+      "bytes": 158180,
+      "sha256": "7bfd3e624b8cc64a3ce2c8ce8a9e915fe7b0c6ef63e280cddc726348cccfb3c8"
+    },
+    "reports/automation_batch2_v1/segmented/wire_shots.json": {
+      "bytes": 717,
+      "sha256": "32f262d350c101e04c1fc7e0c4930bce3674ab8e2767735a9e57caf6f696d57f"
+    },
+    "reports/automation_batch2_v1/segmented/wire_three_quarter.png": {
+      "bytes": 174998,
+      "sha256": "a90604ff4a2febf2f503c51a1eb151518394cd9499d81164c45c82ef00fdb489"
+    },
+    "reports/automation_batch2_v1/source_diagnostics.json": {
+      "bytes": 11075,
+      "sha256": "4bfc7730b5b205c20970769d20bf597024cfab15c90c3be81dbb1a88e1ae44fb"
+    },
+    "reports/automation_batch2_v1/tripo_generated.jpg": {
+      "bytes": 124925,
+      "sha256": "c3ced67103e0d537d01fe246bdfead46d12328d7984f0c5a0abcc68545f29174"
+    },
+    "reports/automation_batch2_v1/tripo_saved.jpg": {
+      "bytes": 119712,
+      "sha256": "ee21cca2cbcdf266512ea3c68989f62a51ec280f3987a7e5a39a0ab3769bb3ff"
+    },
+    "reports/automation_batch2_v1/tripo_segmented.jpg": {
+      "bytes": 120538,
+      "sha256": "d190191ad0312aa4912421bf445385828d184aae2044e8e3b0c41543d4eded4c"
+    },
+    "reports/automation_batch2_v1/working/cleanup.json": {
+      "bytes": 476265,
+      "sha256": "612fdd118783987d785e9ec841471af2312318f986c5ce85a17f783e03ca3d2e"
+    },
+    "reports/automation_batch2_v1/working/opposite.png": {
+      "bytes": 1136998,
+      "sha256": "31d63e6e5df43b5da41e21b4f42d7bd67896974c7f9bdb1e2f1b915cda88911b"
+    },
+    "reports/automation_batch2_v1/working/profile.png": {
+      "bytes": 1154511,
+      "sha256": "e143d7864edbc8cde8436e65b5c64d22e79bd9a9c04b5786258d951fd77442d2"
+    },
+    "reports/automation_batch2_v1/working/reimport_qa.json": {
+      "bytes": 43210,
+      "sha256": "2f563bce746b4ec81b76f672a00565acbd9fccb3f5ac267f59f58a79ffc9810b"
+    },
+    "reports/automation_batch2_v1/working/source_qa.json": {
+      "bytes": 42698,
+      "sha256": "92099d0ceec5a822f2c3c413b05ca50adaf242af6b00fc6c25287eca48011d1c"
+    },
+    "reports/automation_batch2_v1/working/three_quarter.png": {
+      "bytes": 1149249,
+      "sha256": "b63a3bd3cb8f46f8194f55f5949f8116fbbe994efd743b7dffac311a20fd9e2a"
+    },
+    "reports/automation_batch2_v1/working/top.png": {
+      "bytes": 1103050,
+      "sha256": "9013f52325f9279a40c82b91ad5782efe1aa80a27282f88e949feb235032bd36"
+    },
+    "reports/automation_batch2_v1/working/verification.json": {
+      "bytes": 217,
+      "sha256": "f61c65de921feacdf4496fa12a19686d8a8bad96f53bc94317d8877f7eee9428"
+    },
+    "reports/automation_batch2_v1/working/wire.png": {
+      "bytes": 1088809,
+      "sha256": "c69bf3840ef1a12650c31cb8e55621c4de504941ecbbf490c98910468bcf6357"
+    },
+    "tools/inspect_automation_batch2_v1.py": {
+      "bytes": 7684,
+      "sha256": "1bd56455bcc6edc4b22c629bad120c551d72505de7a6e3f1536b0c37121f450d"
+    },
+    "tools/package_automation_batch2_v1.py": {
+      "bytes": 13063,
+      "sha256": "6ab64b3d8e7e3aea0ca409b30f445fd76ddc802b27c8d17d83ac6e294a65f784"
+    },
+    "tools/prepare_automation_hound_v1.py": {
+      "bytes": 7636,
+      "sha256": "a525213bd72ecd7587457b39fc1603c61ab4ac226681d42235d61396268530f8"
+    }
+  }
+}

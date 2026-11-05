@@ -1,0 +1,19 @@
+{
+  "capture_fps": 60,
+  "captures": 961,
+  "checks": 962,
+  "failures": [],
+  "metrics": {
+    "native_camera": {
+      "pitch": -30,
+      "resolution": [
+        1280,
+        800
+      ],
+      "size": 10.0192031860352,
+      "yaw": 45
+    }
+  },
+  "passed": true,
+  "scope": "same lighting before/after, latest armour, native camera; prepared assets only"
+}

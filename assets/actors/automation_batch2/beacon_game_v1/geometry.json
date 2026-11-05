@@ -1,0 +1,915 @@
+{
+  "actor": "beacon",
+  "triangles": 4237,
+  "parts": 16,
+  "part_triangles": {
+    "base": 734,
+    "leg.A": 284,
+    "leg.B": 302,
+    "leg.C": 296,
+    "key": 120,
+    "column_lower": 214,
+    "column_upper": 315,
+    "rotor": 934,
+    "lamp": 143,
+    "lamp_mount": 177,
+    "lens": 69,
+    "bell": 213,
+    "hammer": 112,
+    "horn": 170,
+    "antenna": 110,
+    "core": 44
+  },
+  "provenance": [
+    {
+      "source_part": 1,
+      "group": "base",
+      "triangles": 4355
+    },
+    {
+      "source_part": 7,
+      "group": "base",
+      "triangles": 2099
+    },
+    {
+      "source_part": 10,
+      "group": "base",
+      "triangles": 2945
+    },
+    {
+      "source_part": 14,
+      "group": "base",
+      "triangles": 1682
+    },
+    {
+      "source_part": 19,
+      "group": "base",
+      "triangles": 415
+    },
+    {
+      "source_part": 25,
+      "group": "base",
+      "triangles": 461
+    },
+    {
+      "source_part": 26,
+      "group": "base",
+      "triangles": 590
+    },
+    {
+      "source_part": 37,
+      "group": "base",
+      "triangles": 556
+    },
+    {
+      "source_part": 38,
+      "group": "base",
+      "triangles": 529
+    },
+    {
+      "source_part": 44,
+      "group": "base",
+      "triangles": 409
+    },
+    {
+      "source_part": 46,
+      "group": "base",
+      "triangles": 391
+    },
+    {
+      "source_part": 52,
+      "group": "base",
+      "triangles": 264
+    },
+    {
+      "source_part": 53,
+      "group": "base",
+      "triangles": 259
+    },
+    {
+      "source_part": 56,
+      "group": "base",
+      "triangles": 250
+    },
+    {
+      "source_part": 59,
+      "group": "base",
+      "triangles": 215
+    },
+    {
+      "source_part": 61,
+      "group": "base",
+      "triangles": 156
+    },
+    {
+      "source_part": 62,
+      "group": "base",
+      "triangles": 143
+    },
+    {
+      "source_part": 63,
+      "group": "base",
+      "triangles": 129
+    },
+    {
+      "source_part": 64,
+      "group": "base",
+      "triangles": 131
+    },
+    {
+      "source_part": 66,
+      "group": "base",
+      "triangles": 110
+    },
+    {
+      "source_part": 68,
+      "group": "base",
+      "triangles": 109
+    },
+    {
+      "source_part": 70,
+      "group": "base",
+      "triangles": 101
+    },
+    {
+      "source_part": 72,
+      "group": "base",
+      "triangles": 95
+    },
+    {
+      "source_part": 74,
+      "group": "base",
+      "triangles": 92
+    },
+    {
+      "source_part": 75,
+      "group": "base",
+      "triangles": 83
+    },
+    {
+      "source_part": 5,
+      "group": "leg.A",
+      "triangles": 3526
+    },
+    {
+      "source_part": 23,
+      "group": "leg.A",
+      "triangles": 549
+    },
+    {
+      "source_part": 54,
+      "group": "leg.A",
+      "triangles": 258
+    },
+    {
+      "source_part": 55,
+      "group": "leg.A",
+      "triangles": 258
+    },
+    {
+      "source_part": 65,
+      "group": "leg.A",
+      "triangles": 101
+    },
+    {
+      "source_part": 3,
+      "group": "leg.B",
+      "triangles": 2932
+    },
+    {
+      "source_part": 11,
+      "group": "leg.B",
+      "triangles": 1715
+    },
+    {
+      "source_part": 50,
+      "group": "leg.B",
+      "triangles": 315
+    },
+    {
+      "source_part": 58,
+      "group": "leg.B",
+      "triangles": 217
+    },
+    {
+      "source_part": 2,
+      "group": "leg.C",
+      "triangles": 2926
+    },
+    {
+      "source_part": 24,
+      "group": "leg.C",
+      "triangles": 561
+    },
+    {
+      "source_part": 57,
+      "group": "leg.C",
+      "triangles": 248
+    },
+    {
+      "source_part": 60,
+      "group": "leg.C",
+      "triangles": 199
+    },
+    {
+      "source_part": 71,
+      "group": "leg.C",
+      "triangles": 103
+    },
+    {
+      "source_part": 13,
+      "group": "key",
+      "triangles": 660
+    },
+    {
+      "source_part": 18,
+      "group": "key",
+      "triangles": 773
+    },
+    {
+      "source_part": 21,
+      "group": "column_lower",
+      "triangles": 790
+    },
+    {
+      "source_part": 67,
+      "group": "column_lower",
+      "triangles": 114
+    },
+    {
+      "source_part": 12,
+      "group": "column_lower",
+      "triangles": 1367
+    },
+    {
+      "source_part": 20,
+      "group": "column_upper",
+      "triangles": 641
+    },
+    {
+      "source_part": 51,
+      "group": "column_upper",
+      "triangles": 278
+    },
+    {
+      "source_part": 48,
+      "group": "column_upper",
+      "triangles": 377
+    },
+    {
+      "source_part": 41,
+      "group": "column_upper",
+      "triangles": 446
+    },
+    {
+      "source_part": 30,
+      "group": "column_upper",
+      "triangles": 841
+    },
+    {
+      "source_part": 69,
+      "group": "column_upper",
+      "triangles": 101
+    },
+    {
+      "source_part": 0,
+      "group": "rotor",
+      "triangles": 17566
+    },
+    {
+      "source_part": 47,
+      "group": "rotor",
+      "triangles": 398
+    },
+    {
+      "source_part": 4,
+      "group": "rotor",
+      "triangles": 529
+    },
+    {
+      "source_part": 8,
+      "group": "rotor",
+      "triangles": 777
+    },
+    {
+      "source_part": 31,
+      "group": "rotor",
+      "triangles": 764
+    },
+    {
+      "source_part": 32,
+      "group": "rotor",
+      "triangles": 750
+    },
+    {
+      "source_part": 33,
+      "group": "rotor",
+      "triangles": 725
+    },
+    {
+      "source_part": 34,
+      "group": "rotor",
+      "triangles": 623
+    },
+    {
+      "source_part": 35,
+      "group": "rotor",
+      "triangles": 598
+    },
+    {
+      "source_part": 39,
+      "group": "rotor",
+      "triangles": 499
+    },
+    {
+      "source_part": 40,
+      "group": "rotor",
+      "triangles": 486
+    },
+    {
+      "source_part": 43,
+      "group": "rotor",
+      "triangles": 432
+    },
+    {
+      "source_part": 45,
+      "group": "rotor",
+      "triangles": 400
+    },
+    {
+      "source_part": 49,
+      "group": "rotor",
+      "triangles": 353
+    },
+    {
+      "source_part": 9,
+      "group": "lamp",
+      "triangles": 1455
+    },
+    {
+      "source_part": 29,
+      "group": "lamp",
+      "triangles": 1182
+    },
+    {
+      "source_part": 16,
+      "group": "lamp_mount",
+      "triangles": 1071
+    },
+    {
+      "source_part": 22,
+      "group": "lamp_mount",
+      "triangles": 678
+    },
+    {
+      "source_part": 28,
+      "group": "lamp_mount",
+      "triangles": 1466
+    },
+    {
+      "source_part": 36,
+      "group": "lens",
+      "triangles": 586
+    },
+    {
+      "source_part": 27,
+      "group": "bell",
+      "triangles": 3702
+    },
+    {
+      "source_part": 73,
+      "group": "bell",
+      "triangles": 91
+    },
+    {
+      "source_part": 17,
+      "group": "hammer",
+      "triangles": 855
+    },
+    {
+      "source_part": 6,
+      "group": "horn",
+      "triangles": 2039
+    },
+    {
+      "source_part": 42,
+      "group": "horn",
+      "triangles": 440
+    },
+    {
+      "source_part": 15,
+      "group": "antenna",
+      "triangles": 906
+    }
+  ],
+  "repairs": [
+    {
+      "group": "base",
+      "removed_nonmanifold_flaps": [
+        {
+          "area": 7.459586726099587e-08,
+          "center": [
+            0.062196239829063416,
+            0.13948523998260498,
+            0.3255484700202942
+          ]
+        },
+        {
+          "area": 3.2008782113734924e-07,
+          "center": [
+            -0.04840238019824028,
+            -0.1458236277103424,
+            0.3672049939632416
+          ]
+        },
+        {
+          "area": 2.9919604571659875e-07,
+          "center": [
+            -0.04840238019824028,
+            -0.14540019631385803,
+            0.3676017224788666
+          ]
+        },
+        {
+          "area": 7.197289875193746e-08,
+          "center": [
+            0.062097057700157166,
+            0.13935554027557373,
+            0.3247092366218567
+          ]
+        },
+        {
+          "area": 1.4787114821501746e-07,
+          "center": [
+            0.11151361465454102,
+            0.12206351011991501,
+            0.4566596448421478
+          ]
+        },
+        {
+          "area": 1.4915184465280618e-07,
+          "center": [
+            0.11180353164672852,
+            0.12121283262968063,
+            0.4565680921077728
+          ]
+        }
+      ],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "leg.A",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "leg.B",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 19
+    },
+    {
+      "group": "leg.C",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 12
+    },
+    {
+      "group": "key",
+      "removed_nonmanifold_flaps": [
+        {
+          "area": 1.640264173374817e-07,
+          "center": [
+            -0.13674311339855194,
+            0.07078637182712555,
+            0.4472602307796478
+          ]
+        },
+        {
+          "area": 1.6230231381086924e-07,
+          "center": [
+            -0.13759379088878632,
+            0.0705956369638443,
+            0.4478324353694916
+          ]
+        }
+      ],
+      "new_cap_triangles": 12
+    },
+    {
+      "group": "column_lower",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "column_upper",
+      "removed_nonmanifold_flaps": [
+        {
+          "area": 2.650420185545954e-07,
+          "center": [
+            0.0019745491445064545,
+            0.039482951164245605,
+            1.0219366550445557
+          ]
+        },
+        {
+          "area": 2.6212370585199096e-07,
+          "center": [
+            0.0016951225697994232,
+            0.040325045585632324,
+            1.0223562717437744
+          ]
+        }
+      ],
+      "new_cap_triangles": 33
+    },
+    {
+      "group": "rotor",
+      "removed_nonmanifold_flaps": [
+        {
+          "area": 2.0553206070417218e-07,
+          "center": [
+            0.03791091591119766,
+            0.07567489147186279,
+            1.1471731662750244
+          ]
+        },
+        {
+          "area": 2.1249314841043088e-07,
+          "center": [
+            -0.14663845300674438,
+            -0.028430094942450523,
+            1.2779715061187744
+          ]
+        },
+        {
+          "area": 4.5163017148297513e-07,
+          "center": [
+            0.03972003981471062,
+            0.1249321699142456,
+            1.3349326848983765
+          ]
+        },
+        {
+          "area": 2.72193972250534e-07,
+          "center": [
+            0.09789703786373138,
+            0.06373678147792816,
+            1.1596243381500244
+          ]
+        },
+        {
+          "area": 4.236574966398621e-07,
+          "center": [
+            0.03972003981471062,
+            0.12535560131072998,
+            1.3356651067733765
+          ]
+        },
+        {
+          "area": 2.2067737859288172e-07,
+          "center": [
+            -0.14621502161026,
+            -0.028430094942450523,
+            1.277834177017212
+          ]
+        },
+        {
+          "area": 9.568437775442362e-08,
+          "center": [
+            -0.04532269760966301,
+            -0.10949721932411194,
+            1.2282569408416748
+          ]
+        },
+        {
+          "area": 3.0469689704659686e-07,
+          "center": [
+            -0.09576565027236938,
+            -0.06653130054473877,
+            1.2510855197906494
+          ]
+        },
+        {
+          "area": 3.108651185357303e-07,
+          "center": [
+            -0.09618908166885376,
+            -0.0656806230545044,
+            1.2515738010406494
+          ]
+        },
+        {
+          "area": 2.4330597625521477e-07,
+          "center": [
+            -0.08820870518684387,
+            0.0799034982919693,
+            1.243318796157837
+          ]
+        },
+        {
+          "area": 2.4679343368916307e-07,
+          "center": [
+            -0.08905938267707825,
+            0.07957352697849274,
+            1.242983102798462
+          ]
+        },
+        {
+          "area": 3.1985373993848043e-07,
+          "center": [
+            -0.044572412967681885,
+            -0.1377326250076294,
+            1.2563955783843994
+          ]
+        },
+        {
+          "area": 3.3377071417817206e-07,
+          "center": [
+            -0.044572412967681885,
+            -0.1381598711013794,
+            1.255922555923462
+          ]
+        },
+        {
+          "area": 2.7569839744501223e-07,
+          "center": [
+            0.09816788136959076,
+            0.06458745896816254,
+            1.1592276096343994
+          ]
+        },
+        {
+          "area": 1.6595336660429894e-07,
+          "center": [
+            -0.048188745975494385,
+            -0.10926355421543121,
+            1.2268850803375244
+          ]
+        }
+      ],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "lamp",
+      "removed_nonmanifold_flaps": [
+        {
+          "area": 2.200912376792985e-07,
+          "center": [
+            0.03833639994263649,
+            0.0756615400314331,
+            1.1479361057281494
+          ]
+        },
+        {
+          "area": 2.9471584639395587e-07,
+          "center": [
+            -0.057164713740348816,
+            0.037282831966876984,
+            1.383348822593689
+          ]
+        },
+        {
+          "area": 2.939061403139931e-07,
+          "center": [
+            -0.056455180048942566,
+            0.037841685116291046,
+            1.383776068687439
+          ]
+        },
+        {
+          "area": 2.357618740234102e-07,
+          "center": [
+            0.037272170186042786,
+            -0.08920588344335556,
+            1.310457468032837
+          ]
+        },
+        {
+          "area": 2.3520171055224637e-07,
+          "center": [
+            0.03769750893115997,
+            -0.08898653835058212,
+            1.310457468032837
+          ]
+        },
+        {
+          "area": 4.847283108233569e-08,
+          "center": [
+            -0.07329323887825012,
+            0.07429780066013336,
+            1.212129831314087
+          ]
+        },
+        {
+          "area": 4.968631728274886e-08,
+          "center": [
+            -0.07321694493293762,
+            0.0743645578622818,
+            1.212129831314087
+          ]
+        }
+      ],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "lamp_mount",
+      "removed_nonmanifold_flaps": [
+        {
+          "area": 2.463863779667008e-07,
+          "center": [
+            0.00725884735584259,
+            -0.06660570204257965,
+            1.0905096530914307
+          ]
+        },
+        {
+          "area": 2.4694261924196326e-07,
+          "center": [
+            0.007685139775276184,
+            -0.0660487562417984,
+            1.0902273654937744
+          ]
+        }
+      ],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "lens",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "bell",
+      "removed_nonmanifold_flaps": [
+        {
+          "area": 2.0917921972340991e-07,
+          "center": [
+            0.2668137550354004,
+            -0.023897334933280945,
+            0.8560127019882202
+          ]
+        },
+        {
+          "area": 2.2883260442085884e-07,
+          "center": [
+            0.19351431727409363,
+            -0.05722920224070549,
+            0.8251460790634155
+          ]
+        },
+        {
+          "area": 2.0861239136138465e-07,
+          "center": [
+            0.2664933204650879,
+            -0.023647472262382507,
+            0.8568633794784546
+          ]
+        },
+        {
+          "area": 2.996933119447931e-07,
+          "center": [
+            0.2473587989807129,
+            -0.00043890735832974315,
+            0.9677451848983765
+          ]
+        },
+        {
+          "area": 2.9780065347040363e-07,
+          "center": [
+            0.24774789810180664,
+            -0.0008647229406051338,
+            0.9670737981796265
+          ]
+        },
+        {
+          "area": 2.253249959949244e-07,
+          "center": [
+            0.19308707118034363,
+            -0.05703083798289299,
+            0.8251460790634155
+          ]
+        }
+      ],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "hammer",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 13
+    },
+    {
+      "group": "horn",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0
+    },
+    {
+      "group": "antenna",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 11
+    },
+    {
+      "group": "core",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0
+    }
+  ],
+  "source_sha256": "7e4495a7672e9dcebca205f9dfa0dd4b59b6b13111e26bd4ac5dccdf0b0c76b5",
+  "source_unchanged": true,
+  "bake": "exploded semantic pairs, color/normal/ORM 1024, emission 128; ORM R=1 (no AO bake)",
+  "glow_groups": [
+    "lamp",
+    "core"
+  ],
+  "static_fit": "1.5 m height + 4 mm support clearance; Z rotation pi; source XY centre [0.026,0.001]; legs progressively expanded 48% from their hinge",
+  "leg_pivots": {
+    "leg.A": [
+      0.16349999606609344,
+      0.032999999821186066,
+      0.32199999690055847
+    ],
+    "leg.B": [
+      -0.0885000005364418,
+      0.1379999965429306,
+      0.328000009059906
+    ],
+    "leg.C": [
+      -0.08699999749660492,
+      -0.16949999332427979,
+      0.32199999690055847
+    ]
+  },
+  "pivots": {
+    "base": [
+      -0.0,
+      -0.0,
+      0.33399999141693115
+    ],
+    "key": [
+      -0.1769999861717224,
+      0.03449999913573265,
+      0.42100000381469727
+    ],
+    "column_lower": [
+      -0.0,
+      -0.0,
+      0.5139999985694885
+    ],
+    "column_upper": [
+      -0.0,
+      -0.0,
+      0.7540000081062317
+    ],
+    "lamp_mount": [
+      -0.0,
+      -0.0,
+      1.059999942779541
+    ],
+    "rotor": [
+      -0.0,
+      -0.0,
+      1.2714999914169312
+    ],
+    "lamp": [
+      -0.0,
+      -0.0,
+      1.2714999914169312
+    ],
+    "lens": [
+      -0.029999999329447746,
+      0.05549999326467514,
+      1.0735000371932983
+    ],
+    "core": [
+      -0.035999998450279236,
+      0.08699999749660492,
+      1.0749999284744263
+    ],
+    "bell": [
+      0.22350001335144043,
+      0.006000000052154064,
+      0.9880000352859497
+    ],
+    "hammer": [
+      0.06450000405311584,
+      -0.0,
+      0.8005000352859497
+    ],
+    "horn": [
+      -0.07499999552965164,
+      -0.0,
+      0.9909999966621399
+    ],
+    "antenna": [
+      -0.11550000309944153,
+      -0.0,
+      1.1334999799728394
+    ]
+  },
+  "mechanism": {
+    "upper_column_retraction_m": 0.2,
+    "rotor_axis": "Z",
+    "hammer_source_pivot": [
+      -0.017,
+      0.001,
+      0.531
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-05",
+  "provider": "Tripo Studio",
+  "model_id": "68f29497-3b38-4142-b5f9-861b8b702e14",
+  "model": "H3.1 HD",
+  "private": true,
+  "target_triangles": 80000,
+  "pbr": true,
+  "texture_resolution": 2048,
+  "ultra": false,
+  "ai_completion": false,
+  "segmentation": "Fine, post-generation",
+  "generation_credits": 30,
+  "segmentation_credits": 40,
+  "total_credits": 70,
+  "source_hashes": {
+    "beacon_raw.glb": "613ca6aff0f06a03b3c1688d18b818c91bc3707cdf449e8c0766fdcea64355dc",
+    "beacon_segmented.glb": "aad366d00c070d8320b8bed83a0986be56e66db7a8872216fde3f3d95ce9e39f"
+  },
+  "stage": "immutable high-density sources; game derivative separate",
+  "input": "../concept_v1/lure_beacon_v1.png"
+}

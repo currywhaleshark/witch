@@ -1,0 +1,17 @@
+{
+  "previous_source": "assets\\actors\\automation_batch2\\hound_game_v2",
+  "changed_vertex_groups": [
+    "fore_piston_rod.L",
+    "fore_piston_rod.R",
+    "hind_piston_case.L",
+    "hind_piston_case.R",
+    "hind_piston_rod.L",
+    "hind_piston_rod.R"
+  ],
+  "changed_vertices": 52,
+  "maximum_rest_vertex_delta_m": 0.017901157559880625,
+  "triangles": 6795,
+  "uv_topology_weights_materials_preserved": true,
+  "changed_clips": "run; changed piston parts receive death floor support only",
+  "previous_files_untouched": true
+}

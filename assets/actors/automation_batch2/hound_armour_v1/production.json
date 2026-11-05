@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-05",
+  "stage": "prepared art review candidate",
+  "actor": "hound_armour",
+  "triangles": 1388,
+  "rigid_groups": 4,
+  "bones": 37,
+  "surface_count": 1,
+  "clips": {
+    "spawn": {
+      "seconds": 0.4,
+      "loop": false
+    },
+    "idle": {
+      "seconds": 1.0,
+      "loop": true
+    },
+    "run": {
+      "seconds": 0.5,
+      "loop": true
+    },
+    "bite": {
+      "seconds": 0.6,
+      "loop": false
+    },
+    "hit": {
+      "seconds": 0.25,
+      "loop": false
+    },
+    "death": {
+      "seconds": 1.2,
+      "loop": false
+    }
+  },
+  "runtime_checks": 31375,
+  "gpu_captures": 256,
+  "source_and_reimport_qa_pass": true,
+  "parity": {
+    "passed": true,
+    "compared_bone_origins": 9509,
+    "maximum_error_m": 6.600396822791254e-07
+  },
+  "remaining_warnings": {
+    "source": [
+      "Hound_Rigid_Surface: duplicate verts=22 loose verts=0",
+      "hound_armour_Rigid_Surface: duplicate verts=56 loose verts=0",
+      "hidden back-to-back faces: hound_armour_Rigid_Surface (60 pairs) - delete to save tris",
+      "hidden back-to-back faces: Hound_Rigid_Surface (2 pairs) - delete to save tris"
+    ],
+    "reimport": [
+      "hound_armour_Rigid_Surface: duplicate verts=1386 loose verts=0",
+      "Hound_Rigid_Surface: duplicate verts=4988 loose verts=0",
+      "hidden back-to-back faces: hound_armour_Rigid_Surface (60 pairs) - delete to save tris",
+      "hidden back-to-back faces: Hound_Rigid_Surface (7 pairs) - delete to save tris"
+    ]
+  },
+  "warning_adjudication": "UV/normal seams and rigid mating vertices stay separate; hidden opposing cap/panel faces and internal bearings are intentional. Source torso/shell boundaries remain open; no watertight or arbitrary contact claim. Rest support clearance is intentional.",
+  "textures": "shared 1024 color/OpenGL normal/ORM, R=1 without AO; 128 emission for base actors; armour has one opaque material and no runtime glow",
+  "source_blend": "hound_armour_game_v1.blend",
+  "source_sha256": "7feb15507b7e1afa25880c4be3a48ff3de06cab36074e24b8a31b897f92eee05",
+  "runtime_glb": "hound_armour_v1.glb",
+  "runtime_sha256": "2070972b617069a542af0c1fff424ef4429e7cefea7119c47564ec28d41b9f61",
+  "limitations": [
+    "Prepared assets and review helpers only; no new targeting, damage, lifetime, resource or node-selection integration.",
+    "Baked destruction starts from its authored initial pose; arbitrary interruption/blend, inter-part/terrain collision and final performance are not certified.",
+    "Optional 1–3 number decals remain a future instance accessory; base meshes are reused without them.",
+    "Full compatible skeleton is duplicated for supplemental armour; further skeleton/instance optimization is deferred until gameplay integration."
+  ]
+}

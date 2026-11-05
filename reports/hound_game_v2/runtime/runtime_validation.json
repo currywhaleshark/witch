@@ -1,0 +1,85 @@
+{
+  "captures": 312,
+  "checks": 36509,
+  "failures": [],
+  "metrics": {
+    "bones": 37,
+    "exported_vertices": 10640,
+    "floors": {
+      "bite": {
+        "minimum_y": 0.00152149051427841,
+        "paw_minimum_y": 0.00152149051427841,
+        "worst": {
+          "bone": "hind_paw.R",
+          "bone_origin": "(-0.141608, 0.038658, 0.444397)",
+          "point": "(-0.145738, 0.001521, 0.371054)",
+          "time": 0.273103459128018
+        }
+      },
+      "death": {
+        "minimum_y": 0.0039561465382576,
+        "paw_minimum_y": 0.0039561465382576,
+        "worst": {
+          "bone": "fore_paw.L",
+          "bone_origin": "(0.126564, 0.061735, -0.349746)",
+          "point": "(0.138643, 0.003956, -0.432672)",
+          "time": 0.0207612464997183
+        }
+      },
+      "hit": {
+        "minimum_y": 0.00151011347770691,
+        "paw_minimum_y": 0.00151011347770691,
+        "worst": {
+          "bone": "fore_paw.L",
+          "bone_origin": "(0.126728, 0.059294, -0.35136)",
+          "point": "(0.13881, 0.00151, -0.434282)",
+          "time": 0.0208333333333333
+        }
+      },
+      "idle": {
+        "minimum_y": 0.00399359315633774,
+        "paw_minimum_y": 0.00399359315633774,
+        "worst": {
+          "bone": "fore_paw.L",
+          "bone_origin": "(0.126666, 0.061772, -0.349707)",
+          "point": "(0.138744, 0.003994, -0.432634)",
+          "time": 0.479166666666667
+        }
+      },
+      "run": {
+        "minimum_y": 0.000523526221513748,
+        "paw_minimum_y": 0.000523526221513748,
+        "worst": {
+          "bone": "hind_paw.L",
+          "bone_origin": "(0.171077, 0.031248, 0.338096)",
+          "point": "(0.195856, 0.000524, 0.309074)",
+          "time": 0.354166666666667
+        }
+      },
+      "spawn": {
+        "minimum_y": 0.00326952151954174,
+        "paw_minimum_y": 0.00326952151954174,
+        "worst": {
+          "bone": "hind_paw.L",
+          "bone_origin": "(0.17048, 0.033902, 0.247436)",
+          "point": "(0.195228, 0.00327, 0.218291)",
+          "time": 0.272164952509182
+        }
+      }
+    },
+    "native_camera": {
+      "pitch": -30,
+      "resolution": [
+        1280,
+        800
+      ],
+      "shared_studio_lighting": true,
+      "size": 10.0192031860352,
+      "yaw": 45
+    },
+    "surfaces": 2,
+    "triangles": 6795
+  },
+  "passed": true,
+  "scope": "prepared art and playback; no gameplay integration"
+}

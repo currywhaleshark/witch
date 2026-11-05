@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "poses": 404,
+  "maximum_matrix_error": 8.344650268554688e-07,
+  "loops": {
+    "idle": 2.3404740545629465e-07,
+    "walk": 2.2702865010160167e-07
+  },
+  "floors": {
+    "assemble": {
+      "min_z": 0.007999562164150542,
+      "worst": {
+        "time": 0.3416666666666667,
+        "part": "foot.R"
+      }
+    },
+    "idle": {
+      "min_z": 0.007998372711703894,
+      "worst": {
+        "time": 1.8916666666666666,
+        "part": "foot.R"
+      }
+    },
+    "walk": {
+      "min_z": 0.004357403038043051,
+      "worst": {
+        "time": 0.025,
+        "part": "foot.L"
+      }
+    },
+    "slam": {
+      "min_z": 0.006285871145664146,
+      "worst": {
+        "time": 0.39166666666666666,
+        "part": "foot.R"
+      }
+    },
+    "hit": {
+      "min_z": 0.007171432754983442,
+      "worst": {
+        "time": 0.016666666666666666,
+        "part": "foot.R"
+      }
+    },
+    "death": {
+      "min_z": 0.0049996914783871915,
+      "worst": {
+        "time": 1.0833333333333333,
+        "part": "core"
+      }
+    }
+  },
+  "triangles": 15943,
+  "parts": 27,
+  "bones": 33,
+  "warnings_adjudication": "Source shells retain open boundaries; seam/contact vertices, hidden opposing mating faces and intentionally enclosed joint bearings are retained. Positive rest clearance is intentional. No arbitrary inter-part/live collision claim."
+}

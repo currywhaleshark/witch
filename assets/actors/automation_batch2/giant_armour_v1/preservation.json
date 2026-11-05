@@ -1,0 +1,12 @@
+{
+  "base_source_sha256": "c607378bc7821c97c56840f41b3d385bae030f37023d36859f68850f03449e10",
+  "base_mesh_positions_sha256": "6336abd287f902dc1332623079cfcbe088c29d9a95b75b9ecfdf90f04331548f",
+  "base_mesh_unchanged": true,
+  "bones_rests_actions_reused": true,
+  "extra_triangles": 1256,
+  "rigid_groups": 6,
+  "texture_set": "1K color/normal/ORM + unused 128 emission retained only in source",
+  "death_armour_only": true,
+  "living_actions_exact": true,
+  "death_detach_seconds": 0.22
+}

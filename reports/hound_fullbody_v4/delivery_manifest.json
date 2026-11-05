@@ -1,0 +1,350 @@
+{
+  "task": "hound whole-body gallop v4",
+  "stage": "prepared art; no main-game integration or user art selection",
+  "assets": {
+    "hound": "hound_game_v4 / runtime hound_v4",
+    "armour": "hound_armour_v3",
+    "giant": "unchanged giant_v2 + giant_armour_v2"
+  },
+  "source_poses": 781,
+  "godot_runtime_checks": 49769,
+  "independent_motion_checks": 24559,
+  "gpu_captures": 721,
+  "godot_pose_parity": {
+    "hound": {
+      "passed": true,
+      "bone_origins": 12321,
+      "maximum_error_m": 1.4348541292468675e-06
+    },
+    "hound_armour": {
+      "passed": true,
+      "bone_origins": 16576,
+      "maximum_error_m": 1.4348541292468675e-06
+    }
+  },
+  "previous_asset_files_preserved": 35,
+  "motion_metrics": {
+    "topology_uv_weights_materials_rest_exact": true,
+    "other_geometry_normals_exact": true,
+    "previous_nonrun_clips_max_matrix_error": 5.960464477539062e-07,
+    "source_fullbody_rotation_max_matrix_error": 8.344650268554688e-07,
+    "old_back_height_range_m": [
+      0.3930213451385498,
+      0.4301442503929138
+    ],
+    "new_back_height_range_m": [
+      0.42268450501025023,
+      0.519889390166796
+    ],
+    "old_elbow_above_back_max_m": 0.0015231072902679443,
+    "new_elbow_above_back_max_m": -0.11212654541501854,
+    "new_outer_elbow_above_back_max_m": -0.08540748089830352,
+    "minimum_floor_m": 0.004538922061565698,
+    "stance_world_drift_xyz_m": {
+      "('fore.L', 0)": [
+        8.38935375213623e-06,
+        2.3752450942993164e-05,
+        8.671730756759644e-05
+      ],
+      "('fore.R', 0)": [
+        2.1316111087799072e-05,
+        3.820657730102539e-05,
+        0.00011265277862548828
+      ],
+      "('hind.L', 0)": [
+        6.541609764099121e-06,
+        4.792213439941406e-05,
+        0.00012295693159103394
+      ],
+      "('hind.R', 0)": [
+        4.217028617858887e-06,
+        6.389617919921875e-05,
+        0.00016364455223083496
+      ],
+      "('fore.L', 1)": [
+        8.381903171539307e-06,
+        2.3603439331054688e-05,
+        8.670240640640259e-05
+      ],
+      "('fore.R', 1)": [
+        2.1319836378097534e-05,
+        3.838539123535156e-05,
+        0.00011265277862548828
+      ],
+      "('hind.L', 1)": [
+        6.541609764099121e-06,
+        4.792213439941406e-05,
+        0.0001229606568813324
+      ],
+      "('hind.R', 1)": [
+        4.217028617858887e-06,
+        6.389617919921875e-05,
+        0.00016367435455322266
+      ]
+    },
+    "max_joint_error_m": 1.228781230931777e-07,
+    "pistons": {
+      "fore.R": {
+        "min_overlap_m": 0.007685349261744107,
+        "min_rear_clearance_m": 0.009243646313136358,
+        "max_anchor_error_m": 1.0771179418862582e-07
+      },
+      "fore.L": {
+        "min_overlap_m": 0.009480019871532935,
+        "min_rear_clearance_m": 0.00819774668582865,
+        "max_anchor_error_m": 1.5526016044746866e-07
+      },
+      "hind.R": {
+        "min_overlap_m": 0.01610731569150338,
+        "min_rear_clearance_m": 0.0019535613940546703,
+        "max_anchor_error_m": 1.1944189326376765e-07
+      },
+      "hind.L": {
+        "min_overlap_m": 0.026941675409084334,
+        "min_rear_clearance_m": 0.010434667774614728,
+        "max_anchor_error_m": 1.2377834115800373e-07
+      }
+    },
+    "dense_hz": 1920,
+    "distance_per_clip_m": 2.7547715068852785,
+    "reference_playback_speed": 1.1797711686348384
+  },
+  "loop_velocity_ratio_max": 0.07606966244369676,
+  "videos": {
+    "side": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "front": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "rear": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "armour": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "native": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "travel": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 800,
+          "r_frame_rate": "60/1",
+          "nb_frames": "120"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    }
+  },
+  "qa_warnings": {
+    "hound/source_qa": [
+      "Hound_Rigid_Surface: duplicate verts=22 loose verts=0",
+      "hidden back-to-back faces: Hound_Rigid_Surface (2 pairs) - delete to save tris"
+    ],
+    "hound/reimport_qa": [
+      "Hound_Rigid_Surface: duplicate verts=4988 loose verts=0",
+      "hidden back-to-back faces: Hound_Rigid_Surface (7 pairs) - delete to save tris"
+    ],
+    "hound_armour/source_qa": [
+      "Hound_Rigid_Surface: duplicate verts=22 loose verts=0",
+      "hound_armour_Rigid_Surface: duplicate verts=56 loose verts=0",
+      "hidden back-to-back faces: hound_armour_Rigid_Surface (60 pairs) - delete to save tris",
+      "hidden back-to-back faces: Hound_Rigid_Surface (2 pairs) - delete to save tris"
+    ],
+    "hound_armour/reimport_qa": [
+      "hound_armour_Rigid_Surface: duplicate verts=1386 loose verts=0",
+      "Hound_Rigid_Surface: duplicate verts=4988 loose verts=0",
+      "hidden back-to-back faces: hound_armour_Rigid_Surface (60 pairs) - delete to save tris",
+      "hidden back-to-back faces: Hound_Rigid_Surface (7 pairs) - delete to save tris"
+    ]
+  },
+  "warning_adjudication": "Retained source UV/normal seams and hidden mating caps/internal bearings; exported loop vertices split on UV/normal boundaries. No same-facing visible duplicate surfaces were found. Floor clearance and opaque rigid materials remain intentional.",
+  "visual_review": {
+    "inspected": "material side/front/rear at multiple phases, heavy armour, native camera, parts colors and wireframe",
+    "observations": "higher cyclic trunk, head and pelvis follow original action, recovered elbow shell stays below back, no visible part detachment in sampled poses"
+  },
+  "environment": "Blender 5.1.1 isolated CLI because MCP handshake unavailable; Godot 4.6.2 gl_compatibility RTX2060; user:// shader-cache creation diagnostic remains; no model/load/playback errors.",
+  "limits": [
+    "fullbody orientations copied; limb proportions/contact height/recovery adapted, not exact wolf geometry",
+    "prepared art only, integration must use updated stride/playback rate",
+    "no arbitrary pose blending/interruption/armour collision or live debris physics",
+    "no final performance or user motion selection"
+  ],
+  "source_receipt": {
+    "provider": "Quaternius",
+    "official_page": "https://quaternius.com/packs/ultimateanimatedanimals.html",
+    "license": "CC0 1.0",
+    "action": "Wolf/Gallop",
+    "unchanged_source_sha256": "fe31c3829dd2a8b9dfedb2e5cb656939a1d525ebd535a62434d2d25a4399cb9e"
+  },
+  "files": {
+    "AGENTS.md": "25c4ad333f5c17325ebbc19e54c9e5b0765fe21610dacfaf2a12e1c064ec8676",
+    "assets/actors/automation_batch2/ART_REQUEST.md": "316d2920281746ba1b41d36bacf31cce3a1a7e73f644a56f026546ebf8951acd",
+    "assets/actors/automation_batch2/catalog.json": "1514d08bb693d3a8e656f6fe76a6c607a1706e0f20df448b075dafac8923369a",
+    "assets/actors/automation_batch2/hound_armour_v3/.gitignore": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87",
+    "assets/actors/automation_batch2/hound_armour_v3/animation_samples.json.gz": "b9ee830eaf7469c74bbc2c5dbf56a72b327f6d6d3dac6579be5e3fa72ca76817",
+    "assets/actors/automation_batch2/hound_armour_v3/hound_armour_game_v3.blend": "ce9758de37da0f0e9e8e6bca78486967e7627e61e87f25bc0b2af467f3ab0cc1",
+    "assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3.glb": "6be9552947211b2eb04db47e2be80b539f080ef0cd4713964ba579038011e58b",
+    "assets/actors/automation_batch2/hound_armour_v3/parts.json": "05e36f2f2bca70351f95c20cb4440d67e9a6fcbfea0ac1865d7d52f232f3fcaa",
+    "assets/actors/automation_batch2/hound_armour_v3/preservation.json": "b6bd3576f7c50152aecaf51a54a715765288e1b968efe9e513cef99a6eeae0ca",
+    "assets/actors/automation_batch2/hound_armour_v3/README.md": "0a7b3445416aa9f1c054acf1c7e1f003794823c2a06b9ef7401306eb91f206fc",
+    "assets/actors/automation_batch2/hound_armour_v3/rig.json": "1f1cf6cd0af3883bf209d2e25cebbc69835d29d4478f380f4970beae55fc0244",
+    "assets/actors/automation_batch2/hound_game_v4/.gitignore": "a1cdfb7e82a857b376c046deccba6e148298c1166bc0fddd1e0d4b625d9d9a87",
+    "assets/actors/automation_batch2/hound_game_v4/animation_samples.json.gz": "71832b7bcd8b8cd40bf4308a5d6a12b7004709a22d5de45aa77b64f8b8c16365",
+    "assets/actors/automation_batch2/hound_game_v4/geometry.json": "b98a9d8302a856e504b1c188d5857ddde44d2e7dfc527486aaf8a4c38ceb7444",
+    "assets/actors/automation_batch2/hound_game_v4/hound_game_v4.blend": "d1d7a3b9fbb3be8fbf31020bde6adfccec3d3bd9acffd74897cb167bfde5203a",
+    "assets/actors/automation_batch2/hound_game_v4/hound_v4.glb": "bf0a077e7ce5eb70c8d38638d591c3bafeac9ec03acee311ec017d855066c6d3",
+    "assets/actors/automation_batch2/hound_game_v4/parts.json": "58db7ec7e47f55070866301cac25a823c852abf20bfd750891887358fd203278",
+    "assets/actors/automation_batch2/hound_game_v4/preservation.json": "7b6b384c7cb280980466a4afbf7ac2eb69d76da7bcb353476e17015429af1c0e",
+    "assets/actors/automation_batch2/hound_game_v4/README.md": "e3f665df1f6a34a89cb13a6e055ecd0f78b4d75192b761839bbb9ba5524cd75e",
+    "assets/actors/automation_batch2/hound_game_v4/rig.json": "094d6a043037139683cb1f0f0695705c12e06d5be4333c1921516aa15593f2eb",
+    "assets/actors/automation_batch2/motion_sources/quaternius/License.txt": "256bf3c521d10dd09071855b8784859b0131196d623ae3bc3239787e32a2703f",
+    "assets/actors/automation_batch2/motion_sources/quaternius/README.md": "89547e82e73e645fc3dbf463790fdb8aeea489aecf2df09bc0e85a331f06f3b0",
+    "assets/actors/automation_batch2/motion_sources/quaternius/Wolf.blend": "fe31c3829dd2a8b9dfedb2e5cb656939a1d525ebd535a62434d2d25a4399cb9e",
+    "assets/actors/automation_batch2/motion_sources/quaternius/wolf_gallop_samples.json.gz": "bd23e51cbd32f35c57130d34bdcc1008accbbebc5408936e0381e78062e898aa",
+    "assets/actors/automation_batch2/README.md": "a3df23bc6234d30ab70d151358adb2972ce5de3164501566b9438e7c131e1067",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3.glb": "6be9552947211b2eb04db47e2be80b539f080ef0cd4713964ba579038011e58b",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3.glb.import": "73a32ab14bbdac5c4273c9fb399a904b5ab39a98fe219663cfff20e9067e616a",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3_hound_armour_color.png": "5740ca4deb1e91a8d45ecc037fba12fa7dd0e67b86891ad91ddce52eaf371927",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3_hound_armour_color.png.import": "863b86f1c81542c8b06b7c8a1de2334dec239c95185c619467d935f210765128",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3_hound_armour_normal.png": "d94e475500ffc0e292bb65118d899182736682398f0d7215bc536bfa90d63d56",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3_hound_armour_normal.png.import": "d44233c344822acf9d9f13c218ded4005286195540510f57ec8cfc4988cf2d88",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3_hound_armour_orm.png": "b1c7a51175cc1f88205969795b9ae24d239b5e69020978077176bed9ca22d17f",
+    "game/assets/actors/automation_batch2/hound_armour_v3/hound_armour_v3_hound_armour_orm.png.import": "e001cb134ebd917ff41adc45d79410fe633137ddea891ef36b5ad6ed03d3631d",
+    "game/assets/actors/automation_batch2/hound_armour_v3/import_exact_animation.gd": "5efe7220d8629d1d5e48a494ff18757ca7d8847ad4245cd0ae2baf764c3bf8e8",
+    "game/assets/actors/automation_batch2/hound_armour_v3/import_exact_animation.gd.uid": "973f1df6a3dce8c78b0f9a794099c8a2e826fb9c266758780f74072c12a71015",
+    "game/assets/actors/automation_batch2/hound_armour_v3/parts.json": "05e36f2f2bca70351f95c20cb4440d67e9a6fcbfea0ac1865d7d52f232f3fcaa",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4.glb": "bf0a077e7ce5eb70c8d38638d591c3bafeac9ec03acee311ec017d855066c6d3",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4.glb.import": "6a08ff18968979fee29291d179916a89a042df3748fb7d414f2542c12cdf010d",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4_hound_color.png": "4a55b677c2bc3ff3cb6f9fd6d726db5eb3624797ff50fbf246cc15035b6c703b",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4_hound_color.png.import": "c7fb707f7749e714557a5ff765962b495a60cd51e727765b5473d1fe4cdf59c2",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4_hound_emission.png": "6717d46aaab7f676886949ad76eec9188697a8e6aee05f4f1403a692e99e296b",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4_hound_emission.png.import": "24e6969b28705f9922f9b190ac0fa6e7fb7e96ec133173dca12623064be23a8b",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4_hound_normal.png": "48692a6eb1deb1aef8380f67e71a790a4f4dff1c8afdfe055b7d7c63210190f7",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4_hound_normal.png.import": "48f6144e755f87e370920a7d0df1e2055793d2eaef460123d530805a984ba6db",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4_hound_orm.png": "2fc7debdf9b70ddfbdc4262b35875593530c99e13fd9b7f47af3c15bea23d2d2",
+    "game/assets/actors/automation_batch2/hound_v4/hound_v4_hound_orm.png.import": "dab41a7312080cff3980888a35db3cfebf754225489d6a631ef91d83506d15c4",
+    "game/assets/actors/automation_batch2/hound_v4/import_exact_animation.gd": "5efe7220d8629d1d5e48a494ff18757ca7d8847ad4245cd0ae2baf764c3bf8e8",
+    "game/assets/actors/automation_batch2/hound_v4/import_exact_animation.gd.uid": "355a254267e534059f948d65d5e800585c1d2124ab9bf783c18a704248ee54e1",
+    "game/assets/actors/automation_batch2/hound_v4/parts.json": "58db7ec7e47f55070866301cac25a823c852abf20bfd750891887358fd203278",
+    "game/tests/helpers/automation_batch2_visual.gd": "4e6ac2bebed170585a0c3a03001891093079e019d7d91cb7ebd97be895cb6175",
+    "game/tests/review_automation_actor_v1.gd": "2fb62fb4510003344e10d17594f2f005e4c021c0256f80cf50880556c7543c8f",
+    "game/tests/review_automation_batch2_complete_v1.gd": "22dfa1e2d8b38a654df27a1ad88cd411af7e3c6c38ecf09fce911796c4a82cce",
+    "game/tests/review_hound_fullbody_v4.gd": "cfb7d3415bf54e799c2a3d5ec409c87cc84fb6924779ce2be92b19cc0e8aebc5",
+    "reports/hound_fullbody_v4/.gitignore": "8c56fd1bd08cc3c3daa2952c1ebf9a211cc06d76d9ccb1a48449e0178f07cfe6",
+    "reports/hound_fullbody_v4/capture_receipt.json": "d570a66a7a15341baaf77702315a9b6c92c7d1bd70509c3d1a07e6ae5e726c7e",
+    "reports/hound_fullbody_v4/comparison_poses.jpg": "9f6f81ff5de9fc5f704f805163bf9814734b94c3a0ee7e7d82f3a32e45ef45cc",
+    "reports/hound_fullbody_v4/hound/geometry/floor_diagnostic.json": "023a36e15cbbe619a738b13ede886e3c54b26b4778a1066ea2ff907db898d356",
+    "reports/hound_fullbody_v4/hound/retarget_analysis.json": "045ebb51069edd2770f23d19d525925df2d3807cf4370e9a1de63045c682979f",
+    "reports/hound_fullbody_v4/hound/runtime/runtime_validation.json": "694eb5db198fa3dc921671a307be5e24e62524ca18ac1e894b5813cde58b7285",
+    "reports/hound_fullbody_v4/hound/validation/floors.json": "a506b75f020c46c05d747d20769fb28fd043b05f81097b2407c5350acda70f9c",
+    "reports/hound_fullbody_v4/hound/validation/godot_pose_parity.json": "43a6eb456c21100cae14b0cced5b61ea2bd15dad5ac9d278c561f9b66d340aff",
+    "reports/hound_fullbody_v4/hound/validation/matrix_diagnostic.json": "fe275ec544f63a040f26a2f58b3780732814e65be37561c5d3584779d98cf720",
+    "reports/hound_fullbody_v4/hound/validation/reimport.json": "b1a7963c2202433c4007d0a1fe72cff5da72e880ffeb0746c39d6afd0ac9b2ec",
+    "reports/hound_fullbody_v4/hound/validation/reimport_qa.json": "e98351cf1898bb343178112bc688218da0092e6a376416b02d69fd1ca582956e",
+    "reports/hound_fullbody_v4/hound/validation/saved_source.json": "9744a92e5d4e0dc81d40e476d4953d9a9d6509f429fca13f52ccfe9a63bad95f",
+    "reports/hound_fullbody_v4/hound/validation/source_qa.json": "9731ad868d967910b175ef729733ba5b791f1369f3df9657fd0c0816f6d38389",
+    "reports/hound_fullbody_v4/hound_armour/runtime/runtime_validation.json": "1d446aae0fddb29f302cee6ddd41f638de7802954e3522d6b808eae87d9934d6",
+    "reports/hound_fullbody_v4/hound_armour/validation/floors.json": "13cab831559037b78fac2b7d5d4c3f87baa2c6915b54ea6ba2bb4d46268d1c9a",
+    "reports/hound_fullbody_v4/hound_armour/validation/godot_pose_parity.json": "ed53a44ba89becd9ee90c5d6768da224f5c2e19fccb24c30ed0af5e33422f685",
+    "reports/hound_fullbody_v4/hound_armour/validation/matrix_diagnostic.json": "fe275ec544f63a040f26a2f58b3780732814e65be37561c5d3584779d98cf720",
+    "reports/hound_fullbody_v4/hound_armour/validation/reimport.json": "ee8a71227a2ce6d7ac65b3c2fc221083a90303e478936f1e14b6af4178cf3cc4",
+    "reports/hound_fullbody_v4/hound_armour/validation/reimport_qa.json": "5f7035eceffc0c51c38ebf105ee5a60d776d5877615a60081d088f03650c0e19",
+    "reports/hound_fullbody_v4/hound_armour/validation/saved_source.json": "e8ff394265f6ab03e7d40c158459580cc89478479596340c60528773259b94af",
+    "reports/hound_fullbody_v4/hound_armour/validation/source_qa.json": "0a16187e17122c80589bcb28d03ac8cb4cd0767a57d351d55404e91b4c126eca",
+    "reports/hound_fullbody_v4/motion_validation.json": "6780737d56e750b9294c4115717307fbf8a71bd7e351c737a18ddcac9dbabcb4",
+    "reports/hound_fullbody_v4/native_camera.jpg": "40c690919c4fda0615ddb6006a29641ad7c46f38a3eed4d52b75b92de305a407",
+    "reports/hound_fullbody_v4/parts_wire.jpg": "dcfed70d388a0181add2e5d604ddcdf900a954576ba8a535211b6d3d2f82a685",
+    "reports/hound_fullbody_v4/previous_asset_baseline.json": "cd1df5b2ac90b080ccfc74cf378ad32372226a3cfaa828ca6790ad570f9ba4db",
+    "reports/hound_fullbody_v4/review.html": "713fe1b2702b9cdce32d1e959f48647c6a6c8a68f7b4dc4040a3781c8a466b41",
+    "reports/hound_fullbody_v4/source_poses.jpg": "05229d329564009f5769896453ba9e97fba54860b51000b966ef50b0cb51e2c3",
+    "reports/hound_fullbody_v4/videos/armour.jpg": "767874687b4a5846df7d18b17788cf5a3fb2b81d7a4c3d78f3ca49232cd555be",
+    "reports/hound_fullbody_v4/videos/armour.mp4": "5f923a9296985136245f2ccf1198f2017bbec515b38fe4ba4a50bf5a6bcb29ed",
+    "reports/hound_fullbody_v4/videos/front.jpg": "4c2419232de44c4f2f9b2d25721f502d79b412aae4cde84d7461839753903b04",
+    "reports/hound_fullbody_v4/videos/front.mp4": "56037b8d4a49bdc9b6a9f112885eebbe6474ed72dbda4253fdaf9fea37f65f00",
+    "reports/hound_fullbody_v4/videos/native.jpg": "1d86867d3fa7e88ceae94af8f940c4dafac14cebb434135a4e99c27574f03218",
+    "reports/hound_fullbody_v4/videos/native.mp4": "be0777a85e1cef1c833b7124d71db732ded9dd1d19a4003326b1e33c598b7b5a",
+    "reports/hound_fullbody_v4/videos/rear.jpg": "1470a0bf976ce88b1f0e92b8276d6035e89207172a3e1d1bd11ac6c466ba65f8",
+    "reports/hound_fullbody_v4/videos/rear.mp4": "6743f6889e8a9ede827fa29108a50175f6ceb7c40325d493f8cd9cd59c9bbeab",
+    "reports/hound_fullbody_v4/videos/side.jpg": "783554e9294fdf5d3752f77a6043e071b74d4d625db052500f42b367bed38e1b",
+    "reports/hound_fullbody_v4/videos/side.mp4": "7768d9f0387f24ed1691cf3f5eb1b71d11d85ed0a6946fb35d2a6523a4c4490a",
+    "reports/hound_fullbody_v4/videos/travel.jpg": "da1e33967be1d873d52cb1688d5c1a077605b6c1646ea684d9b90e0439e590c4",
+    "reports/hound_fullbody_v4/videos/travel.mp4": "c5e793d121e0056e5bc2232763f4838fbff730e0aca9e4e70d486a23b4e20d71",
+    "tools/automation_motion_common.py": "1d6fdc8d8cc574a5984e0cec79dd069b72a7ee2a5f6dffa7bf497691bd04d18d",
+    "tools/build_hound_fullbody_v4.py": "0f439bc87c660cba1971ca186ec83a07aa1aa05f223c8127530e005e67ddc04d",
+    "tools/export_automation_actor.py": "bb7dc9d9c9a3b3e3eb19418dd8983222c1effd38595ab66ba8f40a5cd1b07d50",
+    "tools/hound_fullbody_motion.py": "2087e5854474d0fe8ed4d0d1e04cfc97c90bda313c8ba6141c494463ea6a0011",
+    "tools/package_hound_fullbody_v4.py": "06e38db50dc14718aa9fdcbfb72d70ad466c1d33c7583570a58b7847edd33ceb",
+    "tools/prototype_hound_fullbody_v4.py": "6e1fc25cf018019d6f5067ad65180a913b783c55c97583a79f5644a7edf0464a",
+    "tools/review_automation_motion_v2.py": "d8aeb11cae020da5f16ec0800360a165ecdbd420f1d657c279682b118d016364",
+    "tools/review_hound_fullbody_v4.ps1": "ef1552ebddbda6f53d1e4fb5f91b2d14b84aa77c21994984b2814b8e7c6ffa86",
+    "tools/validate_automation_actor.py": "79359f5534d536e28604512096f881953b662986da55f2f7361df792fbcb85d4",
+    "tools/validate_hound_fullbody_v4.py": "40064ca82613604ba746d9e3ce2c1d0eba31d58f1a3af48572fc84a0b483fcd5"
+  }
+}

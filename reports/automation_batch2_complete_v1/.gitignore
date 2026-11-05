@@ -1,0 +1,5 @@
+local/
+**/local/
+**/runtime/motion_*/
+**/runtime/poses_*/
+combined/multiple/

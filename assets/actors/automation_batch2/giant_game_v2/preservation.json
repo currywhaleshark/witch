@@ -1,0 +1,13 @@
+{
+  "previous_source": "assets\\actors\\automation_batch2\\giant_game_v1",
+  "changed_vertex_groups": [
+    "core",
+    "gear"
+  ],
+  "changed_vertices": 421,
+  "maximum_rest_vertex_delta_m": 0.048356676229351636,
+  "triangles": 15943,
+  "uv_topology_weights_materials_preserved": true,
+  "changed_clips": "gear/key mechanical transforms in living clips; changed-part floor support on death",
+  "previous_files_untouched": true
+}

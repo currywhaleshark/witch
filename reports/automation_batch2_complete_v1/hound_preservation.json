@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "files_checked": 26,
+  "files": {
+    "assets/actors/automation_batch2/hound_game_v2/.gitignore": {
+      "bytes": 26,
+      "sha256": "e2e833604311c2f99de5eb0347f6066a976e8368a3de259febba5eba6856d633"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/geometry.json": {
+      "bytes": 20424,
+      "sha256": "b98a9d8302a856e504b1c188d5857ddde44d2e7dfc527486aaf8a4c38ceb7444"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/hound_game_v2.blend": {
+      "bytes": 3822204,
+      "sha256": "fa33cbe00ed49015d4b610a8e18593aa0b0a9e5e60ceddc2bf9d59f6bbb9924e"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/hound_geometry.blend": {
+      "bytes": 7780781,
+      "sha256": "b7c2ed356cef05bbea6a08ac6dda21da7bee7779390ca713700e18e3ceffcd4a"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/hound_v2.glb": {
+      "bytes": 4191136,
+      "sha256": "e250e2b82b414dcbcb9574a26b9039f8f14623555a4cd0b480c10aa7d84496dd"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/parts.json": {
+      "bytes": 20407,
+      "sha256": "f51a141d6d79200f290fb790cb24261934bd53fe02b5a7123a19d33049bd8003"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/production.json": {
+      "bytes": 19751,
+      "sha256": "a84b1b2b62569844e5409977cc4b1e5ce38e8526b599b1f0e92c6c2d92d6a203"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/README.md": {
+      "bytes": 7616,
+      "sha256": "9248b212215b1e9bcaf25f027980df43b76e88ee72e66f88f96e39b2bb318eef"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/rig.json": {
+      "bytes": 28980,
+      "sha256": "d933ef43ba0d126a72e36efc2ef5892133972580711944fe1c8e4d6259b449f3"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/textures/hound_color.png": {
+      "bytes": 1094259,
+      "sha256": "4a55b677c2bc3ff3cb6f9fd6d726db5eb3624797ff50fbf246cc15035b6c703b"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/textures/hound_emission.png": {
+      "bytes": 415,
+      "sha256": "6717d46aaab7f676886949ad76eec9188697a8e6aee05f4f1403a692e99e296b"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/textures/hound_normal.png": {
+      "bytes": 889568,
+      "sha256": "48692a6eb1deb1aef8380f67e71a790a4f4dff1c8afdfe055b7d7c63210190f7"
+    },
+    "assets/actors/automation_batch2/hound_game_v2/textures/hound_orm.png": {
+      "bytes": 1072197,
+      "sha256": "2fc7debdf9b70ddfbdc4262b35875593530c99e13fd9b7f47af3c15bea23d2d2"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2.glb": {
+      "bytes": 4191136,
+      "sha256": "e250e2b82b414dcbcb9574a26b9039f8f14623555a4cd0b480c10aa7d84496dd"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2.glb.import": {
+      "bytes": 418058,
+      "sha256": "c218741a122e8163f16f16db732a63b77b35bdbd0bbd35e8be35852696646836"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_color.png": {
+      "bytes": 1094259,
+      "sha256": "4a55b677c2bc3ff3cb6f9fd6d726db5eb3624797ff50fbf246cc15035b6c703b"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_color.png.import": {
+      "bytes": 1071,
+      "sha256": "d95029c90b406505ef313e3f3a3edba71da3768a7a40f02eb9c1b5f0a252c587"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_emission.png": {
+      "bytes": 415,
+      "sha256": "6717d46aaab7f676886949ad76eec9188697a8e6aee05f4f1403a692e99e296b"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_emission.png.import": {
+      "bytes": 1080,
+      "sha256": "73d17e44776112bde973df1bd3420bd9c480697ccb79205a5e514aa95c03a087"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_normal.png": {
+      "bytes": 889568,
+      "sha256": "48692a6eb1deb1aef8380f67e71a790a4f4dff1c8afdfe055b7d7c63210190f7"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_normal.png.import": {
+      "bytes": 1074,
+      "sha256": "70c2bb0af414bb74e730894ded833d394cca2c48680ba8d347500faa1b1397ba"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_orm.png": {
+      "bytes": 1072197,
+      "sha256": "2fc7debdf9b70ddfbdc4262b35875593530c99e13fd9b7f47af3c15bea23d2d2"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/hound_v2_hound_orm.png.import": {
+      "bytes": 1065,
+      "sha256": "d962829c08420086ce38f1e8333787fdbbcaa932bfb447b0cbc5b933eb8f7334"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/import_exact_animation.gd": {
+      "bytes": 3215,
+      "sha256": "5efe7220d8629d1d5e48a494ff18757ca7d8847ad4245cd0ae2baf764c3bf8e8"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/import_exact_animation.gd.uid": {
+      "bytes": 20,
+      "sha256": "651a17249071685e80468c98bda49b5efd5d2e96e4edc162b14f14ad8e0fa2b9"
+    },
+    "game/assets/actors/automation_batch2/hound_v2/parts.json": {
+      "bytes": 20407,
+      "sha256": "f51a141d6d79200f290fb790cb24261934bd53fe02b5a7123a19d33049bd8003"
+    }
+  }
+}

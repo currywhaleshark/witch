@@ -1,0 +1,85 @@
+{
+  "ok": true,
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    "hound_armour_Rigid_Surface: duplicate verts=1386 loose verts=0",
+    "Hound_Rigid_Surface: duplicate verts=4988 loose verts=0",
+    "hidden back-to-back faces: hound_armour_Rigid_Surface (60 pairs) - delete to save tris",
+    "hidden back-to-back faces: Hound_Rigid_Surface (7 pairs) - delete to save tris"
+  ],
+  "ground_z": 0.0005,
+  "zfighting": [],
+  "floating": [],
+  "back_to_back": [
+    {
+      "where": "hound_armour_Rigid_Surface",
+      "tri_pairs": 60
+    },
+    {
+      "where": "Hound_Rigid_Surface",
+      "tri_pairs": 7
+    }
+  ],
+  "enclosed": [],
+  "objects": {
+    "hound_armour_Rigid_Surface": {
+      "verts": 2773,
+      "faces": 1388,
+      "tris": 1388,
+      "ngons": 0,
+      "boundary_edges": 2782,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 1386,
+      "islands": 689,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "unweighted_verts": 0,
+      "verts_over_4_influences": 0,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 0,
+      "uv_overlap_pct": 0.0,
+      "uv_coverage_pct": 48.3
+    },
+    "Hound_Rigid_Surface": {
+      "verts": 10640,
+      "faces": 6795,
+      "tris": 6795,
+      "ngons": 0,
+      "boundary_edges": 10491,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 4988,
+      "islands": 2006,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 2,
+      "unweighted_verts": 0,
+      "verts_over_4_influences": 0,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 0,
+      "uv_overlap_pct": 0.07,
+      "uv_coverage_pct": 9.1
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "poses": 142,
+  "maximum_reopen_matrix_error": 9.5367431640625e-07,
+  "loop_matrix_errors": {
+    "idle": 2.384185791015625e-07,
+    "run": 2.384185791015625e-07
+  },
+  "measurements": {
+    "bounds_blender": [
+      [
+        -0.1882314682006836,
+        -0.7244521379470825,
+        0.0004611254553310573
+      ],
+      [
+        0.20535770058631897,
+        0.5673154592514038,
+        0.7057090401649475
+      ]
+    ],
+    "body_length_without_tail_m": 1.039920687675476,
+    "shoulder_shell_height_m": 0.5206751823425293,
+    "core_center_height_m": 0.601553738117218
+  },
+  "packed_images": [
+    {
+      "name": "Hound_color",
+      "size": [
+        1024,
+        1024
+      ],
+      "packed": true,
+      "colorspace": "sRGB"
+    },
+    {
+      "name": "Hound_emission",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true,
+      "colorspace": "sRGB"
+    },
+    {
+      "name": "Hound_normal",
+      "size": [
+        1024,
+        1024
+      ],
+      "packed": true,
+      "colorspace": "Non-Color"
+    },
+    {
+      "name": "Hound_orm",
+      "size": [
+        1024,
+        1024
+      ],
+      "packed": true,
+      "colorspace": "Non-Color"
+    }
+  ],
+  "triangles": 6795,
+  "bones": 37,
+  "parts": 33,
+  "max_influences": 1,
+  "warnings_adjudication": "Coincident seam/contact vertices and hidden opposing mating-face pairs retained as reported in source_qa.json; rigid joint cores overlap intentionally. Torso shell boundaries are retained. This does not certify arbitrary inter-part collision."
+}

@@ -1,0 +1,87 @@
+{
+  "source": "assets/actors/automation_batch2/beacon_tripo_v1/source/beacon_raw.glb",
+  "source_sha256": "613ca6aff0f06a03b3c1688d18b818c91bc3707cdf449e8c0766fdcea64355dc",
+  "source_bytes": 5663076,
+  "status": "generated source; no game-ready rig, reduction or joint cleanup",
+  "blender": "5.1.1",
+  "mesh_count": 1,
+  "triangles": 76276,
+  "vertices": 45619,
+  "bounds_blender": [
+    [
+      -0.2198944389820099,
+      -0.2134399712085724,
+      0.0
+    ],
+    [
+      0.2198944389820099,
+      0.2134399712085724,
+      1.0
+    ]
+  ],
+  "dimensions_source_units": [
+    0.4397888779640198,
+    0.4268799424171448,
+    1.0
+  ],
+  "gltf": {
+    "meshes": 1,
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  "parts": [
+    {
+      "name": "tripo_node_25ff94fe-8eb8-4023-94f3-0d5dd21c76ba",
+      "vertices": 45619,
+      "triangles": 76276,
+      "bounds_blender": [
+        [
+          -0.2198944389820099,
+          -0.2134399712085724,
+          0.0
+        ],
+        [
+          0.2198944389820099,
+          0.2134399712085724,
+          1.0
+        ]
+      ],
+      "center_blender": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "material_slots": [
+        "tripo_mat_25ff94fe-8eb8-4023-94f3-0d5dd21c76ba"
+      ],
+      "geometry_uv_transform_sha256": "bf2924fb10d930826041dc15daeaa30e96969b9e45692153dc1e231281352451"
+    }
+  ],
+  "images": [
+    {
+      "name": "tripo_image_25ff94fe-8eb8-4023-94f3-0d5dd21c76ba_0",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "sRGB"
+    },
+    {
+      "name": "tripo_image_25ff94fe-8eb8-4023-94f3-0d5dd21c76ba_1",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "Non-Color"
+    },
+    {
+      "name": "tripo_image_25ff94fe-8eb8-4023-94f3-0d5dd21c76ba_2",
+      "size": [
+        2048,
+        2048
+      ],
+      "color_space": "Non-Color"
+    }
+  ]
+}

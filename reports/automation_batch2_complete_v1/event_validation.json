@@ -1,0 +1,55 @@
+{
+  "beacon": {
+    "signal_seconds": 0.0,
+    "distal_hammer_clearance_samples": [
+      {
+        "seconds": 0.0,
+        "distal_hammer_to_bell_m": 0.0006216931506060064
+      },
+      {
+        "seconds": 0.25,
+        "distal_hammer_to_bell_m": 0.025238562375307083
+      },
+      {
+        "seconds": 0.5,
+        "distal_hammer_to_bell_m": 0.05038229748606682
+      },
+      {
+        "seconds": 0.75,
+        "distal_hammer_to_bell_m": 0.025238562375307083
+      },
+      {
+        "seconds": 1.0,
+        "distal_hammer_to_bell_m": 0.0006216931506060064
+      }
+    ],
+    "passed": true
+  },
+  "giant": {
+    "hit_seconds": 0.55,
+    "fists": {
+      "L": {
+        "lowest_z": 0.01199992373585701,
+        "center": [
+          0.6295465408874307,
+          1.1411891272239896,
+          0.445603023918411
+        ]
+      },
+      "R": {
+        "lowest_z": 0.011999938637018204,
+        "center": [
+          -0.6150682328049751,
+          1.148743691689828,
+          0.4503389552427346
+        ]
+      }
+    },
+    "attack_socket_blender": [
+      0.0,
+      1.100000023841858,
+      0.012000000104308128
+    ],
+    "passed": true
+  }
+}

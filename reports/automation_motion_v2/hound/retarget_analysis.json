@@ -1,0 +1,76 @@
+{
+  "stats": {
+    "ik_clamps": 0,
+    "max_clamp_m": 0,
+    "clamp_samples": [],
+    "air_reach_adaptation_max_m": 0.03280006442812858,
+    "pistons": {
+      "fore.R": {
+        "min": 0.08694607250369434,
+        "max": 0.12193946429708644
+      },
+      "fore.L": {
+        "min": 0.10621629037342252,
+        "max": 0.1301029976807892
+      },
+      "hind.R": {
+        "min": 0.06433945443547029,
+        "max": 0.1263000217843832
+      },
+      "hind.L": {
+        "min": 0.06320586283078768,
+        "max": 0.11831964592810437
+      }
+    }
+  },
+  "piston_ranges": [
+    {
+      "name": "fore.R",
+      "minimum_distance": 0.08694607250369434,
+      "maximum_distance": 0.12193946429708644,
+      "original_case_length": 0.04568239497845483,
+      "original_rod_length": 0.08580976623470535,
+      "case_length": 0.04568239497845483,
+      "rod_length": 0.08394607250369433,
+      "minimum_overlap": 0.007689003185062743,
+      "minimum_rod_rear_clearance": 0.0030000000000000027,
+      "two_stage_possible": true
+    },
+    {
+      "name": "fore.L",
+      "minimum_distance": 0.10621629037342252,
+      "maximum_distance": 0.1301029976807892,
+      "original_case_length": 0.036366713378783985,
+      "original_rod_length": 0.10496754191951674,
+      "case_length": 0.036366713378783985,
+      "rod_length": 0.10321629037342252,
+      "minimum_overlap": 0.009480006071417302,
+      "minimum_rod_rear_clearance": 0.0030000000000000027,
+      "two_stage_possible": true
+    },
+    {
+      "name": "hind.R",
+      "minimum_distance": 0.06433945443547029,
+      "maximum_distance": 0.1263000217843832,
+      "original_case_length": 0.05642388841534189,
+      "original_rod_length": 0.06380801156479829,
+      "case_length": 0.06336056734891292,
+      "rod_length": 0.06373945443547029,
+      "minimum_overlap": 0.0007999999999999952,
+      "minimum_rod_rear_clearance": 0.0006000000000000033,
+      "two_stage_possible": true
+    },
+    {
+      "name": "hind.L",
+      "minimum_distance": 0.06320586283078768,
+      "maximum_distance": 0.11831964592810437,
+      "original_case_length": 0.043212629743617295,
+      "original_rod_length": 0.07009539380240784,
+      "case_length": 0.0611137830973167,
+      "rod_length": 0.060205862830787674,
+      "minimum_overlap": 0.0030000000000000027,
+      "minimum_rod_rear_clearance": 0.0030000000000000027,
+      "two_stage_possible": true
+    }
+  ]
+}

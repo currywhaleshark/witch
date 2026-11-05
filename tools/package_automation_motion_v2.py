@@ -1,0 +1,114 @@
+"""Offline review and current-input receipts for mechanical motion corrections."""
+import json,gzip,hashlib,subprocess,shutil,math
+from pathlib import Path
+from html.parser import HTMLParser
+from PIL import Image,ImageDraw,ImageFont
+import numpy as np
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'reports/automation_motion_v2';ASSETS=ROOT/'assets/actors/automation_batch2'
+VERSIONS={'hound':3,'giant':2,'hound_armour':2,'giant_armour':2}
+def read(p):return json.loads(p.read_text(encoding='utf8'))
+def dump(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf8')
+def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def folder(a):return ASSETS/f"{a}{'_v' if a.endswith('_armour') else '_game_v'}{VERSIONS[a]}"
+def sheet(paths,dest,cols=3,width=400):
+ height=250;im=Image.new('RGB',(cols*width,math.ceil(len(paths)/cols)*height),'#18252e')
+ for i,p in enumerate(paths):
+  tile=Image.open(p).convert('RGB');tile.thumbnail((width,height));im.paste(tile,((i%cols)*width+(width-tile.width)//2,(i//cols)*height+(height-tile.height)//2))
+ im.save(dest,quality=92)
+motion=read(OUT/'motion_validation.json');assert motion['passed']
+checks=0;pose_count=0;parity={};warnings={}
+for a,v in VERSIONS.items():
+ base=folder(a);runtime=read(OUT/a/'runtime/runtime_validation.json');assert runtime['passed'];checks+=runtime['checks']
+ for n in ['source_qa','reimport_qa','saved_source','reimport']:
+  d=read(OUT/a/f'validation/{n}.json');assert d.get('pass',d.get('passed',False)),(a,n)
+  if n.endswith('_qa'):warnings[a+'/'+n]=d['warnings']
+  if n=='saved_source':pose_count+=d['poses']
+ expected=json.loads(gzip.decompress((base/'animation_samples.json.gz').read_bytes()));observed=read(OUT/a/'runtime/runtime_poses.json')
+ error=0.;count=0
+ for row in observed:
+  ref=min(expected[row['clip']],key=lambda x:abs(x['time']-row['time']));assert abs(ref['time']-row['time'])<1e-6
+  for n,p in row['bones'].items():
+   m=np.array(ref['world'][n]);x,y,z=m[:3,3];e=float(np.linalg.norm(np.array(p)-[x,z,-y]));error=max(error,e);count+=1
+ assert error<.00005,(a,error)
+ parity[a]={'passed':True,'bone_origins':count,'maximum_error_m':error}
+ dump(OUT/a/'validation/godot_pose_parity.json',parity[a])
+ names={'hound':'기계 수렵견 · 늑대 질주 v3','giant':'거대 자동인형 · 축 수정 v2','hound_armour':'중장 추적기 장갑 · 모션 대응 v2','giant_armour':'거대 강화 장갑 · 축 대응 v2'}
+ parts=read(base/'parts.json')
+ text=f"# {names[a]}\n\n[비교 검토](../../../../reports/automation_motion_v2/review.html) · [parts.json](parts.json) · [{a}_game_v{v}.blend]({a}_game_v{v}.blend)\n\n준비용 아트이며 주 게임 스킬·AI·피해·이동 코드는 바꾸지 않았다. 이전 버전과 Tripo 원본은 보존한다.\n\n- {parts['triangles']:,} 삼각형 / {parts['parts']} 강체 그룹 / {parts['bones']} 본 / 6개 클립.\n- 게임 폴더: `game/assets/actors/automation_batch2/{a}_v{v}/`. GLB, parts.json, import 설정, import_exact_animation.gd를 함께 사용한다.\n- 상수 TRS, 단일 본 100% 웨이트, 미터·Godot −Z 정면. 24fps 타임라인과 추가 정확 시각 키를 보존한다.\n\n"
+ if a=='hound':
+  text+='Quaternius의 **CC0 Wolf / Gallop**을 실제로 받아 원본 IK가 평가된 발·몸통·머리·꼬리 궤적과 뒷발목 움직임을 옮겼다. [출처와 원본](../motion_sources/quaternius/README.md). 원형 모델은 기존 Tripo 수렵견을 사용한다.\n\n짧은 다리로 6.5m/s를 맞추기 위해 0.5초 클립에 **두 번의 질주**를 넣는다. 한 번에 0.25초·1.625m, 전체 0.5초·3.25m다. 접지 순서는 앞 L → 앞 R → 뒤 L → 뒤 R이며, 발 회수와 뒷발목은 원본에서 가져오고 접지는 일정 속도로 보정한다. 240Hz 키와 접지 시각을 추가하며 게임 이동은 기존 루트가 담당한다. 공중 발 궤적의 최대 도달 보정은 32.8mm다.\n\n모든 37개 rest 본, 일반 부품 정점·UV·토폴로지·웨이트·재질은 동일하다. 피스톤 6개 그룹의 정적 길이만 가동 범위에 맞춰 조정한다(애니메이션 스케일 없음). run을 교체하고 death는 바뀐 피스톤의 바닥 지지만 보정한다. 나머지 클립 변형은 오차 0.001mm 미만으로 유지한다.\n\n1,920Hz 검토에서 접지 중 이동 보상 후 발 위치 변화는 최대 2.917mm, 관절 끝점 오차는 0.00017mm다. 뒤 R 피스톤의 가장 좁은 삽입 여유는 약 0.402mm다. 이는 지정 클립의 시각적 유지 범위이며 임의 혼합·중단·물리 접촉 보장은 아니다.\n'
+ elif a=='giant':
+  text+='고정 Y/Z 축 대신 메시의 실제 축으로 변경했다. 가슴 톱니는 약 **17.78°**, 태엽 목은 약 **10.99°** 기울어져 있었다. 거대 체형에 맞춘 비균등 배율 때문에 타원이 된 톱니도 원본 균등 배율로 복원한다. 동력 렌즈와 Socket_core를 새 허브에 맞춘다. [축·피벗 측정](mechanisms.json).\n\n변경 정점은 gear/core 두 그룹뿐이다. 모든 면·UV·웨이트·재질과 다른 그룹 정점·자동 노멀은 정확히 유지한다. gear/key/core/Socket_core 네 rest 본의 원점이 바뀌므로 기존 v1 장갑 대신 v2 장갑을 쓴다. 기타 본의 변형은 0.002mm 미만 오차로 유지한다. 붕괴는 바뀐 부품의 새 지지점으로만 보정한다.\n\nidle/walk 482개 시각에서 톱니·태엽의 축 중심 오차는 각각 0.001mm 미만이다. 이전 축의 회전 중 방향 변화는 약 35.56° / 21.98°였다. 새 기어는 Tripo 원형의 미세한 비대칭과 표면은 유지한다.\n'
+ else:
+  ba=a.removesuffix('_armour');bv=VERSIONS[ba]
+  text+=f'장갑 메시·UV·노멀·웨이트·재질은 이전 장갑과 동일하다. **{ba}_v{bv}**와 같은 살아 있는 클립을 같은 초 단위 시간으로 샘플한다. 본/rest는 새 기본형과 맞추고, 기존 장갑의 독립 붕괴는 유지한다. packed 원본에는 현재 기본형과 장갑의 두 리그가 함께 들어 있다. 일반 동작에서는 같은 클립·시각으로 재생한다.\n'
+ text+='\n원본·재임포트 QA 오류 0. UV/노멀 이음 정점, 숨긴 접합면, 내부 베어링, 의도적 바닥 여유 경고는 유지한다. 전체 검증·현재 파일 해시·환경 진단과 한계는 [delivery_manifest.json](../../../../reports/automation_motion_v2/delivery_manifest.json)에 있다. 임의 포즈의 부품 간 충돌, 장갑 접촉, 실시간 파괴 물리나 최종 성능·외형 승인은 포함하지 않는다.\n'
+ (base/'README.md').write_text(text,encoding='utf8')
+
+capture=read(OUT/'comparison/runtime_validation.json');assert capture['passed']
+video_names=['giant_gear','giant_key','giant_full','hound_side','hound_front','hound_armour','giant_armour','native']
+videos={};(OUT/'videos').mkdir(exist_ok=True)
+for name in video_names:
+ source=OUT/'comparison'/name;dest=OUT/'videos'/f'{name}.mp4'
+ subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-framerate','60','-i',str(source/'%03d.jpg'),'-an','-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(dest)],check=True)
+ probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','stream=width,height,nb_frames,r_frame_rate','-show_entries','format=duration','-of','json',str(dest)],text=True));assert int(probe['streams'][0]['nb_frames'])==120
+ videos[name]=probe;shutil.copy2(source/'000.jpg',OUT/'videos'/f'{name}.jpg')
+shutil.copy2(OUT/'local/wolf/sheet.jpg',OUT/'wolf_source.jpg')
+for a in ['hound','giant']:
+ g=OUT/a/'geometry';sheet([g/f'front_{i:02}.png' for i in (0,2,4)]+[g/'parts.png',g/'wire.png',g/'side_04.png'],OUT/a/'geometry_sheet.jpg')
+sheet([OUT/'comparison/hound_side'/f'{i:03}.jpg' for i in (0,3,6,9,12,14)],OUT/'hound_comparison.jpg',cols=2,width=640)
+sheet([OUT/'comparison/giant_gear'/f'{i:03}.jpg' for i in (0,20,40,60,80,100)],OUT/'giant_comparison.jpg',cols=2,width=640)
+
+page='''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>거대 인형 회전축 · 수렵견 질주</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#111b22;color:#e2eceb;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1320px;margin:auto;padding:40px 26px 70px}h1{font-size:34px;line-height:1.25;margin:10px 0 20px}h2{font-size:24px;margin:40px 0 12px}p{color:#b4c6ca}a{color:#92dace}video,img{width:100%;display:block;border-radius:10px;background:#19272f}.tag{color:#c7aa79;letter-spacing:.1em;font-size:13px}.badge{display:inline-block;background:#294239;border:1px solid #4d7463;color:#c6e5cd;border-radius:30px;padding:4px 14px;margin:6px 8px 6px 0}.card{background:#1b2c34;border:1px solid #334a54;border-radius:14px;padding:20px;margin-top:20px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0}button,select{font:inherit;font-size:14px;background:#273e48;border:1px solid #49636d;color:#e7efec;border-radius:7px;padding:7px 13px;cursor:pointer}button.active{background:#9acbbd;color:#10251d}.columns{display:grid;grid-template-columns:1fr 1fr;gap:20px}details{margin:20px 0;padding:16px;background:#17262e;border-radius:10px}summary{cursor:pointer;color:#d6e3df}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px;text-align:left;border-bottom:1px solid #354b54}.fine{font-size:13px;color:#97b1b9}.links{display:flex;gap:20px;flex-wrap:wrap}footer{margin-top:35px;color:#8ba3ad;font-size:13px}@media(max-width:850px){.columns{grid-template-columns:1fr}h1{font-size:28px}main{padding:24px 16px}}</style>
+<main><div class="tag">WITCH · AUTOMATION MOTION · 2026.11.05</div><h1>거대 인형의 회전축을 맞추고<br>수렵견에 늑대 질주를 옮겼습니다</h1>
+<span class="badge">화면 왼쪽: 수정본</span><span class="badge">오른쪽: 이전 버전</span><span class="badge">CC0 애니메이션</span><p>같은 조명·크기로 비교합니다. 느린 재생으로 회전 중심과 발 회수 동작을 확인할 수 있습니다.</p>
+<section class="card" data-player="giant"><h2 style="margin-top:0">거대 자동인형</h2><p>톱니의 타원 변형을 줄이고 기울어진 실제 중심축으로 돌립니다. 태엽도 목 방향을 따르며 동력 렌즈가 새 허브에 맞춰집니다.</p>
+<div class="toolbar tabs"><button class="active" data-video="giant_gear">가슴 톱니 확대</button><button data-video="giant_key">태엽 확대</button><button data-video="giant_full">전체 모습</button></div><video controls loop muted playsinline preload="metadata" src="videos/giant_gear.mp4" poster="videos/giant_gear.jpg"></video><div class="toolbar"><button data-step>1 프레임</button><label>재생 속도 <select data-rate><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option></select></label></div>
+<p class="fine">가슴 톱니 축 약 17.78° · 태엽 축 약 10.99° 보정. 모션 중 중심 오차 0.001mm 미만. 원형의 작은 표면 비대칭은 유지합니다.</p><a href="../../assets/actors/automation_batch2/giant_game_v2/README.md">거대 인형 편집 원본·게임용 파일</a></section>
+<section class="card" data-player="hound"><h2 style="margin-top:0">기계 수렵견</h2><p>Quaternius의 실제 늑대 <b>Gallop</b> 동작에서 발 궤적·몸통·머리·꼬리·뒷발목을 가져왔습니다. 기계 다리의 길이를 유지하면서 앞발 회수와 뒷발 접힘을 맞췄습니다.</p>
+<div class="toolbar tabs"><button class="active" data-video="hound_side">측면 비교</button><button data-video="hound_front">앞쪽 비교</button></div><video controls loop muted playsinline preload="metadata" src="videos/hound_side.mp4" poster="videos/hound_side.jpg"></video><div class="toolbar"><button data-step>1 프레임</button><label>재생 속도 <select data-rate><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option></select></label></div>
+<p class="fine">6.5m/s 속도에 맞춰 0.5초에 질주 두 번. 클립 전체 이동 기준 3.25m는 유지합니다. 관절별 스케일 변형 없이 접지 중 미끄러짐은 최대 약 2.92mm입니다.</p>
+<div class="links"><a href="../../assets/actors/automation_batch2/hound_game_v3/README.md">수렵견 편집 원본·게임용 파일</a><a href="https://quaternius.com/packs/ultimateanimatedanimals.html">무료 CC0 동물 팩</a><a href="../../assets/actors/automation_batch2/motion_sources/quaternius/README.md">받은 원본과 라이선스</a></div>
+<details><summary>가져온 늑대 원본 동작</summary><p>Wolf.blend의 Gallop, 0–17프레임 / 30fps. 원본 IK를 평가한 뒤 관절 비율과 접지를 보정했습니다. 아래는 변환 전 원본입니다.</p><img loading="lazy" src="wolf_source.jpg" alt="원본 늑대의 질주 자세 9개"></details></section>
+<h2>장갑형에도 같은 동작 적용</h2><div class="columns"><section class="card"><h3>중장 추적기</h3><video controls loop muted playsinline preload="metadata" src="videos/hound_armour.mp4" poster="videos/hound_armour.jpg"></video><p>기존 장갑 외형에 새 질주를 연결했습니다.</p></section><section class="card"><h3>거대 단일 강화</h3><video controls loop muted playsinline preload="metadata" src="videos/giant_armour.mp4" poster="videos/giant_armour.jpg"></video><p>현재 기본형과 본·클립을 맞춘 장갑 v2입니다.</p></section></div>
+<h2>실제 1.75배 게임 카메라</h2><img loading="lazy" src="comparison/native_camera.jpg" alt="마녀, 수정된 수렵견과 거대 인형, 강화형의 실제 표시 크기"><details><summary>이 크기로 움직임 보기</summary><video controls loop muted playsinline preload="none" src="videos/native.mp4" poster="videos/native.jpg"></video></details>
+<details><summary>메시·보존·검증</summary><p>삼각형 수와 UV·면 연결·웨이트·재질을 유지합니다. 거대 인형은 톱니·렌즈, 수렵견은 피스톤 정적 길이만 고쳤습니다. 이전 파일은 별도로 보존합니다.</p><table><tr><th>자산</th><th>삼각형</th><th>강체 / 본</th></tr><tr><td>수렵견 v3</td><td>6,795</td><td>33 / 37</td></tr><tr><td>거대 인형 v2</td><td>15,943</td><td>27 / 33</td></tr><tr><td>추가 장갑</td><td>+1,388 / +1,256</td><td>기본형과 같은 본</td></tr></table><p>원본과 새 GLB 임포트 QA 오류 0. 지정 클립의 바닥·접지·관절·축·피스톤과 Godot 재생을 확인했습니다. 뒤 오른쪽 피스톤의 최소 삽입 여유는 약 0.40mm입니다. 이음 정점, 숨은 접합면과 내부 베어링 경고를 유지합니다.</p><div class="columns"><img loading="lazy" src="hound/geometry_sheet.jpg" alt="수렵견 부품과 와이어 검토"><img loading="lazy" src="giant/geometry_sheet.jpg" alt="거대 인형 부품과 와이어 검토"></div><p><a href="motion_validation.json">축·접지·보존 수치</a> · <a href="delivery_manifest.json">현재 파일과 검증 기록</a></p></details>
+<footer>Blender 5.1.1 독립 작업 · Godot 4.6.2 실제 렌더. 주 게임 연결 전 준비용 아트 검토본입니다. 임의 포즈/혼합의 접촉·실시간 파괴 물리·최종 성능·외형 승인은 포함하지 않습니다.</footer></main>
+<script>for(const card of document.querySelectorAll('[data-player]')){const video=card.querySelector('video');for(const b of card.querySelectorAll('[data-video]'))b.onclick=()=>{const running=!video.paused;video.src='videos/'+b.dataset.video+'.mp4';video.poster='videos/'+b.dataset.video+'.jpg';video.load();video.playbackRate=+card.querySelector('[data-rate]').value;for(const x of card.querySelectorAll('[data-video]'))x.classList.toggle('active',x===b);if(running)video.play().catch(()=>{});};card.querySelector('[data-rate]').onchange=e=>video.playbackRate=+e.target.value;card.querySelector('[data-step]').onclick=()=>{video.pause();if(Number.isFinite(video.duration))video.currentTime=(video.currentTime+1/60)%video.duration;};}</script></html>'''
+(OUT/'review.html').write_text(page,encoding='utf8')
+catalog=read(ASSETS/'catalog.json')
+for a in ['hound','giant']:
+ v=VERSIONS[a];catalog['actors'][a]['base']=f'res://assets/actors/automation_batch2/{a}_v{v}/{a}_v{v}.glb';catalog['actors'][a]['parts']=f'res://assets/actors/automation_batch2/{a}_v{v}/parts.json'
+ key='heavy' if a=='hound' else 'enhanced';catalog['actors'][a]['variants'][key]['armour']=f'res://assets/actors/automation_batch2/{a}_armour_v2/{a}_armour_v2.glb'
+catalog['motion_review']='reports/automation_motion_v2/review.html';dump(ASSETS/'catalog.json',catalog)
+
+preserved={}
+for manifest in [ROOT/'reports/hound_game_v2/delivery_manifest.json',ROOT/'reports/automation_batch2_complete_v1/delivery_manifest.json']:
+ for rel,entry in read(manifest).get('files',{}).items():
+  p=ROOT/rel
+  if not rel.startswith(('assets/actors/automation_batch2/','game/assets/actors/automation_batch2/')) or p.suffix not in ('.blend','.glb','.png'):continue
+  if p.is_file():
+   expected=entry['sha256'] if isinstance(entry,dict) else entry
+   actual=digest(p);assert actual==expected,('previous asset changed',rel);preserved[rel]=actual
+dump(OUT/'previous_art_preservation.json',{'passed':True,'files':preserved})
+files=set()
+for a in VERSIONS:
+ files.update(p for p in folder(a).rglob('*') if p.is_file() and not p.name.endswith(('.blend1','_static.glb')))
+ files.update(p for p in (ROOT/f'game/assets/actors/automation_batch2/{a}_v{VERSIONS[a]}').rglob('*') if p.is_file())
+files.update(p for p in (ASSETS/'motion_sources/quaternius').rglob('*') if p.is_file())
+files.update(p for p in OUT.rglob('*') if p.is_file() and 'local' not in p.relative_to(OUT).parts and p.name!='delivery_manifest.json' and not (p.parent.parent.name=='comparison') and not (p.parent.name=='geometry' and p.stem[-2:].isdigit()) and p.name!='runtime_poses.json')
+for name in ['build_automation_motion_v2.py','sample_quaternius_gallop.py','inspect_automation_motion_v2.py','review_automation_motion_v2.py','validate_automation_motion_v2.py','export_automation_actor.py','validate_automation_actor.py','package_automation_motion_v2.py','review_automation_motion_v2.ps1']:files.add(ROOT/'tools'/name)
+files.update([ROOT/'game/tests/review_automation_motion_v2.gd',ROOT/'game/tests/review_automation_actor_v1.gd',ASSETS/'catalog.json',ASSETS/'README.md',ROOT/'AGENTS.md'])
+receipt={'date':'2026-11-05','stage':'prepared motion correction review, not main-game integration/user art selection','source':'Quaternius Wolf Gallop, CC0 1.0','runtime_checks':checks,'motion_checks':motion['checks'],'gpu_checks':capture['checks'],'gpu_captures':capture['captures'],'saved_source_poses':pose_count,'godot_pose_parity':parity,'preserved_previous_art_files':len(preserved),'qa_warnings':warnings,'warnings_adjudication':'UV/normal seam duplicates; hidden panel/cap mating faces and telescoping interiors; intentionally enclosed bearings; positive floor clearance. No arbitrary inter-part/armour/cancel/blend collision or live debris simulation.','environment_diagnostics':['MCP handshake unavailable; isolated Blender 5.1.1 CLI used.','Blender thumbnail write and Godot user shader-cache directory warnings retained in local logs; saved artifacts and rendering succeeded.'],'limits':['Source hound motions are proportion/reach/contact adapted, not a raw copy or claimed mocap.','Existing 0.5s / 3.25m hound contract uses two anatomical gallops; four strides per second.','Max sampled planted-paw drift 2.917mm; minimum rear-right piston overlap about .402mm.','No new game rules, FX, arbitrary-pose physical contact, performance approval or commit/push.'],'videos':videos,'files':{p.relative_to(ROOT).as_posix():{'bytes':p.stat().st_size,'sha256':digest(p)} for p in sorted(files)}}
+dump(OUT/'delivery_manifest.json',receipt)
+class Links(HTMLParser):
+ def __init__(self):super().__init__();self.paths=[]
+ def handle_starttag(self,tag,attrs):
+  for k,v in attrs:
+   if k in ('src','href','poster'):self.paths.append(v)
+parser=Links();parser.feed(page)
+for p in parser.paths:
+ if p.startswith(('https:','#')):continue
+ assert (OUT/p).resolve().is_file(),p
+print('MOTION_PACKAGE_COMPLETE',json.dumps({'runtime_checks':checks,'motion_checks':motion['checks'],'captures':capture['captures'],'source_poses':pose_count,'preserved_art_files':len(preserved),'files':len(files),'links':len(parser.paths)},ensure_ascii=False))

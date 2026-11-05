@@ -1,0 +1,13 @@
+{
+  "previous_source": "assets\\actors\\automation_batch2\\hound_game_v3",
+  "changed_vertex_groups": [
+    "fore_piston_case.L",
+    "fore_piston_case.R"
+  ],
+  "changed_vertices": 20,
+  "maximum_rest_vertex_delta_m": 0.0048701774684386575,
+  "triangles": 6795,
+  "bones": 37,
+  "all_rest_matrices_topology_uv_weights_materials_preserved": true,
+  "changed_clips": "run; changed cylinder death floor support only"
+}

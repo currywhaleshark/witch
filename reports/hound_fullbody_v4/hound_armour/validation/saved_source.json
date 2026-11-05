@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "poses": 448,
+  "maximum_matrix_error": 4.231929779052734e-06,
+  "loops": {
+    "idle": 2.384185791015625e-07,
+    "run": 0.0
+  },
+  "floors": {
+    "spawn": {
+      "min_z": 0.25435936235339796,
+      "worst": {
+        "time": 0.0,
+        "part": "fore_upper.R"
+      }
+    },
+    "idle": {
+      "min_z": 0.3578788805063272,
+      "worst": {
+        "time": 0.75,
+        "part": "fore_upper.L"
+      }
+    },
+    "run": {
+      "min_z": 0.24028167529948824,
+      "worst": {
+        "time": 0.11666666666666667,
+        "part": "fore_upper.L"
+      }
+    },
+    "bite": {
+      "min_z": 0.27106465019068227,
+      "worst": {
+        "time": 0.3333333333333333,
+        "part": "fore_upper.L"
+      }
+    },
+    "hit": {
+      "min_z": 0.2808385339000392,
+      "worst": {
+        "time": 0.125,
+        "part": "fore_upper.L"
+      }
+    },
+    "death": {
+      "min_z": 0.011999857419295878,
+      "worst": {
+        "time": 1.2,
+        "part": "jaw"
+      }
+    }
+  },
+  "triangles": 1388,
+  "parts": 4,
+  "bones": 37,
+  "warnings_adjudication": "Source shells retain open boundaries; seam/contact vertices, hidden opposing mating faces and intentionally enclosed joint bearings are retained. Positive rest clearance is intentional. No arbitrary inter-part/live collision claim."
+}

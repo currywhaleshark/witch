@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-05",
+  "status": "concept and generated source review; no user appearance approval",
+  "scope": "three image_gen concepts; Tripo hound generation, segmentation, source inspection and minimal cleanup",
+  "image_generation": {
+    "mode": "built-in image_gen",
+    "prompt_set": "assets/actors/automation_batch2/concept_v1/prompts.json",
+    "images": [
+      {
+        "id": "mechanical_hound_v1",
+        "path": "assets/actors/automation_batch2/concept_v1/mechanical_hound_v1.png",
+        "sha256": "522e3bff335b4e651a3b7ee8933007accf825ac9808772d814cc62f31499acd5"
+      },
+      {
+        "id": "lure_beacon_v1",
+        "path": "assets/actors/automation_batch2/concept_v1/lure_beacon_v1.png",
+        "sha256": "59fec5a8db7f37bfb315c3c9e90b7cc569f1dfd0eb7747848abadbe151fca5b6"
+      },
+      {
+        "id": "giant_automaton_v1",
+        "path": "assets/actors/automation_batch2/concept_v1/giant_automaton_v1.png",
+        "sha256": "0bc28b5bb4fd5089396cf10108703672ce2b5e5ea21853d958e094b0c8fef797"
+      }
+    ]
+  },
+  "tripo": {
+    "url": "https://studio.tripo3d.ai/ko/workspace/segmentation/af4d77b6-a9e6-4c5b-a45c-fe99ef1326d5",
+    "model": "H3.1",
+    "mode": "HD",
+    "target_polygons": 80000,
+    "topology": "triangles",
+    "textures": "2K PBR",
+    "input": "assets/actors/automation_batch2/concept_v1/mechanical_hound_v1.png",
+    "private": true,
+    "ultra": false,
+    "ai_completion": false,
+    "8k": false,
+    "part_generation": false,
+    "post_generation_segmentation": "fine (정밀)",
+    "export_uv_packing": true,
+    "credits": {
+      "generation": 30,
+      "segmentation": 40,
+      "total": 70,
+      "before": 2455,
+      "after": 2385
+    },
+    "ui_initial_segment_parts": 61,
+    "exported_parts": 60,
+    "missing_export_part_ids": [
+      11
+    ],
+    "ui_initial_segment_faces": 76914,
+    "exported_faces": 76870,
+    "export_note": "Tripo save/UV-packed export changed part/face count. Local GLB counts are authoritative; original unsegmented GLB is preserved."
+  },
+  "tooling": {
+    "blender": "5.1.1",
+    "execution": "background CLI; live MCP handshake unavailable",
+    "render": "EEVEE PBR and Workbench part/wire review"
+  },
+  "working": {
+    "blend": "assets/actors/automation_batch2/hound_tripo_v1/hound_working.blend",
+    "glb": "assets/actors/automation_batch2/hound_tripo_v1/exports/hound_working.glb",
+    "mesh_parts": 60,
+    "triangles": 76862,
+    "removed_overlap_triangles": 8,
+    "materials": 1,
+    "texture_images": 3,
+    "texture_resolution": 2048,
+    "bones": 0,
+    "clips": 0,
+    "qa_errors": 0,
+    "qa_warnings": 64,
+    "reimport_qa_errors": 0,
+    "normal_reencoding_max_vector_error": 0.0006050773873931912
+  },
+  "limits": [
+    "Source units/facing not fitted to the gameplay specification.",
+    "60 automatic pieces are not finalized rigid joints; interior caps/pistons/contact remain.",
+    "5k-7k triangles, 1K atlas, separate emission faces, rig, clips, sockets and node attachments pending.",
+    "Raw GLB QA: 2 errors. Raw segmented GLB QA: 8 errors. Working derivative: 0 errors.",
+    "60 seam-vertex warnings and four hidden mating-face warnings retained intentionally at source stage.",
+    "No game integration, gameplay tests, native-size comparison, performance approval or art selection.",
+    "Beacon and giant automaton have concepts only."
+  ]
+}

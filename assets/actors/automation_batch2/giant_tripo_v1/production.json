@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-05",
+  "provider": "Tripo Studio",
+  "model_id": "e973210a-3462-4249-a2dd-58336f42bbee",
+  "model": "H3.1 HD",
+  "private": true,
+  "target_triangles": 80000,
+  "pbr": true,
+  "texture_resolution": 2048,
+  "ultra": false,
+  "ai_completion": false,
+  "segmentation": "Fine, post-generation",
+  "generation_credits": 30,
+  "segmentation_credits": 40,
+  "total_credits": 70,
+  "source_hashes": {
+    "giant_raw.glb": "6c0cf1944769ba74a058997603b35f9b055366e7fe88a7e1e82a6e8f41bfd89d",
+    "giant_segmented.glb": "19c18f94158c7f4a6002b639f0039e63088cbbb9807654c58f2e178bd63e278d"
+  },
+  "stage": "immutable high-density sources; game derivative separate",
+  "input": "../concept_v1/giant_automaton_v1.png"
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "html_link_count": 13,
+  "html_files": [
+    "reports/automation_batch2_complete_v1/combined/native_lineup_front.jpg",
+    "reports/automation_batch2_complete_v1/combined/enhanced_lineup_front.jpg",
+    "reports/automation_batch2_complete_v1/combined/multiple.mp4",
+    "reports/automation_batch2_complete_v1/combined/multiple_poster.jpg",
+    "reports/automation_batch2_complete_v1/combined/slam_contact_front.jpg",
+    "reports/automation_batch2_complete_v1/combined/slam_contact_side.jpg",
+    "reports/automation_batch2_complete_v1/tripo/beacon_segmented_ui.png",
+    "reports/automation_batch2_complete_v1/tripo/giant_segmented_ui.png",
+    "assets/actors/automation_batch2/beacon_tripo_v1/README.md",
+    "assets/actors/automation_batch2/giant_tripo_v1/README.md",
+    "assets/actors/automation_batch2/README.md",
+    "assets/actors/automation_batch2/catalog.json",
+    "reports/hound_game_v2/review.html"
+  ],
+  "model_readme_links": true,
+  "videos_verified_by_ffprobe": "video_validation.json"
+}

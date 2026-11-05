@@ -1,0 +1,42 @@
+{
+  "actor": "hound_armour",
+  "triangles": 1388,
+  "parts": 4,
+  "part_triangles": {
+    "fore_upper.L": 252,
+    "fore_upper.R": 252,
+    "head": 212,
+    "jaw": 672
+  },
+  "provenance": [],
+  "repairs": [
+    {
+      "group": "fore_upper.L",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    },
+    {
+      "group": "fore_upper.R",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    },
+    {
+      "group": "head",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    },
+    {
+      "group": "jaw",
+      "removed_nonmanifold_flaps": [],
+      "new_cap_triangles": 0,
+      "redundant_internal_caps_removed": []
+    }
+  ],
+  "source_sha256": "fa33cbe00ed49015d4b610a8e18593aa0b0a9e5e60ceddc2bf9d59f6bbb9924e",
+  "source_unchanged": true,
+  "bake": "exploded semantic pairs, color/normal/ORM 1024, emission 128; ORM R=1 (no AO bake)",
+  "glow_groups": []
+}

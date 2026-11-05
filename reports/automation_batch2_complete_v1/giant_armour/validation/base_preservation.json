@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "base_mesh_geometry_normals_uv_weights_exact": true,
+  "base_rests_and_actions_exact": true,
+  "extra_rests_exact": true,
+  "base_source_sha256": "ad29184da80848f26b0a130f01800982cf1aca6fcf555f7c64bff8ced37f7eaa",
+  "base_glb_sha256": "1f11156269daf580c0c0281ec8ae0a0c4c8d84bad2c0e372a282eea6b8eab647",
+  "base_mesh_signatures": {
+    "vertices": "53e97c5b2613af8930ee684245d8ca0d767275f85e7e00ff3dc94f8a2ee52283",
+    "faces": "4583e70a5687079c1f6c84413073c5312271568945a09839b3f5cb50093f8139",
+    "materials": "641f289d74b43ee90e66f12bf20551fcfe03102024f4cd4bef4cdf775d974b52",
+    "uv": "6da3e3365d571981623d86b104634b5083ab16c814d51d8ddb15757880423d3a",
+    "normals": "9084041f2a1fab1ae36c9d03cd8c9d9001261cb4cbc926b74a7694b93a4db19d",
+    "weights": "c61aa0ee581fd27e69905cf5fad6bab7bcfa25b1e0e99dc6303db2a48601cc72"
+  },
+  "base_action_signatures": {
+    "assemble": "63ef193627f13bffc31bc697a9b31ac6e76cdbab235135114cf0846335fc5979",
+    "death": "0e15e89e9315770c3c43b1815a77bc4fc6bd2a2f32fa122ab8c21eb49248b207",
+    "hit": "7452740c59d29db970d9dfd7944938785f5a110fd08411c5efee8f32fa788838",
+    "idle": "88cb642624085e619deeab13e298a2ecc4830dd5df5f067e9ac1c3e54140f9d7",
+    "slam": "d120b6c07794a62ba0a3cbf6fc1323db59bace94e9fe729f2b66ea9108d7ec5e",
+    "walk": "2ac8cebe117ca9570da5a15b3de658cb219b585e370fb9cb4df97917f933ebc0"
+  }
+}

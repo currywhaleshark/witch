@@ -1,0 +1,761 @@
+{
+  "stage": "prepared base hound art/motion candidate; not main-game skill integration",
+  "user_source_direction_selection": "좋구만 / 이어가보자 (2026-11-05); source concept direction accepted, this new motion pass remains a review candidate",
+  "triangles": 6795,
+  "original_working_triangles": 76862,
+  "rigid_groups": 33,
+  "meshes": 1,
+  "materials": 2,
+  "bones": 37,
+  "clips": {
+    "spawn": {
+      "seconds": 0.4,
+      "times": [
+        0.0,
+        0.04166667,
+        0.08333333,
+        0.125,
+        0.16666667,
+        0.20833333,
+        0.25,
+        0.29166667,
+        0.33333333,
+        0.375,
+        0.4
+      ],
+      "loop": false
+    },
+    "idle": {
+      "seconds": 1.0,
+      "times": [
+        0.0,
+        0.04166667,
+        0.08333333,
+        0.125,
+        0.16666667,
+        0.20833333,
+        0.25,
+        0.29166667,
+        0.33333333,
+        0.375,
+        0.41666667,
+        0.45833333,
+        0.5,
+        0.54166667,
+        0.58333333,
+        0.625,
+        0.66666667,
+        0.70833333,
+        0.75,
+        0.79166667,
+        0.83333333,
+        0.875,
+        0.91666667,
+        0.95833333,
+        1.0
+      ],
+      "loop": true
+    },
+    "run": {
+      "seconds": 0.5,
+      "times": [
+        0.0,
+        0.0065625,
+        0.013125,
+        0.0196875,
+        0.02625,
+        0.0328125,
+        0.039375,
+        0.04166667,
+        0.0459375,
+        0.0525,
+        0.065,
+        0.0715625,
+        0.078125,
+        0.08333333,
+        0.0846875,
+        0.09125,
+        0.0978125,
+        0.104375,
+        0.1109375,
+        0.1175,
+        0.125,
+        0.13,
+        0.16666667,
+        0.20833333,
+        0.2275,
+        0.24,
+        0.2465625,
+        0.25,
+        0.253125,
+        0.2596875,
+        0.26625,
+        0.2728125,
+        0.279375,
+        0.2859375,
+        0.29166667,
+        0.2925,
+        0.305,
+        0.3115625,
+        0.318125,
+        0.3246875,
+        0.33125,
+        0.33333333,
+        0.3378125,
+        0.344375,
+        0.3509375,
+        0.3575,
+        0.37,
+        0.375,
+        0.41666667,
+        0.45833333,
+        0.4875,
+        0.5
+      ],
+      "loop": true
+    },
+    "bite": {
+      "seconds": 0.6,
+      "times": [
+        0.0,
+        0.04166667,
+        0.08333333,
+        0.125,
+        0.16666667,
+        0.20833333,
+        0.25,
+        0.29166667,
+        0.3,
+        0.33333333,
+        0.375,
+        0.41666667,
+        0.45833333,
+        0.5,
+        0.54166667,
+        0.58333333,
+        0.6
+      ],
+      "loop": false
+    },
+    "hit": {
+      "seconds": 0.25,
+      "times": [
+        0.0,
+        0.04166667,
+        0.08333333,
+        0.125,
+        0.16666667,
+        0.20833333,
+        0.25
+      ],
+      "loop": false
+    },
+    "death": {
+      "seconds": 1.2,
+      "times": [
+        0.0,
+        0.04166667,
+        0.08333333,
+        0.125,
+        0.16666667,
+        0.20833333,
+        0.25,
+        0.29166667,
+        0.33333333,
+        0.375,
+        0.41666667,
+        0.45833333,
+        0.5,
+        0.54166667,
+        0.58333333,
+        0.625,
+        0.66666667,
+        0.70833333,
+        0.75,
+        0.79166667,
+        0.83333333,
+        0.875,
+        0.91666667,
+        0.95833333,
+        1.0,
+        1.04166667,
+        1.08333333,
+        1.125,
+        1.16666667,
+        1.2
+      ],
+      "loop": false
+    }
+  },
+  "source_process": "Blender 5.1.1 background CLI; live MCP get_addon_status reported Not connected to Blender; no new Tripo generation or credits",
+  "fitting": {
+    "body_nose_to_rump_m": 0.9545585215091705,
+    "shoulder_shell_height_m": 0.4972290098667145,
+    "head_roof_excluding_antennas_m": 0.6279779076576233,
+    "overall_bounds_blender": [
+      [
+        -0.1882314682006836,
+        -0.7244521379470825,
+        0.0004611254553310573
+      ],
+      [
+        0.20535770058631897,
+        0.5673154592514038,
+        0.7057090401649475
+      ]
+    ],
+    "origin": "floor, average of four paw-pad bbox centres",
+    "forward": "Blender +Y -> Godot -Z"
+  },
+  "rig": "one full bone influence per vertex and triangle; 33 independent rigid groups merged into two material surfaces; unit scale in all authored tracks",
+  "geometry_changes": {
+    "source_parts": 60,
+    "semantic_groups": 33,
+    "limb_cap_triangles": 345,
+    "source_pistons_replaced": [
+      16,
+      19,
+      22,
+      "17 lower portion"
+    ],
+    "topology_repairs": [
+      {
+        "group": "chest",
+        "removed_flaps": [
+          {
+            "area_m2": 4.62207907503398e-08,
+            "center": [
+              -0.050606921315193176,
+              0.2993258237838745,
+              0.4192081689834595
+            ]
+          },
+          {
+            "area_m2": 1.9284721020085271e-07,
+            "center": [
+              -0.038494523614645004,
+              0.0068951500579714775,
+              0.35121816396713257
+            ]
+          },
+          {
+            "area_m2": 1.9531755413026985e-07,
+            "center": [
+              -0.03798183053731918,
+              0.006535232067108154,
+              0.3509005904197693
+            ]
+          },
+          {
+            "area_m2": 1.8441362215071422e-07,
+            "center": [
+              -0.045330457389354706,
+              0.13218830525875092,
+              0.4547578692436218
+            ]
+          },
+          {
+            "area_m2": 1.8472145768555492e-07,
+            "center": [
+              -0.045330457389354706,
+              0.13186407089233398,
+              0.45443886518478394
+            ]
+          }
+        ]
+      },
+      {
+        "group": "pelvis",
+        "removed_flaps": [
+          {
+            "area_m2": 1.560161138058902e-07,
+            "center": [
+              0.08739352226257324,
+              -0.30579468607902527,
+              0.3414689898490906
+            ]
+          }
+        ]
+      },
+      {
+        "group": "neck",
+        "removed_flaps": [
+          {
+            "area_m2": 1.235295314927498e-07,
+            "center": [
+              -0.009226355701684952,
+              0.29684698581695557,
+              0.5728491544723511
+            ]
+          },
+          {
+            "area_m2": 1.225953667471913e-07,
+            "center": [
+              -0.009862597100436687,
+              0.29700928926467896,
+              0.5726078748703003
+            ]
+          },
+          {
+            "area_m2": 1.90224056950683e-07,
+            "center": [
+              -0.03785077482461929,
+              0.33266013860702515,
+              0.5351412296295166
+            ]
+          },
+          {
+            "area_m2": 1.8908652066329523e-07,
+            "center": [
+              -0.03836917132139206,
+              0.33306485414505005,
+              0.5354189872741699
+            ]
+          }
+        ]
+      },
+      {
+        "group": "head",
+        "removed_flaps": [
+          {
+            "area_m2": 7.219171038741479e-08,
+            "center": [
+              -0.04262595996260643,
+              0.3732604682445526,
+              0.6189996004104614
+            ]
+          },
+          {
+            "area_m2": 7.300965165768503e-08,
+            "center": [
+              -0.043262556195259094,
+              0.3731202483177185,
+              0.6191179752349854
+            ]
+          }
+        ]
+      },
+      {
+        "group": "fore_upper.R",
+        "removed_flaps": [
+          {
+            "area_m2": 9.019512958730047e-08,
+            "center": [
+              -0.08594872802495956,
+              0.2253451645374298,
+              0.350501149892807
+            ]
+          },
+          {
+            "area_m2": 1.4523875790928287e-07,
+            "center": [
+              -0.08938663452863693,
+              0.29407304525375366,
+              0.4194631278514862
+            ]
+          },
+          {
+            "area_m2": 1.4931212888313894e-07,
+            "center": [
+              -0.09002465009689331,
+              0.29383954405784607,
+              0.4192081689834595
+            ]
+          },
+          {
+            "area_m2": 9.049356464174707e-08,
+            "center": [
+              -0.08620508015155792,
+              0.2253386676311493,
+              0.3511373698711395
+            ]
+          }
+        ]
+      },
+      {
+        "group": "fore_lower.R",
+        "removed_flaps": [
+          {
+            "area_m2": 1.417476767073822e-07,
+            "center": [
+              -0.11745956540107727,
+              0.21959297358989716,
+              0.22999796271324158
+            ]
+          },
+          {
+            "area_m2": 1.4329492614706396e-07,
+            "center": [
+              -0.11777573078870773,
+              0.21984589099884033,
+              0.22957640886306763
+            ]
+          }
+        ]
+      },
+      {
+        "group": "fore_lower.L",
+        "removed_flaps": [
+          {
+            "area_m2": 8.873437451484278e-08,
+            "center": [
+              0.14091327786445618,
+              0.2655779719352722,
+              0.19416341185569763
+            ]
+          },
+          {
+            "area_m2": 2.536655472340499e-07,
+            "center": [
+              0.11348122358322144,
+              0.2519076466560364,
+              0.20635417103767395
+            ]
+          },
+          {
+            "area_m2": 8.902635784124868e-08,
+            "center": [
+              0.14154845476150513,
+              0.26578548550605774,
+              0.19428303837776184
+            ]
+          },
+          {
+            "area_m2": 2.588181757801067e-07,
+            "center": [
+              0.11316221952438354,
+              0.2519465684890747,
+              0.20681558549404144
+            ]
+          }
+        ]
+      },
+      {
+        "group": "fore_paw.L",
+        "removed_flaps": [
+          {
+            "area_m2": 1.4589883789994929e-07,
+            "center": [
+              0.09345763921737671,
+              0.405770480632782,
+              0.002814127830788493
+            ]
+          },
+          {
+            "area_m2": 1.4590186481200362e-07,
+            "center": [
+              0.09379374980926514,
+              0.40613359212875366,
+              0.0021761073730885983
+            ]
+          },
+          {
+            "area_m2": 1.689424635742398e-07,
+            "center": [
+              0.14473003149032593,
+              0.37534281611442566,
+              0.029497070237994194
+            ]
+          },
+          {
+            "area_m2": 1.7180413180994947e-07,
+            "center": [
+              0.1453680545091629,
+              0.3757059574127197,
+              0.02907552197575569
+            ]
+          }
+        ]
+      },
+      {
+        "group": "hind_upper.R",
+        "removed_flaps": [
+          {
+            "area_m2": 1.6489930487750826e-07,
+            "center": [
+              -0.07674020528793335,
+              -0.23294556140899658,
+              0.34270763397216797
+            ]
+          },
+          {
+            "area_m2": 1.650666661134892e-07,
+            "center": [
+              -0.07642119377851486,
+              -0.23324386775493622,
+              0.34270763397216797
+            ]
+          }
+        ]
+      },
+      {
+        "group": "hind_hock.R",
+        "removed_flaps": [
+          {
+            "area_m2": 1.912629343792105e-08,
+            "center": [
+              -0.13217400014400482,
+              -0.4276280999183655,
+              0.034020181745290756
+            ]
+          }
+        ]
+      },
+      {
+        "group": "hind_paw.R",
+        "removed_flaps": [
+          {
+            "area_m2": 2.002224164243671e-07,
+            "center": [
+              -0.13454380631446838,
+              -0.4312596917152405,
+              0.02685384266078472
+            ]
+          }
+        ]
+      },
+      {
+        "group": "hind_upper.L",
+        "removed_flaps": [
+          {
+            "area_m2": 4.6324384328499946e-08,
+            "center": [
+              0.0846107229590416,
+              -0.2526891827583313,
+              0.4090439975261688
+            ]
+          },
+          {
+            "area_m2": 4.67672514048445e-08,
+            "center": [
+              0.08524589985609055,
+              -0.2528318166732788,
+              0.40903544425964355
+            ]
+          },
+          {
+            "area_m2": 1.3403945331447176e-07,
+            "center": [
+              0.11729505658149719,
+              -0.22540681064128876,
+              0.34541282057762146
+            ]
+          },
+          {
+            "area_m2": 1.3392309483606368e-07,
+            "center": [
+              0.11735772341489792,
+              -0.2250436544418335,
+              0.34478116035461426
+            ]
+          }
+        ]
+      }
+    ],
+    "static_fit_matrix": [
+      [
+        0.0,
+        1.1200000047683716,
+        0.0,
+        0.007945692166686058
+      ],
+      [
+        -1.274999976158142,
+        0.0,
+        0.0,
+        -0.08762028813362122
+      ],
+      [
+        0.0,
+        0.0,
+        1.1200000047683716,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "neck_rest_tilt_degrees": -7
+  },
+  "textures": {
+    "color": 1024,
+    "normal_OpenGL": 1024,
+    "orm": 1024,
+    "emission": 64,
+    "orm_ao_channel": "1.0 neutral, not a separate AO bake",
+    "runtime_materials": 2
+  },
+  "piston_fits": [
+    {
+      "name": "fore.R",
+      "minimum_distance": 0.09180976623470535,
+      "maximum_distance": 0.11949216121316018,
+      "case_length": 0.04568239497845483,
+      "rod_length": 0.08580976623470535,
+      "minimum_overlap": 0.011999999999999997,
+      "minimum_rod_rear_clearance": 0.006000000000000005
+    },
+    {
+      "name": "fore.L",
+      "minimum_distance": 0.11096754191951674,
+      "maximum_distance": 0.12933425529830073,
+      "case_length": 0.036366713378783985,
+      "rod_length": 0.10496754191951674,
+      "minimum_overlap": 0.01200000000000001,
+      "minimum_rod_rear_clearance": 0.006000000000000005
+    },
+    {
+      "name": "hind.R",
+      "minimum_distance": 0.0698080115647983,
+      "maximum_distance": 0.10823189998014018,
+      "case_length": 0.05642388841534189,
+      "rod_length": 0.06380801156479829,
+      "minimum_overlap": 0.011999999999999997,
+      "minimum_rod_rear_clearance": 0.006000000000000005
+    },
+    {
+      "name": "hind.L",
+      "minimum_distance": 0.07609539380240785,
+      "maximum_distance": 0.10130802354602514,
+      "case_length": 0.043212629743617295,
+      "rod_length": 0.07009539380240784,
+      "minimum_overlap": 0.011999999999999997,
+      "minimum_rod_rear_clearance": 0.006000000000000005
+    }
+  ],
+  "videos": {
+    "spawn": {
+      "path": "spawn.mp4",
+      "frames": 25,
+      "fps": 24,
+      "bytes": 106731
+    },
+    "idle": {
+      "path": "idle.mp4",
+      "frames": 48,
+      "fps": 24,
+      "bytes": 217393
+    },
+    "run": {
+      "path": "run.mp4",
+      "frames": 48,
+      "fps": 24,
+      "bytes": 382854
+    },
+    "bite": {
+      "path": "bite.mp4",
+      "frames": 28,
+      "fps": 24,
+      "bytes": 160070
+    },
+    "hit": {
+      "path": "hit.mp4",
+      "frames": 25,
+      "fps": 24,
+      "bytes": 63543
+    },
+    "death": {
+      "path": "death.mp4",
+      "frames": 42,
+      "fps": 24,
+      "bytes": 163791
+    },
+    "native_run": {
+      "path": "native_run.mp4",
+      "frames": 48,
+      "fps": 24,
+      "bytes": 42797
+    }
+  },
+  "validation": {
+    "runtime_checks": 36509,
+    "gpu_captures": 312,
+    "source_reopened_poses": 142,
+    "runtime_origin_comparisons": 5254,
+    "runtime_origin_max_error_m": 1.6101918192868757e-07,
+    "source_errors": 0,
+    "reimport_errors": 0,
+    "floor_metrics": {
+      "bite": {
+        "minimum_y": 0.00152149051427841,
+        "paw_minimum_y": 0.00152149051427841,
+        "worst": {
+          "bone": "hind_paw.R",
+          "bone_origin": "(-0.141608, 0.038658, 0.444397)",
+          "point": "(-0.145738, 0.001521, 0.371054)",
+          "time": 0.273103459128018
+        }
+      },
+      "death": {
+        "minimum_y": 0.0039561465382576,
+        "paw_minimum_y": 0.0039561465382576,
+        "worst": {
+          "bone": "fore_paw.L",
+          "bone_origin": "(0.126564, 0.061735, -0.349746)",
+          "point": "(0.138643, 0.003956, -0.432672)",
+          "time": 0.0207612464997183
+        }
+      },
+      "hit": {
+        "minimum_y": 0.00151011347770691,
+        "paw_minimum_y": 0.00151011347770691,
+        "worst": {
+          "bone": "fore_paw.L",
+          "bone_origin": "(0.126728, 0.059294, -0.35136)",
+          "point": "(0.13881, 0.00151, -0.434282)",
+          "time": 0.0208333333333333
+        }
+      },
+      "idle": {
+        "minimum_y": 0.00399359315633774,
+        "paw_minimum_y": 0.00399359315633774,
+        "worst": {
+          "bone": "fore_paw.L",
+          "bone_origin": "(0.126666, 0.061772, -0.349707)",
+          "point": "(0.138744, 0.003994, -0.432634)",
+          "time": 0.479166666666667
+        }
+      },
+      "run": {
+        "minimum_y": 0.000523526221513748,
+        "paw_minimum_y": 0.000523526221513748,
+        "worst": {
+          "bone": "hind_paw.L",
+          "bone_origin": "(0.171077, 0.031248, 0.338096)",
+          "point": "(0.195856, 0.000524, 0.309074)",
+          "time": 0.354166666666667
+        }
+      },
+      "spawn": {
+        "minimum_y": 0.00326952151954174,
+        "paw_minimum_y": 0.00326952151954174,
+        "worst": {
+          "bone": "hind_paw.L",
+          "bone_origin": "(0.17048, 0.033902, 0.247436)",
+          "point": "(0.195228, 0.00327, 0.218291)",
+          "time": 0.272164952509182
+        }
+      }
+    }
+  },
+  "limits": [
+    "Base hound and shared 0.8x pack preview only; heavy tracker armour remains unbuilt.",
+    "No hound gameplay rules/targets/FX/node selection integration and no beacon/giant model generation in this pass.",
+    "Baked collapse starts from the authored idle pose; arbitrary interruptions and arbitrary blended poses are not contact-certified.",
+    "No live inter-part/debris/terrain collision, visual or performance approval.",
+    "Torso/source shell boundaries and intentional internal joint overlaps remain; source QA retains 22 seam/contact duplicate vertices and two hidden opposing-face pairs.",
+    "Piston length adjustment is a one-time rest-mesh fit. Mesh parts never scale during playback.",
+    "Native comparison uses the actual 1.75x camera settings and current assets with shared studio lighting; main game lighting is unchanged."
+  ],
+  "technical_references": [
+    "https://docs.godotengine.org/en/stable/classes/class_editorscenepostimport.html",
+    "https://docs.godotengine.org/en/latest/tutorials/assets_pipeline/importing_3d_scenes/advanced_import_settings.html"
+  ],
+  "immutable_download_hashes": {
+    "hound_raw.glb": "94ea4061dc94b5e1365ab10a4d73b8fd37c2a4e36e753c31eb3119b6b70cc6e7",
+    "hound_segmented.glb": "b40454295efee0baf0840b84c7a9aba43f8c6da449f8c45aba9e410eb6668a87"
+  }
+}

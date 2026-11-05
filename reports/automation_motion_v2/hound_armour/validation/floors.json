@@ -1,0 +1,44 @@
+{
+  "spawn": {
+    "min_z": 0.25435936235339796,
+    "worst": {
+      "time": 0.0,
+      "part": "fore_upper.R"
+    }
+  },
+  "idle": {
+    "min_z": 0.3578788805063272,
+    "worst": {
+      "time": 0.75,
+      "part": "fore_upper.L"
+    }
+  },
+  "run": {
+    "min_z": 0.1918434997843388,
+    "worst": {
+      "time": 0.125,
+      "part": "fore_upper.L"
+    }
+  },
+  "bite": {
+    "min_z": 0.27106465019068227,
+    "worst": {
+      "time": 0.3333333333333333,
+      "part": "fore_upper.L"
+    }
+  },
+  "hit": {
+    "min_z": 0.2808385339000392,
+    "worst": {
+      "time": 0.125,
+      "part": "fore_upper.L"
+    }
+  },
+  "death": {
+    "min_z": 0.011999857419295878,
+    "worst": {
+      "time": 1.2,
+      "part": "jaw"
+    }
+  }
+}

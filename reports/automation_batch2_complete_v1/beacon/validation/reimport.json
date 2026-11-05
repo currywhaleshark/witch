@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "actions": [
+    "death",
+    "deploy",
+    "hit",
+    "pulse",
+    "shutdown"
+  ],
+  "triangles": 4237,
+  "sha256": "8abee0e5302f8fe001928b41c32126bc3fe356520f26b18cfe6b6d75f4cbb277"
+}

@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "sheet": "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\automation_batch2_complete_v1\\beacon_source\\segmented\\random.png",
+  "views": [
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\automation_batch2_complete_v1\\beacon_source\\segmented\\random_front.png",
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\automation_batch2_complete_v1\\beacon_source\\segmented\\random_back.png",
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\automation_batch2_complete_v1\\beacon_source\\segmented\\random_right.png",
+    "C:\\Users\\yurib\\Documents\\New project\\witch\\reports\\automation_batch2_complete_v1\\beacon_source\\segmented\\random_three_quarter.png"
+  ],
+  "layout": "2x2",
+  "order": [
+    "front",
+    "back",
+    "right",
+    "three_quarter"
+  ]
+}
