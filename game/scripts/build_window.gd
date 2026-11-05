@@ -514,8 +514,28 @@ func effect_note(id: String) -> String:
 		"recoil_control":
 			return "화기 사격 간격·산탄 대기 −%s%% · 도약 속도 +%d%%" % [str(snappedf(100 * (1.0 - arena.fire_interval_factor()), 0.1)), roundi(100 * (arena.leap_speed_factor() - 1.0))]
 		"automaton", "turret":
-			return "체력 ×%.2f · 피해 ×%.2f · 명중 %d%% · 치명 %d%%" % [arena.summon_growth("hp", id), arena.summon_growth("damage", id),
+			var growth := "체력 ×%.2f · 피해 ×%.2f · 명중 %d%% · 치명 %d%%" % [arena.summon_growth("hp", id), arena.summon_growth("damage", id),
 				roundi(100 * clampf(config.summon_hit_base + config.summon_hit_per_level * (config[id + "_level"] - 1), config.hit_min, config.hit_cap)), roundi(100 * arena.crit_chance(id))]
+			if id != "turret":
+				return growth
+			var plan: Dictionary = arena.turret_plan()
+			var reach: float = arena.detection_range({"mobile": false})
+			var kind: String = {"base": "탐지 %.1fm" % reach,
+				"suppress": "탐지 %.1fm · 표적 주변 %.1fm 적 %d명에게도 퍼짐 · 발당 피해 ×%s" % [reach, float(plan.get("spread_radius", 0)), int(plan.get("spread_targets", 0)), str(plan.get("damage_factor", 1))],
+				"precise": "탐지 %.1fm · 가장 단단한 적 먼저 · 피해 ×%s · 사격 간격 ×%s" % [reach, str(plan.get("damage_factor", 1)), str(plan.get("interval_factor", 1))]}[config.turret_node]
+			return "%s · %s · %s" % [Build.SKILL_NODE_NAMES.turret[config.turret_node], kind, growth]
+		"power_management":
+			var power: Dictionary = config.passives.power_management
+			var level: float = arena.passive_level(id)
+			return "소환체 수명 +%d%% · 태엽인형·포탑 마나 −%d%% · 공구 유지비 −%s%%" % [roundi(100 * float(power.summon_life_per_level) * level), roundi(100 * float(power.summon_mana_cut_per_level) * level), str(snappedf(100 * arena.power_upkeep_cut(), 0.1))]
+		"target_judgement":
+			var judge: Dictionary = config.passives.target_judgement
+			var level: float = arena.passive_level(id)
+			return "소환체 탐지 범위 +%d%% · 표적 중계로 지정한 적에게 소환체 피해 +%d%%" % [roundi(100 * float(judge.detection_per_level) * level), roundi(100 * float(judge.relay_damage_per_level) * level)]
+		"spare_parts":
+			var spare: Dictionary = config.passives.spare_parts
+			var level: float = arena.passive_level(id)
+			return "소환체가 적에게 부서지면 그 스킬 마나 %d%% 환급 · 남은 재사용 대기 −%d%%" % [roundi(100 * float(spare.mana_refund_per_level) * level), roundi(100 * minf(1.0, float(spare.cooldown_cut_per_level) * level))]
 		"production_efficiency":
 			return "시전 속도 +%d" % roundi(arena.build.cast_speed_parts().passive)
 		"guillotine":

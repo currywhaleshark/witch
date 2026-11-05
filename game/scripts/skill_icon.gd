@@ -5,7 +5,8 @@ extends RefCounted
 const GOLD = Color("d8b77b")
 const KINDS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8, "spring_dash": 9,
 	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12, "matchlock": 14, "reload": 15, "rifle": 16, "powder_keg": 17, "gatling": 18, "smoke_launcher": 19, "recoil_leap": 20, "artillery": 21, "naval_gun": 22, "recoil_control": 23,
-	"guillotine": 24, "hydraulic_press": 25, "compound_executor": 26, "restraint_winch": 27, "exoskeleton": 28, "shock_frame": 29, "focus_attack": 30, "area_attack": 31}
+	"guillotine": 24, "hydraulic_press": 25, "compound_executor": 26, "restraint_winch": 27, "exoskeleton": 28, "shock_frame": 29, "focus_attack": 30, "area_attack": 31,
+	"power_management": 32, "target_judgement": 33, "spare_parts": 34}
 const PLAIN = 13
 
 static func draw(canvas: CanvasItem, p: Vector2, id: String, color: Color, scale: float = 1.0) -> void:
@@ -202,6 +203,25 @@ static func shape(canvas: CanvasItem, p: Vector2, kind: int, color: Color) -> vo
 			canvas.draw_line(p + Vector2(-14, -14), p + Vector2(14, -14), color, 3)
 			canvas.draw_line(p + Vector2(-14, 14), p + Vector2(14, 14), color, 3)
 			canvas.draw_polyline(PackedVector2Array([p + Vector2(0, -14), p + Vector2(-8, -9), p + Vector2(8, -4), p + Vector2(-8, 1), p + Vector2(8, 6), p + Vector2(-8, 10), p + Vector2(0, 14)]), GOLD, 2)
+		32:
+			# Power management: a wound mainspring feeding a lightning bolt.
+			canvas.draw_arc(p + Vector2(-5, 2), 11, 0.4, TAU - 0.2, 20, color, 2)
+			canvas.draw_arc(p + Vector2(-5, 2), 5, 0.4, TAU - 0.2, 12, color, 2)
+			canvas.draw_polyline(PackedVector2Array([p + Vector2(12, -16), p + Vector2(5, -2), p + Vector2(12, -2), p + Vector2(5, 14)]), GOLD, 3)
+		33:
+			# Target judgement: a crosshair on a marked foe.
+			canvas.draw_arc(p, 12, 0, TAU, 24, color, 2)
+			for k in 4:
+				var d := Vector2(0, -1).rotated(k * PI / 2)
+				canvas.draw_line(p + d * 7, p + d * 17, color, 2)
+			canvas.draw_circle(p, 3, GOLD)
+		34:
+			# Spare parts: a spare gear beside a bolt.
+			canvas.draw_arc(p + Vector2(-5, -3), 8, 0, TAU, 18, color, 2)
+			for k in 6:
+				canvas.draw_line(p + Vector2(-5, -3) + Vector2(8, 0).rotated(k * TAU / 6), p + Vector2(-5, -3) + Vector2(12, 0).rotated(k * TAU / 6), color, 3)
+			canvas.draw_line(p + Vector2(9, -2), p + Vector2(9, 16), GOLD, 3)
+			canvas.draw_rect(Rect2(p + Vector2(4, -7), Vector2(10, 5)), GOLD)
 		15:
 			# Reload mechanism: rounds feeding into a gear.
 			canvas.draw_arc(p + Vector2(5, 3), 8, 0, TAU, 18, color, 2)

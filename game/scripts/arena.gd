@@ -179,6 +179,7 @@ var twin_shots: Array = []
 var block_push_left := 0.0
 var last_recoil: Dictionary = {}
 var last_spring_landing: Dictionary = {}
+var last_spare_refund: Dictionary = {}
 var last_shot: Dictionary = {}
 var hold: Dictionary = {}
 # A held ground click keeps steering on its own, so skill presses never replace it.
@@ -429,6 +430,7 @@ func reset_arena() -> void:
 	block_push_left = 0.0
 	last_recoil.clear()
 	last_spring_landing.clear()
+	last_spare_refund.clear()
 	spring_plate = null
 	for id in enemies:
 		enemies[id].body.free()
@@ -1315,7 +1317,7 @@ func sync_tool_upkeep() -> void:
 	# The exoskeleton's drive frame trims it further.
 	var cut: float = minf(0.9, gear_total("upkeep_pct") / 100.0)
 	for id in tool_upkeep:
-		rules.skills[id].upkeep_per_second = float(tool_upkeep[id]) * (1.0 - cut) * (1.0 - exo_upkeep_cut())
+		rules.skills[id].upkeep_per_second = float(tool_upkeep[id]) * (1.0 - cut) * (1.0 - exo_upkeep_cut()) * (1.0 - power_upkeep_cut())
 
 func skill_level_factor(source: String) -> float:
 	# Skills whose level raises their damage (the shotgun, for its blueprint) scale here.
@@ -1520,7 +1522,8 @@ func sync_automaton_cost() -> void:
 	var cut: float = clampf(gear_total("mana_cost_pct") / 100.0, 0.0, 0.5)
 	for id in base_mana_costs:
 		var cost: float = float(node.get("mana_cost", automaton_cost.mana_cost)) if id == "automaton" else float(base_mana_costs[id])
-		rules.skills[id].mana_cost = cost * (1.0 - cut)
+		# Power management trims what the summons cost to build.
+		rules.skills[id].mana_cost = cost * (1.0 - cut) * (summon_mana_factor() if id in ["automaton", "turret"] else 1.0)
 	# A gun is assembled loaded: its cost is a full magazine at its per-round price.
 	for id in GUNS:
 		rules.skills[id].mana_cost = gun_magazine(id) * round_cost(id)
@@ -1545,6 +1548,66 @@ func fire_interval_factor() -> float:
 func leap_speed_factor() -> float:
 	# It also lands the recoil leap and the spring dash's jump faster: the same distance in less time.
 	return 1.0 + float(config.passives.recoil_control.leap_speed_per_level) * recoil_level()
+
+func passive_level(id: String) -> float:
+	return float(config.passive_levels.get(id, 0))
+
+func summon_life_factor() -> float:
+	# Power management (automation passive): summons and turrets run longer on one winding...
+	return 1.0 + float(config.passives.power_management.summon_life_per_level) * passive_level("power_management")
+
+func summon_mana_factor() -> float:
+	# ...cost less mana to build...
+	return maxf(0.1, 1.0 - float(config.passives.power_management.summon_mana_cut_per_level) * passive_level("power_management"))
+
+func power_upkeep_cut() -> float:
+	# ...and lend a little to the drive tools' upkeep (03 §2.1 synergy).
+	return float(config.passives.power_management.tool_upkeep_cut_per_level) * passive_level("power_management")
+
+func turret_plan() -> Dictionary:
+	return rules.skills.turret.nodes[config.turret_node]
+
+func detection_range(ally: Dictionary) -> float:
+	# How far a summon looks for enemies: the turret node widens or narrows it, target judgement
+	# (automation passive) widens both.
+	var reach: float = float(config.summon_detection_range) if ally.mobile else float(config.turret_detection_range) * float(turret_plan().get("detection_factor", 1.0))
+	return reach * (1.0 + float(config.passives.target_judgement.detection_per_level) * passive_level("target_judgement"))
+
+func relay_factor(ally: Dictionary) -> float:
+	# Target judgement: hits on the enemy the relay pointed them at land harder.
+	if ally.target == "" or ally.target != ally.get("relayed", ""):
+		return 1.0
+	return 1.0 + float(config.passives.target_judgement.relay_damage_per_level) * passive_level("target_judgement")
+
+func toughest_enemy(ally: Dictionary) -> String:
+	# The precise turret picks the enemy with the most health it can see, nearer first on a tie.
+	var best := ""
+	var most := -1.0
+	var near := INF
+	for id in enemies:
+		if not eligible(ally, id):
+			continue
+		var tough: float = float(enemies[id].max_hp)
+		var gap: float = ally.node.position.distance_to(enemies[id].body.position)
+		if tough > most + 0.001 or (absf(tough - most) <= 0.001 and gap < near):
+			best = id
+			most = tough
+			near = gap
+	return best
+
+func spare_parts_refund(ally: Dictionary) -> void:
+	# Spare parts (automation passive): a summon broken by enemies hands back part of its mana and
+	# cuts what is left of its skill's cooldown, so it can be put back sooner.
+	var level: float = passive_level("spare_parts")
+	if level <= 0:
+		return
+	var plan: Dictionary = config.passives.spare_parts
+	var skill: String = "automaton" if ally.mobile else "turret"
+	var refund: float = float(rules.skills[skill].mana_cost) * float(plan.mana_refund_per_level) * level
+	state.mana = minf(state.max_mana, state.mana + refund)
+	if state.cooldowns.has(skill):
+		state.cooldowns[skill] = float(state.cooldowns[skill]) * maxf(0.0, 1.0 - float(plan.cooldown_cut_per_level) * level)
+	last_spare_refund = {"skill": skill, "mana": refund}
 
 func turret_fire_rate() -> float:
 	# The reload mechanism's feed also speeds up the turret, which feeds rounds the same way (03 §2.1).
@@ -3571,6 +3634,7 @@ func execute_cast(event: Dictionary) -> void:
 			for ally in allies:
 				if eligible(ally, event.target_enemy):
 					ally.target = event.target_enemy
+					ally.relayed = event.target_enemy
 					linked.append(ally.node.position)
 			spawn_vfx().relay(target, linked, map.ground_y(target))
 
@@ -4145,13 +4209,13 @@ func spawn_ally(pos: Vector3, mobile: bool, target_id) -> void:
 	var node = Node3D.new()
 	world.add_child(node)
 	node.position = map.grounded(pos)
-	ActorVisual.create(node, "automaton" if mobile else "turret", str(config.automaton_node) if mobile else "base", float(config.summon_lifetime))
+	ActorVisual.create(node, "automaton" if mobile else "turret", str(config.automaton_node) if mobile else "base", float(config.summon_lifetime) * summon_life_factor())
 	var durability: float = (config.automaton_hp if mobile else config.turret_hp) * summon_growth("hp", "automaton" if mobile else "turret")
 	# The automaton keeps the node it was summoned with; B never times out but only so many stay.
 	# Taken before an old B steps aside, so the new one keeps the place it was assembled at.
 	var slot := free_follow_slot() if mobile else -1
 	var kind: String = config.automaton_node if mobile else ""
-	var life: float = config.summon_lifetime if mobile else config.turret_lifetime
+	var life: float = (config.summon_lifetime if mobile else config.turret_lifetime) * summon_life_factor()
 	if kind == "B":
 		# The lasting B automaton is a tank: a little harder hitting and sturdier.
 		life = INF
@@ -4236,7 +4300,7 @@ func on_screen(pos: Vector3) -> bool:
 	return rect.has_point(screen)
 
 func eligible(ally: Dictionary, id: String) -> bool:
-	return enemies.has(id) and on_screen(enemies[id].body.position) and ally.node.position.distance_to(enemies[id].body.position) <= (config.summon_detection_range if ally.mobile else config.turret_detection_range) and map.sees(ally.node.position, enemies[id].body.position)
+	return enemies.has(id) and on_screen(enemies[id].body.position) and ally.node.position.distance_to(enemies[id].body.position) <= detection_range(ally) and map.sees(ally.node.position, enemies[id].body.position)
 
 func _physics_process(dt: float) -> void:
 	if not is_instance_valid(player) or loading:
@@ -4442,6 +4506,7 @@ func damage_ally(ally: Dictionary, amount: float, grade: String) -> void:
 		# Destroyed summons break apart without the end-of-life self-destruct blast.
 		spawn_vfx().summon_break(ally.node.position + Vector3.UP * 0.5, floor_y)
 		play_sfx("summon_break", 1.15)
+		spare_parts_refund(ally)
 		var art: Node = ally.node.get_node_or_null("ActorVisual")
 		if art != null:
 			art.detach_for_death(world, self)
@@ -4847,7 +4912,10 @@ func _tick_allies(dt: float) -> void:
 			face_travel(ally, before, dt)
 			continue
 		if not eligible(ally, ally.target):
-			ally.target = nearest_enemy(ally.node.position, config.summon_detection_range if ally.mobile else config.turret_detection_range, Vector3.ZERO, -1, true, true)
+			if not ally.mobile and turret_plan().get("toughest_first", false):
+				ally.target = toughest_enemy(ally)
+			else:
+				ally.target = nearest_enemy(ally.node.position, detection_range(ally), Vector3.ZERO, -1, true, true)
 		if ally.target == "":
 			if ally.mobile:
 				var before: Vector3 = ally.node.position
@@ -4879,9 +4947,27 @@ func _tick_allies(dt: float) -> void:
 			var saw: bool = ally.mobile and ally.node_kind == "B"
 			var damage: float = config.summon_damage * (float(config.automaton_nodes.B.damage_factor) if ally.node_kind == "B" else 1.0)
 			damage = (damage if ally.mobile else config.turret_damage) * summon_growth("damage", "automaton" if ally.mobile else "turret")
-			strike(ally.target, damage, true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret", "saw" if saw else "")
-			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown / turret_fire_rate()
+			var plan: Dictionary = {} if ally.mobile else turret_plan()
+			damage *= float(plan.get("damage_factor", 1.0))
+			var aimed: String = ally.target
+			strike(aimed, damage * relay_factor(ally), true, "automaton" if ally.mobile else "turret", "automaton" if ally.mobile else "turret", "saw" if saw else "")
+			if int(plan.get("spread_targets", 0)) > 0:
+				turret_spread(ally, aimed, target, damage, shot_origin, plan)
+			ally.cooldown = config.summon_attack_cooldown if ally.mobile else config.turret_attack_cooldown / turret_fire_rate() * float(plan.get("interval_factor", 1.0))
 	separate_allies(dt)
+
+func turret_spread(ally: Dictionary, aimed: String, at: Vector3, damage: float, origin: Vector3, plan: Dictionary) -> void:
+	# The suppressing turret's burst scatters: each shot also strikes a few other enemies near
+	# its target, at the node's lowered damage per hit.
+	var near: Array = []
+	for id in enemies:
+		if id != aimed and enemies[id].body.position.distance_to(at) <= float(plan.spread_radius) and eligible(ally, id):
+			near.append(id)
+	near.sort_custom(func(a, b): return enemies[a].body.position.distance_to(at) < enemies[b].body.position.distance_to(at))
+	for id in near.slice(0, int(plan.spread_targets)):
+		if enemies.has(id):
+			spawn_vfx().summon_shot(origin, enemies[id].body.position + Vector3.UP * 0.8, Color(1.0, 0.78, 0.45), map.ground_y(origin))
+			strike(id, damage, true, "turret", "turret")
 
 func show_message(value: String) -> void:
 	if value == message and message_time > 0.3:

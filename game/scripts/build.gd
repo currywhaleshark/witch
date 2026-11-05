@@ -17,6 +17,7 @@ const SKILL_NODE_NAMES = {
 	"area_attack": {"base": "기본", "power": "광역 피해", "debuff": "디버프 확산"},
 	"exoskeleton": {"base": "기본 프레임", "guard": "방호 프레임", "drive": "집행 프레임"},
 	"spring_dash": {"base": "기본 판", "approach": "접근 착지", "retreat": "후퇴 착지"},
+	"turret": {"base": "기본 포대", "suppress": "광역 제압", "precise": "정밀 조준"},
 }
 
 var arena: Node
