@@ -2802,9 +2802,13 @@ func focus_hit(direction: Vector3) -> void:
 	if best == "":
 		last_tool_attack = {"skill": "focus_attack", "tool": tool, "target": "", "result": "miss", "hits": channel.hits}
 		return
-	var result := tool_strike(best, tool, tool_hit_damage("focus_attack", channel.plan), channel.plan, "focus_attack")
+	var damage := tool_hit_damage("focus_attack", channel.plan)
+	var result := tool_strike(best, tool, damage, channel.plan, "focus_attack")
 	if result != "miss":
 		tool_hit_sound(tool)
+		# Each landed bolt cutter thrust drags one more enemy in, like a basic attack hit.
+		if tool == "bolt_cutter" and gear_total("rule:chain_cut") > 0:
+			chain_cut(best, damage, [], "focus_attack:bolt_cutter")
 	last_tool_attack = {"skill": "focus_attack", "tool": tool, "target": best, "result": result, "hits": channel.hits}
 
 func tool_area(tool, direction: Vector3) -> void:
@@ -2835,6 +2839,13 @@ func tool_area(tool, direction: Vector3) -> void:
 			results[id] = tool_strike(id, tool, damage, plan, "area_attack")
 	if results.values().has("hit") or results.values().has("crit"):
 		tool_hit_sound(tool)
+		if tool == "bolt_cutter" and gear_total("rule:chain_cut") > 0:
+			# One drag per swing: from the nearest enemy it cut to the nearest one it did not.
+			var first := ""
+			for id in struck:
+				if results.get(id, "miss") != "miss" and enemies.has(id) and (first == "" or player.position.distance_to(enemies[id].body.position) < player.position.distance_to(enemies[first].body.position)):
+					first = id
+			chain_cut(first, damage, struck, "area_attack:bolt_cutter")
 	spawn_vfx().fan_slash(player.position, direction, reach, rad_to_deg(half) * 2.0, map.ground_y(player.position))
 	last_tool_attack = {"skill": "area_attack", "tool": tool, "struck": struck, "results": results}
 
@@ -4035,8 +4046,9 @@ func dismantle_ally(ally: Dictionary) -> void:
 	ally.node.queue_free()
 	allies.erase(ally)
 
-func chain_cut(first: String, damage: float) -> void:
-	# Unique 집행자의 도르래: a landed bolt cutter hit drags the nearest other enemy in.
+func chain_cut(first: String, damage: float, skip: Array = [], label: String = "") -> void:
+	# Unique 집행자의 도르래: a landed bolt cutter hit (basic, focus or area attack) drags the
+	# nearest other enemy in. Enemies in `skip` were already cut by the same swing.
 	if not enemies.has(first):
 		return
 	var rule: Dictionary = items.data.rule_values
@@ -4045,11 +4057,11 @@ func chain_cut(first: String, damage: float) -> void:
 	var best := float(rule.chain_cut_range)
 	for id in enemies:
 		var gap: float = enemies[id].body.position.distance_to(origin)
-		if id != first and gap <= best:
+		if id != first and id not in skip and gap <= best:
 			best = gap
 			second = id
 	if second != "":
-		strike(second, damage * float(rule.chain_cut_factor), true, "witch", "bolt_cutter")
+		strike(second, damage * float(rule.chain_cut_factor), true, "witch", "bolt_cutter", "", label)
 
 func expire_ally(ally: Dictionary) -> void:
 	# End of life: automatons self-destruct, turrets just shut down. An A automaton also lands

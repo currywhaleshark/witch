@@ -57,7 +57,7 @@
     "tag:cutting": "절삭 공격 피해 +%d%%", "tag:projectile": "발사체 공격 피해 +%d%%", "upkeep_pct": "토글 유지비 −%d%%"},
   "uniques": [
     {"id": "executioner_pulley", "name": "집행자의 도르래", "base": "part_cutting", "options": {"tag:cutting": 10, "attack_speed": 10},
-      "rule": "chain_cut", "rule_text": "볼트 커터로 적중하면 3m 안의 다른 적 하나를 60% 피해로 연동 타격"},
+      "rule": "chain_cut", "rule_text": "볼트 커터로 적중하면 3m 안의 다른 적 하나를 60% 피해로 연동 타격(평타·집중·광역 공격)"},
     {"id": "self_replicating_spring", "name": "자기복제 태엽", "base": "bp_automaton", "options": {"skill:automaton": 1, "cast_speed": 10},
       "rule": "self_replicate", "rule_text": "태엽인형이 자폭하면 그 자리에 수명이 절반인 복제 인형 하나가 남음(복제는 다시 복제하지 않음)"}
   ],
