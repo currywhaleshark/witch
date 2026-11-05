@@ -6,7 +6,8 @@ const GOLD = Color("d8b77b")
 const KINDS = {"basic_attack": 0, "shotgun": 1, "bolt_cutter": 2, "automaton": 3, "turret": 4, "relay": 5, "grinder": 6, "shield": 7, "chainsaw": 8, "spring_dash": 9,
 	"ballistics": 10, "cutting_precision": 11, "production_efficiency": 12, "matchlock": 14, "reload": 15, "rifle": 16, "powder_keg": 17, "gatling": 18, "smoke_launcher": 19, "recoil_leap": 20, "artillery": 21, "naval_gun": 22, "recoil_control": 23,
 	"guillotine": 24, "hydraulic_press": 25, "compound_executor": 26, "restraint_winch": 27, "exoskeleton": 28, "shock_frame": 29, "focus_attack": 30, "area_attack": 31,
-	"power_management": 32, "target_judgement": 33, "spare_parts": 34}
+	"power_management": 32, "target_judgement": 33, "spare_parts": 34,
+	"hound": 35, "beacon": 36, "giant": 37}
 const PLAIN = 13
 
 static func draw(canvas: CanvasItem, p: Vector2, id: String, color: Color, scale: float = 1.0) -> void:
@@ -222,6 +223,33 @@ static func shape(canvas: CanvasItem, p: Vector2, kind: int, color: Color) -> vo
 				canvas.draw_line(p + Vector2(-5, -3) + Vector2(8, 0).rotated(k * TAU / 6), p + Vector2(-5, -3) + Vector2(12, 0).rotated(k * TAU / 6), color, 3)
 			canvas.draw_line(p + Vector2(9, -2), p + Vector2(9, 16), GOLD, 3)
 			canvas.draw_rect(Rect2(p + Vector2(4, -7), Vector2(10, 5)), GOLD)
+		35:
+			# Mechanical hound: a long low body, a trap jaw and four thin legs.
+			canvas.draw_line(p + Vector2(-12, -2), p + Vector2(8, -4), color, 3)
+			canvas.draw_polyline(PackedVector2Array([p + Vector2(8, -4), p + Vector2(15, -10), p + Vector2(19, -6), p + Vector2(12, -2)]), color, 2)
+			canvas.draw_line(p + Vector2(15, -10), p + Vector2(17, -15), color, 2)
+			for x in [-11, -6, 3, 7]:
+				canvas.draw_line(p + Vector2(x, -2), p + Vector2(x - 2, 14), color, 2)
+			canvas.draw_line(p + Vector2(-12, -2), p + Vector2(-18, -9), color, 2)
+			canvas.draw_circle(p + Vector2(15, -7), 2, GOLD)
+		36:
+			# Lure beacon: a tripod mast with a lamp and a bell, signal arcs round the lamp.
+			canvas.draw_line(p + Vector2(0, -6), p + Vector2(0, 10), color, 3)
+			for x in [-10, 0, 10]:
+				canvas.draw_line(p + Vector2(0, 10), p + Vector2(x, 16), color, 2)
+			canvas.draw_circle(p + Vector2(0, -10), 4, GOLD)
+			canvas.draw_arc(p + Vector2(0, -10), 9, -2.4, -0.7, 8, GOLD, 2)
+			canvas.draw_arc(p + Vector2(0, -10), 14, -2.4, -0.7, 10, color, 2)
+			canvas.draw_rect(Rect2(p + Vector2(-9, -2), Vector2(5, 5)), color)
+		37:
+			# Giant automaton: broad shoulders, long arms, a gear on the chest.
+			canvas.draw_rect(Rect2(p + Vector2(-9, -12), Vector2(18, 16)), color, false, 2)
+			canvas.draw_rect(Rect2(p + Vector2(-4, -17), Vector2(8, 5)), color)
+			for sign_x in [-1, 1]:
+				canvas.draw_line(p + Vector2(sign_x * 9, -10), p + Vector2(sign_x * 16, 4), color, 3)
+				canvas.draw_rect(Rect2(p + Vector2(sign_x * 16 - 3, 4), Vector2(6, 6)), GOLD)
+				canvas.draw_line(p + Vector2(sign_x * 5, 4), p + Vector2(sign_x * 6, 16), color, 3)
+			canvas.draw_arc(p + Vector2(0, -4), 4, 0, TAU, 12, GOLD, 2)
 		15:
 			# Reload mechanism: rounds feeding into a gear.
 			canvas.draw_arc(p + Vector2(5, 3), 8, 0, TAU, 18, color, 2)

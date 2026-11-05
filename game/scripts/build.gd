@@ -18,6 +18,8 @@ const SKILL_NODE_NAMES = {
 	"exoskeleton": {"base": "기본 프레임", "guard": "방호 프레임", "drive": "집행 프레임"},
 	"spring_dash": {"base": "기본 판", "approach": "접근 착지", "retreat": "후퇴 착지"},
 	"turret": {"base": "기본 포대", "suppress": "광역 제압", "precise": "정밀 조준"},
+	"hound": {"base": "기본 무리", "pack": "사냥 무리", "tracker": "중장 추적기"},
+	"giant": {"base": "기본 기체", "single": "단일 강화", "multi": "다수 운용"},
 }
 
 var arena: Node

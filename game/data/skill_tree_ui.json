@@ -39,13 +39,13 @@
     {"tree": "automation", "nodes": [
       {"name": "태엽인형", "tier": 1, "col": 1, "id": "automaton"},
       {"name": "반복 타격기", "tier": 1, "col": 4},
-      {"name": "기계 수렵견", "tier": 2, "col": 0},
+      {"name": "기계 수렵견", "tier": 2, "col": 0, "id": "hound"},
       {"name": "수리인형", "tier": 2, "col": 2},
-      {"name": "유인 신호기", "tier": 2, "col": 6},
+      {"name": "유인 신호기", "tier": 2, "col": 6, "id": "beacon"},
       {"name": "호위 인형", "tier": 3, "col": 0},
       {"name": "자동포탑", "tier": 3, "col": 4, "id": "turret"},
       {"name": "표적 중계기", "tier": 3, "col": 5, "id": "relay"},
-      {"name": "거대 자동인형", "tier": 4, "col": 1},
+      {"name": "거대 자동인형", "tier": 4, "col": 1, "id": "giant"},
       {"name": "조립 인형대", "tier": 4, "col": 2},
       {"name": "자율공방", "tier": 4, "col": 3}],
      "passives": [

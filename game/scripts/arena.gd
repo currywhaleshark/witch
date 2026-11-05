@@ -14,6 +14,7 @@ const PlayerVisual = preload("res://scripts/player_visual.gd")
 const ActorVisual = preload("res://scripts/actor_visual.gd")
 const AutomatonAssembly = preload("res://scripts/automaton_assembly.gd")
 const TurretAssembly = preload("res://scripts/turret_assembly.gd")
+const Batch2Summons = preload("res://scripts/batch2_summons.gd")
 const ShotgunCast = preload("res://scripts/shotgun_cast.gd")
 const ShotgunGeometry = preload("res://scripts/shotgun_geometry.gd")
 const FloatingGun = preload("res://scripts/floating_gun.gd")
@@ -34,7 +35,7 @@ const DEVICES = ["guillotine", "hydraulic_press", "compound_executor"]
 const SKILL_TREES = {"shotgun": "firearm", "matchlock": "firearm", "rifle": "firearm", "powder_keg": "firearm", "gatling": "firearm", "smoke_launcher": "firearm", "recoil_leap": "firearm", "artillery": "firearm", "naval_gun": "firearm", "bolt_cutter": "drive", "grinder": "drive", "chainsaw": "drive", "shield": "drive", "spring_dash": "drive",
 	"guillotine": "drive", "hydraulic_press": "drive", "compound_executor": "drive", "restraint_winch": "drive", "exoskeleton": "drive",
 	"focus_attack": "drive", "area_attack": "drive",
-	"automaton": "automation", "turret": "automation", "relay": "automation"}
+	"automaton": "automation", "turret": "automation", "relay": "automation", "hound": "automation", "beacon": "automation", "giant": "automation"}
 const CombatVfx = preload("res://scripts/combat_vfx.gd")
 const StatusFx = preload("res://scripts/status_fx.gd")
 const AssetWarmup = preload("res://scripts/asset_warmup.gd")
@@ -67,6 +68,8 @@ const PICK_LAYER = 8
 # Held inputs repeat only attack-like casts; toggles, summons and placement stay one per press.
 const REPEAT_KINDS = ["aim", "enemy"]
 const GUNS = ["matchlock", "rifle"]
+# Every summon skill whose build cost power management trims.
+const SUMMON_SKILLS = ["automaton", "turret", "hound", "beacon", "giant"]
 var config: Dictionary
 var rules: RefCounted
 # The automaton skill's own cost, which nodes A and B keep; no node swaps in a cheaper, quicker one.
@@ -109,6 +112,10 @@ var scrap := 0
 var pieces: Dictionary = {}
 var base_mana_costs: Dictionary = {}
 var shotgun_cooldown := 0.0
+# Automation batch 2 (hounds, lure beacon, giant automaton) and the giant's own cooldown, which
+# the multiple-units node shortens.
+var batch2: RefCounted
+var giant_cooldown := 0.0
 # C10: potions bought or dropped wait in the stash; the four quickslots are refilled by hand
 # from it (04 §8.2: no automatic refill). The stash persists; a restart still restocks the loadout.
 var potion_stash: Dictionary = {}
@@ -265,6 +272,8 @@ func _ready() -> void:
 	rules = Rules.new(config)
 	automaton_cost = {"mana_cost": rules.skills.automaton.mana_cost, "cooldown_seconds": rules.skills.automaton.cooldown_seconds}
 	shotgun_cooldown = float(rules.skills.shotgun.cooldown_seconds)
+	giant_cooldown = float(rules.skills.giant.cooldown_seconds)
+	batch2 = Batch2Summons.new(self)
 	basic_range = float(rules.skills.basic_attack.range)
 	items = Items.new()
 	loot_rng.randomize()
@@ -431,6 +440,7 @@ func reset_arena() -> void:
 	last_recoil.clear()
 	last_spring_landing.clear()
 	last_spare_refund.clear()
+	batch2.clear()
 	spring_plate = null
 	for id in enemies:
 		enemies[id].body.free()
@@ -1523,7 +1533,11 @@ func sync_automaton_cost() -> void:
 	for id in base_mana_costs:
 		var cost: float = float(node.get("mana_cost", automaton_cost.mana_cost)) if id == "automaton" else float(base_mana_costs[id])
 		# Power management trims what the summons cost to build.
-		rules.skills[id].mana_cost = cost * (1.0 - cut) * (summon_mana_factor() if id in ["automaton", "turret"] else 1.0)
+		if id == "giant":
+			cost = float(batch2.plan("giant").get("mana_cost", cost))
+		rules.skills[id].mana_cost = cost * (1.0 - cut) * (summon_mana_factor() if id in SUMMON_SKILLS else 1.0)
+	# The giant's multiple-units node comes back sooner than the single big one.
+	rules.skills.giant.cooldown_seconds = float(batch2.plan("giant").get("cooldown_seconds", giant_cooldown))
 	# A gun is assembled loaded: its cost is a full magazine at its per-round price.
 	for id in GUNS:
 		rules.skills[id].mana_cost = gun_magazine(id) * round_cost(id)
@@ -1571,6 +1585,8 @@ func detection_range(ally: Dictionary) -> float:
 	# How far a summon looks for enemies: the turret node widens or narrows it, target judgement
 	# (automation passive) widens both.
 	var reach: float = float(config.summon_detection_range) if ally.mobile else float(config.turret_detection_range) * float(turret_plan().get("detection_factor", 1.0))
+	if ally.get("summon", "") in Batch2Summons.SKILLS:
+		reach = batch2.detection(ally)
 	return reach * (1.0 + float(config.passives.target_judgement.detection_per_level) * passive_level("target_judgement"))
 
 func relay_factor(ally: Dictionary) -> float:
@@ -1602,12 +1618,16 @@ func spare_parts_refund(ally: Dictionary) -> void:
 	if level <= 0:
 		return
 	var plan: Dictionary = config.passives.spare_parts
-	var skill: String = "automaton" if ally.mobile else "turret"
+	var skill: String = ally_skill(ally)
 	var refund: float = float(rules.skills[skill].mana_cost) * float(plan.mana_refund_per_level) * level
 	state.mana = minf(state.max_mana, state.mana + refund)
 	if state.cooldowns.has(skill):
 		state.cooldowns[skill] = float(state.cooldowns[skill]) * maxf(0.0, 1.0 - float(plan.cooldown_cut_per_level) * level)
 	last_spare_refund = {"skill": skill, "mana": refund}
+
+func ally_skill(ally: Dictionary) -> String:
+	# The skill that built a summon: batch 2 summons say so, the rest are automatons or turrets.
+	return String(ally.get("summon", "automaton" if ally.mobile else "turret"))
 
 func turret_fire_rate() -> float:
 	# The reload mechanism's feed also speeds up the turret, which feeds rounds the same way (03 §2.1).
@@ -1898,6 +1918,9 @@ func begin_cast(slot: String, cursor: Dictionary, shift: bool, stationary: bool,
 		world.add_child(automaton_assembly)
 		automaton_assembly.position = map.grounded(automaton_spawn_position(free_follow_slot()))
 		automaton_assembly.initialize(self)
+	elif cast.skill in Batch2Summons.SKILLS:
+		windup.visual_duration = windup.release
+		batch2.begin_preview(cast.skill, snapshot)
 	elif cast.skill == "turret":
 		windup.visual_duration = windup.release
 		turret_assembly = TurretAssembly.new()
@@ -1965,6 +1988,8 @@ func tick_windup(dt: float) -> void:
 		automaton_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(turret_assembly):
 		turret_assembly.sample_progress(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
+	if not batch2.preview.is_empty():
+		batch2.sample_preview(1.0 - float(windup.release) / maxf(0.0001, float(windup.visual_duration)))
 	if is_instance_valid(shotgun_assembly):
 		var aim := {"target_enemy":windup.cursor.get("enemy_id"),"position":windup.cursor.get("ground")}
 		shotgun_assembly.global_transform = ShotgunGeometry.frame(self,cast_target(aim),aims_at_enemy(aim))
@@ -2045,7 +2070,9 @@ func separate_allies(dt: float) -> void:
 			if not a.mobile and not b.mobile:
 				continue
 			var gap := Vector3(b.node.position.x - a.node.position.x, 0, b.node.position.z - a.node.position.z)
-			var overlap: float = ALLY_SPACING - gap.length()
+			# Batch 2 summons carry their own footprint (the giant stands 0.9m wide).
+			var spacing: float = maxf(ALLY_SPACING, float(a.get("radius", ALLY_SPACING / 2)) + float(b.get("radius", ALLY_SPACING / 2)))
+			var overlap: float = spacing - gap.length()
 			if overlap <= 0.0:
 				continue
 			var away: Vector3 = gap.normalized() if gap.length() > 0.001 else Vector3.RIGHT.rotated(Vector3.UP, j * 2.4)
@@ -2064,6 +2091,7 @@ func cancel_summon_assemblies(reason: String) -> void:
 	if is_instance_valid(turret_assembly):
 		turret_assembly.cancel(reason)
 	turret_assembly = null
+	batch2.cancel_preview(reason)
 	if is_instance_valid(shotgun_assembly):
 		shotgun_assembly.cancel(reason)
 	shotgun_assembly = null
@@ -3182,15 +3210,15 @@ func knock_back(id: String) -> void:
 		return
 	push_back(id, float(skill.knockback_distance), float(skill.knockback_seconds))
 
-func push_back(id: String, distance: float, seconds: float) -> void:
-	# Shoves the enemy straight away from her. Heavy enemies go half as far, bosses and charging
-	# brutes not at all.
+func push_back(id: String, distance: float, seconds: float, from = null) -> void:
+	# Shoves the enemy straight away from her (or from `from`, the giant's fists). Heavy enemies go
+	# half as far, bosses and charging brutes not at all.
 	if not enemies.has(id):
 		return
 	var enemy: Dictionary = enemies[id]
 	if config.enemy_types[enemy.kind].has("boss") or enemy.get("charging", 0.0) > 0:
 		return
-	var away: Vector3 = enemy.body.position - player.position
+	var away: Vector3 = enemy.body.position - (player.position if from == null else from)
 	away.y = 0.0
 	if away.length() < 0.01:
 		away = -player_model.global_basis.z
@@ -3629,10 +3657,13 @@ func execute_cast(event: Dictionary) -> void:
 				turret_assembly.complete()
 				turret_assembly = null
 			spawn_ally(pos, false, "")
+		"hound", "beacon", "giant":
+			batch2.summon(event)
 		"relay":
 			var linked: Array = []
 			for ally in allies:
-				if eligible(ally, event.target_enemy):
+				# The beacon only calls enemies over; it takes no orders.
+				if ally.get("summon", "") != "beacon" and eligible(ally, event.target_enemy):
 					ally.target = event.target_enemy
 					ally.relayed = event.target_enemy
 					linked.append(ally.node.position)
@@ -4471,7 +4502,14 @@ func aggro_distance(enemy: Dictionary, target: String) -> float:
 		# Smoke hides her altogether: summons in sight draw the enemy instead.
 		return INF if hp <= 0 or blinded(enemy) else enemy.body.position.distance_to(player.position) - config.aggro_witch_bias
 	var ally: Dictionary = ally_by_id(target)
-	return INF if ally.is_empty() else enemy.body.position.distance_to(ally.node.position)
+	if ally.is_empty():
+		return INF
+	# A lure beacon's signal turns the enemies it reached on it for as long as it stands; the giant
+	# counts closer than it is so it draws enemies off the witch (03 §5.9).
+	if batch2.lured_to(enemy, ally):
+		return -1000.0
+	var bias: float = float(rules.skills.giant.aggro_bias) if ally.get("summon", "") == "giant" else 0.0
+	return enemy.body.position.distance_to(ally.node.position) - bias
 
 func nearest_foe(enemy: Dictionary) -> String:
 	# Aggro goes to whatever is closest, so summons and turrets can draw enemies off the witch.
@@ -4499,6 +4537,7 @@ func hit_foe(target: String, amount: float, grade: String) -> void:
 func damage_ally(ally: Dictionary, amount: float, grade: String) -> void:
 	amount *= spread_factor(float(config.build.enemy_spread)) * (1.0 - summon_guard())
 	ally.hp -= amount
+	ally.hurt = 0.25
 	probe.ally_hit(grade, minf(amount, maxf(ally.hp + amount, 0.0)), ally.hp <= 0)
 	var floor_y: float = map.ground_y(ally.node.position)
 	spawn_vfx().summon_hit(ally.node.position + Vector3.UP * 0.6 + camera.global_basis.z * 0.4, floor_y)
@@ -4902,6 +4941,12 @@ func tick_bolts(dt: float) -> void:
 func _tick_allies(dt: float) -> void:
 	for ally in allies.duplicate():
 		ally.life -= dt
+		if ally.get("summon", "") in Batch2Summons.SKILLS:
+			if ally.life <= 0:
+				batch2.retire(ally)
+			else:
+				batch2.tick(ally, dt)
+			continue
 		if ally.life <= 0:
 			expire_ally(ally)
 			continue

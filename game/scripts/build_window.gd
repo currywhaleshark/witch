@@ -13,7 +13,7 @@ const SLOT_NAMES = {"lmb": "LMB", "rmb": "RMB", "q": "Q", "w": "W", "e": "E", "r
 # Every skill a slot can carry, grouped by tree. The left button takes one too; with none it
 # keeps the basic attack, which is never dragged.
 const LOADOUT = ["matchlock", "rifle", "powder_keg", "gatling", "smoke_launcher", "shotgun", "recoil_leap", "artillery", "naval_gun", "bolt_cutter", "grinder", "chainsaw", "focus_attack", "area_attack", "shield", "spring_dash",
-	"guillotine", "restraint_winch", "hydraulic_press", "compound_executor", "automaton", "turret", "relay"]
+	"guillotine", "restraint_winch", "hydraulic_press", "compound_executor", "automaton", "turret", "relay", "hound", "beacon", "giant"]
 
 # Skill tree layout: candidates from 03 in tier rows, links of related study. A link into a skill
 # that requires the other (build entry "requires") is a prerequisite: it is learned for a point after.
@@ -524,10 +524,28 @@ func effect_note(id: String) -> String:
 				"suppress": "탐지 %.1fm · 표적 주변 %.1fm 적 %d명에게도 퍼짐 · 발당 피해 ×%s" % [reach, float(plan.get("spread_radius", 0)), int(plan.get("spread_targets", 0)), str(plan.get("damage_factor", 1))],
 				"precise": "탐지 %.1fm · 가장 단단한 적 먼저 · 피해 ×%s · 사격 간격 ×%s" % [reach, str(plan.get("damage_factor", 1)), str(plan.get("interval_factor", 1))]}[config.turret_node]
 			return "%s · %s · %s" % [Build.SKILL_NODE_NAMES.turret[config.turret_node], kind, growth]
+		"hound", "beacon", "giant":
+			var plan: Dictionary = arena.batch2.plan(id)
+			var hp: float = float(plan.hp) * float(plan.get("hp_factor", 1.0)) * arena.summon_growth("hp", id)
+			var life: float = float(plan.lifetime) * arena.summon_life_factor()
+			match id:
+				"hound":
+					var bite: float = float(plan.bite_damage) * float(plan.get("damage_factor", 1.0)) * arena.summon_growth("damage", id)
+					var extra: String = {"base": "", "pack": " · 서로 다른 적을 나눠 묾", "tracker": " · 강화·정예·보스 먼저"}[plan.node]
+					return "%s · %d마리씩 최대 %d · 물기 %s / %.1f초 · 둔화 %.1f초 · 체력 %d · 탐지 %dm · %.1f초%s" % [Build.SKILL_NODE_NAMES.hound[plan.node], int(plan.per_cast), int(plan.max_count),
+						str(snappedf(bite, 0.1)), float(plan.bite_seconds), float(plan.slow_seconds), roundi(hp), int(plan.detection), life, extra]
+				"beacon":
+					life += float(plan.lifetime_per_level) * (float(config.beacon_level) - 1.0) * arena.summon_life_factor()
+					return "%.1f초 동안 %.0f초마다 신호 · 반경 %.0fm 적이 신호기를 노림 · 보스 제외 · 체력 %d · 하나만 설치" % [life, float(plan.pulse_seconds), float(plan.lure_radius), roundi(hp)]
+				_:
+					var slam: float = float(plan.damage) * float(plan.get("damage_factor", 1.0)) * arena.summon_growth("damage", id)
+					var stun: String = " · 기절 %.1f초" % float(plan.stun_seconds) if plan.has("stun_seconds") else ""
+					return "%s · 최대 %d기 · 강타 %d (앞 %.1fm 부채꼴, %.1f초마다) · 밀침%s · 체력 %d · %.0f초" % [Build.SKILL_NODE_NAMES.giant[plan.node], int(plan.max_count), roundi(slam),
+						float(plan.slam_radius), float(plan.slam_seconds), stun, roundi(hp), life]
 		"power_management":
 			var power: Dictionary = config.passives.power_management
 			var level: float = arena.passive_level(id)
-			return "소환체 수명 +%d%% · 태엽인형·포탑 마나 −%d%% · 공구 유지비 −%s%%" % [roundi(100 * float(power.summon_life_per_level) * level), roundi(100 * float(power.summon_mana_cut_per_level) * level), str(snappedf(100 * arena.power_upkeep_cut(), 0.1))]
+			return "소환체 수명 +%d%% · 소환 마나 −%d%% · 공구 유지비 −%s%%" % [roundi(100 * float(power.summon_life_per_level) * level), roundi(100 * float(power.summon_mana_cut_per_level) * level), str(snappedf(100 * arena.power_upkeep_cut(), 0.1))]
 		"target_judgement":
 			var judge: Dictionary = config.passives.target_judgement
 			var level: float = arena.passive_level(id)

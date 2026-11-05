@@ -118,7 +118,7 @@ func _draw() -> void:
 		# Summon durability: a thin teal bar only once it has been hit.
 		if ally.hp >= ally.max_hp or arena.camera.is_position_behind(ally.node.position):
 			continue
-		var q: Vector2 = arena.camera.unproject_position(ally.node.position + Vector3(0, 1.45, 0))
+		var q: Vector2 = arena.camera.unproject_position(ally.node.position + Vector3(0, float(ally.get("bar_height", 1.45)), 0))
 		draw_rect(Rect2(q.x - 19, q.y - 1, 38, 6), INK)
 		draw_rect(Rect2(q.x - 18, q.y, 36 * maxf(0, ally.hp) / ally.max_hp, 4), TEAL)
 	if arena.message_time > 0:
