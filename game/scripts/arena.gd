@@ -175,6 +175,7 @@ var last_device: Dictionary = {}
 var exo_visual: Node3D
 var last_shotgun: Dictionary = {}
 var last_recoil: Dictionary = {}
+var last_spring_landing: Dictionary = {}
 var last_shot: Dictionary = {}
 var hold: Dictionary = {}
 # A held ground click keeps steering on its own, so skill presses never replace it.
@@ -422,6 +423,7 @@ func reset_arena() -> void:
 	last_impact.clear()
 	last_shotgun.clear()
 	last_recoil.clear()
+	last_spring_landing.clear()
 	spring_plate = null
 	for id in enemies:
 		enemies[id].body.free()
@@ -3258,6 +3260,8 @@ func start_dash(target: Vector3, direction: Vector3, at_enemy: bool) -> void:
 	move_marker.visible = false
 	var seconds: float = float(skill.dash_seconds) / leap_speed_factor()
 	dash = {"direction": direction, "left": length, "speed": length / seconds, "visual_distance":length}
+	if config.spring_dash_node != "base":
+		dash.landing = config.spring_dash_node
 	player_visual.launch_spring_jump(seconds)
 	if not is_instance_valid(spring_plate):begin_spring_plate(direction)
 	spring_plate.launch(direction)
@@ -3312,9 +3316,37 @@ func tick_dash(dt: float) -> void:
 	player_visual.update_spring_jump(1.0 - float(dash.left) / maxf(float(dash.visual_distance), 0.0001))
 	# Done, or pinned against a wall the floor check could not see.
 	if dash.left <= 0.001 or made < travel * 0.3:
+		var landing: String = dash.get("landing", "")
 		player_visual.land_spring_jump()
 		dash.clear()
 		player.velocity = Vector3.ZERO
+		if landing != "":
+			spring_landing(landing)
+
+func spring_landing(node: String) -> void:
+	# Spring dash nodes (2026-11-05): the plate's kick hits the floor where she lands. Approach
+	# stuns the enemies round her so the drive tools can cut; retreat shoves them off so guns and
+	# summons keep their range. No damage and no roll; bosses ignore both, heavy enemies slide half.
+	var plan: Dictionary = rules.skills.spring_dash.nodes[node]
+	var struck: Array = []
+	for id in enemies.keys():
+		var delta: Vector3 = enemies[id].body.position - player.position
+		delta.y = 0.0
+		if delta.length() <= float(plan.radius) + 0.4 * float(enemies[id].size) and map.sees(player.position, enemies[id].body.position):
+			struck.append(id)
+			if node == "approach":
+				restrain(id, "stun", float(plan.stun_seconds))
+			else:
+				push_back(id, float(plan.knockback_distance), float(plan.knockback_seconds))
+	var floor_y: float = map.ground_y(player.position)
+	var at := Vector3(player.position.x, floor_y, player.position.z)
+	var fx = spawn_vfx()
+	var tint := Color(1.0, 0.82, 0.35) if node == "approach" else Color(0.55, 0.85, 1.0)
+	fx.ground_ring(at, 0.3, float(plan.radius), 0.16, tint, 0.32)
+	for i in 3:
+		fx.dust_trail(at, 0.0)
+	shake_time = maxf(shake_time, 0.08)
+	last_spring_landing = {"node": node, "struck": struck, "at": at}
 
 func execute_cast(event: Dictionary) -> void:
 	if SKILL_TREES.has(event.skill) and event.skill not in TOOL_ATTACKS:

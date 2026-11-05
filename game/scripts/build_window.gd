@@ -365,6 +365,8 @@ func node_info(node: Dictionary) -> PackedStringArray:
 		lines.append(effect_note(id))
 	else:
 		lines.append("레벨 효과 없음")
+		if Build.SKILL_NODE_NAMES.has(id):
+			lines.append(effect_note(id))
 	var key := bound_key(id)
 	if key != "":
 		lines.append("슬롯 " + key)
@@ -464,6 +466,14 @@ func effect_note(id: String) -> String:
 	match id:
 		"shield":
 			return "막기 %d%% · %.1f초" % [roundi(100 * arena.block_chance()), arena.shield_duration()]
+		"spring_dash":
+			var landing: Dictionary = arena.rules.skills.spring_dash.nodes[config.spring_dash_node]
+			match str(config.spring_dash_node):
+				"approach":
+					return "%s · 착지 반경 %.1fm 적 기절 %.1f초 · 보스 제외" % [Build.SKILL_NODE_NAMES.spring_dash.approach, float(landing.radius), float(landing.stun_seconds)]
+				"retreat":
+					return "%s · 착지 반경 %.1fm 적 %.1fm 밀침 · 무거운 적 절반 · 보스 제외" % [Build.SKILL_NODE_NAMES.spring_dash.retreat, float(landing.radius), float(landing.knockback_distance)]
+			return "%s · 착지 효과 없음 · 노드로 기절/밀치기 선택" % Build.SKILL_NODE_NAMES.spring_dash.base
 		"chainsaw":
 			return "출혈 %.1f초" % arena.bleed_plan(0).seconds
 		"shotgun":
