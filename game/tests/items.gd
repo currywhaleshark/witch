@@ -359,7 +359,9 @@ func run() -> void:
 	press.position = bag_view.get_global_rect().position + (Vector2(new_ring.at) + Vector2(0.5, 0.5)) * window.CELL
 	root.push_input(press, true)
 	await step()
-	check(arena.equipment.ring == new_ring and arena.hold.is_empty() and arena.state.mana == mana_before, "a real right click wears a bag item without casting the right-click skill")
+	# A rolled "+max mana" option raises current mana with the maximum when worn; a cast would
+	# lower it. The ring differs between runs, so check for no spend rather than equality.
+	check(arena.equipment.ring == new_ring and arena.hold.is_empty() and arena.windup.is_empty() and arena.state.mana >= mana_before, "a real right click wears a bag item without casting the right-click skill")
 	await step()
 	window.click_bag(arena.bag[0].at)
 	outside.button_index = MOUSE_BUTTON_RIGHT
