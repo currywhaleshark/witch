@@ -23,6 +23,8 @@ func step(count: int = 1) -> void:
 
 func fresh() -> void:
 	arena.reset_arena()
+	# Pin the hit roll: an unpinned basic attack can miss and leave the enemy's HP unchanged.
+	arena.force_rolls = {"hit": true, "crit": false}
 	arena.player.position = Vector3.ZERO
 	arena.config.enemy_speed = 0
 	arena.config.mana_regen = 0

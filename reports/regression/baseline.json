@@ -1,0 +1,1621 @@
+{
+    "started":  "2026-11-06T09:51:02",
+    "minutes":  6.3,
+    "commit":  "f021ab1c",
+    "dirty_files_before":  109,
+    "godot":  "C:\\Users\\USER\\Downloads\\Godot_v4.6.2-stable_win64.exe\\Godot_v4.6.2-stable_win64_console.exe",
+    "jobs":  3,
+    "group":  "all",
+    "counts":  {
+                   "total":  93,
+                   "pass":  92,
+                   "not_pass":  1
+               },
+    "unlisted_tests":  [
+
+                       ],
+    "restored_reports":  [
+                             "reports/automaton_nodes_v1/automaton_node_art_regression/result.json",
+                             "reports/godot_bleed_growth_report.json",
+                             "reports/godot_build_report.json",
+                             "reports/ground_loot_v1/runtime.json",
+                             "reports/ground_loot_v2/runtime.json",
+                             "reports/inventory_art_v1/report.json",
+                             "reports/item_art_v2/runtime_validation.json",
+                             "reports/loot_selection/report.json",
+                             "reports/loot_selection/resources.json",
+                             "reports/potion_bag/report.json",
+                             "reports/run_arm_v21/integration/gameplay/player_visual_validation.json",
+                             "reports/salvage_mode/report.json"
+                         ],
+    "other_modified_files":  [
+
+                             ],
+    "new_untracked_files":  [
+
+                            ],
+    "comparison":  null,
+    "results":  [
+                    {
+                        "name":  "approach_cast",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  8.3,
+                        "checks":  27,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/approach_cast.log"
+                    },
+                    {
+                        "name":  "automation_batch2",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  26.1,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automation_batch2.log"
+                    },
+                    {
+                        "name":  "automation_passives",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automation_passives.log"
+                    },
+                    {
+                        "name":  "automaton_assembly",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.4,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automaton_assembly.log"
+                    },
+                    {
+                        "name":  "automaton_node",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  67.4,
+                        "checks":  18,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automaton_node.log"
+                    },
+                    {
+                        "name":  "automaton_node_art_regression",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  67.1,
+                        "checks":  15,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automaton_node_art_regression.log"
+                    },
+                    {
+                        "name":  "automaton_spawn_anchor",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  8.5,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automaton_spawn_anchor.log"
+                    },
+                    {
+                        "name":  "automaton_variant_a",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.4,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automaton_variant_a.log"
+                    },
+                    {
+                        "name":  "automaton_variant_b",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.4,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automaton_variant_b.log"
+                    },
+                    {
+                        "name":  "automaton_variants",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.4,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/automaton_variants.log"
+                    },
+                    {
+                        "name":  "bleed",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  36.2,
+                        "checks":  26,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/bleed.log"
+                    },
+                    {
+                        "name":  "bleed_growth",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  2.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/bleed_growth.log"
+                    },
+                    {
+                        "name":  "bolt_cutter_v2",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.1,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/bolt_cutter_v2.log"
+                    },
+                    {
+                        "name":  "boss",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  18.8,
+                        "checks":  21,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/boss.log"
+                    },
+                    {
+                        "name":  "boss_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  11.1,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/boss_art.log"
+                    },
+                    {
+                        "name":  "boss_key",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.5,
+                        "checks":  9,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/boss_key.log"
+                    },
+                    {
+                        "name":  "build_windows",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  19.5,
+                        "checks":  34,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/build_windows.log"
+                    },
+                    {
+                        "name":  "cast_speed_gear",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.2,
+                        "checks":  11,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/cast_speed_gear.log"
+                    },
+                    {
+                        "name":  "combat_actors",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  4.4,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/combat_actors.log"
+                    },
+                    {
+                        "name":  "combat_sfx",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  8,
+                        "checks":  21,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/combat_sfx.log"
+                    },
+                    {
+                        "name":  "damage_model",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  2.9,
+                        "checks":  28,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/damage_model.log"
+                    },
+                    {
+                        "name":  "device_aim",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  8.3,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/device_aim.log"
+                    },
+                    {
+                        "name":  "drive_devices",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  24.1,
+                        "checks":  50,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/drive_devices.log"
+                    },
+                    {
+                        "name":  "drive_material_v3_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  1.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/drive_material_v3_art.log"
+                    },
+                    {
+                        "name":  "drive_tree_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  1,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/drive_tree_art.log"
+                    },
+                    {
+                        "name":  "drive_tree_v2_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  2.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/drive_tree_v2_art.log"
+                    },
+                    {
+                        "name":  "enemy_flinch",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  6.1,
+                        "checks":  19,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/enemy_flinch.log"
+                    },
+                    {
+                        "name":  "enemy_level",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.2,
+                        "checks":  16,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/enemy_level.log"
+                    },
+                    {
+                        "name":  "enemy_spacing",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  4.2,
+                        "checks":  9,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/enemy_spacing.log"
+                    },
+                    {
+                        "name":  "enemy_types",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  22.2,
+                        "checks":  25,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/enemy_types.log"
+                    },
+                    {
+                        "name":  "exoskeleton_passive",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.4,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/exoskeleton_passive.log"
+                    },
+                    {
+                        "name":  "exoskeleton_v3_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  2.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/exoskeleton_v3_art.log"
+                    },
+                    {
+                        "name":  "exoskeleton_v3_continuity",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  1.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/exoskeleton_v3_continuity.log"
+                    },
+                    {
+                        "name":  "exoskeleton_v4_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.2,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/exoskeleton_v4_art.log"
+                    },
+                    {
+                        "name":  "exoskeleton_v4_continuity",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  1.9,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/exoskeleton_v4_continuity.log"
+                    },
+                    {
+                        "name":  "firearm_gatling",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  28,
+                        "checks":  29,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_gatling.log"
+                    },
+                    {
+                        "name":  "firearm_matchlock",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  51.8,
+                        "checks":  37,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_matchlock.log"
+                    },
+                    {
+                        "name":  "firearm_material_v3",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  0.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_material_v3.log"
+                    },
+                    {
+                        "name":  "firearm_material_v4",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  1,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_material_v4.log"
+                    },
+                    {
+                        "name":  "firearm_offscreen_guns",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  25.1,
+                        "checks":  28,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_offscreen_guns.log"
+                    },
+                    {
+                        "name":  "firearm_powder_keg",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  12.5,
+                        "checks":  25,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_powder_keg.log"
+                    },
+                    {
+                        "name":  "firearm_recoil_control",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  4.1,
+                        "checks":  8,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_recoil_control.log"
+                    },
+                    {
+                        "name":  "firearm_recoil_leap",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.7,
+                        "checks":  18,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_recoil_leap.log"
+                    },
+                    {
+                        "name":  "firearm_rifle",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  9.9,
+                        "checks":  18,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_rifle.log"
+                    },
+                    {
+                        "name":  "firearm_smoke",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  24.1,
+                        "checks":  20,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_smoke.log"
+                    },
+                    {
+                        "name":  "firearm_tree_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  1,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_tree_art.log"
+                    },
+                    {
+                        "name":  "firearm_tree_v2",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  0.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/firearm_tree_v2.log"
+                    },
+                    {
+                        "name":  "grades_hits",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  7.4,
+                        "checks":  22,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/grades_hits.log"
+                    },
+                    {
+                        "name":  "ground_loot",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.2,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/ground_loot.log"
+                    },
+                    {
+                        "name":  "ground_loot_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.5,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/ground_loot_art.log"
+                    },
+                    {
+                        "name":  "ground_loot_art_v2",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  10.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/ground_loot_art_v2.log"
+                    },
+                    {
+                        "name":  "hit_block",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  13.4,
+                        "checks":  21,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/hit_block.log"
+                    },
+                    {
+                        "name":  "hold_input",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  25.1,
+                        "checks":  41,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/hold_input.log"
+                    },
+                    {
+                        "name":  "inventory_art",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  2.8,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/inventory_art.log"
+                    },
+                    {
+                        "name":  "item_art_v2",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.1,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/item_art_v2.log"
+                    },
+                    {
+                        "name":  "item_options_v2",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  10.8,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/item_options_v2.log"
+                    },
+                    {
+                        "name":  "items",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  7.4,
+                        "checks":  62,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/items.log"
+                    },
+                    {
+                        "name":  "lmb_loadout",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  6.3,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/lmb_loadout.log"
+                    },
+                    {
+                        "name":  "loadout_dash",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  7,
+                        "checks":  14,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/loadout_dash.log"
+                    },
+                    {
+                        "name":  "loot_resources",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.3,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/loot_resources.log"
+                    },
+                    {
+                        "name":  "mana_a5",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  10.6,
+                        "checks":  18,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/mana_a5.log"
+                    },
+                    {
+                        "name":  "mana_potions",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  11.9,
+                        "checks":  15,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/mana_potions.log"
+                    },
+                    {
+                        "name":  "map_nav",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  24.6,
+                        "checks":  50,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/map_nav.log"
+                    },
+                    {
+                        "name":  "passives",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  17.2,
+                        "checks":  13,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/passives.log"
+                    },
+                    {
+                        "name":  "player_motion_v18",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  12.7,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/player_motion_v18.log"
+                    },
+                    {
+                        "name":  "player_visual",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  14.4,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/player_visual.log"
+                    },
+                    {
+                        "name":  "potion_bag",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  4.2,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/potion_bag.log"
+                    },
+                    {
+                        "name":  "potions",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  45.7,
+                        "checks":  18,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/potions.log"
+                    },
+                    {
+                        "name":  "pulley_tool_attacks",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  14.7,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/pulley_tool_attacks.log"
+                    },
+                    {
+                        "name":  "replay_rules",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  0.6,
+                        "checks":  null,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/replay_rules.log"
+                    },
+                    {
+                        "name":  "run_entry_v22",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  2.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/run_entry_v22.log"
+                    },
+                    {
+                        "name":  "salvage_mode",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.5,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/salvage_mode.log"
+                    },
+                    {
+                        "name":  "shotgun_cast",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  10,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/shotgun_cast.log"
+                    },
+                    {
+                        "name":  "shotgun_knockback",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  7.4,
+                        "checks":  6,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/shotgun_knockback.log"
+                    },
+                    {
+                        "name":  "smoke_arena",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.2,
+                        "checks":  31,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/smoke_arena.log"
+                    },
+                    {
+                        "name":  "sockets_crafting",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  7.7,
+                        "checks":  25,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/sockets_crafting.log"
+                    },
+                    {
+                        "name":  "spring_dash_nodes",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  5.8,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/spring_dash_nodes.log"
+                    },
+                    {
+                        "name":  "spring_jump_v24",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  18.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/spring_jump_v24.log"
+                    },
+                    {
+                        "name":  "spring_plate_v1",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  16,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  1,
+                        "log":  "reports/regression/runs/20261106-095101/spring_plate_v1.log"
+                    },
+                    {
+                        "name":  "staff_material_v3",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  0.6,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/staff_material_v3.log"
+                    },
+                    {
+                        "name":  "staff_visual",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  4.8,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/staff_visual.log"
+                    },
+                    {
+                        "name":  "status_fx",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  10,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/status_fx.log"
+                    },
+                    {
+                        "name":  "summon_growth",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.2,
+                        "checks":  9,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/summon_growth.log"
+                    },
+                    {
+                        "name":  "summons_v2",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.2,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/summons_v2.log"
+                    },
+                    {
+                        "name":  "tool_attack_log",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  9.9,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/tool_attack_log.log"
+                    },
+                    {
+                        "name":  "tool_attacks",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  28.3,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/tool_attacks.log"
+                    },
+                    {
+                        "name":  "tool_switch",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  10.2,
+                        "checks":  21,
+                        "failures":  0,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/tool_switch.log"
+                    },
+                    {
+                        "name":  "transformation_v25",
+                        "group":  "headless",
+                        "status":  "fail",
+                        "exit_code":  1,
+                        "seconds":  31.5,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/transformation_v25.log"
+                    },
+                    {
+                        "name":  "transformation_v26",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  31.5,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/transformation_v26.log"
+                    },
+                    {
+                        "name":  "transformation_v27",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  3.5,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/transformation_v27.log"
+                    },
+                    {
+                        "name":  "transformation_v27_regression",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  31.4,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/transformation_v27_regression.log"
+                    },
+                    {
+                        "name":  "turret_assembly",
+                        "group":  "headless",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  10.2,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/turret_assembly.log"
+                    },
+                    {
+                        "name":  "outfit_material_parity_v27",
+                        "group":  "gpu",
+                        "status":  "pass",
+                        "exit_code":  0,
+                        "seconds":  4.2,
+                        "checks":  null,
+                        "failures":  null,
+                        "failure_names":  [
+
+                                          ],
+                        "script_errors":  [
+
+                                          ],
+                        "error_lines":  0,
+                        "log":  "reports/regression/runs/20261106-095101/outfit_material_parity_v27.log"
+                    }
+                ]
+}

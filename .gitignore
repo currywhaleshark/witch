@@ -29,3 +29,6 @@ reports/drive_material_v3/preview/
 # Local secrets such as the ElevenLabs API key written by its CLI.
 .env.local
 .env*.local
+
+# Per-run logs and outputs of tools/run_regression.ps1 (baseline.json stays tracked).
+reports/regression/runs/

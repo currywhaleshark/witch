@@ -267,6 +267,22 @@ powershell -ExecutionPolicy Bypass -File tools/run_godot.ps1 -Verify
 powershell -ExecutionPolicy Bypass -File tools/run_godot.ps1 -RenderCheck
 ```
 
+**전체 회귀 실행기 (2026-11-06):** `-Verify`는 16개만 돌리고 첫 실패에서 멈춘다. 리팩터링 등 넓은 변경 전후에는 [run_regression.ps1](../tools/run_regression.ps1)로 전체를 끝까지 돌리고 [기준선](../reports/regression/baseline.json)과 비교한다.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/run_regression.ps1 -Jobs 3 -Baseline reports/regression/baseline.json
+powershell -ExecutionPolicy Bypass -File tools/run_regression.ps1 -Only items,boss -NoImport
+powershell -ExecutionPolicy Bypass -File tools/run_regression.ps1 -Jobs 3 -SaveBaseline
+```
+
+- 대상 목록은 [regression_suite.json](../game/tests/regression_suite.json)이다. `game/tests/*.gd`는 모두 `headless`·`gpu`·`excluded`(사유 기록, `review_*` 등 캡처·자산 준비·측정 스크립트) 중 하나에 있어야 하며, 빠진 새 테스트는 실행기가 경고한다. 새 회귀 테스트를 만들면 여기에 추가한다.
+- 테스트마다 `--output`의 뜻이 다르다(파일/폴더). `output_file`·`output_dir`에 적힌 테스트는 실행 폴더 안의 경로를 받는다. 대부분은 이 인자 없이 실행하면 저장 단계에서 SCRIPT ERROR로 멈춘다.
+- 결과는 `reports/regression/runs/<시각>/`(git 제외)의 테스트별 로그와 `summary.json`에 남는다. 테스트가 다시 쓴 추적 중인 `reports/` 파일은 실행 뒤 git에서 복원한다(`-KeepReports`로 유지). 그 밖에 바뀐 파일·새 파일은 목록만 남긴다. 실행 전부터 수정돼 있던 보고서 파일은 복원 대상이 아니다.
+- 기본으로 먼저 임포트를 실행한다(새 에셋의 임포트 캐시가 없으면 해당 테스트가 실패한다). 임포트는 Godot가 `.import` 파일을 다시 쓸 수 있다. 이미 최신이면 `-NoImport`로 생략한다.
+- SCRIPT ERROR 뒤 `quit()`에 도달하지 못한 테스트는 로그가 `-StallSec`(기본 45초) 동안 멈추면 끊고 `script_error`로 기록한다. 전체 제한은 `-TimeoutSec`(기본 600초).
+- `-Baseline`을 주면 기준선에서 통과하던 테스트가 실패할 때만 종료 코드 1이다. 병렬(`-Jobs`)은 같은 `user://` 폴더를 쓰므로, 병렬에서만 실패하면 `-Only`로 단독 재실행해 확인한다.
+- 기준선의 알려진 실패: `transformation_v25`는 v26 입장 클립 교체 뒤 v25 Blender 자세(오차 약 0.39m)와 효과음 연결 기대가 맞지 않는다. 같은 범위를 v26·v27 테스트가 통과한다.
+
 - Python 회귀 검사 43개 통과.
 - [B8 출혈 레벨 성장 검사](../game/tests/bleed_growth.gd): 고정 시안 조건에서 Lv1~10·4등급의 실제 피해·만료, 5중첩 효율, 실제 전기톱 발동, 레벨 변경과 독립 만료·교체·정지/재개를 확인했다. [보고서](../reports/godot_bleed_growth_report.json) 263개 통과. `-Verify`에 기존 출혈 검사와 함께 포함된다. 수동 체감·최종 밸런스 승인은 별도다.
 - [Godot 규칙 재생](../game/tests/replay_rules.gd): **동일한** [JSON 입력 시나리오](../tests/fixtures/combat_rules.json) 13개·39단계와 소수 유지비 검사를 통과. [보고서](../reports/godot_rules_report.json).

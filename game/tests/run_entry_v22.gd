@@ -45,7 +45,8 @@ func run() -> void:
 	var pure_error:=0.
 	for kind in Player.CLIPS:
 		# A clip later replaced on purpose (the v23 thrust) is no longer the one this check protects.
-		if Player.CLIPS[kind] != old.CLIPS[kind]:
+		# Kinds added after v22 (e.g. the v24 spring_jump) have no baseline clip to compare.
+		if Player.CLIPS[kind] != old.CLIPS.get(kind, ""):
 			continue
 		for i in 17:
 			v._sample(kind,i/16.*v._length(kind));old._sample(kind,i/16.*old._length(kind))
