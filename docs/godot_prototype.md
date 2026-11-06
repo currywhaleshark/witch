@@ -259,6 +259,29 @@ powershell -ExecutionPolicy Bypass -File tools/run_godot.ps1 -GodotPath 'C:\path
 
 HP 회복과 물약이 없어서 오래 싸우면 쓰러질 수 있다. 사망하면 그 시점까지의 기록이 저장된다. 시험 설정의 원본은 [trial.json](../game/data/trial.json)의 `mana_regen_steps`, `a5_respawn_seconds`다.
 
+## 코드 구조: arena 분할 (2026-11-06)
+
+`arena.gd`가 5,064줄까지 커져서 시스템별 동작을 RefCounted 부품 9개로 나눴다. arena.gd는 2,274줄이며 필드 구성·리셋·입력·시전 흐름(`request_slot`/`begin_cast`/`tick_windup`/`execute_cast`)·이동·`_physics_process` 조율·HUD를 맡는다.
+
+| 부품 (arena의 변수) | 파일 | 범위 |
+|---|---|---|
+| `inventory_sys` | [arena_inventory.gd](../game/scripts/arena_inventory.gd) | 가방 칸·착용·손에 든 물건·소켓·분해·재연마 |
+| `loot_sys` | [arena_loot.gd](../game/scripts/arena_loot.gd) | 드롭 굴림·바닥 아이템 배치/연출/라벨/호버·줍기 |
+| `potion_sys` | [arena_potions.gd](../game/scripts/arena_potions.gd) | 물약 가방·빠른 칸·구입·마시기·재사용·지속 효과 |
+| `firearm_sys` | [arena_firearms.gd](../game/scripts/arena_firearms.gd) | 부유 총·산탄·반동 도약·화약통·개틀링·포격/함포·화재·연막 |
+| `device_sys` | [arena_devices.gd](../game/scripts/arena_devices.gd) | 단두대·압착기·처형기·윈치·표식/구속·외골격 |
+| `tool_sys` | [arena_tools.gd](../game/scripts/arena_tools.gd) | 공구 채널·집중/범위 공구 공격·그라인더 휩쓸기 |
+| `damage_sys` | [arena_damage.gd](../game/scripts/arena_damage.gd) | 명중/치명·편차·방어·패시브 배율·경직·출혈·마녀 피격/막기 |
+| `enemy_sys` | [arena_enemies.gd](../game/scripts/arena_enemies.gd) | 적 생성/간격·레벨·재등장·적 AI/공격 예고·마법탄·보스 |
+| `ally_sys` | [arena_allies.gd](../game/scripts/arena_allies.gd) | 태엽인형·포탑 소환체의 추종·성장·표적·피해·만료 (batch2는 기존 [batch2_summons.gd](../game/scripts/batch2_summons.gd)) |
+
+- **상태는 arena에 남는다.** `bag`, `enemies`, `allies`, `gun`, `force_rolls` 같은 변수는 테스트·HUD·창이 직접 읽으므로 옮기지 않았다. 부품은 `arena.<변수>`로 읽고 쓴다.
+- **기존 호출 표면 유지.** 밖(arena 나머지·다른 스크립트·테스트·문자열 호출)에서 쓰는 함수는 arena.gd에 한 줄 위임 함수가 남아 있다(`func drop_item(...): loot_sys.drop_item(...)`). 그래서 `arena.drop_item()` 같은 기존 호출은 그대로 동작한다. 위임 함수 묶음은 `# loot_sys: arena_loot.gd ...` 주석 아래에 있다.
+- arena.gd에 `class_name Arena`를 붙였고 부품은 `var arena: Arena`로 타입을 가진다. 그래서 오타·없는 멤버는 로드 때 컴파일 오류로 잡힌다. 상수는 부품에서 `Arena.TEAL`처럼 쓴다. class_name을 새로 붙이거나 바꾸면 Godot의 전역 클래스 캐시를 갱신해야 하므로 임포트(`run_regression.ps1` 기본 동작 또는 에디터)를 한 번 실행한다.
+- 분할은 [extract_arena_module.mjs](../tools/extract_arena_module.mjs)(Node.js)로 했다. 옮길 함수 목록 JSON을 받아 함수 본문의 arena 멤버 참조를 `arena.`/`Arena.`로 바꾸고, 밖에서 쓰이는 함수의 위임을 만든다. 동작 변경 없이 함수 본문 텍스트만 옮겼다.
+- **검증:** 분할 뒤 [전체 회귀](#자동-검증과-남은-확인) 93개 중 92개 통과로 기준선과 같고(알려진 실패 `transformation_v25`), 실제 시작 장면 `boot.tscn`을 1,200프레임 헤드리스로 실행해 오류가 없었다. 직접 플레이 체감 확인은 별도다.
+- **남은 정리:** 위임 함수가 약 180개(두 줄씩) 남아 있다. 테스트와 창 스크립트가 `arena.loot_sys.drop_item()`처럼 부품을 직접 부르게 바꾸면 위임을 지울 수 있다. 입력 처리(`_unhandled_input` 150줄)·`_physics_process`(152줄)·시전 흐름은 아직 arena.gd에 있다.
+
 ## 자동 검증과 남은 확인
 
 ```powershell
