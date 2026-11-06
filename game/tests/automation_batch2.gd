@@ -79,6 +79,10 @@ func run() -> void:
 	for id in ["hound", "beacon", "giant"]:
 		var node = arena.skill_window.find_node(id)
 		check(node != null and arena.skill_window.node_state(node) == "levels", "%s sits in the automation tree" % id)
+	# The agreed cleanup: merged or dropped candidates are gone, and only the workshop remains unbuilt.
+	var automation_nodes: Array = arena.skill_window.TREE_UI.trees.filter(func(tree): return tree.tree == "automation")[0].nodes
+	var unbuilt: Array = automation_nodes.filter(func(node): return not node.has("id")).map(func(node): return node.name)
+	check(unbuilt == ["자율공방"], "the automation tree's only unbuilt candidate is the workshop, got %s" % str(unbuilt))
 	check(build.skills.hound == 1 and build.skills.beacon == 1 and build.skills.giant == 0 and build.requires.get("giant") == "automaton", "hound and beacon start at Lv1, the giant unlearned behind the automaton")
 	check(arena.skill_window.drag_data("hound", "") != null and arena.skill_window.drag_data("beacon", "") != null and arena.skill_window.drag_data("giant", "") == null, "learned hound and beacon icons drag onto a key; the unlearned giant does not")
 	var points: int = build.skill_points()
