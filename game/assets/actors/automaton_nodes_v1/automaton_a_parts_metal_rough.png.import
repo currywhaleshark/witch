@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmbu68nkrcm0n"
+uid="uid://c3fv121jksg6q"
 path.s3tc="res://.godot/imported/automaton_a_parts_metal_rough.png-ad8706980598c42029c95b427974acf2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "7bad542cb2e340d8e5ed7ea48d3b1f15"
 }
 
 [deps]

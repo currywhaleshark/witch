@@ -2,23 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5vkeehlfbh45"
-path="res://.godot/imported/rag_v1_rag_rm_1k.png-99de6f7dfc4b2299229cd406812a3be6.ctex"
+uid="uid://cbrpjwofgot1m"
+path.s3tc="res://.godot/imported/rag_v1_rag_rm_1k.png-99de6f7dfc4b2299229cd406812a3be6.s3tc.ctex"
 metadata={
-"vram_texture": false
-}
-generator_parameters={
-"md5": "2b45888fb9aae0416b2fb9a7483c7cd1"
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/actors/combat_set_v1/rag_v1_rag_rm_1k.png"
-dest_files=["res://.godot/imported/rag_v1_rag_rm_1k.png-99de6f7dfc4b2299229cd406812a3be6.ctex"]
+dest_files=["res://.godot/imported/rag_v1_rag_rm_1k.png-99de6f7dfc4b2299229cd406812a3be6.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

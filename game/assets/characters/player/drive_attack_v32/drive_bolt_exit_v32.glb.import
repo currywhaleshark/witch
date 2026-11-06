@@ -1,10 +1,15 @@
 [remap]
+
 importer="scene"
 importer_version=1
 type="PackedScene"
+uid="uid://bix5rw6e388bh"
+path="res://.godot/imported/drive_bolt_exit_v32.glb-fec7d8233e5b1259257713f8cdc0dbdf.scn"
 
 [deps]
+
 source_file="res://assets/characters/player/drive_attack_v32/drive_bolt_exit_v32.glb"
+dest_files=["res://.godot/imported/drive_bolt_exit_v32.glb-fec7d8233e5b1259257713f8cdc0dbdf.scn"]
 
 [params]
 

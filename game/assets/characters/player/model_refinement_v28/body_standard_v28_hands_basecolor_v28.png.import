@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cu40qd3r84mp6"
-path="res://.godot/imported/body_standard_v28_hands_basecolor_v28.png-3c6287b62a5d5cc7dd2450b25255f5a9.ctex"
+path.s3tc="res://.godot/imported/body_standard_v28_hands_basecolor_v28.png-3c6287b62a5d5cc7dd2450b25255f5a9.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "87a702f38c7e1dd7c5d5f88bcad978ef"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/characters/player/model_refinement_v28/body_standard_v28_hands_basecolor_v28.png"
-dest_files=["res://.godot/imported/body_standard_v28_hands_basecolor_v28.png-3c6287b62a5d5cc7dd2450b25255f5a9.ctex"]
+dest_files=["res://.godot/imported/body_standard_v28_hands_basecolor_v28.png-3c6287b62a5d5cc7dd2450b25255f5a9.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

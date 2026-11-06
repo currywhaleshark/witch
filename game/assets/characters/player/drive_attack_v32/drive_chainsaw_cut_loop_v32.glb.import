@@ -1,10 +1,15 @@
 [remap]
+
 importer="scene"
 importer_version=1
 type="PackedScene"
+uid="uid://d0lki18b4jgwp"
+path="res://.godot/imported/drive_chainsaw_cut_loop_v32.glb-7735b3a98bb11b414ecbd91207d7b35c.scn"
 
 [deps]
+
 source_file="res://assets/characters/player/drive_attack_v32/drive_chainsaw_cut_loop_v32.glb"
+dest_files=["res://.godot/imported/drive_chainsaw_cut_loop_v32.glb-7735b3a98bb11b414ecbd91207d7b35c.scn"]
 
 [params]
 

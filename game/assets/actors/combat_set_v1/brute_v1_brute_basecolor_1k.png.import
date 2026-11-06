@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mjcggqt5yqgs"
-path="res://.godot/imported/brute_v1_brute_basecolor_1k.png-909692a651fe43b5d2a7cc3269a6bd6e.ctex"
+path.s3tc="res://.godot/imported/brute_v1_brute_basecolor_1k.png-909692a651fe43b5d2a7cc3269a6bd6e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "399b91ca884b0b71f0932128da2407fe"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/actors/combat_set_v1/brute_v1_brute_basecolor_1k.png"
-dest_files=["res://.godot/imported/brute_v1_brute_basecolor_1k.png-909692a651fe43b5d2a7cc3269a6bd6e.ctex"]
+dest_files=["res://.godot/imported/brute_v1_brute_basecolor_1k.png-909692a651fe43b5d2a7cc3269a6bd6e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

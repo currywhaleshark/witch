@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc1db525k08jt"
-path="res://.godot/imported/eyes_neutral_v21_shared_head_basecolor_v8.png-230bc2e6e9b536b37ffef33b94c38774.ctex"
+path.s3tc="res://.godot/imported/eyes_neutral_v21_shared_head_basecolor_v8.png-230bc2e6e9b536b37ffef33b94c38774.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "9f22fadf2c876fcd904cf77dab2e369a"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/characters/player/run_arm_v21/eyes_neutral_v21_shared_head_basecolor_v8.png"
-dest_files=["res://.godot/imported/eyes_neutral_v21_shared_head_basecolor_v8.png-230bc2e6e9b536b37ffef33b94c38774.ctex"]
+dest_files=["res://.godot/imported/eyes_neutral_v21_shared_head_basecolor_v8.png-230bc2e6e9b536b37ffef33b94c38774.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

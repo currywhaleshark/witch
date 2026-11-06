@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bteckskioly6b"
+uid="uid://cgfgrwvxkf48p"
 path.s3tc="res://.godot/imported/turret_parts_normal.png-15a104fdef5048290220c587ef546b69.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "a7b5dfddde3424acb74533315d65984f"
 }
 
 [deps]

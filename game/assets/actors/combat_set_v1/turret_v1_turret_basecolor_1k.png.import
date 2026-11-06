@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bekat3110edws"
-path="res://.godot/imported/turret_v1_turret_basecolor_1k.png-1931db0561cae7b03ce1020ed8774d1b.ctex"
+path.s3tc="res://.godot/imported/turret_v1_turret_basecolor_1k.png-1931db0561cae7b03ce1020ed8774d1b.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "54cdaa0c1ca38329b5b1a02ecb532ee9"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/actors/combat_set_v1/turret_v1_turret_basecolor_1k.png"
-dest_files=["res://.godot/imported/turret_v1_turret_basecolor_1k.png-1931db0561cae7b03ce1020ed8774d1b.ctex"]
+dest_files=["res://.godot/imported/turret_v1_turret_basecolor_1k.png-1931db0561cae7b03ce1020ed8774d1b.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

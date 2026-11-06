@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boypbx87kfhe2"
+uid="uid://crai5m4b3oiay"
 path.s3tc="res://.godot/imported/automaton_a_parts_color.png-8b30b307caaa9ef90ee214cd14cad1f2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "a48f292f0e311f3af40d28d5c04013ac"
 }
 
 [deps]

@@ -2,23 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djp4pvgc5xqeh"
-path="res://.godot/imported/outfit_civilian_v17_civilian_shared_atlas_2k.png-41d03e47bcb895021a4351e803023755.ctex"
+uid="uid://cp7jbs8vm47t0"
+path.s3tc="res://.godot/imported/outfit_civilian_v17_civilian_shared_atlas_2k.png-41d03e47bcb895021a4351e803023755.s3tc.ctex"
 metadata={
-"vram_texture": false
-}
-generator_parameters={
-"md5": "86a3212ee87173f0adb6fca9a78af859"
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/characters/player/combat_motion_v17/outfit_civilian_v17_civilian_shared_atlas_2k.png"
-dest_files=["res://.godot/imported/outfit_civilian_v17_civilian_shared_atlas_2k.png-41d03e47bcb895021a4351e803023755.ctex"]
+dest_files=["res://.godot/imported/outfit_civilian_v17_civilian_shared_atlas_2k.png-41d03e47bcb895021a4351e803023755.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
